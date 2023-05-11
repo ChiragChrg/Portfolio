@@ -6,11 +6,18 @@ const Tracker = () => {
     useEffect(() => {
         document.addEventListener('mousemove', evt => {
             const x = evt.clientX - 200;
-            const y = evt.clientY - 200;
+            const y = evt.clientY + window.scrollY - 200;
 
             TrackRef.current.style.top = y + "px";
             TrackRef.current.style.left = x + "px";
         })
+        // document.body.addEventListener("scroll", evt => {
+        //     const x = evt.clientX - 200;
+        //     const y = evt.clientY - window.scrollY - 200;
+
+        //     TrackRef.current.style.top = y + "px";
+        //     TrackRef.current.style.left = x + "px";
+        // });
     }, [document])
 
     return (

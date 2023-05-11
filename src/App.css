@@ -13,14 +13,39 @@
 body{
   background-color: var(--base);
   color: var(--text);
+  scroll-behavior: smooth;
+}
+
+.App{
+  position: relative;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col{
+  flex-direction: column;
+}
+
+.gap05{
+  gap: 0.5em;
+}
+
+.gap{
+  gap: 1em;
 }
 
 /* Tracker CSS */
 .Tracker-Main{
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  z-index: 2;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
   overflow: hidden;
 }
 
@@ -32,7 +57,13 @@ body{
   left: -200px;
   border-radius: 100px;
   z-index: -30;
+  opacity: 0;
   pointer-events: none;
-  background: radial-gradient(rgba(48, 61, 179, 0.1), transparent 80%);
+  transition: opacity 0.5s ease;
+  background: radial-gradient(rgba(48, 61, 179, 0.5), transparent 80%);
+}
+
+body:hover #tracker{
+  opacity: 1;
 }
 /* Tracker CSS */
