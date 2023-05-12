@@ -2,12 +2,17 @@
   --primary: #000000;
   --base: #000000;
   --text: #fff;
+  --pink: #ff00bf;
+  --purple: #6600FF;
+  --gradient: linear-gradient(to right,
+  var(--pink), var(--purple),var(--purple),var(--pink));
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Poppins;
 }
 
 body{
@@ -67,3 +72,23 @@ body:hover #tracker{
   opacity: 1;
 }
 /* Tracker CSS */
+
+
+.gradientText{
+  font-family: Satisfy;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: gradientPan 5s linear infinite;
+}
+
+@keyframes gradientPan {
+  from{
+    background-position: 0% center;
+  }
+  to{
+    background-position: -200% center;
+  }
+}

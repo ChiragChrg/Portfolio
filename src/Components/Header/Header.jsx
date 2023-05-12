@@ -6,7 +6,7 @@ const Header = () => {
         <div className="Header-Main">
             <div className="Header-Container flex">
                 <div className="Header-Logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <h1>ChiragChrg</h1>
+                    <h1 className="gradientText">Portfolio.</h1>
                 </div>
 
                 <nav>
@@ -15,30 +15,34 @@ const Header = () => {
                             activeClass="active"
                             spy={true}
                             smooth={true}
-                            offset={-69}
+                            offset={-64}
                             duration={500}
-                            to="about">About</Link></li>
+                            to="about">About</Link>
+                        </li>
                         <li><Link
                             activeClass="active"
                             spy={true}
                             smooth={true}
-                            offset={-69}
+                            offset={-64}
                             duration={500}
-                            to="projects">Projects</Link></li>
+                            to="projects">Projects</Link>
+                        </li>
                         <li><Link
                             activeClass="active"
                             spy={true}
                             smooth={true}
-                            offset={-69}
+                            offset={-64}
                             duration={500}
-                            to="contact">Contact</Link></li>
+                            to="contact">Contact</Link>
+                        </li>
                         <li><Link
                             activeClass="active"
                             spy={true}
                             smooth={true}
-                            offset={-69}
+                            offset={-64}
                             duration={500}
-                            to="resume">Resume</Link></li>
+                            to="resume">Resume</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

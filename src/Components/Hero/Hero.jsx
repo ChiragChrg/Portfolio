@@ -1,9 +1,16 @@
-import "./Intro.css"
+import "./Hero.css"
+import { useRef } from 'react'
 
-const Intro = () => {
+import { HTMLLogo, CSSLogo, JSLogo, REACTLogo, AOTImg } from "../../Assets";
+
+const Hero = () => {
+    const AvatarRef = useRef();
+
     return (
         <div className="Intro-Main flex">
-            <h1>Introducot dsdsd sdsds dsds dsdsdsdsdsdd</h1>
+            <h1>Hi! My name is
+                <span className="gradientText">Chirag.</span>
+            </h1>
 
             <div className="Intro-AvatarContainer flex">
                 <div className="Intro-AvatarTrail Trail1">
@@ -19,9 +26,8 @@ const Intro = () => {
                     <div className="Intro-TrailDot"></div>
                 </div>
 
-                <div className="Intro-Avatar flex">
-                    <div className="Intro-Pulse"></div>
-                    YO
+                <div className="Intro-Avatar flex" ref={AvatarRef}>
+                    <img src={AOTImg} alt="AOTImg" />
                 </div>
 
             </div>
@@ -29,4 +35,4 @@ const Intro = () => {
     )
 }
 
-export default Intro
+export default Hero
