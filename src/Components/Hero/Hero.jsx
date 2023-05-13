@@ -1,7 +1,7 @@
 import "./Hero.css"
 import { useRef } from 'react'
 
-import { AOTImg } from "../../Assets/index"
+import { AOTImg } from "/src/Assets"
 
 const Hero = () => {
     const AvatarRef = useRef();
