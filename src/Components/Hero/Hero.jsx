@@ -1,7 +1,7 @@
 import "./Hero.css"
 import { useRef } from 'react'
 
-import { HTMLLogo, CSSLogo, JSLogo, REACTLogo, AOTImg } from "../../Assets";
+import { AOTImg } from "../../Assets"
 
 const Hero = () => {
     const AvatarRef = useRef();
