@@ -28,7 +28,7 @@
     width: 300px;
     aspect-ratio: 1;
     overflow: hidden;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 50%;
     z-index: 6;
     cursor: none;
