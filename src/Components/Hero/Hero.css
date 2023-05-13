@@ -1,4 +1,4 @@
-.Intro-Main{
+.Hero-Main{
     width: 100%;
     height: 100vh;
     padding: 1em 2em;
@@ -7,20 +7,24 @@
     justify-content: space-around;
 }
 
-.Intro-Main h1 span{
+.Hero-Main h1{
+    white-space: nowrap;
+}
+
+.Hero-Main h1 span{
     margin-left: 0.2em;
     font-size: 48px;
 }
 
-.Intro-AvatarContainer{
+.Hero-AvatarContainer{
     width: 100%;
     height: 100%;
     position: relative;
-    top: -4em;
+    top: -2.8em;
     overflow: hidden;
 }
 
-.Intro-Avatar{
+.Hero-Avatar{
     width: 300px;
     aspect-ratio: 1;
     overflow: hidden;
@@ -31,13 +35,13 @@
     transition:0.5s ease-in-out;
 }
 
-.Intro-Avatar img{
+.Hero-Avatar img{
     width: 100%;
     height: 100%;
     background-size: cover;
 }
 
-.Intro-AvatarTrail{
+.Hero-AvatarTrail{
     width: 350px;
     aspect-ratio: 1;
     background: conic-gradient(
@@ -60,7 +64,7 @@
     }
 }
 
-.Intro-AvatarTrail::before{
+.Hero-AvatarTrail::before{
     content: "";
     width: calc(100% - 1%);
     aspect-ratio: 1;    
@@ -71,7 +75,7 @@
     background-color: var(--base);
 }
 
-.Intro-TrailDot{
+.Hero-TrailDot{
     width: 10px;
     height: 10px;
     background-color: #fff;
@@ -124,7 +128,7 @@
     z-index: 2;
 }
 
-.Intro-TrailDot img{
+.Hero-TrailDot img{
     width: 100%;
     aspect-ratio: 1;
     position: relative;
@@ -133,17 +137,17 @@
     transition: 0.2s ease-out;
 }
 
-:has(.Intro-Avatar:hover) .Intro-AvatarTrail{
+:has(.Hero-Avatar:hover) .Hero-AvatarTrail{
     animation-play-state: paused;
 }
 
-:has(.Intro-Avatar:hover) .Intro-TrailDot{
+:has(.Hero-Avatar:hover) .Hero-TrailDot{
     background-color: var(--base) !important;
     outline: 0.5px solid #fff;
     scale: 2;
 }
 
-:has(.Intro-Avatar:hover) .Intro-TrailDot img{
+:has(.Hero-Avatar:hover) .Hero-TrailDot img{
     width: 100%;
     aspect-ratio: 1;
     opacity: 1;

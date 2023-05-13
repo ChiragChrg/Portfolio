@@ -19,6 +19,7 @@ body{
   background-color: var(--base);
   color: var(--text);
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 .App{
@@ -43,35 +44,49 @@ body{
   gap: 1em;
 }
 
-/* Tracker CSS */
-.Tracker-Main{
+/* Cursor CSS */
+.Cursor-Main{
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -2;
+  z-index: 9999;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.Tracker-Main #tracker{
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  top: -200px;
-  left: -200px;
+.Cursor-Main #cursor{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
   border-radius: 100px;
-  z-index: -30;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease;
-  background: radial-gradient(rgba(48, 61, 179, 0.5), transparent 80%);
+  transition: all 0.1s linear;
+  /* background: radial-gradient(rgba(48, 61, 179, 0.5), transparent 80%); */
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 #fff;
 }
 
-body:hover #tracker{
+.Cursor-Main #cursor::before{
+  content: "";
+  width: 0;
+  aspect-ratio: 1;    
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  position: absolute;
+  transition: scale 0.5s ease-in-out;
+  background-color: var(--base);
+}
+
+body:hover #cursor{
   opacity: 1;
 }
-/* Tracker CSS */
+/* Cursor CSS */
 
 
 .gradientText{

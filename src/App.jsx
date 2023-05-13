@@ -3,7 +3,7 @@ import { BrowserRouter as Browser, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 import Home from "./pages/Home/Home"
-// import Tracker from './Components/Tracker'
+import Cursor from './Components/Cursor'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,7 +17,7 @@ function App() {
         </Routes>
       </Browser>
 
-      {/* <Tracker /> */}
+      <Cursor />
     </div>
   )
 }
