@@ -66,7 +66,6 @@ body{
   opacity: 0;
   pointer-events: none;
   transition: all 0.1s linear;
-  /* background: radial-gradient(rgba(48, 61, 179, 0.5), transparent 80%); */
   background-color: #fff;
   box-shadow: 0 0 20px 0 #fff;
 }
@@ -81,6 +80,17 @@ body{
   position: absolute;
   transition: scale 0.5s ease-in-out;
   background-color: var(--base);
+}
+
+.Cursor-Main #cursorDot{
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 10ms linear;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 #fff;
 }
 
 body:hover #cursor{
