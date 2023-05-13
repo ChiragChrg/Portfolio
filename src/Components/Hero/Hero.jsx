@@ -1,8 +1,8 @@
 import "./Hero.css"
 import { useRef } from 'react'
 
-// import AOTImg from "../../../public/AOT.jpg"
-import AOTImg from "../../Assets/AOT.jpg"
+import AOTImg from "../../../public/AOT.jpg"
+// import AOTImg from "../../Assets/AOT.jpg"
 
 const Hero = () => {
     const AvatarRef = useRef();
