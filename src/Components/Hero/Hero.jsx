@@ -5,6 +5,7 @@ import { AOTImg } from "../../Assets"
 
 const Hero = () => {
     const AvatarRef = useRef();
+    console.log(AOTImg)
 
     return (
         <div className="Intro-Main flex">
