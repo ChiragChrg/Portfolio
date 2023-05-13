@@ -12,6 +12,7 @@ const Header = () => {
                 <nav>
                     <ul>
                         <li><Link
+                            href="#about"
                             activeClass="active"
                             spy={true}
                             smooth={true}
@@ -20,6 +21,7 @@ const Header = () => {
                             to="about">About</Link>
                         </li>
                         <li><Link
+                            href="#projects"
                             activeClass="active"
                             spy={true}
                             smooth={true}
@@ -28,6 +30,7 @@ const Header = () => {
                             to="projects">Projects</Link>
                         </li>
                         <li><Link
+                            href="#contact"
                             activeClass="active"
                             spy={true}
                             smooth={true}
@@ -36,6 +39,7 @@ const Header = () => {
                             to="contact">Contact</Link>
                         </li>
                         <li><Link
+                            href="#resume"
                             activeClass="active"
                             spy={true}
                             smooth={true}
