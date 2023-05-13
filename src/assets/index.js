@@ -3,12 +3,11 @@ import CSSLogo from "./css.svg"
 import JSLogo from "./javascript.svg"
 import REACTLogo from "./react.svg"
 // import AOTImg from "./aot.webp"
-import AOTImg from "./AOT.jpg"
+// import AOTImg from "./AOT.jpg"
 
 export {
     HTMLLogo,
     CSSLogo,
     JSLogo,
     REACTLogo,
-    AOTImg
 }
