@@ -32,7 +32,7 @@
     border-radius: 50%;
     z-index: 6;
     cursor: none;
-    transition: 0.5s ease-in-out;
+    /* transition: 0.5s ease-in-out; */
 }
 
 .Hero-Avatar img{
@@ -138,9 +138,13 @@
     transition: 0.2s ease-out;
 }
 
+/* .Hero-AvatarContainer:hover{
+    transition: all 5s ease-in-out;
+}
+
 :has(.Hero-Avatar:hover) .Hero-AvatarTrail{
     animation-play-state: paused;
-}
+} */
 
 :has(.Hero-Avatar:hover) .Hero-TrailDot{
     background-color: var(--base) !important;

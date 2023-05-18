@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Browser, Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -6,7 +5,6 @@ import Home from "./pages/Home/Home"
 import Cursor from './Components/Cursor'
 
 function App() {
-  const [count, setCount] = useState(0)
 
 
   return (

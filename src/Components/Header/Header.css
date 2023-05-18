@@ -8,7 +8,11 @@
 .Header-Container{
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    /* background: rgba(0, 0, 0, 0.6); */
+    background: linear-gradient(180deg, 
+    rgb(0, 0, 0), 
+    rgba(0, 0, 0, 0.6),
+    transparent);
     padding: 0.5em 2em;
     position: relative;
     top: 0;
