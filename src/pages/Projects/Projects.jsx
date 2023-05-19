@@ -1,5 +1,5 @@
 import "./Projects.css"
-import { PurpleTop } from "../../Assets"
+import { PurpleTop } from "../../assets"
 
 const Projects = () => {
     return (

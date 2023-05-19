@@ -1,5 +1,5 @@
 import "./About.css"
-import { PurpleTop } from "../../Assets"
+import { PurpleTop } from "../../assets"
 
 const About = () => {
     return (
