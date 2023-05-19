@@ -7,7 +7,8 @@
 }
 
 p{
-    opacity: 0.1;
+    position: relative;
+    z-index: 1;
 }
 
 #about,
@@ -16,4 +17,23 @@ p{
 #resume{
     width: 100%;
     height: 100vh;
+}
+
+#About-Vector{
+    position: absolute;
+    top: -116%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#Projects-Vector{
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    transform: rotate(180deg);
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
 }

@@ -1,10 +1,17 @@
 :root{
   --primary: #000000;
   --base: #000000;
+  --baseLite: rgba(0, 0, 0, 0.6);
   --text: #fff;
-  --pink: #ff00bf;
-  /* --blue: #006eff; */
+
   --purple: #6600FF;
+  --purpleLite: rgba(102, 0, 255, 0.6);
+  --pink: #ff00bf;
+  --pinkLite: rgba(255, 0, 191, 0.6);
+
+  /* --pink: #00ff73; */
+  /* --blue: #006eff; */
+  /* --purple: #0059ff; */
   --gradient: linear-gradient(to right,
   var(--pink), var(--purple),var(--purple),var(--pink));
 }
@@ -84,6 +91,7 @@ body{
 }
 
 .Cursor-Main #cursorDot{
+  position: fixed;
   width: 10px;
   height: 10px;
   border-radius: 100px;

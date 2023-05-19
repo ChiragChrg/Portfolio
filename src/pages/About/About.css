@@ -1,0 +1,9 @@
+.About-Main{
+    position: relative;
+    background-color: var(--purple);
+}
+
+/* .About-Main p{
+    position: relative;
+    z-index: 1;
+} */

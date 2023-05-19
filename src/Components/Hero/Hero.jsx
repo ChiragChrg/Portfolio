@@ -1,8 +1,8 @@
 import "./Hero.css"
 import { motion } from "framer-motion"
 
-import AOTImg from "../../../public/AOT.jpg"
-// import AOTImg from "../../Assets/AOT.jpg"
+// import AOTImg from "../../../public/AOT.jpg"
+import AOTImg from "../../AOT.jpg"
 
 const Hero = () => {
     const orbitVariant = {

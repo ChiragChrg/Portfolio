@@ -1,13 +1,5 @@
-import HTMLLogo from "./html.svg"
-import CSSLogo from "./css.svg"
-import JSLogo from "./javascript.svg"
-import REACTLogo from "./react.svg"
-// import AOTImg from "./aot.webp"
-// import AOTImg from "./AOT.jpg"
-
-export {
-    HTMLLogo,
-    CSSLogo,
-    JSLogo,
-    REACTLogo,
-}
+export { default as HTMLLogo } from "./html.svg"
+export { default as CSSLogo } from "./css.svg"
+export { default as JSLogo } from "./javascript.svg"
+export { default as REACTLogo } from "./react.svg"
+export { default as PurpleTop } from "./purpleTop.svg"

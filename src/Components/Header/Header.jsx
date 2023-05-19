@@ -10,10 +10,10 @@ const Header = () => {
                 </div>
 
                 <nav>
-                    <ul>
+                    <ul className="flex">
                         <li><Link
                             href="#about"
-                            activeClass="active"
+                            activeClass="active purpleHeader"
                             spy={true}
                             smooth={true}
                             offset={-64}
@@ -49,6 +49,10 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
+
+                <div className="Header-Theme">
+                    THEME
+                </div>
             </div>
         </div>
     )
