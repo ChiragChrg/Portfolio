@@ -1,9 +1,8 @@
 .About-Main{
     position: relative;
-    background-color: var(--purple);
+    background-color: #1E004C;
 }
 
-/* .About-Main p{
-    position: relative;
-    z-index: 1;
-} */
+.About-Content{
+    height: 100%;
+}

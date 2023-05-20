@@ -6,12 +6,13 @@
     z-index: 2;
 }
 
-p{
+p,h1{
     position: relative;
     z-index: 1;
 }
 
 #about,
+#skills,
 #projects,
 #contact,
 #resume{
@@ -21,19 +22,41 @@ p{
 
 #About-Vector{
     position: absolute;
-    top: -116%;
+    top: -17em;
     width: 100%;
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
+    /* opacity: 0.3; */
 }
 
 #Projects-Vector{
     position: absolute;
-    top: -20%;
+    top: -6em;
     width: 100%;
     transform: rotate(180deg);
     object-fit: cover;
     z-index: 0;
+    pointer-events: none;
+    /* opacity: 0.3; */
+}
+
+#contact{
+    /* background-color: #fff; */
+    position: relative;
+}
+
+#footer{
+    width: 100%;
+    height: 50vh;
+    background-color: #1E004C;
+}
+
+
+#Contact-Vector{
+    position: absolute;
+    bottom: -1em;
+    width: 100%;
+    object-fit: cover;
     pointer-events: none;
 }

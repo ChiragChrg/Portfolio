@@ -41,7 +41,7 @@ const Hero = () => {
     }
 
     return (
-        <div className="Hero-Main flex">
+        <div id="hero" className="Hero-Main flex">
             <div className="Hero-Text">
                 <h1>Hi! My name is
                     <span className="gradientText">Chirag.</span>

@@ -23,13 +23,17 @@
     cursor: none;
 }
 
-:has(.Header-Logo:hover, a:hover) #cursor{
+:has(.Header-Logo:hover, 
+.Header-ActionBtn:hover,
+a:hover) #cursor{
     width: 40px;
     height: 40px;
     background: none;
     outline: 3px solid #fff;
 }
-:has(.Header-Logo:hover, a:hover) #cursor::before{
+:has(.Header-Logo:hover, 
+.Header-ActionBtn:hover,
+a:hover) #cursor::before{
     content: "";
     width: calc(100% - 10%);
     aspect-ratio: 1;    
@@ -41,24 +45,43 @@
     /* background-color: var(--base); */
 }
 
-.Header-Container nav ul{
+.Header-Container nav{
     list-style: none;
     gap: 1.5em;
+    position: relative;
 }
 
-/* .Header-Container nav ul li{
-} */
-
-.Header-Container nav ul li a{
+.Header-Container nav a{
     position: relative;
+    text-align: center;
     text-decoration: none;
     cursor: none;
     color: var(--text);
     overflow: hidden;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.Header-Container nav ul li a.active{
+.Header-Container nav a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--gradient);
+    /* background-color: var(--text); */
+    background-size: 200%;
+    animation: gradientPan 5s linear infinite;
+    transition: transform 0.25s ease-out;
+}
+
+.Header-Container nav a.active::after {
+    transform: scaleX(1);
+}
+
+/* .Header-Container nav ul li a.active{
     font-weight: 700;
     background: var(--gradient);
     background-clip: text;
@@ -66,19 +89,52 @@
     color: transparent !important;
     background-size: 200%;
     animation: gradientPan 5s linear infinite;
-  }
+  } */
 
-/* .Header-Container nav ul li a::after{
-    content: "";
+  .Header-Container nav a.hidden{
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+}
+
+.Header-NavUnderline{
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    border-radius: 4px;
+    background-color: #fff;
     transition: 0.3s ease-in-out;
 }
 
-.Header-Container nav ul li a:hover::after{
-    width: 100%;
-} */
+:has(.hiddenLine) .Header-NavUnderline{
+    width: 0 !important;
+}
+
+.Header-ActionBtn{
+position: relative;
+border-radius: 0.2em;
+overflow: hidden;
+}
+
+.Header-ActionBtn::after{
+content: "";
+position: absolute;
+width: 120%;
+aspect-ratio: 1;
+background: conic-gradient(
+    var(--purple),
+    var(--pink),
+    var(--purple));
+animation: spin 5s linear infinite;
+}
+
+.Header-ActionBtn>div{
+padding: 0.2em 0.8em;
+background-color: var(--base);
+color: var(--text);
+border-radius: inherit;
+margin: 2px;
+z-index: 2;
+}

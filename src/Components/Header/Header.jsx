@@ -1,7 +1,9 @@
 import "./Header.css"
-import { Link, animateScroll as scroll } from "react-scroll";
+import { useEffect, useRef } from "react";
+import { Link } from "react-scroll";
 
 const Header = () => {
+
     return (
         <div className="Header-Main">
             <div className="Header-Container flex">
@@ -9,49 +11,46 @@ const Header = () => {
                     <h1 className="gradientText">Portfolio.</h1>
                 </div>
 
-                <nav>
-                    <ul className="flex">
-                        <li><Link
-                            href="#about"
-                            activeClass="active purpleHeader"
-                            spy={true}
-                            smooth={true}
-                            offset={-64}
-                            duration={500}
-                            to="about">About</Link>
-                        </li>
-                        <li><Link
-                            href="#projects"
-                            activeClass="active"
-                            spy={true}
-                            smooth={true}
-                            offset={-64}
-                            duration={500}
-                            to="projects">Projects</Link>
-                        </li>
-                        <li><Link
-                            href="#contact"
-                            activeClass="active"
-                            spy={true}
-                            smooth={true}
-                            offset={-64}
-                            duration={500}
-                            to="contact">Contact</Link>
-                        </li>
-                        <li><Link
-                            href="#resume"
-                            activeClass="active"
-                            spy={true}
-                            smooth={true}
-                            offset={-64}
-                            duration={500}
-                            to="resume">Resume</Link>
-                        </li>
-                    </ul>
+                <nav className="flex">
+                    <Link
+                        href="#about"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-64}
+                        duration={500}
+                        to="about">About</Link>
+
+                    <Link
+                        href="#skills"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-64}
+                        duration={500}
+                        to="skills">Skills</Link>
+
+                    <Link
+                        href="#projects"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-64}
+                        duration={500}
+                        to="projects">Projects</Link>
+
+                    <Link
+                        href="#contact"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-64}
+                        duration={500}
+                        to="contact">Contact</Link>
                 </nav>
 
-                <div className="Header-Theme">
-                    THEME
+                <div className="Header-ActionBtn flex">
+                    <div>Resume</div>
                 </div>
             </div>
         </div>

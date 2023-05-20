@@ -5,10 +5,11 @@
   --text: #fff;
 
   --purple: #6600FF;
-  --purpleLite: rgba(102, 0, 255, 0.6);
+  --purpleLite: rgba(102, 0, 255, 0.3);
   --pink: #ff00bf;
   --pinkLite: rgba(255, 0, 191, 0.6);
 
+  /* --pink: hsla(0, 0%, 0%, 0); */
   /* --pink: #00ff73; */
   /* --blue: #006eff; */
   /* --purple: #0059ff; */

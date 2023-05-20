@@ -1,8 +1,10 @@
 .Projects-Main{
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
-.Projects-Main p{
-    padding-top: 10em;
+.Skills-Content,
+.Projects-Content{
+    height: 100%;
 }
