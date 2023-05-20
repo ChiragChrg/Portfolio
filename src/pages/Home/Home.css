@@ -14,10 +14,14 @@ p,h1{
 #about,
 #skills,
 #projects,
-#contact,
 #resume{
     width: 100%;
     height: 100vh;
+}
+
+#contact{
+    width: 100%;
+    height: 150vh;
 }
 
 #About-Vector{

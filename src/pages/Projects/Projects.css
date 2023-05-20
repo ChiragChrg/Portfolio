@@ -2,9 +2,11 @@
     position: relative;
     width: 100%;
     height: 100%;
+    background-color: var(--pink);
 }
 
 .Skills-Content,
+.Contact-Content,
 .Projects-Content{
     height: 100%;
 }
