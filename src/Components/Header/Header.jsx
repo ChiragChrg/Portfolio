@@ -11,7 +11,13 @@ const Header = () => {
                     <h1 className="gradientText">Portfolio.</h1>
                 </div>
 
-                <nav className="flex">
+                <div className="Header-Ham">
+                    <span className="HamLine line1"></span>
+                    <span className="HamLine line2"></span>
+                    <span className="HamLine line3"></span>
+                </div>
+
+                <nav className="Header-Nav flex">
                     <Link
                         href="#about"
                         activeClass="active"

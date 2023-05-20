@@ -45,6 +45,10 @@ a:hover) #cursor::before{
     /* background-color: var(--base); */
 }
 
+.Header-Ham{
+    display: none;
+}
+
 .Header-Container nav{
     list-style: none;
     gap: 1.5em;
@@ -70,8 +74,8 @@ a:hover) #cursor::before{
     height: 2px;
     bottom: 0;
     left: 0;
-    background: var(--gradient);
     /* background-color: var(--text); */
+    background: var(--gradient);
     background-size: 200%;
     animation: gradientPan 5s linear infinite;
     transition: transform 0.25s ease-out;
@@ -113,28 +117,62 @@ a:hover) #cursor::before{
 }
 
 .Header-ActionBtn{
-position: relative;
-border-radius: 0.2em;
-overflow: hidden;
+    position: relative;
+    border-radius: 0.2em;
+    overflow: hidden;
 }
 
 .Header-ActionBtn::after{
-content: "";
-position: absolute;
-width: 120%;
-aspect-ratio: 1;
-background: conic-gradient(
-    var(--purple),
-    var(--pink),
-    var(--purple));
-animation: spin 5s linear infinite;
+    content: "";
+    position: absolute;
+    width: 120%;
+    aspect-ratio: 1;
+    background: conic-gradient(
+        var(--purple),
+        var(--pink),
+        var(--purple));
+    animation: spin 5s linear infinite;
 }
 
 .Header-ActionBtn>div{
-padding: 0.2em 0.8em;
-background-color: var(--base);
-color: var(--text);
-border-radius: inherit;
-margin: 2px;
-z-index: 2;
+    padding: 0.2em 1.35em;
+    background-color: var(--base);
+    color: var(--text);
+    border-radius: inherit;
+    margin: 2px;
+    z-index: 2;
+}
+
+
+/* Mobile Responsive CSS */
+@media (width < 750px){
+    .Header-Nav,
+    .Header-ActionBtn {
+        display: none;
+    }
+
+    .Header-Container{
+        padding: 0.5em 1.5em;
+    }
+
+    .Header-Ham{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+        gap: 0.6em;
+    }
+
+    .Header-Ham .HamLine{
+        width: 2.5em;
+        height: 0.2em;
+        border-radius: 50px;
+        background-color: #fff;
+    }
+    .line2{
+        width: 1.8em !important;
+    }
+    .line3{
+        width: 1em !important;
+    }
 }

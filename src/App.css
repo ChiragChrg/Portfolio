@@ -15,6 +15,8 @@
   /* --purple: #0059ff; */
   --gradient: linear-gradient(to right,
   var(--pink), var(--purple),var(--purple),var(--pink));
+
+  --mobileSize: 750px;
 }
 
 *{
@@ -126,5 +128,13 @@ body:hover #cursorDot{
   }
   to{
     background-position: -200% center;
+  }
+}
+
+
+/* Mobile Responsive CSS */
+@media (width < 750px){
+  .Cursor-Main{
+    display: none;
   }
 }

@@ -7,12 +7,13 @@
     justify-content: space-around;
 }
 
-.Hero-Main h1{
+.Hero-Text h1{
     white-space: nowrap;
+    font-size: 24px;
 }
 
-.Hero-Main h1 span{
-    margin-left: 0.2em;
+.Hero-Text h1 span{
+    margin-left: 0.3em;
     font-size: 48px;
 }
 
@@ -30,11 +31,9 @@
     /* width: 300px; */
     aspect-ratio: 1;
     overflow: hidden;
-    /* background-color: #fff; */
     border-radius: 50%;
     z-index: 6;
     cursor: none;
-    /* pointer-events: none; */
     /* transition: 0.5s ease-in-out; */
 }
 
@@ -160,4 +159,22 @@
     width: 100%;
     aspect-ratio: 1;
     opacity: 1;
+}
+
+
+/* Mobile Responsive CSS */
+@media (width < 750px){
+    .Hero-Main{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .Hero-AvatarContainer{
+        --avatar-width: 400px;
+        top: 0em;
+    }
+
+    .Hero-Text h1{
+        font-size: 25px;
+    }
 }
