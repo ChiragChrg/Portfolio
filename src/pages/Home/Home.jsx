@@ -10,7 +10,7 @@ import Skills from '../Skills/Skills'
 
 const Home = () => {
     return (
-        <div className="Home-Main">
+        <main className="Home-Main">
             <Header />
 
             <Hero />
@@ -19,7 +19,7 @@ const Home = () => {
             <Projects />
             <Contact />
             <Footer />
-        </div>
+        </main>
     )
 }
 
