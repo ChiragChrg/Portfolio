@@ -11,7 +11,7 @@
     background: linear-gradient(180deg, 
     rgba(0, 0, 0, 0.6),
     transparent);
-    padding: 0.5em 2em;
+    padding: 0.5em 1.5em;
     position: relative;
     top: 0;
     backdrop-filter: blur(1.5px);
@@ -120,6 +120,7 @@ a:hover) #cursor::before{
     position: relative;
     border-radius: 0.2em;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .Header-ActionBtn::after{
@@ -152,7 +153,7 @@ a:hover) #cursor::before{
     }
 
     .Header-Container{
-        padding: 0.5em 1.5em;
+        padding: 0.5em 1em;
     }
 
     .Header-Ham{
@@ -163,11 +164,12 @@ a:hover) #cursor::before{
         gap: 0.6em;
     }
 
-    .Header-Ham .HamLine{
+    /* .Header-Ham .HamLine{
         width: 2.5em;
         height: 0.2em;
         border-radius: 50px;
         background-color: #fff;
+        transition: transform 0.4s ease-in-out;
     }
     .line2{
         width: 1.8em !important;
@@ -175,4 +177,80 @@ a:hover) #cursor::before{
     .line3{
         width: 1em !important;
     }
+
+    .Header-Ham.isOpen .line1{
+        animation: HamLine 0.6s forwards;
+        rotate: -45deg;
+    }
+    .Header-Ham.isOpen .line3{
+        animation: HamLine 0.6s forwards;
+        rotate: 45deg;
+    }
+    
+    .Header-Ham.isClosed .line1{
+        animation: HamLine 0.6s forwards;
+        rotate: 0deg;
+    }
+    .Header-Ham.isClosed .line3{
+        animation: HamLine 0.6s forwards;
+        rotate: 0deg;
+    } */
+
+    /* @keyframes HamLine {
+        0%{
+            width: 2.5em;
+        }
+        50%{
+            width: 0;
+        }
+        100%{
+            width: 2.5em !important;
+        }
+    } */
+
+    .line {
+        fill:none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke:#fff;
+        stroke-width:5.5;
+        stroke-linecap:round;
+    }
+
+    .Header-Ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        scale: 0.8;
+    }
+
+    .Header-Ham.isOpen {
+        transform: rotate(45deg);
+    }
+
+    .Header-Ham .top {
+        stroke-dasharray: 40 160;
+    }
+    .Header-Ham .middle {
+        stroke-dasharray: 40 142;
+        transform-origin: 50%;
+        transition: transform 400ms;
+    }
+    .Header-Ham .bottom {
+        stroke-dasharray: 40 85;
+        transform-origin: 50%;
+        transition: transform 400ms, stroke-dashoffset 400ms;
+    }
+    .Header-Ham.isOpen .top {
+        stroke-dashoffset: -64px;
+    }
+    .Header-Ham.isOpen .middle {
+        transform: rotate(90deg);
+    }
+    .Header-Ham.isOpen .bottom {
+        stroke-dashoffset: -64px;
+    }  
 }

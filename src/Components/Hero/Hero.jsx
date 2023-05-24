@@ -1,5 +1,6 @@
 import "./Hero.css"
 import { motion } from "framer-motion"
+import { BsGithub, BsLinkedin, BsTwitter, BsGoogle, BsInstagram } from "react-icons/bs"
 
 // import AOTImg from "../../../public/AOT.jpg"
 import AOTImg from "../../AOT.jpg"
@@ -41,11 +42,32 @@ const Hero = () => {
     }
 
     return (
-        <div id="hero" className="Hero-Main flex">
-            <div className="Hero-Text">
-                <h1>Hi! My name is
-                    <span className="gradientText">Chirag.</span>
-                </h1>
+        <section id="hero" className="Hero-Main flex">
+            <div className="Hero-Intro flex col">
+                <div className="Hero-Text">
+                    <p>Hi! my name is,</p>
+                    <h1 className="gradientText">Chirag.</h1>
+                    <p>I'm a Fullstack Web Developer.</p>
+                    <p>I create Exciting Stuff on the Internet.</p>
+                </div>
+
+                <div className="Hero-Links flex">
+                    <a href="https://github.com/ChiragChrg" title="GitHub" target="_blank" rel="noreferrer">
+                        <BsGithub size={30} color="var(--text)" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/chiragchrg/" title="LinkedIn" target="_blank" rel="noreferrer">
+                        <BsLinkedin size={30} color="var(--text)" />
+                    </a>
+                    <a href="https://twitter.com/ChiragChrg1" title="Twitter" target="_blank" rel="noreferrer">
+                        <BsTwitter size={30} color="var(--text)" />
+                    </a>
+                    <a href="https://www.instagram.com/chiragchrg/" title="Instagram" target="_blank" rel="noreferrer">
+                        <BsInstagram size={30} color="var(--text)" />
+                    </a>
+                    <a href="https://www.google.com/search?q=%22chiragchrg%22" title="Google Search" target="_blank" rel="noreferrer">
+                        <BsGoogle size={30} color="var(--text)" />
+                    </a>
+                </div>
             </div>
 
             <motion.div
@@ -79,7 +101,7 @@ const Hero = () => {
                     <div className="Hero-TrailDot"></div>
                 </motion.div>
             </motion.div>
-        </div>
+        </section>
     )
 }
 

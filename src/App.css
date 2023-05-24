@@ -26,11 +26,16 @@
   font-family: Poppins;
 }
 
+/* *{
+  border: 1px solid red;
+  outline: 1px solid green;
+} */
+
 body{
   background-color: var(--base);
   color: var(--text);
   scroll-behavior: smooth;
-  cursor: none;
+  /* cursor: none; */
 }
 
 .App{
@@ -137,4 +142,10 @@ body:hover #cursorDot{
   .Cursor-Main{
     display: none;
   }
+}
+
+
+/* Custom ScrollBar */
+::-webkit-scrollbar {
+  display: none;
 }
