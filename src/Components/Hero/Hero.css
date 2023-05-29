@@ -1,4 +1,4 @@
-.Hero-Main{
+.Hero-Main {
     width: 100%;
     height: calc(100vh - 4em);
     padding: 1em 2em;
@@ -7,37 +7,37 @@
     justify-content: space-around;
 }
 
-.Hero-Intro{
+.Hero-Intro {
     justify-content: flex-start;
     gap: 2em;
 }
 
-.Hero-Text{
-    cursor: default;
+.Hero-Text {
+    /* cursor: default; */
     letter-spacing: 1px;
 }
 
-.Hero-Text p{
+.Hero-Text p {
     font-size: 24px;
 }
 
-.Hero-Text h1{
+.Hero-Text h1 {
     font-size: 9em;
     padding-bottom: 0.1em;
     font-family: Ubuntu;
 }
 
-.Hero-Text span{
+.Hero-Text span {
     font-family: Ubuntu;
 }
 
-.Hero-Links{
+.Hero-Links {
     width: 100%;
     justify-content: flex-start;
     gap: 2.5em;
 }
 
-.Hero-AvatarContainer{
+.Hero-AvatarContainer {
     --avatar-width: 500px;
     width: var(--avatar-width);
     aspect-ratio: 1;
@@ -46,33 +46,32 @@
     overflow: hidden;
 }
 
-.Hero-Avatar{
+.Hero-Avatar {
     width: 50%;
     /* width: 300px; */
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 50%;
     z-index: 6;
-    /* cursor: none; */
+    cursor: none;
     /* transition: 0.5s ease-in-out; */
 }
 
-.Hero-Avatar img{
+.Hero-Avatar img {
     width: 100%;
     height: 100%;
     background-size: cover;
     border-radius: inherit;
 }
 
-.Hero-AvatarTrail{
+.Hero-AvatarTrail {
     width: 60%;
     /* width: 350px; */
     aspect-ratio: 1;
-    background: conic-gradient(
-        transparent,
-        transparent,
-        var(--purple),
-        var(--pink),#fff);
+    background: conic-gradient(transparent,
+            transparent,
+            var(--purple),
+            var(--pink), #fff);
     border-radius: 50%;
     position: absolute;
     animation: spin 6s linear infinite;
@@ -80,18 +79,19 @@
 }
 
 @keyframes spin {
-    0%{
+    0% {
         rotate: 0deg;
     }
-    100%{
+
+    100% {
         rotate: 360deg;
     }
 }
 
-.Hero-AvatarTrail::before{
+.Hero-AvatarTrail::before {
     content: "";
     width: calc(100% - 1%);
-    aspect-ratio: 1;    
+    aspect-ratio: 1;
     inset: 0;
     margin: auto;
     border-radius: 50%;
@@ -99,7 +99,7 @@
     background-color: var(--base);
 }
 
-.Hero-TrailDot{
+.Hero-TrailDot {
     width: 0.5em;
     aspect-ratio: 1;
     background-color: #fff;
@@ -112,7 +112,7 @@
     box-shadow: 0 0 10px 0 #fff;
 }
 
-.Trail2{
+.Trail2 {
     width: 70%;
     /* width: 400px; */
     animation-duration: 8s;
@@ -122,37 +122,35 @@
         #fff,
         transparent,
         transparent); */
-    background: conic-gradient(
-        #fff,
-        var(--pink),
-        var(--purple),
-        transparent,
-        transparent);
+    background: conic-gradient(#fff,
+            var(--pink),
+            var(--purple),
+            transparent,
+            transparent);
     z-index: 4;
 }
 
-.Trail3{
+.Trail3 {
     width: 80%;
     /* width: 450px; */
     animation-duration: 10s;
     z-index: 3;
 }
 
-.Trail4{
+.Trail4 {
     width: 90%;
     /* width: 540px; */
     animation-duration: 12s;
     animation-direction: reverse;
-    background: conic-gradient(
-        #fff,
-        var(--pink),
-        var(--purple),
-        transparent,
-        transparent);
+    background: conic-gradient(#fff,
+            var(--pink),
+            var(--purple),
+            transparent,
+            transparent);
     z-index: 2;
 }
 
-.Hero-TrailDot img{
+.Hero-TrailDot img {
     width: 100%;
     aspect-ratio: 1;
     position: relative;
@@ -169,7 +167,7 @@
     animation-play-state: paused;
 } */
 
-:has(.Hero-Avatar:hover) .Hero-TrailDot{
+:has(.Hero-Avatar:hover) .Hero-TrailDot {
     background-color: var(--base) !important;
     outline: 0.5px solid #fff;
     scale: 2;
@@ -183,34 +181,34 @@
 
 
 /* Mobile Responsive CSS */
-@media (width < 750px){
-    .Hero-Main{
+@media (width < 750px) {
+    .Hero-Main {
         flex-direction: column-reverse;
         justify-content: flex-end;
         gap: 3em;
     }
 
-    .Hero-AvatarContainer{
+    .Hero-AvatarContainer {
         --avatar-width: 370px;
         top: 0em;
     }
 
-    .Hero-Text h1{
+    .Hero-Text h1 {
         font-size: 4em;
         padding-bottom: 0.2em;
         text-align: center;
     }
-    
-    .Hero-Text p{
+
+    .Hero-Text p {
         text-align: center;
         font-size: 18px;
     }
 
-    .Hero-Links{
+    .Hero-Links {
         justify-content: center;
     }
 
-    :has(.Hero-Avatar:hover) .Hero-TrailDot{
+    :has(.Hero-Avatar:hover) .Hero-TrailDot {
         outline: 1px solid #fff;
     }
 }

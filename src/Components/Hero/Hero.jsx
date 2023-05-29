@@ -6,7 +6,7 @@ import { BsGithub, BsLinkedin, BsTwitter, BsGoogle, BsInstagram } from "react-ic
 import AOTImg from "../../AOT.jpg"
 
 const Hero = () => {
-    const orbitVariant = {
+    const orbitContainer = {
         hidden: {
             opacity: 0
         },
@@ -20,7 +20,7 @@ const Hero = () => {
         }
     }
 
-    const circleVariant = {
+    const orbitItems = {
         hidden: {
             opacity: 0,
             scale: 0.8
@@ -41,17 +41,72 @@ const Hero = () => {
         }
     }
 
+    const TextContainer = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                delay: 1.1,
+                delayChildren: 0.5,
+                staggerChildren: 0.4
+            }
+        }
+    }
+
+    const TextItems = {
+        hidden: {
+            opacity: 0,
+            y: 50,
+            scale: 0.8
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                ease: "ease",
+                duration: 0.4,
+                scale: {
+                    type: "spring",
+                    damping: 10,
+                    stiffness: 200,
+                    restDelta: 0.001
+                }
+            }
+        }
+    }
+
+
     return (
         <section id="hero" className="Hero-Main flex">
             <div className="Hero-Intro flex col">
-                <div className="Hero-Text">
-                    <p>Hi! my name is,</p>
-                    <h1 className="gradientText">Chirag.</h1>
-                    <p>I'm a Fullstack Web Developer.</p>
-                    <p>I create <span className="gradientText">Exciting Stuff</span> on the Internet.</p>
-                </div>
+                <motion.div
+                    variants={TextContainer}
+                    initial="hidden"
+                    animate="visible"
+                    className="Hero-Text">
+                    <motion.p
+                        variants={TextItems}>Hi! my name is,</motion.p>
+                    <motion.h1
+                        variants={TextItems}
+                        className="gradientText">Chirag.</motion.h1>
+                    <motion.p
+                        variants={TextItems}>I'm a Fullstack Web Developer.</motion.p>
+                    <motion.p
+                        variants={TextItems}>I create <span className="gradientText">Exciting Stuff</span> on the Internet.</motion.p>
+                </motion.div>
 
-                <div className="Hero-Links flex">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        ease: "ease",
+                        duration: 0.4,
+                        delay: 2.2
+                    }}
+                    className="Hero-Links flex">
                     <a href="https://github.com/ChiragChrg" title="GitHub" target="_blank" rel="noreferrer">
                         <BsGithub size={30} color="var(--text)" />
                     </a>
@@ -67,36 +122,36 @@ const Hero = () => {
                     <a href="https://www.google.com/search?q=%22chiragchrg%22" title="Google Search" target="_blank" rel="noreferrer">
                         <BsGoogle size={30} color="var(--text)" />
                     </a>
-                </div>
+                </motion.div>
             </div>
 
             <motion.div
-                variants={orbitVariant}
+                variants={orbitContainer}
                 initial="hidden"
                 animate="visible"
                 className="Hero-AvatarContainer flex">
                 <motion.div
-                    variants={circleVariant}
+                    variants={orbitItems}
                     className="Hero-Avatar flex">
                     <img src={AOTImg} alt="AOTImg" />
                 </motion.div>
                 <motion.div
-                    variants={circleVariant}
+                    variants={orbitItems}
                     className="Hero-AvatarTrail Trail1">
                     <div className="Hero-TrailDot"></div>
                 </motion.div>
                 <motion.div
-                    variants={circleVariant}
+                    variants={orbitItems}
                     className="Hero-AvatarTrail Trail2">
                     <div className="Hero-TrailDot"></div>
                 </motion.div>
                 <motion.div
-                    variants={circleVariant}
+                    variants={orbitItems}
                     className="Hero-AvatarTrail Trail3">
                     <div className="Hero-TrailDot"></div>
                 </motion.div>
                 <motion.div
-                    variants={circleVariant}
+                    variants={orbitItems}
                     className="Hero-AvatarTrail Trail4">
                     <div className="Hero-TrailDot"></div>
                 </motion.div>

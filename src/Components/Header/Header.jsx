@@ -12,7 +12,7 @@ const Header = () => {
     useEffect(() => {
         window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
         setNavHeight(NavRef?.current?.offsetHeight)
-        console.log(NavRef?.current?.offsetHeight)
+        // console.log(NavRef?.current?.offsetHeight)
     })
 
     const Sidebar = {

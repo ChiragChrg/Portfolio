@@ -35,7 +35,14 @@ body {
   background-color: var(--base);
   color: var(--text);
   scroll-behavior: smooth;
-  /* cursor: none; */
+  cursor: none !important;
+}
+
+div,
+a,
+h1,
+p {
+  cursor: none !important;
 }
 
 .App {
@@ -83,7 +90,7 @@ body {
   border-radius: 100px;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.2s linear;
+  transition: all 0.2s ease-in-out;
   background-color: #fff;
   box-shadow: 0 0 20px 0 #fff;
   will-change: transform;
@@ -108,7 +115,7 @@ body {
   border-radius: 100px;
   opacity: 0;
   pointer-events: none;
-  transition: all 10ms linear;
+  transition: all 10ms ease-out;
   background-color: #fff;
   box-shadow: 0 0 20px 0 #fff;
 }
