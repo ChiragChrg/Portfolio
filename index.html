@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="var(--base)" />
+  <meta name="theme-color" content="#000" />
   <meta name="description"
     content="Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences." />
   <meta name="robots" content="index, follow" />
@@ -14,7 +14,10 @@
 
   <title>ChiragChrg | Portfolio </title>
 
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/Icons/192.png" />
+  <link rel="manifest" href="/manifest.json" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet preload" as="style"
@@ -24,6 +27,23 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
+  <!-- PWA Service Worker Script -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/ServiceWorker.js")
+          .then((Reg) => {
+            console.log("SW Registered: ", Reg.scope);
+          })
+          .catch((RegErr) => {
+            console.log("SW Registration failed: ", RegErr);
+          });
+      });
+    }
+  </script>
+  <!-- PWA Service Worker Script -->
 </body>
 
 </html>

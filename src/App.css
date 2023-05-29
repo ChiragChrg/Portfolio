@@ -9,10 +9,6 @@
   --pink: #ff00bf;
   --pinkLite: rgba(255, 0, 191, 0.6);
 
-  /* --pink: hsla(0, 0%, 0%, 0); */
-  /* --pink: #00ff73; */
-  /* --blue: #006eff; */
-  /* --purple: #0059ff; */
   --gradient: linear-gradient(to right,
       var(--pink), var(--purple), var(--purple), var(--pink));
 
