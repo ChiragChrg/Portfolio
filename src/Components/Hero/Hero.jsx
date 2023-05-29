@@ -33,7 +33,7 @@ const Hero = () => {
                 duration: 0.5,
                 scale: {
                     type: "spring",
-                    damping: 8,
+                    damping: 5,
                     stiffness: 100,
                     restDelta: 0.001
                 }
@@ -48,9 +48,8 @@ const Hero = () => {
         visible: {
             opacity: 1,
             transition: {
-                delay: 1.1,
                 delayChildren: 0.5,
-                staggerChildren: 0.4
+                staggerChildren: 0.1
             }
         }
     }
@@ -66,7 +65,7 @@ const Hero = () => {
             y: 0,
             scale: 1,
             transition: {
-                ease: "ease",
+                ease: "easeOut",
                 duration: 0.4,
                 scale: {
                     type: "spring",
@@ -102,9 +101,9 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        ease: "ease",
+                        ease: "easeOut",
                         duration: 0.4,
-                        delay: 2.2
+                        delay: 1
                     }}
                     className="Hero-Links flex">
                     <a href="https://github.com/ChiragChrg" title="GitHub" target="_blank" rel="noreferrer">
