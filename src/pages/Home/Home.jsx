@@ -19,6 +19,9 @@ const Home = () => {
             <Projects />
             <Contact />
             <Footer />
+
+            {/* Mobile Background Blur when Nav is Open */}
+            {/* <div className="Nav-blur"></div> */}
         </main>
     )
 }

@@ -23,8 +23,12 @@
 
 .Hero-Text h1{
     font-size: 9em;
-    font-family: Montserrat;
     padding-bottom: 0.1em;
+    font-family: Ubuntu;
+}
+
+.Hero-Text span{
+    font-family: Ubuntu;
 }
 
 .Hero-Links{

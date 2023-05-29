@@ -1,9 +1,39 @@
 import "./Header.css"
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
+import { motion, useCycle } from "framer-motion";
 
 const Header = () => {
-    const [openNav, setOpenNav] = useState(false)
+    const [openNav, setOpenNav] = useCycle(false, true);
+    const [isMobile, setIsMobile] = useState(false);
+    const [navHeight, setNavHeight] = useState();
+    const NavRef = useRef();
+
+    useEffect(() => {
+        window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
+        setNavHeight(NavRef?.current?.offsetHeight)
+        console.log(NavRef?.current?.offsetHeight)
+    })
+
+    const Sidebar = {
+        open: (navHeight = 1000) => ({
+            clipPath: `circle(${navHeight * 2 + 200}px at 40px 90%)`,
+            transition: {
+                type: "spring",
+                stiffness: 20,
+                restDelta: 2
+            }
+        }),
+        closed: {
+            clipPath: "circle(30px at 40px 90%)",
+            transition: {
+                delay: 0.5,
+                type: "spring",
+                stiffness: 400,
+                damping: 40
+            }
+        }
+    };
 
     return (
         <header className="Header-Main">
@@ -13,12 +43,7 @@ const Header = () => {
                     {/* <h1 className="gradientText">ChiragChrg.</h1> */}
                 </div>
 
-                {/* <div className={openNav ? "Header-Ham isOpen" : "Header-Ham isClosed"} onClick={() => setOpenNav(prev => !prev)}>
-                    <span className="HamLine line1"></span>
-                    <span className="HamLine line2"></span>
-                    <span className="HamLine line3"></span>
-                </div> */}
-                <svg viewBox="0 0 100 100" width="80" className={openNav ? "Header-Ham isOpen" : "Header-Ham"} onClick={() => setOpenNav(prev => !prev)}>
+                <svg viewBox="20 20 60 60" width="45" className={openNav ? "Header-Ham isOpen" : "Header-Ham"} onClick={() => setOpenNav(prev => !prev)}>
                     <path
                         className="line top"
                         d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
@@ -30,7 +55,15 @@ const Header = () => {
                         d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
                 </svg>
 
-                <nav className="Header-Nav flex">
+                <motion.nav
+                    initial={false}
+                    animate={openNav ? "open" : "close"}
+                    custom={navHeight}
+                    ref={NavRef}
+                    className="Header-Nav flex">
+
+                    <motion.div variants={Sidebar} className="NavBg flex"></motion.div>
+
                     <Link
                         href="#about"
                         activeClass="active"
@@ -66,9 +99,15 @@ const Header = () => {
                         offset={-64}
                         duration={500}
                         to="contact">Contact</Link>
-                </nav>
 
-                <div className="Header-ActionBtn flex">
+                    <div className="Action-Container flex">
+                        <div className="Header-ActionBtn flex">
+                            <div>Resume</div>
+                        </div>
+                    </div>
+                </motion.nav>
+
+                <div className="Header-ActionBtn hideOnMobile flex">
                     <div>Resume</div>
                 </div>
             </div>

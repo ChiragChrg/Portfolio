@@ -1,16 +1,16 @@
-.Header-Main{
+.Header-Main {
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 99;
 }
 
-.Header-Container{
+.Header-Container {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.6),
-    transparent);
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.6),
+            transparent);
     padding: 0.5em 1.5em;
     position: relative;
     top: 0;
@@ -19,24 +19,25 @@
     transition: background 0.4s ease;
 }
 
-.Header-Logo{
+.Header-Logo {
     cursor: none;
 }
 
-:has(.Header-Logo:hover, 
-.Header-ActionBtn:hover,
-a:hover) #cursor{
+:has(.Header-Logo:hover,
+    .Header-ActionBtn:hover,
+    a:hover) #cursor {
     width: 40px;
     height: 40px;
     background: none;
     outline: 3px solid #fff;
 }
-:has(.Header-Logo:hover, 
-.Header-ActionBtn:hover,
-a:hover) #cursor::before{
+
+:has(.Header-Logo:hover,
+    .Header-ActionBtn:hover,
+    a:hover) #cursor::before {
     content: "";
     width: calc(100% - 10%);
-    aspect-ratio: 1;    
+    aspect-ratio: 1;
     inset: 0;
     margin: auto;
     border-radius: 50%;
@@ -45,17 +46,17 @@ a:hover) #cursor::before{
     /* background-color: var(--base); */
 }
 
-.Header-Ham{
+.Header-Ham {
     display: none;
 }
 
-.Header-Container nav{
+.Header-Container nav {
     list-style: none;
     gap: 1.5em;
     position: relative;
 }
 
-.Header-Container nav a{
+.Header-Container nav a {
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -66,7 +67,7 @@ a:hover) #cursor::before{
     text-transform: uppercase;
 }
 
-.Header-Container nav a::after{
+.Header-Container nav a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -95,47 +96,39 @@ a:hover) #cursor::before{
     animation: gradientPan 5s linear infinite;
   } */
 
-  .Header-Container nav a.hidden{
+.Header-Nav .NavBg {
+    visibility: hidden;
+}
+
+.Header-Container nav a.hidden {
     visibility: hidden;
     position: absolute;
     pointer-events: none;
 }
 
-.Header-NavUnderline{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    border-radius: 4px;
-    background-color: #fff;
-    transition: 0.3s ease-in-out;
+.Action-Container {
+    display: none;
 }
 
-:has(.hiddenLine) .Header-NavUnderline{
-    width: 0 !important;
-}
-
-.Header-ActionBtn{
+.Header-ActionBtn {
     position: relative;
     border-radius: 0.2em;
     overflow: hidden;
     cursor: pointer;
 }
 
-.Header-ActionBtn::after{
+.Header-ActionBtn::after {
     content: "";
     position: absolute;
     width: 120%;
     aspect-ratio: 1;
-    background: conic-gradient(
-        var(--purple),
-        var(--pink),
-        var(--purple));
+    background: conic-gradient(var(--purple),
+            var(--pink),
+            var(--purple));
     animation: spin 5s linear infinite;
 }
 
-.Header-ActionBtn>div{
+.Header-ActionBtn>div {
     padding: 0.2em 1.35em;
     background-color: var(--base);
     color: var(--text);
@@ -146,111 +139,152 @@ a:hover) #cursor::before{
 
 
 /* Mobile Responsive CSS */
-@media (width < 750px){
+@media (width < 750px) {
+    .Header-Container {
+        padding: 0.5em 1em !important;
+    }
+
     .Header-Nav,
     .Header-ActionBtn {
+        position: absolute !important;
+        display: none;
+        /* transform: translateX(200%) !important;
+        transition: 0.4s ease-in-out; */
+    }
+
+    .Header-Nav {
+        top: 0;
+        inset: 0;
+        width: 100%;
+        height: 100vh !important;
+        flex-direction: column;
+        /* background: rgba(57, 224, 6, 0.356); */
+        /* background: linear-gradient(180deg, 
+        rgba(89, 6, 223, 0.6),
+        rgba(214, 0, 185, 0.6)); */
+        /* backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px); */
+    }
+
+    .Header-Nav .NavBg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        /* width: 100%;
+        height: 100vh; */
+        background: linear-gradient(180deg,
+                rgba(89, 6, 223, 0.6),
+                rgba(214, 0, 185, 0.6));
+        z-index: 99;
+    }
+
+    .Header-Nav a {
+        background-color: #000;
+        padding: 0.5em 1em;
+        border-radius: 0.4em;
+        min-width: 10em;
+    }
+
+    .Action-Container {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        inset: 0;
+        align-items: flex-end;
+        padding-bottom: 5em;
+    }
+
+    .Header-Container .hideOnMobile {
         display: none;
     }
 
-    .Header-Container{
-        padding: 0.5em 1em;
+    .Header-ActionBtn {
+        font-size: 1.3em;
     }
 
-    .Header-Ham{
+    .Header-Ham {
         display: flex;
         justify-content: center;
         align-items: end;
         flex-direction: column;
         gap: 0.6em;
-    }
+        z-index: 999;
 
-    /* .Header-Ham .HamLine{
-        width: 2.5em;
-        height: 0.2em;
-        border-radius: 50px;
-        background-color: #fff;
-        transition: transform 0.4s ease-in-out;
-    }
-    .line2{
-        width: 1.8em !important;
-    }
-    .line3{
-        width: 1em !important;
-    }
-
-    .Header-Ham.isOpen .line1{
-        animation: HamLine 0.6s forwards;
-        rotate: -45deg;
-    }
-    .Header-Ham.isOpen .line3{
-        animation: HamLine 0.6s forwards;
-        rotate: 45deg;
-    }
-    
-    .Header-Ham.isClosed .line1{
-        animation: HamLine 0.6s forwards;
-        rotate: 0deg;
-    }
-    .Header-Ham.isClosed .line3{
-        animation: HamLine 0.6s forwards;
-        rotate: 0deg;
-    } */
-
-    /* @keyframes HamLine {
-        0%{
-            width: 2.5em;
-        }
-        50%{
-            width: 0;
-        }
-        100%{
-            width: 2.5em !important;
-        }
-    } */
-
-    .line {
-        fill:none;
-        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-        stroke:#fff;
-        stroke-width:5.5;
-        stroke-linecap:round;
-    }
-
-    .Header-Ham {
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
-        transition: transform 400ms;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
+        transition: transform 0.4s;
         user-select: none;
-        scale: 0.8;
     }
 
     .Header-Ham.isOpen {
         transform: rotate(45deg);
     }
 
+    :has(.Header-Ham.isOpen) body {
+        overflow: hidden !important;
+    }
+
+    :has(.Header-Ham.isOpen) .Nav-blur {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        inset: 0;
+        background: rgba(3, 74, 204, 0.356);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 9;
+    }
+
+    /* :has(.Header-Ham.isOpen) .Header-Nav,
+    :has(.Header-Ham.isOpen) .Header-ActionBtn {
+        transform: translateX(0%) !important;
+    } */
+
+    .Header-Ham .line {
+        fill: none;
+        transition: stroke-dasharray 0.4s,
+            stroke-dashoffset 0.4s;
+        stroke: #fff;
+        stroke-width: 5.5;
+        transform-origin: right;
+        stroke-linecap: round;
+    }
+
     .Header-Ham .top {
         stroke-dasharray: 40 160;
     }
+
     .Header-Ham .middle {
-        stroke-dasharray: 40 142;
-        transform-origin: 50%;
-        transition: transform 400ms;
+        /* stroke-dasharray: 40 142; */
+        stroke-dasharray: 30 142;
+        stroke-dashoffset: -20%;
+        transform-origin: 83% 83%;
+        transition: transform 0.4s;
     }
+
     .Header-Ham .bottom {
-        stroke-dasharray: 40 85;
+        /* stroke-dasharray: 40 85; */
+        stroke-dasharray: 10 85;
         transform-origin: 50%;
-        transition: transform 400ms, stroke-dashoffset 400ms;
+        transition: transform 0.4s,
+            stroke-dashoffset 0.4s;
     }
+
     .Header-Ham.isOpen .top {
         stroke-dashoffset: -64px;
     }
+
     .Header-Ham.isOpen .middle {
+        stroke-dasharray: 40 142;
+        stroke-dashoffset: 0%;
         transform: rotate(90deg);
     }
+
     .Header-Ham.isOpen .bottom {
+        stroke-dasharray: 40 85;
         stroke-dashoffset: -64px;
-    }  
+    }
 }

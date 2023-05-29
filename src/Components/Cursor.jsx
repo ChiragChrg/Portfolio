@@ -8,6 +8,7 @@ const Cursor = () => {
         document.addEventListener('mousemove', evt => {
             const x = evt.clientX - CursorRef.current.offsetWidth / 2;
             const y = evt.clientY - CursorRef.current.offsetHeight / 2;
+            // console.log(evt)
             // const xDot = evt.clientX - CursorDotRef.current.offsetWidth / 2;
             // const yDot = evt.clientY - CursorDotRef.current.offsetHeight / 2;
 
@@ -24,7 +25,7 @@ const Cursor = () => {
             // }
 
             CursorRef.current.animate(keyframes, {
-                duration: 800,
+                duration: 500,
                 fill: "forwards"
             })
             // CursorDotRef.current.animate(DotKeyframes, {

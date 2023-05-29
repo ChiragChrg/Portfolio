@@ -48,7 +48,7 @@ const Hero = () => {
                     <p>Hi! my name is,</p>
                     <h1 className="gradientText">Chirag.</h1>
                     <p>I'm a Fullstack Web Developer.</p>
-                    <p>I create Exciting Stuff on the Internet.</p>
+                    <p>I create <span className="gradientText">Exciting Stuff</span> on the Internet.</p>
                 </div>
 
                 <div className="Hero-Links flex">

@@ -1,4 +1,4 @@
-:root{
+:root {
   --primary: #000000;
   --base: #000000;
   --baseLite: rgba(0, 0, 0, 0.6);
@@ -14,12 +14,12 @@
   /* --blue: #006eff; */
   /* --purple: #0059ff; */
   --gradient: linear-gradient(to right,
-  var(--pink), var(--purple),var(--purple),var(--pink));
+      var(--pink), var(--purple), var(--purple), var(--pink));
 
   --mobileSize: 750px;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,37 +31,37 @@
   outline: 1px solid green;
 } */
 
-body{
+body {
   background-color: var(--base);
   color: var(--text);
   scroll-behavior: smooth;
   /* cursor: none; */
 }
 
-.App{
+.App {
   position: relative;
 }
 
-.flex{
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.col{
+.col {
   flex-direction: column;
 }
 
-.gap05{
+.gap05 {
   gap: 0.5em;
 }
 
-.gap{
+.gap {
   gap: 1em;
 }
 
 /* Cursor CSS */
-.Cursor-Main{
+.Cursor-Main {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -72,10 +72,12 @@ body{
   pointer-events: none;
 }
 
-.Cursor-Main #cursor{
+.Cursor-Main #cursor {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 20px;
   height: 20px;
   border-radius: 100px;
@@ -84,12 +86,13 @@ body{
   transition: all 0.2s linear;
   background-color: #fff;
   box-shadow: 0 0 20px 0 #fff;
+  will-change: transform;
 }
 
-.Cursor-Main #cursor::before{
+.Cursor-Main #cursor::before {
   content: "";
   width: 0;
-  aspect-ratio: 1;    
+  aspect-ratio: 1;
   inset: 0;
   margin: auto;
   border-radius: 50%;
@@ -98,7 +101,7 @@ body{
   background-color: var(--base);
 }
 
-.Cursor-Main #cursorDot{
+.Cursor-Main #cursorDot {
   position: fixed;
   width: 10px;
   height: 10px;
@@ -111,13 +114,14 @@ body{
 }
 
 body:hover #cursor,
-body:hover #cursorDot{
+body:hover #cursorDot {
   opacity: 1;
 }
+
 /* Cursor CSS */
 
 
-.gradientText{
+.gradientText {
   font-family: Satisfy;
   background: var(--gradient);
   background-clip: text;
@@ -128,18 +132,19 @@ body:hover #cursorDot{
 }
 
 @keyframes gradientPan {
-  from{
+  from {
     background-position: 0% center;
   }
-  to{
+
+  to {
     background-position: -200% center;
   }
 }
 
 
 /* Mobile Responsive CSS */
-@media (width < 750px){
-  .Cursor-Main{
+@media (width < 750px) {
+  .Cursor-Main {
     display: none;
   }
 }
