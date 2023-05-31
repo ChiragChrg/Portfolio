@@ -5,9 +5,9 @@
   --text: #fff;
 
   --purple: #6600FF;
-  --purpleLite: rgba(102, 0, 255, 0.3);
+  --purpleLite: hsla(264, 99%, 27%, 0.6);
   --pink: #ff00bf;
-  --pinkLite: rgba(255, 0, 191, 0.6);
+  --pinkLite: hsla(315, 100%, 40%, 0.6);
 
   --gradient: linear-gradient(to right,
       var(--pink), var(--purple), var(--purple), var(--pink));

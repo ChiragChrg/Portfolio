@@ -6,44 +6,34 @@ import { motion, useCycle } from "framer-motion";
 const Header = () => {
     const [openNav, setOpenNav] = useCycle(false, true);
     const [isMobile, setIsMobile] = useState(false);
-    const [navHeight, setNavHeight] = useState();
     const NavRef = useRef();
 
     useEffect(() => {
         window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
-        setNavHeight(NavRef?.current?.offsetHeight)
-        // console.log(NavRef?.current?.offsetHeight)
     })
 
     const Sidebar = {
-        open: (navHeight = 1000) => ({
-            clipPath: `circle(${navHeight * 2 + 200}px at 40px 90%)`,
-            transition: {
-                type: "spring",
-                stiffness: 20,
-                restDelta: 2
-            }
-        }),
+        open: {
+            width: "100%"
+        },
         closed: {
-            clipPath: "circle(30px at 40px 90%)",
-            transition: {
-                delay: 0.5,
-                type: "spring",
-                stiffness: 400,
-                damping: 40
-            }
+            width: "0",
         }
     };
 
     return (
         <header className="Header-Main">
             <div className="Header-Container flex">
-                <div className="Header-Logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <div
+                    className="Header-Logo"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <h1 className="gradientText">Portfolio.</h1>
                     {/* <h1 className="gradientText">ChiragChrg.</h1> */}
                 </div>
 
-                <svg viewBox="20 20 60 60" width="45" className={openNav ? "Header-Ham isOpen" : "Header-Ham"} onClick={() => setOpenNav(prev => !prev)}>
+                <svg viewBox="20 20 60 60" width="45"
+                    className={openNav ? "Header-Ham isOpen" : "Header-Ham"}
+                    onClick={() => setOpenNav(prev => !prev)}>
                     <path
                         className="line top"
                         d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
@@ -56,21 +46,31 @@ const Header = () => {
                 </svg>
 
                 <motion.nav
-                    initial={false}
-                    animate={openNav ? "open" : "close"}
-                    custom={navHeight}
+                    variants={isMobile && Sidebar}
+                    initial={"closed"}
+                    animate={openNav ? "open" : "closed"}
                     ref={NavRef}
                     className="Header-Nav flex">
 
-                    <motion.div variants={Sidebar} className="NavBg flex"></motion.div>
+                    {/* <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a> */}
+
+                    {/* <div
+                        className="Mobile-HomeNav"
+                        onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setOpenNav(false) }}>
+                        Home
+                    </div> */}
 
                     <Link
                         href="#about"
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-64}
+                        offset={-60}
                         duration={500}
+                        onClick={() => setOpenNav(false)}
                         to="about">About</Link>
 
                     <Link
@@ -78,8 +78,9 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-64}
+                        offset={-60}
                         duration={500}
+                        onClick={() => setOpenNav(false)}
                         to="skills">Skills</Link>
 
                     <Link
@@ -87,8 +88,9 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-64}
+                        offset={-60}
                         duration={500}
+                        onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>
 
                     <Link
@@ -96,18 +98,21 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-64}
+                        offset={-60}
                         duration={500}
+                        onClick={() => setOpenNav(false)}
                         to="contact">Contact</Link>
 
-                    <div className="Action-Container flex">
-                        <div className="Header-ActionBtn flex">
+                    <div className="MobileAction-Container flex">
+                        <div className="Header-ActionBtn flex"
+                            onClick={() => setOpenNav(false)}>
                             <div>Resume</div>
                         </div>
                     </div>
                 </motion.nav>
 
-                <div className="Header-ActionBtn hideOnMobile flex">
+                <div className="Header-ActionBtn hideOnMobile flex"
+                    onClick={() => setOpenNav(false)}>
                     <div>Resume</div>
                 </div>
             </div>
