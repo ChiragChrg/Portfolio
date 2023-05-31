@@ -13,11 +13,15 @@ const Header = () => {
     })
 
     const Sidebar = {
-        open: {
-            width: "100%"
-        },
         closed: {
             width: "0",
+            scale: 0.85,
+            borderRadius: "50px 0 0 50px"
+        },
+        open: {
+            width: "100%",
+            scale: 1,
+            borderRadius: "0"
         }
     };
 
@@ -68,7 +72,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        // offset={isMobile ? -55 : -64}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="about">About</Link>
@@ -78,7 +82,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        // offset={isMobile ? -55 : -64}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="skills">Skills</Link>
@@ -88,7 +92,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        // offset={isMobile ? -55 : -64}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>
@@ -98,7 +102,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        // offset={isMobile ? -55 : -64}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="contact">Contact</Link>

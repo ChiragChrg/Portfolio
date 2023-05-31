@@ -44,7 +44,6 @@
     border-radius: 50%;
     position: absolute;
     background-color: transparent;
-    /* background-color: var(--base); */
 }
 
 .Header-Ham {
@@ -80,7 +79,6 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    /* background-color: var(--text); */
     background: var(--gradient);
     background-size: 200%;
     animation: gradientPan 5s linear infinite;
@@ -90,16 +88,6 @@
 .Header-Container nav a.active::after {
     transform: scaleX(1);
 }
-
-/* .Header-Container nav ul li a.active{
-    font-weight: 700;
-    background: var(--gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent !important;
-    background-size: 200%;
-    animation: gradientPan 5s linear infinite;
-  } */
 
 .Header-Nav .NavBg {
     visibility: hidden;
@@ -152,9 +140,6 @@
     .Header-Nav,
     .Header-ActionBtn {
         position: fixed !important;
-        /* display: none; */
-        /* transform: translateX(200%) !important;
-        transition: 0.4s ease-in-out; */
     }
 
     .Header-Nav {
@@ -165,13 +150,11 @@
         flex-direction: column;
         overflow: hidden;
         background: var(--purpleLite);
-        ;
-        /* background: linear-gradient(180deg,
-                rgba(89, 6, 223, 0.4),
-                rgba(214, 0, 185, 0.4)); */
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         z-index: 1;
+        transform-origin: right;
+        transition: 0.25s ease-out;
     }
 
     .Mobile-HomeNav {
@@ -230,23 +213,6 @@
     :has(.Header-Ham.isOpen) body {
         overflow: hidden !important;
     }
-
-    /* :has(.Header-Ham.isOpen) .Nav-blur {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        inset: 0;
-        background: rgba(3, 74, 204, 0.356);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        z-index: 9;
-    } */
-
-    /* :has(.Header-Ham.isOpen) .Header-Nav,
-    :has(.Header-Ham.isOpen) .Header-ActionBtn {
-        transform: translateX(0%) !important;
-    } */
 
     .Header-Ham .line {
         fill: none;
