@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { BsGithub, BsLinkedin, BsTwitter, BsGoogle, BsInstagram } from "react-icons/bs"
 
 // import AOTImg from "../../../public/AOT.jpg"
-import AOTImg from "../../AOT.jpg"
+import AOTImg from "../../AOT.webp"
 
 const Hero = () => {
     const orbitContainer = {
