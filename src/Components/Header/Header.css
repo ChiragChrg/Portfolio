@@ -79,9 +79,10 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background: var(--gradient);
+    background-color: #fff;
+    /* background: var(--gradient);
     background-size: 200%;
-    animation: gradientPan 5s linear infinite;
+    animation: gradientPan 5s linear infinite; */
     transition: transform 0.25s ease-out;
 }
 
