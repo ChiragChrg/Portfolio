@@ -2,7 +2,8 @@ import "./Hero.css"
 import { motion } from "framer-motion"
 import { BsGithub, BsLinkedin, BsTwitter, BsGoogle, BsInstagram } from "react-icons/bs"
 
-import AOTImg from "../../AOT.webp"
+// import AvatarImg from "../../AOT.webp"
+import { AvatarImg } from "../../assets/index"
 
 const Hero = () => {
     const orbitContainer = {
@@ -131,7 +132,7 @@ const Hero = () => {
                 <motion.div
                     variants={orbitItems}
                     className="Hero-Avatar flex">
-                    <img src={AOTImg} alt="AOTImg" />
+                    <img src={AvatarImg} alt="AvatarImg" />
                 </motion.div>
                 <motion.div
                     variants={orbitItems}

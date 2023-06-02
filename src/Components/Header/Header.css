@@ -3,6 +3,11 @@
     position: sticky;
     top: 0;
     z-index: 99;
+    transition: 0.3s ease;
+}
+
+.Header-Main.HideHeader {
+    transform: translateY(-100%);
 }
 
 .Header-Container {
@@ -16,7 +21,7 @@
     top: 0;
     backdrop-filter: blur(1.5px);
     justify-content: space-between;
-    transition: background 0.4s ease;
+    transition: 0.3s ease;
 }
 
 .Header-Logo {

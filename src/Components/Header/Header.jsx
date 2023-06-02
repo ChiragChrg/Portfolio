@@ -6,11 +6,34 @@ import { motion, useCycle } from "framer-motion";
 const Header = () => {
     const [openNav, setOpenNav] = useCycle(false, true);
     const [isMobile, setIsMobile] = useState(false);
+
+    const [showHeader, setShowHeader] = useState(true);
+    const [prevScrollY, setPrevScrollY] = useState(false);
+
     const NavRef = useRef();
 
     useEffect(() => {
-        window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
-    })
+        const controlNavbar = () => {
+            if (window.scrollY > prevScrollY) {
+                setShowHeader(false);
+            } else {
+                setShowHeader(true);
+            }
+
+            setPrevScrollY(window.scrollY);
+        };
+
+        if (typeof window !== 'undefined') {
+            // Hide Header if Mobile view
+            window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
+
+            window.addEventListener('scroll', controlNavbar);
+
+            return () => {
+                window.removeEventListener('scroll', controlNavbar);
+            };
+        }
+    }, [prevScrollY])
 
     const Sidebar = {
         closed: {
@@ -26,7 +49,7 @@ const Header = () => {
     };
 
     return (
-        <header className="Header-Main">
+        <header className={showHeader ? "Header-Main" : "Header-Main HideHeader"}>
             <div className="Header-Container flex">
                 <div
                     className="Header-Logo"
