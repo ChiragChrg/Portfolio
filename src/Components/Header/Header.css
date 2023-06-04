@@ -19,7 +19,7 @@
     padding: 0.5em 1.5em;
     position: relative;
     top: 0;
-    backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(2px);
     justify-content: space-between;
     transition: 0.3s ease;
 }
@@ -95,9 +95,6 @@
     transform: scaleX(1);
 }
 
-.Header-Nav .NavBg {
-    visibility: hidden;
-}
 
 .Header-Container nav a.hidden {
     visibility: hidden;
@@ -139,129 +136,7 @@
 
 /* Mobile Responsive CSS */
 @media (width < 750px) {
-    .Header-Container {
-        padding: 0.5em 1em !important;
-    }
-
-    .Header-Nav,
-    .Header-ActionBtn {
-        position: fixed !important;
-    }
-
-    .Header-Nav {
-        top: 0 !important;
-        right: 0 !important;
-        width: 0;
-        height: 100vh !important;
-        flex-direction: column;
-        overflow: hidden;
-        background: var(--purpleLite);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        z-index: 1;
-        transform-origin: right;
-        transition: 0.25s ease-out;
-    }
-
-    .Mobile-HomeNav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #000;
-        padding: 0.5em 1em;
-        border-radius: 0.4em;
-        min-width: 10em;
-        z-index: 100;
-    }
-
-    .Header-Nav a {
-        background-color: #000;
-        padding: 0.5em 1em;
-        border-radius: 0.4em;
-        min-width: 10em;
-        z-index: 100;
-    }
-
-    .MobileAction-Container {
-        display: flex;
-        position: absolute;
-        inset: 0;
-        align-items: flex-end;
-        padding-bottom: 5em;
-    }
-
-    .Header-Container .hideOnMobile {
+    .Header-Main {
         display: none;
-    }
-
-    .Header-ActionBtn {
-        font-size: 1.3em;
-    }
-
-    .Header-Ham {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        flex-direction: column;
-        gap: 0.6em;
-        z-index: 999;
-
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transition: transform 0.4s;
-        user-select: none;
-    }
-
-    .Header-Ham.isOpen {
-        transform: rotate(45deg);
-    }
-
-    :has(.Header-Ham.isOpen) body {
-        overflow: hidden !important;
-    }
-
-    .Header-Ham .line {
-        fill: none;
-        transition: stroke-dasharray 0.4s,
-            stroke-dashoffset 0.4s;
-        stroke: #fff;
-        stroke-width: 5.5;
-        transform-origin: right;
-        stroke-linecap: round;
-    }
-
-    .Header-Ham .top {
-        stroke-dasharray: 18 160;
-    }
-
-    .Header-Ham .middle {
-        /* stroke-dasharray: 40 142; */
-        stroke-dasharray: 40 142;
-        /* stroke-dashoffset: -20%; */
-        transform-origin: 83% 83%;
-        transition: transform 0.4s;
-    }
-
-    .Header-Ham .bottom {
-        /* stroke-dasharray: 40 85; */
-        stroke-dasharray: 18 85;
-        transform-origin: 50%;
-        transition: transform 0.4s,
-            stroke-dashoffset 0.4s;
-    }
-
-    .Header-Ham.isOpen .top {
-        stroke-dashoffset: -64px;
-    }
-
-    .Header-Ham.isOpen .middle {
-        stroke-dasharray: 40 142;
-        stroke-dashoffset: 0%;
-        transform: rotate(90deg);
-    }
-
-    .Header-Ham.isOpen .bottom {
-        stroke-dasharray: 40 85;
-        stroke-dashoffset: -64px;
     }
 }

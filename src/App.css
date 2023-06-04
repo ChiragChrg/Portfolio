@@ -5,14 +5,12 @@
   --text: #fff;
 
   --purple: #6600FF;
-  --purpleLite: hsla(264, 99%, 27%, 0.6);
+  --purpleLite: hsla(264, 99%, 27%, 0.8);
   --pink: #ff00bf;
-  --pinkLite: hsla(315, 100%, 40%, 0.6);
+  --pinkLite: hsla(315, 100%, 40%, 0.8);
 
   --gradient: linear-gradient(to right,
       var(--pink), var(--purple), var(--purple), var(--pink));
-
-  --mobileSize: 750px;
 }
 
 * {
@@ -22,9 +20,9 @@
   font-family: Poppins;
 }
 
-/* *{
-  border: 1px solid red;
-  outline: 1px solid green;
+/* * {
+  border: 1px solid red !important;
+  outline: 1px solid green !important;
 } */
 
 body {

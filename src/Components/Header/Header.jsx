@@ -1,55 +1,35 @@
 import "./Header.css"
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, } from "react";
 import { Link } from "react-scroll";
-import { motion, useCycle } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const Header = () => {
-    const [openNav, setOpenNav] = useCycle(false, true);
-    const [isMobile, setIsMobile] = useState(false);
-
-    const [showHeader, setShowHeader] = useState(true);
-    const [prevScrollY, setPrevScrollY] = useState(false);
-
-    const NavRef = useRef();
+    // const [showHeader, setShowHeader] = useState(true);
+    // const [prevScrollY, setPrevScrollY] = useState(false);
 
     useEffect(() => {
-        const controlNavbar = () => {
-            if (window.scrollY > prevScrollY) {
-                setShowHeader(false);
-            } else {
-                setShowHeader(true);
-            }
+        // const controlNavbar = () => {
+        //     if (window.scrollY > prevScrollY) {
+        //         setShowHeader(false);
+        //     } else {
+        //         setShowHeader(true);
+        //     }
 
-            setPrevScrollY(window.scrollY);
-        };
+        //     setPrevScrollY(window.scrollY);
+        // };
 
         if (typeof window !== 'undefined') {
-            // Hide Header if Mobile view
-            window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
+            // window.addEventListener('scroll', controlNavbar);
 
-            window.addEventListener('scroll', controlNavbar);
-
-            return () => {
-                window.removeEventListener('scroll', controlNavbar);
-            };
+            // return () => {
+            //     window.removeEventListener('scroll', controlNavbar);
+            // };
         }
-    }, [prevScrollY])
-
-    const Sidebar = {
-        closed: {
-            width: "0",
-            scale: 0.85,
-            borderRadius: "50px 0 0 50px"
-        },
-        open: {
-            width: "100%",
-            scale: 1,
-            borderRadius: "0"
-        }
-    };
+    }, [])
 
     return (
-        <header className={showHeader ? "Header-Main" : "Header-Main HideHeader"}>
+        // <header className={showHeader ? "Header-Main" : "Header-Main HideHeader"}>
+        <header className="Header-Main">
             <div className="Header-Container flex">
                 <div
                     className="Header-Logo"
@@ -58,38 +38,7 @@ const Header = () => {
                     {/* <h1 className="gradientText">ChiragChrg.</h1> */}
                 </div>
 
-                <svg viewBox="20 20 60 60" width="45"
-                    className={openNav ? "Header-Ham isOpen" : "Header-Ham"}
-                    onClick={() => setOpenNav(prev => !prev)}>
-                    <path
-                        className="line top"
-                        d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-                    <path
-                        className="line middle"
-                        d="m 30,50 h 40" />
-                    <path
-                        className="line bottom"
-                        d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-                </svg>
-
-                <motion.nav
-                    variants={isMobile && Sidebar}
-                    initial={"closed"}
-                    animate={openNav ? "open" : "closed"}
-                    ref={NavRef}
-                    className="Header-Nav flex">
-
-                    {/* <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a> */}
-
-                    {/* <div
-                        className="Mobile-HomeNav"
-                        onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setOpenNav(false) }}>
-                        Home
-                    </div> */}
-
+                <nav className="Header-Nav flex">
                     <Link
                         href="#about"
                         activeClass="active"
@@ -97,7 +46,6 @@ const Header = () => {
                         smooth={true}
                         // offset={isMobile ? -55 : -64}
                         duration={500}
-                        onClick={() => setOpenNav(false)}
                         to="about">About</Link>
 
                     <Link
@@ -107,7 +55,6 @@ const Header = () => {
                         smooth={true}
                         // offset={isMobile ? -55 : -64}
                         duration={500}
-                        onClick={() => setOpenNav(false)}
                         to="skills">Skills</Link>
 
                     <Link
@@ -117,7 +64,6 @@ const Header = () => {
                         smooth={true}
                         // offset={isMobile ? -55 : -64}
                         duration={500}
-                        onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>
 
                     <Link
@@ -127,19 +73,10 @@ const Header = () => {
                         smooth={true}
                         // offset={isMobile ? -55 : -64}
                         duration={500}
-                        onClick={() => setOpenNav(false)}
                         to="contact">Contact</Link>
+                </nav>
 
-                    <div className="MobileAction-Container flex">
-                        <div className="Header-ActionBtn flex"
-                            onClick={() => setOpenNav(false)}>
-                            <div>Resume</div>
-                        </div>
-                    </div>
-                </motion.nav>
-
-                <div className="Header-ActionBtn hideOnMobile flex"
-                    onClick={() => setOpenNav(false)}>
+                <div className="Header-ActionBtn flex">
                     <div>Resume</div>
                 </div>
             </div>
