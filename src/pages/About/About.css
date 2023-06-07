@@ -1,8 +1,73 @@
 .About-Main {
     position: relative;
-    /* background-color: #1E004C; */
+    padding: 2em 6em;
+}
+
+/* .About-Container {
+} */
+
+.About-Title {
+    margin: 0 0 2em 0;
+    justify-content: flex-start;
+    padding-left: 1em;
+}
+
+.About-Title span {
+    background-color: #000;
+    padding: 0 0.2em;
+    font-family: Ubuntu;
+    font-size: 1.5em;
+}
+
+.About-Title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.2em;
+    width: 100%;
+    height: 1px;
+    z-index: -2;
+    background-color: #fff;
 }
 
 .About-Content {
-    height: 100%;
+    width: 100%;
+    gap: 2em;
+    overflow: hidden;
+}
+
+.About-Image {
+    border-radius: 50%;
+    transform: rotateY(180deg);
+}
+
+
+.About-Info {
+    width: 100%;
+    align-items: flex-start;
+    letter-spacing: 1px;
+    border-left: 1px solid var(--purple);
+    padding: 2em 0 2em 3em;
+}
+
+/* Mobile Responsive CSS */
+@media (width < 750px) {
+    .About-Main {
+        padding: 2em;
+        padding-top: 0;
+        margin-top: 4em;
+    }
+
+    .About-Title {
+        line-height: 1.5em;
+    }
+
+    .About-Content {
+        flex-direction: column;
+    }
+
+    .About-Info {
+        border: none;
+        padding: 0;
+    }
 }

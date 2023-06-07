@@ -6,9 +6,9 @@
     transition: 0.3s ease;
 }
 
-.Header-Main.HideHeader {
+/* .Header-Main.HideHeader {
     transform: translateY(-100%);
-}
+} */
 
 .Header-Container {
     width: 100%;
@@ -18,7 +18,7 @@
             transparent);
     padding: 0.5em 1.5em;
     position: relative;
-    top: 0;
+    /* top: 0; */
     backdrop-filter: blur(2px);
     justify-content: space-between;
     transition: 0.3s ease;

@@ -3,8 +3,10 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    /* overflow: scroll; */
     /* overflow-x: hidden !important; */
+    /* scroll-snap-type: y proximity; */
 }
 
 p,
@@ -13,20 +15,17 @@ h1 {
     z-index: 1;
 }
 
-#about,
-#skills,
-#projects,
-#resume {
+.Home-Main section {
     width: 100%;
+    height: 100%;
     min-height: 100vh;
-    outline: 1px solid grey;
+    /* outline: 1px solid grey; */
+    /* scroll-snap-align: start; */
 }
 
 #contact {
-    width: 100%;
-    min-height: 150vh;
     position: relative;
-    outline: 1px solid grey;
+    min-height: 150vh;
 }
 
 #footer {
@@ -34,7 +33,6 @@ h1 {
     height: 50vh;
     background-color: #1E004C;
 }
-
 
 #Contact-Vector {
     position: absolute;

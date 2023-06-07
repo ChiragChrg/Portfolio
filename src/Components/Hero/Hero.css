@@ -1,6 +1,6 @@
 .Hero-Main {
     width: 100%;
-    height: calc(100vh - 4em);
+    height: calc(100vh - 4em) !important;
     padding: 1em 2em;
     background-color: rgba(255, 255, 255, 0.1);
     background-color: var(--base);
@@ -103,13 +103,19 @@
     width: 0.5em;
     aspect-ratio: 1;
     background-color: #fff;
-    border-radius: 50%;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(-45deg);
     position: absolute;
     top: -0.2em;
     left: 50%;
     transition: 0.2s ease-in-out;
     overflow: hidden;
     box-shadow: 0 0 10px 0 #fff;
+}
+
+.Trail2 .Hero-TrailDot,
+.Trail4 .Hero-TrailDot {
+    transform: rotate(140deg);
 }
 
 .Trail2 {
@@ -170,6 +176,7 @@
 :has(.Hero-Avatar:hover) .Hero-TrailDot {
     background-color: var(--base) !important;
     outline: 0.5px solid #fff;
+    /* border-radius: 50% !important; */
     scale: 2;
 }
 

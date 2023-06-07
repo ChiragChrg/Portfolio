@@ -60,6 +60,10 @@ p {
   gap: 1em;
 }
 
+.fsMid {
+  font-size: 1.5em;
+}
+
 /* Cursor CSS */
 .Cursor-Main {
   position: absolute;
@@ -154,3 +158,10 @@ body:hover #cursorDot {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* Custom Text Select Color */
+/* h1::selection,
+p::selection,
+span::selection {
+  background: var(--purple);
+} */
