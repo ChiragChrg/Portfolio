@@ -40,7 +40,7 @@ const Hero = () => {
                     <a href="https://www.linkedin.com/in/chiragchrg/" title="LinkedIn" target="_blank" rel="noreferrer">
                         <BsLinkedin size={30} color="var(--text)" />
                     </a>
-                    <a href="https://twitter.com/ChiragChrg1" title="Twitter" target="_blank" rel="noreferrer">
+                    <a href="https://twitter.com/ChrgChirag" title="Twitter" target="_blank" rel="noreferrer">
                         <BsTwitter size={30} color="var(--text)" />
                     </a>
                     <a href="https://www.instagram.com/chiragchrg/" title="Instagram" target="_blank" rel="noreferrer">

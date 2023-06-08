@@ -72,7 +72,6 @@ const MobileNav = () => {
             <motion.nav
                 variants={MenuVariant}
                 initial="hideMenu"
-                // initial={{backdropFilter: blur}}
                 animate={openNav ? "showMenu" : "hideMenu"}
                 className="MobileNav-Nav flex col">
 
@@ -84,24 +83,10 @@ const MobileNav = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        // offset={isMobile ? -55 : -64}
+                        offset={-40}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="about">About</Link>
-                </motion.div>
-
-                <motion.div
-                    variants={LinkVariant}
-                    className="MobileNav-LinkHolder flex">
-                    <Link
-                        href="#skills"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        // offset={isMobile ? -55 : -64}
-                        duration={500}
-                        onClick={() => setOpenNav(false)}
-                        to="skills">Skills</Link>
                 </motion.div>
 
                 <motion.div
@@ -116,6 +101,20 @@ const MobileNav = () => {
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>
+                </motion.div>
+
+                <motion.div
+                    variants={LinkVariant}
+                    className="MobileNav-LinkHolder flex">
+                    <Link
+                        href="#skills"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        // offset={isMobile ? -55 : -64}
+                        duration={500}
+                        onClick={() => setOpenNav(false)}
+                        to="skills">Skills</Link>
                 </motion.div>
 
                 <motion.div

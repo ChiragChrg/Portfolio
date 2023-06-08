@@ -18,7 +18,6 @@ h1 {
 .Home-Main section {
     width: 100%;
     height: 100%;
-    min-height: 100vh;
     /* outline: 1px solid grey; */
     /* scroll-snap-align: start; */
 }
@@ -27,6 +26,47 @@ h1 {
     position: relative;
     min-height: 150vh;
 }
+
+/* Page Title Style */
+.Title-Tag.Opening {
+    margin: 0 0 1em 0;
+    justify-content: flex-start;
+    /* padding-left: 0.5em; */
+}
+
+.Title-Tag.Closing {
+    justify-content: flex-end;
+    padding-top: 0.5em;
+    /* padding-right: 0.5em; */
+}
+
+.Title-Tag span {
+    background-color: #000;
+    color: var(--purple);
+    font-family: Ubuntu;
+    padding: 0 0.2em;
+    font-size: 1.5em;
+}
+
+.Title-Tag p {
+    background-color: #000;
+    font-family: Ubuntu;
+    padding: 0 0.2em;
+    font-size: 1.2em;
+}
+
+.Title-Tag.Opening::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.7em;
+    width: 100%;
+    height: 1px;
+    z-index: -2;
+    background-color: var(--purpleLite);
+}
+
+/* Page Title Style */
 
 #footer {
     width: 100%;

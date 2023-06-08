@@ -71,6 +71,49 @@ export const TextItems = {
 }
 // -- Hero Page Variants
 
+//FadeUp Transition
+export const FadeUpVariant = {
+    init: {
+        opacity: 0,
+        y: 75,
+    },
+    fadeup: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            delay: 0.5,
+            type: "spring",
+            stiffness: 200,
+            damping: 40,
+            delayChildren: 0.6,
+            staggerChildren: 0.1
+        }
+    }
+}
+
+export const FadeUpChild = {
+    init: {
+        opacity: 0,
+        y: 50,
+        scale: 0.8
+    },
+    fadeup: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            ease: "easeOut",
+            duration: 0.4,
+            scale: {
+                type: "spring",
+                damping: 10,
+                stiffness: 200,
+                restDelta: 0.001
+            }
+        }
+    }
+}
+
 
 // About Page Variants --
 export const AboutVariant = {
@@ -92,7 +135,7 @@ export const AboutVariant = {
     }
 }
 
-export const AboutTitle = {
+export const TitleTagOpen = {
     init: {
         y: 75,
         opacity: 0,
@@ -104,6 +147,23 @@ export const AboutTitle = {
         scale: 1,
         transition: {
             delay: 0.5,
+            type: "spring",
+            stiffness: 200,
+            damping: 40
+        }
+    }
+}
+
+export const TitleTagClose = {
+    init: {
+        y: 50,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 0.7,
+        transition: {
+            delay: 0.3,
             type: "spring",
             stiffness: 200,
             damping: 40
@@ -136,5 +196,24 @@ export const StaggerChild = {
             duration: 0.5,
         },
     },
+}
+
+export const SkillParent = {
+    init: {
+        y: 50,
+        opacity: 0,
+        scale: 0.8
+    },
+    animate: {
+        y: -50,
+        opacity: 1,
+        scale: 1,
+        transition: {
+            delay: 0.5,
+            type: "spring",
+            stiffness: 200,
+            damping: 40
+        }
+    }
 }
 // -- About Page Variants
