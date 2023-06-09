@@ -108,8 +108,8 @@
     transform: rotate(-45deg);
     position: absolute;
     top: -0.2em;
-    left: 50%;
-    transition: 0.2s ease-in-out;
+    left: 49%;
+    transition: 0.25s ease-in-out;
     overflow: hidden;
     box-shadow: 0 0 10px 0 #fff;
 }
@@ -178,7 +178,7 @@
     background-color: var(--base) !important;
     outline: 0.5px solid #fff;
     /* border-radius: 50% !important; */
-    scale: 2;
+    scale: 1.8;
 }
 
 /* :has(.Hero-Avatar:hover) .Hero-TrailDot img{
@@ -219,5 +219,6 @@
 
     :has(.Hero-Avatar:hover) .Hero-TrailDot {
         outline: 1px solid #fff;
+        scale: 1.5;
     }
 }

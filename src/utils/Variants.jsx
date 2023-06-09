@@ -114,63 +114,6 @@ export const FadeUpChild = {
     }
 }
 
-
-// About Page Variants --
-export const AboutVariant = {
-    init: {
-        opacity: 0,
-        y: 75,
-    },
-    animate: {
-        y: -75,
-        opacity: 1,
-        transition: {
-            delay: 0.5,
-            type: "spring",
-            stiffness: 200,
-            damping: 40,
-            delayChildren: 0.6,
-            staggerChildren: 0.1
-        }
-    }
-}
-
-export const TitleTagOpen = {
-    init: {
-        y: 75,
-        opacity: 0,
-        scale: 0.8
-    },
-    animate: {
-        y: -75,
-        opacity: 1,
-        scale: 1,
-        transition: {
-            delay: 0.5,
-            type: "spring",
-            stiffness: 200,
-            damping: 40
-        }
-    }
-}
-
-export const TitleTagClose = {
-    init: {
-        y: 50,
-        opacity: 0,
-    },
-    animate: {
-        y: 0,
-        opacity: 0.7,
-        transition: {
-            delay: 0.3,
-            type: "spring",
-            stiffness: 200,
-            damping: 40
-        }
-    }
-}
-
 export const StaggerParent = {
     init: {
         opacity: 0,
@@ -178,11 +121,13 @@ export const StaggerParent = {
     animate: {
         opacity: 1,
         transition: {
-            delayChildren: 0.5,
+            // delayChildren: 0.3,
             staggerChildren: 0.1
         }
     }
+
 }
+
 
 export const StaggerChild = {
     init: {
@@ -197,23 +142,3 @@ export const StaggerChild = {
         },
     },
 }
-
-export const SkillParent = {
-    init: {
-        y: 50,
-        opacity: 0,
-        scale: 0.8
-    },
-    animate: {
-        y: -50,
-        opacity: 1,
-        scale: 1,
-        transition: {
-            delay: 0.5,
-            type: "spring",
-            stiffness: 200,
-            damping: 40
-        }
-    }
-}
-// -- About Page Variants

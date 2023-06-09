@@ -1,12 +1,16 @@
 :root {
-  --primary: #000000;
+  /* --base: #fff; */
   --base: #000000;
   --baseLite: rgba(0, 0, 0, 0.6);
+  /* --text: #000; */
   --text: #fff;
 
+  /* --purple: #f7ff00;
+  --pink: #e98008; */
+
   --purple: #6600FF;
-  --purpleLite: hsla(264, 99%, 27%, 0.8);
   --pink: #ff00bf;
+  --purpleLite: hsla(264, 99%, 27%, 0.8);
   --pinkLite: hsla(315, 100%, 40%, 0.8);
 
   --gradient: linear-gradient(to right,
@@ -36,6 +40,17 @@ a,
 h1,
 p {
   cursor: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+img {
+  user-select: none;
+  pointer-events: none;
 }
 
 .App {
