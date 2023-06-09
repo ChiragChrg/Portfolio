@@ -32,7 +32,7 @@ export const ProjectsList = [
     },
     {
         Name: "Srinivas Exam Manager",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "Exam Management software developed for Srinivas University. It generates Halltickets and Marks card for Students.",
         Logo: SrinivasLogo,
         Link: "https://srinivas-exam-manager.netlify.app/",
         Shot: SrinivasShots,
@@ -40,23 +40,23 @@ export const ProjectsList = [
     },
     {
         Name: "Piktures",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "Access a wide collection of Vibrant and Colorful images. Search and download any images.",
         Logo: PikturesLogo,
         Link: "https://piktures.netlify.app/",
         Shot: PikturesShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     },
-    {
-        Name: "ARMS 1.0",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
-        Logo: ArmsPhpLogo,
-        Link: "https://sims-arms.000webhostapp.com/",
-        Shot: bgImg,
-        Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon]
-    },
+    // {
+    //     Name: "ARMS 1.0",
+    //     Desc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. (SIMS - MP)",
+    //     Logo: ArmsPhpLogo,
+    //     Link: "https://sims-arms.000webhostapp.com/",
+    //     Shot: bgImg,
+    //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon]
+    // },
     {
         Name: "FilmStack",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "More info on your Fav Movie? Filmstack shows all the details! Search any movie globally.",
         Logo: FilmstackLogo,
         Link: "https://filmstack.netlify.app/",
         Shot: FilmstackShots,
@@ -64,7 +64,7 @@ export const ProjectsList = [
     },
     {
         Name: "Days Beyond",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "Shows Yearly Progress and Daily Events held globally. Check what's Special Today!",
         Logo: DaysbeyondLogo,
         Link: "https://daysbeyond.netlify.app/",
         Shot: DaysbeyondShots,
@@ -72,7 +72,7 @@ export const ProjectsList = [
     },
     {
         Name: "CovidTrax",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "Search global COVID-19 statistics for each Country and Indian States and Districts",
         Logo: CovidtraxLogo,
         Link: "https://covidtrax.netlify.app/",
         Shot: CovidTraxShots,
@@ -80,7 +80,7 @@ export const ProjectsList = [
     },
     {
         Name: "Cookeez",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "Find your favorite dishes along with the ingredients for the recipe",
         Logo: CookeezLogo,
         Link: "https://cookeez.netlify.app/",
         Shot: CookeezShots,
@@ -88,7 +88,7 @@ export const ProjectsList = [
     },
     {
         Name: "CliMate",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "Get Weather Updates for any location along with Geolocation Support.",
         Logo: ClimateLogo,
         Link: "https://klimate.netlify.app/",
         Shot: ClimateShots,
@@ -96,7 +96,7 @@ export const ProjectsList = [
     },
     {
         Name: "Nuklear Brain",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "A simple blog with basic interaction elements and multiple pages.",
         Logo: NuklearbrainLogo,
         Link: "https://nuklearbrain.netlify.app/",
         Shot: NuklearbrainShots,
@@ -104,7 +104,7 @@ export const ProjectsList = [
     },
     {
         Name: "Kalci",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "A simple Calculator for basic Calcuations and user friendly UI.",
         Logo: KalciLogo,
         Link: "https://nuklearbrain.netlify.app/",
         Shot: KalciShots,
