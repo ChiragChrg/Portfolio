@@ -30,7 +30,7 @@ const Projects = () => {
                                     <div className="Projects-Tech flex gap">
                                         {obj.Tech.map((icon, indx) => {
                                             return (
-                                                <img src={icon} key={indx} alt="HtmlIcon" width={35} />
+                                                <img src={icon} key={indx} alt="HtmlIcon" width={26} />
                                             )
                                         })}
                                     </div>

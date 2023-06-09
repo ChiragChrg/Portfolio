@@ -36,6 +36,7 @@
     width: 100%;
     justify-content: flex-start;
     gap: 2.5em;
+    padding: 1em 0;
 }
 
 .Hero-AvatarContainer {

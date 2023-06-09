@@ -8,7 +8,8 @@
 .Projects-Container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
+    gap: 2em;
+    padding: 0 1em;
     width: 100%;
 }
 
@@ -17,7 +18,9 @@
     overflow: hidden;
     position: relative;
     border-radius: 0.4em;
-    background-color: rgba(132, 0, 255, 0.4);
+    /* background-color: rgb(47, 47, 48); */
+    background: var(--gradientLite);
+    color: var(--text);
 }
 
 .Projects-Preview {
@@ -34,6 +37,10 @@
     padding: 0.5em;
 }
 
+.Projects-Details p {
+    text-align: center;
+}
+
 .Projects-Shot {
     position: relative;
     background-size: cover;
@@ -41,17 +48,28 @@
 }
 
 .Projects-Tech {
-    padding-top: 0.3em;
+    padding-top: 1em;
 }
 
 @media (750px < width < 1110px) {
     .Projects-Container {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .Projects-Logo {
+        left: 0.5em;
+        bottom: 0.5em;
+    }
 }
 
 @media (width < 750px) {
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
+        padding: 0.5em;
+    }
+
+    .Projects-Logo {
+        left: 0.5em;
+        bottom: 0.5em;
     }
 }

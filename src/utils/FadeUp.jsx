@@ -28,7 +28,7 @@ export const FadeUp = ({ children, href = "", width = "fit-content", height = "1
     )
   } else {
     return (
-      <a href={href} style={{ position: "relative", width, height }} ref={FadeUpRef}>
+      <a href={href} target='_blank' rel='noreferrer' style={{ position: "relative", width, height }} ref={FadeUpRef}>
         <motion.div
           variants={FadeUpVariant}
           initial="init"

@@ -1,8 +1,7 @@
 import "./Hero.css"
 import { motion } from "framer-motion"
-import { BsGithub, BsLinkedin, BsTwitter, BsGoogle, BsInstagram } from "react-icons/bs"
 
-import { AvatarImg } from "../../assets/index"
+import { AvatarImg, GithubIcon, GoogleIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "../../assets/index"
 import { OrbitContainer, OrbitItems, TextContainer, TextItems } from "../../utils/Variants"
 
 const Hero = () => {
@@ -35,19 +34,19 @@ const Hero = () => {
                     }}
                     className="Hero-Links flex">
                     <a href="https://github.com/ChiragChrg" title="GitHub" target="_blank" rel="noreferrer">
-                        <BsGithub size={30} color="var(--text)" />
+                        <img src={GithubIcon} alt="GithubIcon" />
                     </a>
                     <a href="https://www.linkedin.com/in/chiragchrg/" title="LinkedIn" target="_blank" rel="noreferrer">
-                        <BsLinkedin size={30} color="var(--text)" />
+                        <img src={LinkedinIcon} alt="LinkedinIcon" />
                     </a>
                     <a href="https://twitter.com/ChrgChirag" title="Twitter" target="_blank" rel="noreferrer">
-                        <BsTwitter size={30} color="var(--text)" />
+                        <img src={TwitterIcon} alt="TwitterIcon" />
                     </a>
                     <a href="https://www.instagram.com/chiragchrg/" title="Instagram" target="_blank" rel="noreferrer">
-                        <BsInstagram size={30} color="var(--text)" />
+                        <img src={InstagramIcon} alt="InstagramIcon" />
                     </a>
                     <a href="https://www.google.com/search?q=%22chiragchrg%22" title="Google Search" target="_blank" rel="noreferrer">
-                        <BsGoogle size={30} color="var(--text)" />
+                        <img src={GoogleIcon} alt="GoogleIcon" />
                     </a>
                 </motion.div>
             </div>
