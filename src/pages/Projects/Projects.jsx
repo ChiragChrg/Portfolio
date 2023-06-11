@@ -29,14 +29,14 @@ const Projects = () => {
                                 onClick={() => setSelectProject(obj)}
                                 key={index}>
                                 <div className="Projects-Preview">
-                                    <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" />
-                                    <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} />
+                                    <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
+                                    <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} height={55} />
                                 </div>
                                 <div className="Projects-Details">
                                     <div className="Projects-Title flex">
                                         <h2>{obj.Name}</h2>
                                         <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link flex">
-                                            <img src={LinkArrow} alt="LinkArrow" width={24} />
+                                            <img src={LinkArrow} alt="LinkArrow" width={24} height={24} />
                                         </a>
                                     </div>
                                     {/* <p>{obj.Desc}</p> */}
@@ -46,7 +46,7 @@ const Projects = () => {
                                         <div className="Projects-TechIcons flex gap">
                                             {obj.Tech.map((icon, indx) => {
                                                 return (
-                                                    <img src={icon} key={indx} alt="HtmlIcon" width={26} />
+                                                    <img src={icon} key={indx} alt="HtmlIcon" width={26} height={26} />
                                                 )
                                             })}
                                         </div>

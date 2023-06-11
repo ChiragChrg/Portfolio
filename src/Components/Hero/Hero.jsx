@@ -34,19 +34,19 @@ const Hero = () => {
                     }}
                     className="Hero-Links flex">
                     <a href="https://github.com/ChiragChrg" title="GitHub" target="_blank" rel="noreferrer">
-                        <img src={GithubIcon} alt="GithubIcon" />
+                        <img src={GithubIcon} alt="GithubIcon" width={30} height={30} />
                     </a>
                     <a href="https://www.linkedin.com/in/chiragchrg/" title="LinkedIn" target="_blank" rel="noreferrer">
-                        <img src={LinkedinIcon} alt="LinkedinIcon" />
+                        <img src={LinkedinIcon} alt="LinkedinIcon" width={30} height={30} />
                     </a>
                     <a href="https://twitter.com/ChrgChirag" title="Twitter" target="_blank" rel="noreferrer">
-                        <img src={TwitterIcon} alt="TwitterIcon" />
+                        <img src={TwitterIcon} alt="TwitterIcon" width={30} height={30} />
                     </a>
                     <a href="https://www.instagram.com/chiragchrg/" title="Instagram" target="_blank" rel="noreferrer">
-                        <img src={InstagramIcon} alt="InstagramIcon" />
+                        <img src={InstagramIcon} alt="InstagramIcon" width={30} height={30} />
                     </a>
                     <a href="https://www.google.com/search?q=%22chiragchrg%22" title="Google Search" target="_blank" rel="noreferrer">
-                        <img src={GoogleIcon} alt="GoogleIcon" />
+                        <img src={GoogleIcon} alt="GoogleIcon" width={30} height={30} />
                     </a>
                 </motion.div>
             </div>
@@ -59,7 +59,7 @@ const Hero = () => {
                 <motion.div
                     variants={OrbitItems}
                     className="Hero-Avatar flex">
-                    <img src={AvatarImg} alt="AvatarImg" />
+                    <img src={AvatarImg} alt="ChiragChrg" />
                 </motion.div>
                 <motion.div
                     variants={OrbitItems}
