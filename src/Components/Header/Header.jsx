@@ -18,7 +18,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-50}
                         duration={500}
                         to="about">About</Link>
 
@@ -27,7 +27,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        // offset={isMobile ? -55 : -64}
+                        offset={-30}
                         duration={500}
                         to="projects">Projects</Link>
 
@@ -36,7 +36,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        // offset={isMobile ? -55 : -64}
+                        offset={-60}
                         duration={500}
                         to="skills">Skills</Link>
 
@@ -45,7 +45,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        // offset={isMobile ? -55 : -64}
+                        offset={-60}
                         duration={500}
                         to="contact">Contact</Link>
                 </nav>

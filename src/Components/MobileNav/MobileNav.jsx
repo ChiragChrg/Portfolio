@@ -83,7 +83,7 @@ const MobileNav = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-40}
+                        offset={-25}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="about">About</Link>
@@ -97,7 +97,7 @@ const MobileNav = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        // offset={isMobile ? -55 : -64}
+                        offset={-20}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>

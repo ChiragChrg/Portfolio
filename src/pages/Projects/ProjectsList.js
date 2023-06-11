@@ -70,22 +70,22 @@ export const ProjectsList = [
         Shot: FilmstackShots,
         Tech: [HtmlIcon, CssIcon, JsIcon]
     },
-    {
-        Name: "CovidTrax",
-        Desc: "Search global COVID-19 statistics for each Country and Indian States and Districts",
-        Logo: CovidtraxLogo,
-        Link: "https://covidtrax.netlify.app/",
-        Shot: CovidTraxShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon]
-    },
-    {
-        Name: "Cookeez",
-        Desc: "Find your favorite dishes along with the ingredients for the recipe",
-        Logo: CookeezLogo,
-        Link: "https://cookeez.netlify.app/",
-        Shot: CookeezShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
-    },
+    // {
+    //     Name: "CovidTrax",
+    //     Desc: "Search global COVID-19 statistics for each Country and Indian States and Districts",
+    //     Logo: CovidtraxLogo,
+    //     Link: "https://covidtrax.netlify.app/",
+    //     Shot: CovidTraxShots,
+    //     Tech: [HtmlIcon, CssIcon, JsIcon]
+    // },
+    // {
+    //     Name: "Cookeez",
+    //     Desc: "Find your favorite dishes along with the ingredients for the recipe",
+    //     Logo: CookeezLogo,
+    //     Link: "https://cookeez.netlify.app/",
+    //     Shot: CookeezShots,
+    //     Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
+    // },
     {
         Name: "CliMate",
         Desc: "Get Weather Updates for any location along with Geolocation Support.",
@@ -94,20 +94,20 @@ export const ProjectsList = [
         Shot: ClimateShots,
         Tech: [HtmlIcon, CssIcon, JsIcon]
     },
-    {
-        Name: "Nuklear Brain",
-        Desc: "A simple blog with basic interaction elements and multiple pages.",
-        Logo: NuklearbrainLogo,
-        Link: "https://nuklearbrain.netlify.app/",
-        Shot: NuklearbrainShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon]
-    },
-    {
-        Name: "Kalci",
-        Desc: "A simple Calculator for basic Calcuations and user friendly UI.",
-        Logo: KalciLogo,
-        Link: "https://nuklearbrain.netlify.app/",
-        Shot: KalciShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon]
-    },
+    // {
+    //     Name: "Nuklear Brain",
+    //     Desc: "A simple blog with basic interaction elements and multiple pages.",
+    //     Logo: NuklearbrainLogo,
+    //     Link: "https://nuklearbrain.netlify.app/",
+    //     Shot: NuklearbrainShots,
+    //     Tech: [HtmlIcon, CssIcon, JsIcon]
+    // },
+    // {
+    //     Name: "Kalci",
+    //     Desc: "A simple Calculator for basic Calcuations and user friendly UI.",
+    //     Logo: KalciLogo,
+    //     Link: "https://nuklearbrain.netlify.app/",
+    //     Shot: KalciShots,
+    //     Tech: [HtmlIcon, CssIcon, JsIcon]
+    // },
 ]

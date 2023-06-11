@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 import { FadeUpVariant } from "./Variants"
 
-export const FadeUp = ({ children, isHover = false, width = "fit-content", height = "100%", className = "", setIsFadeDone }) => {
+export const FadeUp = ({ children, onClick, isHover = false, width = "fit-content", height = "100%", className = "", setIsFadeDone }) => {
   const FadeUpRef = useRef(null)
   const isInView = useInView(FadeUpRef, { once: true })
   const FadeControl = useAnimation()
@@ -14,7 +14,7 @@ export const FadeUp = ({ children, isHover = false, width = "fit-content", heigh
   }, [isInView])
 
   return (
-    <div className={isHover ? "CardHover" : ""} style={{ position: "relative", width, height }} ref={FadeUpRef}>
+    <div className={isHover ? "CardHover" : ""} onClick={onClick} style={{ position: "relative", width, height }} ref={FadeUpRef}>
       <motion.div
         variants={FadeUpVariant}
         initial="init"

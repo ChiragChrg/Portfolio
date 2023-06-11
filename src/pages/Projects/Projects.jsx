@@ -1,9 +1,14 @@
 import "./Projects.css"
+import { useState } from "react"
 import { ProjectsList } from "./ProjectsList"
+
 import FadeUp from "../../utils/FadeUp"
 import { LinkArrow } from "../../assets"
+import ProjectDetails from "./ProjectDetails/ProjectDetails"
 
 const Projects = () => {
+    const [selectProject, setSelectProject] = useState([])
+
     return (
         <section id="projects" className="Projects-Main">
             <FadeUp width="100%">
@@ -19,7 +24,10 @@ const Projects = () => {
                 {
                     ProjectsList.map((obj, index) => {
                         return (
-                            <FadeUp isHover className="Projects-Item flex col" key={index}>
+                            <FadeUp isHover
+                                className="Projects-Item flex col"
+                                onClick={() => setSelectProject(obj)}
+                                key={index}>
                                 <div className="Projects-Preview">
                                     <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" />
                                     <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} />
@@ -48,6 +56,8 @@ const Projects = () => {
                     })
                 }
             </FadeUp>
+
+            {selectProject && <ProjectDetails data={selectProject} />}
         </section>
     )
 }
