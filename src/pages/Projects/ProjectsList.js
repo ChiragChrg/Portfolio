@@ -12,7 +12,7 @@ export const ProjectsList = [
         Logo: ArmsLogo,
         Link: "https://armss.netlify.app/",
         Shot: ArmsShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, MongoIcon, GdriveIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon]
     },
     {
         Name: "XRecon",
@@ -20,7 +20,7 @@ export const ProjectsList = [
         Logo: XReconLogo,
         Link: "https://xrecon.netlify.app/",
         Shot: XreconShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, MongoIcon, SocketIoIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon]
     },
     {
         Name: "YoaTube",
@@ -42,9 +42,17 @@ export const ProjectsList = [
         Name: "Piktures",
         Desc: "Access a wide collection of Vibrant and Colorful images. Search and download any images.",
         Logo: PikturesLogo,
-        Link: "https://piktures.netlify.app/",
+        Link: "https://pikture.netlify.app/",
         Shot: PikturesShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
+    },
+    {
+        Name: "Days Beyond",
+        Desc: "Shows Yearly Progress and Daily Events held globally. Check what's Special Today!",
+        Logo: DaysbeyondLogo,
+        Link: "https://daysbeyond.netlify.app/",
+        Shot: DaysbeyondShots,
+        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     },
     // {
     //     Name: "ARMS 1.0",
@@ -61,14 +69,6 @@ export const ProjectsList = [
         Link: "https://filmstack.netlify.app/",
         Shot: FilmstackShots,
         Tech: [HtmlIcon, CssIcon, JsIcon]
-    },
-    {
-        Name: "Days Beyond",
-        Desc: "Shows Yearly Progress and Daily Events held globally. Check what's Special Today!",
-        Logo: DaysbeyondLogo,
-        Link: "https://daysbeyond.netlify.app/",
-        Shot: DaysbeyondShots,
-        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     },
     {
         Name: "CovidTrax",

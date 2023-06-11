@@ -1,4 +1,5 @@
 export { default as PurpleTop } from "./purpleTop.svg"
+export { default as LinkArrow } from "./LinkArrow.svg"
 export { default as AvatarImg } from "./Avatar.webp"
 
 // Code Icon

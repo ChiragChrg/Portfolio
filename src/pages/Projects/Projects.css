@@ -1,6 +1,6 @@
 .Projects-Main {
     position: relative;
-    padding: 2em;
+    padding: 2em 1em;
     padding-top: 0.5em;
     min-height: 100vh;
 }
@@ -13,18 +13,50 @@
     width: 100%;
 }
 
+.Projects-Container .CardHover {
+    scale: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.Projects-Container .CardHover:hover {
+    scale: 1.05;
+}
+
 .Projects-Item {
     width: 100%;
+    /* height: 300px; */
     overflow: hidden;
     position: relative;
     border-radius: 0.4em;
-    /* background-color: rgb(47, 47, 48); */
-    background: var(--gradientLite);
     color: var(--text);
+    background: var(--cardGradient);
+    transition: 0.3s ease;
+}
+
+:has(.Projects-Item:hover) #cursor {
+    width: 65px;
+    height: 65px;
+    background: none;
+    outline: 3px solid #fff;
+}
+
+:has(.Projects-Item:hover) #cursorView {
+    visibility: visible !important;
+}
+
+:has(.Projects-Item:hover) #cursorDot {
+    visibility: hidden !important;
 }
 
 .Projects-Preview {
     position: relative;
+}
+
+.Projects-Shot {
+    background-size: cover;
+    border-radius: 0.4em 0.4em 0 100%;
+    filter: opacity(0.4);
+    /* border-radius: 0.4em 0.4em 0% 0%; */
 }
 
 .Projects-Logo {
@@ -34,26 +66,49 @@
 }
 
 .Projects-Details {
+    padding: 0 1em;
+    width: 100%;
+}
+
+.Projects-Link {
     padding: 0.5em;
+    z-index: 5;
+}
+
+:has(.Projects-Link:hover) #cursor {
+    width: 40px;
+    height: 40px;
+}
+
+:has(.Projects-Link:hover) #cursorView {
+    visibility: hidden !important;
+}
+
+:has(.Projects-Link:hover) #cursorDot {
+    visibility: visible !important;
 }
 
 .Projects-Details p {
     text-align: center;
 }
 
-.Projects-Shot {
-    position: relative;
-    background-size: cover;
-    border-radius: 0.4em 0.4em 0 100%;
+.Projects-Title {
+    justify-content: space-between;
 }
 
 .Projects-Tech {
-    padding-top: 1em;
+    /* padding-top: 0.5em; */
+    align-items: flex-start;
 }
 
-@media (750px < width < 1110px) {
+.Projects-TechIcons {
+    padding: 0.8em 0;
+    width: 100%;
+}
+
+@media (750px < width < 1180px) {
     .Projects-Container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .Projects-Logo {
@@ -66,6 +121,10 @@
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
         padding: 0.5em;
+    }
+
+    .Projects-Container .CardHover:hover {
+        scale: 1;
     }
 
     .Projects-Logo {

@@ -1,7 +1,7 @@
 import "./Projects.css"
 import { ProjectsList } from "./ProjectsList"
 import FadeUp from "../../utils/FadeUp"
-import { HtmlIcon, ReactIcon } from "../../assets"
+import { LinkArrow } from "../../assets"
 
 const Projects = () => {
     return (
@@ -14,25 +14,34 @@ const Projects = () => {
                 </h1>
             </FadeUp>
 
+            {/* <FadeUp href={obj.Link} className="Projects-Item flex col" key={index}> */}
             <FadeUp className="Projects-Container">
                 {
                     ProjectsList.map((obj, index) => {
                         return (
-                            <FadeUp href={obj.Link} className="Projects-Item" key={index}>
+                            <FadeUp isHover className="Projects-Item flex col" key={index}>
                                 <div className="Projects-Preview">
                                     <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" />
                                     <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} />
                                 </div>
                                 <div className="Projects-Details">
-                                    <h2>{obj.Name}</h2>
-                                    <p>{obj.Desc}</p>
+                                    <div className="Projects-Title flex">
+                                        <h2>{obj.Name}</h2>
+                                        <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link flex">
+                                            <img src={LinkArrow} alt="LinkArrow" width={24} />
+                                        </a>
+                                    </div>
+                                    {/* <p>{obj.Desc}</p> */}
 
-                                    <div className="Projects-Tech flex gap">
-                                        {obj.Tech.map((icon, indx) => {
-                                            return (
-                                                <img src={icon} key={indx} alt="HtmlIcon" width={26} />
-                                            )
-                                        })}
+                                    <div className="Projects-Tech flex col">
+                                        {/* <p>Tech used:</p> */}
+                                        <div className="Projects-TechIcons flex gap">
+                                            {obj.Tech.map((icon, indx) => {
+                                                return (
+                                                    <img src={icon} key={indx} alt="HtmlIcon" width={26} />
+                                                )
+                                            })}
+                                        </div>
                                     </div>
                                 </div>
                             </FadeUp>)

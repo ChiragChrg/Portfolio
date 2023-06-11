@@ -6,11 +6,11 @@ const Cursor = () => {
 
     useEffect(() => {
         document.addEventListener('mousemove', evt => {
-            const x = evt.clientX - CursorRef.current.offsetWidth / 2;
-            const y = evt.clientY - CursorRef.current.offsetHeight / 2;
+            const x = evt?.clientX - CursorRef?.current?.offsetWidth / 2;
+            const y = evt?.clientY - CursorRef?.current?.offsetHeight / 2;
             // console.log(evt)
-            const xDot = evt.clientX - CursorDotRef.current.offsetWidth / 2;
-            const yDot = evt.clientY - CursorDotRef.current.offsetHeight / 2;
+            const xDot = evt?.clientX - CursorDotRef?.current?.offsetWidth / 2;
+            const yDot = evt?.clientY - CursorDotRef?.current?.offsetHeight / 2;
 
             // CursorDotRef.current.style.top = y + "px";
             // CursorDotRef.current.style.left = x + "px";
@@ -24,12 +24,12 @@ const Cursor = () => {
                 transform: `translate(${xDot}px, ${yDot}px)`
             }
 
-            CursorRef.current.animate(keyframes, {
+            CursorRef?.current?.animate(keyframes, {
                 duration: 500,
                 easing: "ease-in-out",
                 fill: "forwards",
             })
-            CursorDotRef.current.animate(DotKeyframes, {
+            CursorDotRef?.current?.animate(DotKeyframes, {
                 duration: 10,
                 easing: "ease-out",
                 fill: "forwards"
@@ -40,7 +40,9 @@ const Cursor = () => {
 
     return (
         <div className="Cursor-Main">
-            <div id="cursor" ref={CursorRef}></div>
+            <div id="cursor" ref={CursorRef}>
+                <div id="cursorView" className='flex'>View</div>
+            </div>
             <div id="cursorDot" ref={CursorDotRef}></div>
         </div>
     )
