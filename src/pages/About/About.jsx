@@ -26,7 +26,7 @@ const About = () => {
             </FadeUp>
 
             <FadeUp className="About-Content flex" setIsFadeDone={setIsFadeDone}>
-                <img src={AvatarImg} alt="ChiragChrg" className="About-Image" width="300px" height="300px" />
+                <img src={AvatarImg} alt="ChiragChrg" className="About-Image" width="300px" height="auto" />
 
                 <motion.div
                     variants={StaggerParent}

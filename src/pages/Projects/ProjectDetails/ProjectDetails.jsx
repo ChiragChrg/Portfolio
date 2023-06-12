@@ -5,7 +5,7 @@ const ProjectDetails = ({ data }) => {
 
     useEffect(() => {
         setProject(data)
-        console.log(data)
+        // console.log(data)
     }, [location.state])
 
     return (

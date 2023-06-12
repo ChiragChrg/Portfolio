@@ -29,7 +29,7 @@ const Projects = () => {
                                 onClick={() => setSelectProject(obj)}
                                 key={index}>
                                 <div className="Projects-Preview">
-                                    <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
+                                    <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="auto" />
                                     <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} height={55} />
                                 </div>
                                 <div className="Projects-Details">
