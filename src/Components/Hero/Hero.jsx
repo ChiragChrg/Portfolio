@@ -59,7 +59,7 @@ const Hero = () => {
                 <motion.div
                     variants={OrbitItems}
                     className="Hero-Avatar flex">
-                    <img src={AvatarImg} alt="ChiragChrg" />
+                    <img src={AvatarImg} alt="ChiragChrg" width="100%" height="100%" />
                 </motion.div>
                 <motion.div
                     variants={OrbitItems}
