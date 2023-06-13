@@ -75,7 +75,7 @@ export const TextItems = {
 export const FadeUpVariant = {
     init: {
         opacity: 0,
-        y: 75,
+        y: 50,
     },
     fadeup: {
         y: 0,

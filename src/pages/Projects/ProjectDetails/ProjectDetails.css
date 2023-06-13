@@ -1,0 +1,34 @@
+.ProjectDetails-Main {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    padding: 1em 0.8em;
+    background-color: var(--baseLite);
+    backdrop-filter: blur(5px);
+    z-index: 99999;
+}
+
+.ProjectDetails-Main.Hidden {
+    display: none;
+}
+
+:has(.ProjectDetails-Main.ShowModal) body {
+    overflow: hidden;
+}
+
+.ProjectDetails-Container {
+    width: 100%;
+    height: 100%;
+    background: var(--cardGradientAlt);
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.ProjectDetails-CloseBtn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background: none;
+    border: none;
+}

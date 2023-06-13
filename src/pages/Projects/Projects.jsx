@@ -1,13 +1,12 @@
 import "./Projects.css"
-import { useState } from "react"
 import { ProjectsList } from "./ProjectsList"
+import { useContextData } from "../../Hooks/useContextData"
 
 import FadeUp from "../../utils/FadeUp"
 import { LinkArrow } from "../../assets"
-import ProjectDetails from "./ProjectDetails/ProjectDetails"
 
 const Projects = () => {
-    const [selectProject, setSelectProject] = useState([])
+    const { setSelectedProject } = useContextData()
 
     return (
         <section id="projects" className="Projects-Main">
@@ -26,17 +25,17 @@ const Projects = () => {
                         return (
                             <FadeUp isHover
                                 className="Projects-Item flex col"
-                                onClick={() => setSelectProject(obj)}
+                                onClick={() => setSelectedProject(obj)}
                                 key={index}>
                                 <div className="Projects-Preview">
-                                    <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="auto" />
+                                    <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
                                     <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} height={55} />
                                 </div>
                                 <div className="Projects-Details">
                                     <div className="Projects-Title flex">
                                         <h2>{obj.Name}</h2>
                                         <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link flex">
-                                            <img src={LinkArrow} alt="LinkArrow" width={24} height={24} />
+                                            <img src={LinkArrow} alt="LinkArrow" width="25px" height="25px" />
                                         </a>
                                     </div>
                                     {/* <p>{obj.Desc}</p> */}
@@ -57,7 +56,13 @@ const Projects = () => {
                 }
             </FadeUp>
 
-            {selectProject && <ProjectDetails data={selectProject} />}
+            <FadeUp width="100%">
+                <span className="Title-Tag Closing flex">
+                    <span>{"</"}</span>
+                    <p>My Projects</p>
+                    <span>{">"}</span>
+                </span>
+            </FadeUp>
         </section>
     )
 }

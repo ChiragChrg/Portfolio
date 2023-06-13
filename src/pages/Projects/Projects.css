@@ -12,6 +12,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
     padding: 0 1em;
+    padding-bottom: 1.5em;
     width: 100%;
 }
 
@@ -44,6 +45,7 @@
 
 :has(.Projects-Item:hover) #cursorView {
     visibility: visible !important;
+    font-size: 0.9em;
 }
 
 :has(.Projects-Item:hover) #cursorDot {
@@ -57,14 +59,18 @@
 .Projects-Shot {
     background-size: cover;
     border-radius: 0.4em 0.4em 0 100%;
-    filter: opacity(0.4);
+    filter: opacity(0.5);
     /* border-radius: 0.4em 0.4em 0% 0%; */
+}
+
+.Projects-Item:hover .Projects-Shot {
+    filter: opacity(0.8);
 }
 
 .Projects-Logo {
     position: absolute;
     left: 1em;
-    bottom: 1em;
+    bottom: 1.5em;
 }
 
 .Projects-Details {
@@ -114,8 +120,8 @@
     }
 
     .Projects-Logo {
-        left: 0.5em;
-        bottom: 0.5em;
+        left: 1em;
+        bottom: 2em;
     }
 }
 
@@ -123,6 +129,7 @@
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
         padding: 0;
+        padding-bottom: 1.5em;
     }
 
     .Projects-Container .CardHover:hover {
@@ -130,7 +137,7 @@
     }
 
     .Projects-Logo {
-        left: 0.5em;
-        bottom: 0.5em;
+        left: 1em;
+        bottom: 1.5em;
     }
 }

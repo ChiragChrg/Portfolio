@@ -9,12 +9,15 @@ import Skills from '../Skills/Skills'
 import Projects from '../Projects/Projects'
 import Contact from '../Contact/Contact'
 import Footer from "../Footer/Footer"
+import { useContextData } from "../../Hooks/useContextData"
+import ProjectDetails from "../Projects/ProjectDetails/ProjectDetails"
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const { selectedProject } = useContextData()
 
     useEffect(() => {
-        // Hide Header if Mobile view
+        // Hide Header Comp if Mobile view
         window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
     }, [])
 
@@ -32,6 +35,8 @@ const Home = () => {
             <Skills />
             <Contact />
             <Footer />
+
+            {selectedProject && <ProjectDetails />}
         </main>
     )
 }

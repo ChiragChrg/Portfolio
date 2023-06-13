@@ -29,28 +29,6 @@
     text-decoration: none;
 }
 
-:has(.Header-Logo:hover,
-    .Header-ActionBtn:hover,
-    a:hover) #cursor {
-    width: 40px;
-    height: 40px;
-    background: none;
-    outline: 3px solid #fff;
-}
-
-:has(.Header-Logo:hover,
-    .Header-ActionBtn:hover,
-    a:hover) #cursor::before {
-    content: "";
-    width: calc(100% - 10%);
-    aspect-ratio: 1;
-    inset: 0;
-    margin: auto;
-    border-radius: 50%;
-    position: absolute;
-    background-color: transparent;
-}
-
 .Header-Ham {
     display: none;
 }
