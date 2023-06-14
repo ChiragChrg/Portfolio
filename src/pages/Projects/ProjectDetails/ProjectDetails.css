@@ -40,8 +40,14 @@
     position: absolute;
     top: 1em;
     right: 1em;
+    opacity: 1;
     background: none;
     border: none;
+    transition: 0.2s ease-in-out;
+}
+
+.ProjectDetails-Main.Hidden .ProjectDetails-CloseBtn {
+    opacity: 0;
 }
 
 @media (width < 750px) {
