@@ -53,12 +53,12 @@ const ProjectDetails = () => {
 
                 <div className="ProjectDetails-Right flex col">
                     <div className="ProjectDetails-Links flex">
-                        <a href={selectedProject.Source} className="flex gap05" target="_blank" rel="noreferrer">
+                        <a href={selectedProject.Source ? selectedProject.Source : "https://github.com/ChiragChrg"} className="flex gap05" target="_blank" rel="noreferrer">
                             <img src={GithubIcon} alt="GithubIcon" width={28} height={28} />
                             <span>Source Code</span>
                         </a>
 
-                        <a href={selectedProject.Link} className="flex gap05" target="_blank" rel="noreferrer">
+                        <a href={selectedProject.Link ? selectedProject.Link : "https://chiragchrg.netlify.app/"} className="flex gap05" target="_blank" rel="noreferrer">
                             <img src={LinkArrow} alt="LinkArrow" width={28} height={28} />
                             <span>Live Site</span>
                         </a>
