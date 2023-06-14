@@ -36,31 +36,31 @@
     transition: 0.3s ease;
 }
 
-:has(.Projects-Item:hover) #cursor {
+.Projects-Preview {
+    position: relative;
+}
+
+:has(.Projects-Preview:hover) #cursor {
     width: 65px;
     height: 65px;
     background: none;
     outline: 3px solid #fff;
 }
 
-:has(.Projects-Item:hover) #cursorView {
+:has(.Projects-Preview:hover) #cursorView {
     visibility: visible !important;
     font-size: 0.9em;
 }
 
-:has(.Projects-Item:hover) #cursorDot {
+:has(.Projects-Preview:hover) #cursorDot {
     visibility: hidden !important;
-}
-
-.Projects-Preview {
-    position: relative;
 }
 
 .Projects-Shot {
     background-size: cover;
     border-radius: 0.4em 0.4em 0 100%;
     filter: opacity(0.5);
-    /* border-radius: 0.4em 0.4em 0% 0%; */
+    transition: 0.3s filter ease-in-out;
 }
 
 .Projects-Item:hover .Projects-Shot {
@@ -80,7 +80,12 @@
 
 .Projects-Link {
     padding: 0.5em;
-    z-index: 5;
+    z-index: 10;
+    transition: 0.2s ease-in-out;
+}
+
+.Projects-Link:hover {
+    scale: 1.1;
 }
 
 :has(.Projects-Link:hover) #cursor {
@@ -139,5 +144,9 @@
     .Projects-Logo {
         left: 1em;
         bottom: 1.5em;
+    }
+
+    .Projects-Link:hover {
+        scale: 1;
     }
 }

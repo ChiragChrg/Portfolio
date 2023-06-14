@@ -7,7 +7,7 @@ const bgImg = "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixli
 
 export const ProjectsList = [
     {
-        Name: "ARMS 2.0",
+        Name: "ARMS",
         Desc: "Modified version of ARMS (PHP) Authorized users can upload files Users can access documents anonymously",
         Logo: ArmsLogo,
         Link: "https://armss.netlify.app/",

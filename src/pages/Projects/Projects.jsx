@@ -25,9 +25,8 @@ const Projects = () => {
                         return (
                             <FadeUp isHover
                                 className="Projects-Item flex col"
-                                onClick={() => setSelectedProject(obj)}
                                 key={index}>
-                                <div className="Projects-Preview">
+                                <div className="Projects-Preview" onClick={(e) => setSelectedProject(obj)}>
                                     <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
                                     <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={55} height={55} />
                                 </div>

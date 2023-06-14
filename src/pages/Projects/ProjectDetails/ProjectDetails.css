@@ -6,11 +6,22 @@
     padding: 1em 0.8em;
     background-color: var(--baseLite);
     backdrop-filter: blur(5px);
+    transition: 0.25s ease-in-out;
     z-index: 99999;
 }
 
 .ProjectDetails-Main.Hidden {
-    display: none;
+    visibility: hidden !important;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 95vh;
+    left: 45vw;
+}
+
+.ProjectDetails-Main.ShowModal {
+    visibility: visible;
 }
 
 :has(.ProjectDetails-Main.ShowModal) body {
@@ -31,4 +42,11 @@
     right: 1em;
     background: none;
     border: none;
+}
+
+@media (width < 750px) {
+    .ProjectDetails-Main.Hidden {
+        top: 95vh;
+        left: 38vw;
+    }
 }
