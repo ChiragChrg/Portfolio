@@ -89,7 +89,7 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    background-color: #fff;
+    background-color: var(--LogoBgColor);
     border-radius: 50%;
     padding: 1em;
 }

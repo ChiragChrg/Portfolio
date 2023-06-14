@@ -13,6 +13,7 @@ const ProjectDetails = () => {
     useEffect(() => {
         if (selectedProject.length !== 0) {
             setShowModal(true)
+            document.querySelector(":root").style.setProperty("--LogoBgColor", selectedProject.Theme)
         }
         else
             setShowModal(false)
@@ -30,6 +31,7 @@ const ProjectDetails = () => {
                 <div className="ProjectDetails-Left">
                     <div className="ProjectDetails-Screenshot flex col" ref={ScreenshotRef}>
                         <img src={selectedProject.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
+
                         <div className="ProjectDetails-Logo flex">
                             <img src={selectedProject.Logo} alt="Project_Logo" width={100} height={100} />
                         </div>
@@ -74,7 +76,7 @@ const ProjectDetails = () => {
 
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

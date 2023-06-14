@@ -13,6 +13,7 @@ export const ProjectsList = [
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
         Shot: ArmsShots,
+        Theme: "#fff",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon]
     },
     {
@@ -22,6 +23,7 @@ export const ProjectsList = [
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Shot: XreconShots,
+        Theme: "#001220",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon]
     },
     {
@@ -31,6 +33,7 @@ export const ProjectsList = [
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
         Shot: YoatubeShots,
+        Theme: "#0f0f0f",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     },
     {
@@ -38,6 +41,7 @@ export const ProjectsList = [
         Desc: "Exam Management software developed for Srinivas University. It generates Halltickets and Marks card for Students.",
         Logo: SrinivasLogo,
         Shot: SrinivasShots,
+        Theme: "#fff",
         Link: "https://srinivas-exam-manager.netlify.app/",
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, DatabaseIcon]
@@ -49,6 +53,7 @@ export const ProjectsList = [
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
         Shot: PikturesShots,
+        Theme: "#ddd",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     },
     {
@@ -58,6 +63,7 @@ export const ProjectsList = [
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Shot: DaysbeyondShots,
+        Theme: "#fff",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     },
     // {
@@ -67,6 +73,7 @@ export const ProjectsList = [
     //     Link: "https://sims-arms.000webhostapp.com/",
     //     Source: "https://github.com/ChiragChrg/ARMS-PHP",
     //     Shot: bgImg,
+    //     Theme: "#fff",
     //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon]
     // },
     {
@@ -76,6 +83,7 @@ export const ProjectsList = [
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
         Shot: FilmstackShots,
+        Theme: "#fff",
         Tech: [HtmlIcon, CssIcon, JsIcon]
     },
     // {
@@ -85,6 +93,7 @@ export const ProjectsList = [
     //     Link: "https://covidtrax.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/CovidTrax",
     //     Shot: CovidTraxShots,
+    //     Theme: "#fff",
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
     // },
     // {
@@ -94,6 +103,7 @@ export const ProjectsList = [
     //     Link: "https://cookeez.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Cookeez",
     //     Shot: CookeezShots,
+    //     Theme: "#fff",
     //     Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     // },
     {
@@ -103,6 +113,7 @@ export const ProjectsList = [
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
         Shot: ClimateShots,
+        Theme: "#fff",
         Tech: [HtmlIcon, CssIcon, JsIcon]
     },
     // {
@@ -112,6 +123,7 @@ export const ProjectsList = [
     //     Link: "https://nuklearbrain.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Nuklear-Brain",
     //     Shot: NuklearbrainShots,
+    //     Theme: "#fff",
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
     // },
     // {
@@ -121,6 +133,7 @@ export const ProjectsList = [
     //     Link: "https://nuklearbrain.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Kalci",
     //     Shot: KalciShots,
+    //     Theme: "#fff",
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
     // },
 ]
