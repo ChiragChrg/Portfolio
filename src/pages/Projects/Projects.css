@@ -33,7 +33,7 @@
     border-radius: 0.4em;
     color: var(--text);
     background: var(--cardGradient);
-    transition: 0.3s ease;
+    /* transition: 0.3s ease; */
 }
 
 .Projects-Preview {

@@ -49,6 +49,7 @@
 }
 
 .ProjectDetails-Main.Hidden * {
+    position: absolute;
     opacity: 0;
 }
 
@@ -105,6 +106,7 @@
 
 .ProjectDetails-TechIcons {
     padding: 1em 0;
+    opacity: 0;
 }
 
 .ProjectDetails-TechIcons img {

@@ -58,7 +58,6 @@ export const TextItems = {
         y: 0,
         scale: 1,
         transition: {
-            ease: "easeOut",
             duration: 0.4,
             scale: {
                 type: "spring",
@@ -82,9 +81,11 @@ export const FadeUpVariant = {
         opacity: 1,
         transition: {
             delay: 0.5,
-            type: "spring",
-            stiffness: 200,
-            damping: 40,
+            type: "tween",
+            duration: 0.8,
+            // stiffness: 100,
+            // damping: 20,
+            // restDelta: 0.001,
             delayChildren: 0.6,
             staggerChildren: 0.1
         }
@@ -102,10 +103,9 @@ export const FadeUpChild = {
         y: 0,
         scale: 1,
         transition: {
-            ease: "easeOut",
-            duration: 0.4,
             scale: {
                 type: "spring",
+                duration: 0.4,
                 damping: 10,
                 stiffness: 200,
                 restDelta: 0.001
@@ -127,7 +127,6 @@ export const StaggerParent = {
     }
 
 }
-
 
 export const StaggerChild = {
     init: {

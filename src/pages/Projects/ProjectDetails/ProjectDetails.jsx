@@ -1,14 +1,13 @@
 import "./ProjectDetails.css"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import FadeModal from "../../../utils/FadeModal"
 import { useContextData } from "../../../Hooks/useContextData"
 import { Close, GithubIcon, LinkArrow } from "../../../assets"
 
 const ProjectDetails = () => {
     const [showModal, setShowModal] = useState(false)
     const { selectedProject, setSelectedProject } = useContextData()
-
-    const ScreenshotRef = useRef()
-
 
     useEffect(() => {
         if (selectedProject.length !== 0) {
@@ -17,8 +16,6 @@ const ProjectDetails = () => {
         }
         else
             setShowModal(false)
-
-        // console.log(colorThief)
     }, [selectedProject])
 
     return (
@@ -29,52 +26,52 @@ const ProjectDetails = () => {
                 </button>
 
                 <div className="ProjectDetails-Left">
-                    <div className="ProjectDetails-Screenshot flex col" ref={ScreenshotRef}>
+                    <div className="ProjectDetails-Screenshot flex col">
                         <img src={selectedProject.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
 
-                        <div className="ProjectDetails-Logo flex">
+                        <FadeModal className="ProjectDetails-Logo flex">
                             <img src={selectedProject.Logo} alt="Project_Logo" width={100} height={100} />
-                        </div>
+                        </FadeModal>
                     </div>
                     <div className="ProjectDetails-Overlay"></div>
 
-                    <div className="ProjectDetails-Info flex col">
+                    <FadeModal className="ProjectDetails-Info flex col">
                         <h1 className="flex">{selectedProject.Name}</h1>
 
-                        <div className="ProjectDetails-TechIcons flex gap">
+                        <FadeModal className="ProjectDetails-TechIcons flex gap">
                             {selectedProject?.Tech?.map((icon, indx) => {
                                 return (
-                                    <img src={icon} key={indx} alt="HtmlIcon" width={28} height={28} />
+                                    <motion.img transition={{ delay: 5 }} src={icon} key={indx} alt="HtmlIcon" width={28} height={28} />
                                 )
                             })}
-                        </div>
-                    </div>
+                        </FadeModal>
+                    </FadeModal>
                 </div>
 
-                <div className="ProjectDetails-Right flex col">
-                    <div className="ProjectDetails-Links flex">
+                <FadeModal className="ProjectDetails-Right flex col">
+                    <FadeModal className="ProjectDetails-Links flex">
                         <a href={selectedProject.Source ? selectedProject.Source : "https://github.com/ChiragChrg"} className="flex gap05" target="_blank" rel="noreferrer">
-                            <img src={GithubIcon} alt="GithubIcon" width={28} height={28} />
+                            <motion.img src={GithubIcon} alt="GithubIcon" width={28} height={28} />
                             <span>Source Code</span>
                         </a>
 
                         <a href={selectedProject.Link ? selectedProject.Link : "https://chiragchrg.netlify.app/"} className="flex gap05" target="_blank" rel="noreferrer">
-                            <img src={LinkArrow} alt="LinkArrow" width={28} height={28} />
+                            <motion.img src={LinkArrow} alt="LinkArrow" width={28} height={28} />
                             <span>Live Site</span>
                         </a>
-                    </div>
+                    </FadeModal>
 
-                    <div className="flexStart col gap05">
+                    <FadeModal className="flexStart col gap05">
                         <h2>About the project.</h2>
                         <p>{selectedProject.Desc}</p>
-                    </div>
+                    </FadeModal>
 
-                    <div className="flexStart col gap05">
+                    <FadeModal width="100%" className="flexStart col gap05">
                         <h3>Developed by.</h3>
                         <p>ChiragChrg</p>
-                    </div>
+                    </FadeModal>
 
-                </div>
+                </FadeModal>
             </div>
         </div >
     )
