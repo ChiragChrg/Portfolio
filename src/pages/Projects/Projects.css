@@ -141,6 +141,10 @@
         scale: 1;
     }
 
+    .Projects-Item:hover .Projects-Shot {
+        filter: opacity(0.5);
+    }
+
     .Projects-Logo {
         left: 1em;
         bottom: 1.5em;

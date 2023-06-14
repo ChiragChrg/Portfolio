@@ -15,6 +15,7 @@
     border-radius: 100px;
     width: 100px;
     height: 100px;
+    overflow: scroll;
     position: fixed;
     top: 95vh;
     left: 45vw;
@@ -31,28 +32,158 @@
 .ProjectDetails-Container {
     width: 100%;
     height: 100%;
-    background: var(--cardGradientAlt);
+    /* background: var(--baseLite); */
     border-radius: 0.5em;
     position: relative;
+    align-items: flex-start;
 }
 
 .ProjectDetails-CloseBtn {
     position: absolute;
     top: 1em;
     right: 1em;
-    opacity: 1;
     background: none;
     border: none;
     transition: 0.2s ease-in-out;
+    z-index: 5;
 }
 
-.ProjectDetails-Main.Hidden .ProjectDetails-CloseBtn {
+.ProjectDetails-Main.Hidden * {
     opacity: 0;
 }
 
+.ProjectDetails-Main.ShowModal * {
+    opacity: 1;
+}
+
+.ProjectDetails-Left {
+    position: relative;
+    /* background-color: var(--baseLite); */
+    border-radius: 0.4em;
+    width: 80%;
+    height: 100%;
+}
+
+.ProjectDetails-Overlay {
+    display: none;
+}
+
+.ProjectDetails-Screenshot {
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+}
+
+.ProjectDetails-Screenshot img {
+    border-radius: 0.4em;
+}
+
+.ProjectDetails-Logo {
+    position: relative;
+    width: 100%;
+    top: -3.5em;
+}
+
+.ProjectDetails-Logo::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 1em;
+}
+
+.ProjectDetails-Logo img {
+    z-index: 1;
+}
+
+.ProjectDetails-Info {
+    position: relative;
+    /* padding: 1em 0; */
+}
+
+.ProjectDetails-TechIcons {
+    padding: 1em 0;
+}
+
+.ProjectDetails-TechIcons img {
+    width: 35px;
+    height: 35px;
+}
+
+.ProjectDetails-Right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    gap: 2em;
+    /* background-color: green; */
+}
+
+.ProjectDetails-Right div {
+    width: 100%;
+}
+
+.ProjectDetails-Links {
+    justify-content: flex-start;
+    gap: 5em;
+}
+
+.ProjectDetails-Links a {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.4em;
+    color: var(--text);
+    background: var(--LinkBtnGradient);
+}
+
 @media (width < 750px) {
+    .ProjectDetails-Container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
     .ProjectDetails-Main.Hidden {
         top: 95vh;
         left: 38vw;
+    }
+
+    .ProjectDetails-Left {
+        width: 100%;
+        height: fit-content;
+        z-index: 1;
+    }
+
+    .ProjectDetails-Screenshot {
+        align-items: center;
+    }
+
+    .ProjectDetails-Screenshot img {
+        max-width: none;
+    }
+
+    .ProjectDetails-Logo {
+        justify-content: center;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .ProjectDetails-Overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--overlayGradient);
+    }
+
+    .ProjectDetails-TechIcons img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .ProjectDetails-Links {
+        gap: 2em;
     }
 }

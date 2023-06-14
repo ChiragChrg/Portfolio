@@ -11,6 +11,7 @@ export const ProjectsList = [
         Desc: "Modified version of ARMS (PHP) Authorized users can upload files Users can access documents anonymously",
         Logo: ArmsLogo,
         Link: "https://armss.netlify.app/",
+        Source: "https://github.com/ChiragChrg/ARMS",
         Shot: ArmsShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon]
     },
@@ -19,6 +20,7 @@ export const ProjectsList = [
         Desc: "XRecon is a Realtime Chat App Users can find others using their ID and can Chat with friends and family",
         Logo: XReconLogo,
         Link: "https://xrecon.netlify.app/",
+        Source: "https://github.com/ChiragChrg/xrecon",
         Shot: XreconShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon]
     },
@@ -27,6 +29,7 @@ export const ProjectsList = [
         Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
         Logo: YoatubeLogo,
         Link: "https://yoatube.netlify.app/",
+        Source: "https://github.com/ChiragChrg/yoatube",
         Shot: YoatubeShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     },
@@ -34,8 +37,9 @@ export const ProjectsList = [
         Name: "Srinivas Exam Manager",
         Desc: "Exam Management software developed for Srinivas University. It generates Halltickets and Marks card for Students.",
         Logo: SrinivasLogo,
-        Link: "https://srinivas-exam-manager.netlify.app/",
         Shot: SrinivasShots,
+        Link: "https://srinivas-exam-manager.netlify.app/",
+        Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, DatabaseIcon]
     },
     {
@@ -43,6 +47,7 @@ export const ProjectsList = [
         Desc: "Access a wide collection of Vibrant and Colorful images. Search and download any images.",
         Logo: PikturesLogo,
         Link: "https://pikture.netlify.app/",
+        Source: "https://github.com/ChiragChrg/pikture",
         Shot: PikturesShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     },
@@ -51,6 +56,7 @@ export const ProjectsList = [
         Desc: "Shows Yearly Progress and Daily Events held globally. Check what's Special Today!",
         Logo: DaysbeyondLogo,
         Link: "https://daysbeyond.netlify.app/",
+        Source: "https://github.com/ChiragChrg/DaysBeyond",
         Shot: DaysbeyondShots,
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     },
@@ -59,6 +65,7 @@ export const ProjectsList = [
     //     Desc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. (SIMS - MP)",
     //     Logo: ArmsPhpLogo,
     //     Link: "https://sims-arms.000webhostapp.com/",
+    //     Source: "https://github.com/ChiragChrg/ARMS-PHP",
     //     Shot: bgImg,
     //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon]
     // },
@@ -67,6 +74,7 @@ export const ProjectsList = [
         Desc: "More info on your Fav Movie? Filmstack shows all the details! Search any movie globally.",
         Logo: FilmstackLogo,
         Link: "https://filmstack.netlify.app/",
+        Source: "https://github.com/ChiragChrg/FilmStack",
         Shot: FilmstackShots,
         Tech: [HtmlIcon, CssIcon, JsIcon]
     },
@@ -75,6 +83,7 @@ export const ProjectsList = [
     //     Desc: "Search global COVID-19 statistics for each Country and Indian States and Districts",
     //     Logo: CovidtraxLogo,
     //     Link: "https://covidtrax.netlify.app/",
+    //     Source: "https://github.com/ChiragChrg/CovidTrax",
     //     Shot: CovidTraxShots,
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
     // },
@@ -83,6 +92,7 @@ export const ProjectsList = [
     //     Desc: "Find your favorite dishes along with the ingredients for the recipe",
     //     Logo: CookeezLogo,
     //     Link: "https://cookeez.netlify.app/",
+    //     Source: "https://github.com/ChiragChrg/Cookeez",
     //     Shot: CookeezShots,
     //     Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     // },
@@ -91,6 +101,7 @@ export const ProjectsList = [
         Desc: "Get Weather Updates for any location along with Geolocation Support.",
         Logo: ClimateLogo,
         Link: "https://klimate.netlify.app/",
+        Source: "https://github.com/ChiragChrg/CliMate",
         Shot: ClimateShots,
         Tech: [HtmlIcon, CssIcon, JsIcon]
     },
@@ -99,6 +110,7 @@ export const ProjectsList = [
     //     Desc: "A simple blog with basic interaction elements and multiple pages.",
     //     Logo: NuklearbrainLogo,
     //     Link: "https://nuklearbrain.netlify.app/",
+    //     Source: "https://github.com/ChiragChrg/Nuklear-Brain",
     //     Shot: NuklearbrainShots,
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
     // },
@@ -107,6 +119,7 @@ export const ProjectsList = [
     //     Desc: "A simple Calculator for basic Calcuations and user friendly UI.",
     //     Logo: KalciLogo,
     //     Link: "https://nuklearbrain.netlify.app/",
+    //     Source: "https://github.com/ChiragChrg/Kalci",
     //     Shot: KalciShots,
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
     // },

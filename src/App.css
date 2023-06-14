@@ -1,7 +1,7 @@
 :root {
   /* --base: #fff; */
   --base: #000000;
-  --baseLite: rgba(0, 0, 0, 0.6);
+  --baseLite: rgba(0, 0, 0, 0.8);
   /* --text: #000; */
   --text: #fff;
 
@@ -21,6 +21,8 @@
   --gradientLite: linear-gradient(45deg, var(--purpleLite), var(--pinkLite));
   --cardGradient: linear-gradient(45deg, hsl(0, 0%, 1%), var(--purpleLite));
   --cardGradientAlt: linear-gradient(-135deg, hsl(0, 0%, 5%), var(--purpleLiteAlt));
+  --overlayGradient: linear-gradient(-135deg, hsla(0, 0%, 5%, 0.8), transparent);
+  --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 5%, 0.8));
 }
 
 * {
@@ -68,6 +70,12 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flexStart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .col {
