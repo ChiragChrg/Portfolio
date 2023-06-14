@@ -19,6 +19,7 @@
     position: fixed;
     top: 95vh;
     left: 45vw;
+    z-index: -999;
 }
 
 .ProjectDetails-Main.ShowModal {

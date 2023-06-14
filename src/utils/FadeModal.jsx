@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export const FadeModal = ({ children, className = "", width = "fit-content", height = "100%" }) => {
+export const FadeModal = ({ children, className = "" }) => {
     const FadeInVar = {
         hidden: {
             y: 50,
@@ -22,16 +22,14 @@ export const FadeModal = ({ children, className = "", width = "fit-content", hei
     }
 
     return (
-        <div style={{ position: "relative", width, height }}>
-            <motion.div
-                variants={FadeInVar}
-                initial="hidden"
-                whileInView="visible"
-                exit="hidden"
-                className={className} >
-                {children}
-            </motion.div>
-        </div>
+        <motion.div
+            variants={FadeInVar}
+            initial="hidden"
+            whileInView="visible"
+            exit="hidden"
+            className={className} >
+            {children}
+        </motion.div>
     )
 }
 
