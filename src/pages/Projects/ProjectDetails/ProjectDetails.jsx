@@ -66,6 +66,14 @@ const ProjectDetails = () => {
                         <p>{selectedProject.Desc}</p>
                     </FadeModal>
 
+                    <FadeModal width="100%" className="flexStart col gap05 selectable">
+                        {selectedProject?.Demo && <div className="flexStart col gap05">
+                            <h3>Demo Credentials:</h3>
+                            <p>Email: {selectedProject.Demo.email}</p>
+                            <p>Password: {selectedProject.Demo.password}</p>
+                        </div>}
+                    </FadeModal>
+
                     <FadeModal width="100%" className="flexStart col gap05">
                         <h3>Developed by.</h3>
                         <p>ChiragChrg</p>

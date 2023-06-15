@@ -18,22 +18,23 @@ export const ProjectsList = [
     },
     {
         Name: "XRecon",
-        Desc: "XRecon is a Realtime Chat App Users can find others using their ID and can Chat with friends and family",
+        Desc: "XRecon is a Realtime Chat App Users can find others using their ID and can Chat with friends and family.",
         Logo: XReconLogo,
-        Link: "https://xrecon.netlify.app/",
-        Source: "https://github.com/ChiragChrg/xrecon",
         Shot: XreconShots,
         Theme: "#001220",
+        Link: "https://xrecon.netlify.app/",
+        Source: "https://github.com/ChiragChrg/xrecon",
+        Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon]
     },
     {
         Name: "YoaTube",
-        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD",
+        Desc: "YoaTube is a clone of YouTube You can search and watch any videos I still prefer Youtube Tho XD.",
         Logo: YoatubeLogo,
-        Link: "https://yoatube.netlify.app/",
-        Source: "https://github.com/ChiragChrg/yoatube",
         Shot: YoatubeShots,
         Theme: "#0f0f0f",
+        Link: "https://yoatube.netlify.app/",
+        Source: "https://github.com/ChiragChrg/yoatube",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
     },
     {
@@ -44,6 +45,7 @@ export const ProjectsList = [
         Theme: "#fff",
         Link: "https://srinivas-exam-manager.netlify.app/",
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
+        Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, DatabaseIcon]
     },
     {

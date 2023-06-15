@@ -15,9 +15,8 @@
     border-radius: 100px;
     width: 100px;
     height: 100px;
-    overflow: scroll;
     position: fixed;
-    top: 95vh;
+    top: 105vh;
     left: 45vw;
     z-index: -999;
 }
@@ -84,6 +83,7 @@
     position: relative;
     width: 100%;
     top: -3.5em;
+    z-index: 1;
 }
 
 .ProjectDetails-Logo::after {
@@ -139,6 +139,12 @@
     border-radius: 0.4em;
     color: var(--text);
     background: var(--LinkBtnGradient);
+}
+
+.ProjectDetails-Info h1,
+.ProjectDetails-Right h2,
+.ProjectDetails-Right h3 {
+    font-family: "Ubuntu";
 }
 
 @media (width < 750px) {

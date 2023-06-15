@@ -109,6 +109,10 @@
     justify-content: space-between;
 }
 
+.Projects-Title h2 {
+    font-family: "Ubuntu";
+}
+
 .Projects-Tech {
     /* padding-top: 0.5em; */
     align-items: flex-start;
