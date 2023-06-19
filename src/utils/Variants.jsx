@@ -50,21 +50,14 @@ export const TextContainer = {
 export const TextItems = {
     hidden: {
         opacity: 0,
-        y: 50,
-        scale: 0.8
+        y: 100,
     },
     visible: {
         opacity: 1,
         y: 0,
-        scale: 1,
         transition: {
-            duration: 0.4,
-            scale: {
-                type: "spring",
-                damping: 10,
-                stiffness: 200,
-                restDelta: 0.001
-            }
+            type: "tween",
+            duration: 0.8,
         }
     }
 }

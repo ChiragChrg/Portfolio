@@ -25,11 +25,11 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        ease: "easeOut",
-                        duration: 0.4,
+                        type: "tween",
+                        duration: 0.8,
                         delay: 1
                     }}
                     className="Hero-Links flex">
