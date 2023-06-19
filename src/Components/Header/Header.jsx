@@ -22,6 +22,15 @@ const Header = () => {
                         duration={500}
                         to="about">About</Link>
 
+                    {/* <Link
+                        href="#skills"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        offset={-60}
+                        duration={500}
+                        to="skills">Skills</Link> */}
+
                     <Link
                         href="#projects"
                         activeClass="active"
@@ -30,15 +39,6 @@ const Header = () => {
                         offset={-30}
                         duration={500}
                         to="projects">Projects</Link>
-
-                    <Link
-                        href="#skills"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-60}
-                        duration={500}
-                        to="skills">Skills</Link>
 
                     <Link
                         href="#contact"

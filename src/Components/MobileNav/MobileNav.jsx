@@ -89,6 +89,20 @@ const MobileNav = () => {
                         to="about">About</Link>
                 </motion.div>
 
+                {/* <motion.div
+                    variants={LinkVariant}
+                    className="MobileNav-LinkHolder flex">
+                    <Link
+                        href="#skills"
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        // offset={isMobile ? -55 : -64}
+                        duration={500}
+                        onClick={() => setOpenNav(false)}
+                        to="skills">Skills</Link>
+                </motion.div> */}
+
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
@@ -101,20 +115,6 @@ const MobileNav = () => {
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>
-                </motion.div>
-
-                <motion.div
-                    variants={LinkVariant}
-                    className="MobileNav-LinkHolder flex">
-                    <Link
-                        href="#skills"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        // offset={isMobile ? -55 : -64}
-                        duration={500}
-                        onClick={() => setOpenNav(false)}
-                        to="skills">Skills</Link>
                 </motion.div>
 
                 <motion.div

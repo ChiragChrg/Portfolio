@@ -41,7 +41,7 @@ const ProjectDetails = () => {
                         <FadeModal className="ProjectDetails-TechIcons flex gap">
                             {selectedProject?.Tech?.map((icon, indx) => {
                                 return (
-                                    <motion.img transition={{ delay: 5 }} src={icon} key={indx} alt="HtmlIcon" width={28} height={28} />
+                                    <motion.img transition={{ delay: 5 }} src={icon} key={indx} alt="Tech" width={28} height={28} />
                                 )
                             })}
                         </FadeModal>
