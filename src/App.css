@@ -21,7 +21,7 @@
   --gradientLite: linear-gradient(45deg, var(--purpleLite), var(--pinkLite));
   --cardGradient: linear-gradient(45deg, hsl(0, 0%, 1%), var(--purpleLite));
   --cardGradientAlt: linear-gradient(-135deg, hsl(0, 0%, 5%), var(--purpleLiteAlt));
-  --overlayGradient: linear-gradient(-135deg, hsla(0, 0%, 5%, 0.8), transparent);
+  --overlayGradient: radial-gradient(farthest-corner at 100% 0%, hsla(0, 0%, 5%, 0.5), transparent);
   --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 5%, 0.8));
 }
 
@@ -124,9 +124,10 @@ img {
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s ease-in-out;
-  background-color: #fff;
-  box-shadow: 0 0 20px 0 #fff;
+  background-color: hsla(0, 0%, 100%, 0.6);
+  box-shadow: 0 0 15px 0 hsla(0, 0%, 100%, 0.8);
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .Cursor-Main #cursor::before {
@@ -159,7 +160,8 @@ img {
   pointer-events: none;
   transition: all 10ms ease-out;
   background-color: #fff;
-  box-shadow: 0 0 20px 0 #fff;
+  /* box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, 0.8); */
+  backface-visibility: hidden;
 }
 
 body:hover #cursor,
@@ -175,7 +177,7 @@ body:hover #cursorDot {
   width: 40px;
   height: 40px;
   background: none;
-  outline: 3px solid #fff;
+  outline: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 :has(.Header-Logo:hover,

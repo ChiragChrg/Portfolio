@@ -30,13 +30,14 @@ const Cursor = () => {
                 fill: "forwards",
             })
             CursorDotRef?.current?.animate(DotKeyframes, {
-                duration: 10,
+                duration: 1,
                 easing: "ease-out",
                 fill: "forwards"
             })
         })
 
-    }, [document])
+        return document.addEventListener('mousemove', () => { })
+    }, [])
 
     return (
         <div className="Cursor-Main">
