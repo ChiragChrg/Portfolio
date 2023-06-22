@@ -1,7 +1,7 @@
 :root {
   /* --base: #fff; */
   --base: #000000;
-  --baseLite: rgba(0, 0, 0, 0.8);
+  --baseLite: rgba(0, 0, 0, 0.85);
   /* --text: #000; */
   --text: #fff;
 
@@ -22,7 +22,7 @@
   --cardGradient: linear-gradient(45deg, hsl(0, 0%, 1%), var(--purpleLite));
   --cardGradientAlt: linear-gradient(-135deg, hsl(0, 0%, 5%), var(--purpleLiteAlt));
   --overlayGradient: radial-gradient(farthest-corner at 100% 0%, hsla(0, 0%, 5%, 0.5), transparent);
-  --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 5%, 0.8));
+  --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 15%, 0.8), hsla(0, 0%, 10%, 0.8));
 }
 
 * {
@@ -223,12 +223,35 @@ body:hover #cursorDot {
   .Cursor-Main {
     display: none;
   }
+
+  .ProjectDetails-Right::-webkit-scrollbar {
+    width: 14px !important;
+  }
 }
 
 
 /* Custom ScrollBar */
+/* :not(.ProjectDetails-Right)::-webkit-scrollbar {
+  display: none !important;
+} */
+
 ::-webkit-scrollbar {
-  display: none;
+  width: 16px;
+}
+
+.ProjectDetails-Right::-webkit-scrollbar {
+  width: 14px !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--purpink);
+  border-radius: 14px;
+  border: 6px solid transparent;
+  background-clip: content-box;
 }
 
 /* Custom Text Select Color */

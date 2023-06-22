@@ -102,35 +102,20 @@
 
 .ProjectDetails-Info {
     position: relative;
-    /* padding: 1em 0; */
+    top: -1em;
 }
 
-.ProjectDetails-TechIcons {
-    padding: 1em 0;
-    opacity: 0;
-}
 
 .ProjectDetails-TechIcons img {
     width: 35px;
     height: 35px;
 }
 
-.ProjectDetails-Right {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-    gap: 2em;
-    /* background-color: green; */
-}
-
-.ProjectDetails-Right div {
-    width: 100%;
-}
-
 .ProjectDetails-Links {
-    justify-content: flex-start;
-    gap: 5em;
+    /* gap: 5em; */
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 1em;
 }
 
 .ProjectDetails-Links a {
@@ -139,6 +124,31 @@
     border-radius: 0.4em;
     color: var(--text);
     background: var(--LinkBtnGradient);
+}
+
+.ProjectDetails-Right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    padding-bottom: 3em;
+    overflow-y: auto;
+}
+
+.ProjectDetails-Right div {
+    width: 100%;
+}
+
+.ProjectDetails-About h2 {
+    font-size: 1.6em;
+}
+
+.ProjectDetails-About p {
+    line-height: 1.8em;
+}
+
+.ProjectDetails-Demo {
+    padding-bottom: 1.5em;
 }
 
 .ProjectDetails-Info h1,
@@ -190,9 +200,5 @@
     .ProjectDetails-TechIcons img {
         width: 28px;
         height: 28px;
-    }
-
-    .ProjectDetails-Links {
-        gap: 2em;
     }
 }

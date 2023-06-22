@@ -2,6 +2,7 @@ import "./ProjectDetails.css"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import FadeModal from "../../../utils/FadeModal"
+import FadeUp from "../../../utils/FadeUp"
 import { useContextData } from "../../../Hooks/useContextData"
 import { Close, GithubIcon, LinkArrow } from "../../../assets"
 
@@ -35,7 +36,7 @@ const ProjectDetails = () => {
                     </div>
                     <div className="ProjectDetails-Overlay"></div>
 
-                    <FadeModal className="ProjectDetails-Info flex col">
+                    <FadeModal className="ProjectDetails-Info flex col gap">
                         <h1 className="flex">{selectedProject.Name}</h1>
 
                         <FadeModal className="ProjectDetails-TechIcons flex gap">
@@ -45,40 +46,34 @@ const ProjectDetails = () => {
                                 )
                             })}
                         </FadeModal>
+
+                        <FadeModal className="ProjectDetails-Links flex">
+                            <a href={selectedProject.Source ? selectedProject.Source : "https://github.com/ChiragChrg"} className="flex gap05" target="_blank" rel="noreferrer">
+                                <motion.img src={GithubIcon} alt="GithubIcon" width={28} height={28} />
+                                <span>Source Code</span>
+                            </a>
+
+                            <a href={selectedProject.Link ? selectedProject.Link : "https://chiragchrg.netlify.app/"} className="flex gap05" target="_blank" rel="noreferrer">
+                                <motion.img src={LinkArrow} alt="LinkArrow" width={28} height={28} />
+                                <span>Live Site</span>
+                            </a>
+                        </FadeModal>
                     </FadeModal>
                 </div>
 
-                <FadeModal className="ProjectDetails-Right flex col">
-                    <FadeModal className="ProjectDetails-Links flex">
-                        <a href={selectedProject.Source ? selectedProject.Source : "https://github.com/ChiragChrg"} className="flex gap05" target="_blank" rel="noreferrer">
-                            <motion.img src={GithubIcon} alt="GithubIcon" width={28} height={28} />
-                            <span>Source Code</span>
-                        </a>
-
-                        <a href={selectedProject.Link ? selectedProject.Link : "https://chiragchrg.netlify.app/"} className="flex gap05" target="_blank" rel="noreferrer">
-                            <motion.img src={LinkArrow} alt="LinkArrow" width={28} height={28} />
-                            <span>Live Site</span>
-                        </a>
-                    </FadeModal>
-
-                    <FadeModal className="flexStart col gap05">
-                        <h2>About the project.</h2>
-                        <p>{selectedProject.Desc}</p>
-                    </FadeModal>
-
-                    <FadeModal width="100%" className="flexStart col gap05 selectable">
-                        {selectedProject?.Demo && <div className="flexStart col gap05">
+                <FadeModal className="ProjectDetails-Right">
+                    <FadeUp height="fit-content">
+                        {selectedProject?.Demo && <div className="ProjectDetails-Demo flexStart col gap05 selectable">
                             <h3>Demo Credentials:</h3>
                             <p>Email: {selectedProject.Demo.email}</p>
                             <p>Password: {selectedProject.Demo.password}</p>
                         </div>}
-                    </FadeModal>
+                    </FadeUp>
 
-                    <FadeModal width="100%" className="flexStart col gap05">
-                        <h3>Developed by.</h3>
-                        <p>ChiragChrg</p>
+                    <FadeModal className="ProjectDetails-About flexStart col gap05">
+                        <h2>About the project.</h2>
+                        <p>{selectedProject.Desc}</p>
                     </FadeModal>
-
                 </FadeModal>
             </div>
         </div >

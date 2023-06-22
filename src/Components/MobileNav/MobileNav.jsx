@@ -111,7 +111,7 @@ const MobileNav = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-20}
+                        offset={-19}
                         duration={500}
                         onClick={() => setOpenNav(false)}
                         to="projects">Projects</Link>

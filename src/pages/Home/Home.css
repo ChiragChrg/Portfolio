@@ -1,12 +1,8 @@
 .Home-Main {
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.5); */
     position: relative;
     z-index: 3;
-    /* overflow: scroll; */
-    /* overflow-x: hidden !important; */
-    /* scroll-snap-type: y proximity; */
 }
 
 p,
@@ -18,26 +14,22 @@ h1 {
 .Home-Main section {
     width: 100%;
     height: 100%;
-    /* outline: 1px solid grey; */
-    /* scroll-snap-align: start; */
 }
 
 #contact {
     position: relative;
-    min-height: 150vh;
+    min-height: 100vh;
 }
 
 /* Page Title Style */
 .Title-Tag.Opening {
     margin: 0 0 1em 0;
     justify-content: flex-start;
-    /* padding-left: 0.5em; */
 }
 
 .Title-Tag.Closing {
     justify-content: flex-end;
     padding-top: 0.5em;
-    /* padding-right: 0.5em; */
 }
 
 .Title-Tag span {
@@ -76,6 +68,7 @@ h1 {
 }
 
 /* Page Title Style */
+
 
 #footer {
     width: 100%;

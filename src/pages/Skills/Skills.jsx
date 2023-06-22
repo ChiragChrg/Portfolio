@@ -1,12 +1,11 @@
-import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion"
-import { StaggerParent, StaggerChild } from "../../utils/Variants"
+import "./Skills.css"
 
 const Skills = () => {
     return (
         <section id="skills" className="Skills-Main">
+            <h1>Tech Stack</h1>
             <div className="Skills-Content flex">
-                <h1>SKILLS</h1>
+
             </div>
         </section>
     )

@@ -37,7 +37,7 @@ const Projects = () => {
                                             <img src={LinkArrow} alt="LinkArrow" width="25px" height="25px" />
                                         </a>
                                     </div>
-                                    {/* <p>{obj.Desc}</p> */}
+                                    <p>{obj.ShortDesc}</p>
 
                                     <div className="Projects-Tech flex col">
                                         {/* <p>Tech used:</p> */}
