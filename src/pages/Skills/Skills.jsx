@@ -58,10 +58,10 @@ const Skills = () => {
 
             <div className="Skills-Container flex gap">
                 <FadeUp width="100%" height="100%" className="Skills-Holder flex col gap">
-                    <h3 className="Title-Tag Closing flex">
+                    <h2 className="Title-Tag Closing flex">
                         <p>Front-End</p>
                         <span>{"()"}</span>
-                    </h3>
+                    </h2>
                     <div className="Skills-IconSet">
                         {FrontendStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
@@ -73,10 +73,10 @@ const Skills = () => {
                 </FadeUp>
 
                 <FadeUp width="100%" height="100%" className="Skills-Holder flex col gap">
-                    <h3 className="Title-Tag Closing flex">
+                    <h2 className="Title-Tag Closing flex">
                         <p>Back-End</p>
                         <span>{"()"}</span>
-                    </h3>
+                    </h2>
                     <div className="Skills-IconSet">
                         {BackendStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
@@ -90,10 +90,10 @@ const Skills = () => {
 
             <div className="Skills-Container flex gap">
                 <FadeUp width="100%" height="100%" className="Skills-Holder flex col gap">
-                    <h3 className="Title-Tag Closing flex">
+                    <h2 className="Title-Tag Closing flex">
                         <p>Programming</p>
                         <span>{"()"}</span>
-                    </h3>
+                    </h2>
                     <div className="Skills-IconSet">
                         {ProgrammingStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
@@ -105,10 +105,10 @@ const Skills = () => {
                 </FadeUp>
 
                 <FadeUp width="100%" height="100%" className="Skills-Holder flex col gap">
-                    <h3 className="Title-Tag Closing flex">
+                    <h2 className="Title-Tag Closing flex">
                         <p>Tech & Tools</p>
                         <span>{"()"}</span>
-                    </h3>
+                    </h2>
                     <div className="Skills-IconSet">
                         {ToolsStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">

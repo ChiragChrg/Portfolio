@@ -21,6 +21,10 @@
     padding: 1em;
 }
 
+.Skills-Holder h2 {
+    font-size: 1.1em;
+}
+
 .Skills-IconSet {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
