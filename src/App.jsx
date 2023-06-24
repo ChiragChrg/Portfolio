@@ -5,8 +5,6 @@ import Home from "./pages/Home/Home"
 import Cursor from './Components/Cursor'
 
 function App() {
-
-
   return (
     <div className="App">
       <Browser>
