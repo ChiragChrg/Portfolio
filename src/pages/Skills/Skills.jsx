@@ -1,7 +1,6 @@
 import "./Skills.css"
-import { useEffect, useRef } from 'react'
-import { motion, useInView, useAnimation } from "framer-motion"
-import { FadeUpVariant, BucketIcons } from "../../utils/Variants"
+import { motion } from "framer-motion"
+import { FadeUpVariant, } from "../../utils/Variants"
 import FadeUp from "../../utils/FadeUp"
 import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
@@ -11,16 +10,6 @@ import {
 } from "../../assets"
 
 const Skills = () => {
-    const BucketRef = useRef()
-    const isInView = useInView(BucketRef, { once: true })
-    const BucketControl = useAnimation()
-
-    useEffect(() => {
-        if (isInView) {
-            BucketControl.start("spill")
-        }
-    }, [isInView])
-
     const FrontendStack = [
         { name: "HTML", icon: HtmlIcon },
         { name: "CSS", icon: CssIcon },
@@ -48,7 +37,7 @@ const Skills = () => {
 
     const ToolsStack = [
         { name: "Vite.js", icon: ViteIcon },
-        { name: "Socket.IO", icon: SocketIoIcon },
+        { name: "Socket.io", icon: SocketIoIcon },
         { name: "NPM", icon: NpmIcon },
         { name: "Git", icon: GitIcon },
         { name: "GitHub", icon: GithubIcon },
@@ -76,7 +65,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {FrontendStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <motion.img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
@@ -91,7 +80,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {BackendStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <motion.img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
@@ -108,7 +97,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {ProgrammingStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <motion.img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
@@ -123,7 +112,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {ToolsStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <motion.img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
