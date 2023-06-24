@@ -1,0 +1,61 @@
+.Skills-Main {
+    position: relative;
+    min-height: 50vh;
+}
+
+.Skills-Main h1 {
+    font-size: 1.8em;
+    justify-content: center !important;
+}
+
+.Skills-Container {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.Skills-Holder {
+    /* background-color: rgba(0, 0, 255, 0.534); */
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+}
+
+.Skills-IconSet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.Skills-IconSet.Tools {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.Skills-Icon {
+    padding: 1em;
+    min-width: 7.5em;
+    border-radius: 0.5em;
+    background: var(--SkillGradient);
+}
+
+@media (width < 750px) {
+    .Skills-Main h1 {
+        font-size: 1.5em;
+    }
+
+    .Skills-Container {
+        flex-direction: column;
+    }
+
+    .Skills-IconSet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .Skills-Icon {
+        min-width: 6.5em;
+    }
+
+    .Skills-Icon span {
+        font-size: 0.8em;
+    }
+}

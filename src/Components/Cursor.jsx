@@ -8,14 +8,8 @@ const Cursor = () => {
         document.addEventListener('mousemove', evt => {
             const x = evt?.clientX - CursorRef?.current?.offsetWidth / 2;
             const y = evt?.clientY - CursorRef?.current?.offsetHeight / 2;
-            // console.log(evt)
             const xDot = evt?.clientX - CursorDotRef?.current?.offsetWidth / 2;
             const yDot = evt?.clientY - CursorDotRef?.current?.offsetHeight / 2;
-
-            // CursorDotRef.current.style.top = y + "px";
-            // CursorDotRef.current.style.left = x + "px";
-            // CursorRef.current.style.setProperty("--posx", x + "px")
-            // CursorRef.current.style.setProperty("--posy", x + "px")
 
             const keyframes = {
                 transform: `translate(${x}px, ${y}px)`

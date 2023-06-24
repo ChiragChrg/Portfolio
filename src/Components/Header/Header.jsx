@@ -45,7 +45,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        offset={-40}
                         duration={500}
                         to="contact">Contact</Link>
                 </nav>

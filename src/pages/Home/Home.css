@@ -14,11 +14,12 @@ h1 {
 .Home-Main section {
     width: 100%;
     height: 100%;
+    /* min-height: 100vh; */
 }
 
 #contact {
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 /* Page Title Style */

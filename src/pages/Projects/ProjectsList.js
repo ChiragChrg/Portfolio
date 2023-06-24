@@ -37,7 +37,7 @@ export const ProjectsList = [
         Theme: "#0f0f0f",
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon]
     },
     {
         Name: "Srinivas Exam Manager",
@@ -49,7 +49,7 @@ export const ProjectsList = [
         Link: "https://srinivas-exam-manager.netlify.app/",
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, DatabaseIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, MysqlIcon]
     },
     {
         Name: "Piktures",
@@ -60,7 +60,7 @@ export const ProjectsList = [
         Theme: "#ddd",
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon]
     },
     {
         Name: "Days Beyond",
@@ -93,7 +93,7 @@ export const ProjectsList = [
         Theme: "#fff",
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
-        Tech: [HtmlIcon, CssIcon, JsIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     },
     // {
     //     Name: "CovidTrax",
@@ -104,7 +104,7 @@ export const ProjectsList = [
     //     Theme: "#fff",
     //     Link: "https://covidtrax.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/CovidTrax",
-    //     Tech: [HtmlIcon, CssIcon, JsIcon]
+    //     Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     // },
     // {
     //     Name: "Cookeez",
@@ -115,7 +115,7 @@ export const ProjectsList = [
     //     Theme: "#fff",
     //     Link: "https://cookeez.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Cookeez",
-    //     Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon]
+    //     Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon]
     // },
     {
         Name: "CliMate",
@@ -126,7 +126,7 @@ export const ProjectsList = [
         Theme: "#fff",
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
-        Tech: [HtmlIcon, CssIcon, JsIcon]
+        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
     },
     // {
     //     Name: "Nuklear Brain",

@@ -1,8 +1,8 @@
 .Projects-Main {
     position: relative;
     padding: 2em 1em;
-    /* padding-top: 0.5em; */
-    min-height: 100vh;
+    /* padding-bottom: 0; */
+    /* min-height: 100vh; */
 }
 
 .Projects-Container {

@@ -81,7 +81,7 @@ export const FadeUpVariant = {
             // damping: 20,
             // restDelta: 0.001,
             delayChildren: 0.6,
-            staggerChildren: 0.1
+            staggerChildren: 0.2
         }
     }
 }
