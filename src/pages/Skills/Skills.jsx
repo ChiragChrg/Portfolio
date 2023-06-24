@@ -37,7 +37,6 @@ const Skills = () => {
         { name: "PHP", icon: PhpIcon },
         { name: "REST API", icon: DatabaseIcon },
         { name: "Drive API", icon: GdriveIcon },
-        { name: "Socket.IO", icon: SocketIoIcon },
     ]
 
     const ProgrammingStack = [
@@ -49,6 +48,7 @@ const Skills = () => {
 
     const ToolsStack = [
         { name: "Vite.js", icon: ViteIcon },
+        { name: "Socket.IO", icon: SocketIoIcon },
         { name: "NPM", icon: NpmIcon },
         { name: "Git", icon: GitIcon },
         { name: "GitHub", icon: GithubIcon },
