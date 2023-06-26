@@ -143,6 +143,14 @@
     border: none;
 }
 
+#Contact-Vector {
+    position: absolute;
+    bottom: -1em;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
 @media (width < 750px) {
     .Contact-Container {
         flex-direction: column;

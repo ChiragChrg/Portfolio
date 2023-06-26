@@ -17,11 +17,6 @@ h1 {
     min-height: 100vh;
 }
 
-#contact {
-    position: relative;
-    /* min-height: 80vh; */
-}
-
 /* Page Title Style */
 .Title-Tag.Opening {
     margin: 0 0 1em 0;
@@ -73,22 +68,15 @@ h1 {
     .Title-Tag.Opening::after {
         height: 2px;
     }
-
 }
 
 /* Page Title Style */
 
-
-#footer {
+/* Footer CSS */
+.Footer-Main {
     width: 100%;
     height: 50vh;
+    align-items: flex-end;
+    padding: 2em 1em;
     background-color: #1E004C;
-}
-
-#Contact-Vector {
-    position: absolute;
-    bottom: -1em;
-    width: 100%;
-    object-fit: cover;
-    pointer-events: none;
 }
