@@ -53,28 +53,34 @@ const Contact = () => {
             <FadeUp width="100%">
                 <h1 className="Title-Tag Opening flex">
                     <span>{"<"}</span>
-                    <p>Let's Talk</p>
+                    <p>Contact</p>
                     <span>{"/>"}</span>
                 </h1>
             </FadeUp>
+
+            <h2 className="flex col">
+                <p className="gradientText contactGrad">Let's collaborate!</p>
+                <p>Contact me to discuss your web development needs</p>
+                <p>or just to say hello.</p>
+            </h2>
 
             <div className="Contact-Container flex">
                 <div className="Contact-Left flex col">
                     <div className="Contact-Social flex">
                         <a href="https://www.facebook.com/ChiragChrg/" className="Contact-Icon facebook" title="Facebook" target="_blank" rel="noreferrer">
-                            <img src={FaceBookIcon} alt="FaceBook" width={40} height={40} />
+                            <img src={FaceBookIcon} alt="FaceBook" width={30} height={30} />
                         </a>
                         <a href="https://www.instagram.com/chiragchrg/" className="Contact-Icon instagram" title="Instagram" target="_blank" rel="noreferrer">
-                            <img src={InstagramIcon} alt="Instagram" width={40} height={40} />
+                            <img src={InstagramIcon} alt="Instagram" width={30} height={30} />
                         </a>
                         <a href="mailto:chiruchirag2001@gmail.com" className="Contact-Icon Gmail" title="Gmail" target="_blank" rel="noreferrer">
-                            <img src={GmailIcon} alt="Gmail" width={40} height={40} />
+                            <img src={GmailIcon} alt="Gmail" width={30} height={30} />
                         </a>
                         <a href="https://twitter.com/ChrgChirag" className="Contact-Icon twitter" title="Twitter" target="_blank" rel="noreferrer">
-                            <img src={TwitterIcon} alt="Twitter" width={40} height={40} />
+                            <img src={TwitterIcon} alt="Twitter" width={30} height={30} />
                         </a>
                         <a href="https://discordapp.com/users/647359627461263390" className="Contact-Icon discord" title="Discord" target="_blank" rel="noreferrer">
-                            <img src={DiscordIcon} alt="Discord" width={40} height={40} />
+                            <img src={DiscordIcon} alt="Discord" width={30} height={30} />
                         </a>
                     </div>
                     <img src={ContactArt} alt="ContactArt" width="400px" />

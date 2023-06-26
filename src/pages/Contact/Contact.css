@@ -8,18 +8,27 @@
     justify-content: center !important;
 }
 
+.Contact-Main h2 {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.Contact-Main .contactGrad {
+    font-family: Ubuntu;
+}
+
 .Contact-Container {
-    /* background-color: rgba(255, 0, 0, 0.384); */
     width: 100%;
     height: 100%;
     padding: 0 5em;
-    padding-bottom: 15em;
+    padding-top: 2em;
+    padding-bottom: 20em;
 }
 
 .Contact-Left {
     width: 50%;
     height: 100%;
-    /* background-color: blueviolet; */
     position: relative;
 }
 
@@ -29,8 +38,6 @@
     gap: 2em;
     width: 500px;
     height: 500px;
-    /* background-color: rgba(255, 0, 0, 0.26); */
-    /* padding: 1em; */
     border-radius: 50%;
 }
 
@@ -71,10 +78,9 @@
     left: 81%;
 }
 
-
 :has(.Contact-Icon:hover) #cursor {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 .Contact-Form {
