@@ -25,7 +25,7 @@
 }
 
 .Header-Logo {
-    cursor: none;
+    cursor: pointer;
     text-decoration: none;
 }
 

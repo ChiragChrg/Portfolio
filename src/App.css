@@ -42,17 +42,18 @@ body {
   background-color: var(--base);
   color: var(--text);
   scroll-behavior: smooth;
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 
-/* a{
+a {
   cursor: pointer !important;
-} */
+}
 
 a,
+button,
 h1,
 p {
-  cursor: none !important;
+  /* cursor: none !important; */
   text-decoration: none;
 }
 
@@ -153,6 +154,8 @@ img {
   height: 100%;
   font-size: 0;
   letter-spacing: 1px;
+  background: var(--purpleLite);
+  border-radius: 50%;
 }
 
 
