@@ -1,0 +1,133 @@
+.Contact-Main {
+    position: relative;
+    padding-top: 2.5em;
+}
+
+.Contact-Main h1 {
+    width: 100%;
+    justify-content: center !important;
+}
+
+.Contact-Container {
+    /* background-color: rgba(255, 0, 0, 0.384); */
+    width: 100%;
+    height: 100%;
+    padding: 0 5em;
+    padding-bottom: 15em;
+}
+
+.Contact-Left {
+    width: 50%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    position: relative;
+}
+
+.Contact-Social {
+    position: absolute;
+    align-items: flex-start;
+    gap: 2em;
+    width: 500px;
+    height: 500px;
+    /* background-color: rgba(255, 0, 0, 0.26); */
+    /* padding: 1em; */
+    border-radius: 50%;
+}
+
+
+.Contact-Icon {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+    padding: 1em;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Contact-Icon.facebook {
+    top: 25%;
+    left: 4%;
+}
+
+.Contact-Icon.instagram {
+    top: 7%;
+    left: 20%;
+}
+
+/* .Contact-Icon.Gmail {
+    top: 0;
+    left: 40%;
+} */
+
+.Contact-Icon.twitter {
+    top: 7%;
+    left: 65%;
+}
+
+.Contact-Icon.discord {
+    top: 25%;
+    left: 81%;
+}
+
+
+:has(.Contact-Icon:hover) #cursor {
+    width: 50px;
+    height: 50px;
+}
+
+.Contact-Form {
+    width: 50%;
+    height: 100%;
+    background: var(--LinkBtnGradient);
+    border-radius: 0.4em;
+    padding: 1em 2em;
+}
+
+.Contact-Input {
+    width: 100%;
+    position: relative;
+    align-items: flex-start;
+    padding: 0.2em 0.5em;
+}
+
+:has(.Contact-Input:hover) #cursor,
+:has(.Contact-Input:hover) #cursorDot {
+    opacity: 0;
+}
+
+.Contact-Input input,
+.Contact-Input textarea {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.8em;
+    border-radius: 0.4em;
+    border: none;
+    outline: none;
+}
+
+.Contact-Input textarea {
+    resize: none;
+}
+
+.Contact-InputError {
+    font-size: 0.8em;
+    padding: 0.2em;
+    visibility: hidden;
+}
+
+.Contact-InputError.isError {
+    visibility: visible;
+}
+
+:has(.Contact-InputError.isError).Contact-Input input {
+    outline: 1px solid red;
+}
+
+.Contact-Submit {
+    width: 50%;
+    padding: 1em;
+    border-radius: 0.4em;
+    border: none;
+}
