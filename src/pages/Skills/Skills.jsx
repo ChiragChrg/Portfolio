@@ -65,7 +65,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {FrontendStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
@@ -80,7 +80,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {BackendStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
@@ -97,7 +97,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {ProgrammingStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}
@@ -112,7 +112,7 @@ const Skills = () => {
                     <div className="Skills-IconSet">
                         {ToolsStack.map((obj, i) => {
                             return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={40} height={40} />
+                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
                                 <span>{obj.name}</span>
                             </FadeUp>
                         })}

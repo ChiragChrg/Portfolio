@@ -196,6 +196,7 @@
         justify-content: flex-end;
         padding: 2em;
         gap: 3em;
+        min-height: 80vh !important;
     }
 
     .Hero-AvatarContainer {

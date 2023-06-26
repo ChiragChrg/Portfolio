@@ -8,7 +8,7 @@ export const OrbitContainer = {
         transition: {
             delay: 0.6,
             delayChildren: 0.6,
-            staggerChildren: 0.1
+            staggerChildren: 0.12
         }
     }
 }
@@ -21,9 +21,12 @@ export const OrbitItems = {
     visible: {
         opacity: 1,
         scale: 1,
+        // rotate: 360,
         transition: {
-            ease: [0, 0.71, 0.2, 1.01],
-            duration: 0.5,
+            // ease: [0, 0.71, 0.2, 1.01],
+            // duration: 5,
+            // repeat: Infinity,
+            // repeatType: "loop",
             scale: {
                 type: "spring",
                 damping: 5,
@@ -43,7 +46,7 @@ export const TextContainer = {
         transition: {
             delay: 0.5,
             delayChildren: 0.5,
-            staggerChildren: 0.1
+            staggerChildren: 0.15
         }
     }
 }
@@ -58,7 +61,7 @@ export const TextItems = {
         y: 0,
         transition: {
             type: "tween",
-            duration: 0.8,
+            duration: 0.9,
         }
     }
 }
@@ -99,7 +102,7 @@ export const FadeUpChild = {
         transition: {
             scale: {
                 type: "spring",
-                duration: 0.4,
+                // duration: 0.4,
                 damping: 10,
                 stiffness: 200,
                 restDelta: 0.001

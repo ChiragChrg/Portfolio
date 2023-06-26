@@ -37,6 +37,7 @@
 }
 
 .Projects-Preview {
+    width: 100%;
     position: relative;
     cursor: pointer;
 }
@@ -124,7 +125,7 @@
     width: 100%;
 }
 
-@media (750px < width < 1180px) {
+@media (855px < width < 1180px) {
     .Projects-Container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -135,7 +136,7 @@
     }
 }
 
-@media (width < 750px) {
+@media (width < 855px) {
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
         padding: 0;

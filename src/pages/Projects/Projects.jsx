@@ -56,7 +56,7 @@ const Projects = () => {
             </FadeUp>
 
             <FadeUp width="100%">
-                <span className="Title-Tag Closing flex">
+                <span className="Title-Tag Closing pink flex">
                     <span>{"</"}</span>
                     <p>My Projects</p>
                     <span>{">"}</span>

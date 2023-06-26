@@ -68,7 +68,7 @@ export const ProjectsList = [
         Desc: "Days Beyond is a feature-rich calendar event app that goes beyond traditional functionality. It not only helps you stay organized with events but also showcases the progress of the current year in percentage. Additionally, it displays the exact duration—days, hours, minutes, and seconds since January 1st of the current year, adding a unique perspective to time. Discover the significance of today, uncover special occasions, and easily search for specific dates. Furthermore, Days Beyond accurately calculates your age, ensuring precision and convenience.",
         Logo: DaysbeyondLogo,
         Shot: DaysbeyondShots,
-        Theme: "#fff",
+        Theme: "#008ee0",
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
