@@ -64,7 +64,7 @@ const Contact = () => {
                 <p>or just to say hello.</p>
             </h2>
 
-            <div className="Contact-Container flex">
+            <div className="Contact-Container flex gap">
                 <div className="Contact-Left flex col">
                     <div className="Contact-Social flex">
                         <a href="https://www.facebook.com/ChiragChrg/" className="Contact-Icon facebook" title="Facebook" target="_blank" rel="noreferrer">
@@ -83,7 +83,7 @@ const Contact = () => {
                             <img src={DiscordIcon} alt="Discord" width={30} height={30} />
                         </a>
                     </div>
-                    <img src={ContactArt} alt="ContactArt" width="400px" />
+                    <img className="Contact-VectorArt" src={ContactArt} alt="ContactArt" width="400px" />
                 </div>
 
                 <form className="Contact-Form flex col" onSubmit={SendMail}>

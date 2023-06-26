@@ -30,10 +30,11 @@
     width: 50%;
     height: 100%;
     position: relative;
+    top: 3em;
 }
 
 .Contact-Social {
-    position: absolute;
+    position: relative;
     align-items: flex-start;
     gap: 2em;
     width: 500px;
@@ -81,6 +82,10 @@
 :has(.Contact-Icon:hover) #cursor {
     width: 70px;
     height: 70px;
+}
+
+.Contact-VectorArt {
+    position: absolute;
 }
 
 .Contact-Form {
@@ -136,4 +141,30 @@
     padding: 1em;
     border-radius: 0.4em;
     border: none;
+}
+
+@media (width < 750px) {
+    .Contact-Container {
+        flex-direction: column;
+        padding: 0;
+        padding-bottom: 10em;
+    }
+
+    .Contact-Social {
+        width: 380px;
+        height: 380px;
+    }
+
+    .Contact-VectorArt {
+        width: 300px;
+    }
+
+    .Contact-Left {
+        width: 100%;
+    }
+
+    .Contact-Form {
+        width: 90%;
+        padding: 1em;
+    }
 }
