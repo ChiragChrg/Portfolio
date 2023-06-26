@@ -22,14 +22,14 @@ const Header = () => {
                         duration={500}
                         to="about">About</Link>
 
-                    {/* <Link
+                    <Link
                         href="#skills"
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        offset={-50}
                         duration={500}
-                        to="skills">Skills</Link> */}
+                        to="skills">Skills</Link>
 
                     <Link
                         href="#projects"
@@ -45,7 +45,7 @@ const Header = () => {
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={-40}
+                        offset={-20}
                         duration={500}
                         to="contact">Contact</Link>
                 </nav>

@@ -14,7 +14,7 @@ h1 {
 .Home-Main section {
     width: 100%;
     height: 100%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
 }
 
 #contact {
@@ -31,6 +31,7 @@ h1 {
 .Title-Tag.Closing {
     justify-content: flex-end;
     padding-top: 0.5em;
+    opacity: 0.6;
 }
 
 .Title-Tag span {
@@ -65,6 +66,13 @@ h1 {
 
 .Title-Tag.Opening.pink::after {
     background-color: var(--pinkLite);
+
+}
+
+@media (width < 750px) {
+    .Title-Tag.Opening::after {
+        height: 2px;
+    }
 
 }
 
