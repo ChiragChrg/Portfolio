@@ -9,6 +9,7 @@ const Contact = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
+    const [msgStatus, setMsgStatus] = useState({ status: false, msg: "" })
 
     const NameRef = useRef()
     const EmailRef = useRef()
@@ -47,6 +48,20 @@ const Contact = () => {
             templateParams,
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
+
+        if (mailRes.status === 200) {
+            setMsgStatus({ status: true, msg: "Message Sent!" })
+
+            setName("")
+            setEmail("")
+            setMessage("")
+        } else {
+            setMsgStatus({ status: true, msg: "Message Not Sent" })
+
+            setName("")
+            setEmail("")
+            setMessage("")
+        }
     }
 
     return (
@@ -109,10 +124,13 @@ const Contact = () => {
                             <span className="Contact-InputError">Whoops! Say somthing.</span>
                         </FadeUp>
 
-                        <FadeUp>
-                            <button className="Contact-Submit flex" type="submit">
+                        <FadeUp width="100%" className="Contact-Submit flex">
+                            <button className="flex" type="submit">
                                 <span>Submit</span>
+                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="m21.426 11.095-17-8A.999.999 0 0 0 3.03 4.242L4.969 12 3.03 19.758a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81zM5.481 18.197l.839-3.357L12 12 6.32 9.16l-.839-3.357L18.651 12l-13.17 6.197z"></path></svg>
                             </button>
+
+                            <div className={msgStatus.status ? "Contact-MsgStatus" : "Contact-MsgStatus err"}>{msgStatus.msg}</div>
                         </FadeUp>
                     </form>
                 </FadeModal>

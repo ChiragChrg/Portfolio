@@ -159,15 +159,29 @@ input:-webkit-autofill:active {
 }
 
 .Contact-Submit {
-    margin: 0.2em 0.5em;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.Contact-Submit button {
+    /* margin: 0.2em 0.5em; */
     padding: 0.5em 5em;
     border-radius: 0.4em;
     font-size: 1em;
+    gap: 1em;
     border: none;
     background-color: var(--base);
     color: var(--text);
     cursor: pointer;
     outline: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+
+.Contact-MsgStatus {
+    color: rgb(1, 190, 1);
+}
+
+.Contact-MsgStatus.err {
+    color: rgb(212, 3, 3);
 }
 
 #Contact-Vector {
@@ -202,4 +216,11 @@ input:-webkit-autofill:active {
         width: 90%;
         padding: 1em;
     }
+
+    /* .Contact-Submit { */
+    .Contact-Submit button {
+        margin: 0 0.5em;
+        padding: 0.5em 2em;
+    }
+
 }
