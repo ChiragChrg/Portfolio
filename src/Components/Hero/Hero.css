@@ -55,7 +55,7 @@
     overflow: hidden;
     border-radius: 50%;
     z-index: 6;
-    cursor: none;
+    /* cursor: none; */
     /* transition: 0.5s ease-in-out; */
 }
 

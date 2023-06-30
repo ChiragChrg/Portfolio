@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon, GithubIcon, TwitterIcon, DiscordIcon, LinkedinIcon } from "../../assets"
+import { FaceBookIcon, InstagramIcon, GithubIcon, TwitterIcon, DiscordIcon, LinkedinIcon } from "../../assets"
 
 const Footer = () => {
     return (

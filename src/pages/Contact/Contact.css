@@ -8,26 +8,27 @@
     justify-content: center !important;
 }
 
-.Contact-Main h2 {
-    display: flex;
-    justify-content: center;
+.Contact-Intro {
     padding: 1em;
+    font-size: 1.5em;
 }
 
 .Contact-Main .contactGrad {
     font-family: Ubuntu;
+    font-size: 1.6em;
 }
 
 .Contact-Container {
     width: 100%;
     height: 100%;
+    gap: 5em;
     padding: 0 5em;
     padding-top: 2em;
     padding-bottom: 20em;
 }
 
 .Contact-Left {
-    width: 50%;
+    /* width: 50%; */
     height: 100%;
     position: relative;
     top: 3em;
@@ -57,14 +58,17 @@
 .Contact-Icon.facebook {
     top: 25%;
     left: 4%;
+    /* --hoverClr: #1877F2; */
 }
 
 .Contact-Icon.instagram {
     top: 7%;
     left: 20%;
+    /* --hoverClr: #d31192; */
 }
 
 /* .Contact-Icon.Gmail {
+    --hoverClr: #d11d05;
     top: 0;
     left: 40%;
 } */
@@ -72,11 +76,13 @@
 .Contact-Icon.twitter {
     top: 7%;
     left: 65%;
+    /* --hoverClr: #1DA1F2; */
 }
 
 .Contact-Icon.discord {
     top: 25%;
     left: 81%;
+    /* --hoverClr: #3557d1; */
 }
 
 :has(.Contact-Icon:hover) #cursor {
@@ -93,7 +99,12 @@
     height: 100%;
     background: var(--LinkBtnGradient);
     border-radius: 0.4em;
-    padding: 1em 2em;
+    padding: 1em;
+    outline: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+
+.Contact-Form form {
+    width: 100%;
 }
 
 .Contact-Input {
@@ -112,14 +123,25 @@
 .Contact-Input textarea {
     width: 100%;
     font-size: 1em;
-    padding: 0.8em;
+    padding: 0.5em;
+    margin-top: 0.2em;
     border-radius: 0.4em;
     border: none;
     outline: none;
+    background-color: var(--base);
+    color: var(--text);
 }
 
 .Contact-Input textarea {
     resize: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 999999s ease-in-out 0s;
 }
 
 .Contact-InputError {
@@ -137,10 +159,15 @@
 }
 
 .Contact-Submit {
-    width: 50%;
-    padding: 1em;
+    margin: 0.2em 0.5em;
+    padding: 0.5em 5em;
     border-radius: 0.4em;
+    font-size: 1em;
     border: none;
+    background-color: var(--base);
+    color: var(--text);
+    cursor: pointer;
+    outline: 1px solid hsla(0, 0%, 100%, 0.2);
 }
 
 #Contact-Vector {

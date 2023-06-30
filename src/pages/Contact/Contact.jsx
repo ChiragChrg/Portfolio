@@ -1,6 +1,7 @@
 import "./Contact.css"
 import { useState, useRef } from "react"
 import FadeUp from "../../utils/FadeUp"
+import FadeModal from "../../utils/FadeModal"
 import emailjs from "@emailjs/browser"
 import { ContactArt, InstagramIcon, TwitterIcon, FaceBookIcon, DiscordIcon, GmailIcon } from "../../assets"
 
@@ -58,14 +59,16 @@ const Contact = () => {
                 </h1>
             </FadeUp>
 
-            <h2 className="flex col">
+            <FadeUp width="100%" className="Contact-Intro flex col">
+                {/* <h2 className="flex col"> */}
                 <p className="gradientText contactGrad">Let's collaborate!</p>
                 <p>Contact me to discuss your web development needs</p>
                 <p>or just to say hello.</p>
-            </h2>
+                {/* </h2> */}
+            </FadeUp>
 
-            <div className="Contact-Container flex gap">
-                <div className="Contact-Left flex col">
+            <div className="Contact-Container flex">
+                <FadeUp className="Contact-Left flex col">
                     <div className="Contact-Social flex">
                         <a href="https://www.facebook.com/ChiragChrg/" className="Contact-Icon facebook" title="Facebook" target="_blank" rel="noreferrer">
                             <img src={FaceBookIcon} alt="FaceBook" width={30} height={30} />
@@ -84,31 +87,35 @@ const Contact = () => {
                         </a>
                     </div>
                     <img className="Contact-VectorArt" src={ContactArt} alt="ContactArt" width="400px" />
-                </div>
+                </FadeUp>
 
-                <form className="Contact-Form flex col" onSubmit={SendMail}>
-                    <div className="Contact-Input flex col">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" onChange={(e) => setName(e.target.value)} ref={NameRef} />
-                        <span className="Contact-InputError">What's your name?</span>
-                    </div>
+                <FadeModal className="Contact-Form flex col">
+                    <form onSubmit={SendMail}>
+                        <FadeUp width="100%" className="Contact-Input flex col">
+                            <label htmlFor="name">Name</label>
+                            <input type="text" id="name" onChange={(e) => setName(e.target.value)} ref={NameRef} />
+                            <span className="Contact-InputError">What's your name?</span>
+                        </FadeUp>
 
-                    <div className="Contact-Input flex col">
-                        <label htmlFor="email">Email</label>
-                        <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} ref={EmailRef} />
-                        <span className="Contact-InputError">Enter a valid Email ID</span>
-                    </div>
+                        <FadeUp width="100%" className="Contact-Input flex col">
+                            <label htmlFor="email">Email</label>
+                            <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} ref={EmailRef} />
+                            <span className="Contact-InputError">Enter a valid Email ID</span>
+                        </FadeUp>
 
-                    <div className="Contact-Input flex col">
-                        <label htmlFor="message">Your Message</label>
-                        <textarea rows={5} id="message" onChange={(e) => setMessage(e.target.value)} ref={MessageRef} />
-                        <span className="Contact-InputError">Whoops! Say somthing.</span>
-                    </div>
+                        <FadeUp width="100%" className="Contact-Input flex col">
+                            <label htmlFor="message">Your Message</label>
+                            <textarea rows={5} id="message" onChange={(e) => setMessage(e.target.value)} ref={MessageRef} />
+                            <span className="Contact-InputError">Whoops! Say somthing.</span>
+                        </FadeUp>
 
-                    <button className="Contact-Submit flex" type="submit">
-                        <span>Submit</span>
-                    </button>
-                </form >
+                        <FadeUp>
+                            <button className="Contact-Submit flex" type="submit">
+                                <span>Submit</span>
+                            </button>
+                        </FadeUp>
+                    </form>
+                </FadeModal>
             </div >
 
             <div id="Contact-Vector">
