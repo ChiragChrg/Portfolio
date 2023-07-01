@@ -10,12 +10,16 @@
 
 .Contact-Intro {
     padding: 1em;
-    font-size: 1.5em;
+}
+
+.Contact-Intro p {
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .Contact-Main .contactGrad {
     font-family: Ubuntu;
-    font-size: 1.6em;
+    font-size: 2.4em !important;
 }
 
 .Contact-Container {
@@ -164,7 +168,7 @@ input:-webkit-autofill:active {
 }
 
 .Contact-Submit button {
-    /* margin: 0.2em 0.5em; */
+    margin: 0 0.5em;
     padding: 0.5em 5em;
     border-radius: 0.4em;
     font-size: 1em;
@@ -217,10 +221,12 @@ input:-webkit-autofill:active {
         padding: 1em;
     }
 
-    /* .Contact-Submit { */
-    .Contact-Submit button {
-        margin: 0 0.5em;
-        padding: 0.5em 2em;
+    .Contact-Submit {
+        gap: 0.5em;
     }
 
+    .Contact-Submit button {
+        margin: 0 0.5em;
+        padding: 0.5em 1.5em;
+    }
 }

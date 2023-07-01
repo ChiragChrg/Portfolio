@@ -6,9 +6,6 @@ import emailjs from "@emailjs/browser"
 import { ContactArt, InstagramIcon, TwitterIcon, FaceBookIcon, DiscordIcon, GmailIcon } from "../../assets"
 
 const Contact = () => {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [message, setMessage] = useState("")
     const [msgStatus, setMsgStatus] = useState({ status: false, msg: "" })
 
     const NameRef = useRef()
@@ -17,6 +14,10 @@ const Contact = () => {
 
     const SendMail = async (e) => {
         e.preventDefault();
+
+        const name = NameRef?.current?.value;
+        const email = EmailRef?.current?.value;
+        const message = MessageRef?.current?.value;
 
         const emailValidatorRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const isValidEmail = emailValidatorRegex.test(email);
@@ -49,19 +50,19 @@ const Contact = () => {
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
-        if (mailRes.status === 200) {
-            setMsgStatus({ status: true, msg: "Message Sent!" })
-
-            setName("")
-            setEmail("")
-            setMessage("")
-        } else {
-            setMsgStatus({ status: true, msg: "Message Not Sent" })
-
-            setName("")
-            setEmail("")
-            setMessage("")
+        if (mailRes.status !== 200) {
+            setMsgStatus({ status: false, msg: "😵 Message not Sent" })
+            return
         }
+
+        setMsgStatus({ status: true, msg: "👍 Message Sent!" })
+        NameRef.current.value = ""
+        EmailRef.current.value = ""
+        MessageRef.current.value = ""
+
+        setTimeout(() => {
+            setMsgStatus({ status: false, msg: "" })
+        }, 5000);
     }
 
     return (
@@ -76,9 +77,9 @@ const Contact = () => {
 
             <FadeUp width="100%" className="Contact-Intro flex col">
                 {/* <h2 className="flex col"> */}
-                <p className="gradientText contactGrad">Let's collaborate!</p>
+                <h2 className="gradientText contactGrad">Let's collaborate!</h2>
                 <p>Contact me to discuss your web development needs</p>
-                <p>or just to say hello.</p>
+                <p>or just to say hello. 😉</p>
                 {/* </h2> */}
             </FadeUp>
 
@@ -108,19 +109,19 @@ const Contact = () => {
                     <form onSubmit={SendMail}>
                         <FadeUp width="100%" className="Contact-Input flex col">
                             <label htmlFor="name">Name</label>
-                            <input type="text" id="name" onChange={(e) => setName(e.target.value)} ref={NameRef} />
+                            <input type="text" id="name" ref={NameRef} />
                             <span className="Contact-InputError">What's your name?</span>
                         </FadeUp>
 
                         <FadeUp width="100%" className="Contact-Input flex col">
                             <label htmlFor="email">Email</label>
-                            <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} ref={EmailRef} />
+                            <input type="text" id="email" ref={EmailRef} />
                             <span className="Contact-InputError">Enter a valid Email ID</span>
                         </FadeUp>
 
                         <FadeUp width="100%" className="Contact-Input flex col">
                             <label htmlFor="message">Your Message</label>
-                            <textarea rows={5} id="message" onChange={(e) => setMessage(e.target.value)} ref={MessageRef} />
+                            <textarea rows={5} id="message" ref={MessageRef} />
                             <span className="Contact-InputError">Whoops! Say somthing.</span>
                         </FadeUp>
 
