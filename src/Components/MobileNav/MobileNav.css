@@ -121,3 +121,35 @@
     background-size: 200%;
     animation: gradientPan 5s linear infinite;
 }
+
+:has(.MobileNav-ActionBtn).MobileNav-LinkHolder {
+    padding: 0;
+}
+
+.MobileNav-ActionBtn {
+    position: relative;
+    border-radius: 0.2em;
+    /* padding: 0.8em 1em; */
+    overflow: hidden;
+}
+
+.MobileNav-ActionBtn::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    aspect-ratio: 1;
+    background: conic-gradient(var(--purple),
+            var(--pink),
+            var(--purple));
+    animation: spin 5s linear infinite;
+}
+
+.MobileNav-ActionBtn>div {
+    padding: 0.7em 1em;
+    width: 100%;
+    background-color: var(--base);
+    color: var(--text);
+    border-radius: inherit;
+    margin: 4px;
+    z-index: 2;
+}
