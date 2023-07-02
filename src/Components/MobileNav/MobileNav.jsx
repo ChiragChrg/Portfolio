@@ -134,10 +134,10 @@ const MobileNav = () => {
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <div className="MobileNav-ActionBtn flex"
-                        onClick={() => setOpenNav(false)}>
+                    <a className="MobileNav-ActionBtn flex"
+                        onClick={() => setOpenNav(false)} href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf" download>
                         <div>Resume</div>
-                    </div>
+                    </a>
                 </motion.div>
             </motion.nav>
         </header>

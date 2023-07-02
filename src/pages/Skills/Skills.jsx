@@ -11,39 +11,39 @@ import {
 
 const Skills = () => {
     const FrontendStack = [
-        { name: "HTML", icon: HtmlIcon },
-        { name: "CSS", icon: CssIcon },
-        { name: "JavaScript", icon: JsIcon },
-        { name: "React.js", icon: ReactIcon },
-        { name: "TypeScript", icon: TsIcon },
-        { name: "Next.js", icon: NextIcon },
+        { name: "HTML", icon: HtmlIcon, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+        { name: "CSS", icon: CssIcon, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+        { name: "JavaScript", icon: JsIcon, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { name: "React.js", icon: ReactIcon, link: "https://react.dev/" },
+        { name: "TypeScript", icon: TsIcon, link: "https://www.typescriptlang.org/" },
+        { name: "Next.js", icon: NextIcon, link: "https://nextjs.org/" },
     ]
     const BackendStack = [
-        { name: "Node.js", icon: NodeIcon },
-        { name: "Express.js", icon: ExpressIcon },
-        { name: "MongoDB", icon: MongoIcon },
-        { name: "MySQL", icon: MysqlIcon },
-        { name: "PHP", icon: PhpIcon },
-        { name: "REST API", icon: DatabaseIcon },
-        { name: "Drive API", icon: GdriveIcon },
+        { name: "Node.js", icon: NodeIcon, link: "https://nodejs.org/" },
+        { name: "Express.js", icon: ExpressIcon, link: "https://expressjs.com/" },
+        { name: "MongoDB", icon: MongoIcon, link: "https://www.mongodb.com/" },
+        { name: "MySQL", icon: MysqlIcon, link: "https://www.mysql.com/" },
+        { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
+        { name: "REST API", icon: DatabaseIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
+        { name: "Drive API", icon: GdriveIcon, link: "https://developers.google.com/drive" },
     ]
 
     const ProgrammingStack = [
-        { name: "JavaScript", icon: JsIcon },
-        { name: "Python", icon: PythonIcon },
-        { name: "C++", icon: CppIcon },
-        { name: "Java", icon: JavaIcon },
+        { name: "JavaScript", icon: JsIcon, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
+        { name: "C++", icon: CppIcon, link: "https://isocpp.org/" },
+        { name: "Java", icon: JavaIcon, link: "https://www.oracle.com/java/" },
     ]
 
     const ToolsStack = [
-        { name: "Vite.js", icon: ViteIcon },
-        { name: "Socket.io", icon: SocketIoIcon },
-        { name: "NPM", icon: NpmIcon },
-        { name: "Git", icon: GitIcon },
-        { name: "GitHub", icon: GithubIcon },
-        { name: "Netlify", icon: NetlifyIcon },
-        { name: "VS Code", icon: VsCodeIcon },
-        { name: "Figma", icon: FigmaIcon },
+        { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
+        { name: "Socket.io", icon: SocketIoIcon, link: "https://socket.io/" },
+        { name: "NPM", icon: NpmIcon, link: "https://www.npmjs.com/" },
+        { name: "Git", icon: GitIcon, link: "https://git-scm.com/" },
+        { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
+        { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
+        { name: "VS Code", icon: VsCodeIcon, link: "https://code.visualstudio.com/" },
+        { name: "Figma", icon: FigmaIcon, link: "https://www.figma.com/" },
     ]
 
     return (
@@ -64,9 +64,11 @@ const Skills = () => {
                     </h2>
                     <div className="Skills-IconSet">
                         {FrontendStack.map((obj, i) => {
-                            return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
-                                <span>{obj.name}</span>
+                            return <FadeUp key={i} >
+                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
+                                    <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
+                                    <span>{obj.name}</span>
+                                </a>
                             </FadeUp>
                         })}
                     </div>
@@ -79,9 +81,11 @@ const Skills = () => {
                     </h2>
                     <div className="Skills-IconSet">
                         {BackendStack.map((obj, i) => {
-                            return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
-                                <span>{obj.name}</span>
+                            return <FadeUp key={i}>
+                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
+                                    <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
+                                    <span>{obj.name}</span>
+                                </a>
                             </FadeUp>
                         })}
                     </div>
@@ -96,9 +100,11 @@ const Skills = () => {
                     </h2>
                     <div className="Skills-IconSet">
                         {ProgrammingStack.map((obj, i) => {
-                            return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
-                                <span>{obj.name}</span>
+                            return <FadeUp key={i}>
+                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
+                                    <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
+                                    <span>{obj.name}</span>
+                                </a>
                             </FadeUp>
                         })}
                     </div>
@@ -111,9 +117,11 @@ const Skills = () => {
                     </h2>
                     <div className="Skills-IconSet">
                         {ToolsStack.map((obj, i) => {
-                            return <FadeUp key={i} className="Skills-Icon flex col gap05">
-                                <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
-                                <span>{obj.name}</span>
+                            return <FadeUp key={i}>
+                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
+                                    <img variants={FadeUpVariant} src={obj.icon} alt={obj.name} width={35} height={35} />
+                                    <span>{obj.name}</span>
+                                </a>
                             </FadeUp>
                         })}
                     </div>

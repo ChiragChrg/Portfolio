@@ -14,7 +14,7 @@ export const ProjectsList = [
         Theme: "#fff",
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon]
+        Tech: [ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon]
     },
     {
         Name: "XRecon",
@@ -26,7 +26,7 @@ export const ProjectsList = [
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon]
+        Tech: [ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon]
     },
     {
         Name: "YoaTube",

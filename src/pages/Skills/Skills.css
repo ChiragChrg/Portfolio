@@ -29,20 +29,26 @@
 
 .Skills-IconSet {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1em;
 }
 
-.Skills-IconSet.Tools {
+/* .Skills-IconSet.Tools {
     grid-template-columns: repeat(5, 1fr);
-}
+} */
 
 .Skills-Icon {
     /* padding: 1em; */
-    min-width: 7.5em;
+    min-width: 6em;
     aspect-ratio: 1;
     border-radius: 0.5em;
     background: var(--SkillGradient);
+    color: var(--text);
+    text-decoration: none;
+}
+
+.Skills-Icon span {
+    font-size: 0.9em;
 }
 
 @media (799px < width < 1180px) {
@@ -51,7 +57,7 @@
     }
 
     .Skills-Icon {
-        min-width: 5.5em;
+        min-width: 6em;
     }
 }
 

@@ -2,7 +2,6 @@ import "./Header.css"
 import { Link } from "react-scroll";
 
 const Header = () => {
-
     return (
         <header className="Header-Main">
             <div className="Header-Container flex">
@@ -50,9 +49,9 @@ const Header = () => {
                         to="contact">Contact</Link>
                 </nav>
 
-                <div className="Header-ActionBtn flex">
+                <a className="Header-ActionBtn flex" href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf" download>
                     <div>Resume</div>
-                </div>
+                </a>
             </div>
         </header>
     )

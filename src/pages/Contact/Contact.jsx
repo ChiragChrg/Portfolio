@@ -7,6 +7,7 @@ import { ContactArt, InstagramIcon, TwitterIcon, FaceBookIcon, DiscordIcon, Gmai
 
 const Contact = () => {
     const [msgStatus, setMsgStatus] = useState({ status: false, msg: "" })
+    const [copyText, setCopyText] = useState("chiruchirag2001@gmail.com")
 
     const NameRef = useRef()
     const EmailRef = useRef()
@@ -65,6 +66,14 @@ const Contact = () => {
         }, 5000);
     }
 
+    const CopyMail = () => {
+        navigator.clipboard.writeText("chiruchirag2001@gmail.com")
+        setCopyText("Copied 👍🏻")
+        setTimeout(() => {
+            setCopyText("chiruchirag2001@gmail.com")
+        }, 5000)
+    }
+
     return (
         <section id="contact" className="Contact-Main">
             <FadeUp width="100%">
@@ -103,25 +112,26 @@ const Contact = () => {
                         </a>
                     </div>
                     <img className="Contact-VectorArt" src={ContactArt} alt="ContactArt" width="400px" />
+                    <div className="Contact-EmailId" onClick={CopyMail}>{copyText}</div>
                 </FadeUp>
 
-                <FadeModal className="Contact-Form flex col">
+                <FadeUp width="100%" className="Contact-Form flex col">
                     <form onSubmit={SendMail}>
                         <FadeUp width="100%" className="Contact-Input flex col">
                             <label htmlFor="name">Name</label>
-                            <input type="text" id="name" ref={NameRef} />
+                            <input type="text" id="name" placeholder="Enter your Name" ref={NameRef} />
                             <span className="Contact-InputError">What's your name?</span>
                         </FadeUp>
 
                         <FadeUp width="100%" className="Contact-Input flex col">
                             <label htmlFor="email">Email</label>
-                            <input type="text" id="email" ref={EmailRef} />
+                            <input type="text" id="email" placeholder="example@gmail.com" ref={EmailRef} />
                             <span className="Contact-InputError">Enter a valid Email ID</span>
                         </FadeUp>
 
                         <FadeUp width="100%" className="Contact-Input flex col">
-                            <label htmlFor="message">Your Message</label>
-                            <textarea rows={5} id="message" ref={MessageRef} />
+                            <label htmlFor="message">Message</label>
+                            <textarea rows={5} id="message" placeholder="Enter your Message" ref={MessageRef} />
                             <span className="Contact-InputError">Whoops! Say somthing.</span>
                         </FadeUp>
 
@@ -134,7 +144,7 @@ const Contact = () => {
                             <div className={msgStatus.status ? "Contact-MsgStatus" : "Contact-MsgStatus err"}>{msgStatus.msg}</div>
                         </FadeUp>
                     </form>
-                </FadeModal>
+                </FadeUp>
             </div >
 
             <div id="Contact-Vector">

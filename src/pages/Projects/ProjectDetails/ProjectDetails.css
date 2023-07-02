@@ -46,6 +46,7 @@
     border: none;
     transition: 0.2s ease-in-out;
     z-index: 5;
+    cursor: pointer;
 }
 
 .ProjectDetails-Main.Hidden * {
