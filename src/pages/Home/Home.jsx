@@ -22,22 +22,25 @@ const Home = () => {
     }, [])
 
     return (
-        <main className="Home-Main">
-            {isMobile ?
-                <MobileNav />
-                :
-                <Header />
-            }
+        <>
+            <main className="Home-Main">
+                {isMobile ?
+                    <MobileNav />
+                    :
+                    <Header />
+                }
 
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Contact />
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Contact />
+
+                {selectedProject && <ProjectDetails />}
+            </main>
+
             <Footer />
-
-            {selectedProject && <ProjectDetails />}
-        </main>
+        </>
     )
 }
 

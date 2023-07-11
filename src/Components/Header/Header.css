@@ -1,5 +1,7 @@
 .Header-Main {
     width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
     position: sticky;
     top: 0;
     z-index: 99;
@@ -14,6 +16,7 @@
             rgba(0, 0, 0, 0.6),
             transparent);
     padding: 0.2em 1.5em;
+    padding-top: 0.5em;
     position: relative;
     /* top: 0; */
     backdrop-filter: blur(2px);

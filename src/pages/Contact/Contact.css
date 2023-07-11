@@ -193,13 +193,14 @@ input:-webkit-autofill:active {
     color: rgb(212, 3, 3);
 }
 
-#Contact-Vector {
+/* #Contact-Vector {
     position: absolute;
     bottom: -1em;
     width: 100%;
     object-fit: cover;
     pointer-events: none;
-}
+    overflow-x: auto;
+} */
 
 .Contact-EmailId {
     position: absolute;
