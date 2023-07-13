@@ -45,7 +45,7 @@
     aspect-ratio: 1;
     position: relative;
     /* top: -4em; */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .Hero-Avatar {

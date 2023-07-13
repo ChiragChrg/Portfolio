@@ -14,7 +14,7 @@ const About = () => {
             </FadeUp>
 
             <FadeUp className="About-Content flex">
-                <img src={AvatarImg} alt="ChiragChrg" className="About-Image" width="300px" height="100%" />
+                <img src={AvatarImg} alt="ChiragChrg" className="About-Image" width="250px" height="100%" />
 
                 <div className="About-Info flex col gap">
                     <FadeUp className="fsH2">Hey there! 👋🏻</FadeUp>

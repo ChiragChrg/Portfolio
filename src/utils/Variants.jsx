@@ -6,8 +6,8 @@ export const OrbitContainer = {
     visible: {
         opacity: 1,
         transition: {
-            delay: 0.6,
-            delayChildren: 0.6,
+            delay: 0.5,
+            delayChildren: 0.8,
             staggerChildren: 0.12
         }
     }
@@ -16,23 +16,18 @@ export const OrbitContainer = {
 export const OrbitItems = {
     hidden: {
         opacity: 0,
-        scale: 0.8
+        scale: 0.75
     },
     visible: {
         opacity: 1,
         scale: 1,
-        // rotate: 360,
         transition: {
-            // ease: [0, 0.71, 0.2, 1.01],
-            // duration: 5,
-            // repeat: Infinity,
-            // repeatType: "loop",
-            scale: {
-                type: "spring",
-                damping: 5,
-                stiffness: 100,
-                restDelta: 0.001
-            }
+            // scale: {
+            type: "spring",
+            damping: 3,
+            stiffness: 50,
+            restDelta: 0.001
+            // }
         }
     }
 }

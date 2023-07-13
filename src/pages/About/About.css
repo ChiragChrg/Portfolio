@@ -16,10 +16,11 @@
 .About-Image {
     border-radius: 50%;
     transform: rotateY(180deg);
+    margin: 0 5em;
 }
 
 .About-Info {
-    width: 100%;
+    width: 80%;
     align-items: flex-start;
     letter-spacing: 1px;
     border-left: 1px solid var(--purple);
@@ -39,7 +40,8 @@
     }
 
     .About-Image {
-        width: 250px !important;
+        width: 200px !important;
+        margin: 0;
     }
 
 
@@ -49,6 +51,7 @@
     }
 
     .About-Info {
+        width: 100%;
         border: none;
         padding: 0;
     }
