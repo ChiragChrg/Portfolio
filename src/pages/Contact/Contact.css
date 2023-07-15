@@ -213,7 +213,7 @@ input:-webkit-autofill:active {
     cursor: pointer;
 }
 
-@media (width < 750px) {
+@media (width < 950px) {
     .Contact-Container {
         flex-direction: column;
         padding: 0;
@@ -237,7 +237,7 @@ input:-webkit-autofill:active {
     .Contact-Form {
         width: 90%;
         padding: 1em;
-        margin: 0 1em;
+        margin: 0 auto;
     }
 
     .Contact-Submit {

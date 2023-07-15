@@ -26,6 +26,42 @@
   --SkillGradient: linear-gradient(-135deg, hsla(276, 50%, 10%, 0.8), hsla(296, 50%, 10%, 0.5));
 }
 
+/* Fonts -- */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/poppins-v20-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/poppins-v20-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Satisfy';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/satisfy-v17-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/ubuntu-v20-latin-700.woff2') format('woff2');
+}
+
+/* -- Fonts */
+
+
 * {
   margin: 0;
   padding: 0;
