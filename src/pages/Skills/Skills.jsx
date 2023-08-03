@@ -6,7 +6,7 @@ import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
     PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon, GithubIcon,
-    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon
+    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon
 } from "../../assets"
 
 const Skills = () => {
@@ -28,6 +28,7 @@ const Skills = () => {
         { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
         { name: "REST API", icon: DatabaseIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
         { name: "Drive API", icon: GdriveIcon, link: "https://developers.google.com/drive" },
+        { name: "NextAuth.js", icon: NextAuthIcon, link: "https://next-auth.js.org/" },
     ]
 
     const ProgrammingStack = [
