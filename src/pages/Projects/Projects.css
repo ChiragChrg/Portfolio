@@ -80,6 +80,13 @@
     width: 100%;
 }
 
+.ProjectsDev-Warning{
+    border: 1px solid #FFA500;
+    padding: 0.1em 0.25em;
+    border-radius: 0.2em;
+    color: #FFA500;
+}
+
 .Projects-Link {
     padding: 0.5em;
     z-index: 10;

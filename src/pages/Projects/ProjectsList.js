@@ -1,17 +1,30 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon, PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
-    ArmsLogo, ArmsPhpLogo, ClimateLogo, CookeezLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, KalciLogo, NuklearbrainLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo,
-    ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon, PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon,
+    ArmsLogo, ArmsPhpLogo, ClimateLogo, CookeezLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, KalciLogo, NuklearbrainLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, NextmartLogo,
+    ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, NextmartShots
 } from "../../assets"
 
 export const ProjectsList = [
     {
+        Name: "Next Mart",
+        ShortDesc: "Discover an unparalleled shopping experience with Next Mart website. Unleash the power of online shopping with a vast array of products at your fingertips.",
+        Desc: "Discover an unparalleled shopping experience with Next Mart, an exceptional web app developed by ChiragChrg. Unleash the power of online shopping with a vast array of products at your fingertips",
+        Logo: NextmartLogo,
+        Shot: NextmartShots,
+        Theme: "#050505",
+        Status: "development",
+        Link: "https://nextmart.vercel.app/",
+        Source: "https://github.com/ChiragChrg/nextmart",
+        Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon]
+    },
+    {
         Name: "ARMS",
-        ShortDesc: "A platform which simplifies resource management for students. Faculties can upload PDF files. Students download study materials anonymously.  ",
+        ShortDesc: "A platform which simplifies resource management for students. Faculties can upload PDF files. Students download study materials anonymously.",
         Desc: "ARMS (Academic Resource Management System) is an all-inclusive educational platform designed to empower students with easy access to study materials for their respective subjects. By logging in anonymously, students can conveniently browse and download PDF documents uploaded by authorized faculties. With a centralized approach, ARMS ensures that students can effortlessly find and obtain the necessary resources they need for their academic pursuits. It's a user-friendly solution that streamlines the process of resource management, providing a seamless experience for both students and faculties alike.",
         Logo: ArmsLogo,
         Shot: ArmsShots,
         Theme: "#fff",
+        Status: "completed",
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
         Tech: [ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon]
@@ -23,6 +36,7 @@ export const ProjectsList = [
         Logo: XReconLogo,
         Shot: XreconShots,
         Theme: "#001220",
+        Status: "completed",
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
@@ -35,6 +49,7 @@ export const ProjectsList = [
         Logo: YoatubeLogo,
         Shot: YoatubeShots,
         Theme: "#0f0f0f",
+        Status: "completed",
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon]
@@ -46,6 +61,7 @@ export const ProjectsList = [
         Logo: SrinivasLogo,
         Shot: SrinivasShots,
         Theme: "#fff",
+        Status: "completed",
         Link: "https://srinivas-exam-manager.netlify.app/",
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
@@ -58,6 +74,7 @@ export const ProjectsList = [
         Logo: PikturesLogo,
         Shot: PikturesShots,
         Theme: "#ddd",
+        Status: "completed",
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon]
@@ -69,6 +86,7 @@ export const ProjectsList = [
         Logo: DaysbeyondLogo,
         Shot: DaysbeyondShots,
         Theme: "#008ee0",
+        Status: "completed",
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
@@ -80,6 +98,7 @@ export const ProjectsList = [
     //     Logo: ArmsPhpLogo,
     //     Shot: bgImg,
     //     Theme: "#fff",
+    //     Status: "completed",
     //     Link: "https://sims-arms.000webhostapp.com/",
     //     Source: "https://github.com/ChiragChrg/ARMS-PHP",
     //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon]
@@ -91,6 +110,7 @@ export const ProjectsList = [
         Logo: FilmstackLogo,
         Shot: FilmstackShots,
         Theme: "#fff",
+        Status: "completed",
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
@@ -102,6 +122,7 @@ export const ProjectsList = [
     //     Logo: CovidtraxLogo,
     //     Shot: CovidTraxShots,
     //     Theme: "#fff",
+    //     Status: "completed",
     //     Link: "https://covidtrax.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/CovidTrax",
     //     Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
@@ -113,6 +134,7 @@ export const ProjectsList = [
     //     Logo: CookeezLogo,
     //     Shot: CookeezShots,
     //     Theme: "#fff",
+    //     Status: "completed",
     //     Link: "https://cookeez.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Cookeez",
     //     Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon]
@@ -124,6 +146,7 @@ export const ProjectsList = [
         Logo: ClimateLogo,
         Shot: ClimateShots,
         Theme: "#fff",
+        Status: "completed",
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon]
@@ -135,6 +158,7 @@ export const ProjectsList = [
     //     Logo: NuklearbrainLogo,
     //     Shot: NuklearbrainShots,
     //     Theme: "#fff",
+    //     Status: "completed",
     //     Link: "https://nuklearbrain.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Nuklear-Brain",
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
@@ -146,6 +170,7 @@ export const ProjectsList = [
     //     Logo: KalciLogo,
     //     Shot: KalciShots,
     //     Theme: "#fff",
+    //     Status: "completed",
     //     Link: "https://nuklearbrain.netlify.app/",
     //     Source: "https://github.com/ChiragChrg/Kalci",
     //     Tech: [HtmlIcon, CssIcon, JsIcon]
