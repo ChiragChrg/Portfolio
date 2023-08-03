@@ -6,7 +6,7 @@ import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
     PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon, GithubIcon,
-    NetlifyIcon
+    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon
 } from "../../assets"
 
 const Skills = () => {
@@ -14,9 +14,11 @@ const Skills = () => {
         { name: "HTML", icon: HtmlIcon, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
         { name: "CSS", icon: CssIcon, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
         { name: "JavaScript", icon: JsIcon, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-        { name: "React.js", icon: ReactIcon, link: "https://react.dev/" },
         { name: "TypeScript", icon: TsIcon, link: "https://www.typescriptlang.org/" },
+        { name: "React.js", icon: ReactIcon, link: "https://react.dev/" },
         { name: "Next.js", icon: NextIcon, link: "https://nextjs.org/" },
+        { name: "Tailwind", icon: TailwindIcon, link: "https://tailwindcss.com/" },
+        { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
     ]
     const BackendStack = [
         { name: "Node.js", icon: NodeIcon, link: "https://nodejs.org/" },
@@ -42,6 +44,7 @@ const Skills = () => {
         { name: "Git", icon: GitIcon, link: "https://git-scm.com/" },
         { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
         { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
+        { name: "Vercel", icon: VercelIcon, link: "https://vercel.com/" },
         { name: "VS Code", icon: VsCodeIcon, link: "https://code.visualstudio.com/" },
         { name: "Figma", icon: FigmaIcon, link: "https://www.figma.com/" },
     ]

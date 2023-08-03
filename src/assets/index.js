@@ -30,6 +30,10 @@ export { default as NpmIcon } from "./Icons/npm.svg"
 export { default as GitIcon } from "./Icons/git.svg"
 export { default as FigmaIcon } from "./Icons/figma.svg"
 export { default as NetlifyIcon } from "./Icons/netlify.svg"
+export { default as NextAuthIcon } from "./Icons/nextauth.svg"
+export { default as ReduxIcon } from "./Icons/redux.svg"
+export { default as TailwindIcon } from "./Icons/tailwind.svg"
+export { default as VercelIcon } from "./Icons/vercel.svg"
 
 //Social Icons
 export { default as GithubIcon } from "./Github.svg"
@@ -43,6 +47,7 @@ export { default as GmailIcon } from "./Gmail.svg"
 
 
 //Project Logos
+export { default as NextmartLogo } from "./Logos/NextmartLogo.svg"
 export { default as ArmsLogo } from "./Logos/ArmsLogo.svg"
 export { default as ArmsPhpLogo } from "./Logos/ArmsPhpLogo.svg"
 export { default as ClimateLogo } from "./Logos/ClimateLogo.svg"
@@ -58,6 +63,7 @@ export { default as XReconLogo } from "./Logos/XReconLogo.svg"
 export { default as YoatubeLogo } from "./Logos/YoatubeLogo.svg"
 
 //Project ScreenShots
+export { default as NextmartShots } from "./Shots/NextMart.webp"
 export { default as ArmsShots } from "./Shots/ARMSv2.webp"
 export { default as ClimateShots } from "./Shots/Climate.webp"
 export { default as CookeezShots } from "./Shots/Cookeez.webp"
