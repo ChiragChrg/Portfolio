@@ -167,3 +167,9 @@
         scale: 1;
     }
 }
+
+@media (width > 2560px) {
+    .Projects-Container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
