@@ -71,7 +71,7 @@ const Contact = () => {
         setCopyText("Copied 👍🏻")
         setTimeout(() => {
             setCopyText("chiruchirag2001@gmail.com")
-        }, 5000)
+        }, 2000)
     }
 
     return (

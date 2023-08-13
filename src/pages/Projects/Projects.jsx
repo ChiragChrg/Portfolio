@@ -22,6 +22,10 @@ const Projects = () => {
             <FadeUp className="Projects-Container">
                 {
                     ProjectsList.map((obj, index) => {
+                        if (obj.hideProject) {
+                            return false
+                        }
+
                         return (
                             <FadeUp isHover
                                 className="Projects-Item flex col"
