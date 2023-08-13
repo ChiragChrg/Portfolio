@@ -7,7 +7,7 @@ import {
 export const ProjectsList = [
     {
         Name: "Next Mart",
-        ShortDesc: "Discover an unparalleled shopping experience with Next Mart website. Unleash the power of online shopping with a vast array of products at your fingertips.",
+        ShortDesc: "Discover an unparalleled shopping experience with Next Mart website. Unleash the power of online shopping with a diverse range of products.",
         Desc: "Discover an unparalleled shopping experience with Next Mart, an exceptional web app developed by ChiragChrg. Unleash the power of online shopping with a vast array of products at your fingertips",
         Logo: NextmartLogo,
         Shot: NextmartShots,

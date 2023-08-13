@@ -19,7 +19,7 @@ const About = () => {
                 <div className="About-Info flex col gap">
                     <FadeUp className="fsH2">Hey there! 👋🏻</FadeUp>
                     <FadeUp >I'm Chirag, a full stack web developer with a strong passion for crafting digital realms that captivate and inspire.</FadeUp>
-                    <FadeUp >I specialize in creating dynamic and interactive UI/UX experience. I stay up-to-date with the latest tools and techniques. I've worked on a wide range of projects, from personal websites to large-scale applications, sharpening my problem-solving skills and fostering creativity.</FadeUp>
+                    <FadeUp >I specialize in creating dynamic and interactive UI/UX experience. I stay up to date with the latest tools and techniques. I've worked on a wide range of projects, from personal websites to large-scale applications, sharpening my problem solving skills and fostering creativity.</FadeUp>
                     <FadeUp >If you're seeking a dedicated and passionate web developer, I'm eager to collaborate with you. Let's bring your ideas to life!</FadeUp>
                 </div>
             </FadeUp>
