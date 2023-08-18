@@ -9,20 +9,21 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2em;
-    padding: 0 1em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 0 3em;
     padding-bottom: 1.5em;
     width: 100%;
 }
 
 .Projects-Container .CardHover {
     scale: 1;
-    transition: 0.3s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 .Projects-Container .CardHover:hover {
-    scale: 1.04;
+    /* scale: 1.04; */
+    transform: translateY(-1em)
 }
 
 .Projects-Item {
@@ -71,14 +72,14 @@
 
 .Projects-Logo {
     position: absolute;
-    left: 1em;
-    bottom: 0.5em;
+    left: 1.5em;
+    bottom: 1.5em;
 }
 
 .Projects-Details {
     padding: 0 1em;
     width: 100%;
-    font-size: 0.825em;
+    font-size: 0.95em;
 }
 
 .ProjectsDev-Warning {
@@ -91,11 +92,6 @@
 .Projects-Link {
     padding: 0.5em;
     z-index: 10;
-    transition: 0.2s ease-in-out;
-}
-
-.Projects-Link:hover {
-    scale: 1.1;
 }
 
 :has(.Projects-Link:hover) #cursor {
@@ -169,8 +165,8 @@
     }
 }
 
-/* @media (width > 1180px) {
+@media (width > 2400px) {
     .Projects-Container {
         grid-template-columns: repeat(4, 1fr);
     }
-} */
+}
