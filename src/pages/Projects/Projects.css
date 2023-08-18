@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2em;
+    gap: 1.2em;
     padding: 0 1em;
     padding-bottom: 1.5em;
     width: 100%;
@@ -22,7 +22,7 @@
 }
 
 .Projects-Container .CardHover:hover {
-    scale: 1.05;
+    scale: 1.04;
 }
 
 .Projects-Item {
