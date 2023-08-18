@@ -1,8 +1,8 @@
 export { default as PurpleTop } from "./purpleTop.svg"
 export { default as LinkArrow } from "./LinkArrow.svg"
 export { default as Close } from "./Close.svg"
-export { default as AvatarImg } from "./Avatar.webp"
 export { default as ContactArt } from "./ContactVector.svg"
+export { default as AvatarImg } from "./Avatar.webp"
 
 // Code Icon
 export { default as HtmlIcon } from "./Icons/html.svg"
@@ -34,6 +34,7 @@ export { default as NextAuthIcon } from "./Icons/nextauth.svg"
 export { default as ReduxIcon } from "./Icons/redux.svg"
 export { default as TailwindIcon } from "./Icons/tailwind.svg"
 export { default as VercelIcon } from "./Icons/vercel.svg"
+export { default as ZustandIcon } from "./Icons/zustand.webp"
 
 //Social Icons
 export { default as GithubIcon } from "./Github.svg"

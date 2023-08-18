@@ -6,7 +6,7 @@ import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
     PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon, GithubIcon,
-    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon
+    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon
 } from "../../assets"
 
 const Skills = () => {
@@ -19,6 +19,7 @@ const Skills = () => {
         { name: "Next.js", icon: NextIcon, link: "https://nextjs.org/" },
         { name: "Tailwind", icon: TailwindIcon, link: "https://tailwindcss.com/" },
         { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
+        { name: "Zustand", icon: ZustandIcon, link: "https://zustand-demo.pmnd.rs/" },
     ]
     const BackendStack = [
         { name: "Node.js", icon: NodeIcon, link: "https://nodejs.org/" },

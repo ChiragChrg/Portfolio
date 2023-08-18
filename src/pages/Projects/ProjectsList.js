@@ -1,7 +1,12 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon, PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon,
-    ArmsLogo, ArmsPhpLogo, ClimateLogo, CookeezLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, KalciLogo, NuklearbrainLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, NextmartLogo,
-    ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, NextmartShots
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon, PhpIcon, MysqlIcon, MongoIcon,
+    JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon, ZustandIcon,
+
+    ArmsLogo, ArmsPhpLogo, ClimateLogo, CookeezLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, KalciLogo,
+    NuklearbrainLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, NextmartLogo,
+
+    ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots,
+    PikturesShots, SrinivasShots, XreconShots, YoatubeShots, NextmartShots
 } from "../../assets"
 
 export const ProjectsList = [
@@ -11,13 +16,13 @@ export const ProjectsList = [
         Desc: "Discover an unparalleled shopping experience with Next Mart, an exceptional web app developed by ChiragChrg. Unleash the power of online shopping with a vast array of products at your fingertips",
         Logo: NextmartLogo,
         Shot: NextmartShots,
-        Theme: "#050505",
+        Theme: "#090b0b",
         Status: "development",
         Link: "https://nextmart.vercel.app/",
         Source: "https://github.com/ChiragChrg/nextmart",
         Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon],
         hideProject: false,
-        LogoSize: 45
+        LogoSize: 40
     },
     {
         Name: "ARMS",
@@ -130,7 +135,7 @@ export const ProjectsList = [
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
-        hideProject: false,
+        hideProject: true,
         LogoSize: 55
     },
     {
