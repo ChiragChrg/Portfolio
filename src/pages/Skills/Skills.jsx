@@ -70,7 +70,7 @@ const Skills = () => {
                         {FrontendStack.map((obj, i) => {
                             return <FadeUp key={i} >
                                 <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                    <img variants={FadeUpVariant} src={obj.icon} width={35} height={35} />
+                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
                                     <span>{obj.name}</span>
                                 </a>
                             </FadeUp>
@@ -87,7 +87,7 @@ const Skills = () => {
                         {BackendStack.map((obj, i) => {
                             return <FadeUp key={i}>
                                 <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                    <img variants={FadeUpVariant} src={obj.icon} width={35} height={35} />
+                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
                                     <span>{obj.name}</span>
                                 </a>
                             </FadeUp>
@@ -106,7 +106,7 @@ const Skills = () => {
                         {ProgrammingStack.map((obj, i) => {
                             return <FadeUp key={i}>
                                 <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                    <img variants={FadeUpVariant} src={obj.icon} width={35} height={35} />
+                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
                                     <span>{obj.name}</span>
                                 </a>
                             </FadeUp>
@@ -123,7 +123,7 @@ const Skills = () => {
                         {ToolsStack.map((obj, i) => {
                             return <FadeUp key={i}>
                                 <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                    <img variants={FadeUpVariant} src={obj.icon} width={35} height={35} />
+                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
                                     <span>{obj.name}</span>
                                 </a>
                             </FadeUp>
