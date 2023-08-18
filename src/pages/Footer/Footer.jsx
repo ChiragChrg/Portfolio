@@ -1,4 +1,5 @@
-import { FaceBookIcon, InstagramIcon, GithubIcon, TwitterIcon, DiscordIcon, LinkedinIcon } from "../../assets"
+import { FaceBookIcon, InstagramIcon, GithubIcon, TwitterIcon, DiscordIcon, LinkedinIcon, } from "../../assets"
+import LogoIcon from "../../assets/Icons/C.svg"
 
 const Footer = () => {
     return (
@@ -11,7 +12,33 @@ const Footer = () => {
                     <path d="M0 501L26.7 498C53.3 495 106.7 489 160 490C213.3 491 266.7 499 320 501.3C373.3 503.7 426.7 500.3 480 491.3C533.3 482.3 586.7 467.7 640 464.7C693.3 461.7 746.7 470.3 800 469.3C853.3 468.3 906.7 457.7 933.3 452.3L960 447L960 541L933.3 541C906.7 541 853.3 541 800 541C746.7 541 693.3 541 640 541C586.7 541 533.3 541 480 541C426.7 541 373.3 541 320 541C266.7 541 213.3 541 160 541C106.7 541 53.3 541 26.7 541L0 541Z" fill="#1E004C" />
                 </svg>
             </div>
-            <footer id='footer' className='Footer-Main flex'>
+            <footer id='footer' className='Footer-Main flex col'>
+                <div className="Footer-Logo flex col gap05">
+                    <img src={LogoIcon} alt="LogoIcon" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+                    <p>ChiragChrg | Portfolio</p>
+                </div>
+
+                <div className="Footer-Links flex">
+                    <a href="https://github.com/ChiragChrg" target="_blank" rel="noreferrer">
+                        <img src={GithubIcon} alt="Discord" width={30} height={30} />
+                    </a>
+                    <a href="https://www.facebook.com/ChiragChrg/" target="_blank" rel="noreferrer">
+                        <img src={FaceBookIcon} alt="FaceBook" width={30} height={30} />
+                    </a>
+                    <a href="https://www.instagram.com/chiragchrg/" target="_blank" rel="noreferrer">
+                        <img src={InstagramIcon} alt="Instagram" width={30} height={30} />
+                    </a>
+                    <a href="https://twitter.com/ChrgChirag" target="_blank" rel="noreferrer">
+                        <img src={TwitterIcon} alt="Twitter" width={30} height={30} />
+                    </a>
+                    <a href="https://in.linkedin.com/in/chiragchrg" target="_blank" rel="noreferrer">
+                        <img src={LinkedinIcon} alt="Discord" width={30} height={30} />
+                    </a>
+                    <a href="https://discordapp.com/users/647359627461263390" target="_blank" rel="noreferrer">
+                        <img src={DiscordIcon} alt="Discord" width={30} height={30} />
+                    </a>
+                </div>
+
                 <p>© Copyright 2023 ChiragChrg</p>
             </footer>
         </>

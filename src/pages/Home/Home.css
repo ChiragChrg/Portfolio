@@ -88,22 +88,49 @@ h1 {
 .Footer-Main {
     width: 100%;
     height: 50vh;
-    align-items: flex-end;
     padding: 2em 1em;
+    justify-content: space-between;
     background-color: #1E004C;
     /* position: absolute; */
     /* top: 0; */
 }
 
+.Footer-Links {
+    align-items: flex-start;
+    gap: 5em;
+}
+
+.Footer-Links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--text);
+}
+
+.Footer-Links a span {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Mobile Responsive CSS */
+@media (width < 750px) {
+    .Footer-Links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5em 5em;
+    }
+}
+
 /* Responsive Screen Font Size */
-@media (width >= 1600px) {
-    .Home-Main{
+@media (width >=1600px) {
+    .Home-Main {
         font-size: 1.25rem;
     }
 }
 
-@media (width >= 1920px) {
-    .Home-Main{
+@media (width >=1920px) {
+    .Home-Main {
         font-size: 1.5rem;
     }
 }
