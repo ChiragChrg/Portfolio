@@ -17,6 +17,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/nextmart",
         Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon],
         hideProject: false,
+        LogoSize: 45
     },
     {
         Name: "ARMS",
@@ -28,8 +29,9 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
-        Tech: [ReactIcon, ViteIcon, NodeIcon, MongoIcon, GdriveIcon],
+        Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, GdriveIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "XRecon",
@@ -42,8 +44,9 @@ export const ProjectsList = [
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [ReactIcon, ViteIcon, NodeIcon, MongoIcon, SocketIoIcon],
+        Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, SocketIoIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "YoaTube",
@@ -57,6 +60,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/yoatube",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "Srinivas Exam Manager",
@@ -71,6 +75,7 @@ export const ProjectsList = [
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, MysqlIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "Piktures",
@@ -84,6 +89,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/pikture",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "Days Beyond",
@@ -97,6 +103,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "ARMS 1.0",
@@ -110,6 +117,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/ARMS-PHP",
         Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon],
         hideProject: true,
+        LogoSize: 55
     },
     {
         Name: "FilmStack",
@@ -123,6 +131,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/FilmStack",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "CovidTrax",
@@ -136,6 +145,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/CovidTrax",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
         hideProject: true,
+        LogoSize: 55
     },
     {
         Name: "Cookeez",
@@ -149,6 +159,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/Cookeez",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon],
         hideProject: true,
+        LogoSize: 55
     },
     {
         Name: "CliMate",
@@ -162,6 +173,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/CliMate",
         Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
         hideProject: false,
+        LogoSize: 55
     },
     {
         Name: "Nuklear Brain",
@@ -175,6 +187,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/Nuklear-Brain",
         Tech: [HtmlIcon, CssIcon, JsIcon],
         hideProject: true,
+        LogoSize: 55
     },
     {
         Name: "Kalci",
@@ -188,5 +201,6 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/Kalci",
         Tech: [HtmlIcon, CssIcon, JsIcon],
         hideProject: true,
+        LogoSize: 55
     },
 ]
