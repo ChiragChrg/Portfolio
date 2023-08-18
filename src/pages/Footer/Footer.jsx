@@ -14,7 +14,12 @@ const Footer = () => {
             </div>
             <footer id='footer' className='Footer-Main flex col'>
                 <div className="Footer-Logo flex col gap05">
-                    <img src={LogoIcon} alt="LogoIcon" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+                    <img
+                        src={LogoIcon}
+                        alt="LogoIcon"
+                        width={80}
+                        height={80}
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
                     <p>ChiragChrg | Portfolio</p>
                 </div>
 
