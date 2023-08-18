@@ -94,11 +94,12 @@
     height: 100px;
     background-color: var(--LogoBgColor);
     border-radius: 50%;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .ProjectDetails-Logo img {
     z-index: 1;
+    padding:0.5em;
 }
 
 .ProjectDetails-Info {
@@ -107,10 +108,10 @@
 }
 
 
-.ProjectDetails-TechIcons img {
+/* .ProjectDetails-TechIcons img {
     width: 35px;
     height: 35px;
-}
+} */
 
 .ProjectDetails-Links {
     /* gap: 5em; */

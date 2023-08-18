@@ -39,9 +39,10 @@ const Projects = () => {
                                         <h2>{obj.Name}</h2>
                                         <div className="flex">
                                             {obj.Status === "development" && <div className="flex gap05 ProjectsDev-Warning">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FFA500">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
                                                 </svg>
+
                                                 <span style={{ fontSize: "0.8em" }}>Dev Progress</span>
                                             </div>}
 
@@ -57,7 +58,7 @@ const Projects = () => {
                                         <div className="Projects-TechIcons flex gap">
                                             {obj.Tech.map((icon, indx) => {
                                                 return (
-                                                    <img src={icon} key={indx} alt="HtmlIcon" width={26} height={26} />
+                                                    <img src={icon} key={indx} alt="HtmlIcon" width={22} height={22} />
                                                 )
                                             })}
                                         </div>

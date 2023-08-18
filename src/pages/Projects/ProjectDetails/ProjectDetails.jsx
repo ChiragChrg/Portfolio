@@ -31,7 +31,7 @@ const ProjectDetails = () => {
                         <img src={selectedProject.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
 
                         <FadeModal className="ProjectDetails-Logo flex">
-                            <img src={selectedProject.Logo} alt="Project_Logo" width={80} height={80} />
+                            <img src={selectedProject.Logo} alt="Project_Logo" width={selectedProject.LogoSize * 1.8} height={selectedProject.LogoSize * 1.8} />
                         </FadeModal>
                     </div>
                     <div className="ProjectDetails-Overlay"></div>
