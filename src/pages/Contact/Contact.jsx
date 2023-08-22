@@ -101,7 +101,7 @@ const Contact = () => {
                         <a href="https://www.instagram.com/chiragchrg/" className="Contact-Icon instagram" title="Instagram" target="_blank" rel="noreferrer">
                             <img src={InstagramIcon} alt="Instagram" width={30} height={30} />
                         </a>
-                        <a href="mailto:chiruchirag2001@gmail.com" className="Contact-Icon Gmail" title="Gmail" target="_blank" rel="noreferrer">
+                        <a href="mailto:chiruchirag2001@gmail.com" className="Contact-Icon gmail" title="Gmail" target="_blank" rel="noreferrer">
                             <img src={GmailIcon} alt="Gmail" width={30} height={30} />
                         </a>
                         <a href="https://twitter.com/ChrgChirag" className="Contact-Icon twitter" title="Twitter" target="_blank" rel="noreferrer">

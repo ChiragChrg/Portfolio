@@ -41,7 +41,7 @@
 .Contact-Social {
     position: relative;
     align-items: flex-start;
-    gap: 2em;
+    gap: 1em;
     width: 500px;
     height: 500px;
     border-radius: 50%;
@@ -50,7 +50,6 @@
 .Contact-Icon {
     display: flex;
     align-items: flex-start;
-    position: absolute;
     padding: 1em;
     border: 1px solid #fff;
     border-radius: 50%;
@@ -58,34 +57,18 @@
     cursor: pointer;
 }
 
-.Contact-Icon.facebook {
-    top: 25%;
-    left: 4%;
-    /* --hoverClr: #1877F2; */
+.Contact-Icon.gmail {
+    margin: 0 1.8em;
 }
 
-.Contact-Icon.instagram {
-    top: 7%;
-    left: 20%;
-    /* --hoverClr: #d31192; */
-}
-
-/* .Contact-Icon.Gmail {
-    --hoverClr: #d11d05;
-    top: 0;
-    left: 40%;
-} */
-
+.Contact-Icon.instagram,
 .Contact-Icon.twitter {
-    top: 7%;
-    left: 65%;
-    /* --hoverClr: #1DA1F2; */
+    margin-top: 3em;
 }
 
+.Contact-Icon.facebook,
 .Contact-Icon.discord {
-    top: 25%;
-    left: 81%;
-    /* --hoverClr: #3557d1; */
+    margin-top: 8em;
 }
 
 :has(.Contact-Icon:hover) #cursor {
@@ -232,6 +215,15 @@ input:-webkit-autofill:active {
     .Contact-Left {
         width: 100%;
         top: 2em;
+    }
+
+    .Contact-Icon {
+        padding: 0.6em
+    }
+
+    .Contact-Icon img {
+        width: 25px;
+        height: 25px;
     }
 
     .Contact-Form {

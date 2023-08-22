@@ -31,7 +31,7 @@ const ProjectDetails = () => {
                         <img src={selectedProject.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
 
                         <FadeModal className="ProjectDetails-Logo flex">
-                            <img src={selectedProject.Logo} alt="Project_Logo" width={selectedProject.LogoSize * 1.8} height={selectedProject.LogoSize * 1.8} />
+                            <img src={selectedProject.Logo} alt="Project_Logo" width={(selectedProject?.LogoSize || 55) * 1.8} height={(selectedProject?.LogoSize || 55) * 1.8} />
                         </FadeModal>
                     </div>
                     <div className="ProjectDetails-Overlay"></div>
@@ -49,12 +49,12 @@ const ProjectDetails = () => {
 
                         <FadeModal className="ProjectDetails-Links flex">
                             <a href={selectedProject.Source ? selectedProject.Source : "https://github.com/ChiragChrg"} className="flex gap05" target="_blank" rel="noreferrer">
-                                <motion.img src={GithubIcon} alt="GithubIcon" width={28} height={28} />
+                                <motion.img src={GithubIcon} alt="GithubIcon" width={24} height={24} />
                                 <span>Source Code</span>
                             </a>
 
                             <a href={selectedProject.Link ? selectedProject.Link : "https://chiragchrg.netlify.app/"} className="flex gap05" target="_blank" rel="noreferrer">
-                                <motion.img src={LinkArrow} alt="LinkArrow" width={28} height={28} />
+                                <motion.img src={LinkArrow} alt="LinkArrow" width={24} height={24} />
                                 <span>Live Site</span>
                             </a>
                         </FadeModal>

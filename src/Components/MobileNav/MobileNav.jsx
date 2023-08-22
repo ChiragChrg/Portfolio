@@ -37,10 +37,18 @@ const MobileNav = () => {
         showMenu: {
             y: 0,
             opacity: 1,
+            transition: {
+                type: "tween",
+                duration: 0.3,
+            }
         },
         hideMenu: {
             y: 100,
             opacity: 0,
+            transition: {
+                type: "tween",
+                duration: 0.3,
+            }
         }
     }
 

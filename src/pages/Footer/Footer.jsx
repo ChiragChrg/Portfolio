@@ -24,20 +24,20 @@ const Footer = () => {
                 </div>
 
                 <div className="Footer-Links flex">
-                    <a href="https://github.com/ChiragChrg" target="_blank" rel="noreferrer">
-                        <img src={GithubIcon} alt="Discord" width={30} height={30} />
-                    </a>
                     <a href="https://www.facebook.com/ChiragChrg/" target="_blank" rel="noreferrer">
                         <img src={FaceBookIcon} alt="FaceBook" width={30} height={30} />
-                    </a>
-                    <a href="https://www.instagram.com/chiragchrg/" target="_blank" rel="noreferrer">
-                        <img src={InstagramIcon} alt="Instagram" width={30} height={30} />
                     </a>
                     <a href="https://twitter.com/ChrgChirag" target="_blank" rel="noreferrer">
                         <img src={TwitterIcon} alt="Twitter" width={30} height={30} />
                     </a>
+                    <a href="https://www.instagram.com/chiragchrg/" target="_blank" rel="noreferrer">
+                        <img src={InstagramIcon} alt="Instagram" width={30} height={30} />
+                    </a>
                     <a href="https://in.linkedin.com/in/chiragchrg" target="_blank" rel="noreferrer">
                         <img src={LinkedinIcon} alt="Discord" width={30} height={30} />
+                    </a>
+                    <a href="https://github.com/ChiragChrg" target="_blank" rel="noreferrer">
+                        <img src={GithubIcon} alt="Discord" width={30} height={30} />
                     </a>
                     <a href="https://discordapp.com/users/647359627461263390" target="_blank" rel="noreferrer">
                         <img src={DiscordIcon} alt="Discord" width={30} height={30} />

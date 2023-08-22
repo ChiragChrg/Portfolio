@@ -132,7 +132,7 @@
 @media (width < 855px) {
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
-        padding: 0;
+        padding: 0 0.5em;
         padding-bottom: 1.5em;
     }
 
