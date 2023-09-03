@@ -32,13 +32,13 @@ Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of 
         alt="React JS"
         title="React JS"
         width="40px"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/react.svg"
+        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/reactjs.svg"
       />
       <img 
         alt="Vite JS" 
         title="Vite JS" 
         width="40"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/vite.svg" 
+        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/vitejs.svg" 
       />
       <img 
         alt="Framer Motion" 
