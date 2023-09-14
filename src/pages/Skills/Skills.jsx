@@ -1,13 +1,13 @@
 import "./Skills.css"
-import { motion } from "framer-motion"
 import { FadeUpVariant, } from "../../utils/Variants"
 import FadeUp from "../../utils/FadeUp"
 import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
     PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
-    CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon, GithubIcon,
-    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon
-} from "../../assets"
+    CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon,
+    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon, NanostoresIcon
+} from "../../assets/Icons"
+import { GithubIcon } from "../../assets"
 
 const Skills = () => {
     const FrontendStack = [
@@ -17,9 +17,11 @@ const Skills = () => {
         { name: "TypeScript", icon: TsIcon, link: "https://www.typescriptlang.org/" },
         { name: "React.js", icon: ReactIcon, link: "https://react.dev/" },
         { name: "Next.js", icon: NextIcon, link: "https://nextjs.org/" },
+        { name: "Astro", icon: AstroIcon, link: "https://astro.build/" },
         { name: "Tailwind", icon: TailwindIcon, link: "https://tailwindcss.com/" },
         { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
         { name: "Zustand", icon: ZustandIcon, link: "https://zustand-demo.pmnd.rs/" },
+        { name: "Nanostores", icon: NanostoresIcon, link: "https://github.com/nanostores/nanostores" },
     ]
     const BackendStack = [
         { name: "Node.js", icon: NodeIcon, link: "https://nodejs.org/" },

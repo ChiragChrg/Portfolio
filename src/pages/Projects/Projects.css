@@ -137,7 +137,8 @@
     }
 
     .Projects-Container .CardHover:hover {
-        scale: 1;
+        /* scale: 1; */
+        transform: translateY(0)
     }
 
     .Projects-Item:hover .Projects-Shot {

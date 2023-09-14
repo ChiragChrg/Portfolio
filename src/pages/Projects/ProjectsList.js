@@ -1,15 +1,30 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon, PhpIcon, MysqlIcon, MongoIcon,
-    JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon, ZustandIcon,
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, CppIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon, PhpIcon, ExpressIcon, PythonIcon, ViteIcon, VsCodeIcon, NpmIcon, GitIcon, FigmaIcon, NetlifyIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon, ZustandIcon, AstroIcon, NanostoresIcon
+} from "../../assets/Icons"
 
-    ArmsLogo, ArmsPhpLogo, ClimateLogo, CookeezLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, KalciLogo,
-    NuklearbrainLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, NextmartLogo,
+import {
+    NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CookeezLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, KalciLogo, NuklearbrainLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
+} from "../../assets/Logos"
 
-    ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots,
-    PikturesShots, SrinivasShots, XreconShots, YoatubeShots, NextmartShots
-} from "../../assets"
+import {
+    NextmartShots, ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots
+} from "../../assets/Shots"
 
 export const ProjectsList = [
+    {
+        Name: "Vortexa",
+        ShortDesc: "Stay informed about current conditions, forecasts, and astronomical data, and gain valuable insights into current weather patterns and trends.",
+        Desc: "Explore comprehensive weather insights and forecasts with Vortexa. Stay informed about current conditions, forecasts, and astronomical data, and gain valuable insights into weather patterns and trends.",
+        Logo: VortexaLogo,
+        Shot: VortexaShots,
+        Theme: "#fff",
+        Status: "development",
+        Link: "https://vortexa.netlify.app/",
+        Source: "https://github.com/ChiragChrg/vortexa",
+        Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, NanostoresIcon, DatabaseIcon],
+        hideProject: false,
+        LogoSize: 50
+    },
     {
         Name: "Next Mart",
         ShortDesc: "Discover an unparalleled shopping experience with Next Mart website. Unleash the power of online shopping with a diverse range of products.",
@@ -21,7 +36,7 @@ export const ProjectsList = [
         Link: "https://nextmart.vercel.app/",
         Source: "https://github.com/ChiragChrg/nextmart",
         Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon],
-        hideProject: false,
+        hideProject: true,
         LogoSize: 40
     },
     {
