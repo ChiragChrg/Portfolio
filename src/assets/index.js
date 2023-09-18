@@ -2,6 +2,7 @@ export { default as PurpleWave } from "./purpleWave.svg"
 export { default as LinkArrow } from "./LinkArrow.svg"
 export { default as Close } from "./Close.svg"
 export { default as ContactArt } from "./ContactVector.svg"
+export { default as Chevron } from "./Chevron.svg"
 export { default as AvatarImg } from "./Avatar.webp"
 
 //Social Icons

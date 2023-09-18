@@ -32,7 +32,7 @@ const Home = () => {
 
                 <Hero />
                 <About />
-                <Skills />
+                <Skills isMobile={isMobile} />
                 <Projects />
                 <Contact />
 

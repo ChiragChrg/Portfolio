@@ -51,6 +51,17 @@
     font-size: 0.9em;
 }
 
+.Skills-MoreBtn {
+    width: 100%;
+    height: 100%;
+}
+
+button.Skills-Icon {
+    width: 100%;
+    border: none;
+    font-size: 1em;
+}
+
 @media (799px < width < 1180px) {
     .Skills-IconSet {
         grid-template-columns: repeat(3, 1fr);
