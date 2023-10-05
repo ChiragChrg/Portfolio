@@ -18,7 +18,7 @@ export const ProjectsList = [
         Logo: VortexaLogo,
         Shot: VortexaShots,
         Theme: "#fff",
-        Status: "development",
+        Status: "completed",
         Link: "https://vortexa.netlify.app/",
         Source: "https://github.com/ChiragChrg/vortexa",
         Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, NanostoresIcon, DatabaseIcon],
