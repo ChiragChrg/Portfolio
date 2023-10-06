@@ -10,6 +10,17 @@ const ProjectDetails = () => {
     const [showModal, setShowModal] = useState(false)
     const { selectedProject, setSelectedProject } = useContextData()
 
+    window.onpopstate = () => {
+        // Overriding back button to CLOSE the Modal instead of Navigating back
+        window.history.forward(); //Prevent navigation to prev page
+
+        setShowModal(false)
+        setTimeout(() => {
+            // small delay before clearing state
+            setSelectedProject([])
+        }, 100)
+    };
+
     useEffect(() => {
         if (selectedProject.length !== 0) {
             setShowModal(true)
