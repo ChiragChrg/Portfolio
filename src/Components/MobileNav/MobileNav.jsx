@@ -1,6 +1,5 @@
 import "./MobileNav.css"
 import { motion, useCycle } from 'framer-motion'
-import { Link } from "react-scroll";
 
 const MobileNav = () => {
     const [openNav, setOpenNav] = useCycle(false, true);
@@ -86,57 +85,25 @@ const MobileNav = () => {
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <Link
-                        href="#about"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-25}
-                        duration={500}
-                        onClick={() => setOpenNav(false)}
-                        to="about">About</Link>
+                    <a href="#about" onClick={() => setOpenNav(false)}>About</a>
                 </motion.div>
 
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <Link
-                        href="#skills"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-20}
-                        duration={500}
-                        onClick={() => setOpenNav(false)}
-                        to="skills">Skills</Link>
+                    <a href="#skills" onClick={() => setOpenNav(false)}>Skills</a>
                 </motion.div>
 
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <Link
-                        href="#projects"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-20}
-                        duration={500}
-                        onClick={() => setOpenNav(false)}
-                        to="projects">Projects</Link>
+                    <a href="#projects" onClick={() => setOpenNav(false)}>Projects</a>
                 </motion.div>
 
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <Link
-                        href="#contact"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-20}
-                        duration={500}
-                        onClick={() => setOpenNav(false)}
-                        to="contact">Contact</Link>
+                    <a href="#contact" onClick={() => setOpenNav(false)}>Contact</a>
                 </motion.div>
 
                 <motion.div

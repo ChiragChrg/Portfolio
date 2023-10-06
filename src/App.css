@@ -74,10 +74,13 @@
   outline: 1px solid green !important;
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--base);
   color: var(--text);
-  scroll-behavior: smooth;
   /* cursor: none !important; */
 }
 

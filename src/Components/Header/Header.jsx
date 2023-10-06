@@ -1,7 +1,13 @@
+import { useState } from "react"
 import "./Header.css"
-import { Link } from "react-scroll";
 
 const Header = () => {
+    const [isActive, setIsActive] = useState(null)
+
+    const HandleLinkClick = (linkID) => {
+        setIsActive(linkID)
+    }
+
     return (
         <header className="Header-Main">
             <div className="Header-Container flex">
@@ -12,41 +18,18 @@ const Header = () => {
                 </div>
 
                 <nav className="Header-Nav flex">
-                    <Link
-                        href="#about"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-50}
-                        duration={500}
-                        to="about">About</Link>
-
-                    <Link
-                        href="#skills"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-50}
-                        duration={500}
-                        to="skills">Skills</Link>
-
-                    <Link
-                        href="#projects"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-30}
-                        duration={500}
-                        to="projects">Projects</Link>
-
-                    <Link
-                        href="#contact"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-20}
-                        duration={500}
-                        to="contact">Contact</Link>
+                    <a href="#about"
+                        onClick={() => HandleLinkClick("about")}
+                        className={isActive === "about" ? "active" : ""}>About</a>
+                    <a href="#skills"
+                        onClick={() => HandleLinkClick("skills")}
+                        className={isActive === "skills" ? "active" : ""}>Skills</a>
+                    <a href="#projects"
+                        onClick={() => HandleLinkClick("projects")}
+                        className={isActive === "projects" ? "active" : ""}>Projects</a>
+                    <a href="#contact"
+                        onClick={() => HandleLinkClick("contact")}
+                        className={isActive === "contact" ? "active" : ""}>Contact</a>
                 </nav>
 
                 <a className="Header-ActionBtn flex" href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf" download>
