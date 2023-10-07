@@ -4,9 +4,11 @@ import { useContextData } from "../../Hooks/useContextData"
 
 import FadeUp from "../../utils/FadeUp"
 import { LinkArrow } from "../../assets"
+import { useEffect, useState } from "react"
 
 const Projects = () => {
     const { setSelectedProject } = useContextData()
+    const [showMiscProjects, setShowMiscProjects] = useState(false)
 
     return (
         <section id="projects" className="Projects-Main">
@@ -21,8 +23,8 @@ const Projects = () => {
             {/* <FadeUp href={obj.Link} className="Projects-Item flex col" key={index}> */}
             <FadeUp className="Projects-Container">
                 {
-                    ProjectsList.map((obj, index) => {
-                        if (obj.hideProject) {
+                    ProjectsList?.map((obj, index) => {
+                        if (obj?.hideProject) {
                             return false
                         }
 
@@ -65,6 +67,47 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </FadeUp>)
+                    })
+                }
+            </FadeUp>
+
+            {/* Show Other Misc Projects */}
+            <div style={showMiscProjects ? { padding: "2em 0" } : { paddingTop: "2em" }} className="Projects-Misc flex">
+                <button className="flex gap" onClick={() => setShowMiscProjects(prev => !prev)}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={50}
+                        height={50}
+                        style={showMiscProjects ? { rotate: "180deg" } : { rotate: "0deg" }}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <span>{showMiscProjects ? "Hide" : "Show"} Projects</span>
+                </button>
+            </div>
+
+            <FadeUp width="100%" className="Projects-Container">
+                {
+                    ProjectsList?.map((obj, index) => {
+                        if (!obj?.hideProject) {
+                            return false
+                        }
+
+                        if (showMiscProjects)
+                            return <FadeUp width="100%" className="Projects-MiscCardMain flex col" key={index}>
+                                <div className="Projects-MiscCard flex">
+                                    <div className="Projects-MiscInfo flex" onClick={() => setSelectedProject(obj)}>
+                                        <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
+                                        <h2>{obj.Name}</h2>
+                                    </div>
+                                    <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link flex">
+                                        <img src={LinkArrow} alt="LinkArrow" width={50} height={50} />
+                                    </a>
+                                </div>
+                            </FadeUp>
                     })
                 }
             </FadeUp>

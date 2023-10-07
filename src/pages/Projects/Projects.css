@@ -43,22 +43,6 @@
     cursor: pointer;
 }
 
-:has(.Projects-Preview:hover) #cursor {
-    width: 65px;
-    height: 65px;
-    background: none;
-    outline: 2px solid hsla(0, 0%, 100%, 0.6);
-}
-
-:has(.Projects-Preview:hover) #cursorView {
-    visibility: visible !important;
-    font-size: 0.9em;
-}
-
-:has(.Projects-Preview:hover) #cursorDot {
-    visibility: hidden !important;
-}
-
 .Projects-Shot {
     background-size: cover;
     border-radius: 0.4em 0.4em 0 100%;
@@ -129,6 +113,73 @@
     width: 100%;
 }
 
+.Projects-Misc {
+    width: 100%;
+    padding-top: 2em;
+}
+
+.Projects-Misc button {
+    background: none;
+    border: 1px solid #fff;
+    color: var(--text);
+    font-size: 1.2em;
+    padding: 0.25em 1em;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+.Projects-Misc button svg {
+    transition: 0.3s ease;
+}
+
+.Projects-MiscCardMain {
+    border-radius: 0.4em;
+    color: var(--text);
+    background: var(--miscCardGradient);
+}
+
+.Projects-MiscCard {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+}
+
+.Projects-MiscInfo {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+    cursor: pointer;
+}
+
+.Projects-MiscInfo h2 {
+    letter-spacing: 1.5px;
+}
+
+.Projects-MiscCard>img {
+    margin: 1em;
+}
+
+:has(.Projects-MiscCardMain:hover) #cursor,
+:has(.Projects-Preview:hover) #cursor {
+    width: 65px;
+    height: 65px;
+    background: none;
+    outline: 2px solid hsla(0, 0%, 100%, 0.6);
+}
+
+:has(.Projects-MiscCardMain:hover) #cursorView,
+:has(.Projects-Preview:hover) #cursorView {
+    visibility: visible !important;
+    font-size: 0.9em;
+}
+
+:has(.Projects-MiscCardMain:hover) #cursorDot,
+:has(.Projects-Preview:hover) #cursorDot {
+    visibility: hidden !important;
+}
+
 @media (width < 855px) {
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
@@ -152,6 +203,16 @@
 
     .Projects-Link:hover {
         scale: 1;
+    }
+
+    .Projects-Misc svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .Projects-MiscCard img {
+        width: 30px;
+        height: 30px;
     }
 }
 

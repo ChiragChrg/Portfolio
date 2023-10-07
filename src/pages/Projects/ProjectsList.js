@@ -125,20 +125,20 @@ export const ProjectsList = [
         hideProject: false,
         LogoSize: 55
     },
-    {
-        Name: "ARMS 1.0",
-        ShortDesc: "",
-        Desc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. (SIMS - MP)",
-        Logo: ArmsPhpLogo,
-        Shot: DaysbeyondShots,
-        Theme: "#fff",
-        Status: "completed",
-        Link: "https://sims-arms.000webhostapp.com/",
-        Source: "https://github.com/ChiragChrg/ARMS-PHP",
-        Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon],
-        hideProject: true,
-        LogoSize: 55
-    },
+    // {
+    //     Name: "ARMS v-1.0",
+    //     ShortDesc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
+    //     Desc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
+    //     Logo: ArmsPhpLogo,
+    //     Shot: DaysbeyondShots,
+    //     Theme: "#fff",
+    //     Status: "completed",
+    //     Link: "https://sims-arms.000webhostapp.com/",
+    //     Source: "https://github.com/ChiragChrg/ARMS-PHP",
+    //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon],
+    //     hideProject: true,
+    //     LogoSize: 55
+    // },
     {
         Name: "FilmStack",
         ShortDesc: "Discover trending movies and access details of all films and search for any movie you desire. Easily search for any film and immerse in the world of cinema.",
