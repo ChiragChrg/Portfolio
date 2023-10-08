@@ -19,7 +19,7 @@ const Cursor = () => {
             };
 
             CursorRef.current.animate(keyframes, {
-                duration: 1,
+                duration: 500,
                 easing: "ease-in-out",
                 fill: "forwards",
             });
