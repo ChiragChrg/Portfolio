@@ -226,6 +226,13 @@
     }
 }
 
+/* Xtra small screen size Responsive CSS */
+@media (width < 450px) {
+    .Hero-AvatarContainer {
+        --avatar-width: 250px;
+    }
+}
+
 /* Tablet Responsive CSS */
 @media (min-width: 751px) and (max-width: 849px) {
     .Hero-Main {
