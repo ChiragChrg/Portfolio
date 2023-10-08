@@ -4,8 +4,8 @@
 # ChiragChrg | My Personal Portfolio | Fullstack Web Developer
 Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.
 
-<!-- ### Preview
-![SEM Preview](Frontend/public/Icons/ARMSDevices.png) -->
+### Preview
+![Portfolio Preview](public/Mockup_Preview.png)
 
 ## Tools and TechStacks used :
 
