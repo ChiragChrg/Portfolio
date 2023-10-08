@@ -5,33 +5,37 @@ const Cursor = () => {
     const CursorDotRef = useRef();
 
     useEffect(() => {
-        document.addEventListener('mousemove', evt => {
-            const x = evt?.clientX - CursorRef?.current?.offsetWidth / 2;
-            const y = evt?.clientY - CursorRef?.current?.offsetHeight / 2;
-            const xDot = evt?.clientX - CursorDotRef?.current?.offsetWidth / 2;
-            const yDot = evt?.clientY - CursorDotRef?.current?.offsetHeight / 2;
+        const handleMouseMove = (evt) => {
+            const x = evt.clientX - CursorRef.current.offsetWidth / 2;
+            const y = evt.clientY - CursorRef.current.offsetHeight / 2;
+            const xDot = evt.clientX - CursorDotRef.current.offsetWidth / 2;
+            const yDot = evt.clientY - CursorDotRef.current.offsetHeight / 2;
 
             const keyframes = {
-                transform: `translate(${x}px, ${y}px)`
-            }
-            const DotKeyframes = {
-                transform: `translate(${xDot}px, ${yDot}px)`
-            }
+                transform: `translate3d(${x}px, ${y}px, 0)`,
+            };
+            const dotKeyframes = {
+                transform: `translate3d(${xDot}px, ${yDot}px, 0)`,
+            };
 
-            CursorRef?.current?.animate(keyframes, {
-                duration: 500,
+            CursorRef.current.animate(keyframes, {
+                duration: 1,
                 easing: "ease-in-out",
                 fill: "forwards",
-            })
-            CursorDotRef?.current?.animate(DotKeyframes, {
+            });
+            CursorDotRef.current.animate(dotKeyframes, {
                 duration: 1,
                 easing: "ease-out",
-                fill: "forwards"
-            })
-        })
+                fill: "forwards",
+            });
+        };
 
-        return document.addEventListener('mousemove', () => { })
-    }, [])
+        document.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
 
     return (
         <div className="Cursor-Main">
