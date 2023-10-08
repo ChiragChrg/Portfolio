@@ -281,6 +281,13 @@ body:hover #cursorDot {
   }
 }
 
+/* Disable blue button click highlight */
+input,
+button,
+a,
+div {
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* Custom ScrollBar */
 /* :not(.ProjectDetails-Right)::-webkit-scrollbar {

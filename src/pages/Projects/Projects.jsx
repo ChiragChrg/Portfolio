@@ -85,7 +85,7 @@ const Projects = () => {
                         stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                     </svg>
-                    <span>{showMiscProjects ? "Hide" : "Show"} Projects</span>
+                    <span>{showMiscProjects ? "Less" : "More"} Projects</span>
                 </button>
             </div>
 
@@ -103,7 +103,7 @@ const Projects = () => {
                                         <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
                                         <h2>{obj.Name}</h2>
                                     </div>
-                                    <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link flex">
+                                    <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link Misc-Link flex">
                                         <img src={LinkArrow} alt="LinkArrow" width={50} height={50} />
                                     </a>
                                 </div>

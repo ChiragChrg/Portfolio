@@ -74,13 +74,20 @@
 }
 
 .Projects-Link {
-    padding: 0.5em;
+    padding: 0.45em;
+    border: 1px solid var(--purpleLite);
+    border-radius: 100%;
     z-index: 10;
 }
 
 :has(.Projects-Link:hover) #cursor {
-    width: 40px;
-    height: 40px;
+    width: 3em;
+    height: 3em;
+}
+
+:has(.Projects-Link.Misc-Link:hover) #cursor {
+    width: 5em;
+    height: 5em;
 }
 
 :has(.Projects-Link:hover) #cursorView {
@@ -120,8 +127,9 @@
 
 .Projects-Misc button {
     background: none;
-    border: 1px solid #fff;
+    border: 1px solid var(--pinkLite);
     color: var(--text);
+    min-width: 335px;
     font-size: 1.2em;
     padding: 0.25em 1em;
     border-radius: 0.2em;
@@ -161,21 +169,21 @@
     margin: 1em;
 }
 
-:has(.Projects-MiscCardMain:hover) #cursor,
+:has(.Projects-MiscInfo:hover) #cursor,
 :has(.Projects-Preview:hover) #cursor {
-    width: 65px;
-    height: 65px;
+    width: 5em;
+    height: 5em;
     background: none;
     outline: 2px solid hsla(0, 0%, 100%, 0.6);
 }
 
-:has(.Projects-MiscCardMain:hover) #cursorView,
+:has(.Projects-MiscInfo:hover) #cursorView,
 :has(.Projects-Preview:hover) #cursorView {
     visibility: visible !important;
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 
-:has(.Projects-MiscCardMain:hover) #cursorDot,
+:has(.Projects-MiscInfo:hover) #cursorDot,
 :has(.Projects-Preview:hover) #cursorDot {
     visibility: hidden !important;
 }
@@ -203,6 +211,10 @@
 
     .Projects-Link:hover {
         scale: 1;
+    }
+
+    .Projects-Misc button {
+        min-width: 225px;
     }
 
     .Projects-Misc svg {
