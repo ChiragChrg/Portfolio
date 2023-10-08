@@ -226,8 +226,8 @@ body:hover #cursorDot {
   .Header-ActionBtn:hover,
   a:hover,
   button:hover) #cursor {
-  width: 40px;
-  height: 40px;
+  width: 4em;
+  height: 4em;
   background: none;
   outline: 2px solid rgba(255, 255, 255, 0.8);
 }
