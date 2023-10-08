@@ -9,7 +9,7 @@ const SkillGrid = ({ stack }) => {
     const maxIconLength = isMobile ? 9 : 10
 
     useEffect(() => {
-        window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
+        window.innerWidth <= 850 ? setIsMobile(true) : setIsMobile(false)
     }, [])
 
     return (

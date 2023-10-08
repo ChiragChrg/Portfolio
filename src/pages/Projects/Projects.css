@@ -188,7 +188,7 @@
     visibility: hidden !important;
 }
 
-@media (width < 855px) {
+@media (width < 750px) {
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
         padding: 0 0.5em;
@@ -228,7 +228,8 @@
     }
 }
 
-@media (855px < width < 1180px) {
+/* Tablet Responsive CSS */
+@media (751px < width < 1180px) {
     .Projects-Container {
         grid-template-columns: repeat(2, 1fr);
     }

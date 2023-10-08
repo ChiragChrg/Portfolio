@@ -18,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         // Hide Header Comp if Mobile view
-        window.innerWidth <= 750 ? setIsMobile(true) : setIsMobile(false)
+        window.innerWidth <= 850 ? setIsMobile(true) : setIsMobile(false)
     }, [])
 
     return (

@@ -56,3 +56,19 @@
         padding: 0;
     }
 }
+
+/* Tablet Responsive CSS */
+@media (min-width: 751px) and (max-width: 849px) {
+    .About-Content {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .About-Info {
+        width: 100%;
+        border: none;
+        padding: 0;
+        padding: 0 5em;
+        margin-bottom: 2em;
+    }
+}

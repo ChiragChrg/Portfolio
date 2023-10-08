@@ -225,3 +225,32 @@
         scale: 1.5;
     }
 }
+
+/* Tablet Responsive CSS */
+@media (min-width: 751px) and (max-width: 849px) {
+    .Hero-Main {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        padding: 2em;
+        gap: 3em;
+        min-height: 80vh !important;
+    }
+
+    .Hero-AvatarContainer {
+        --avatar-width: 600px;
+    }
+
+    .Hero-Text p {
+        text-align: center;
+        font-size: 1.5empx;
+    }
+
+    .Hero-Links {
+        justify-content: center;
+    }
+
+    :has(.Hero-Avatar:hover) .Hero-TrailDot {
+        outline: 1px solid #fff;
+        scale: 1.5;
+    }
+}
