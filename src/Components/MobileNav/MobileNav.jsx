@@ -1,10 +1,16 @@
 import "./MobileNav.css"
 import { motion, useCycle } from 'framer-motion'
+import { useState, useEffect } from "react";
 
 const MobileNav = () => {
     const [openNav, setOpenNav] = useCycle(false, true);
     const devWidth = window.innerWidth;
     const devHeight = window.innerHeight;
+    const [isActive, setIsActive] = useState(null)
+
+    useEffect(() => {
+        setIsActive(window?.location?.hash)
+    }, [window?.location?.hash])
 
     const MenuVariant = {
         showMenu: {
@@ -54,12 +60,11 @@ const MobileNav = () => {
     return (
         <header className="MobileNav-Main">
             <div className="MobileNav-Header flex">
-                <div
-                    className="MobileNav-Logo"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <a
+                    href="#"
+                    className="MobileNav-Logo">
                     <h1 className="gradientText">Portfolio.</h1>
-                    {/* <h1 className="gradientText">ChiragChrg.</h1> */}
-                </div>
+                </a>
 
                 <svg viewBox="20 20 60 60" width="45"
                     className={openNav ? "MobileNav-Ham isOpen" : "MobileNav-Ham"}
@@ -85,25 +90,37 @@ const MobileNav = () => {
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <a href="#about" onClick={() => setOpenNav(false)}>About</a>
+                    <a
+                        href="#about"
+                        className={isActive === "#about" ? "active" : ""}
+                        onClick={() => setOpenNav(false)}>About</a>
                 </motion.div>
 
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <a href="#skills" onClick={() => setOpenNav(false)}>Skills</a>
+                    <a
+                        href="#skills"
+                        className={isActive === "#skills" ? "active" : ""}
+                        onClick={() => setOpenNav(false)}>Skills</a>
                 </motion.div>
 
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <a href="#projects" onClick={() => setOpenNav(false)}>Projects</a>
+                    <a
+                        href="#projects"
+                        className={isActive === "#projects" ? "active" : ""}
+                        onClick={() => setOpenNav(false)}>Projects</a>
                 </motion.div>
 
                 <motion.div
                     variants={LinkVariant}
                     className="MobileNav-LinkHolder flex">
-                    <a href="#contact" onClick={() => setOpenNav(false)}>Contact</a>
+                    <a
+                        href="#contact"
+                        className={isActive === "#contact" ? "active" : ""}
+                        onClick={() => setOpenNav(false)}>Contact</a>
                 </motion.div>
 
                 <motion.div

@@ -1,35 +1,27 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./Header.css"
 
 const Header = () => {
     const [isActive, setIsActive] = useState(null)
 
-    const HandleLinkClick = (linkID) => {
-        setIsActive(linkID)
-    }
+    useEffect(() => {
+        setIsActive(window?.location?.hash)
+    }, [window?.location?.hash])
 
     return (
         <header className="Header-Main">
             <div className="Header-Container flex">
-                <div
-                    className="Header-Logo"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <a
+                    href="#"
+                    className="Header-Logo">
                     <h1 className="gradientText">Portfolio.</h1>
-                </div>
+                </a>
 
                 <nav className="Header-Nav flex">
-                    <a href="#about"
-                        onClick={() => HandleLinkClick("about")}
-                        className={isActive === "about" ? "active" : ""}>About</a>
-                    <a href="#skills"
-                        onClick={() => HandleLinkClick("skills")}
-                        className={isActive === "skills" ? "active" : ""}>Skills</a>
-                    <a href="#projects"
-                        onClick={() => HandleLinkClick("projects")}
-                        className={isActive === "projects" ? "active" : ""}>Projects</a>
-                    <a href="#contact"
-                        onClick={() => HandleLinkClick("contact")}
-                        className={isActive === "contact" ? "active" : ""}>Contact</a>
+                    <a href="#about" className={isActive === "#about" ? "active" : ""}>About</a>
+                    <a href="#skills" className={isActive === "#skills" ? "active" : ""}>Skills</a>
+                    <a href="#projects" className={isActive === "#projects" ? "active" : ""}>Projects</a>
+                    <a href="#contact" className={isActive === "#contact" ? "active" : ""}>Contact</a>
                 </nav>
 
                 <a className="Header-ActionBtn flex" href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf" download>
