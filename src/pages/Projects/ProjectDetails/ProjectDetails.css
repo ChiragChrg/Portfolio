@@ -49,6 +49,11 @@
     cursor: pointer;
 }
 
+:has(.ProjectDetails-CloseBtn:hover) #cursor {
+    width: 4em;
+    height: 4em;
+}
+
 .ProjectDetails-Main.Hidden * {
     position: absolute;
     opacity: 0;
