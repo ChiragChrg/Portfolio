@@ -1,5 +1,4 @@
 import "./Skills.css"
-import { FadeUpVariant, } from "../../utils/Variants"
 import FadeUp from "../../utils/FadeUp"
 import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
@@ -7,15 +6,10 @@ import {
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon,
     NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon, NanostoresIcon
 } from "../../assets/Icons"
-import { Chevron, GithubIcon } from "../../assets"
-import { useState } from "react"
+import { GithubIcon } from "../../assets"
+import SkillGrid from "../../utils/SkillGrid"
 
-const Skills = ({ isMobile }) => {
-    const [showFrontend, setShowFrontend] = useState(false)
-    const [showBackend, setShowBackend] = useState(false)
-    const [showProgramming, setShowProgramming] = useState(false)
-    const [showTools, setShowTools] = useState(false)
-    const maxIconLength = isMobile ? 9 : 10
+const Skills = () => {
 
     const FrontendStack = [
         { name: "HTML", icon: HtmlIcon, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
@@ -76,51 +70,7 @@ const Skills = ({ isMobile }) => {
                         <p>Front-End</p>
                         <span>{"()"}</span>
                     </h2>
-                    <div className="Skills-IconSet">
-                        {FrontendStack.length <= maxIconLength ?
-                            FrontendStack.map((obj, i) => {
-                                // While stack.length <= maxIconLength, show all icons
-                                return <FadeUp key={i} >
-                                    <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                        <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                        <span>{obj.name}</span>
-                                    </a>
-                                </FadeUp>
-                            })
-                            :
-                            <>
-                                {!showFrontend ?
-                                    FrontendStack.map((obj, i) => {
-                                        // when stack.length > maxIconLength, 
-                                        // show only limited icons and at end add "Show More" button
-                                        if (i < maxIconLength - 1)
-                                            return <FadeUp key={i} >
-                                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                    <span>{obj.name}</span>
-                                                </a>
-                                            </FadeUp>
-                                    })
-                                    : FrontendStack.map((obj, i) => {
-                                        // show all icons when "Show More" button is clicked
-                                        return <FadeUp key={i} >
-                                            <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                <span>{obj.name}</span>
-                                            </a>
-                                        </FadeUp>
-                                    })
-                                }
-
-                                <FadeUp className="Skills-MoreBtn" width="100%">
-                                    <button className="Skills-Icon flex col gap05" onClick={() => setShowFrontend(prev => !prev)}>
-                                        <img style={{ rotate: showFrontend ? "180deg" : "0deg" }} variants={FadeUpVariant} src={Chevron} alt="Chevron" width={35} height={35} />
-                                        <span>{showFrontend ? "Show Less" : "Show More"}</span>
-                                    </button>
-                                </FadeUp>
-                            </>
-                        }
-                    </div>
+                    <SkillGrid stack={FrontendStack} />
                 </FadeUp>
 
                 <FadeUp width="100%" height="100%" className="Skills-Holder flex col gap">
@@ -128,51 +78,7 @@ const Skills = ({ isMobile }) => {
                         <p>Back-End</p>
                         <span>{"()"}</span>
                     </h2>
-                    <div className="Skills-IconSet">
-                        {BackendStack.length <= maxIconLength ?
-                            BackendStack.map((obj, i) => {
-                                // While stack.length <= maxIconLength, show all icons
-                                return <FadeUp key={i} >
-                                    <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                        <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                        <span>{obj.name}</span>
-                                    </a>
-                                </FadeUp>
-                            })
-                            :
-                            <>
-                                {!showBackend ?
-                                    BackendStack.map((obj, i) => {
-                                        // when stack.length > maxIconLength, 
-                                        // show only limited icons and at end add "Show More" button
-                                        if (i < maxIconLength - 1)
-                                            return <FadeUp key={i} >
-                                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                    <span>{obj.name}</span>
-                                                </a>
-                                            </FadeUp>
-                                    })
-                                    : BackendStack.map((obj, i) => {
-                                        // show all icons when "Show More" button is clicked
-                                        return <FadeUp key={i} >
-                                            <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                <span>{obj.name}</span>
-                                            </a>
-                                        </FadeUp>
-                                    })
-                                }
-
-                                <FadeUp className="Skills-MoreBtn" width="100%">
-                                    <button className="Skills-Icon flex col gap05" onClick={() => setShowBackend(prev => !prev)}>
-                                        <img style={{ rotate: showBackend ? "180deg" : "0deg" }} variants={FadeUpVariant} src={Chevron} alt="Chevron" width={35} height={35} />
-                                        <span>{showBackend ? "Show Less" : "Show More"}</span>
-                                    </button>
-                                </FadeUp>
-                            </>
-                        }
-                    </div>
+                    <SkillGrid stack={BackendStack} />
                 </FadeUp>
             </div>
 
@@ -182,51 +88,7 @@ const Skills = ({ isMobile }) => {
                         <p>Programming</p>
                         <span>{"()"}</span>
                     </h2>
-                    <div className="Skills-IconSet">
-                        {ProgrammingStack.length <= maxIconLength ?
-                            ProgrammingStack.map((obj, i) => {
-                                // While stack.length <= maxIconLength, show all icons
-                                return <FadeUp key={i} >
-                                    <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                        <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                        <span>{obj.name}</span>
-                                    </a>
-                                </FadeUp>
-                            })
-                            :
-                            <>
-                                {!showProgramming ?
-                                    ProgrammingStack.map((obj, i) => {
-                                        // when stack.length > maxIconLength, 
-                                        // show only limited icons and at end add "Show More" button
-                                        if (i < maxIconLength - 1)
-                                            return <FadeUp key={i} >
-                                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                    <span>{obj.name}</span>
-                                                </a>
-                                            </FadeUp>
-                                    })
-                                    : ProgrammingStack.map((obj, i) => {
-                                        // show all icons when "Show More" button is clicked
-                                        return <FadeUp key={i} >
-                                            <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                <span>{obj.name}</span>
-                                            </a>
-                                        </FadeUp>
-                                    })
-                                }
-
-                                <FadeUp className="Skills-MoreBtn" width="100%">
-                                    <button className="Skills-Icon flex col gap05" onClick={() => setShowProgramming(prev => !prev)}>
-                                        <img style={{ rotate: showProgramming ? "180deg" : "0deg" }} variants={FadeUpVariant} src={Chevron} alt="Chevron" width={35} height={35} />
-                                        <span>{showProgramming ? "Show Less" : "Show More"}</span>
-                                    </button>
-                                </FadeUp>
-                            </>
-                        }
-                    </div>
+                    <SkillGrid stack={ProgrammingStack} />
                 </FadeUp>
 
                 <FadeUp width="100%" height="100%" className="Skills-Holder flex col gap">
@@ -234,51 +96,7 @@ const Skills = ({ isMobile }) => {
                         <p>Tech & Tools</p>
                         <span>{"()"}</span>
                     </h2>
-                    <div className="Skills-IconSet">
-                        {ToolsStack.length <= maxIconLength ?
-                            ToolsStack.map((obj, i) => {
-                                // While stack.length <= maxIconLength, show all icons
-                                return <FadeUp key={i} >
-                                    <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                        <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                        <span>{obj.name}</span>
-                                    </a>
-                                </FadeUp>
-                            })
-                            :
-                            <>
-                                {!showTools ?
-                                    ToolsStack.map((obj, i) => {
-                                        // when stack.length > maxIconLength, 
-                                        // show only limited icons and at end add "Show More" button
-                                        if (i < maxIconLength - 1)
-                                            return <FadeUp key={i} >
-                                                <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                    <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                    <span>{obj.name}</span>
-                                                </a>
-                                            </FadeUp>
-                                    })
-                                    : ToolsStack.map((obj, i) => {
-                                        // show all icons when "Show More" button is clicked
-                                        return <FadeUp key={i} >
-                                            <a href={obj.link} title={obj.name} className="Skills-Icon flex col gap05" target="_blank" rel="noreferrer">
-                                                <img variants={FadeUpVariant} src={obj.icon} alt="" width={35} height={35} />
-                                                <span>{obj.name}</span>
-                                            </a>
-                                        </FadeUp>
-                                    })
-                                }
-
-                                <FadeUp className="Skills-MoreBtn" width="100%">
-                                    <button className="Skills-Icon flex col gap05" onClick={() => setShowTools(prev => !prev)}>
-                                        <img style={{ rotate: showTools ? "180deg" : "0deg" }} variants={FadeUpVariant} src={Chevron} alt="Chevron" width={35} height={35} />
-                                        <span>{showTools ? "Show Less" : "Show More"}</span>
-                                    </button>
-                                </FadeUp>
-                            </>
-                        }
-                    </div>
+                    <SkillGrid stack={ToolsStack} />
                 </FadeUp>
             </div>
 
