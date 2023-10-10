@@ -4,7 +4,7 @@ import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
     PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon,
-    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon, NanostoresIcon
+    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon, NanostoresIcon, FirebaseIcon
 } from "../../assets/Icons"
 import { GithubIcon } from "../../assets"
 import SkillGrid from "../../utils/SkillGrid"
@@ -28,6 +28,7 @@ const Skills = () => {
         { name: "Node.js", icon: NodeIcon, link: "https://nodejs.org/" },
         { name: "Express.js", icon: ExpressIcon, link: "https://expressjs.com/" },
         { name: "MongoDB", icon: MongoIcon, link: "https://www.mongodb.com/" },
+        { name: "Firebase", icon: FirebaseIcon, link: "https://firebase.google.com/" },
         { name: "MySQL", icon: MysqlIcon, link: "https://www.mysql.com/" },
         { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
         { name: "REST API", icon: DatabaseIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
