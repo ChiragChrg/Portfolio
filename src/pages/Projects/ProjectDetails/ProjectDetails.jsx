@@ -10,17 +10,6 @@ const ProjectDetails = () => {
     const [showModal, setShowModal] = useState(false)
     const { selectedProject, setSelectedProject } = useContextData()
 
-    window.onpopstate = () => {
-        // Overriding back button to CLOSE the Modal instead of Navigating back
-        window.history.forward(); //Prevent navigation to prev page
-
-        setShowModal(false)
-        setTimeout(() => {
-            // small delay before clearing state
-            setSelectedProject([])
-        }, 100)
-    };
-
     useEffect(() => {
         if (selectedProject.length !== 0) {
             setShowModal(true)
@@ -30,10 +19,25 @@ const ProjectDetails = () => {
             setShowModal(false)
     }, [selectedProject])
 
+    // Overriding back button to CLOSE the Modal instead of Navigating back
+    window.onpopstate = () => {
+        setShowModal(false)
+        setTimeout(() => {
+            // small delay before clearing state
+            setSelectedProject([])
+        }, 100)
+    };
+
+    const handleModalClose = () => {
+        setShowModal(false)
+        setSelectedProject([])
+        window.history.back();
+    }
+
     return (
         <div className={!showModal ? "ProjectDetails-Main Hidden" : "ProjectDetails-Main ShowModal"}>
             <div className="ProjectDetails-Container flex">
-                <button className="ProjectDetails-CloseBtn flex" onClick={() => { setShowModal(false), setSelectedProject([]) }}>
+                <button className="ProjectDetails-CloseBtn flex" onClick={handleModalClose}>
                     <img src={Close} alt="CloseModal" width="35px" height="35px" />
                 </button>
 

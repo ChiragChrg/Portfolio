@@ -20,7 +20,6 @@ const Projects = () => {
                 </h1>
             </FadeUp>
 
-            {/* <FadeUp href={obj.Link} className="Projects-Item flex col" key={index}> */}
             <FadeUp className="Projects-Container">
                 {
                     ProjectsList?.map((obj, index) => {
@@ -32,7 +31,10 @@ const Projects = () => {
                             <FadeUp isHover
                                 className="Projects-Item flex col"
                                 key={index}>
-                                <div className="Projects-Preview" onClick={() => setSelectedProject(obj)}>
+                                <div className="Projects-Preview" onClick={() => {
+                                    setSelectedProject(obj);
+                                    window.history.pushState({}, '', `#projects/${obj?.Name?.toLowerCase()}`);
+                                }}>
                                     <img className="Projects-Shot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
                                     <img className="Projects-Logo" src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
                                 </div>
@@ -56,7 +58,6 @@ const Projects = () => {
                                     <p>{obj.ShortDesc}</p>
 
                                     <div className="Projects-Tech flex col">
-                                        {/* <p>Tech used:</p> */}
                                         <div className="Projects-TechIcons flex gap">
                                             {obj.Tech.map((icon, indx) => {
                                                 return (
