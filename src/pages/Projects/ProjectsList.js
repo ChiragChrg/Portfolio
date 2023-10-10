@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, CppIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon, PhpIcon, ExpressIcon, PythonIcon, ViteIcon, VsCodeIcon, NpmIcon, GitIcon, FigmaIcon, NetlifyIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon, ZustandIcon, AstroIcon, NanostoresIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, CppIcon, JavaIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ExpressIcon, PythonIcon, ViteIcon, VsCodeIcon, NpmIcon, GitIcon, FigmaIcon, NetlifyIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon
 } from "../../assets/Icons"
 
 import {
@@ -21,7 +21,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://vortexa.netlify.app/",
         Source: "https://github.com/ChiragChrg/vortexa",
-        Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, NanostoresIcon, DatabaseIcon],
+        Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, D3JsIcon, NanostoresIcon, RestApiIcon],
         hideProject: false,
         LogoSize: 50
     },
@@ -78,7 +78,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
         hideProject: false,
         LogoSize: 55
     },
@@ -107,7 +107,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
         hideProject: false,
         LogoSize: 55
     },
@@ -121,7 +121,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
-        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: false,
         LogoSize: 55
     },
@@ -135,7 +135,7 @@ export const ProjectsList = [
     //     Status: "completed",
     //     Link: "https://sims-arms.000webhostapp.com/",
     //     Source: "https://github.com/ChiragChrg/ARMS-PHP",
-    //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, DatabaseIcon],
+    //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, RestApiIcon],
     //     hideProject: true,
     //     LogoSize: 55
     // },
@@ -149,7 +149,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
-        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: true,
         LogoSize: 55
     },
@@ -163,7 +163,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://covidtrax.netlify.app/",
         Source: "https://github.com/ChiragChrg/CovidTrax",
-        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: true,
         LogoSize: 55
     },
@@ -177,7 +177,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://cookeez.netlify.app/",
         Source: "https://github.com/ChiragChrg/Cookeez",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
         hideProject: true,
         LogoSize: 55
     },
@@ -191,7 +191,7 @@ export const ProjectsList = [
         Status: "completed",
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
-        Tech: [HtmlIcon, CssIcon, JsIcon, DatabaseIcon],
+        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: false,
         LogoSize: 55
     },
