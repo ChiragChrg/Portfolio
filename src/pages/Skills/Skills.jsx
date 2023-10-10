@@ -2,9 +2,10 @@ import "./Skills.css"
 import FadeUp from "../../utils/FadeUp"
 import {
     HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, ViteIcon, TsIcon, NextIcon,
-    PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, DatabaseIcon,
+    PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, RestApiIcon,
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon,
-    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon, NanostoresIcon, FirebaseIcon
+    NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon,
+    NanostoresIcon, FirebaseIcon, D3JsIcon
 } from "../../assets/Icons"
 import { GithubIcon } from "../../assets"
 import SkillGrid from "../../utils/SkillGrid"
@@ -22,6 +23,7 @@ const Skills = () => {
         { name: "Tailwind", icon: TailwindIcon, link: "https://tailwindcss.com/" },
         { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
         { name: "Zustand", icon: ZustandIcon, link: "https://zustand-demo.pmnd.rs/" },
+        { name: "D3.js", icon: D3JsIcon, link: "https://d3js.org/" },
         { name: "Nanostores", icon: NanostoresIcon, link: "https://github.com/nanostores/nanostores" },
     ]
     const BackendStack = [
@@ -31,7 +33,7 @@ const Skills = () => {
         { name: "Firebase", icon: FirebaseIcon, link: "https://firebase.google.com/" },
         { name: "MySQL", icon: MysqlIcon, link: "https://www.mysql.com/" },
         { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
-        { name: "REST API", icon: DatabaseIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
+        { name: "REST API", icon: RestApiIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
         { name: "Drive API", icon: GdriveIcon, link: "https://developers.google.com/drive" },
         { name: "NextAuth.js", icon: NextAuthIcon, link: "https://next-auth.js.org/" },
     ]
