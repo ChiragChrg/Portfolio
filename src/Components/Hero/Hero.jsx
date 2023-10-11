@@ -39,7 +39,7 @@ const Hero = () => {
                     <a href="https://www.linkedin.com/in/chiragchrg/" title="LinkedIn" target="_blank" rel="noreferrer">
                         <img src={LinkedinIcon} alt="LinkedinIcon" width={30} height={30} />
                     </a>
-                    <a href="https://twitter.com/ChrgChirag" title="Twitter" target="_blank" rel="noreferrer">
+                    <a href="https://x.com/ChrgChirag" title="Twitter X" target="_blank" rel="noreferrer">
                         <img src={TwitterIcon} alt="TwitterIcon" width={30} height={30} />
                     </a>
                     <a href="https://www.instagram.com/chiragchrg/" title="Instagram" target="_blank" rel="noreferrer">

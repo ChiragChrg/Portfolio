@@ -27,8 +27,8 @@ const Footer = () => {
                     <a href="https://www.facebook.com/ChiragChrg/" target="_blank" rel="noreferrer">
                         <img src={FaceBookIcon} alt="FaceBook" width={30} height={30} />
                     </a>
-                    <a href="https://twitter.com/ChrgChirag" target="_blank" rel="noreferrer">
-                        <img src={TwitterIcon} alt="Twitter" width={30} height={30} />
+                    <a href="https://x.com/ChrgChirag" target="_blank" rel="noreferrer">
+                        <img src={TwitterIcon} alt="Twitter X" width={30} height={30} />
                     </a>
                     <a href="https://www.instagram.com/chiragchrg/" target="_blank" rel="noreferrer">
                         <img src={InstagramIcon} alt="Instagram" width={30} height={30} />

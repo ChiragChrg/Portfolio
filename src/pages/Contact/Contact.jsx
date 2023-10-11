@@ -102,8 +102,8 @@ const Contact = () => {
                         <a href="mailto:chiruchirag2001@gmail.com" className="Contact-Icon gmail" title="Gmail" target="_blank" rel="noreferrer">
                             <img src={GmailIcon} alt="Gmail" width={30} height={30} />
                         </a>
-                        <a href="https://twitter.com/ChrgChirag" className="Contact-Icon twitter" title="Twitter" target="_blank" rel="noreferrer">
-                            <img src={TwitterIcon} alt="Twitter" width={30} height={30} />
+                        <a href="https://x.com/ChrgChirag" className="Contact-Icon twitter" title="Twitter" target="_blank" rel="noreferrer">
+                            <img src={TwitterIcon} alt="Twitter X" width={30} height={30} />
                         </a>
                         <a href="https://discordapp.com/users/647359627461263390" className="Contact-Icon discord" title="Discord" target="_blank" rel="noreferrer">
                             <img src={DiscordIcon} alt="Discord" width={30} height={30} />

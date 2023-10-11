@@ -8,7 +8,7 @@
 
   <title>ChiragChrg | My Personal Portfolio | Fullstack Web Developer</title>
   <meta name="description"
-    content="Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences." />
+    content="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX." />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y" />
   <meta name="keywords"
@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="ChiragChrg | My Personal Portfolio | Fullstack Web Developer">
   <meta property="og:description"
-    content="Welcome to ChiragChrg's portfolio website, a dynamic world of Web Development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.">
+    content="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.">
   <meta property="og:image"
     content="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp">
 
@@ -31,7 +31,7 @@
   <meta property="twitter:url" content="https://chiragchrg.netlify.app/">
   <meta name="twitter:title" content="ChiragChrg | My Personal Portfolio | Fullstack Web Developer">
   <meta name="twitter:description"
-    content="Welcome to ChiragChrg's portfolio website, a dynamic world of Web Development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.">
+    content="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.">
   <meta name="twitter:image"
     content="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp">
   <meta name="twitter:site" content="@ChrgChirag" />
@@ -82,7 +82,7 @@
       GitHub</a>
     <a href="https://www.linkedin.com/in/chiragchrg/" title="LinkedIn" target="_blank" rel="noreferrer">
       LinkedIn</a>
-    <a href="https://twitter.com/ChrgChirag" title="Twitter" target="_blank" rel="noreferrer">
+    <a href="https://x.com/ChrgChirag" title="Twitter" target="_blank" rel="noreferrer">
       Twitter</a>
     <a href="https://www.instagram.com/chiragchrg/" title="Instagram" target="_blank" rel="noreferrer">
       Instagram</a>
@@ -106,22 +106,22 @@
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 
-  <!-- PWA Service Worker Script -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/ServiceWorker.js")
-          .then((Reg) => {
-            console.log("SW Registered: ", Reg.scope);
-          })
-          .catch((RegErr) => {
-            console.log("SW Registration failed: ", RegErr);
-          });
-      });
-    }
-  </script>
-  <!-- PWA Service Worker Script -->
 </body>
+<!-- PWA Service Worker Script -->
+<script defer>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/ServiceWorker.js")
+        .then((Reg) => {
+          console.log("SW Registered: ", Reg.scope);
+        })
+        .catch((RegErr) => {
+          console.log("SW Registration failed: ", RegErr);
+        });
+    });
+  }
+</script>
+<!-- PWA Service Worker Script -->
 
 </html>
