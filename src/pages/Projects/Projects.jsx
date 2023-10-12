@@ -100,7 +100,10 @@ const Projects = () => {
                         if (showMiscProjects)
                             return <FadeUp width="100%" className="Projects-MiscCardMain flex col" key={index}>
                                 <div className="Projects-MiscCard flex">
-                                    <div className="Projects-MiscInfo flex" onClick={() => setSelectedProject(obj)}>
+                                    <div className="Projects-MiscInfo flex" onClick={() => {
+                                        setSelectedProject(obj);
+                                        window.history.pushState({}, '', `#projects/${obj?.Name?.toLowerCase()}`);
+                                    }}>
                                         <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
                                         <h2>{obj.Name}</h2>
                                     </div>
