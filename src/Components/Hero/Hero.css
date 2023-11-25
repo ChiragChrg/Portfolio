@@ -3,6 +3,7 @@
     /* height: 100vh; */
     height: calc(100vh - 4em) !important;
     padding: 1em 2em;
+    padding-top: 1em !important;
     background-color: rgba(255, 255, 255, 0.1);
     background-color: var(--base);
     justify-content: space-around;
@@ -228,8 +229,9 @@
 @media (377px < width < 750px) {
     .Hero-Main {
         flex-direction: column-reverse;
-        justify-content: flex-end;
+        justify-content: space-evenly;
         padding: 2em;
+        padding-top: 2em !important;
         gap: 3em;
         min-height: 80vh !important;
     }
