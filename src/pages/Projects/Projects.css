@@ -154,7 +154,6 @@
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    gap: 2em;
     cursor: pointer;
 }
 
@@ -197,6 +196,7 @@
     visibility: hidden !important;
 }
 
+/* Mobile Responsive CSS */
 @media (width < 750px) {
     .Projects-Container {
         grid-template-columns: repeat(1, 1fr);
@@ -234,6 +234,10 @@
     .Projects-MiscCard img {
         width: 30px;
         height: 30px;
+    }
+
+    .Projects-MiscCard .Projects-TechIcons img {
+        width: 20px;
     }
 }
 

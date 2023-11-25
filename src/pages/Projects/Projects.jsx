@@ -96,16 +96,17 @@ const Projects = () => {
                         }
 
                         if (showMiscProjects)
-                            return <FadeUp width="100%">
-                                <div className="Projects-MiscCardMain flex col" key={index}>
+                            return <FadeUp width="100%" key={index}>
+                                <div className="Projects-MiscCardMain flex col">
                                     <img className="Projects-MiscShot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
+
                                     <div className="Projects-MiscCard flex">
                                         <div className="Projects-MiscInfo flex" onClick={() => {
                                             setSelectedProject(obj);
                                             window.history.pushState({}, '', `#projects/${obj?.Name?.toLowerCase()}`);
                                         }}>
                                             <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
-                                            <div className="">
+                                            <div className="flex col w-full">
                                                 <h2>{obj.Name}</h2>
                                                 <div className="Projects-TechIcons flex gap">
                                                     {obj.Tech.map((icon, indx) => {
@@ -116,10 +117,10 @@ const Projects = () => {
                                                 </div>
                                             </div>
                                         </div>
+
                                         <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link Misc-Link flex">
                                             <img src={LinkArrow} alt="LinkArrow" width={30} height={30} />
                                         </a>
-
                                     </div>
                                 </div>
                             </FadeUp>

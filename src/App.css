@@ -127,6 +127,10 @@ img {
   align-items: center;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .flexStart {
   display: flex;
   justify-content: flex-start;
