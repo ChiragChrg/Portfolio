@@ -24,7 +24,7 @@ const Cursor = () => {
                 fill: "forwards",
             });
             CursorDotRef.current.animate(dotKeyframes, {
-                duration: 1,
+                duration: 100,
                 easing: "ease-out",
                 fill: "forwards",
             });
