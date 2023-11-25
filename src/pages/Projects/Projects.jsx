@@ -57,14 +57,12 @@ const Projects = () => {
                                     </div>
                                     <p>{obj.ShortDesc}</p>
 
-                                    <div className="Projects-Tech flex col">
-                                        <div className="Projects-TechIcons flex gap">
-                                            {obj.Tech.map((icon, indx) => {
-                                                return (
-                                                    <img src={icon} key={indx} alt="HtmlIcon" width={22} height={22} />
-                                                )
-                                            })}
-                                        </div>
+                                    <div className="Projects-TechIcons flex gap">
+                                        {obj.Tech.map((icon, indx) => {
+                                            return (
+                                                <img src={icon} key={indx} alt="HtmlIcon" width={22} height={22} />
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </FadeUp>)
@@ -77,8 +75,8 @@ const Projects = () => {
                 <button className="flex gap" onClick={() => setShowMiscProjects(prev => !prev)}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width={50}
-                        height={50}
+                        width={30}
+                        height={30}
                         style={showMiscProjects ? { rotate: "180deg" } : { rotate: "0deg" }}
                         fill="none"
                         viewBox="0 0 24 24"
@@ -99,17 +97,29 @@ const Projects = () => {
 
                         if (showMiscProjects)
                             return <FadeUp width="100%" className="Projects-MiscCardMain flex col" key={index}>
+                                <img className="Projects-MiscShot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
                                 <div className="Projects-MiscCard flex">
+
                                     <div className="Projects-MiscInfo flex" onClick={() => {
                                         setSelectedProject(obj);
                                         window.history.pushState({}, '', `#projects/${obj?.Name?.toLowerCase()}`);
                                     }}>
                                         <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
-                                        <h2>{obj.Name}</h2>
+                                        <div className="">
+                                            <h2>{obj.Name}</h2>
+                                            <div className="Projects-TechIcons flex gap">
+                                                {obj.Tech.map((icon, indx) => {
+                                                    return (
+                                                        <img src={icon} key={indx} alt="HtmlIcon" width={22} height={22} />
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
                                     </div>
                                     <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link Misc-Link flex">
-                                        <img src={LinkArrow} alt="LinkArrow" width={50} height={50} />
+                                        <img src={LinkArrow} alt="LinkArrow" width={30} height={30} />
                                     </a>
+
                                 </div>
                             </FadeUp>
                     })
