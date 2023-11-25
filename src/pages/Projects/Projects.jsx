@@ -4,7 +4,7 @@ import { useContextData } from "../../Hooks/useContextData"
 
 import FadeUp from "../../utils/FadeUp"
 import { LinkArrow } from "../../assets"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const Projects = () => {
     const { setSelectedProject } = useContextData()
@@ -96,32 +96,34 @@ const Projects = () => {
                         }
 
                         if (showMiscProjects)
-                            return <FadeUp width="100%" className="Projects-MiscCardMain flex col" key={index}>
-                                <img className="Projects-MiscShot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
-                                <div className="Projects-MiscCard flex">
-
-                                    <div className="Projects-MiscInfo flex" onClick={() => {
-                                        setSelectedProject(obj);
-                                        window.history.pushState({}, '', `#projects/${obj?.Name?.toLowerCase()}`);
-                                    }}>
-                                        <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
-                                        <div className="">
-                                            <h2>{obj.Name}</h2>
-                                            <div className="Projects-TechIcons flex gap">
-                                                {obj.Tech.map((icon, indx) => {
-                                                    return (
-                                                        <img src={icon} key={indx} alt="HtmlIcon" width={22} height={22} />
-                                                    )
-                                                })}
+                            return <FadeUp width="100%">
+                                <div className="Projects-MiscCardMain flex col" key={index}>
+                                    <img className="Projects-MiscShot" src={obj.Shot} alt="Project_ScreenShot" width="100%" height="100%" />
+                                    <div className="Projects-MiscCard flex">
+                                        <div className="Projects-MiscInfo flex" onClick={() => {
+                                            setSelectedProject(obj);
+                                            window.history.pushState({}, '', `#projects/${obj?.Name?.toLowerCase()}`);
+                                        }}>
+                                            <img src={obj.Logo} alt="Project_Logo" width={obj.LogoSize} height={obj.LogoSize} />
+                                            <div className="">
+                                                <h2>{obj.Name}</h2>
+                                                <div className="Projects-TechIcons flex gap">
+                                                    {obj.Tech.map((icon, indx) => {
+                                                        return (
+                                                            <img src={icon} key={indx} alt="HtmlIcon" width={22} height={22} />
+                                                        )
+                                                    })}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link Misc-Link flex">
-                                        <img src={LinkArrow} alt="LinkArrow" width={30} height={30} />
-                                    </a>
+                                        <a href={obj.Link} target='_blank' rel='noreferrer' className="Projects-Link Misc-Link flex">
+                                            <img src={LinkArrow} alt="LinkArrow" width={30} height={30} />
+                                        </a>
 
+                                    </div>
                                 </div>
                             </FadeUp>
+
                     })
                 }
             </FadeUp>
