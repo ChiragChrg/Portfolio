@@ -198,7 +198,7 @@ img {
   height: 100%;
   font-size: 0;
   letter-spacing: 1px;
-  background: var(--purpleLite);
+  background: var(--SkillGradient);
   border-radius: 50%;
 }
 

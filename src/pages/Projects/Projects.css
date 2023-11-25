@@ -188,6 +188,7 @@
 :has(.Projects-Preview:hover) #cursorView {
     visibility: visible !important;
     font-size: 1.2em;
+    padding-bottom: 1.15em;
 }
 
 :has(.Projects-MiscInfo:hover) #cursorDot,
