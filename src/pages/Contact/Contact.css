@@ -190,7 +190,7 @@ input:-webkit-autofill:active {
     text-align: center;
     border-radius: 0.4em;
     padding: 0.5em 1em;
-    width: 18em;
+    width: 20em;
     background: var(--LinkBtnGradient);
     cursor: pointer;
 }
