@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.16.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.13",
-    "@types/react-dom": "^18.2.6",
-    "@vitejs/plugin-react": "^4.0.1",
-    "npm-check-updates": "^16.10.12",
-    "vite": "^4.3.9"
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.0",
+    "npm-check-updates": "^16.14.11",
+    "vite": "^5.0.2"
   }
 }
