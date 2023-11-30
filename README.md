@@ -1,5 +1,5 @@
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/chiragchrg/deploys)
+##### Created : 09/04/2023
 
 # ChiragChrg | My Personal Portfolio | Fullstack Web Developer
 Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.
