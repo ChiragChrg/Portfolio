@@ -11,6 +11,7 @@ export { default as ReduxIcon } from "./redux.svg"
 export { default as ZustandIcon } from "./zustand.webp"
 export { default as D3JsIcon } from "./d3js.svg"
 export { default as NanostoresIcon } from "./nanostores.svg"
+export { default as ReactQueryIcon } from "./reactquery.svg"
 
 // Backend-Stack
 export { default as NodeIcon } from "./nodejs.svg"
@@ -22,6 +23,7 @@ export { default as PhpIcon } from "./php.svg"
 export { default as RestApiIcon } from "./database.svg"
 export { default as GdriveIcon } from "./gdrive.svg"
 export { default as NextAuthIcon } from "./nextauth.svg"
+export { default as EdgeStoreIcon } from "./edgestore.webp"
 
 // Programming-Stack
 export { default as PythonIcon } from "./python.svg"

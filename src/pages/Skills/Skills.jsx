@@ -5,7 +5,7 @@ import {
     PhpIcon, MysqlIcon, MongoIcon, JavaIcon, GdriveIcon, SocketIoIcon, RestApiIcon,
     CppIcon, FigmaIcon, GitIcon, NpmIcon, VsCodeIcon, ExpressIcon, PythonIcon,
     NetlifyIcon, VercelIcon, TailwindIcon, ReduxIcon, NextAuthIcon, ZustandIcon, AstroIcon,
-    NanostoresIcon, FirebaseIcon, D3JsIcon
+    NanostoresIcon, FirebaseIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
 } from "../../assets/Icons"
 import { GithubIcon } from "../../assets"
 import SkillGrid from "../../utils/SkillGrid"
@@ -21,6 +21,7 @@ const Skills = () => {
         { name: "Next.js", icon: NextIcon, link: "https://nextjs.org/" },
         { name: "Astro", icon: AstroIcon, link: "https://astro.build/" },
         { name: "Tailwind", icon: TailwindIcon, link: "https://tailwindcss.com/" },
+        { name: "React Query", icon: ReactQueryIcon, link: "https://tanstack.com/query/latest/" },
         { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
         { name: "Zustand", icon: ZustandIcon, link: "https://zustand-demo.pmnd.rs/" },
         { name: "D3.js", icon: D3JsIcon, link: "https://d3js.org/" },
@@ -31,6 +32,7 @@ const Skills = () => {
         { name: "Express.js", icon: ExpressIcon, link: "https://expressjs.com/" },
         { name: "MongoDB", icon: MongoIcon, link: "https://www.mongodb.com/" },
         { name: "Firebase", icon: FirebaseIcon, link: "https://firebase.google.com/" },
+        { name: "Edge Store", icon: EdgeStoreIcon, link: "https://edgestore.dev/" },
         { name: "MySQL", icon: MysqlIcon, link: "https://www.mysql.com/" },
         { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
         { name: "REST API", icon: RestApiIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
