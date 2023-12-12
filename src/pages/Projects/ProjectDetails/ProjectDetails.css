@@ -164,6 +164,34 @@
     font-family: "Ubuntu";
 }
 
+.ProjectDetails-Versions {
+    margin-top: 2em;
+}
+
+.ProjectDetails-Versions .version-links {
+    margin-bottom: 0.25em;
+}
+
+.ProjectDetails-Versions .version-links button {
+    margin-left: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.4em;
+    color: var(--text);
+    background: var(--LinkBtnGradient);
+    border: none;
+}
+
+.ProjectDetails-Versions .version-links .currentProject {
+    margin-left: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.4em;
+    font-size: 0.8em;
+    color: var(--text);
+    background: var(--gradientLite);
+    border: none;
+    user-select: none;
+}
+
 @media (width < 750px) {
     .ProjectDetails-Container {
         flex-direction: column;

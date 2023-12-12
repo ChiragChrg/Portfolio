@@ -7,10 +7,48 @@ import {
 } from "../../assets/Logos"
 
 import {
-    NextmartShots, ArmsShots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots
+    NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CookeezShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, KalciShots, NuklearbrainShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
 } from "../../assets/Shots"
 
+// -- PROJECTS TEMPLATE --
+// {
+//     Name: "TITLE",
+//     ShortDesc: "SHORT_DESCRIPTION",
+//     Desc: "DESCRIPTION",
+//     Logo: LOGO_URL,
+//     Shot: SCREENSHOT_URL,
+//     Theme: "PROJECT_THEME_COLOR_HEX",
+//     Status: "completed OR development",
+//     Link: "PROJECT_URL",
+//     Source: "GITHUB_URL",
+//     Tech: [TECH_ICONS_URL],
+//     hideProject: false,
+//     LogoSize: 50,
+//     versions: [
+//         { title: "PREV_PROJECT_TITLE", version: "VERSION_NO" },
+//     ]
+// },
+
 export const ProjectsList = [
+    {
+        Name: "ARMS v3",
+        ShortDesc: "An educational platform designed to empower students with easy access to study materials. Students can browse & download PDFs files.",
+        Desc: "ARMS (Academic Resource Management System) is an all-inclusive educational platform designed to empower students with easy access to study materials for their respective subjects. By logging in anonymously, students can conveniently browse and download PDF documents uploaded by authorized faculties. With a centralized approach, ARMS ensures that students can effortlessly find and obtain the necessary resources they need for their academic pursuits. It's a user-friendly solution that streamlines the process of resource management, providing a seamless experience for both students and faculties alike.",
+        Logo: ArmsLogo,
+        Shot: Armsv3Shots,
+        Theme: "#FFF",
+        Status: "development",
+        Link: "https://arms-v3.vercel.app/",
+        Source: "https://github.com/ChiragChrg/arms-v3",
+        Tech: [NextIcon, TsIcon, TailwindIcon, ReactQueryIcon, ZustandIcon, MongoIcon, NextAuthIcon],
+        hideProject: false,
+        LogoSize: 50,
+        versions: [
+            { title: "ARMS v3", version: "3" },
+            { title: "ARMS v2", version: "2" },
+            { title: "ARMS v1", version: "1" },
+        ]
+    },
     {
         Name: "Vortexa",
         ShortDesc: "Stay informed about current conditions, forecasts, and astronomical data, and gain valuable insights into current weather patterns and trends.",
@@ -23,7 +61,11 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/vortexa",
         Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, D3JsIcon, NanostoresIcon, RestApiIcon],
         hideProject: false,
-        LogoSize: 50
+        LogoSize: 50,
+        versions: [
+            { title: "Vortexa", version: "2" },
+            { title: "CliMate", version: "1" },
+        ]
     },
     {
         Name: "Next Mart",
@@ -37,21 +79,27 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/nextmart",
         Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon],
         hideProject: true,
-        LogoSize: 40
+        LogoSize: 40,
+        versions: []
     },
     {
-        Name: "ARMS",
+        Name: "ARMS v2",
         ShortDesc: "A platform which simplifies resource management for students. Faculties can upload PDF files. Students download study materials anonymously.",
         Desc: "ARMS (Academic Resource Management System) is an all-inclusive educational platform designed to empower students with easy access to study materials for their respective subjects. By logging in anonymously, students can conveniently browse and download PDF documents uploaded by authorized faculties. With a centralized approach, ARMS ensures that students can effortlessly find and obtain the necessary resources they need for their academic pursuits. It's a user-friendly solution that streamlines the process of resource management, providing a seamless experience for both students and faculties alike.",
         Logo: ArmsLogo,
-        Shot: ArmsShots,
+        Shot: Armsv2Shots,
         Theme: "#fff",
         Status: "completed",
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
         Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, GdriveIcon],
-        hideProject: false,
-        LogoSize: 55
+        hideProject: true,
+        LogoSize: 55,
+        versions: [
+            { title: "ARMS v3", version: "3" },
+            { title: "ARMS v2", version: "2" },
+            { title: "ARMS v1", version: "1" },
+        ]
     },
     {
         Name: "XRecon",
@@ -66,7 +114,8 @@ export const ProjectsList = [
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, SocketIoIcon],
         hideProject: false,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "YoaTube",
@@ -80,7 +129,8 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/yoatube",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
         hideProject: false,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "Srinivas Exam Manager",
@@ -95,7 +145,8 @@ export const ProjectsList = [
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, MysqlIcon],
         hideProject: false,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "Piktures",
@@ -108,8 +159,9 @@ export const ProjectsList = [
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
-        hideProject: false,
-        LogoSize: 55
+        hideProject: true,
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "Days Beyond",
@@ -123,22 +175,28 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: false,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
-    // {
-    //     Name: "ARMS v-1.0",
-    //     ShortDesc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
-    //     Desc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
-    //     Logo: ArmsPhpLogo,
-    //     Shot: DaysbeyondShots,
-    //     Theme: "#fff",
-    //     Status: "completed",
-    //     Link: "https://sims-arms.000webhostapp.com/",
-    //     Source: "https://github.com/ChiragChrg/ARMS-PHP",
-    //     Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, RestApiIcon],
-    //     hideProject: true,
-    //     LogoSize: 55
-    // },
+    {
+        Name: "ARMS v1",
+        ShortDesc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
+        Desc: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
+        Logo: ArmsPhpLogo,
+        Shot: Armsv1Shots,
+        Theme: "#fff",
+        Status: "completed",
+        Link: "http://arms-v1.infinityfreeapp.com/",
+        Source: "https://github.com/ChiragChrg/ARMS-PHP",
+        Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, RestApiIcon],
+        hideProject: true,
+        LogoSize: 55,
+        versions: [
+            { title: "ARMS v3", version: "3" },
+            { title: "ARMS v2", version: "2" },
+            { title: "ARMS v1", version: "1" },
+        ]
+    },
     {
         Name: "FilmStack",
         ShortDesc: "Discover trending movies and access details of all films and search for any movie you desire. Easily search for any film and immerse in the world of cinema.",
@@ -151,7 +209,8 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/FilmStack",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: true,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "CovidTrax",
@@ -165,7 +224,8 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/CovidTrax",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
         hideProject: true,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "Cookeez",
@@ -179,7 +239,8 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/Cookeez",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
         hideProject: true,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "CliMate",
@@ -192,8 +253,12 @@ export const ProjectsList = [
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
-        hideProject: false,
-        LogoSize: 55
+        hideProject: true,
+        LogoSize: 55,
+        versions: [
+            { title: "Vortexa", version: "2" },
+            { title: "CliMate", version: "1" },
+        ]
     },
     {
         Name: "Nuklear Brain",
@@ -207,7 +272,8 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/Nuklear-Brain",
         Tech: [HtmlIcon, CssIcon, JsIcon],
         hideProject: true,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
     {
         Name: "Kalci",
@@ -221,6 +287,7 @@ export const ProjectsList = [
         Source: "https://github.com/ChiragChrg/Kalci",
         Tech: [HtmlIcon, CssIcon, JsIcon],
         hideProject: true,
-        LogoSize: 55
+        LogoSize: 55,
+        versions: []
     },
 ]

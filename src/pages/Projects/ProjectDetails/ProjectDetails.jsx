@@ -5,6 +5,7 @@ import FadeModal from "../../../utils/FadeModal"
 import FadeUp from "../../../utils/FadeUp"
 import { useContextData } from "../../../Hooks/useContextData"
 import { Close, GithubIcon, LinkArrow } from "../../../assets"
+import { ProjectsList } from "../ProjectsList"
 
 const ProjectDetails = () => {
     const [showModal, setShowModal] = useState(false)
@@ -31,7 +32,20 @@ const ProjectDetails = () => {
     const handleModalClose = () => {
         setShowModal(false)
         setSelectedProject([])
-        window.history.back();
+        window.history.pushState({}, "", "#projects");
+    }
+
+    const handleProjectChange = (projectName) => {
+        setShowModal(false)
+        setSelectedProject([])
+
+        const [newProject] = ProjectsList.filter((obj) => obj?.Name === projectName)
+
+        // Small delay before resettig state with new project & showing modal
+        setTimeout(() => {
+            setSelectedProject(newProject)
+            window.history.pushState({}, '', `#projects/${newProject?.Name?.toLowerCase()}`);
+        }, 300)
     }
 
     return (
@@ -78,17 +92,37 @@ const ProjectDetails = () => {
 
                 <FadeModal className="ProjectDetails-Right">
                     <FadeUp height="fit-content">
-                        {selectedProject?.Demo && <div className="ProjectDetails-Demo flexStart col gap05 selectable">
-                            <h3>Demo Credentials:</h3>
-                            <p>Email: {selectedProject.Demo.email}</p>
-                            <p>Password: {selectedProject.Demo.password}</p>
-                        </div>}
+                        {selectedProject?.Demo &&
+                            <div className="ProjectDetails-Demo flexStart col gap05 selectable">
+                                <h3>Demo Credentials:</h3>
+                                <p>Email: {selectedProject.Demo.email}</p>
+                                <p>Password: {selectedProject.Demo.password}</p>
+                            </div>
+                        }
                     </FadeUp>
 
                     <FadeModal className="ProjectDetails-About flexStart col gap05">
                         <h2>About the project.</h2>
                         <p>{selectedProject.Desc}</p>
                     </FadeModal>
+
+                    {selectedProject?.versions?.length !== 0 &&
+                        <FadeModal className="ProjectDetails-Versions flexStart col gap05">
+                            <h3>Project versions:</h3>
+                            {selectedProject?.versions?.map((obj, index) => (
+                                <li key={index} className="version-links">
+                                    <span>{obj?.title.replace(/\s*v[1-3]\s*/i, '').trim()}</span>
+                                    <span style={{ marginLeft: "1em" }}>v{obj?.version}</span>
+
+                                    {obj?.title === selectedProject?.Name ?
+                                        <span className="currentProject">Current project</span>
+                                        :
+                                        <button onClick={() => handleProjectChange(obj?.title)}>View project</button>
+                                    }
+                                </li>
+                            ))}
+                        </FadeModal>
+                    }
                 </FadeModal>
             </div>
         </div >
