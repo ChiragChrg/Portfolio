@@ -97,12 +97,12 @@ p {
   text-decoration: none;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 p,
-span,
+span, */
 img {
   user-select: none;
   pointer-events: none;
