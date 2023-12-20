@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "https://github.com/ChiragChrg/Portfolio",
   "author": {
@@ -16,15 +16,14 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^10.16.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.38",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.0",
-    "npm-check-updates": "^16.14.11",
-    "vite": "^5.0.2"
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.10"
   }
 }
