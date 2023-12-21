@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 import Header from "../../Components/Header/Header"
 import MobileNav from "../../Components/MobileNav/MobileNav"
-import Hero from '../../Components/Hero/Hero'
+import Hero from '../Hero/Hero'
 import About from '../About/About'
 import Skills from '../Skills/Skills'
 import Projects from '../Projects/Projects'
