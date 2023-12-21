@@ -155,7 +155,7 @@
 }
 
 .ProjectDetails-Demo {
-    padding-bottom: 1.5em;
+    padding-block: 1.5em;
 }
 
 .ProjectDetails-Info h1,
@@ -172,8 +172,13 @@
     margin-bottom: 0.25em;
 }
 
+.ProjectDetails-Versions .version-links span {
+    min-width: 125px;
+}
+
 .ProjectDetails-Versions .version-links button {
     margin-left: 1em;
+    min-width: 125px;
     padding: 0.5em 1em;
     border-radius: 0.4em;
     color: var(--text);

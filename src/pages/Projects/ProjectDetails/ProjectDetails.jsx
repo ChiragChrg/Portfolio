@@ -91,6 +91,11 @@ const ProjectDetails = () => {
                 </div>
 
                 <FadeModal className="ProjectDetails-Right">
+                    <FadeModal className="ProjectDetails-About flexStart col gap05">
+                        <h2>About the project.</h2>
+                        <p>{selectedProject.Desc}</p>
+                    </FadeModal>
+
                     <FadeUp height="fit-content">
                         {selectedProject?.Demo &&
                             <div className="ProjectDetails-Demo flexStart col gap05 selectable">
@@ -100,11 +105,6 @@ const ProjectDetails = () => {
                             </div>
                         }
                     </FadeUp>
-
-                    <FadeModal className="ProjectDetails-About flexStart col gap05">
-                        <h2>About the project.</h2>
-                        <p>{selectedProject.Desc}</p>
-                    </FadeModal>
 
                     {selectedProject?.versions?.length !== 0 &&
                         <FadeModal className="ProjectDetails-Versions flexStart col gap05">
