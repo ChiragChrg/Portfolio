@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <>
-            <main className="Home-Main">
+            <main id="#" className="Home-Main">
                 {isMobile ?
                     <MobileNav />
                     :

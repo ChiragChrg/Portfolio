@@ -1,16 +1,41 @@
 import "./MobileNav.css"
 import { motion, useCycle } from 'framer-motion'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const MobileNav = () => {
     const [openNav, setOpenNav] = useCycle(false, true);
     const devWidth = window.innerWidth;
     const devHeight = window.innerHeight;
     const [isActive, setIsActive] = useState(null)
+    const headerRef = useRef(null);
 
     useEffect(() => {
-        setIsActive(window?.location?.hash)
-    }, [window?.location?.hash])
+        const handleScroll = () => {
+            const sections = {
+                '#': document.getElementById('#'),
+                '#about': document.getElementById('about'),
+                '#skills': document.getElementById('skills'),
+                '#projects': document.getElementById('projects'),
+                '#contact': document.getElementById('contact'),
+            };
+
+            for (const [section, element] of Object.entries(sections)) {
+                if (!element) return
+
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= headerRef.current.offsetHeight && rect.top >= 0) {
+                    setIsActive(section);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); //initial call
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const MenuVariant = {
         showMenu: {
@@ -58,7 +83,7 @@ const MobileNav = () => {
     }
 
     return (
-        <header className="MobileNav-Main">
+        <header className="MobileNav-Main" ref={headerRef}>
             <div className="MobileNav-Header flex">
                 <a
                     href="#"

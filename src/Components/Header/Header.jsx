@@ -1,15 +1,40 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import "./Header.css"
 
 const Header = () => {
     const [isActive, setIsActive] = useState(null)
+    const headerRef = useRef(null);
 
     useEffect(() => {
-        setIsActive(window?.location?.hash)
-    }, [window?.location?.hash])
+        const handleScroll = () => {
+            const sections = {
+                '#': document.getElementById('#'),
+                '#about': document.getElementById('about'),
+                '#skills': document.getElementById('skills'),
+                '#projects': document.getElementById('projects'),
+                '#contact': document.getElementById('contact'),
+            };
+
+            for (const [section, element] of Object.entries(sections)) {
+                if (!element) return
+
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= headerRef.current.offsetHeight && rect.top >= 0) {
+                    setIsActive(section);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); //initial call
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <header className="Header-Main">
+        <header className="Header-Main" ref={headerRef}>
             <div className="Header-Container flex">
                 <a
                     href="#"
