@@ -37,7 +37,7 @@ export const ProjectsList = [
         Logo: ArmsLogo,
         Shot: Armsv3Shots,
         Theme: "#FFF",
-        Status: "development",
+        Status: "completed",
         Link: "https://arms-v3.vercel.app/",
         Source: "https://github.com/ChiragChrg/arms-v3",
         Tech: [NextIcon, TsIcon, TailwindIcon, ReactQueryIcon, ZustandIcon, MongoIcon, NextAuthIcon, EdgeStoreIcon],
