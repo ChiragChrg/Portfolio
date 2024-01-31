@@ -1,51 +1,205 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+import { SEO } from "astro-seo";
+import { AstroFont } from "astro-font";
+import { join } from "node:path";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+
+		<SEO
+			title="ChiragChrg | My Personal Portfolio | Fullstack Web Developer"
+			description="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX."
+			openGraph={{
+				basic: {
+					title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
+					type: "website",
+					image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.png",
+					url: "https://chiragchrg.netlify.app/",
+				},
+			}}
+			twitter={{
+				title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
+				description:
+					"Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
+				card: "summary",
+				site: "@ChrgChirag",
+				creator: "@ChrgChirag",
+				image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.png",
+			}}
+			extend={{
+				link: [
+					{ rel: "icon", type: "image/png", href: "/favicon.png" },
+					{
+						rel: "shortcut",
+						type: "image/png",
+						href: "/favicon.png",
+					},
+					{
+						rel: "apple-touch-icon",
+						type: "image/png",
+						href: "/favicon.png",
+					},
+				],
+				meta: [
+					{
+						name: "twitter:url",
+						content: "https://chiragchrg.netlify.app/",
+					},
+				],
+			}}
+		/>
+
+		<AstroFont
+			config={[
+				{
+					name: "Poppins",
+					src: [
+						{
+							weight: "400",
+							style: "normal",
+							path: join(
+								process.cwd(),
+								"src",
+								"assets",
+								"fonts",
+								"poppins-v20-latin-regular.woff2",
+							),
+						},
+					],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "serif",
+				},
+				{
+					name: "Satisfy",
+					src: [
+						{
+							weight: "400",
+							style: "normal",
+							path: join(
+								process.cwd(),
+								"src",
+								"assets",
+								"fonts",
+								"satisfy-v17-latin-regular.woff2",
+							),
+						},
+					],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "serif",
+				},
+				{
+					name: "Ubuntu",
+					src: [
+						{
+							weight: "700",
+							style: "normal",
+							path: join(
+								process.cwd(),
+								"src",
+								"assets",
+								"fonts",
+								"ubuntu-v20-latin-700.woff2",
+							),
+						},
+					],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "serif",
+				},
+			]}
+		/>
 	</head>
 	<body>
 		<slot />
+		<style is:global>
+			:root {
+				/* --base: #fff; */
+				--base: #000000;
+				--baseLite: rgba(0, 0, 0, 0.85);
+				/* --text: #000; */
+				--text: #fff;
+
+				/* --purple: #f7ff00;
+  --pink: #e98008; */
+
+				--purple: #6600ff;
+				--pink: #ff00bf;
+				--purpink: #8c00ef;
+
+				--purpleLite: hsla(264, 99%, 27%, 0.6);
+				--purpleLiteAlt: hsla(263, 99%, 32%, 0.3);
+				--pinkLite: hsla(315, 100%, 40%, 0.6);
+
+				--gradient: linear-gradient(
+					to right,
+					var(--pink),
+					var(--purple),
+					var(--purple),
+					var(--pink)
+				);
+				--gradientLite: linear-gradient(
+					45deg,
+					var(--purpleLite),
+					var(--pinkLite)
+				);
+				--cardGradient: linear-gradient(
+					45deg,
+					hsl(0, 0%, 1%),
+					var(--purpleLite)
+				);
+				--cardGradientAlt: linear-gradient(
+					-135deg,
+					hsl(0, 0%, 5%),
+					var(--purpleLiteAlt)
+				);
+				--miscCardGradient: linear-gradient(
+					-45deg,
+					hsl(0, 0%, 1%),
+					var(--purpleLiteAlt)
+				);
+				--overlayGradient: radial-gradient(
+					farthest-corner at 100% 0%,
+					hsla(0, 0%, 5%, 0.5),
+					transparent
+				);
+				--LinkBtnGradient: linear-gradient(
+					-135deg,
+					hsla(0, 0%, 15%, 0.8),
+					hsla(0, 0%, 10%, 0.5)
+				);
+				--SkillGradient: linear-gradient(
+					-135deg,
+					hsla(276, 50%, 10%, 0.8),
+					hsla(296, 50%, 10%, 0.5)
+				);
+			}
+
+			html {
+				font-family: system-ui, sans-serif;
+				background: #13151a;
+				background-size: 224px;
+			}
+			code {
+				font-family:
+					Menlo,
+					Monaco,
+					Lucida Console,
+					Liberation Mono,
+					DejaVu Sans Mono,
+					Bitstream Vera Sans Mono,
+					Courier New,
+					monospace;
+			}
+		</style>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
