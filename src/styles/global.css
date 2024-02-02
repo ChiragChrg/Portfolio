@@ -1,0 +1,240 @@
+:root {
+    /* --base: #fff; */
+    --base: #000000;
+    --baseLite: rgba(0, 0, 0, 0.85);
+    /* --text: #000; */
+    --text: #fff;
+
+    /* --purple: #f7ff00;
+    --pink: #e98008; */
+
+    --purple: #6600ff;
+    --pink: #ff00bf;
+    --purpink: #8c00ef;
+
+    --purpleLite: hsla(264, 99%, 27%, 0.6);
+    --purpleLiteAlt: hsla(263, 99%, 32%, 0.3);
+    --pinkLite: hsla(315, 100%, 40%, 0.6);
+
+    --gradient: linear-gradient(to right,
+            var(--pink),
+            var(--purple),
+            var(--purple),
+            var(--pink));
+    --gradientLite: linear-gradient(45deg,
+            var(--purpleLite),
+            var(--pinkLite));
+    --headerGradient: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.6),
+            transparent);
+    --cardGradient: linear-gradient(45deg,
+            hsl(0, 0%, 1%),
+            var(--purpleLite));
+    --cardGradientAlt: linear-gradient(-135deg,
+            hsl(0, 0%, 5%),
+            var(--purpleLiteAlt));
+    --miscCardGradient: linear-gradient(-45deg,
+            hsl(0, 0%, 1%),
+            var(--purpleLiteAlt));
+    --overlayGradient: radial-gradient(farthest-corner at 100% 0%,
+            hsla(0, 0%, 5%, 0.5),
+            transparent);
+    --LinkBtnGradient: linear-gradient(-135deg,
+            hsla(0, 0%, 15%, 0.8),
+            hsla(0, 0%, 10%, 0.5));
+    --SkillGradient: linear-gradient(-135deg,
+            hsla(276, 50%, 10%, 0.8),
+            hsla(296, 50%, 10%, 0.5));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Poppins;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--base);
+    color: var(--text);
+}
+
+a {
+    cursor: pointer !important;
+}
+
+a,
+button,
+h1,
+p {
+    /* cursor: none !important; */
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+.selectable p {
+    user-select: text;
+    cursor: text;
+}
+
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cursor CSS */
+.Cursor-Main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.Cursor-Main #cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    background-color: hsla(0, 0%, 100%, 0.6);
+    box-shadow: 0 0 15px 0 hsla(0, 0%, 100%, 0.8);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.Cursor-Main #cursor::before {
+    content: "";
+    width: 0;
+    aspect-ratio: 1;
+    inset: 0;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.1s ease-in-out;
+    background-color: var(--base);
+}
+
+.Cursor-Main #cursorView {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    letter-spacing: 1px;
+    background: var(--SkillGradient);
+    border-radius: 50%;
+}
+
+.Cursor-Main #cursorDot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 10ms ease-out;
+    background-color: #fff;
+    /* box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, 0.8); */
+    backface-visibility: hidden;
+}
+
+body:hover #cursor,
+body:hover #cursorDot {
+    opacity: 1;
+}
+
+:has(.Header-Logo:hover,
+    .Header-ActionBtn:hover,
+    a:hover,
+    button:hover) #cursor {
+    width: 4em;
+    height: 4em;
+    background: none;
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+:has(.Header-Logo:hover,
+    .Header-ActionBtn:hover,
+    a:hover,
+    button:hover) #cursor::before {
+    content: "";
+    width: calc(100% - 10%);
+    aspect-ratio: 1;
+    inset: 0;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+    background-color: transparent;
+}
+
+/* Cursor CSS */
+
+.gradientText {
+    font-family: Satisfy;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: gradientPan 5s linear infinite;
+}
+
+@keyframes gradientPan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+/* Disable blue button click highlight */
+input,
+button,
+a,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom ScrollBar */
+/* :not(.ProjectDetails-Right)::-webkit-scrollbar {
+display: none !important;
+} */
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+.ProjectDetails-Right::-webkit-scrollbar {
+    width: 14px !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--purpink);
+    border-radius: 14px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}

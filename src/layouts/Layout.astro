@@ -2,6 +2,8 @@
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
+import Header from "../components/React/Header";
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -72,8 +74,8 @@ import { join } from "node:path";
 					],
 					preload: true,
 					display: "swap",
-					selector: "body",
 					fallback: "serif",
+					cssVariable: "astro-font-poppins",
 				},
 				{
 					name: "Satisfy",
@@ -91,8 +93,8 @@ import { join } from "node:path";
 					],
 					preload: true,
 					display: "swap",
-					selector: "body",
 					fallback: "serif",
+					cssVariable: "astro-font-satisfy",
 				},
 				{
 					name: "Ubuntu",
@@ -110,93 +112,16 @@ import { join } from "node:path";
 					],
 					preload: true,
 					display: "swap",
-					selector: "body",
 					fallback: "serif",
+					cssVariable: "astro-font-ubuntu",
 				},
 			]}
 		/>
 	</head>
-	<body>
-		<slot />
-		<style is:global>
-			:root {
-				/* --base: #fff; */
-				--base: #000000;
-				--baseLite: rgba(0, 0, 0, 0.85);
-				/* --text: #000; */
-				--text: #fff;
-
-				/* --purple: #f7ff00;
-  --pink: #e98008; */
-
-				--purple: #6600ff;
-				--pink: #ff00bf;
-				--purpink: #8c00ef;
-
-				--purpleLite: hsla(264, 99%, 27%, 0.6);
-				--purpleLiteAlt: hsla(263, 99%, 32%, 0.3);
-				--pinkLite: hsla(315, 100%, 40%, 0.6);
-
-				--gradient: linear-gradient(
-					to right,
-					var(--pink),
-					var(--purple),
-					var(--purple),
-					var(--pink)
-				);
-				--gradientLite: linear-gradient(
-					45deg,
-					var(--purpleLite),
-					var(--pinkLite)
-				);
-				--cardGradient: linear-gradient(
-					45deg,
-					hsl(0, 0%, 1%),
-					var(--purpleLite)
-				);
-				--cardGradientAlt: linear-gradient(
-					-135deg,
-					hsl(0, 0%, 5%),
-					var(--purpleLiteAlt)
-				);
-				--miscCardGradient: linear-gradient(
-					-45deg,
-					hsl(0, 0%, 1%),
-					var(--purpleLiteAlt)
-				);
-				--overlayGradient: radial-gradient(
-					farthest-corner at 100% 0%,
-					hsla(0, 0%, 5%, 0.5),
-					transparent
-				);
-				--LinkBtnGradient: linear-gradient(
-					-135deg,
-					hsla(0, 0%, 15%, 0.8),
-					hsla(0, 0%, 10%, 0.5)
-				);
-				--SkillGradient: linear-gradient(
-					-135deg,
-					hsla(276, 50%, 10%, 0.8),
-					hsla(296, 50%, 10%, 0.5)
-				);
-			}
-
-			html {
-				font-family: system-ui, sans-serif;
-				background: #13151a;
-				background-size: 224px;
-			}
-			code {
-				font-family:
-					Menlo,
-					Monaco,
-					Lucida Console,
-					Liberation Mono,
-					DejaVu Sans Mono,
-					Bitstream Vera Sans Mono,
-					Courier New,
-					monospace;
-			}
-		</style>
+	<body id="home">
+		<Header client:load />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
