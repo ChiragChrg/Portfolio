@@ -4,6 +4,7 @@ import { AstroFont } from "astro-font";
 import { join } from "node:path";
 import Header from "../components/React/Header";
 import "../styles/global.css";
+import Cursor from "../components/React/Cursor";
 ---
 
 <!doctype html>
@@ -118,10 +119,12 @@ import "../styles/global.css";
 			]}
 		/>
 	</head>
-	<body id="home">
+	<body id="home" class="relative">
 		<Header client:load />
 		<main>
 			<slot />
 		</main>
+
+		<Cursor client:load />
 	</body>
 </html>
