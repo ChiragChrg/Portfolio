@@ -33,16 +33,31 @@ const Cursor = () => {
             });
         };
 
+        const handleMouseClick = () => {
+            if (!CursorRef.current) return
+
+            const ripple = document.createElement('span');
+            ripple.classList.add('absolute', 'w-[200%]', 'aspect-square', 'rounded-full', 'bg-white', 'opacity-0', 'animate-ripple');
+            CursorRef.current.appendChild(ripple);
+
+            setTimeout(() => {
+                if (!CursorRef.current) return
+                CursorRef.current.removeChild(ripple);
+            }, 1000)
+        }
+
         document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mousedown', handleMouseClick);
 
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mousedown', handleMouseClick);
         };
     }, []);
 
     return (
         <div className="Cursor-Main">
-            <div id="cursor" ref={CursorRef}>
+            <div id="cursor" className='grid place-items-center' ref={CursorRef}>
                 <div id="cursorView" className='flex_center'>View</div>
             </div>
             <div id="cursorDot" ref={CursorDotRef}></div>

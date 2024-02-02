@@ -72,6 +72,10 @@ body:hover #cursorDot {
     outline: 2px solid rgba(255, 255, 255, 0.8);
 }
 
+:has(a:hover, button:hover) #cursor span {
+    width: 100% !important;
+}
+
 :has(a:hover, button:hover) #cursor::before {
     content: "";
     width: calc(100% - 10%);
