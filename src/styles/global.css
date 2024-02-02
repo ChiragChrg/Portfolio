@@ -45,6 +45,15 @@
     --SkillGradient: linear-gradient(-135deg,
             hsla(276, 50%, 10%, 0.8),
             hsla(296, 50%, 10%, 0.5));
+    --orbitGradient: conic-gradient(transparent,
+            transparent,
+            var(--purple),
+            var(--pink), #fff);
+    --orbitGradientAlt: conic-gradient(#fff,
+            var(--pink),
+            var(--purple),
+            transparent,
+            transparent);
 }
 
 * {
@@ -92,7 +101,6 @@ img {
 }
 
 .gradientText {
-    font-family: Satisfy;
     background: var(--gradient);
     background-clip: text;
     -webkit-background-clip: text;
