@@ -21,6 +21,7 @@ export default {
 			backgroundImage:{
 				'headerGradient': 'var(--headerGradient)',
 				'OrbitGradient': 'var(--orbitGradient)',
+				'skillGradient': 'var(--SkillGradient)',
 			},
 			keyframes: {
 				"ripple": {
