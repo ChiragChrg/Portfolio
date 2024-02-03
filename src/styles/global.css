@@ -16,6 +16,8 @@
     --purpleLiteAlt: hsla(263, 99%, 32%, 0.3);
     --pinkLite: hsla(315, 100%, 40%, 0.6);
 
+    --footer: #1E004C;
+
     --gradient: linear-gradient(to right,
             var(--pink),
             var(--purple),

@@ -1,0 +1,79 @@
+---
+import {
+    DiscordIcon,
+    FaceBookIcon,
+    GithubIcon,
+    InstagramIcon,
+    LinkedinIcon,
+    LogoIcon,
+    TwitterIcon,
+    PurpleWave,
+} from "../assets/SVGs";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+    class="relative w-full h-[50vh] flex justify-between items-center flex-col px-4 py-8 bg-footer"
+>
+    <img
+        src={PurpleWave.src}
+        alt="LogoIcon"
+        width="100%"
+        height="100%"
+        class="absolute -translate-y-full pb-4"
+    />
+
+    <div class="w-full flex_center flex-col gap-2">
+        <img src={LogoIcon.src} alt="LogoIcon" width={80} height={80} />
+        <span>ChiragChrg | Portfolio</span>
+    </div>
+
+    <div class="grid grid-cols-3 lg:grid-cols-6 gap-x-20 gap-y-10 lg:gap-20">
+        <a
+            href="https://www.facebook.com/ChiragChrg/"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img src={FaceBookIcon.src} alt="FaceBook" width={30} height={30} />
+        </a>
+        <a href="https://x.com/ChrgChirag" target="_blank" rel="noreferrer">
+            <img src={TwitterIcon.src} alt="Twitter X" width={30} height={30} />
+        </a>
+        <a
+            href="https://www.instagram.com/chiragchrg/"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img
+                src={InstagramIcon.src}
+                alt="Instagram"
+                width={30}
+                height={30}
+            />
+        </a>
+        <a
+            href="https://in.linkedin.com/in/chiragchrg"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img src={LinkedinIcon.src} alt="Discord" width={30} height={30} />
+        </a>
+        <a
+            href="https://github.com/ChiragChrg"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img src={GithubIcon.src} alt="Discord" width={30} height={30} />
+        </a>
+        <a
+            href="https://discord.com/invite/8ngPa6tE"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img src={DiscordIcon.src} alt="Discord" width={30} height={30} />
+        </a>
+    </div>
+
+    <span>© Copyright 2023-{currentYear} ChiragChrg</span>
+</footer>

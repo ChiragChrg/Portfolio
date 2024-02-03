@@ -12,6 +12,7 @@ export default {
 				purpleLite:"var(--purpleLite)",
 				purpleLiteAlt:"var(--purpleLiteAlt)",
 				pinkLite:"var(--pinkLite)",
+				footer:"var(--footer)",
 			},
 			fontFamily:{
 				poppins:"var(--astro-font-poppins)",
