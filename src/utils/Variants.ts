@@ -1,5 +1,3 @@
-import { animate } from "framer-motion";
-
 // Hero Page Variants --
 export const OrbitContainer = {
     hidden: {
