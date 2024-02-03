@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import { AvatarImg } from "../assets/SVGs";
+import FadeUp from "./React/FadeUp";
+import { TagTitle } from "./React/SectionTitle";
+---
+
+<section id="about" class="w-full min-h-screen px-6 pb-4 pt-16 bg-background">
+    <TagTitle title="About Me" variant="open" client:load />
+
+    <FadeUp className="flex_center w-full h-full py-10 gap-8" client:load>
+        <Image
+            src={AvatarImg}
+            alt="ChiragChrg"
+            class="w-full aspect-square max-w-[250px] rounded-full scale-x-[-1] mx-14"
+        />
+
+        <div
+            class="w-[60%] flex justify-center items-start flex-col gap-2 border-l border-purple py-8 pl-10"
+        >
+            <span class="text-[1.5em] font-bold">Hey there! 👋🏻</span>
+            <p>
+                I'm Chirag, a full stack web developer with a strong passion for
+                crafting digital realms that captivate and inspire.
+            </p>
+            <p>
+                I specialize in creating dynamic and interactive UI/UX
+                experience. I stay up to date with the latest tools and
+                techniques and worked on a wide range of projects, from personal
+                websites to large-scale applications, sharpening my problem
+                solving skills and fostering creativity.
+            </p>
+            <p>
+                If you're seeking a dedicated and passionate web developer, I'm
+                eager to collaborate with you. Let's bring your ideas to life!
+            </p>
+        </div>
+    </FadeUp>
+
+    <TagTitle title="About Me" variant="close" client:load />
+</section>
