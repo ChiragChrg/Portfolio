@@ -1,9 +1,10 @@
 ---
-import About from "../components/About.astro";
-import Footer from "../components/Footer.astro";
-import Hero from "../components/Hero.astro";
-import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
@@ -11,6 +12,6 @@ import Layout from "../layouts/Layout.astro";
 	<About />
 	<Skills />
 	<div id="projects" class="bg-green-600/60 w-full h-screen"></div>
-	<div id="contact" class="bg-yellow-600/60 w-full h-screen"></div>
+	<Contact />
 	<Footer />
 </Layout>

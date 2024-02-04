@@ -23,6 +23,7 @@ export default {
 				'headerGradient': 'var(--headerGradient)',
 				'OrbitGradient': 'var(--orbitGradient)',
 				'skillGradient': 'var(--SkillGradient)',
+				'LinkBtnGradient': 'var(--LinkBtnGradient)',
 			},
 			keyframes: {
 				"ripple": {
