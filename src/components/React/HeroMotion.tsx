@@ -1,8 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { OrbitContainer, OrbitItems, TextContainer, TextItems } from '../../utils/Variants'
 import { AvatarImg, GithubIcon, GoogleIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from '../../assets/SVGs'
 import "../../styles/hero.css"
+
+// Lazy loading variants
+const variants = import('../../utils/Variants');
+const { OrbitContainer, OrbitItems, TextContainer, TextItems } = await variants;
 
 export const HeroIntro = () => {
     return (
