@@ -1,6 +1,9 @@
 import { motion, useAnimation, useInView } from 'framer-motion'
 import React, { useEffect, useRef } from 'react'
-import { FadeUpVariant } from '../../utils/Variants'
+
+// Lazy loading variants
+const variants = import('../../utils/Variants');
+const { FadeUpVariant } = await variants;
 
 type Props = {
     children: React.ReactNode,
