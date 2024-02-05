@@ -1,6 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { AvatarImg, GithubIcon, GoogleIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from '../../assets/SVGs'
+import { GithubIcon, GoogleIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from '../../assets/SVGs'
+import Avatar_180 from '../../Avatar_180.webp'
+import Avatar_250 from '../../Avatar_250.webp'
 import "../../styles/hero.css"
 
 // Lazy loading variants
@@ -9,7 +11,7 @@ const { OrbitContainer, OrbitItems, TextContainer, TextItems } = await variants;
 
 export const HeroIntro = () => {
     return (
-        <div className="flex justify-start items-center flex-col gap-8">
+        <div className="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
             <motion.div
                 variants={TextContainer}
                 initial="hidden"
@@ -79,7 +81,13 @@ export const HeroOrbit = () => {
             <motion.div
                 variants={OrbitItems}
                 className="flex_center w-[50%] aspect-square rounded-full z-10">
-                <img src={AvatarImg.src} alt="Hero_Avatar" className='w-[180px] lg:w-[250px] object-cover' />
+                <img
+                    src={Avatar_180.src}
+                    alt="Hero_Avatar"
+                    className='object-cover'
+                    srcSet={`${Avatar_180.src} 180w, ${Avatar_250.src} 250w`}
+                    sizes="(max-width: 640px) 180px, 250px"
+                />
             </motion.div>
             <motion.div
                 variants={OrbitItems}

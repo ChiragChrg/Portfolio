@@ -1,5 +1,4 @@
 export { default as LogoIcon } from "./C.svg"
-export { default as AvatarImg } from "../Avatar.webp"
 export { default as PurpleWave } from "./purpleWave.svg"
 export { default as ContactArt } from "./ContactVector.svg"
 

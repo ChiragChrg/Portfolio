@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { AvatarImg } from "../assets/SVGs";
 import { FadeUp } from "./React";
 import { SectionTitle } from "./React/TitleTag";
+import Avatar_250 from "../Avatar_250.webp";
 ---
 
 <section id="about" class="w-full min-h-screen px-6 pb-4 pt-16 bg-background">
@@ -13,7 +13,7 @@ import { SectionTitle } from "./React/TitleTag";
         client:load
     >
         <Image
-            src={AvatarImg}
+            src={Avatar_250}
             alt="About_Avatar"
             class="rounded-full scale-x-[-1] lg:mx-14"
             width={225}
