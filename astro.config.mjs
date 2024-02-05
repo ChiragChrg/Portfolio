@@ -12,11 +12,7 @@ export default defineConfig({
       CSS: false,
       HTML: false,
       Image: false,
-      JavaScript: true,
+      JavaScript: false,
       SVG: true,
-      Exclude: [
-        (File) => File.includes("FadeUp"),
-        (File) => File.includes("HeroMotion"),
-      ],
     })]
 });
