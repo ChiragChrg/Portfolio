@@ -49,6 +49,67 @@
     z-index: 2;
 }
 
+/* Mobile Header Nav */
+.MobileHeader_Nav {
+    min-width: 14em;
+    text-align: center;
+    background-color: #000;
+    border-radius: 0.3em;
+    padding: 1em;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.MobileHeader_Nav a {
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.MobileHeader_Nav a.active {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: gradientPan 5s linear infinite;
+}
+
+:has(.MobileHeader_ActionBtn).MobileHeader_Nav {
+    padding: 0;
+}
+
+.MobileHeader_ActionBtn {
+    position: relative;
+    border-radius: 0.2em;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.MobileHeader_ActionBtn::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    aspect-ratio: 1;
+    background: conic-gradient(var(--purple),
+            var(--pink),
+            var(--purple));
+    animation: spin 5s linear infinite;
+}
+
+.MobileHeader_ActionBtn>div {
+    padding: 0.7em 1em;
+    width: 100%;
+    background-color: var(--base);
+    color: var(--text);
+    border-radius: inherit;
+    margin: 4px;
+    z-index: 2;
+}
+
 @keyframes spin {
     0% {
         rotate: 0deg;

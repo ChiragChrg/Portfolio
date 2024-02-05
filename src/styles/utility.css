@@ -34,7 +34,7 @@
     position: absolute;
     margin-top: 0.3em;
     width: 100%;
-    height: 1px;
+    height: 2px;
     z-index: 0;
     background-color: var(--purpleLite);
 }
@@ -47,11 +47,61 @@
     background-color: var(--pinkLite);
 }
 
-/* Contact Form */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-text-fill-color: var(--text) !important;
-    transition: background-color 999999s ease-in-out 0s;
+/* Mobile Ham Menu Animation --> */
+.MobileNav_Ham {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.4s;
+    user-select: none;
 }
+
+.MobileNav_Ham.isOpen {
+    transform: rotate(45deg);
+}
+
+:has(.MobileNav_Ham.isOpen) body {
+    overflow-y: hidden !important;
+}
+
+.MobileNav_Ham .line {
+    fill: none;
+    transition: stroke-dasharray 0.4s,
+        stroke-dashoffset 0.4s;
+    stroke: #fff;
+    stroke-width: 5.5;
+    transform-origin: right;
+    stroke-linecap: round;
+}
+
+.MobileNav_Ham .top {
+    stroke-dasharray: 18 160;
+}
+
+.MobileNav_Ham .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 83% 83%;
+    transition: transform 0.4s;
+}
+
+.MobileNav_Ham .bottom {
+    stroke-dasharray: 18 85;
+    transform-origin: 50%;
+    transition: transform 0.4s,
+        stroke-dashoffset 0.4s;
+}
+
+.MobileNav_Ham.isOpen .top {
+    stroke-dashoffset: -64px;
+}
+
+.MobileNav_Ham.isOpen .middle {
+    stroke-dasharray: 40 142;
+    stroke-dashoffset: 0%;
+    transform: rotate(90deg);
+}
+
+.MobileNav_Ham.isOpen .bottom {
+    stroke-dasharray: 40 85;
+    stroke-dashoffset: -64px;
+}
+
+/* <-- Mobile Ham Menu Animation */
