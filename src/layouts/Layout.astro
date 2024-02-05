@@ -4,6 +4,7 @@ import { AstroFont } from "astro-font";
 import { join } from "node:path";
 import Header from "../components/React/Header";
 import Cursor from "../components/React/Cursor";
+import MobileHeader from "../components/React/MobileHeader";
 import "../styles/global.css";
 import "../styles/utility.css";
 ---
@@ -14,6 +15,8 @@ import "../styles/utility.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
+		<link rel="manifest" href="/manifest.json" />
 
 		<SEO
 			title="ChiragChrg | My Personal Portfolio | Fullstack Web Developer"
@@ -120,12 +123,25 @@ import "../styles/utility.css";
 			]}
 		/>
 	</head>
-	<body id="home" class="relative">
+	<body id="home">
 		<Header client:load />
+		<MobileHeader client:load />
+
 		<main>
 			<slot />
 		</main>
 
 		<Cursor client:load />
+		<script is:inline>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register("/ServiceWorker.js")
+						.catch((RegErr) => {
+							console.log("SW Registration failed: ", RegErr);
+						});
+				});
+			}
+		</script>
 	</body>
 </html>
