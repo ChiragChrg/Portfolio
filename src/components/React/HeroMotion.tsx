@@ -85,8 +85,8 @@ export const HeroOrbit = () => {
                     src={Avatar_180.src}
                     alt="Hero_Avatar"
                     className='object-cover'
-                    width="auto"
-                    height="auto"
+                    width="250"
+                    height="180"
                     srcSet={`${Avatar_180.src} 180w, ${Avatar_250.src} 250w`}
                     sizes="(max-width: 640px) 180px, 250px"
                 />
