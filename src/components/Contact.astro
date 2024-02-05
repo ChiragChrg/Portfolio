@@ -14,31 +14,37 @@ import {
 
 <section
     id="contact"
-    class="w-full min-h-screen mb-[15em] px-6 pb-4 pt-16 bg-background"
+    class="w-full min-h-screen mb-16 lg:mb-[15em] px-6 pb-4 pt-16 bg-background"
 >
     <CenterTitle title="Contact" client:load />
 
     <FadeUp
         width="100%"
-        className="flex_center flex-col p-4 text-[1.2em]"
+        className="flex_center flex-col p-4 text-[1.2em] text-center"
         client:load
     >
-        <h2 class="gradientText font-ubuntu text-[2.4rem]">
+        <h2 class="gradientText font-ubuntu text-[2rem] lg:text-[2.4rem]">
             Let's collaborate!
         </h2>
         <p>Contact me to discuss your web development needs</p>
         <p>or just to say hello. 😉</p>
     </FadeUp>
 
-    <div class="flex_center w-full h-full gap-20 px-20 pt-8 pb-16">
-        <FadeUp className="flex_center flex-col relative" client:load>
+    <div
+        class="flex_center flex-col lg:flex-row w-full h-full gap-4 lg:gap-20 lg:px-20 pt-8 pb-16"
+    >
+        <FadeUp
+            width="100%"
+            className="flex_center flex-col relative"
+            client:load
+        >
             <div
-                class="w-[450px] aspect-square rounded-full border-2 border-dashed border-white/40"
+                class="w-[350px] scale-[0.9] lg:scale-1 lg:w-[450px] aspect-square rounded-full border-2 border-dashed border-white/40 mb-8"
                 id="socialCircle"
             >
                 <a
                     href="https://www.facebook.com/ChiragChrg/"
-                    class="socialIcon absolute w-16 aspect-square flex_center p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
+                    class="socialIcon absolute w-12 lg:w-16 aspect-square flex_center p-2 lg:p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
                     title="Facebook"
                     target="_blank"
                     rel="noreferrer"
@@ -52,7 +58,7 @@ import {
                 </a>
                 <a
                     href="https://www.instagram.com/chiragchrg/"
-                    class="socialIcon absolute w-16 aspect-square flex_center p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
+                    class="socialIcon absolute w-12 lg:w-16 aspect-square flex_center p-2 lg:p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
                     title="Instagram"
                     target="_blank"
                     rel="noreferrer"
@@ -66,7 +72,7 @@ import {
                 </a>
                 <a
                     href="mailto:chiruchirag2001@gmail.com"
-                    class="socialIcon absolute w-16 aspect-square flex_center p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
+                    class="socialIcon absolute w-12 lg:w-16 aspect-square flex_center p-2 lg:p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
                     title="Gmail"
                     target="_blank"
                     rel="noreferrer"
@@ -80,7 +86,7 @@ import {
                 </a>
                 <a
                     href="https://x.com/ChrgChirag"
-                    class="socialIcon absolute w-16 aspect-square flex_center p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
+                    class="socialIcon absolute w-12 lg:w-16 aspect-square flex_center p-2 lg:p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
                     title="Twitter"
                     target="_blank"
                     rel="noreferrer"
@@ -94,7 +100,7 @@ import {
                 </a>
                 <a
                     href="https://discordapp.com/users/647359627461263390"
-                    class="socialIcon absolute w-16 aspect-square flex_center p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
+                    class="socialIcon absolute w-12 lg:w-16 aspect-square flex_center p-2 lg:p-4 bg-background outline-dashed outline-2 outline-white/40 rounded-full"
                     title="Discord"
                     target="_blank"
                     rel="noreferrer"
@@ -109,10 +115,9 @@ import {
             </div>
 
             <img
-                class="absolute top-12"
+                class="absolute top-8 w-[300px] lg:w-[400px]"
                 src={ContactArt.src}
                 alt="ContactArt"
-                width="400px"
             />
         </FadeUp>
 
@@ -130,8 +135,8 @@ import {
             return;
         }
 
-        const iconSize = 64;
-        const radius = 225; // Adjust radius as needed
+        const iconSize = images[0].clientWidth;
+        const radius = Math.ceil((center.clientWidth + 2) / 2);
 
         images.forEach((image, index) => {
             const angle = (index / (images.length - 1)) * Math.PI;

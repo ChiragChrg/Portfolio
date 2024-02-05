@@ -61,8 +61,8 @@ const ContactForm = () => {
 
     return (
         <FadeUp
-            width="60%"
-            className="bg-LinkBtnGradient rounded-md px-4 py-2 outline outline-1 outline-white/20 flex col">
+            width='100%'
+            className="bg-LinkBtnGradient rounded-md lg:min-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
             <form onSubmit={HandleFormSubmit} className="w-full">
                 <label
                     htmlFor="name"
@@ -108,7 +108,7 @@ const ContactForm = () => {
 
                 <div className="flex justify-start items-center gap-4">
                     <button
-                        className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 px-20 rounded-md"
+                        className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 lg:px-20 rounded-md"
                         type="submit"
                     >
                         {

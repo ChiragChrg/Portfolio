@@ -35,8 +35,8 @@ const Header = () => {
     }, []);
 
     return (
-        <header id="header" className="sticky top-0 z-50" ref={headerRef}>
-            <div className="flex justify-between items-center w-full px-6 py-2 bg-headerGradient">
+        <header id="header" className="hidden lg:block sticky top-0 z-50" ref={headerRef}>
+            <div className="flex justify-between items-center w-full px-6 py-2 bg-headerGradient backdrop-blur-[2px]">
                 <a
                     href="#home"
                     className="font-satisfy font-bold text-[2em]">

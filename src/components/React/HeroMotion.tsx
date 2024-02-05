@@ -14,12 +14,12 @@ export const HeroIntro = () => {
                 variants={TextContainer}
                 initial="hidden"
                 animate="visible"
-                className="text-[26px]">
+                className="text-[18px] lg:text-[26px] text-center lg:text-left">
                 <motion.p
                     variants={TextItems}>Hi! my name is,</motion.p>
                 <motion.h1
                     variants={TextItems}
-                    className="gradientText font-ubuntu text-[9rem] leading-tight">Chirag.</motion.h1>
+                    className="gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight">Chirag.</motion.h1>
                 <motion.p
                     variants={TextItems}>I'm a Fullstack Web Developer.</motion.p>
                 <motion.p
@@ -75,11 +75,11 @@ export const HeroOrbit = () => {
             variants={OrbitContainer}
             initial="hidden"
             animate="visible"
-            className="relative flex_center w-[500px] aspect-square">
+            className="relative flex_center w-[360px] lg:w-[500px] aspect-square">
             <motion.div
                 variants={OrbitItems}
                 className="flex_center w-[50%] aspect-square rounded-full z-10">
-                <img src={AvatarImg.src} alt="ChiragChrg" width="100%" height="100%" className='object-cover' />
+                <img src={AvatarImg.src} alt="Hero_Avatar" className='w-[180px] lg:w-[250px] object-cover' />
             </motion.div>
             <motion.div
                 variants={OrbitItems}
