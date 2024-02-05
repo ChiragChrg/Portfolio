@@ -5,10 +5,5 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    react(), 
-    tailwind(), 
-    compress({
-    Path:["./dist", "./_astro", "./Compress"]
-  })]
+  integrations: [react(), tailwind(), compress()]
 });
