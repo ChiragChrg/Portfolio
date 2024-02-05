@@ -57,8 +57,8 @@ const Cursor = () => {
 
     return (
         <div className="Cursor-Main hidden lg:block">
-            <div id="cursor" className='grid place-items-center' ref={CursorRef}>
-                <div id="cursorView" className='flex_center'>View</div>
+            <div id="cursor" className="grid place-items-center" ref={CursorRef}>
+                <div id="cursorView" className="flex_center">View</div>
             </div>
             <div id="cursorDot" ref={CursorDotRef}></div>
         </div>

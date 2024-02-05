@@ -7,14 +7,13 @@ const { FadeUpVariant } = await variants;
 
 type Props = {
     children: React.ReactNode,
-    isHover?: boolean,
     width?: string,
     height?: string,
     className?: string
 }
 
 const FadeUp = ({
-    children, isHover = false, width = "fit-content", height = "100%",
+    children, width = "fit-content", height = "100%",
     className = ""
 }: Props) => {
     const FadeUpRef = useRef<HTMLDivElement>(null)
@@ -25,7 +24,6 @@ const FadeUp = ({
         if (isInView) {
             FadeControl.start("fadeup")
         }
-        console.log(isHover)
     }, [isInView])
 
     return (

@@ -75,6 +75,7 @@ const ContactForm = () => {
                         name="name"
                         placeholder="Enter your Name"
                         className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
+                        autoComplete='name'
                         required
                         ref={NameRef} />
                 </label>
@@ -89,6 +90,7 @@ const ContactForm = () => {
                         name="email"
                         placeholder="example@gmail.com"
                         className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
+                        autoComplete='email'
                         required
                         ref={EmailRef} />
                 </label>
