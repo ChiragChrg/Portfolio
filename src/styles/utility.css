@@ -39,12 +39,12 @@
     background-color: var(--purpleLite);
 }
 
-.Title_Line.close::after {
-    background-color: transparent;
-}
-
 .Title_Line.pink::after {
     background-color: var(--pinkLite);
+}
+
+.Title_Line.close::after {
+    background-color: transparent;
 }
 
 /* Mobile Ham Menu Animation --> */
@@ -105,3 +105,64 @@
 }
 
 /* <-- Mobile Ham Menu Animation */
+
+
+/* Projects Card Hover */
+.CardHover {
+    scale: 1;
+    transition: 0.25s ease-in-out;
+}
+
+.CardHover:hover {
+    /* scale: 1.04; */
+    transform: translateY(-1em) !important
+}
+
+.Card_Main:hover .Card_Image {
+    opacity: 0.8;
+}
+
+.Projects_Link {
+    padding: 0.45em;
+    border: 1px solid var(--purpleLite);
+    border-radius: 100%;
+    z-index: 10;
+}
+
+:has(.Projects_Link:hover) #cursor {
+    width: 3em;
+    height: 3em;
+}
+
+:has(.Projects_Link.Misc-Link:hover) #cursor {
+    width: 5em;
+    height: 5em;
+}
+
+:has(.Projects_Link:hover) #cursorView {
+    visibility: hidden !important;
+}
+
+:has(.Projects_Link:hover) #cursorDot {
+    visibility: visible !important;
+}
+
+:has(.Projects-MiscInfo:hover) #cursor,
+:has(.Projects_Preview:hover) #cursor {
+    width: 5em;
+    height: 5em;
+    background: none;
+    outline: 2px solid hsla(0, 0%, 100%, 0.6);
+}
+
+:has(.Projects-MiscInfo:hover) #cursorView,
+:has(.Projects_Preview:hover) #cursorView {
+    visibility: visible !important;
+    font-size: 1.2em;
+    padding-bottom: 1.15em;
+}
+
+:has(.Projects-MiscInfo:hover) #cursorDot,
+:has(.Projects_Preview:hover) #cursorDot {
+    visibility: hidden !important;
+}
