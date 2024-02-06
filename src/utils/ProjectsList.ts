@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, CppIcon, JavaIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ExpressIcon, PythonIcon, ViteIcon, VsCodeIcon, NpmIcon, GitIcon, FigmaIcon, NetlifyIcon, NextAuthIcon, ReduxIcon, TailwindIcon, VercelIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
 } from "../assets/Icons"
 
 import {
