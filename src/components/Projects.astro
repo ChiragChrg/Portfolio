@@ -13,7 +13,7 @@ import { Image } from "astro:assets";
     <SectionTitle title="My Projects" variant="open" color="pink" client:load />
 
     <div
-        class="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-12 pb-6"
+        class="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
     >
         {
             ProjectsList?.map((project, index) => {
@@ -33,8 +33,8 @@ import { Image } from "astro:assets";
                                 style={{ borderRadius: "0.4em 0.4em 0 100%" }}
                                 src={project.Shot}
                                 alt={`Project_ScreenShot_${project.Name}`}
-                                width="453"
-                                height="255"
+                                width="437"
+                                height="246"
                             />
                             <Image
                                 class="absolute left-6 bottom-6"
