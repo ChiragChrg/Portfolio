@@ -71,7 +71,7 @@
 
 html {
     font-family: Poppins;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 body {
@@ -164,4 +164,25 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-text-fill-color: var(--text) !important;
     transition: background-color 999999s ease-in-out 0s;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
 }

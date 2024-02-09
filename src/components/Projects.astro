@@ -1,9 +1,12 @@
 ---
 import { ExternalLinkIcon, WrenchIcon } from "lucide-react";
-import { ProjectsList } from "../utils/ProjectsList";
 import { FadeUp } from "./React";
 import { SectionTitle } from "./React/TitleTag";
 import { Image } from "astro:assets";
+
+// Lazy loading ProjectInfo
+const ProjectInfo = import("../utils/ProjectsList");
+const { ProjectsList } = await ProjectInfo;
 ---
 
 <section
@@ -12,22 +15,24 @@ import { Image } from "astro:assets";
 >
     <SectionTitle title="My Projects" variant="open" color="pink" client:load />
 
-    <div
-        class="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
+    <FadeUp
+        className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
+        client:load
     >
         {
             ProjectsList?.map((project, index) => {
-                if (project?.hideProject) {
-                    return false;
-                }
+                if (project?.hideProject) return;
 
                 return (
                     <FadeUp
                         height="fit-content"
-                        className="Card_Main w-full flex_center flex-col bg-cardGradient overflow-hidden relative rounded-[0.4em] CardHover mt-3"
+                        className="Card_Main w-full flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] CardHover mt-3"
                         client:load
                     >
-                        <div class="Projects_Preview w-full relative rounded-[0.4em]">
+                        <a
+                            href="/projects/arms"
+                            class="Projects_Preview w-full relative rounded-[0.4em]"
+                        >
                             <Image
                                 class="Card_Image bg-cover opacity-50 transition-opacity"
                                 style={{ borderRadius: "0.4em 0.4em 0 100%" }}
@@ -43,7 +48,7 @@ import { Image } from "astro:assets";
                                 width={project.LogoSize}
                                 height={project.LogoSize}
                             />
-                        </div>
+                        </a>
                         <div class="w-full text-[0.95em] px-4">
                             <div class="flex justify-between items-center">
                                 <h2 class="font-ubuntu text-[1.4em] py-3">
@@ -90,7 +95,7 @@ import { Image } from "astro:assets";
                 );
             })
         }
-    </div>
+    </FadeUp>
 
     <SectionTitle
         title="My Projects"

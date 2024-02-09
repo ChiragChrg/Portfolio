@@ -1,10 +1,104 @@
 ---
-import { HeroIntro, HeroOrbit } from "./React/HeroMotion";
+import { Image } from "astro:assets";
+import { HeroOrbit } from "./React/HeroMotion";
+import FadeUp from "./UI/FadeUp.astro";
+import {
+    GithubIcon,
+    GoogleIcon,
+    InstagramIcon,
+    LinkedinIcon,
+    TwitterIcon,
+} from "../assets/SVGs";
 ---
 
 <section
     class="w-full h-[calc(100vh-4rem)] px-6 py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
 >
-    <HeroIntro client:load />
+    <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
+        <FadeUp>
+            <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
+                <p>Hi! my name is,</p>
+                <h1
+                    class="gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
+                >
+                    Chirag.
+                </h1>
+                <p>I'm a Fullstack Web Developer.</p>
+                <p>
+                    I create <span class="gradientText font-ubuntu"
+                        >Exciting Stuff</span
+                    > on the Internet.
+                </p>
+            </div>
+        </FadeUp>
+
+        <div class="flex justify-start items-center w-full gap-10 py-4">
+            <a
+                href="https://github.com/ChiragChrg"
+                title="GitHub"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image
+                    src={GithubIcon}
+                    alt="GithubIcon"
+                    width={30}
+                    height={30}
+                />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/chiragchrg/"
+                title="LinkedIn"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image
+                    src={LinkedinIcon}
+                    alt="LinkedinIcon"
+                    width={30}
+                    height={30}
+                />
+            </a>
+            <a
+                href="https://x.com/ChrgChirag"
+                title="Twitter X"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image
+                    src={TwitterIcon}
+                    alt="TwitterIcon"
+                    width={30}
+                    height={30}
+                />
+            </a>
+            <a
+                href="https://www.instagram.com/chiragchrg/"
+                title="Instagram"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image
+                    src={InstagramIcon}
+                    alt="InstagramIcon"
+                    width={30}
+                    height={30}
+                />
+            </a>
+            <a
+                href="https://www.google.com/search?q=chiragchrg"
+                title="Google Search"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image
+                    src={GoogleIcon}
+                    alt="GoogleIcon"
+                    width={30}
+                    height={30}
+                />
+            </a>
+        </div>
+    </div>
     <HeroOrbit client:load />
 </section>
