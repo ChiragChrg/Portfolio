@@ -1,7 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { HeroOrbit } from "./React/HeroMotion";
-import FadeUp from "./UI/FadeUp.astro";
 import {
     GithubIcon,
     GoogleIcon,
@@ -9,35 +7,38 @@ import {
     LinkedinIcon,
     TwitterIcon,
 } from "../assets/SVGs";
+import Avatar_180 from "../Avatar_180.webp";
+import Avatar_250 from "../Avatar_250.webp";
+import "../styles/hero.css";
 ---
 
 <section
     class="w-full h-[calc(100vh-4rem)] px-6 py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
 >
+    <!-- Hero Intro Info -->
     <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
-        <FadeUp>
-            <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
-                <p>Hi! my name is,</p>
-                <h1
-                    class="gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
-                >
-                    Chirag.
-                </h1>
-                <p>I'm a Fullstack Web Developer.</p>
-                <p>
-                    I create <span class="gradientText font-ubuntu"
-                        >Exciting Stuff</span
-                    > on the Internet.
-                </p>
-            </div>
-        </FadeUp>
+        <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
+            <p class="Fade_Up">Hi! my name is,</p>
+            <h1
+                class="Fade_Up gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
+            >
+                Chirag.
+            </h1>
+            <p class="Fade_Up">I'm a Fullstack Web Developer.</p>
+            <p class="Fade_Up">
+                I create
+                <span class="gradientText font-ubuntu">Exciting Stuff</span>
+                on the Internet.
+            </p>
+        </div>
 
-        <div class="flex justify-start items-center w-full gap-10 py-4">
+        <div class="Fade_Up flex justify-start items-center w-full gap-10 py-4">
             <a
                 href="https://github.com/ChiragChrg"
                 title="GitHub"
                 target="_blank"
                 rel="noreferrer"
+                class="Fade_Up"
             >
                 <Image
                     src={GithubIcon}
@@ -51,6 +52,7 @@ import {
                 title="LinkedIn"
                 target="_blank"
                 rel="noreferrer"
+                class="Fade_Up"
             >
                 <Image
                     src={LinkedinIcon}
@@ -64,6 +66,7 @@ import {
                 title="Twitter X"
                 target="_blank"
                 rel="noreferrer"
+                class="Fade_Up"
             >
                 <Image
                     src={TwitterIcon}
@@ -77,6 +80,7 @@ import {
                 title="Instagram"
                 target="_blank"
                 rel="noreferrer"
+                class="Fade_Up"
             >
                 <Image
                     src={InstagramIcon}
@@ -90,6 +94,7 @@ import {
                 title="Google Search"
                 target="_blank"
                 rel="noreferrer"
+                class="Fade_Up"
             >
                 <Image
                     src={GoogleIcon}
@@ -100,5 +105,33 @@ import {
             </a>
         </div>
     </div>
-    <HeroOrbit client:load />
+
+    <!-- Hero Orbit Animation -->
+    <div class="relative flex_center w-[360px] lg:w-[500px] aspect-square">
+        <div
+            class="Spring_Up flex_center w-[50%] aspect-square rounded-full z-10"
+        >
+            <Image
+                src={Avatar_180}
+                alt="Hero_Avatar"
+                class="object-cover"
+                width="250"
+                height="180"
+                srcset={`${Avatar_180} 180w, ${Avatar_250} 250w`}
+                sizes="(max-width: 640px) 180px, 250px"
+            />
+        </div>
+        <div class="Spring_Up Hero_Trail Trail1">
+            <span class="Orbit_Dot"></span>
+        </div>
+        <div class="Spring_Up Hero_Trail Trail2">
+            <span class="Orbit_Dot"></span>
+        </div>
+        <div class="Spring_Up Hero_Trail Trail3">
+            <span class="Orbit_Dot"></span>
+        </div>
+        <div class="Spring_Up Hero_Trail Trail4">
+            <span class="Orbit_Dot"></span>
+        </div>
+    </div>
 </section>

@@ -147,11 +147,61 @@ import "../styles/utility.css";
 			import { gsap } from "gsap";
 			import { ScrollTrigger } from "gsap/ScrollTrigger";
 			import Lenis from "@studio-freight/lenis";
+			gsap.registerPlugin(ScrollTrigger);
+
+			// FadeUp Animation
+			const FadeUpElement = document.querySelectorAll(".Fade_Up");
+			let tl1 = gsap.timeline({
+				scrollTrigger: {
+					trigger: FadeUpElement,
+					start: "top 80%",
+					toggleActions: "play none none none",
+				},
+			});
+
+			tl1.fromTo(
+				FadeUpElement,
+				{
+					opacity: 0,
+					y: 50,
+				},
+				{
+					opacity: 1,
+					y: 0,
+					duration: 1,
+					delay: 1,
+					stagger: 0.2,
+				},
+			);
+
+			const SpringUpElement = document.querySelectorAll(".Spring_Up");
+			let tl2 = gsap.timeline({
+				scrollTrigger: {
+					trigger: SpringUpElement,
+					start: "top 80%",
+					toggleActions: "play none none none",
+				},
+			});
+			tl2.fromTo(
+				SpringUpElement,
+				{
+					opacity: 0,
+					scale: 0.75,
+				},
+				{
+					ease: "elastic.out(0.5,0.1)",
+					opacity: 1,
+					scale: 1,
+					duration: 3.5,
+					delay: 1,
+					stagger: 0.1,
+				},
+			);
 
 			// Smooth Scrolling
 			const lenis = new Lenis();
 			lenis.on("scroll", ScrollTrigger.update);
-			gsap.ticker.add((time: number) => {
+			gsap.ticker.add((time) => {
 				lenis.raf(time * 1000);
 			});
 			gsap.ticker.lagSmoothing(0);

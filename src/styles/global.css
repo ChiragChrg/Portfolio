@@ -116,6 +116,30 @@ img {
     animation: gradientPan 5s linear infinite;
 }
 
+.Orbit_Dot {
+    width: 0.5em;
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -0.2em;
+    left: 49%;
+    transition: 0.25s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 #fff;
+}
+
+.Fade_Up {
+    opacity: 0;
+    transform: translateY(50);
+}
+
+.Spring_Up {
+    opacity: 0;
+    scale: 0.75;
+}
+
 @keyframes gradientPan {
     from {
         background-position: 0% center;
