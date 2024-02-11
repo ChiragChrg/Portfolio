@@ -53,7 +53,24 @@ tl2.fromTo(
     },
 );
 
-// Mobile Nav Menu Animation
+// FadeDown Animation
+const FadeDownElements = document.querySelectorAll(".Fade_Down");
+const FadeDownTl = gsap.timeline();
+FadeDownTl.fromTo(
+    FadeDownElements,
+    {
+        opacity: 0,
+        y: -50,
+    },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.125,
+    }
+)
+
+// Mobile Nav Ham-Menu Animation
 const MobileNavElement = document.querySelector("#mobileHeader nav");
 const MobileLinkElement = document.querySelectorAll("#mobileHeader nav .MobileHeader_Nav");
 let isMenuOpen = false;
@@ -73,10 +90,10 @@ menuTl.fromTo(
         clipPath: `circle(${(dimensions.height * 2) + 200}px at 40px 40px)`,
         backgroundColor: "var(--purpleLite)",
         duration: 0.6,
-        ease: "power2.inOut"
+        ease: "power1.inOut"
     });
 
-// Define LinkVariant animation
+// MobileNav Link FadeUp animation
 const linkTl = gsap.timeline({ paused: true });
 linkTl.fromTo(
     MobileLinkElement,
@@ -93,7 +110,7 @@ linkTl.fromTo(
         ease: "power1.out"
     });
 
-// Add event listener to trigger animations
+// Event listener to trigger MobileNav animations
 const HamMenuButton = document.getElementById("Ham_Menu");
 
 const closeNav = () => {
