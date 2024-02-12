@@ -1,0 +1,17 @@
+---
+type Props = {
+    title: string;
+    variant?: "open" | "close";
+    color?: "purple" | "pink";
+};
+const { title, variant, color }: Props = Astro.props;
+---
+
+<div
+    data-delay="0"
+    class={`Fade_Up Title-Tag Title_Line relative flex items-center ${variant} ${color}`}
+>
+    <span class="text-[1.5em]">{variant === "open" ? "<" : "</"}</span>
+    <p class="text-[1.6em]">{title}</p>
+    <span class="text-[1.5em]">{">"}</span>
+</div>

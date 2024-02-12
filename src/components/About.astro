@@ -1,46 +1,42 @@
 ---
 import { Image } from "astro:assets";
-import { FadeUp } from "./React";
-import { SectionTitle } from "./React/TitleTag";
 import Avatar_250 from "../Avatar_250.webp";
+import { SectionTitle } from "./UI";
 ---
 
 <section id="about" class="w-full min-h-screen px-6 pb-4 pt-16 bg-background">
-    <SectionTitle title="About Me" variant="open" client:load />
+    <SectionTitle title="About Me" variant="open" color="purple" />
 
-    <FadeUp
-        className="flex_center flex-col lg:flex-row w-full h-full py-10 gap-8"
-        client:load
-    >
+    <div class="flex_center flex-col lg:flex-row w-full h-full py-10 gap-8">
         <Image
             src={Avatar_250}
             alt="About_Avatar"
-            class="rounded-full scale-x-[-1] lg:mx-14"
+            class="Fade_Up rounded-full scale-x-[-1] lg:mx-14"
             width={225}
             height={225}
         />
 
         <div
-            class="w-full lg:w-[60%] flex justify-center items-start flex-col gap-4 lg:border-l border-purple py-8 lg:pl-10"
+            class="Fade_Up w-full lg:w-[60%] flex justify-center items-start flex-col gap-4 lg:border-l border-purple py-8 lg:pl-10"
         >
-            <span class="text-[1.5em] font-bold">Hey there! 👋🏻</span>
-            <p>
+            <span class="Fade_Up text-[1.5em] font-bold">Hey there! 👋🏻</span>
+            <p class="Fade_Up">
                 I'm Chirag, a full stack web developer with a strong passion for
                 crafting digital realms that captivate and inspire.
             </p>
-            <p>
+            <p class="Fade_Up">
                 I specialize in creating dynamic and interactive UI/UX
                 experience. I stay up to date with the latest tools and
                 techniques and worked on a wide range of projects, from personal
                 websites to large-scale applications, sharpening my problem
                 solving skills and fostering creativity.
             </p>
-            <p>
+            <p class="Fade_Up">
                 If you're seeking a dedicated and passionate web developer, I'm
                 eager to collaborate with you. Let's bring your ideas to life!
             </p>
         </div>
-    </FadeUp>
+    </div>
 
-    <SectionTitle title="About Me" variant="close" client:load />
+    <SectionTitle title="About Me" variant="close" color="purple" />
 </section>

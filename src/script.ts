@@ -5,28 +5,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 // FadeUp Animation
 const FadeUpElement = document.querySelectorAll(".Fade_Up");
-let tl1 = gsap.timeline({
-    scrollTrigger: {
-        trigger: FadeUpElement,
-        start: "top 80%",
-        toggleActions: "play none none none",
-    },
-});
+FadeUpElement.forEach(element => {
+    const FadeUpDelay = parseFloat(element.getAttribute("data-delay") as string);
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            toggleActions: "play none none none",
+        },
+    });
 
-tl1.fromTo(
-    FadeUpElement,
-    {
-        opacity: 0,
-        y: 50,
-    },
-    {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: 1,
-        stagger: 0.2,
-    },
-);
+    tl.fromTo(
+        element,
+        {
+            opacity: 0,
+            y: 50,
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: FadeUpDelay ?? 1,
+            stagger: 0.2,
+        }
+    );
+});
 
 // Hero Orbit Spring Animation
 const SpringUpElement = document.querySelectorAll(".Spring_Up");
