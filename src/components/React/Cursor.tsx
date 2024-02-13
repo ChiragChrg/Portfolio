@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'preact/hooks'
 import "../../styles/cursor.css"
 
 const Cursor = () => {

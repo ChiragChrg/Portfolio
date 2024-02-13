@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'preact/hooks'
 import { motion } from 'framer-motion'
 import { Download } from "lucide-react"
 

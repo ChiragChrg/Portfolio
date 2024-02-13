@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'preact/hooks';
 import FadeUp from './FadeUp';
 import { ChevronDownIcon } from 'lucide-react';
 
@@ -25,7 +25,7 @@ const SkillGrid = ({ stack }: Prop) => {
                     // While stack.length <= maxIcons, show all icons
                     return <FadeUp key={i}>
                         <a href={obj.link} title={obj.name} className="flex_center flex-col gap-2 min-w-24 aspect-square rounded-lg bg-skillGradient" target="_blank" rel="noreferrer">
-                            <img src={obj.icon.src} alt={obj.name.replaceAll(" ","_")+"_Icon"} width={35} height={35} />
+                            <img src={obj.icon.src} alt={obj.name.replaceAll(" ", "_") + "_Icon"} width={35} height={35} />
                             <span className='text-[0.9em]'>{obj.name}</span>
                         </a>
                     </FadeUp>
@@ -39,7 +39,7 @@ const SkillGrid = ({ stack }: Prop) => {
                             if (i < maxIcons - 1)
                                 return <FadeUp key={i} >
                                     <a href={obj.link} title={obj.name} className="flex_center flex-col gap-2 min-w-24 aspect-square rounded-lg bg-skillGradient" target="_blank" rel="noreferrer">
-                                        <img src={obj.icon.src} alt={obj.name.replaceAll(" ","_")+"_Icon"} width={35} height={35} />
+                                        <img src={obj.icon.src} alt={obj.name.replaceAll(" ", "_") + "_Icon"} width={35} height={35} />
                                         <span className='text-[0.9em]'>{obj.name}</span>
                                     </a>
                                 </FadeUp>
@@ -48,7 +48,7 @@ const SkillGrid = ({ stack }: Prop) => {
                             // show all icons when "Show More" button is clicked
                             return <FadeUp key={i} >
                                 <a href={obj.link} title={obj.name} className="flex_center flex-col gap-2 min-w-24 aspect-square rounded-lg bg-skillGradient" target="_blank" rel="noreferrer">
-                                    <img src={obj.icon.src} alt={obj.name.replaceAll(" ","_")+"_Icon"} width={35} height={35} />
+                                    <img src={obj.icon.src} alt={obj.name.replaceAll(" ", "_") + "_Icon"} width={35} height={35} />
                                     <span className='text-[0.9em]'>{obj.name}</span>
                                 </a>
                             </FadeUp>

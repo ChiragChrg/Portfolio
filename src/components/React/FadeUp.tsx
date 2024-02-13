@@ -1,5 +1,5 @@
 import { motion, useAnimation, useInView } from 'framer-motion'
-import React, { useEffect, useRef, type MouseEventHandler } from 'react'
+import { useEffect, useRef, type MouseEventHandler } from 'preact/hooks'
 
 // Lazy loading variants
 const variants = import('../../utils/Variants');

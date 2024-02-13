@@ -1,4 +1,4 @@
-import React, { useState, type FormEvent, useRef } from 'react'
+import { useState, type FormEvent, useRef } from 'preact/hooks'
 import FadeUp from './FadeUp'
 import emailjs from "@emailjs/browser"
 import { Loader2Icon, SendHorizonalIcon } from 'lucide-react'

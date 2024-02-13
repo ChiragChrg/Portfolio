@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from 'preact/hooks'
 import "../../styles/header.css"
 import { Download } from "lucide-react"
 
