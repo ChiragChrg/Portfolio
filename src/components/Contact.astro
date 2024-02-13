@@ -1,6 +1,6 @@
 ---
-import { FadeUp, ContactForm } from "./React";
-import { CenterTitle } from "./React/TitleTag";
+import { ContactForm } from "./React";
+import { CenterTitle } from "./UI";
 import {
     FaceBookIcon,
     GmailIcon,
@@ -15,24 +15,20 @@ import {
     id="contact"
     class="w-full min-h-screen mb-16 lg:mb-[15em] px-6 pb-4 pt-16 bg-background"
 >
-    <CenterTitle title="Contact" client:load />
+    <CenterTitle title="Contact" color="purple" />
 
-    <FadeUp
-        width="100%"
-        className="flex_center flex-col p-4 text-[1.2em] text-center"
-        client:load
-    >
+    <div class="w-full flex_center flex-col p-4 text-[1.2em] text-center">
         <h2 class="gradientText font-ubuntu text-[2rem] lg:text-[2.4rem]">
             Let's collaborate!
         </h2>
         <p>Contact me to discuss your web development needs</p>
         <p>or just to say hello. 😉</p>
-    </FadeUp>
+    </div>
 
     <div
         class="flex_center flex-col lg:flex-row w-full h-full gap-4 lg:gap-20 lg:px-20 pt-8 pb-16"
     >
-        <FadeUp width="100%" className="flex_center flex-col" client:load>
+        <div class="w-full flex_center flex-col">
             <div
                 class="w-[350px] scale-[0.9] lg:scale-1 lg:w-[450px] aspect-square rounded-full border-2 border-dashed border-white/40 mb-8"
                 id="socialCircle"
@@ -115,7 +111,7 @@ import {
                 alt="ContactArt"
                 loading="lazy"
             />
-        </FadeUp>
+        </div>
 
         <ContactForm client:load />
     </div>

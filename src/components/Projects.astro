@@ -1,7 +1,6 @@
 ---
-import { ExternalLinkIcon, WrenchIcon } from "lucide-react";
-import { FadeUp } from "./React";
-import { SectionTitle } from "./React/TitleTag";
+import { ExternalLinkIcon, WrenchIcon } from "lucide-preact";
+import { SectionTitle } from "./UI";
 import { Image } from "astro:assets";
 
 // Lazy loading ProjectInfo
@@ -13,22 +12,17 @@ const { ProjectsList } = await ProjectInfo;
     id="projects"
     class="w-full min-h-screen px-6 pb-4 pt-16 bg-background"
 >
-    <SectionTitle title="My Projects" variant="open" color="pink" client:load />
+    <SectionTitle title="My Projects" variant="open" color="pink" />
 
-    <FadeUp
-        className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
-        client:load
+    <div
+        class="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
     >
         {
             ProjectsList?.map((project, index) => {
                 if (project?.hideProject) return;
 
                 return (
-                    <FadeUp
-                        height="fit-content"
-                        className="Card_Main w-full flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] CardHover mt-3"
-                        client:load
-                    >
+                    <div class="Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] CardHover mt-3">
                         <a
                             href="/projects/arms"
                             class="Projects_Preview w-full relative rounded-[0.4em]"
@@ -91,16 +85,11 @@ const { ProjectsList } = await ProjectInfo;
                                 })}
                             </div>
                         </div>
-                    </FadeUp>
+                    </div>
                 );
             })
         }
-    </FadeUp>
+    </div>
 
-    <SectionTitle
-        title="My Projects"
-        variant="close"
-        color="pink"
-        client:load
-    />
+    <SectionTitle title="My Projects" variant="close" color="pink" />
 </section>

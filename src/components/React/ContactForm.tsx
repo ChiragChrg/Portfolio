@@ -1,7 +1,6 @@
-import { useState, type FormEvent, useRef } from 'preact/hooks'
-import FadeUp from './FadeUp'
+import { useState, useRef } from 'preact/hooks'
 import emailjs from "@emailjs/browser"
-import { Loader2Icon, SendHorizonalIcon } from 'lucide-react'
+import { Loader2Icon, SendHorizonalIcon } from 'lucide-preact'
 
 type StatusType = {
     status: boolean,
@@ -16,7 +15,7 @@ const ContactForm = () => {
     const EmailRef = useRef<HTMLInputElement>(null)
     const MessageRef = useRef<HTMLTextAreaElement>(null)
 
-    const HandleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const HandleFormSubmit = async (e: any) => {
         e.preventDefault();
 
         if (!NameRef.current || !EmailRef.current || !MessageRef.current) return
@@ -60,77 +59,73 @@ const ContactForm = () => {
     }
 
     return (
-        <FadeUp
-            width='100%'
-            className="bg-LinkBtnGradient rounded-md lg:min-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
-            <form onSubmit={HandleFormSubmit} className="w-full">
-                <label
-                    htmlFor="name"
-                    className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-                >
-                    Name
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your Name"
-                        className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
-                        autoComplete='name'
-                        required
-                        ref={NameRef} />
-                </label>
-                <label
-                    htmlFor="email"
-                    className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-                >
-                    Email
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="example@gmail.com"
-                        className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
-                        autoComplete='email'
-                        required
-                        ref={EmailRef} />
-                </label>
-                <label
-                    htmlFor="message"
-                    className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-                >
-                    Message
-                    <textarea
-                        rows={5}
-                        id="message"
-                        name="message"
-                        placeholder="Enter your Message"
-                        className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground resize-none"
-                        ref={MessageRef} />
-                </label>
+        <form onSubmit={HandleFormSubmit} className="bg-LinkBtnGradient rounded-md w-full lg:min-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
+            <label
+                htmlFor="name"
+                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
+            >
+                Name
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your Name"
+                    className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
+                    autoComplete='name'
+                    required
+                    ref={NameRef} />
+            </label>
+            <label
+                htmlFor="email"
+                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
+            >
+                Email
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
+                    autoComplete='email'
+                    required
+                    ref={EmailRef} />
+            </label>
+            <label
+                htmlFor="message"
+                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
+            >
+                Message
+                <textarea
+                    rows={5}
+                    id="message"
+                    name="message"
+                    placeholder="Enter your Message"
+                    className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground resize-none"
+                    ref={MessageRef} />
+            </label>
 
-                <div className="flex justify-start items-center gap-4">
-                    <button
-                        className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 lg:px-20 rounded-md"
-                        type="submit"
-                    >
-                        {
-                            isLoading ? (
-                                <>
-                                    <span>Sending</span>
-                                    <Loader2Icon className="animate-spin" />
-                                </>
-                            ) : (
-                                <>
-                                    <span>Submit</span>
-                                    <SendHorizonalIcon />
-                                </>
-                            )
-                        }
-                    </button>
-                    <span>{mailStatus.message}</span>
-                </div>
-            </form>
-        </FadeUp >
+            <div className="flex justify-start items-center gap-4">
+                <button
+                    className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 lg:px-20 rounded-md"
+                    type="submit"
+                >
+                    {
+                        isLoading ? (
+                            <>
+                                <span>Sending</span>
+                                <Loader2Icon className="animate-spin" />
+                            </>
+                        ) : (
+                            <>
+                                <span>Submit</span>
+                                <SendHorizonalIcon />
+                            </>
+                        )
+                    }
+                </button>
+                <span>{mailStatus.message}</span>
+            </div>
+        </form>
     )
 }
 
