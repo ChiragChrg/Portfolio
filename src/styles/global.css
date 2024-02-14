@@ -130,9 +130,23 @@ img {
     box-shadow: 0 0 10px 0 #fff;
 }
 
+.Fade_Stagger {
+    opacity: 0;
+    transform: translateY(50);
+}
+
 .Fade_Up {
     opacity: 0;
     transform: translateY(50);
+}
+
+.Fade_Down {
+    opacity: 0;
+    transform: translateY(-50);
+}
+
+.Fade_In {
+    opacity: 0;
 }
 
 .Spring_Up {

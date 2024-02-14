@@ -3,44 +3,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 gsap.registerPlugin(ScrollTrigger);
 
-// FadeUp Animation
-const FadeUpElement = document.querySelectorAll(".Fade_Up");
-FadeUpElement.forEach(element => {
-    const FadeUpDelay = parseFloat(element.getAttribute("data-delay") as string);
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none none",
-        },
-    });
-
-    tl.fromTo(
-        element,
-        {
-            opacity: 0,
-            y: 50,
-        },
-        {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            delay: FadeUpDelay ?? 1,
-            stagger: 0.2,
-        }
-    );
-});
-
 // Hero Orbit Spring Animation
 const SpringUpElement = document.querySelectorAll(".Spring_Up");
-let tl2 = gsap.timeline({
+let SpringUpTl = gsap.timeline({
     scrollTrigger: {
         trigger: SpringUpElement,
-        start: "top 80%",
+        start: "top 90%",
         toggleActions: "play none none none",
     },
 });
-tl2.fromTo(
+SpringUpTl.fromTo(
     SpringUpElement,
     {
         opacity: 0,
@@ -56,22 +28,78 @@ tl2.fromTo(
     },
 );
 
+// Stagger Animation
+const StaggerElements = document.querySelectorAll(".Fade_Stagger");
+ScrollTrigger.batch(StaggerElements, {
+    onEnter: elements => {
+        gsap.fromTo(elements, {
+            opacity: 0,
+            y: 50,
+        },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.25,
+                stagger: 0.125,
+            });
+    },
+    once: true
+});
+
+
+// FadeUp Animation
+const FadeUpElements = document.querySelectorAll(".Fade_Up");
+ScrollTrigger.batch(FadeUpElements, {
+    onEnter: elements => {
+        gsap.fromTo(elements, {
+            opacity: 0,
+            y: 50,
+        },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.125,
+            });
+    },
+    once: true
+});
+
 // FadeDown Animation
 const FadeDownElements = document.querySelectorAll(".Fade_Down");
-const FadeDownTl = gsap.timeline();
-FadeDownTl.fromTo(
-    FadeDownElements,
-    {
-        opacity: 0,
-        y: -50,
+ScrollTrigger.batch(FadeDownElements, {
+    onEnter: elements => {
+        gsap.fromTo(elements, {
+            opacity: 0,
+            y: -50,
+        },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.125,
+            });
     },
-    {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.125,
-    }
-)
+    once: true
+});
+
+// FadeIn Animation
+const FadeInElements = document.querySelectorAll(".Fade_In");
+ScrollTrigger.batch(FadeInElements, {
+    onEnter: elements => {
+        gsap.fromTo(elements, {
+            opacity: 0,
+        },
+            {
+                opacity: 1,
+                duration: 1.5,
+                stagger: 0.125,
+                ease: "power1.out"
+            });
+    },
+    once: true
+});
 
 // Mobile Nav Ham-Menu Animation
 const MobileNavElement = document.querySelector("#mobileHeader nav");

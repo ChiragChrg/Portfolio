@@ -85,8 +85,6 @@
     position: relative;
     border-radius: 0.2em;
     overflow: hidden;
-    display: grid;
-    place-items: center;
 }
 
 .MobileHeader_ActionBtn::after {
