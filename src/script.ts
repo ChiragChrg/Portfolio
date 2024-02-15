@@ -178,13 +178,16 @@ document
             e.preventDefault();
             const id = el.getAttribute("href")?.slice(1);
             if (!id) return;
+
             const target = document.getElementById(id);
             if (target) {
                 lenis.scrollTo(target);
-                closeNav()
-                isMenuOpen = !isMenuOpen;
-                HamMenuButton?.classList.toggle("isOpen");
 
+                if (window.innerWidth < 1024) {
+                    closeNav()
+                    isMenuOpen = !isMenuOpen;
+                    HamMenuButton?.classList.toggle("isOpen");
+                }
             }
         });
     });

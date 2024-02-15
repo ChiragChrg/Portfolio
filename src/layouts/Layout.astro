@@ -2,7 +2,7 @@
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
-import { Cursor } from "../components/React";
+import { Cursor } from "../components/UI";
 import "../styles/global.css";
 import "../styles/utility.css";
 import { Header, MobileHeader } from "../components/UI";
@@ -142,7 +142,7 @@ import { Header, MobileHeader } from "../components/UI";
 			<slot />
 		</main>
 
-		<Cursor client:load />
+		<Cursor />
 
 		<script src="../script.ts"></script>
 	</body>
