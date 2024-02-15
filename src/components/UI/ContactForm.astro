@@ -1,0 +1,141 @@
+<form
+    id="contact-form"
+    class="Fade_Up bg-LinkBtnGradient rounded-md w-full lg:max-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col"
+>
+    <label
+        for="name"
+        class="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
+    >
+        Name
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your Name"
+            class="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
+            autocomplete="name"
+            required
+        />
+    </label>
+    <label
+        for="email"
+        class="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
+    >
+        Email
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            class="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
+            autocomplete="email"
+            required
+        />
+    </label>
+    <label
+        for="message"
+        class="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
+    >
+        Message
+        <textarea
+            rows={5}
+            id="message"
+            name="message"
+            placeholder="Enter your Message"
+            class="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground resize-none"
+        ></textarea>
+    </label>
+
+    <div class="w-full flex justify-start items-center gap-4">
+        <button
+            type="submit"
+            id="submit-button"
+            class="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 lg:px-20 rounded-md"
+        >
+            <span id="submitBtn-text">Submit</span>
+            <div id="submitBtn-icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-send-horizontal"
+                    data-v-56bd7dfc=""
+                    ><path d="m3 3 3 9-3 9 19-9Z"></path><path d="M6 12h16"
+                    ></path></svg
+                >
+            </div>
+        </button>
+        <span id="mail-status"></span>
+    </div>
+</form>
+
+<script type="module">
+    import emailjs from "@emailjs/browser";
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const FormRef = document.getElementById("contact-form");
+        const SubmitButtonRef = document.getElementById("submit-button");
+        const SubmitTextRef = document.getElementById("submitBtn-text");
+        const SubmitIconRef = document.getElementById("submitBtn-icon");
+        const MailStatusRef = document.getElementById("mail-status");
+
+        FormRef?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(FormRef);
+            SubmitButtonRef.disabled = true;
+
+            const name = formData.get("name");
+            const email = formData.get("email");
+            const message = formData.get("message");
+
+            if (!name || !email || !message) {
+                console.error("Missing form fields");
+                return;
+            }
+
+            if (!SubmitTextRef || !SubmitIconRef || !MailStatusRef) return;
+
+            let templateParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+            };
+
+            try {
+                // Enable Loading button Ui
+                SubmitTextRef.textContent = "Sending";
+                SubmitIconRef.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-spin lucide lucide-loader-2" data-v-56bd7dfc=""><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>`;
+
+                const mailRes = await emailjs.send(
+                    import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
+                    import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+                    templateParams,
+                    import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY,
+                );
+
+                if (mailRes.status !== 200) {
+                    throw new Error("😵 Message not Sent");
+                }
+
+                MailStatusRef.textContent = "👍 Message Sent!";
+                FormRef.reset();
+            } catch (error) {
+                MailStatusRef.textContent = error.message;
+            } finally {
+                // Revert back to Submit button Ui
+                SubmitTextRef.textContent = "Submit";
+                SubmitIconRef.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizontal" data-v-56bd7dfc=""><path d="m3 3 3 9-3 9 19-9Z"></path><path d="M6 12h16"></path></svg>`;
+
+                setTimeout(() => {
+                    MailStatusRef.textContent = "";
+                }, 3000);
+            }
+        });
+    });
+</script>
