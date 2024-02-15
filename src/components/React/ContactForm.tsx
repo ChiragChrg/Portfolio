@@ -59,7 +59,7 @@ const ContactForm = () => {
     }
 
     return (
-        <form onSubmit={HandleFormSubmit} className="Fade_Up bg-LinkBtnGradient rounded-md w-full lg:min-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
+        <form onSubmit={HandleFormSubmit} className="Fade_Up bg-LinkBtnGradient rounded-md w-full lg:max-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
             <label
                 htmlFor="name"
                 className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
