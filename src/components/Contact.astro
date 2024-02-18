@@ -1,5 +1,6 @@
 ---
-import { CenterTitle, ContactForm } from "./UI";
+import { CenterTitle } from "./UI";
+import { ContactForm } from "./Preact";
 import {
     FaceBookIcon,
     GmailIcon,
@@ -114,7 +115,7 @@ import {
             />
         </div>
 
-        <ContactForm />
+        <ContactForm client:load />
     </div>
 </section>
 
