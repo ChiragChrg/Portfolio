@@ -108,15 +108,13 @@
 
 
 /* Projects Card Hover */
-.CardHover {
-    scale: 1;
+/* .CardHover {
     transition: 0.25s ease-in-out;
-}
+} */
 
-.CardHover:hover {
-    /* scale: 1.04; */
+/* .CardHover:hover {
     transform: translateY(-1em) !important
-}
+} */
 
 .Card_Main:hover .Card_Image {
     opacity: 0.8;
