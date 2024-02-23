@@ -2,6 +2,7 @@
 import { ExternalLinkIcon, WrenchIcon } from "lucide-preact";
 import { SectionTitle } from "./UI";
 import { Image } from "astro:assets";
+import { ProjectCard } from "../components/Preact";
 
 // Lazy loading ProjectInfo
 const ProjectInfo = import("../utils/ProjectsList");
@@ -23,10 +24,7 @@ const { ProjectsList } = await ProjectInfo;
 
                 return (
                     <div class="Fade_Stagger Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] mt-3">
-                        <a
-                            href="/projects/arms"
-                            class="Projects_Preview w-full relative rounded-[0.4em]"
-                        >
+                        <ProjectCard projectData={project} client:load>
                             <Image
                                 class="Card_Image bg-cover opacity-50 transition-opacity w-full"
                                 style={{ borderRadius: "0.4em 0.4em 0 100%" }}
@@ -42,7 +40,7 @@ const { ProjectsList } = await ProjectInfo;
                                 height={project.LogoSize}
                                 loading="lazy"
                             />
-                        </a>
+                        </ProjectCard>
                         <div class="w-full text-[0.95em] px-4">
                             <div class="flex justify-between items-center">
                                 <h2 class="font-ubuntu text-[1.4em] py-3">

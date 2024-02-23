@@ -1,6 +1,6 @@
 import { atom } from "nanostores";
 
-type ProjectsListType = {
+export type ProjectsListType = {
     Name: string,
     ShortDesc: string,
     Desc: string,
