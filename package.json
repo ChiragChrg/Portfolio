@@ -17,25 +17,23 @@
     "lint": "eslint --ext .js,.astro src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.4",
-    "@astrojs/preact": "^3.1.0",
+    "@astrojs/check": "^0.5.5",
+    "@astrojs/preact": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
     "@emailjs/browser": "^4.1.0",
-    "@nanostores/preact": "^0.5.1",
-    "@studio-freight/lenis": "^1.0.35",
-    "astro": "^4.4.0",
+    "@studio-freight/lenis": "^1.0.37",
+    "astro": "^4.4.4",
     "astro-font": "^0.0.77",
-    "astro-seo": "^0.8.0",
+    "astro-seo": "^0.8.2",
     "gsap": "^3.12.5",
-    "lucide-preact": "^0.331.0",
-    "nanostores": "^0.10.0",
-    "preact": "^10.19.5",
+    "lucide-preact": "^0.338.0",
+    "preact": "^10.19.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^7.0.1",
-    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4"
   }
 }
