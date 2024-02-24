@@ -3,6 +3,34 @@ import { Download } from "lucide-preact";
 import "../../styles/header.css";
 ---
 
+<header class="hidden lg:block sticky top-0 z-50">
+    <div
+        class="flex justify-between items-center w-full px-6 py-2 bg-headerGradient backdrop-blur-[2px]"
+    >
+        <a href="/" class="Fade_Down font-satisfy font-bold text-[2em]">
+            <h1 class="gradientText w-fit">Portfolio.</h1>
+        </a>
+
+        <div class="Header_Nav flex gap-6">
+            <a class="Fade_Down" href="/#about">ABOUT</a>
+            <a class="Fade_Down" href="/#skills">SKILLS</a>
+            <a class="Fade_Down" href="/#projects">PROJECTS</a>
+            <a class="Fade_Down" href="/#contact">CONTACT</a>
+        </div>
+
+        <a
+            class="Fade_Down Header_ActionBtn"
+            href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf"
+        >
+            <div class="flex_center gap-2">
+                <p>Resume</p>
+                <Download size={18} />
+            </div>
+        </a>
+    </div>
+</header>
+
+<!-- Mobile Header -->
 <header
     class="lg:hidden w-full sticky top-0 z-50 bg-headerGradient backdrop-blur-[2px]"
 >
@@ -29,25 +57,25 @@ import "../../styles/header.css";
         </svg>
     </div>
 
-    <nav
+    <div
         id="mobileHeaderNav"
         style="clip-path: circle(30px at calc(100vw + 30px) -30px);"
         class="w-full h-dvh flex_center flex-col fixed top-0 right-0 gap-8 z-[60]"
     >
         <div class="MobileHeader_Nav flex_center">
-            <a href="#about">About</a>
+            <a href="/#about">About</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center">
-            <a href="#skills">Skills</a>
+            <a href="/#skills">Skills</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center">
-            <a href="#projects">Projects</a>
+            <a href="/#projects">Projects</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center">
-            <a href="#contact">Contact</a>
+            <a href="/#contact">Contact</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center">
@@ -61,54 +89,5 @@ import "../../styles/header.css";
                 </div>
             </a>
         </div>
-    </nav>
+    </div>
 </header>
-
-<script type="module">
-    const headerElement = document.getElementById("mobileHeader");
-    const sectionsList = {
-        "#home": document.getElementById("home"),
-        "#about": document.getElementById("about"),
-        "#skills": document.getElementById("skills"),
-        "#projects": document.getElementById("projects"),
-        "#contact": document.getElementById("contact"),
-    };
-
-    // Set Active class on section scroll
-    const handleScroll = () => {
-        for (const [linkHref, section] of Object.entries(sectionsList)) {
-            if (!section) return;
-
-            const rect = section.getBoundingClientRect();
-            const link = document.querySelector(
-                `#mobileHeader a[href="${linkHref}"]`,
-            );
-
-            if (
-                headerElement &&
-                rect.top <= headerElement.offsetHeight &&
-                rect.bottom >= headerElement.offsetHeight
-            ) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        }
-    };
-
-    function throttle(func, limit) {
-        let throttling = false;
-        return function () {
-            if (!throttling) {
-                func.apply(this, arguments);
-                throttling = true;
-                setTimeout(() => {
-                    throttling = false;
-                }, limit);
-            }
-        };
-    }
-
-    window.addEventListener("scroll", throttle(handleScroll, 100));
-    handleScroll(); // Initial call
-</script>

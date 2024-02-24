@@ -2,11 +2,9 @@
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
-import { Cursor } from "../components/UI";
+import { Header, MobileHeader, Cursor } from "../components/UI";
 import "../styles/global.css";
 import "../styles/utility.css";
-import { Header, MobileHeader } from "../components/UI";
-import { ProjectDetails } from "../components/Preact";
 ---
 
 <!doctype html>
@@ -144,7 +142,6 @@ import { ProjectDetails } from "../components/Preact";
 		</main>
 
 		<Cursor />
-		<ProjectDetails client:only />
 		<script src="../script.ts"></script>
 	</body>
 </html>

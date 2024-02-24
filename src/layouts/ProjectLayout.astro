@@ -1,0 +1,147 @@
+---
+const { title } = Astro.props;
+import { SEO } from "astro-seo";
+import { AstroFont } from "astro-font";
+import { join } from "node:path";
+import { Cursor, ProjectsHeader } from "../components/UI";
+import "../styles/global.css";
+import "../styles/utility.css";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="theme-color" content="#000" />
+        <!-- <meta name="robots" content="index, follow" /> -->
+        <!-- <meta
+			name="google-site-verification"
+			content="YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y"
+		/> -->
+        <meta
+            name="keywords"
+            content="chiragchrg,chrgchirag, @ChrgChirag, portfolio, vortexa,  devbase, ARMS, ARMS2.0, Academic, Resource, Management, System, arms2, xrecon, @ChrgChirag, chiruchirag2001, chiragchrg.netlify.app, devbase.netlify.app,
+		Fullstack Web Developer, My Personal Portfolio, ChiragChrg.github.io, I create Exciting Stuff on the Internet."
+        />
+        <meta name="author" content="ChiragChrg" />
+        <link rel="manifest" href="/manifest.json" />
+
+        <SEO
+            title={title}
+            description="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX."
+            canonical="https://calculas.netlify.app/"
+            openGraph={{
+                basic: {
+                    title: `${title}`,
+                    type: "website",
+                    image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+                    url: "https://chiragchrg.netlify.app/",
+                },
+            }}
+            twitter={{
+                title: `${title}`,
+                description:
+                    "Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
+                card: "summary",
+                site: "@ChrgChirag",
+                creator: "@ChrgChirag",
+                image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+            }}
+            extend={{
+                link: [
+                    { rel: "icon", type: "image/png", href: "/favicon.png" },
+                    {
+                        rel: "shortcut",
+                        type: "image/png",
+                        href: "/favicon.png",
+                    },
+                    {
+                        rel: "apple-touch-icon",
+                        type: "image/png",
+                        href: "/favicon.png",
+                    },
+                ],
+                meta: [
+                    {
+                        name: "twitter:url",
+                        content: "https://chiragchrg.netlify.app/",
+                    },
+                ],
+            }}
+        />
+
+        <AstroFont
+            config={[
+                {
+                    name: "Poppins",
+                    src: [
+                        {
+                            weight: "400",
+                            style: "normal",
+                            path: join(
+                                process.cwd(),
+                                "public",
+                                "fonts",
+                                "poppins-v20-latin-regular.woff2",
+                            ),
+                        },
+                    ],
+                    preload: true,
+                    display: "swap",
+                    fallback: "serif",
+                    cssVariable: "astro-font-poppins",
+                },
+                {
+                    name: "Satisfy",
+                    src: [
+                        {
+                            weight: "400",
+                            style: "normal",
+                            path: join(
+                                process.cwd(),
+                                "public",
+                                "fonts",
+                                "satisfy-v17-latin-regular.woff2",
+                            ),
+                        },
+                    ],
+                    preload: true,
+                    display: "swap",
+                    fallback: "serif",
+                    cssVariable: "astro-font-satisfy",
+                },
+                {
+                    name: "Ubuntu",
+                    src: [
+                        {
+                            weight: "700",
+                            style: "normal",
+                            path: join(
+                                process.cwd(),
+                                "public",
+                                "fonts",
+                                "ubuntu-v20-latin-700.woff2",
+                            ),
+                        },
+                    ],
+                    preload: true,
+                    display: "swap",
+                    fallback: "serif",
+                    cssVariable: "astro-font-ubuntu",
+                },
+            ]}
+        />
+    </head>
+    <body>
+        <ProjectsHeader />
+
+        <main>
+            <slot />
+        </main>
+
+        <Cursor />
+        <script src="../script.ts"></script>
+    </body>
+</html>
