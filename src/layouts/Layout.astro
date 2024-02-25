@@ -3,6 +3,7 @@ import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
 import { Header, MobileHeader, Cursor } from "../components/UI";
+import { Footer } from "../components";
 import "../styles/global.css";
 import "../styles/utility.css";
 ---
@@ -141,6 +142,7 @@ import "../styles/utility.css";
 			<slot />
 		</main>
 
+		<Footer />
 		<Cursor />
 		<script src="../script.ts"></script>
 	</body>

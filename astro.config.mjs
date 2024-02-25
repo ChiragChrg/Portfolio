@@ -4,5 +4,6 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "hybrid",
   integrations: [preact(), tailwind()]
 });

@@ -1,9 +1,10 @@
 ---
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
 import { Cursor, ProjectsHeader } from "../components/UI";
+import { Footer } from "../components";
 import "../styles/global.css";
 import "../styles/utility.css";
 ---
@@ -30,7 +31,7 @@ import "../styles/utility.css";
 
         <SEO
             title={title}
-            description="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX."
+            description={description}
             canonical="https://calculas.netlify.app/"
             openGraph={{
                 basic: {
@@ -42,8 +43,7 @@ import "../styles/utility.css";
             }}
             twitter={{
                 title: `${title}`,
-                description:
-                    "Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
+                description: `${description}`,
                 card: "summary",
                 site: "@ChrgChirag",
                 creator: "@ChrgChirag",
@@ -137,11 +137,12 @@ import "../styles/utility.css";
     <body>
         <ProjectsHeader />
 
-        <main>
+        <main class="px-8">
             <slot />
         </main>
 
         <Cursor />
+        <Footer />
         <script src="../script.ts"></script>
     </body>
 </html>
