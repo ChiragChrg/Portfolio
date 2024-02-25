@@ -25,6 +25,7 @@ export default {
 				'skillGradient': 'var(--SkillGradient)',
 				'LinkBtnGradient': 'var(--LinkBtnGradient)',
 				'cardGradient': 'var(--cardGradient)',
+				'imgOverlayGradient': 'radial-gradient(circle, transparent, #000 95%),linear-gradient(180deg,rgba(0, 0, 0),transparent 25%),linear-gradient(0deg,rgba(0, 0, 0),transparent 25%) '
 			},
 			keyframes: {
 				"ripple": {
