@@ -239,7 +239,7 @@ export const ProjectsList: ProjectsListType = [
         ]
     },
     {
-        Name: "FilmStack",
+        Name: "Film Stack",
         ShortDesc: "Discover trending movies and access details of all films and search for any movie you desire. Easily search for any film and immerse in the world of cinema.",
         Desc: "FilmStack is the ultimate movie app that brings you all the details of trending films at your fingertips. Explore a vast collection of movies, access comprehensive information, and immerse yourself in the world of cinema. With FilmStack, you can effortlessly search for any movie, making it easy to find your favorite movies.",
         Logo: FilmstackLogo,

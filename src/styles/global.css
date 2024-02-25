@@ -42,8 +42,8 @@
             hsla(0, 0%, 5%, 0.5),
             transparent);
     --LinkBtnGradient: linear-gradient(-135deg,
-            hsla(0, 0%, 15%, 0.8),
-            hsla(0, 0%, 10%, 0.5));
+            rgb(24, 24, 24),
+            hsla(0, 0%, 10%, 0.6));
     --SkillGradient: linear-gradient(-135deg,
             hsla(276, 50%, 10%, 0.8),
             hsla(296, 50%, 10%, 0.5));
