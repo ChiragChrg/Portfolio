@@ -103,14 +103,16 @@ const [project] = ProjectsList.filter(
     <div class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
         About the project.
     </div>
-    <div class="flex justify-center items-start gap-4">
+    <div
+        class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-4"
+    >
         <Image
             src={project.Mockup}
             alt="Vortexa_Image"
             width={600}
             class="Fade_Up"
         />
-        <p class="Fade_Up">{project.Desc}</p>
+        <p class="Fade_Up md:w-[80%] lg:w-full">{project.Desc}</p>
     </div>
     <div class="w-full h-screen"></div>
 </ProjectLayout>
