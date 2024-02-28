@@ -18,7 +18,7 @@
 .Title-Tag.close {
     justify-content: flex-end;
     padding-top: 0.5em;
-    opacity: 0.6;
+    opacity: 0.7 !important;
 }
 
 .Title-Tag.purple span {

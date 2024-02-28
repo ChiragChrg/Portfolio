@@ -8,91 +8,88 @@ const ProjectInfo = import("../utils/ProjectsList");
 const { ProjectsList } = await ProjectInfo;
 ---
 
-<section
-    id="projects"
-    class="w-full min-h-screen px-6 pb-4 pt-16 bg-background"
->
-    <SectionTitle title="My Projects" variant="open" color="pink" />
+<section id="projects" class="w-full min-h-screen px-6 py-4 bg-background">
+    <SectionTitle title="My Projects" color="pink">
+        <div
+            class="Fade_Up relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
+        >
+            {
+                ProjectsList?.map((project, index) => {
+                    if (project?.hideProject) return;
 
-    <div
-        class="Fade_Up relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
-    >
-        {
-            ProjectsList?.map((project, index) => {
-                if (project?.hideProject) return;
+                    return (
+                        <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] mt-3">
+                            <a
+                                href={`/projects/${project?.Name.replaceAll(
+                                    " ",
+                                    "-",
+                                ).toLowerCase()}`}
+                                class="Projects_Preview w-full relative rounded-[0.4em]"
+                            >
+                                <Image
+                                    class="Card_Image bg-cover opacity-50 transition-opacity w-full"
+                                    style={{
+                                        borderRadius: "0.4em 0.4em 0 100%",
+                                    }}
+                                    src={project.Shot}
+                                    alt={`Project_ScreenShot_${project.Name}`}
+                                    loading="lazy"
+                                />
+                                <Image
+                                    class="absolute left-6 bottom-6"
+                                    src={project.Logo}
+                                    alt={`Project_Logo_${project.Name}`}
+                                    width={project.LogoSize}
+                                    height={project.LogoSize}
+                                    loading="lazy"
+                                />
+                            </a>
+                            <div class="w-full text-[0.95em] px-4">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="font-ubuntu text-[1.4em] py-3">
+                                        {project.Name}
+                                    </h2>
+                                    <div class="flex">
+                                        {project.Status === "development" && (
+                                            <div class="flex_center gap-2 px-1 py-0.5 text-orange-400">
+                                                <WrenchIcon size={16} />
 
-                return (
-                    <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] mt-3">
-                        <a
-                            href={`/projects/${project?.Name.replaceAll(
-                                " ",
-                                "-",
-                            ).toLowerCase()}`}
-                            class="Projects_Preview w-full relative rounded-[0.4em]"
-                        >
-                            <Image
-                                class="Card_Image bg-cover opacity-50 transition-opacity w-full"
-                                style={{ borderRadius: "0.4em 0.4em 0 100%" }}
-                                src={project.Shot}
-                                alt={`Project_ScreenShot_${project.Name}`}
-                                loading="lazy"
-                            />
-                            <Image
-                                class="absolute left-6 bottom-6"
-                                src={project.Logo}
-                                alt={`Project_Logo_${project.Name}`}
-                                width={project.LogoSize}
-                                height={project.LogoSize}
-                                loading="lazy"
-                            />
-                        </a>
-                        <div class="w-full text-[0.95em] px-4">
-                            <div class="flex justify-between items-center">
-                                <h2 class="font-ubuntu text-[1.4em] py-3">
-                                    {project.Name}
-                                </h2>
-                                <div class="flex">
-                                    {project.Status === "development" && (
-                                        <div class="flex_center gap-2 px-1 py-0.5 text-orange-400">
-                                            <WrenchIcon size={16} />
+                                                <span class="text-[0.8em]">
+                                                    Dev Progress
+                                                </span>
+                                            </div>
+                                        )}
 
-                                            <span class="text-[0.8em]">
-                                                Dev Progress
-                                            </span>
-                                        </div>
-                                    )}
+                                        <a
+                                            href={project.Link}
+                                            title={`${project.Name}_Demo`}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            class="Projects_Link flex"
+                                        >
+                                            <ExternalLinkIcon />
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="text-center">{project.ShortDesc}</p>
 
-                                    <a
-                                        href={project.Link}
-                                        title={`${project.Name}_Demo`}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        class="Projects_Link flex"
-                                    >
-                                        <ExternalLinkIcon />
-                                    </a>
+                                <div class="w-full flex_center gap-4 py-3">
+                                    {project.Tech.map((icon) => {
+                                        return (
+                                            <Image
+                                                src={icon}
+                                                alt={`TechIcon_${index}`}
+                                                width={22}
+                                                height={22}
+                                            />
+                                        );
+                                    })}
                                 </div>
                             </div>
-                            <p class="text-center">{project.ShortDesc}</p>
-
-                            <div class="w-full flex_center gap-4 py-3">
-                                {project.Tech.map((icon) => {
-                                    return (
-                                        <Image
-                                            src={icon}
-                                            alt={`TechIcon_${index}`}
-                                            width={22}
-                                            height={22}
-                                        />
-                                    );
-                                })}
-                            </div>
                         </div>
-                    </div>
-                );
-            })
-        }
-    </div>
-
-    <SectionTitle title="My Projects" variant="close" color="pink" />
+                    );
+                })
+            }
+        </div>
+    </SectionTitle>
 </section>
