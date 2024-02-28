@@ -31,6 +31,10 @@ type ProjectsListType = {
         password: string
     },
     Tech: ImageMetadata[],
+    features: {
+        title: string,
+        description: string
+    }[],
     hideProject: boolean,
     LogoSize: number,
     versions: {
@@ -51,13 +55,21 @@ type ProjectsListType = {
 //     Status: "completed OR development",
 //     Link: "PROJECT_URL",
 //     Source: "GITHUB_URL",
-//     ?Demo?: { email: "demouser123@gmail.com", password: "DemoUser123" },
+//     Demo?: { 
+//         email: "DEMO_EMAIL", 
+//         password: "DEMO_PASSWORD" 
+//     },
 //     Tech: [TECH_ICONS_URL],
+//     features: [{
+//         title: "FEATURE_TITLE",
+//         description: "FEATURE_DESCRIPTION"
+//     }],
 //     hideProject: false,
 //     LogoSize: 50,
-//     versions: [
-//         { title: "PREV_PROJECT_TITLE", version: "VERSION_NO" },
-//     ]
+//     versions: [{ 
+//         title: "PREV_PROJECT_TITLE", 
+//         version: "VERSION_NO" 
+//     }]
 // },
 
 export const ProjectsList: ProjectsListType = [
@@ -73,6 +85,32 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://arms-v3.vercel.app/",
         Source: "https://github.com/ChiragChrg/arms-v3",
         Tech: [NextIcon, TsIcon, TailwindIcon, ReactQueryIcon, ZustandIcon, MongoIcon, NextAuthIcon, EdgeStoreIcon],
+        features: [
+            {
+                title: "Anonymous Login",
+                description: "Students can conveniently  log in anonymously to browse and access study materials."
+            },
+            {
+                title: "Secure Access",
+                description: "Utilizes NextAuth for secure authentication of authorized users using Google and Github Auth providers."
+            },
+            {
+                title: "Responsive Design",
+                description: "Optimized for seamless access on various devices like Mobile, Tablet and desktop."
+            },
+            {
+                title: "Streamlined Resource Management",
+                description: "Efficient upload, update, and management of study materials using EdgeStore cloud storage."
+            },
+            {
+                title: "Document Download",
+                description: "Easily download PDF documents for offline access."
+            },
+            {
+                title: "Efficient Data Management",
+                description: "Automatically caches query results, reduces redundant network requests, and improves overall application performance using Tanstack Query."
+            }
+        ],
         hideProject: false,
         LogoSize: 50,
         versions: [
@@ -93,6 +131,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://vortexa.netlify.app/",
         Source: "https://github.com/ChiragChrg/vortexa",
         Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, D3JsIcon, NanostoresIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: false,
         LogoSize: 50,
         versions: [
@@ -112,6 +153,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://nextmart.vercel.app/",
         Source: "https://github.com/ChiragChrg/nextmart",
         Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 40,
         versions: []
@@ -128,6 +172,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
         Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, GdriveIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: [
@@ -149,6 +196,9 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, SocketIoIcon],
+        features: [
+
+        ],
         hideProject: false,
         LogoSize: 55,
         versions: []
@@ -165,6 +215,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: false,
         LogoSize: 55,
         versions: []
@@ -182,6 +235,9 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, MysqlIcon],
+        features: [
+
+        ],
         hideProject: false,
         LogoSize: 55,
         versions: []
@@ -198,6 +254,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: []
@@ -214,6 +273,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: false,
         LogoSize: 55,
         versions: []
@@ -230,6 +292,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "http://arms-v1.infinityfreeapp.com/",
         Source: "https://github.com/ChiragChrg/ARMS-PHP",
         Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: [
@@ -250,6 +315,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: []
@@ -266,6 +334,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://covidtrax.netlify.app/",
         Source: "https://github.com/ChiragChrg/CovidTrax",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: []
@@ -282,6 +353,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://cookeez.netlify.app/",
         Source: "https://github.com/ChiragChrg/Cookeez",
         Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: []
@@ -298,6 +372,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
         Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: [
@@ -317,6 +394,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://nuklearbrain.netlify.app/",
         Source: "https://github.com/ChiragChrg/Nuklear-Brain",
         Tech: [HtmlIcon, CssIcon, JsIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: []
@@ -333,6 +413,9 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://nuklearbrain.netlify.app/",
         Source: "https://github.com/ChiragChrg/Kalci",
         Tech: [HtmlIcon, CssIcon, JsIcon],
+        features: [
+
+        ],
         hideProject: true,
         LogoSize: 55,
         versions: []

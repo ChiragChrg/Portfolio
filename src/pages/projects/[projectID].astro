@@ -23,6 +23,7 @@ import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
 import { GithubIcon } from "../../assets/SVGs";
 import { ExternalLinkIcon } from "lucide-preact";
+import { SectionTitle } from "../../components/UI";
 
 // Lazy loading ProjectInfo
 const ProjectInfo = import("../../utils/ProjectsList");
@@ -100,11 +101,11 @@ const [project] = ProjectsList.filter(
         </div>
     </div>
 
-    <div class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
+    <span class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
         About the project.
-    </div>
+    </span>
     <div
-        class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-4"
+        class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-4 py-10"
     >
         <Image
             src={project.Mockup}
@@ -112,7 +113,26 @@ const [project] = ProjectsList.filter(
             width={600}
             class="Fade_Up"
         />
-        <p class="Fade_Up md:w-[80%] lg:w-full">{project.Desc}</p>
+        <p class="Fade_Up md:w-[80%] lg:w-full text-justify text-[1.1em]">
+            {project.Desc}
+        </p>
     </div>
+
+    <SectionTitle title="Features" color="purple">
+        <div class="grid grid-cols-1 md:grid-cols-2 mx-4">
+            {
+                project.features.map((items) => (
+                    <div class="Fade_Up p-4">
+                        <span class="font-ubuntu text-[1.125em]">
+                            ⭐ {items.title} :
+                        </span>
+                        <p class="pl-16 text-justify">{items.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </SectionTitle>
+
+    <SectionTitle title="Tech Stack" color="pink">yo</SectionTitle>
     <div class="w-full h-screen"></div>
 </ProjectLayout>
