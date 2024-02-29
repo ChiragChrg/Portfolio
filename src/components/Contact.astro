@@ -9,6 +9,7 @@ import {
     InstagramIcon,
     TwitterIcon,
 } from "../assets/SVGs";
+import { Image } from "astro:assets";
 ---
 
 <section
@@ -42,8 +43,8 @@ import {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <img
-                        src={FaceBookIcon.src}
+                    <Image
+                        src={FaceBookIcon}
                         alt="FaceBook"
                         width={30}
                         height={30}
@@ -56,8 +57,8 @@ import {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <img
-                        src={InstagramIcon.src}
+                    <Image
+                        src={InstagramIcon}
                         alt="Instagram"
                         width={30}
                         height={30}
@@ -70,12 +71,7 @@ import {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <img
-                        src={GmailIcon.src}
-                        alt="Gmail"
-                        width={30}
-                        height={30}
-                    />
+                    <Image src={GmailIcon} alt="Gmail" width={30} height={30} />
                 </a>
                 <a
                     href="https://x.com/ChrgChirag"
@@ -84,8 +80,8 @@ import {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <img
-                        src={TwitterIcon.src}
+                    <Image
+                        src={TwitterIcon}
                         alt="Twitter X"
                         width={30}
                         height={30}
@@ -98,8 +94,8 @@ import {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <img
-                        src={DiscordIcon.src}
+                    <Image
+                        src={DiscordIcon}
                         alt="Discord"
                         width={30}
                         height={30}
@@ -107,9 +103,9 @@ import {
                 </a>
             </div>
 
-            <img
+            <Image
                 class="Fade_Up absolute bottom-10 md:bottom-2 w-[300px] md:w-[400px]"
-                src={ContactArt.src}
+                src={ContactArt}
                 alt="ContactArt"
                 loading="lazy"
             />
