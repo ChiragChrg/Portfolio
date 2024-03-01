@@ -12,6 +12,9 @@ export { default as ZustandIcon } from "./zustand.webp"
 export { default as D3JsIcon } from "./d3js.svg"
 export { default as NanostoresIcon } from "./nanostores.svg"
 export { default as ReactQueryIcon } from "./reactquery.svg"
+export { default as PreactIcon } from "./preactjs.svg"
+export { default as GSAPIcon } from "./gsap.svg"
+export { default as FramerMotionIcon } from "./framermotion.svg"
 
 // Backend-Stack
 export { default as NodeIcon } from "./nodejs.svg"

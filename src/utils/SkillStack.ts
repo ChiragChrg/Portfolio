@@ -33,6 +33,9 @@ import {
     VercelIcon,
     VsCodeIcon,
     FigmaIcon,
+    PreactIcon,
+    GSAPIcon,
+    FramerMotionIcon
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
@@ -66,6 +69,8 @@ export const FrontendStack = [
         icon: ReactQueryIcon,
         link: "https://tanstack.com/query/latest/",
     },
+    { name: "GSAP", icon: GSAPIcon, link: "https://gsap.com/" },
+    { name: "Motion", icon: FramerMotionIcon, link: "https://www.framer.com/motion/" },
     { name: "Redux", icon: ReduxIcon, link: "https://redux.js.org/" },
     {
         name: "Zustand",
@@ -73,6 +78,7 @@ export const FrontendStack = [
         link: "https://zustand-demo.pmnd.rs/",
     },
     { name: "D3.js", icon: D3JsIcon, link: "https://d3js.org/" },
+    { name: "Preact.js", icon: PreactIcon, link: "https://preactjs.com/" },
     {
         name: "Nanostores",
         icon: NanostoresIcon,
