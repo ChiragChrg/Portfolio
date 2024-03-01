@@ -23,7 +23,7 @@ import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
 import { GithubIcon } from "../../assets/SVGs";
 import { ExternalLinkIcon } from "lucide-preact";
-import { SectionTitle } from "../../components/UI";
+import { CenterTitle, SectionTitle } from "../../components/UI";
 
 // Lazy loading ProjectInfo
 const ProjectInfo = import("../../utils/ProjectsList");
@@ -40,7 +40,7 @@ const [project] = ProjectsList.filter(
     <div class="Fade_In flex_center absolute inset-0 w-full h-full z-[-1]">
         <Image
             src={project.Shot}
-            alt="Vortexa_Image"
+            alt={`${project.Name}_BG_Image`}
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
         />
         <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
@@ -49,7 +49,7 @@ const [project] = ProjectsList.filter(
     <div class="flex_center flex-col gap-4 py-4">
         <Image
             src={project.Logo}
-            alt="Vortexa_Image"
+            alt={`${project.Name}_Image`}
             class="Fade_Up"
             width={100}
             height={100}
@@ -60,10 +60,10 @@ const [project] = ProjectsList.filter(
 
         <div class="w-full flex_center gap-4">
             {
-                project?.Tech?.map((icon, index) => {
+                project?.Tech?.map((tech, index) => {
                     return (
                         <Image
-                            src={icon}
+                            src={tech.icon}
                             alt={`TechIcon_${index}`}
                             width={28}
                             height={28}
@@ -109,7 +109,7 @@ const [project] = ProjectsList.filter(
     >
         <Image
             src={project.Mockup}
-            alt="Vortexa_Image"
+            alt={`${project.Name}_Mockup_Image`}
             width={600}
             class="Fade_Up"
         />
@@ -119,7 +119,7 @@ const [project] = ProjectsList.filter(
     </div>
 
     <SectionTitle title="Features" color="purple">
-        <div class="grid grid-cols-1 md:grid-cols-2 mx-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 mx-4">
             {
                 project.features.map((items) => (
                     <div class="Fade_Up p-4">
@@ -133,6 +133,24 @@ const [project] = ProjectsList.filter(
         </div>
     </SectionTitle>
 
-    <SectionTitle title="Tech Stack" color="pink">yo</SectionTitle>
+    <CenterTitle title="Tech Stack" color="pink" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
+        {
+            project.Tech.map((tech) => (
+                <div class="Fade_Stagger flex_center flex-col gap-4 p-4 border border-transparent hover:border-pinkLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
+                    <div class="flex_center gap-4">
+                        <Image
+                            src={tech.icon}
+                            alt={tech.title}
+                            width={40}
+                            height={40}
+                        />
+                        <span class="text-[1.2em]">{tech.title}</span>
+                    </div>
+                    <p class="text-center">{tech.description}</p>
+                </div>
+            ))
+        }
+    </div>
     <div class="w-full h-screen"></div>
 </ProjectLayout>

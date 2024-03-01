@@ -30,7 +30,11 @@ type ProjectsListType = {
         email: string,
         password: string
     },
-    Tech: ImageMetadata[],
+    Tech: {
+        title: string,
+        description: string,
+        icon: ImageMetadata
+    }[],
     features: {
         title: string,
         description: string
@@ -72,6 +76,124 @@ type ProjectsListType = {
 //     }]
 // },
 
+const TechInfo = {
+    HTML: {
+        title: "HTML",
+        description: "HyperText Markup Language for creating the structure of web pages.",
+        icon: HtmlIcon
+    },
+    CSS: {
+        title: "CSS",
+        description: "Cascading Style Sheets for styling the presentation of HTML documents.",
+        icon: CssIcon
+    },
+    JavaScript: {
+        title: "JavaScript",
+        description: "High-level scripting language for adding interactivity to web pages.",
+        icon: JsIcon
+    },
+    React: {
+        title: "React",
+        description: "JavaScript library for building user interfaces with reusable components.",
+        icon: ReactIcon
+    },
+    Node: {
+        title: "Node.js",
+        description: "JavaScript runtime for server-side applications, enabling scalable and event-driven architecture.",
+        icon: NodeIcon
+    },
+    TypeScript: {
+        title: "TypeScript",
+        description: "A superset of JavaScript adding static typing for building large-scale applications with enhanced maintainability and tooling support.",
+        icon: TsIcon
+    },
+    Next: {
+        title: "Next.js",
+        description: "A React framework for server-side rendering, static site generation, and routing, offering improved performance and SEO optimization.",
+        icon: NextIcon
+    },
+    MySQL: {
+        title: "MySQL",
+        description: "Open-source relational database management system for storing and managing structured data.",
+        icon: MysqlIcon
+    },
+    MongoDB: {
+        title: "MongoDB",
+        description: "NoSQL database offering flexibility and scalability for storing and managing data efficiently.",
+        icon: MongoIcon
+    },
+    GDrive: {
+        title: "Google Drive API",
+        description: "RESTful API for integrating Google Drive functionalities such as file storage and synchronization into applications.",
+        icon: GdriveIcon
+    },
+    SocketIO: {
+        title: "Socket.IO",
+        description: "Real-time bidirectional communication library for building interactive web applications.",
+        icon: SocketIoIcon
+    },
+    RESTAPI: {
+        title: "REST API",
+        description: "Architectural style for designing networked applications with standardized HTTP operations.",
+        icon: RestApiIcon
+    },
+    PHP: {
+        title: "PHP",
+        description: "Server-side scripting language for building dynamic web applications.",
+        icon: PhpIcon
+    },
+    Vite: {
+        title: "Vite",
+        description: "Modern build tooling for web development with rapid startup and hot module replacement.",
+        icon: ViteIcon
+    },
+    NextAuth: {
+        title: "NextAuth.js",
+        description: "Authentication library designed specifically for Next.js applications, providing robust authentication features and seamless integration.",
+        icon: NextAuthIcon
+    },
+    Redux: {
+        title: "Redux",
+        description: "Predictable state management library for JavaScript applications, enabling developers to write consistent, scalable code with ease.",
+        icon: ReduxIcon
+    },
+    TailwindCSS: {
+        title: "Tailwind CSS",
+        description: "A utility-first CSS framework providing pre-designed, atomic-level utility classes for rapid UI development with minimal CSS code.",
+        icon: TailwindIcon
+    },
+    Zustand: {
+        title: "Zustand",
+        description: "Tiny, fast, and scalable state management for React applications, providing a simple and intuitive API.",
+        icon: ZustandIcon
+    },
+    Astro: {
+        title: "Astro",
+        description: "Frontend framework for streamlined development, integrating seamlessly with popular tools to create fast and modern websites with minimal configuration overhead.",
+        icon: AstroIcon
+    },
+    NanoStores: {
+        title: "NanoStores",
+        description: "Lightweight state management library for JavaScript applications, designed for simplicity and performance to simplify state management and improve application responsiveness.",
+        icon: NanostoresIcon
+    },
+    D3: {
+        title: "D3.js",
+        description: "Versatile JavaScript library for data visualization, enabling developers to create dynamic, interactive graphics and charts by binding data to DOM elements.",
+        icon: D3JsIcon
+    },
+    ReactQuery: {
+        title: "React Query",
+        description: "React library for managing, caching, and synchronizing server state in web applications, providing a powerful and intuitive API for fetching and updating data.",
+        icon: ReactQueryIcon
+    },
+    EdgeStore: {
+        title: "EdgeStore",
+        description: "State management library for React applications, designed for scalability and performance, with efficient updates and minimal API.",
+        icon: EdgeStoreIcon
+    }
+};
+
 export const ProjectsList: ProjectsListType = [
     {
         Name: "ARMS v3",
@@ -84,7 +206,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://arms-v3.vercel.app/",
         Source: "https://github.com/ChiragChrg/arms-v3",
-        Tech: [NextIcon, TsIcon, TailwindIcon, ReactQueryIcon, ZustandIcon, MongoIcon, NextAuthIcon, EdgeStoreIcon],
+        Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.ReactQuery, TechInfo.Zustand, TechInfo.MongoDB, TechInfo.NextAuth, TechInfo.EdgeStore],
         features: [
             {
                 title: "Anonymous Login",
@@ -130,7 +252,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://vortexa.netlify.app/",
         Source: "https://github.com/ChiragChrg/vortexa",
-        Tech: [AstroIcon, ReactIcon, TsIcon, TailwindIcon, D3JsIcon, NanostoresIcon, RestApiIcon],
+        Tech: [TechInfo.Astro, TechInfo.React, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.D3, TechInfo.NanoStores, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -152,7 +274,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "development",
         Link: "https://nextmart.vercel.app/",
         Source: "https://github.com/ChiragChrg/nextmart",
-        Tech: [NextIcon, TsIcon, MongoIcon, NextAuthIcon, ReduxIcon, TailwindIcon],
+        Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.MongoDB, TechInfo.NextAuth, TechInfo.Redux, TechInfo.TailwindCSS],
         features: [
 
         ],
@@ -171,7 +293,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
-        Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, GdriveIcon],
+        Tech: [TechInfo.Vite, TechInfo.React, TechInfo.Node, TechInfo.MongoDB, TechInfo.GDrive],
         features: [
 
         ],
@@ -195,7 +317,7 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [ViteIcon, ReactIcon, NodeIcon, MongoIcon, SocketIoIcon],
+        Tech: [TechInfo.Vite, TechInfo.React, TechInfo.Node, TechInfo.MongoDB, TechInfo.SocketIO],
         features: [
 
         ],
@@ -214,7 +336,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -234,7 +356,7 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://srinivas-exam-manager.netlify.app/",
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, MysqlIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.Node, TechInfo.MySQL],
         features: [
 
         ],
@@ -253,7 +375,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -272,7 +394,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
-        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -291,7 +413,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "http://arms-v1.infinityfreeapp.com/",
         Source: "https://github.com/ChiragChrg/ARMS-PHP",
-        Tech: [HtmlIcon, CssIcon, JsIcon, PhpIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.PHP, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -314,7 +436,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
-        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -333,7 +455,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://covidtrax.netlify.app/",
         Source: "https://github.com/ChiragChrg/CovidTrax",
-        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -352,7 +474,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://cookeez.netlify.app/",
         Source: "https://github.com/ChiragChrg/Cookeez",
-        Tech: [HtmlIcon, CssIcon, JsIcon, ReactIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -371,7 +493,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
-        Tech: [HtmlIcon, CssIcon, JsIcon, RestApiIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
 
         ],
@@ -393,7 +515,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://nuklearbrain.netlify.app/",
         Source: "https://github.com/ChiragChrg/Nuklear-Brain",
-        Tech: [HtmlIcon, CssIcon, JsIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript],
         features: [
 
         ],
@@ -412,7 +534,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://nuklearbrain.netlify.app/",
         Source: "https://github.com/ChiragChrg/Kalci",
-        Tech: [HtmlIcon, CssIcon, JsIcon],
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript],
         features: [
 
         ],

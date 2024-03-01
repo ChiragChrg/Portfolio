@@ -8,17 +8,20 @@ const ProjectInfo = import("../utils/ProjectsList");
 const { ProjectsList } = await ProjectInfo;
 ---
 
-<section id="projects" class="w-full min-h-screen px-6 py-4 bg-background">
+<section
+    id="projects"
+    class="w-full min-h-screen px-6 py-4 pt-14 bg-background"
+>
     <SectionTitle title="My Projects" color="pink">
         <div
             class="Fade_Up relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
         >
             {
-                ProjectsList?.map((project, index) => {
+                ProjectsList?.map((project) => {
                     if (project?.hideProject) return;
 
                     return (
-                        <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] mt-3">
+                        <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] mt-3 opacity-0">
                             <a
                                 href={`/projects/${project?.Name.replaceAll(
                                     " ",
@@ -74,11 +77,11 @@ const { ProjectsList } = await ProjectInfo;
                                 <p class="text-center">{project.ShortDesc}</p>
 
                                 <div class="w-full flex_center gap-4 py-3">
-                                    {project.Tech.map((icon) => {
+                                    {project.Tech.map((tech) => {
                                         return (
                                             <Image
-                                                src={icon}
-                                                alt={`TechIcon_${index}`}
+                                                src={tech.icon}
+                                                alt={`TechIcon ${tech.title}`}
                                                 width={22}
                                                 height={22}
                                             />
