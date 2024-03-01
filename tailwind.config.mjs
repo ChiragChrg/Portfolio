@@ -12,6 +12,7 @@ export default {
 				purpleLite: "var(--purpleLite)",
 				purpleLiteAlt: "var(--purpleLiteAlt)",
 				pinkLite: "var(--pinkLite)",
+				pinkLiteAlt: "var(--pinkLiteAlt)",
 				footer: "var(--footer)",
 			},
 			fontFamily: {
@@ -23,6 +24,7 @@ export default {
 				'headerGradient': 'var(--headerGradient)',
 				'OrbitGradient': 'var(--orbitGradient)',
 				'skillGradient': 'var(--SkillGradient)',
+				'skillGradientAlt': 'var(--SkillGradientAlt)',
 				'LinkBtnGradient': 'var(--LinkBtnGradient)',
 				'cardGradient': 'var(--cardGradient)',
 				'imgOverlayGradient': 'radial-gradient(circle, transparent, #000 95%),linear-gradient(180deg,rgba(0, 0, 0),transparent 25%),linear-gradient(0deg,rgba(0, 0, 0),transparent 25%) '

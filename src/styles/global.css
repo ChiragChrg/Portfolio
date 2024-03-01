@@ -15,6 +15,7 @@
     --purpleLite: hsla(264, 99%, 27%, 0.6);
     --purpleLiteAlt: hsla(263, 99%, 32%, 0.3);
     --pinkLite: hsla(315, 100%, 40%, 0.6);
+    --pinkLiteAlt: hsla(315, 100%, 40%, 0.3);
 
     --footer: #1E004C;
 
@@ -47,6 +48,9 @@
     --SkillGradient: linear-gradient(-135deg,
             hsla(276, 50%, 10%, 0.8),
             hsla(296, 50%, 10%, 0.5));
+    --SkillGradientAlt: linear-gradient(-135deg,
+            hsla(276, 50%, 10%, 0.4),
+            hsla(296, 50%, 10%, 0.25));
     --orbitGradient: conic-gradient(transparent,
             transparent,
             var(--purple),
