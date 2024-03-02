@@ -101,9 +101,9 @@ const [project] = ProjectsList.filter(
         </div>
     </div>
 
-    <span class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
+    <div class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
         About the project.
-    </span>
+    </div>
     <div
         class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-4 py-10"
     >
@@ -119,14 +119,18 @@ const [project] = ProjectsList.filter(
     </div>
 
     <SectionTitle title="Features" color="purple">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 mx-4">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-10 md:gap-y-0 md:mx-4"
+        >
             {
                 project.features.map((items) => (
-                    <div class="Fade_Up p-4">
-                        <span class="font-ubuntu text-[1.125em]">
+                    <div class="Fade_Up md:p-4 text-center md:text-start">
+                        <span class="font-ubuntu text-[1.125em] border-b-2 border-purpleLite">
                             ⭐ {items.title} :
                         </span>
-                        <p class="pl-16 text-justify">{items.description}</p>
+                        <p class="md:pl-16 text-center md:text-justify">
+                            {items.description}
+                        </p>
                     </div>
                 ))
             }
