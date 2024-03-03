@@ -32,7 +32,7 @@ import "../styles/utility.css";
         <SEO
             title={title}
             description={description}
-            canonical="https://calculas.netlify.app/"
+            canonical=`https://calculas.netlify.app/projects/${title.replace(" | ChiragChrg","").replaceAll(" ","-").toLowerCase()}`
             openGraph={{
                 basic: {
                     title: `${title}`,
