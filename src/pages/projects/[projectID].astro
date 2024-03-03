@@ -42,6 +42,7 @@ const [project] = ProjectsList.filter(
             src={project.Shot}
             alt={`${project.Name}_BG_Image`}
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
+            loading="eager"
         />
         <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
     </div>
@@ -53,6 +54,7 @@ const [project] = ProjectsList.filter(
             class="Fade_Up"
             width={100}
             height={100}
+            loading="eager"
         />
         <h1 class="Fade_Up font-ubuntu text-[1.8em] tracking-[0.2em]">
             {project.Name}
@@ -68,6 +70,7 @@ const [project] = ProjectsList.filter(
                             width={28}
                             height={28}
                             class="Fade_Stagger"
+                            loading="eager"
                         />
                     );
                 })
@@ -112,6 +115,7 @@ const [project] = ProjectsList.filter(
             alt={`${project.Name}_Mockup_Image`}
             width={600}
             class="Fade_Up"
+            loading="eager"
         />
         <p class="Fade_Up md:w-[80%] lg:w-full text-justify text-[1.1em]">
             {project.Desc}
