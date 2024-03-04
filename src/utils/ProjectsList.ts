@@ -194,6 +194,18 @@ const TechInfo = {
     }
 };
 
+// Common Features List
+const FeatureList = {
+    Responsive: {
+        title: "Responsive Design",
+        description: "Enjoy a seamless experience across devices with a responsive design that adapts to various screen sizes and orientations."
+    },
+    SEO: {
+        title: "SEO Optimization",
+        description: "Crafted with SEO best practices, ensuring optimal visibility on search engines. From keyword-rich content to streamlined meta tags and efficient site architecture."
+    }
+}
+
 export const ProjectsList: ProjectsListType = [
     {
         Name: "ARMS v3",
@@ -217,10 +229,6 @@ export const ProjectsList: ProjectsListType = [
                 description: "Utilizes NextAuth for secure authentication of authorized users using Google and Github Auth providers."
             },
             {
-                title: "Responsive Design",
-                description: "Optimized for seamless access on various devices like Mobile, Tablet and desktop."
-            },
-            {
                 title: "Streamlined Resource Management",
                 description: "Efficient upload, update, and management of study materials using EdgeStore cloud storage."
             },
@@ -231,7 +239,9 @@ export const ProjectsList: ProjectsListType = [
             {
                 title: "Efficient Data Management",
                 description: "Automatically caches query results, reduces redundant network requests, and improves overall application performance using Tanstack Query."
-            }
+            },
+            FeatureList.Responsive,
+            FeatureList.SEO
         ],
         hideProject: false,
         LogoSize: 50,
@@ -254,7 +264,36 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/vortexa",
         Tech: [TechInfo.Astro, TechInfo.React, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.D3, TechInfo.NanoStores, TechInfo.RESTAPI],
         features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
+            {
+                title: "Dynamic Background Images",
+                description: "Experience the weather firsthand with dynamic background images that change based on the current weather conditions, creating an immersive atmosphere."
+            },
+            {
+                title: "City Search",
+                description: "Easily search for weather information in any city around the world. Get accurate forecasts and conditions for your desired location."
+            },
+            {
+                title: "Wind Direction Compass",
+                description: "Visualize wind direction with an interactive compass display. Easily identify the direction from which the wind is blowing for better understanding of weather patterns."
+            },
+            {
+                title: "Sunrise-Sunset Graph",
+                description: "Track the daily progression of sunrise and sunset times with an intuitive graph. Plan your activities accordingly based on daylight hours."
+            },
+            {
+                title: "Air Quality Index (AQI)",
+                description: "Stay informed about air quality levels with real-time Air Quality Index (AQI) data. Monitor pollution levels and take necessary precautions for your health."
+            },
+            {
+                title: "24-Hour Weather Forecast",
+                description: "Plan your day with a detailed 24-hour weather forecast displayed graphically. Visualize temperature changes, precipitation, and other weather parameters."
+            },
+            {
+                title: "2-Day Forecast",
+                description: "Get a glimpse of the weather ahead with a concise 2-day forecast. Stay prepared for upcoming changes in weather conditions."
+            }
         ],
         hideProject: false,
         LogoSize: 50,
@@ -276,7 +315,8 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/nextmart",
         Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.MongoDB, TechInfo.NextAuth, TechInfo.Redux, TechInfo.TailwindCSS],
         features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 40,
@@ -295,7 +335,20 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/ARMS",
         Tech: [TechInfo.Vite, TechInfo.React, TechInfo.Node, TechInfo.MongoDB, TechInfo.GDrive],
         features: [
-
+            {
+                title: "Anonymous Login",
+                description: "Students can conveniently  log in anonymously to browse and access study materials."
+            },
+            {
+                title: "Streamlined Resource Management",
+                description: "Upload, update, and management of study materials using Google Drive cloud storage."
+            },
+            {
+                title: "Document Download",
+                description: "Easily download PDF documents for offline access."
+            },
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -319,7 +372,24 @@ export const ProjectsList: ProjectsListType = [
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [TechInfo.Vite, TechInfo.React, TechInfo.Node, TechInfo.MongoDB, TechInfo.SocketIO],
         features: [
-
+            {
+                title: "Real-Time Chat",
+                description: "Engage in real-time conversations with other users using Socket.io technology providing seamless communication."
+            },
+            {
+                title: "Dynamic User Avatars",
+                description: "Personalize your profile with dynamic user avatars generated using the Multiavatar API. Each user gets a unique and colorful avatar based on their username."
+            },
+            {
+                title: "Private Messaging",
+                description: "Communicate privately with other users through secure and encrypted messaging. Exchange messages without the worry of unauthorized access."
+            },
+            {
+                title: "Emojis and Reactions",
+                description: "Express yourself with a wide range of emojis and reactions. Add fun and personality to your messages with animated emojis and customizable reactions."
+            },
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -338,7 +408,16 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/yoatube",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
         features: [
-
+            {
+                title: "Video Streaming",
+                description: "Stream high-quality videos seamlessly. Enjoy smooth playback with adaptive streaming technology."
+            },
+            {
+                title: "Search and Discovery",
+                description: "Discover new content with powerful search and recommendation algorithms. Find videos based on your interests and preferences."
+            },
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -358,7 +437,32 @@ export const ProjectsList: ProjectsListType = [
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.Node, TechInfo.MySQL],
         features: [
-
+            {
+                title: "Dynamic Hall Ticket Generation",
+                description: "Generate personalized hall tickets dynamically for each student. Include relevant exam details and student information."
+            },
+            {
+                title: "File Upload & Download",
+                description: "Upload and download files securely. Share resources such as study materials, question papers, and answer keys with students and faculty."
+            },
+            {
+                title: "Multi-Role Based User Management",
+                description: "Manage users with different roles such as Student, Faculty, Staff, Admin, Super-Admin. Assign permissions and access levels based on user roles."
+            },
+            {
+                title: "Exam Scheduling",
+                description: "Schedule exams efficiently with an intuitive scheduling system. Set exam dates, times and notify users about upcoming exams."
+            },
+            {
+                title: "Attendance Management",
+                description: "Monitor student attendance during exams. Keep track of attendance records and generate reports for analysis and compliance purposes."
+            },
+            {
+                title: "Notification System",
+                description: "Send automated notifications to students and faculty about exam-related events. Notify about exam schedules, hall ticket availability, and result announcements."
+            },
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -377,7 +481,8 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/pikture",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
         features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -396,7 +501,24 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/DaysBeyond",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
-
+            {
+                title: "Accurate Time Progress",
+                description: "Calculate exact time elapsed since Jan 1. Display months, days, hours, minutes, and seconds passed since the beginning of the year."
+            },
+            {
+                title: "Accurate User Age Calculation",
+                description: "Calculate user ages accurately based on their date of birth. Display age in years, months, and days with precision."
+            },
+            {
+                title: "Significance of Today",
+                description: "Display the significance of today's date. Highlight special events, holidays, birthdays, or historical events that occurred on this day."
+            },
+            {
+                title: "Color of the Day",
+                description: "Show the color associated with the current day. Use color psychology to represent the mood or energy of the day."
+            },
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -415,7 +537,8 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/ARMS-PHP",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.PHP, TechInfo.RESTAPI],
         features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -438,7 +561,8 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/FilmStack",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -457,26 +581,8 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/CovidTrax",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
-
-        ],
-        hideProject: true,
-        LogoSize: 55,
-        versions: []
-    },
-    {
-        Name: "Cookeez",
-        ShortDesc: "",
-        Desc: "Find your favorite dishes along with the ingredients for the recipe",
-        Logo: CookeezLogo,
-        Shot: CookeezShots,
-        Mockup: ARMSv3Mockup,
-        Theme: "#fff",
-        Status: "completed",
-        Link: "https://cookeez.netlify.app/",
-        Source: "https://github.com/ChiragChrg/Cookeez",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
-        features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -495,7 +601,8 @@ export const ProjectsList: ProjectsListType = [
         Source: "https://github.com/ChiragChrg/CliMate",
         Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
         features: [
-
+            FeatureList.Responsive,
+            FeatureList.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -503,43 +610,5 @@ export const ProjectsList: ProjectsListType = [
             { title: "Vortexa", version: "2" },
             { title: "CliMate", version: "1" },
         ]
-    },
-    {
-        Name: "Nuklear Brain",
-        ShortDesc: "",
-        Desc: "A simple blog with basic interaction elements and multiple pages.",
-        Logo: NuklearbrainLogo,
-        Shot: NuklearbrainShots,
-        Mockup: ARMSv3Mockup,
-        Theme: "#fff",
-        Status: "completed",
-        Link: "https://nuklearbrain.netlify.app/",
-        Source: "https://github.com/ChiragChrg/Nuklear-Brain",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript],
-        features: [
-
-        ],
-        hideProject: true,
-        LogoSize: 55,
-        versions: []
-    },
-    {
-        Name: "Kalci",
-        ShortDesc: "",
-        Desc: "A simple Calculator for basic Calcuations and user friendly UI.",
-        Logo: KalciLogo,
-        Shot: KalciShots,
-        Mockup: ARMSv3Mockup,
-        Theme: "#fff",
-        Status: "completed",
-        Link: "https://nuklearbrain.netlify.app/",
-        Source: "https://github.com/ChiragChrg/Kalci",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript],
-        features: [
-
-        ],
-        hideProject: true,
-        LogoSize: 55,
-        versions: []
-    },
+    }
 ]
