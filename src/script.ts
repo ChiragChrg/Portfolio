@@ -117,7 +117,7 @@ ScrollTrigger.batch(FadeInElements, {
 });
 
 // Mobile Nav Ham-Menu Animation
-const MobileNavElement = document.querySelector("#mobileHeader nav");
+const MobileNavElement = document.querySelector("#mobileHeaderNav");
 let isMenuOpen = false;
 const dimensions = {
     width: window.innerWidth,
@@ -142,7 +142,7 @@ if (MobileNavElement) {
 }
 
 // MobileNav Link FadeUp animation
-const MobileLinkElement = document.querySelectorAll("#mobileHeader nav .MobileHeader_Nav");
+const MobileLinkElement = document.querySelectorAll("#mobileHeaderNav .MobileHeader_Nav");
 const linkTl = gsap.timeline({ paused: true });
 
 if (MobileLinkElement.length !== 0) {

@@ -65,7 +65,7 @@ import "../../styles/header.css";
 </header>
 
 <script type="module">
-    const headerElement = document.getElementById("mobileHeader");
+    const headerElement = document.getElementById("mobileHeaderNav");
     const sectionsList = {
         "#home": document.getElementById("home"),
         "#about": document.getElementById("about"),
@@ -81,7 +81,7 @@ import "../../styles/header.css";
 
             const rect = section.getBoundingClientRect();
             const link = document.querySelector(
-                `#mobileHeader a[href="${linkHref}"]`,
+                `#mobileHeaderNav a[href="${linkHref}"]`,
             );
 
             if (
