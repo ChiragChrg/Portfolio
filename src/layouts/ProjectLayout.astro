@@ -5,8 +5,6 @@ import { AstroFont } from "astro-font";
 import { join } from "node:path";
 import { Cursor, ProjectsHeader } from "../components/UI";
 import { Footer } from "../components";
-import "../styles/global.css";
-import "../styles/utility.css";
 ---
 
 <!doctype html>
@@ -28,6 +26,11 @@ import "../styles/utility.css";
         />
         <meta name="author" content="ChiragChrg" />
         <link rel="manifest" href="/manifest.json" />
+
+        <!-- Preload CSS Styles -->
+        <link rel="preload stylesheet" href="/styles/global.css" as="style" />
+        <link rel="preload stylesheet" href="/styles/utility.css" as="style" />
+        <link rel="preload stylesheet" href="/styles/cursor.css" as="style" />
 
         <SEO
             title={title}
