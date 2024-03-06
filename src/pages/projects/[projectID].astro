@@ -141,7 +141,7 @@ const [project] = ProjectsList.filter(
     </SectionTitle>
 
     <CenterTitle title="Tech Stack" color="pink" />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-80">
         {
             project.Tech.map((tech) => (
                 <div class="Fade_Stagger flex_center flex-col gap-4 p-4 border border-transparent hover:border-pinkLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
@@ -159,5 +159,4 @@ const [project] = ProjectsList.filter(
             ))
         }
     </div>
-    <div class="w-full h-screen"></div>
 </ProjectLayout>
