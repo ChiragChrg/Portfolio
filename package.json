@@ -19,12 +19,12 @@
   "dependencies": {
     "@astrojs/check": "^0.5.5",
     "@astrojs/netlify": "^5.1.2",
-    "@astrojs/partytown": "^2.0.4",
     "@astrojs/preact": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
     "@emailjs/browser": "^4.1.0",
     "@studio-freight/lenis": "^1.0.37",
     "astro": "^4.4.4",
+    "astro-compress": "^2.2.11",
     "astro-font": "^0.0.77",
     "astro-seo": "^0.8.2",
     "gsap": "^3.12.5",
