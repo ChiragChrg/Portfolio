@@ -106,7 +106,7 @@ const ContactForm = () => {
 
             <div className="w-full flex justify-start items-center gap-4">
                 <button
-                    className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 lg:px-20 rounded-md"
+                    className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 px-6 lg:px-20 rounded-md"
                     type="submit"
                     disabled={isLoading}
                 >
