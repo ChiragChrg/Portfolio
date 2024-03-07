@@ -1,0 +1,65 @@
+<div class="Cursor-Main hidden lg:block">
+    <div id="cursor" class="relative flex_center">
+        <div id="cursorView" class="flex_center">View</div>
+    </div>
+    <div id="cursorDot"></div>
+</div>
+
+<script type="module">
+    document.addEventListener("DOMContentLoaded", function () {
+        const CursorRef = document.getElementById("cursor");
+        const CursorDotRef = document.getElementById("cursorDot");
+
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mousedown", handleMouseClick);
+
+        function handleMouseMove(evt) {
+            if (window.innerWidth < 1024) return;
+            if (!CursorRef || !CursorDotRef) return;
+
+            const x = evt.clientX - CursorRef.offsetWidth / 2;
+            const y = evt.clientY - CursorRef.offsetHeight / 2;
+            const xDot = evt.clientX - CursorDotRef.offsetWidth / 2;
+            const yDot = evt.clientY - CursorDotRef.offsetHeight / 2;
+
+            const keyframes = {
+                transform: `translate3d(${x}px, ${y}px, 0)`,
+            };
+            const dotKeyframes = {
+                transform: `translate3d(${xDot}px, ${yDot}px, 0)`,
+            };
+
+            CursorRef.animate(keyframes, {
+                duration: 500,
+                easing: "ease-in-out",
+                fill: "forwards",
+            });
+            CursorDotRef.animate(dotKeyframes, {
+                duration: 100,
+                easing: "ease-out",
+                fill: "forwards",
+            });
+        }
+
+        function handleMouseClick() {
+            if (!CursorRef) return;
+
+            const ripple = document.createElement("span");
+            ripple?.classList.add(
+                "absolute",
+                "w-[200%]",
+                "aspect-square",
+                "rounded-full",
+                "bg-white",
+                "opacity-0",
+                "animate-ripple",
+            );
+            CursorRef.appendChild(ripple);
+
+            setTimeout(() => {
+                if (!CursorRef) return;
+                CursorRef.removeChild(ripple);
+            }, 1000);
+        }
+    });
+</script>

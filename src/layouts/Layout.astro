@@ -1,0 +1,506 @@
+---
+import { SEO } from "astro-seo";
+import { AstroFont } from "astro-font";
+import { join } from "node:path";
+import { Header, MobileHeader, Cursor } from "../components/UI";
+import { Footer } from "../components";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#000" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="google-site-verification"
+			content="YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y"
+		/>
+		<meta
+			name="keywords"
+			content="chiragchrg,chrgchirag, @ChrgChirag, portfolio, vortexa,  devbase, ARMS, ARMS2.0, Academic, Resource, Management, System, arms2, xrecon, @ChrgChirag, chiruchirag2001, chiragchrg.netlify.app, devbase.netlify.app,
+		Fullstack Web Developer, My Personal Portfolio, ChiragChrg.github.io, I create Exciting Stuff on the Internet."
+		/>
+		<meta name="author" content="ChiragChrg" />
+		<link rel="manifest" href="/manifest.json" />
+
+		<!-- Preload CSS Styles -->
+		<link rel="preload stylesheet" href="/styles/global.css" as="style" />
+		<link rel="preload stylesheet" href="/styles/utility.css" as="style" />
+		<link rel="preload stylesheet" href="/styles/cursor.css" as="style" />
+
+		<SEO
+			title="ChiragChrg | My Personal Portfolio | Fullstack Web Developer"
+			description="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX."
+			canonical="https://chiragchrg.netlify.app/"
+			openGraph={{
+				basic: {
+					title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
+					type: "website",
+					image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+					url: "https://chiragchrg.netlify.app/",
+				},
+			}}
+			twitter={{
+				title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
+				description:
+					"Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
+				card: "summary",
+				site: "@ChrgChirag",
+				creator: "@ChrgChirag",
+				image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+			}}
+			extend={{
+				link: [
+					{ rel: "icon", type: "image/png", href: "/favicon.png" },
+					{
+						rel: "shortcut",
+						type: "image/png",
+						href: "/favicon.png",
+					},
+					{
+						rel: "apple-touch-icon",
+						type: "image/png",
+						href: "/favicon.png",
+					},
+				],
+				meta: [
+					{
+						name: "twitter:url",
+						content: "https://chiragchrg.netlify.app/",
+					},
+				],
+			}}
+		/>
+
+		<AstroFont
+			config={[
+				{
+					name: "Poppins",
+					src: [
+						{
+							weight: "400",
+							style: "normal",
+							path: join(
+								process.cwd(),
+								"public",
+								"fonts",
+								"poppins-v20-latin-regular.woff2",
+							),
+						},
+					],
+					preload: true,
+					display: "swap",
+					fallback: "serif",
+					cssVariable: "astro-font-poppins",
+				},
+				{
+					name: "Satisfy",
+					src: [
+						{
+							weight: "400",
+							style: "normal",
+							path: join(
+								process.cwd(),
+								"public",
+								"fonts",
+								"satisfy-v17-latin-regular.woff2",
+							),
+						},
+					],
+					preload: true,
+					display: "swap",
+					fallback: "serif",
+					cssVariable: "astro-font-satisfy",
+				},
+				{
+					name: "Ubuntu",
+					src: [
+						{
+							weight: "700",
+							style: "normal",
+							path: join(
+								process.cwd(),
+								"public",
+								"fonts",
+								"ubuntu-v20-latin-700.woff2",
+							),
+						},
+					],
+					preload: true,
+					display: "swap",
+					fallback: "serif",
+					cssVariable: "astro-font-ubuntu",
+				},
+			]}
+		/>
+
+		<style is:global>
+			/* Header */
+			.Header_Nav a {
+				position: relative;
+				overflow: hidden;
+				letter-spacing: 1px;
+			}
+
+			.Header_Nav a::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: #fff;
+				transform: scaleX(0);
+				transition: transform 0.25s ease-out;
+			}
+
+			.Header_Nav a.active::after {
+				transform: scaleX(1);
+			}
+
+			/* Action Button Style */
+			.Header_ActionBtn {
+				position: relative;
+				border-radius: 0.2em;
+				overflow: hidden;
+				display: grid;
+				place-items: center;
+			}
+
+			.Header_ActionBtn::after {
+				content: "";
+				position: absolute;
+				width: 120%;
+				aspect-ratio: 1;
+				background: conic-gradient(
+					var(--purple),
+					var(--pink),
+					var(--purple)
+				);
+				animation: spin 5s linear infinite;
+			}
+
+			.Header_ActionBtn > div {
+				padding: 0.2em 1.35em;
+				background-color: var(--base);
+				color: var(--text);
+				border-radius: inherit;
+				margin: 2px;
+				z-index: 2;
+			}
+
+			/* Mobile Header Nav */
+			.MobileHeader_Nav {
+				min-width: 14em;
+				text-align: center;
+				background-color: #000;
+				border-radius: 0.3em;
+				padding: 1em;
+				font-size: 1.3em;
+				font-weight: 700;
+				letter-spacing: 1px;
+			}
+
+			.MobileHeader_Nav a {
+				width: 100%;
+				color: #fff;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+
+			.MobileHeader_Nav a.active {
+				background: var(--gradient);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+				background-size: 200%;
+				animation: gradientPan 5s linear infinite;
+			}
+
+			:has(.MobileHeader_ActionBtn).MobileHeader_Nav {
+				padding: 0;
+			}
+
+			.MobileHeader_ActionBtn {
+				position: relative;
+				border-radius: 0.2em;
+				overflow: hidden;
+			}
+
+			.MobileHeader_ActionBtn::after {
+				content: "";
+				position: absolute;
+				width: 120%;
+				aspect-ratio: 1;
+				background: conic-gradient(
+					var(--purple),
+					var(--pink),
+					var(--purple)
+				);
+				animation: spin 5s linear infinite;
+			}
+
+			.MobileHeader_ActionBtn > div {
+				padding: 0.7em 1em;
+				width: 100%;
+				background-color: var(--base);
+				color: var(--text);
+				border-radius: inherit;
+				margin: 4px;
+				z-index: 2;
+			}
+
+			/* Page Title Style */
+			.Title-Tag {
+				font-family: Ubuntu;
+			}
+
+			.Title-Tag span,
+			.Title-Tag p {
+				z-index: 1;
+				background-color: var(--base);
+				padding-inline: 0.25em;
+			}
+
+			.Title-Tag.open {
+				margin-bottom: 1em;
+				justify-content: flex-start;
+			}
+
+			.Title-Tag.close {
+				justify-content: flex-end;
+				padding-top: 0.5em;
+				opacity: 0.7 !important;
+			}
+
+			.Title-Tag.purple span {
+				color: var(--purple);
+			}
+
+			.Title-Tag.pink span {
+				color: var(--pink);
+			}
+
+			.Title_Line::after {
+				content: "";
+				position: absolute;
+				margin-top: 0.3em;
+				width: 100%;
+				height: 2px;
+				z-index: 0;
+				background-color: var(--purpleLite);
+			}
+
+			.Title_Line.pink::after {
+				background-color: var(--pinkLite);
+			}
+
+			.Title_Line.close::after {
+				background-color: transparent;
+			}
+
+			/* Mobile Ham Menu Animation --> */
+			.MobileNav_Ham {
+				-webkit-tap-highlight-color: transparent;
+				transition: transform 0.4s;
+				user-select: none;
+			}
+
+			.MobileNav_Ham .line {
+				fill: none;
+				transition:
+					stroke-dasharray 0.4s,
+					stroke-dashoffset 0.4s;
+				stroke: #fff;
+				stroke-width: 5.5;
+				transform-origin: right;
+				stroke-linecap: round;
+			}
+
+			.MobileNav_Ham .top {
+				stroke-dasharray: 18 160;
+			}
+
+			.MobileNav_Ham .middle {
+				stroke-dasharray: 40 142;
+				transform-origin: 83% 83%;
+				transition: transform 0.4s;
+			}
+
+			.MobileNav_Ham .bottom {
+				stroke-dasharray: 18 85;
+				transform-origin: 50%;
+				transition:
+					transform 0.4s,
+					stroke-dashoffset 0.4s;
+			}
+
+			.Projects_Link {
+				padding: 0.45em;
+				border: 1px solid var(--purpleLite);
+				border-radius: 100%;
+				z-index: 10;
+			}
+
+			/* Cursor */
+			.Cursor-Main {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				inset: 0;
+				z-index: 9999;
+				overflow: hidden;
+				pointer-events: none;
+			}
+
+			/* Hero */
+			.Hero_Trail {
+				position: absolute;
+				aspect-ratio: 1;
+				border-radius: 50%;
+				animation: spin 6s linear infinite;
+			}
+
+			.Hero_Trail::before {
+				content: "";
+				width: calc(100% - 1%);
+				aspect-ratio: 1;
+				inset: 0;
+				margin: auto;
+				border-radius: 50%;
+				position: absolute;
+				background-color: var(--base);
+			}
+
+			.Trail1 {
+				width: 60%;
+				background: var(--orbitGradient);
+				z-index: 5;
+			}
+
+			.Trail2 {
+				width: 70%;
+				animation-duration: 8s;
+				animation-direction: reverse;
+				background: var(--orbitGradientAlt);
+				z-index: 4;
+			}
+
+			.Trail3 {
+				width: 80%;
+				background: var(--orbitGradient);
+				animation-duration: 10s;
+				z-index: 3;
+			}
+
+			.Trail4 {
+				width: 90%;
+				animation-duration: 12s;
+				animation-direction: reverse;
+				background: var(--orbitGradientAlt);
+				z-index: 2;
+			}
+
+			.Trail2 span,
+			.Trail4 span {
+				transform: rotate(140deg) !important;
+			}
+
+			/* Lenis Smooth Scroll */
+			html.lenis {
+				height: auto;
+			}
+
+			.lenis.lenis-smooth {
+				scroll-behavior: auto !important;
+			}
+
+			.lenis.lenis-smooth [data-lenis-prevent] {
+				overscroll-behavior: contain;
+			}
+
+			.lenis.lenis-stopped {
+				overflow: hidden;
+			}
+
+			.lenis.lenis-scrolling iframe {
+				pointer-events: none;
+			}
+
+			/* GSAP Animation inits */
+			.flex_center {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.gradientText {
+				background: var(--gradient);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+				background-size: 200%;
+				animation: gradientPan 5s linear infinite;
+			}
+
+			.Orbit_Dot {
+				width: 0.5em;
+				aspect-ratio: 1;
+				background-color: #fff;
+				border-radius: 0 50% 50%;
+				transform: rotate(-45deg);
+				position: absolute;
+				top: -0.2em;
+				left: 49%;
+				transition: 0.25s ease-in-out;
+				overflow: hidden;
+				box-shadow: 0 0 10px #fff;
+			}
+
+			.Fade_Stagger,
+			.Fade_Up {
+				opacity: 0;
+				transform: translateY(50);
+			}
+
+			.Fade_Down {
+				opacity: 0;
+				transform: translateY(-50);
+			}
+
+			.Fade_In {
+				opacity: 0;
+			}
+
+			.Spring_Up {
+				opacity: 0;
+				scale: 0.75;
+			}
+
+			@keyframes spin {
+				0% {
+					rotate: 0deg;
+				}
+
+				100% {
+					rotate: 360deg;
+				}
+			}
+		</style>
+	</head>
+	<body id="home">
+		<Header />
+		<MobileHeader />
+
+		<main>
+			<slot />
+		</main>
+
+		<Footer />
+		<Cursor />
+		<script src="../script.ts"></script>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+export { default as Header } from "./Header.astro"
+export { default as MobileHeader } from "./MobileHeader.astro"
+export { default as SectionTitle } from "./SectionTitle.astro"
+export { default as CenterTitle } from "./CenterTitle.astro"
+export { default as SkillTitle } from "./SkillTitle.astro"
+export { default as SkillGrid } from "./SkillGrid.astro"
+export { default as Cursor } from "./Cursor.astro"
+export { default as ProjectsHeader } from "./ProjectsHeader.astro"

@@ -1,0 +1,80 @@
+---
+import { Download } from "lucide-preact";
+---
+
+<header id="header" class="hidden lg:block sticky top-0 z-50">
+    <div
+        class="flex justify-between items-center w-full px-6 py-2 bg-headerGradient backdrop-blur-[2px]"
+    >
+        <a href="#home" class="Fade_Down font-satisfy font-bold text-[2em]">
+            <h1 class="gradientText w-fit">Portfolio.</h1>
+        </a>
+
+        <nav class="Header_Nav flex gap-6">
+            <a class="Fade_Down" href="#about">ABOUT</a>
+            <a class="Fade_Down" href="#skills">SKILLS</a>
+            <a class="Fade_Down" href="#projects">PROJECTS</a>
+            <a class="Fade_Down" href="#contact">CONTACT</a>
+        </nav>
+
+        <a
+            class="Fade_Down Header_ActionBtn"
+            href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf"
+        >
+            <div class="flex_center gap-2">
+                <p>Resume</p>
+                <Download size={18} />
+            </div>
+        </a>
+    </div>
+</header>
+
+<script type="module">
+    const headerElement = document.getElementById("header");
+    const sectionsList = {
+        "#home": document.getElementById("home"),
+        "#about": document.getElementById("about"),
+        "#skills": document.getElementById("skills"),
+        "#projects": document.getElementById("projects"),
+        "#contact": document.getElementById("contact"),
+    };
+
+    // Set Active class on section scroll
+    const handleScroll = () => {
+        for (const [linkHref, section] of Object.entries(sectionsList)) {
+            if (!section) return;
+
+            const rect = section.getBoundingClientRect();
+            const link = document.querySelector(
+                `#header a[href="${linkHref}"]`,
+            );
+
+            if (
+                link &&
+                headerElement &&
+                rect.top <= headerElement.offsetHeight &&
+                rect.bottom >= headerElement.offsetHeight
+            ) {
+                link?.classList.add("active");
+            } else {
+                link?.classList.remove("active");
+            }
+        }
+    };
+
+    function throttle(func, limit) {
+        let throttling = false;
+        return function () {
+            if (!throttling) {
+                func.apply(this, arguments);
+                throttling = true;
+                setTimeout(() => {
+                    throttling = false;
+                }, limit);
+            }
+        };
+    }
+
+    window.addEventListener("scroll", throttle(handleScroll, 100));
+    handleScroll(); // Initial call
+</script>

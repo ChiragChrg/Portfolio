@@ -1,0 +1,114 @@
+---
+import { Download } from "lucide-preact";
+---
+
+<header
+    class="lg:hidden w-full sticky top-0 z-50 bg-headerGradient backdrop-blur-[2px]"
+>
+    <div class="flex justify-between items-center py-2 px-4">
+        <a href="#home" class="Fade_In font-satisfy font-bold text-[2em]">
+            <h1 class="gradientText w-fit">Portfolio.</h1>
+        </a>
+
+        <svg
+            viewBox="20 20 60 60"
+            width="45"
+            class="Fade_In MobileNav_Ham flex justify-center items-end flex-col gap-2 z-[70] cursor-pointer`"
+            id="Ham_Menu"
+        >
+            <path
+                class="line top"
+                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+            ></path>
+            <path class="line middle" d="m 30,50 h 40"></path>
+            <path
+                class="line bottom"
+                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+            ></path>
+        </svg>
+    </div>
+
+    <nav
+        id="mobileHeaderNav"
+        style="clip-path: circle(30px at calc(100vw + 30px) -30px);"
+        class="w-full h-dvh flex_center flex-col fixed top-0 right-0 gap-8 z-[60]"
+    >
+        <div class="MobileHeader_Nav flex_center">
+            <a href="#about">About</a>
+        </div>
+
+        <div class="MobileHeader_Nav flex_center">
+            <a href="#skills">Skills</a>
+        </div>
+
+        <div class="MobileHeader_Nav flex_center">
+            <a href="#projects">Projects</a>
+        </div>
+
+        <div class="MobileHeader_Nav flex_center">
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="MobileHeader_Nav flex_center">
+            <a
+                class="MobileHeader_ActionBtn flex_center"
+                href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume%20Dummy.pdf"
+            >
+                <div class="flex_center gap-4">
+                    <p>Resume</p>
+                    <Download />
+                </div>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<script type="module">
+    const headerElement = document.getElementById("mobileHeaderNav");
+    const sectionsList = {
+        "#home": document.getElementById("home"),
+        "#about": document.getElementById("about"),
+        "#skills": document.getElementById("skills"),
+        "#projects": document.getElementById("projects"),
+        "#contact": document.getElementById("contact"),
+    };
+
+    // Set Active class on section scroll
+    const handleScroll = () => {
+        for (const [linkHref, section] of Object.entries(sectionsList)) {
+            if (!section) return;
+
+            const rect = section.getBoundingClientRect();
+            const link = document.querySelector(
+                `#mobileHeaderNav a[href="${linkHref}"]`,
+            );
+
+            if (
+                link &&
+                headerElement &&
+                rect.top <= headerElement.offsetHeight &&
+                rect.bottom >= headerElement.offsetHeight
+            ) {
+                link?.classList.add("active");
+            } else {
+                link?.classList.remove("active");
+            }
+        }
+    };
+
+    function throttle(func, limit) {
+        let throttling = false;
+        return function () {
+            if (!throttling) {
+                func.apply(this, arguments);
+                throttling = true;
+                setTimeout(() => {
+                    throttling = false;
+                }, limit);
+            }
+        };
+    }
+
+    window.addEventListener("scroll", throttle(handleScroll, 100));
+    handleScroll(); // Initial call
+</script>

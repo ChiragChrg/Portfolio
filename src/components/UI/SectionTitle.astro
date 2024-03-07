@@ -1,0 +1,28 @@
+---
+type Props = {
+    title: string;
+    className?: string;
+    color?: "purple" | "pink";
+};
+const { title, color, className }: Props = Astro.props;
+---
+
+<div class={`Fade_Up my-4 ${className}`}>
+    <div
+        class={`Fade_Up Title-Tag Title_Line relative flex items-center open ${color}`}
+    >
+        <span class="text-[1.5em]">{"<"}</span>
+        <p class="text-[1.6em]">{title}</p>
+        <span class="text-[1.5em]">{">"}</span>
+    </div>
+
+    <slot />
+
+    <div
+        class={`Fade_Up Title-Tag Title_Line relative flex items-center close ${color}`}
+    >
+        <span class="text-[1.5em]">{"</"}</span>
+        <p class="text-[1.4em]">{title}</p>
+        <span class="text-[1.5em]">{">"}</span>
+    </div>
+</div>

@@ -34,7 +34,11 @@
     "dir": "ltr",
     "lang": "en",
     "orientation": "portrait",
-    "display_override": [],
+    "display_override": [
+        "standalone",
+        "fullscreen",
+        "window-controls-overlay"
+    ],
     "categories": [
         "productivity",
         "education",

@@ -1,0 +1,15 @@
+---
+type Props = {
+    title: string;
+    color?: "purple" | "pink";
+};
+const { title, color }: Props = Astro.props;
+---
+
+<div
+    class={`Fade_Up Title-Tag Title_Line relative flex_center text-[2em] ${color}`}
+>
+    <span>{"<"}</span>
+    <p>{title}</p>
+    <span>{"/>"}</span>
+</div>

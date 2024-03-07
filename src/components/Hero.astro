@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+import {
+    GithubIcon,
+    GoogleIcon,
+    InstagramIcon,
+    LinkedinIcon,
+    TwitterIcon,
+} from "../assets/SVGs";
+import Avatar_180 from "../Avatar_180.webp";
+import Avatar_250 from "../Avatar_250.webp";
+---
+
+<section
+    class="w-full h-[calc(100vh-4rem)] px-6 py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
+>
+    <!-- Hero Intro Info -->
+    <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
+        <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
+            <p class="Fade_Stagger">Hi! my name is,</p>
+            <h1
+                class="Fade_Stagger gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
+            >
+                Chirag.
+            </h1>
+            <p class="Fade_Stagger">I'm a Fullstack Web Developer.</p>
+            <p class="Fade_Stagger">
+                I create
+                <span class="gradientText font-ubuntu">Exciting Stuff</span>
+                on the Internet.
+            </p>
+        </div>
+
+        <div
+            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4"
+        >
+            <a
+                href="https://github.com/ChiragChrg"
+                title="GitHub"
+                target="_blank"
+                rel="author"
+                class="Fade_Stagger"
+            >
+                <Image
+                    src={GithubIcon}
+                    alt="GithubIcon"
+                    width={30}
+                    height={30}
+                    class="object-cover"
+                />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/chiragchrg/"
+                title="LinkedIn"
+                target="_blank"
+                rel="noreferrer"
+                class="Fade_Stagger"
+            >
+                <Image
+                    src={LinkedinIcon}
+                    alt="LinkedinIcon"
+                    width={30}
+                    height={30}
+                    class="object-cover"
+                />
+            </a>
+            <a
+                href="https://x.com/ChrgChirag"
+                title="Twitter X"
+                target="_blank"
+                rel="noreferrer"
+                class="Fade_Stagger"
+            >
+                <Image
+                    src={TwitterIcon}
+                    alt="TwitterIcon"
+                    width={30}
+                    height={30}
+                    class="object-cover"
+                />
+            </a>
+            <a
+                href="https://www.instagram.com/chiragchrg/"
+                title="Instagram"
+                target="_blank"
+                rel="noreferrer"
+                class="Fade_Stagger"
+            >
+                <Image
+                    src={InstagramIcon}
+                    alt="InstagramIcon"
+                    width={30}
+                    height={30}
+                    class="object-cover"
+                />
+            </a>
+            <a
+                href="https://www.google.com/search?q=chiragchrg"
+                title="Google Search"
+                target="_blank"
+                rel="noreferrer"
+                class="Fade_Stagger"
+            >
+                <Image
+                    src={GoogleIcon}
+                    alt="GoogleIcon"
+                    width={30}
+                    height={30}
+                    class="object-cover"
+                />
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Orbit Animation -->
+    <div class="relative flex_center w-[360px] lg:w-[500px] aspect-square">
+        <div
+            class="Spring_Up flex_center w-[50%] aspect-square rounded-full z-10"
+        >
+            <Image
+                src={Avatar_180}
+                alt="Hero_Avatar"
+                class="object-cover"
+                width="250"
+                height="180"
+                srcset={`${Avatar_180.src} 180w, ${Avatar_250.src} 250w`}
+                sizes="(max-width: 640px) 180px, 250px"
+                loading="eager"
+            />
+        </div>
+        <div class="Spring_Up Hero_Trail Trail1">
+            <span class="Orbit_Dot"></span>
+        </div>
+        <div class="Spring_Up Hero_Trail Trail2">
+            <span class="Orbit_Dot"></span>
+        </div>
+        <div class="Spring_Up Hero_Trail Trail3">
+            <span class="Orbit_Dot"></span>
+        </div>
+        <div class="Spring_Up Hero_Trail Trail4">
+            <span class="Orbit_Dot"></span>
+        </div>
+    </div>
+</section>
