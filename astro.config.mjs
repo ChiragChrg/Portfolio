@@ -8,7 +8,5 @@ import compress from "astro-compress";
 export default defineConfig({
   output: "hybrid",
   integrations: [preact(), tailwind(), compress()],
-  adapter: netlify({
-    imageCDN: false,
-  }),
+  adapter: netlify()
 });
