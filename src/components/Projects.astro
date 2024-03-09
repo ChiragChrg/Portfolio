@@ -36,7 +36,7 @@ const { ProjectsList } = await ProjectInfo;
                                     }}
                                     src={project.Shot}
                                     alt={`Project_ScreenShot_${project.Name}`}
-                                    loading="lazy"
+                                    loading="eager"
                                 />
                                 <Image
                                     class="absolute left-6 bottom-6"
@@ -44,7 +44,7 @@ const { ProjectsList } = await ProjectInfo;
                                     alt={`Project_Logo_${project.Name}`}
                                     width={project.LogoSize}
                                     height={project.LogoSize}
-                                    loading="lazy"
+                                    loading="eager"
                                 />
                             </a>
                             <div class="w-full text-[0.95em] px-4">
@@ -70,7 +70,10 @@ const { ProjectsList } = await ProjectInfo;
                                             rel="noreferrer"
                                             class="Projects_Link flex"
                                         >
-                                            <ExternalLinkIcon />
+                                            <ExternalLinkIcon aria-hidden="true" />
+                                            <span class="sr-only">
+                                                Demo for {project.Name}
+                                            </span>
                                         </a>
                                     </div>
                                 </div>
@@ -84,6 +87,7 @@ const { ProjectsList } = await ProjectInfo;
                                                 alt={`TechIcon ${tech.title}`}
                                                 width={22}
                                                 height={22}
+                                                loading="lazy"
                                             />
                                         );
                                     })}
