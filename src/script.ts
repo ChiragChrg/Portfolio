@@ -9,12 +9,12 @@ ScrollTrigger.batch(SpringUpElement, {
     onEnter: elements => {
         gsap.fromTo(elements,
             {
-                opacity: 0,
+                autoAlpha: 0,
                 scale: 0.75,
             },
             {
                 ease: "elastic.out(0.6,0.16)",
-                opacity: 1,
+                autoAlpha: 1,
                 scale: 1,
                 duration: 4,
                 delay: 1,
@@ -30,11 +30,11 @@ const StaggerElements = document.querySelectorAll(".Fade_Stagger");
 ScrollTrigger.batch(StaggerElements, {
     onEnter: elements => {
         gsap.fromTo(elements, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 50,
         },
             {
-                opacity: 1,
+                autoAlpha: 1,
                 y: 0,
                 duration: 1,
                 delay: 0.25,
@@ -48,11 +48,11 @@ const ProjectStaggerElements = document.querySelectorAll(".Project_Stagger");
 ScrollTrigger.batch(ProjectStaggerElements, {
     onEnter: elements => {
         gsap.fromTo(elements, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 50,
         },
             {
-                opacity: 1,
+                autoAlpha: 1,
                 y: 0,
                 duration: 1,
                 delay: 0.25,
@@ -68,11 +68,11 @@ const FadeUpElements = document.querySelectorAll(".Fade_Up");
 ScrollTrigger.batch(FadeUpElements, {
     onEnter: elements => {
         gsap.fromTo(elements, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 50,
         },
             {
-                opacity: 1,
+                autoAlpha: 1,
                 y: 0,
                 duration: 1,
                 stagger: 0.125,
@@ -86,11 +86,11 @@ const FadeDownElements = document.querySelectorAll(".Fade_Down");
 ScrollTrigger.batch(FadeDownElements, {
     onEnter: elements => {
         gsap.fromTo(elements, {
-            opacity: 0,
+            autoAlpha: 0,
             y: -50,
         },
             {
-                opacity: 1,
+                autoAlpha: 1,
                 y: 0,
                 duration: 1,
                 stagger: 0.125,
@@ -104,10 +104,10 @@ const FadeInElements = document.querySelectorAll(".Fade_In");
 ScrollTrigger.batch(FadeInElements, {
     onEnter: elements => {
         gsap.fromTo(elements, {
-            opacity: 0,
+            autoAlpha: 0,
         },
             {
-                opacity: 1,
+                autoAlpha: 1,
                 duration: 1.5,
                 stagger: 0.125,
                 ease: "power1.out"
@@ -150,11 +150,11 @@ if (MobileLinkElement.length !== 0) {
         MobileLinkElement,
         {
             y: 100,
-            opacity: 0,
+            autoAlpha: 0,
         },
         {
             y: 0,
-            opacity: 1,
+            autoAlpha: 1,
             duration: 0.3,
             delay: 0.25,
             stagger: 0.1,
