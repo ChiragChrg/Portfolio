@@ -21,7 +21,7 @@ const { projectID } = Astro.params;
 import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
 import { GithubIcon } from "../../assets/SVGs";
-import { ExternalLinkIcon } from "lucide-preact";
+import { ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
 import { CenterTitle, SectionTitle } from "../../components/UI";
 
 // Lazy loading ProjectInfo
@@ -103,9 +103,9 @@ const [project] = ProjectsList.filter(
         </div>
     </div>
 
-    <div class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
+    <h2 class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
         About the project.
-    </div>
+    </h2>
     <div
         class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-4 py-10"
     >
@@ -116,9 +116,39 @@ const [project] = ProjectsList.filter(
             class="Fade_Up"
             loading="eager"
         />
-        <p class="Fade_Up md:w-[80%] lg:w-full text-justify text-[1.1em]">
-            {project.Desc}
-        </p>
+        <div class="Fade_Up flex_center flex-col gap-4">
+            {
+                project.Demo && (
+                    <div class="flex items-center flex-col lg:flex-row gap-4 w-[80%] lg:w-full p-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
+                        <h3 class="min-w-[10rem]">Demo Credentials :</h3>
+
+                        <div class="flex justify-evenly w-full flex-col md:flex-row gap-2">
+                            <div class="flex_center gap-4 bg-black/80 p-2">
+                                <span id="emailContent">
+                                    {project.Demo?.email}
+                                </span>
+
+                                <button id="emailCopyBtn">
+                                    <ClipboardCopyIcon />
+                                </button>
+                            </div>
+                            <div class="flex_center gap-4 bg-black/80 p-2">
+                                <span id="passContent">
+                                    {project.Demo?.password}
+                                </span>
+
+                                <button id="passCopyBtn">
+                                    <ClipboardCopyIcon />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+            <p class="md:w-[80%] lg:w-full text-justify text-[1.1em]">
+                {project.Desc}
+            </p>
+        </div>
     </div>
 
     <SectionTitle title="Features" color="purple">
@@ -160,3 +190,17 @@ const [project] = ProjectsList.filter(
         }
     </div>
 </ProjectLayout>
+
+<script type="module">
+    const emailCopyBtn = document.getElementById("emailCopyBtn");
+    const passCopyBtn = document.getElementById("passCopyBtn");
+    const emailContent = document.getElementById("emailContent");
+    const passContent = document.getElementById("passContent");
+
+    emailCopyBtn?.addEventListener("click", () => {
+        navigator.clipboard.writeText(emailContent?.textContent);
+    });
+    passCopyBtn?.addEventListener("click", () => {
+        navigator.clipboard.writeText(passContent?.textContent);
+    });
+</script>
