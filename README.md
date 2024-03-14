@@ -7,6 +7,9 @@ Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of 
 ### Preview
 ![Portfolio Preview](public/Mockup_Preview.png)
 
+### LightHouse Audit
+![LightHouse Audit Preview](public/LightHouse_Audit.jpg)
+
 ## Tools and TechStacks used :
 
 <div align="center">
