@@ -7,9 +7,6 @@ Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of 
 ### Preview
 ![Portfolio Preview](public/Mockup_Preview.png)
 
-### LightHouse Audit
-![LightHouse Audit Preview](public/LightHouse_Audit.jpg)
-
 ## Tools and TechStacks used :
 
 <div align="center">
@@ -45,3 +42,6 @@ Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of 
 ### Live Demo
 
 Check out a live demo of ARMS at https://chiragchrg.netlify.app/.
+
+### LightHouse Audit
+![LightHouse Audit Preview](public/LightHouse_Audit.jpg)
