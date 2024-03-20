@@ -36,6 +36,8 @@ const { ProjectsList } = await ProjectInfo;
                                     }}
                                     src={project.Shot}
                                     alt={`Project_ScreenShot_${project.Name}`}
+                                    widths={[346, project.Shot.width]}
+                                    sizes={`(max-width: 720px) 346px, ${project.Shot.width}px`}
                                     loading="eager"
                                 />
                                 <Image
