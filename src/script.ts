@@ -3,53 +3,111 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero Orbit Spring Animation
-const SpringUpElement = document.querySelectorAll(".Spring_Up");
-ScrollTrigger.batch(SpringUpElement, {
-    start: "top bottom-=100px",
-    onEnter: elements => {
-        gsap.fromTo(elements,
-            {
-                opacity: 0,
-                scale: 0.75,
-            },
-            {
-                ease: "elastic.out(0.6,0.14)",
-                opacity: 1,
-                scale: 1,
-                duration: 4.25,
-                delay: 1.25,
-                stagger: 0.15,
+const transitions = {
+    SpringUp: {
+        from: {
+            opacity: 0,
+            scale: 0.75,
+        },
+        to: {
+            ease: "elastic.out(0.6,0.14)",
+            opacity: 1,
+            scale: 1,
+            duration: 4.25,
+            delay: 1.25,
+            stagger: 0.15,
+            scrollTrigger: {
+                trigger: '.Spring_Up',
             }
-        );
+        }
+    },
+    Stagger: {
+        from: {
+            opacity: 0,
+            y: 50,
+        },
+        to: {
+            opacity: 1,
+            y: 0,
+            delay: .125,
+            duration: 1.125,
+            stagger: 0.125,
+            ease: "power2.out"
+        }
+    },
+    FadeUp: {
+        from: {
+            opacity: 0,
+            y: 50,
+        },
+        to: {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.15,
+        }
+    },
+    FadeDown: {
+        from: {
+            opacity: 0,
+            y: -50,
+        },
+        to: {
+            opacity: 1,
+            y: 0,
+            delay: 0.25,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power2.out",
+        }
+    },
+    FadeIn: {
+        from: {
+            opacity: 0,
+        },
+        to: {
+            opacity: 1,
+            duration: 1,
+            stagger: 0.125,
+            ease: "power1.out"
+        }
+    },
+    MobileLink: {
+        from: {
+            y: 100,
+            opacity: 0,
+        },
+        to: {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+            delay: 0.25,
+            stagger: 0.1,
+            ease: "power1.out"
+        }
+    }
+}
+
+// Hero Orbit Spring Animation
+ScrollTrigger.batch(".Spring_Up", {
+    start: "top bottom",
+    onEnter: elements => {
+        gsap.fromTo(elements, transitions.SpringUp.from, transitions.SpringUp.to);
     },
     once: true
 });
 
 // Stagger Animation
-const StaggerElements = document.querySelectorAll(".Fade_Stagger");
-ScrollTrigger.batch(StaggerElements, {
+ScrollTrigger.batch(".Fade_Stagger", {
     start: "top bottom",
     onEnter: elements => {
-        gsap.fromTo(elements,
-            {
-                opacity: 0,
-                y: 50,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                delay: .125,
-                duration: 1.125,
-                stagger: 0.125,
-                ease: "power2.out"
-            });
+        gsap.fromTo(elements, transitions.Stagger.from, transitions.Stagger.to);
+
     },
     once: true
 });
 
-const ProjectStaggerElements = document.querySelectorAll(".Project_Stagger");
-ScrollTrigger.batch(ProjectStaggerElements, {
+ScrollTrigger.batch(".Project_Stagger", {
     start: "top bottom-=100px",
     onEnter: elements => {
         gsap.fromTo(elements,
@@ -73,62 +131,27 @@ ScrollTrigger.batch(ProjectStaggerElements, {
 
 
 // FadeUp Animation
-const FadeUpElements = document.querySelectorAll(".Fade_Up");
-ScrollTrigger.batch(FadeUpElements, {
+ScrollTrigger.batch(".Fade_Up", {
     start: "top bottom-=100px",
     onEnter: elements => {
-        gsap.fromTo(elements,
-            {
-                opacity: 0,
-                y: 50,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.15,
-            });
+        gsap.fromTo(elements, transitions.FadeUp.from, transitions.FadeUp.to);
     },
     once: true
 });
 
 // FadeDown Animation
-const FadeDownElements = document.querySelectorAll(".Fade_Down");
-ScrollTrigger.batch(FadeDownElements, {
+ScrollTrigger.batch(".Fade_Down", {
     start: "top bottom-=100px",
     onEnter: elements => {
-        gsap.fromTo(elements,
-            {
-                opacity: 0,
-                y: -50,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                delay: 0.25,
-                duration: 1,
-                stagger: 0.15,
-                ease: "power2.out",
-            });
+        gsap.fromTo(elements, transitions.FadeDown.from, transitions.FadeDown.to);
     },
     once: true
 });
 
 // FadeIn Animation
-const FadeInElements = document.querySelectorAll(".Fade_In");
-ScrollTrigger.batch(FadeInElements, {
+ScrollTrigger.batch(".Fade_In", {
     onEnter: elements => {
-        gsap.fromTo(elements,
-            {
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                stagger: 0.125,
-                ease: "power1.out"
-            }
-        )
+        gsap.fromTo(elements, transitions.FadeIn.from, transitions.FadeIn.to)
     },
     once: true
 });
@@ -163,20 +186,7 @@ const MobileLinkElement = document.querySelectorAll("#mobileHeaderNav .MobileHea
 const linkTl = gsap.timeline({ paused: true });
 
 if (MobileLinkElement.length !== 0) {
-    linkTl.fromTo(
-        MobileLinkElement,
-        {
-            y: 100,
-            opacity: 0,
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 0.3,
-            delay: 0.25,
-            stagger: 0.1,
-            ease: "power1.out"
-        });
+    linkTl.fromTo(MobileLinkElement, transitions.MobileLink.from, transitions.MobileLink.to);
 }
 
 // Event listener to trigger MobileNav animations
