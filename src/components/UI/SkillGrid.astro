@@ -22,13 +22,14 @@ const { stack }: Props = Astro.props;
                 target="_blank"
                 rel="noreferrer"
             >
-                <Image
-                    src={obj.icon}
-                    alt={obj.name.replaceAll(" ", "_") + "_Icon"}
-                    width={35}
-                    height={35}
-                    class="min-w-[35px] aspect-square"
-                />
+                <div class="flex_center min-h-[35px] aspect-square">
+                    <Image
+                        src={obj.icon}
+                        alt={obj.name.replaceAll(" ", "_") + "_Icon"}
+                        width={35}
+                        height={35}
+                    />
+                </div>
                 <span class="text-[0.9em]">{obj.name}</span>
             </a>
         ))
