@@ -65,7 +65,7 @@ export const FrontendStack = [
     { name: "Astro", icon: AstroIcon, link: "https://astro.build/" },
     { name: "Tailwind", icon: TailwindIcon, link: "https://tailwindcss.com/" },
     {
-        name: "React Query",
+        name: "TS Query",
         icon: ReactQueryIcon,
         link: "https://tanstack.com/query/latest/",
     },
@@ -108,9 +108,9 @@ export const BackendStack = [
         link: "https://developers.google.com/drive",
     },
     {
-        name: "NextAuth.js",
+        name: "Auth.js",
         icon: NextAuthIcon,
-        link: "https://next-auth.js.org/",
+        link: "https://authjs.dev/",
     },
 ];
 
