@@ -120,6 +120,11 @@ export const ProgrammingStack = [
         icon: JsIcon,
         link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
+    {
+        name: "TypeScript",
+        icon: TsIcon,
+        link: "https://www.typescriptlang.org/",
+    },
     { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
     { name: "C++", icon: CppIcon, link: "https://isocpp.org/" },
     { name: "Java", icon: JavaIcon, link: "https://www.oracle.com/java/" },
