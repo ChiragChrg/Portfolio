@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			screens: {
+				'4xl': '1800px'
+			},
 			colors: {
 				background: "var(--base)",
 				foreground: "var(--text)",
