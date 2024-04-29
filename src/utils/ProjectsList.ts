@@ -189,7 +189,7 @@ const TechInfo = {
     },
     EdgeStore: {
         title: "EdgeStore",
-        description: "State management library for React applications, designed for scalability and performance, with efficient updates and minimal API.",
+        description: "EdgeStore is an open-source file storage service, designed for scalability and performance, with efficient updates and minimal API.",
         icon: EdgeStoreIcon
     }
 };
