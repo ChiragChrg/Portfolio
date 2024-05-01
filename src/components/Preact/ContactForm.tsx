@@ -30,6 +30,12 @@ const ContactForm = () => {
         }
 
         try {
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            if (!emailRegex.test(email)) {
+                throw new Error('🙄 Invalid Email ID!')
+            }
+
             setisLoading(true)
             const mailRes = await emailjs.send(
                 import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
