@@ -35,7 +35,8 @@ import {
     FigmaIcon,
     PreactIcon,
     GSAPIcon,
-    FramerMotionIcon
+    FramerMotionIcon,
+    BunIcon
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
@@ -131,11 +132,12 @@ export const ProgrammingStack = [
 ];
 
 export const ToolsStack = [
-    { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
-    { name: "Socket.io", icon: SocketIoIcon, link: "https://socket.io/" },
     { name: "NPM", icon: NpmIcon, link: "https://www.npmjs.com/" },
+    { name: "Bun", icon: BunIcon, link: "https://bun.sh/" },
     { name: "Git", icon: GitIcon, link: "https://git-scm.com/" },
     { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
+    { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
+    { name: "Socket.io", icon: SocketIoIcon, link: "https://socket.io/" },
     { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
     { name: "Vercel", icon: VercelIcon, link: "https://vercel.com/" },
     {

@@ -34,10 +34,11 @@ export { default as CppIcon } from "./cpp.svg"
 export { default as JavaIcon } from "./java.svg"
 
 // Tools-Stack
-export { default as ViteIcon } from "./vitejs.svg"
-export { default as SocketIoIcon } from "./socketio.svg"
 export { default as NpmIcon } from "./npm.svg"
 export { default as GitIcon } from "./git.svg"
+export { default as BunIcon } from "./bun.svg"
+export { default as ViteIcon } from "./vitejs.svg"
+export { default as SocketIoIcon } from "./socketio.svg"
 export { default as NetlifyIcon } from "./netlify.svg"
 export { default as VercelIcon } from "./vercel.svg"
 export { default as VsCodeIcon } from "./vscode.svg"
