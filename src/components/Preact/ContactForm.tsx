@@ -23,7 +23,7 @@ const ContactForm = () => {
         const email = EmailRef?.current?.value as string;
         const message = MessageRef?.current?.value as string;
 
-        let templateParams = {
+        const templateParams = {
             from_name: name,
             from_email: email,
             message: message,
@@ -54,7 +54,7 @@ const ContactForm = () => {
             NameRef.current.value = ""
             EmailRef.current.value = ""
             MessageRef.current.value = ""
-        } catch (error: any) {
+        } catch (error: { message: string } | any) {
             setMailStatus({ status: false, message: error.message })
         } finally {
             setTimeout(() => {
