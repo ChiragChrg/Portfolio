@@ -32,6 +32,7 @@ export { default as EdgeStoreIcon } from "./edgestore.webp"
 export { default as PythonIcon } from "./python.svg"
 export { default as CppIcon } from "./cpp.svg"
 export { default as JavaIcon } from "./java.svg"
+export { default as RIcon } from "./Rlogo.svg"
 
 // Tools-Stack
 export { default as NpmIcon } from "./npm.svg"

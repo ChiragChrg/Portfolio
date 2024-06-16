@@ -36,7 +36,8 @@ import {
     PreactIcon,
     GSAPIcon,
     FramerMotionIcon,
-    BunIcon
+    BunIcon,
+    RIcon
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
@@ -129,6 +130,7 @@ export const ProgrammingStack = [
     { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
     { name: "C++", icon: CppIcon, link: "https://isocpp.org/" },
     { name: "Java", icon: JavaIcon, link: "https://www.oracle.com/java/" },
+    { name: "R", icon: RIcon, link: "https://www.r-project.org/" },
 ];
 
 export const ToolsStack = [
