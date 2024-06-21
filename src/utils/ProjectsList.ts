@@ -366,7 +366,7 @@ export const ProjectsList: ProjectsListType = [
         Shot: XreconShots,
         Mockup: XreconMockup,
         Theme: "#001220",
-        Status: "completed",
+        Status: "development",
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
