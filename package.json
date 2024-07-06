@@ -18,19 +18,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/netlify": "^5.3.0",
-    "@astrojs/preact": "^3.4.0",
+    "@astrojs/netlify": "^5.3.5",
+    "@astrojs/preact": "^3.5.0",
     "@astrojs/tailwind": "^5.1.0",
     "@emailjs/browser": "^4.3.3",
     "@studio-freight/lenis": "^1.0.42",
-    "astro": "^4.10.2",
+    "astro": "^4.11.5",
     "astro-compress": "^2.2.28",
     "astro-font": "^0.0.81",
     "astro-seo": "^0.8.4",
     "gsap": "^3.12.5",
-    "lucide-preact": "^0.395.0",
-    "preact": "^10.22.0",
+    "lucide-preact": "^0.400.0",
+    "preact": "^10.22.1",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   }
 }
