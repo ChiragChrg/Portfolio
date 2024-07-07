@@ -1,0 +1,73 @@
+<button
+    id="themeToggleBtn"
+    class="aspect-square w-8 h-8 outline outline-2 outline-slate-500/50 rounded-full relative flex_center"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        id="themeSunSvg"
+        class="lucide lucide-sun absolute"
+        style="visibility: hidden;"
+        ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path
+            d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path
+            d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path
+            d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path
+            d="m19.07 4.93-1.41 1.41"></path></svg
+    >
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        id="themeMoonSvg"
+        class="lucide lucide-moon-star absolute"
+        style="visibility: visible;"
+        ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path><path d="M20 3v4"
+        ></path><path d="M22 5h-4"></path></svg
+    >
+</button>
+
+<script is:inline type="module">
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    const lightThemeBtn = document.getElementById("themeSunSvg");
+    const darkThemeBtn = document.getElementById("themeMoonSvg");
+
+    let currentTheme = localStorage.getItem("chiragchrg-portfolio-theme");
+
+    if (currentTheme == "light") {
+        document.documentElement.classList.add("light");
+        darkThemeBtn.style.visibility = "hidden";
+        lightThemeBtn.style.visibility = "visible";
+    } else {
+        document.documentElement.classList.remove("light");
+        darkThemeBtn.style.visibility = "visible";
+        lightThemeBtn.style.visibility = "hidden";
+    }
+
+    themeToggleBtn.addEventListener("click", () => {
+        if (document.documentElement.classList.contains("light")) {
+            darkThemeBtn.style.visibility = "visible";
+            lightThemeBtn.style.visibility = "hidden";
+            document.documentElement.classList.remove("light");
+            localStorage.setItem("chiragchrg-portfolio-theme", "dark");
+        } else {
+            darkThemeBtn.style.visibility = "hidden";
+            lightThemeBtn.style.visibility = "visible";
+            document.documentElement.classList.add("light");
+            localStorage.setItem("chiragchrg-portfolio-theme", "light");
+        }
+    });
+</script>

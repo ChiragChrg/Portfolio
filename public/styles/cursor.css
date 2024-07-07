@@ -1,3 +1,15 @@
+:root {
+    --cursorColor: hsla(0, 0%, 100%, 0.6);
+    --cursorColorAlt: hsla(0, 0%, 100%, 0.8);
+    --dotColor: #fff
+}
+
+html.dark {
+    --cursorColor: hsla(263, 100%, 75%, 0.6);
+    --cursorColorAlt: hsla(0, 0%, 0%, 0.4);
+    --dotColor: hsl(var(--purpink));
+}
+
 .Cursor-Main #cursor {
     position: fixed;
     inset: 0;
@@ -5,8 +17,8 @@
     width: 20px;
     height: 20px;
     border-radius: 100px;
-    background-color: hsla(0, 0%, 100%, 0.6);
-    box-shadow: 0 0 15px 0 hsla(0, 0%, 100%, 0.8);
+    background-color: var(--cursorColor);
+    box-shadow: 0 0 15px 0 var(--cursorColorAlt);
     transition: all 0.2s ease-in-out;
     pointer-events: none;
     will-change: transform;
@@ -44,7 +56,7 @@
     opacity: 0;
     pointer-events: none;
     transition: all 10ms ease-out;
-    background-color: #fff;
+    background-color: var(--dotColor);
     /* box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, 0.8); */
     backface-visibility: hidden;
 }
@@ -59,7 +71,7 @@ body:hover #cursorDot {
     width: 4em;
     height: 4em;
     background: none;
-    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline: 2px solid var(--cursorColor);
 }
 
 :has(a:hover, button:hover) #cursor span {
@@ -75,4 +87,48 @@ body:hover #cursorDot {
     border-radius: 50%;
     position: absolute;
     background-color: transparent;
+}
+
+:has(.Projects_Link:hover) #cursor {
+    width: 3em;
+    height: 3em;
+}
+
+:has(#emailCopyBtn:hover) #cursor,
+:has(#passCopyBtn:hover) #cursor {
+    width: 3em;
+    height: 3em;
+}
+
+:has(.Projects_Link.Misc-Link:hover) #cursor {
+    width: 5em;
+    height: 5em;
+}
+
+:has(.Projects_Link:hover) #cursorView {
+    visibility: hidden !important;
+}
+
+:has(.Projects_Link:hover) #cursorDot {
+    visibility: visible !important;
+}
+
+:has(.Projects-MiscInfo:hover) #cursor,
+:has(.Projects_Preview:hover) #cursor {
+    width: 5em;
+    height: 5em;
+    background: none;
+    outline: 2px solid var(--cursorColor);
+}
+
+:has(.Projects-MiscInfo:hover) #cursorView,
+:has(.Projects_Preview:hover) #cursorView {
+    visibility: visible !important;
+    font-size: 1.2em;
+    padding-bottom: 1.15em;
+}
+
+:has(.Projects-MiscInfo:hover) #cursorDot,
+:has(.Projects_Preview:hover) #cursorDot {
+    visibility: hidden !important;
 }

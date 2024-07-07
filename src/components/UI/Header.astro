@@ -1,5 +1,6 @@
 ---
 import { Download } from "lucide-preact";
+import ThemeButton from "./ThemeButton.astro";
 ---
 
 <header id="header" class="hidden lg:block sticky top-0 z-50">
@@ -17,15 +18,19 @@ import { Download } from "lucide-preact";
             <a class="Fade_Down" href="#contact">CONTACT</a>
         </nav>
 
-        <a
-            class="Fade_Down Header_ActionBtn"
-            href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume.pdf"
-        >
-            <div class="flex_center gap-2">
-                <p>Resume</p>
-                <Download size={18} />
-            </div>
-        </a>
+        <div class="flex_center gap-4">
+            <ThemeButton />
+
+            <a
+                class="Fade_Down Header_ActionBtn"
+                href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume.pdf"
+            >
+                <div class="flex_center gap-2">
+                    <p>Resume</p>
+                    <Download size={18} />
+                </div>
+            </a>
+        </div>
     </div>
 </header>
 

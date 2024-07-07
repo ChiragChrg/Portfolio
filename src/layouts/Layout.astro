@@ -138,38 +138,36 @@ import { Footer } from "../components";
 
 		<style is:global>
 			:root {
-				/* --base: #fff; */
 				--base: #000000;
 				--baseLite: rgba(0, 0, 0, 0.85);
-				/* --text: #000; */
 				--text: #fff;
 
-				/* --purple: #f7ff00;
-    --pink: #e98008; */
+				--purple: 264, 100%, 50%;
+				--pink: 315, 100%, 50%;
+				--purpink: 275, 100%, 47%;
 
-				--purple: #6600ff;
-				--pink: #ff00bf;
-				--purpink: #8c00ef;
+				--purpleLite: hsla(var(--purple), 0.6);
+				--purpleLiteAlt: hsla(var(--purple), 0.3);
+				--pinkLite: hsla(var(--pink), 0.6);
+				--pinkLiteAlt: hsla(var(--pink), 0.3);
 
-				--purpleLite: hsla(264, 99%, 27%, 0.6);
-				--purpleLiteAlt: hsla(263, 99%, 32%, 0.3);
-				--pinkLite: hsla(315, 100%, 40%, 0.6);
-				--pinkLiteAlt: hsla(315, 100%, 40%, 0.3);
-
-				--footer: #1e004c;
+				--footer: hsl(264, 100%, 15%);
+				--footerSvgA: hsl(259, 75%, 10%);
+				--footerSvgB: hsl(256, 60%, 5%);
 
 				--gradient: linear-gradient(
 					to right,
-					var(--pink),
-					var(--purple),
-					var(--purple),
-					var(--pink)
+					hsl(var(--pink)),
+					hsl(var(--purple)),
+					hsl(var(--purple)),
+					hsl(var(--pink))
 				);
 				--gradientLite: linear-gradient(
 					45deg,
 					var(--purpleLite),
-					var(--pinkLite)
+					hsl(var(--pinkLite))
 				);
+
 				--headerGradient: linear-gradient(
 					180deg,
 					rgba(0, 0, 0, 0.6),
@@ -213,17 +211,112 @@ import { Footer } from "../components";
 				--orbitGradient: conic-gradient(
 					transparent,
 					transparent,
-					var(--purple),
-					var(--pink),
+					hsl(var(--purple)),
+					hsl(var(--pink)),
 					#fff
 				);
 				--orbitGradientAlt: conic-gradient(
 					#fff,
-					var(--pink),
-					var(--purple),
+					hsl(var(--purple)),
+					hsl(var(--pink)),
 					transparent,
 					transparent
 				);
+
+				--orbitDotColor: #fff;
+				--heroSocialColoe: #fff;
+			}
+
+			html.light {
+				--base: #fff;
+				--baseLite: rgba(255, 255, 255, 0.85);
+				--text: #000;
+
+				/* --purple: 264, 100%, 50%;
+				--pink: 315, 100%, 50%;
+				--purpink: 275, 100%, 47%; */
+
+				/* --purple: 220, 100%, 60%;
+				--pink: 189, 79%, 49%;
+				--purpink: 200, 80%, 58%; */
+
+				--purpleLite: hsla(var(--purple), 0.6);
+				--purpleLiteAlt: hsla(var(--purple), 0.3);
+				--pinkLite: hsla(var(--pink), 0.6);
+				--pinkLiteAlt: hsla(var(--pink), 0.3);
+
+				--footer: hsl(275, 100%, 70%);
+				--footerSvgA: hsl(275, 100%, 80%);
+				--footerSvgB: hsl(275, 100%, 90%);
+
+				--gradient: linear-gradient(
+					to right,
+					hsl(var(--pink)),
+					hsl(var(--purple)),
+					hsl(var(--purple)),
+					hsl(var(--pink))
+				);
+				--gradientLite: linear-gradient(
+					45deg,
+					var(--purpleLite),
+					hsl(var(--pinkLite))
+				);
+
+				--headerGradient: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.6),
+					transparent
+				);
+				--cardGradient: linear-gradient(
+					45deg,
+					var(--purpleLite),
+					hsl(0, 0%, 100%)
+				);
+				--cardGradientAlt: linear-gradient(
+					-135deg,
+					var(--purpleLiteAlt),
+					hsl(0, 0%, 100%)
+				);
+				--miscCardGradient: linear-gradient(
+					-45deg,
+					var(--purpleLiteAlt),
+					hsl(0, 0%, 100%)
+				);
+				--overlayGradient: radial-gradient(
+					farthest-corner at 100% 0%,
+					hsla(0, 0%, 100%, 0.5),
+					transparent
+				);
+				--LinkBtnGradient: linear-gradient(
+					-135deg,
+					hsla(264, 100%, 75%, 0.25),
+					var(--purpleLiteAlt)
+				);
+				--SkillGradient: linear-gradient(
+					-135deg,
+					hsla(276, 50%, 90%, 0.8),
+					hsla(296, 50%, 65%, 0.5)
+				);
+				--SkillGradientAlt: linear-gradient(
+					-135deg,
+					hsla(276, 50%, 90%, 0.4),
+					hsla(296, 50%, 65%, 0.25)
+				);
+				--orbitGradient: conic-gradient(
+					transparent,
+					transparent,
+					hsl(var(--pink)),
+					hsl(var(--purple))
+				);
+				--orbitGradientAlt: conic-gradient(
+					hsl(var(--purple)),
+					hsl(var(--pink)),
+					transparent,
+					transparent
+				);
+
+				--orbitDotColor: hsl(var(--purpink));
+				--heroSocialColor: hsl(0, 0%, 20%);
 			}
 
 			* {
@@ -255,7 +348,7 @@ import { Footer } from "../components";
 				left: 0;
 				width: 100%;
 				height: 2px;
-				background-color: #fff;
+				background-color: var(--orbitDotColor);
 				transform: scaleX(0);
 				transition: transform 0.25s ease-out;
 			}
@@ -279,9 +372,9 @@ import { Footer } from "../components";
 				width: 120%;
 				aspect-ratio: 1;
 				background: conic-gradient(
-					var(--purple),
-					var(--pink),
-					var(--purple)
+					hsl(var(--purple)),
+					hsl(var(--pink)),
+					hsl(var(--purple))
 				);
 				animation: spin 5s linear infinite;
 			}
@@ -380,11 +473,11 @@ import { Footer } from "../components";
 			}
 
 			.Title-Tag.purple span {
-				color: var(--purple);
+				color: hsl(var(--purple));
 			}
 
 			.Title-Tag.pink span {
-				color: var(--pink);
+				color: hsl(var(--pink));
 			}
 
 			.Title_Line::after {
@@ -513,6 +606,10 @@ import { Footer } from "../components";
 				transform: rotate(140deg) !important;
 			}
 
+			footer {
+				color: #fff !important;
+			}
+
 			/* Lenis Smooth Scroll */
 			html.lenis {
 				height: auto;
@@ -553,7 +650,7 @@ import { Footer } from "../components";
 			.Orbit_Dot {
 				width: 0.5em;
 				aspect-ratio: 1;
-				background-color: #fff;
+				background-color: var(--orbitDotColor);
 				border-radius: 0 50% 50%;
 				transform: rotate(-45deg);
 				position: absolute;
@@ -561,12 +658,12 @@ import { Footer } from "../components";
 				left: 49%;
 				transition: 0.25s ease-in-out;
 				overflow: hidden;
-				box-shadow: 0 0 10px #fff;
+				box-shadow: 0 0 10px var(--orbitDotColor);
 			}
 
 			:has(.Hero_Orbit:hover) .Orbit_Dot {
 				background-color: var(--base) !important;
-				outline: 0.5px solid #fff;
+				outline: 0.5px solid var(--orbitDotColor);
 				/* border-radius: 50% !important; */
 				scale: 1.8;
 			}
