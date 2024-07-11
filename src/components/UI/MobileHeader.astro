@@ -1,5 +1,6 @@
 ---
 import { Download } from "lucide-preact";
+import ThemeButton from "./ThemeButton.astro";
 ---
 
 <header
@@ -49,14 +50,16 @@ import { Download } from "lucide-preact";
             <a href="#contact">Contact</a>
         </div>
 
-        <div class="MobileHeader_Nav flex_center">
+        <div class="flex_center gap-4">
+            <ThemeButton />
+
             <a
-                class="MobileHeader_ActionBtn flex_center"
+                class="Fade_Down Header_ActionBtn"
                 href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume.pdf"
             >
-                <div class="flex_center gap-4">
+                <div class="flex_center gap-2">
                     <p>Resume</p>
-                    <Download />
+                    <Download size={18} />
                 </div>
             </a>
         </div>

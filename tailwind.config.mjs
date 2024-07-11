@@ -15,8 +15,8 @@ export default {
 				mixColor: "var(--mixColor)",
 				primaryLite: "var(--primaryLite)",
 				primaryLiteAlt: "var(--primaryLiteAlt)",
-				pinkLite: "var(--pinkLite)",
-				pinkLiteAlt: "var(--pinkLiteAlt)",
+				secondaryLite: "var(--secondaryLite)",
+				secondaryLiteAlt: "var(--secondaryLiteAlt)",
 				footer: "var(--footer)",
 				contactSocialColor: "var(--contactSocialColor)",
 			},
@@ -32,7 +32,7 @@ export default {
 				'skillGradientAlt': 'var(--SkillGradientAlt)',
 				'LinkBtnGradient': 'var(--LinkBtnGradient)',
 				'cardGradient': 'var(--cardGradient)',
-				'imgOverlayGradient': 'radial-gradient(circle, transparent, #000 95%),linear-gradient(180deg,rgba(0, 0, 0),transparent 25%),linear-gradient(0deg,rgba(0, 0, 0),transparent 25%) '
+				'imgOverlayGradient': 'radial-gradient(circle, transparent, var(--base) 95%),linear-gradient(180deg,var(--base),transparent 25%),linear-gradient(0deg,var(--base),transparent 25%) '
 			},
 			keyframes: {
 				"ripple": {
