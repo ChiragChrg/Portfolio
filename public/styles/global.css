@@ -52,7 +52,7 @@ div {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--purpink);
+    background-color: var(--mixColor);
     border-radius: 14px;
     border: 6px solid transparent;
     background-clip: content-box;

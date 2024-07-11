@@ -174,7 +174,7 @@ if (MobileNavElement) {
         },
         {
             clipPath: `circle(${(dimensions.height * 2) + 200}px at 40px 40px)`,
-            backgroundColor: "var(--purpleLite)",
+            backgroundColor: "var(--primaryLite)",
             duration: 0.6,
             ease: "power1.inOut"
         }

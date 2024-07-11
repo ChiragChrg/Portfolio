@@ -142,14 +142,30 @@ import { Footer } from "../components";
 				--baseLite: rgba(0, 0, 0, 0.85);
 				--text: #fff;
 
-				--purple: 264, 100%, 50%;
-				--pink: 315, 100%, 50%;
-				--purpink: 275, 100%, 47%;
+				--pH: 264;
+				--pS: 100%;
+				--pL: 50%;
 
-				--purpleLite: hsla(var(--purple), 0.6);
-				--purpleLiteAlt: hsla(var(--purple), 0.3);
-				--pinkLite: hsla(var(--pink), 0.6);
-				--pinkLiteAlt: hsla(var(--pink), 0.3);
+				--sH: 315;
+				--sS: 100%;
+				--sL: 50%;
+
+				--mH: 275;
+				--mS: 100%;
+				--mL: 47%;
+
+				/* --primary: 264, 100%, 50%;
+				--secondary: 315, 100%, 50%;
+				--mixColor: 275, 100%, 47%; */
+
+				--primary: var(--pH), var(--pS), var(--pL);
+				--secondary: var(--sH), var(--sS), var(--sL);
+				--mixColor: var(--mH), var(--mS), var(--mL);
+
+				--primaryLite: hsla(var(--primary), 0.6);
+				--primaryLiteAlt: hsla(var(--primary), 0.3);
+				--secondaryLite: hsla(var(--secondary), 0.6);
+				--secondaryLiteAlt: hsla(var(--secondary), 0.3);
 
 				--footer: hsl(264, 100%, 15%);
 				--footerSvgA: hsl(259, 75%, 10%);
@@ -157,15 +173,15 @@ import { Footer } from "../components";
 
 				--gradient: linear-gradient(
 					to right,
-					hsl(var(--pink)),
-					hsl(var(--purple)),
-					hsl(var(--purple)),
-					hsl(var(--pink))
+					hsl(var(--secondary)),
+					hsl(var(--primary)),
+					hsl(var(--primary)),
+					hsl(var(--secondary))
 				);
 				--gradientLite: linear-gradient(
 					45deg,
-					var(--purpleLite),
-					hsl(var(--pinkLite))
+					var(--primaryLite),
+					hsl(var(--secondaryLite))
 				);
 
 				--headerGradient: linear-gradient(
@@ -176,17 +192,17 @@ import { Footer } from "../components";
 				--cardGradient: linear-gradient(
 					45deg,
 					hsl(0, 0%, 1%),
-					var(--purpleLite)
+					var(--primaryLite)
 				);
 				--cardGradientAlt: linear-gradient(
 					-135deg,
 					hsl(0, 0%, 5%),
-					var(--purpleLiteAlt)
+					var(--primaryLiteAlt)
 				);
 				--miscCardGradient: linear-gradient(
 					-45deg,
 					hsl(0, 0%, 1%),
-					var(--purpleLiteAlt)
+					var(--primaryLiteAlt)
 				);
 				--overlayGradient: radial-gradient(
 					farthest-corner at 100% 0%,
@@ -211,20 +227,25 @@ import { Footer } from "../components";
 				--orbitGradient: conic-gradient(
 					transparent,
 					transparent,
-					hsl(var(--purple)),
-					hsl(var(--pink)),
+					hsl(var(--primary)),
+					hsl(var(--secondary)),
 					#fff
 				);
 				--orbitGradientAlt: conic-gradient(
 					#fff,
-					hsl(var(--purple)),
-					hsl(var(--pink)),
+					hsl(var(--primary)),
+					hsl(var(--secondary)),
 					transparent,
 					transparent
 				);
 
 				--orbitDotColor: #fff;
 				--heroSocialColoe: #fff;
+				--contactSocialColor: hsla(0, 0%, 100%, 0.4);
+
+				--cursorColor: hsla(0, 0%, 100%, 0.6);
+				--cursorColorAlt: hsla(0, 0%, 100%, 0.8);
+				--dotColor: #fff;
 			}
 
 			html.light {
@@ -232,34 +253,46 @@ import { Footer } from "../components";
 				--baseLite: rgba(255, 255, 255, 0.85);
 				--text: #000;
 
-				/* --purple: 264, 100%, 50%;
-				--pink: 315, 100%, 50%;
-				--purpink: 275, 100%, 47%; */
+				--pH: 220;
+				--pS: 100%;
+				--pL: 60%;
 
-				/* --purple: 220, 100%, 60%;
-				--pink: 189, 79%, 49%;
-				--purpink: 200, 80%, 58%; */
+				--sH: 190;
+				--sS: 80%;
+				--sL: 50%;
 
-				--purpleLite: hsla(var(--purple), 0.6);
-				--purpleLiteAlt: hsla(var(--purple), 0.3);
-				--pinkLite: hsla(var(--pink), 0.6);
-				--pinkLiteAlt: hsla(var(--pink), 0.3);
+				--mH: 200;
+				--mS: 80%;
+				--mL: 60%;
 
-				--footer: hsl(275, 100%, 70%);
-				--footerSvgA: hsl(275, 100%, 80%);
-				--footerSvgB: hsl(275, 100%, 90%);
+				/* --primary: 264, 100%, 50%;
+				--secondary: 315, 100%, 50%;
+				--mixColor: 275, 100%, 47%; */
+
+				--primary: var(--pH), var(--pS), var(--pL);
+				--secondary: var(--sH), var(--sS), var(--sL);
+				--mixColor: var(--mH), var(--mS), var(--mL);
+
+				--primaryLite: hsla(var(--primary), 0.6);
+				--primaryLiteAlt: hsla(var(--primary), 0.3);
+				--secondaryLite: hsla(var(--secondary), 0.6);
+				--secondaryLiteAlt: hsla(var(--secondary), 0.3);
+
+				--footer: hsl(var(--pH), var(--pS), 60%);
+				--footerSvgA: hsl(var(--pH), var(--pS), 70%);
+				--footerSvgB: hsl(var(--pH), var(--pS), 80%);
 
 				--gradient: linear-gradient(
 					to right,
-					hsl(var(--pink)),
-					hsl(var(--purple)),
-					hsl(var(--purple)),
-					hsl(var(--pink))
+					hsl(var(--secondary)),
+					hsl(var(--primary)),
+					hsl(var(--primary)),
+					hsl(var(--secondary))
 				);
 				--gradientLite: linear-gradient(
 					45deg,
-					var(--purpleLite),
-					hsl(var(--pinkLite))
+					var(--primaryLite),
+					hsl(var(--secondaryLite))
 				);
 
 				--headerGradient: linear-gradient(
@@ -269,17 +302,17 @@ import { Footer } from "../components";
 				);
 				--cardGradient: linear-gradient(
 					45deg,
-					var(--purpleLite),
+					var(--primaryLite),
 					hsl(0, 0%, 100%)
 				);
 				--cardGradientAlt: linear-gradient(
 					-135deg,
-					var(--purpleLiteAlt),
+					var(--primaryLiteAlt),
 					hsl(0, 0%, 100%)
 				);
 				--miscCardGradient: linear-gradient(
 					-45deg,
-					var(--purpleLiteAlt),
+					var(--primaryLiteAlt),
 					hsl(0, 0%, 100%)
 				);
 				--overlayGradient: radial-gradient(
@@ -289,13 +322,13 @@ import { Footer } from "../components";
 				);
 				--LinkBtnGradient: linear-gradient(
 					-135deg,
-					hsla(264, 100%, 75%, 0.25),
-					var(--purpleLiteAlt)
+					hsla(var(--secondary), 0.25),
+					var(--primaryLiteAlt)
 				);
 				--SkillGradient: linear-gradient(
 					-135deg,
-					hsla(276, 50%, 90%, 0.8),
-					hsla(296, 50%, 65%, 0.5)
+					hsla(var(--mixColor), 0.15),
+					hsla(var(--primary), 0.45)
 				);
 				--SkillGradientAlt: linear-gradient(
 					-135deg,
@@ -305,18 +338,23 @@ import { Footer } from "../components";
 				--orbitGradient: conic-gradient(
 					transparent,
 					transparent,
-					hsl(var(--pink)),
-					hsl(var(--purple))
+					hsl(var(--secondary)),
+					hsl(var(--primary))
 				);
 				--orbitGradientAlt: conic-gradient(
-					hsl(var(--purple)),
-					hsl(var(--pink)),
+					hsl(var(--primary)),
+					hsl(var(--secondary)),
 					transparent,
 					transparent
 				);
 
-				--orbitDotColor: hsl(var(--purpink));
+				--orbitDotColor: hsl(var(--mixColor));
 				--heroSocialColor: hsl(0, 0%, 20%);
+				--contactSocialColor: hsla(0, 0%, 20%, 0.4);
+
+				--cursorColor: hsla(var(--primary), 0.6);
+				--cursorColorAlt: hsla(var(--primary), 0.6);
+				--dotColor: hsl(var(--mixColor));
 			}
 
 			* {
@@ -372,9 +410,9 @@ import { Footer } from "../components";
 				width: 120%;
 				aspect-ratio: 1;
 				background: conic-gradient(
-					hsl(var(--purple)),
-					hsl(var(--pink)),
-					hsl(var(--purple))
+					hsl(var(--primary)),
+					hsl(var(--secondary)),
+					hsl(var(--primary))
 				);
 				animation: spin 5s linear infinite;
 			}
@@ -432,9 +470,9 @@ import { Footer } from "../components";
 				width: 120%;
 				aspect-ratio: 1;
 				background: conic-gradient(
-					var(--purple),
-					var(--pink),
-					var(--purple)
+					var(--primary),
+					var(--secondary),
+					var(--primary)
 				);
 				animation: spin 5s linear infinite;
 			}
@@ -472,12 +510,12 @@ import { Footer } from "../components";
 				opacity: 0.7 !important;
 			}
 
-			.Title-Tag.purple span {
-				color: hsl(var(--purple));
+			.Title-Tag.primary span {
+				color: hsl(var(--primary));
 			}
 
-			.Title-Tag.pink span {
-				color: hsl(var(--pink));
+			.Title-Tag.secondary span {
+				color: hsl(var(--secondary));
 			}
 
 			.Title_Line::after {
@@ -487,11 +525,11 @@ import { Footer } from "../components";
 				width: 100%;
 				height: 2px;
 				z-index: 0;
-				background-color: var(--purpleLite);
+				background-color: var(--primaryLite);
 			}
 
-			.Title_Line.pink::after {
-				background-color: var(--pinkLite);
+			.Title_Line.secondary::after {
+				background-color: var(--secondaryLite);
 			}
 
 			.Title_Line.close::after {
@@ -536,7 +574,7 @@ import { Footer } from "../components";
 
 			.Projects_Link {
 				padding: 0.45em;
-				border: 1px solid var(--purpleLite);
+				border: 1px solid var(--primaryLite);
 				border-radius: 100%;
 				z-index: 10;
 			}
