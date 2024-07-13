@@ -50,19 +50,21 @@ import ThemeButton from "./ThemeButton.astro";
             <a href="#contact">Contact</a>
         </div>
 
-        <div class="flex_center gap-4">
-            <ThemeButton />
-
+        <div class="MobileHeader_Nav flex_center">
             <a
-                class="Fade_Down Header_ActionBtn"
+                class="MobileHeader_ActionBtn flex_center"
                 href="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Chirag%20Resume.pdf"
             >
-                <div class="flex_center gap-2">
+                <div class="flex_center gap-4">
                     <p>Resume</p>
-                    <Download size={18} />
+                    <Download />
                 </div>
             </a>
         </div>
+
+        <!-- <div class="MobileHeader_Nav flex_center">
+            <ThemeButton />
+        </div> -->
     </nav>
 </header>
 

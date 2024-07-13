@@ -253,9 +253,21 @@ import { Footer } from "../components";
 				--baseLite: rgba(255, 255, 255, 0.85);
 				--text: #000;
 
-				--pH: 220;
+				--pH: 264;
 				--pS: 100%;
-				--pL: 60%;
+				--pL: 50%;
+
+				--sH: 315;
+				--sS: 100%;
+				--sL: 50%;
+
+				--mH: 275;
+				--mS: 100%;
+				--mL: 47%;
+
+				/* --pH: 240;
+				--pS: 60%;
+				--pL: 35%;
 
 				--sH: 190;
 				--sS: 80%;
@@ -263,7 +275,7 @@ import { Footer } from "../components";
 
 				--mH: 200;
 				--mS: 80%;
-				--mL: 60%;
+				--mL: 60%; */
 
 				/* --primary: 264, 100%, 50%;
 				--secondary: 315, 100%, 50%;
@@ -430,7 +442,7 @@ import { Footer } from "../components";
 			.MobileHeader_Nav {
 				min-width: 14em;
 				text-align: center;
-				background-color: #000;
+				background-color: var(--base);
 				border-radius: 0.3em;
 				padding: 1em;
 				font-size: 1.3em;
@@ -440,7 +452,7 @@ import { Footer } from "../components";
 
 			.MobileHeader_Nav a {
 				width: 100%;
-				color: #fff;
+				color: var(--text);
 				text-decoration: none;
 				text-transform: uppercase;
 			}
@@ -552,6 +564,10 @@ import { Footer } from "../components";
 				stroke-width: 5.5;
 				transform-origin: right;
 				stroke-linecap: round;
+			}
+
+			html.light .MobileNav_Ham .line {
+				stroke: var(--primary) !important;
 			}
 
 			.MobileNav_Ham .top {
