@@ -210,6 +210,14 @@ HamMenuButton?.addEventListener('click', () => {
     HamMenuButton?.classList.toggle("isOpen");
 });
 
+// Close Nav menu after Theme button click
+const themeToggleBtn = document.getElementById("themeToggleMobile");
+themeToggleBtn?.addEventListener('click', () => {
+    closeNav()
+    isMenuOpen = !isMenuOpen;
+    HamMenuButton?.classList.toggle("isOpen");
+});
+
 // Smooth Scrolling
 const lenis = new Lenis();
 lenis.on("scroll", ScrollTrigger.update);

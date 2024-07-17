@@ -52,29 +52,30 @@ const { className }: Props = Astro.props;
     const lightThemeBtn = document.getElementById("themeSunSvg");
     const darkThemeBtn = document.getElementById("themeMoonSvg");
 
-    let currentTheme = localStorage.getItem("chiragchrg-portfolio-theme");
+    // let currentTheme = localStorage.getItem("chiragchrg-portfolio-theme");
 
-    if (currentTheme == "light") {
-        document.documentElement.classList.add("light");
-        darkThemeBtn.style.visibility = "hidden";
-        lightThemeBtn.style.visibility = "visible";
-    } else {
-        document.documentElement.classList.remove("light");
-        darkThemeBtn.style.visibility = "visible";
-        lightThemeBtn.style.visibility = "hidden";
-    }
+    // if (currentTheme == "light") {
+    //     document.documentElement.classList.add("light");
+    //     darkThemeBtn.style.visibility = "hidden";
+    //     lightThemeBtn.style.visibility = "visible";
+    // } else {
+    //     document.documentElement.classList.remove("light");
+    //     darkThemeBtn.style.visibility = "visible";
+    //     lightThemeBtn.style.visibility = "hidden";
+    // }
 
     themeToggleBtn.addEventListener("click", () => {
+        console.log("yoo");
         if (document.documentElement.classList.contains("light")) {
             darkThemeBtn.style.visibility = "visible";
             lightThemeBtn.style.visibility = "hidden";
             document.documentElement.classList.remove("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "dark");
+            // localStorage.setItem("chiragchrg-portfolio-theme", "dark");
         } else {
             darkThemeBtn.style.visibility = "hidden";
             lightThemeBtn.style.visibility = "visible";
             document.documentElement.classList.add("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "light");
+            // localStorage.setItem("chiragchrg-portfolio-theme", "light");
         }
     });
 </script>

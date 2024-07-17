@@ -482,9 +482,9 @@ import { Footer } from "../components";
 				width: 120%;
 				aspect-ratio: 1;
 				background: conic-gradient(
-					var(--primary),
-					var(--secondary),
-					var(--primary)
+					hsl(var(--primary)),
+					hsl(var(--secondary)),
+					hsl(var(--primary))
 				);
 				animation: spin 5s linear infinite;
 			}
@@ -560,14 +560,14 @@ import { Footer } from "../components";
 				transition:
 					stroke-dasharray 0.4s,
 					stroke-dashoffset 0.4s;
-				stroke: #fff;
+				stroke: var(--text);
 				stroke-width: 5.5;
 				transform-origin: right;
 				stroke-linecap: round;
 			}
 
 			html.light .MobileNav_Ham .line {
-				stroke: var(--primary) !important;
+				stroke: hsl(var(--primary)) !important;
 			}
 
 			.MobileNav_Ham .top {
