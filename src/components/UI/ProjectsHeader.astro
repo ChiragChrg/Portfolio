@@ -93,5 +93,68 @@ import ThemeButton from "./ThemeButton.astro";
                 </div>
             </a>
         </div>
+
+        <div
+            id="themeToggleMobileProject"
+            class="MobileHeader_Nav flex_center min-h-[68px]"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                id="themeSunSvgMobileProject"
+                class="lucide lucide-sun absolute"
+                style="visibility: hidden;"
+                ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
+                ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
+                ></path><path d="m17.66 17.66 1.41 1.41"></path><path
+                    d="M2 12h2"></path><path d="M20 12h2"></path><path
+                    d="m6.34 17.66-1.41 1.41"></path><path
+                    d="m19.07 4.93-1.41 1.41"></path></svg
+            >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                id="themeMoonSvgMobileProject"
+                class="lucide lucide-moon-star absolute"
+                style="visibility: visible;"
+                ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path><path
+                    d="M20 3v4"></path><path d="M22 5h-4"></path></svg
+            >
+        </div>
     </div>
 </header>
+
+<script is:inline type="module">
+    // Theme Toggle Script for Mobile screens
+    const themeToggleBtn = document.getElementById("themeToggleMobileProject");
+    const lightThemeBtn = document.getElementById("themeSunSvgMobileProject");
+    const darkThemeBtn = document.getElementById("themeMoonSvgMobileProject");
+
+    themeToggleBtn.addEventListener("click", () => {
+        console.log("yoo");
+        if (document.documentElement.classList.contains("light")) {
+            darkThemeBtn.style.visibility = "visible";
+            lightThemeBtn.style.visibility = "hidden";
+            document.documentElement.classList.remove("light");
+        } else {
+            darkThemeBtn.style.visibility = "hidden";
+            lightThemeBtn.style.visibility = "visible";
+            document.documentElement.classList.add("light");
+        }
+    });
+</script>

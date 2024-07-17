@@ -210,9 +210,15 @@ HamMenuButton?.addEventListener('click', () => {
     HamMenuButton?.classList.toggle("isOpen");
 });
 
-// Close Nav menu after Theme button click
-const themeToggleBtn = document.getElementById("themeToggleMobile");
-themeToggleBtn?.addEventListener('click', () => {
+// Close Nav menu after Theme button click for Mobile sizes
+const themeToggleMobileBtn = document.getElementById("themeToggleMobile");
+const themeToggleMobileProjectBtn = document.getElementById("themeToggleMobileProject");
+themeToggleMobileBtn?.addEventListener('click', () => {
+    closeNav()
+    isMenuOpen = !isMenuOpen;
+    HamMenuButton?.classList.toggle("isOpen");
+});
+themeToggleMobileProjectBtn?.addEventListener('click', () => {
     closeNav()
     isMenuOpen = !isMenuOpen;
     HamMenuButton?.classList.toggle("isOpen");
