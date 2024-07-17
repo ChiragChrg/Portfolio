@@ -21,7 +21,7 @@ const { projectID } = Astro.params;
 import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
 import { GithubIcon } from "../../assets/SVGs";
-import { ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
+import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
 import { CenterTitle, SectionTitle } from "../../components/UI";
 
 // Lazy loading ProjectInfo
@@ -133,22 +133,32 @@ const [project] = ProjectsList.filter(
                         <h3 class="min-w-[10rem]">Demo Credentials :</h3>
 
                         <div class="flex justify-evenly w-full flex-col md:flex-row gap-2">
-                            <div class="flex_center gap-4 bg-black/80 p-2">
+                            <div class="flex_center gap-4 bg-backgroundLite p-2 rounded-md">
+                                <span>Email : </span>
                                 <span id="emailContent">
                                     {project.Demo?.email}
                                 </span>
 
-                                <button id="emailCopyBtn">
-                                    <ClipboardCopyIcon />
+                                <button
+                                    id="emailCopyBtn"
+                                    class="flex_center relative"
+                                >
+                                    <ClipboardCopyIcon class="emailCopyIcon visible" />
+                                    <CheckIcon class="emailCopyIcon absolute invisible" />
                                 </button>
                             </div>
-                            <div class="flex_center gap-4 bg-black/80 p-2">
+                            <div class="flex_center gap-4 bg-backgroundLite p-2 rounded-md">
+                                <span>Password : </span>
                                 <span id="passContent">
                                     {project.Demo?.password}
                                 </span>
 
-                                <button id="passCopyBtn">
-                                    <ClipboardCopyIcon />
+                                <button
+                                    id="passCopyBtn"
+                                    class="flex_center relative"
+                                >
+                                    <ClipboardCopyIcon class="passCopyIcon visible" />
+                                    <CheckIcon class="passCopyIcon absolute invisible" />
                                 </button>
                             </div>
                         </div>
@@ -208,11 +218,30 @@ const [project] = ProjectsList.filter(
     const passCopyBtn = document.getElementById("passCopyBtn");
     const emailContent = document.getElementById("emailContent");
     const passContent = document.getElementById("passContent");
+    const emailCopyIcons = document.querySelectorAll(".emailCopyIcon");
+    const passCopyIcons = document.querySelectorAll(".passCopyIcon");
 
     emailCopyBtn?.addEventListener("click", () => {
         navigator.clipboard.writeText(emailContent?.textContent);
+
+        emailCopyIcons[0].classList.replace("visible", "invisible");
+        emailCopyIcons[1].classList.replace("invisible", "visible");
+
+        setTimeout(() => {
+            emailCopyIcons[0].classList.replace("invisible", "visible");
+            emailCopyIcons[1].classList.replace("visible", "invisible");
+        }, 2000);
     });
+
     passCopyBtn?.addEventListener("click", () => {
         navigator.clipboard.writeText(passContent?.textContent);
+
+        passCopyIcons[0].classList.replace("visible", "invisible");
+        passCopyIcons[1].classList.replace("invisible", "visible");
+
+        setTimeout(() => {
+            passCopyIcons[0].classList.replace("invisible", "visible");
+            passCopyIcons[1].classList.replace("visible", "invisible");
+        }, 2000);
     });
 </script>

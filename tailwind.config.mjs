@@ -9,6 +9,7 @@ export default {
 			},
 			colors: {
 				background: "var(--base)",
+				backgroundLite: "var(--baseLite)",
 				foreground: "var(--text)",
 				primary: "var(--primary)",
 				secondary: "var(--secondary)",
