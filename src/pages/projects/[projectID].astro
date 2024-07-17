@@ -55,7 +55,9 @@ const [project] = ProjectsList.filter(
             height={100}
             loading="eager"
         />
-        <h1 class="Fade_Up font-ubuntu text-[1.8em] tracking-[0.2em]">
+        <h1
+            class="Fade_Up font-ubuntu text-[1.6em] md:text-[1.8em] tracking-wider md:tracking-[0.2em] text-center"
+        >
             {project.Name}
         </h1>
 
@@ -76,7 +78,7 @@ const [project] = ProjectsList.filter(
             }
         </div>
 
-        <div class="flex_center gap-4">
+        <div class="flex_center gap-4 text-[1em]">
             <a
                 href={project.Source}
                 target="_blank"
@@ -89,8 +91,8 @@ const [project] = ProjectsList.filter(
                     stroke-width="0"
                     viewBox="0 0 16 16"
                     color="#fff"
-                    height="30"
-                    width="30"
+                    height="24"
+                    width="24"
                     xmlns="http://www.w3.org/2000/svg"
                     style="color: var(--heroSocialColor);"
                 >
@@ -117,7 +119,7 @@ const [project] = ProjectsList.filter(
         About the project.
     </h2>
     <div
-        class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-4 py-10"
+        class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10"
     >
         <Image
             src={project.Mockup}
@@ -129,8 +131,10 @@ const [project] = ProjectsList.filter(
         <div class="Fade_Up flex_center flex-col gap-4">
             {
                 project.Demo && (
-                    <div class="flex items-center flex-col lg:flex-row gap-4 w-[80%] lg:w-full p-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
-                        <h3 class="min-w-[10rem]">Demo Credentials :</h3>
+                    <div class="flex items-center flex-col 2xl:flex-row gap-4 w-full p-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
+                        <h3 class="min-w-max lg:self-start my-auto lg:pl-4">
+                            Demo Credentials :
+                        </h3>
 
                         <div class="flex justify-evenly w-full flex-col md:flex-row gap-2">
                             <div class="flex_center gap-4 bg-backgroundLite p-2 rounded-md">
@@ -165,7 +169,7 @@ const [project] = ProjectsList.filter(
                     </div>
                 )
             }
-            <p class="md:w-[80%] lg:w-full text-justify text-[1.1em]">
+            <p class="w-full text-justify text-[1.1em] mt-4 indent-12">
                 {project.Desc}
             </p>
         </div>
