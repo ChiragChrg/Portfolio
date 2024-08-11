@@ -20,7 +20,6 @@ const { projectID } = Astro.params;
 
 import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
-import { GithubIcon } from "../../assets/SVGs";
 import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
 import { CenterTitle, SectionTitle } from "../../components/UI";
 
@@ -115,7 +114,7 @@ const [project] = ProjectsList.filter(
         </div>
     </div>
 
-    <h2 class="Fade_Up font-ubuntu text-[1.5em] pb-3 w-full">
+    <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">
         About the project.
     </h2>
     <div
@@ -131,15 +130,13 @@ const [project] = ProjectsList.filter(
         <div class="Fade_Up flex_center flex-col gap-4">
             {
                 project.Demo && (
-                    <div class="flex items-center flex-col 2xl:flex-row gap-4 w-full p-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
-                        <h3 class="min-w-max lg:self-start my-auto lg:pl-4">
-                            Demo Credentials :
-                        </h3>
+                    <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
+                        <h3 class="min-w-max my-auto">Demo Credentials</h3>
 
                         <div class="flex justify-evenly w-full flex-col md:flex-row gap-2 text-[0.8em]">
-                            <div class="flex_center gap-4 bg-backgroundLite p-2 rounded-md">
-                                <span>Email : </span>
-                                <span id="emailContent">
+                            <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
+                                <span class="min-w-20 md:w-fit">Email : </span>
+                                <span id="emailContent" class="w-full">
                                     {project.Demo?.email}
                                 </span>
 
@@ -151,9 +148,11 @@ const [project] = ProjectsList.filter(
                                     <CheckIcon class="emailCopyIcon absolute invisible" />
                                 </button>
                             </div>
-                            <div class="flex_center gap-4 bg-backgroundLite p-2 rounded-md">
-                                <span>Password : </span>
-                                <span id="passContent">
+                            <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
+                                <span class="min-w-20 md:w-fit">
+                                    Password :{" "}
+                                </span>
+                                <span id="passContent" class="w-full">
                                     {project.Demo?.password}
                                 </span>
 
@@ -169,7 +168,8 @@ const [project] = ProjectsList.filter(
                     </div>
                 )
             }
-            <p class="w-full text-justify text-[1.1em] mt-4 indent-12">
+
+            <p class="w-full text-justify text-[1.1em] mt-4 px-4 indent-12">
                 {project.Desc}
             </p>
         </div>
@@ -177,15 +177,15 @@ const [project] = ProjectsList.filter(
 
     <SectionTitle title="Features" color="primary">
         <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-10 md:gap-y-0 md:mx-4"
+            class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4"
         >
             {
                 project.features.map((items) => (
-                    <div class="Fade_Up md:p-4 text-center md:text-start">
-                        <span class="font-ubuntu text-[1.125em] border-b-2 border-primaryLite">
-                            ⭐ {items.title} :
+                    <div class="Fade_Up p-2 md:p-4 text-center md:text-start flex flex-col gap-3 border border-primaryLiteAlt sm:border-transparent hover:border-primaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
+                        <span class="font-ubuntu text-[1.125em]">
+                            {items.title}
                         </span>
-                        <p class="md:pl-16 text-center md:text-justify">
+                        <p class="md:pl-8 text-center md:text-justify">
                             {items.description}
                         </p>
                     </div>
