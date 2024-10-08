@@ -6,7 +6,7 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  // output: "server",
   integrations: [preact(), tailwind(), compress()],
   // adapter: netlify()
 });
