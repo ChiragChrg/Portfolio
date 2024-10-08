@@ -7,6 +7,6 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
-  integrations: [preact(), tailwind(), compress()],
+  integrations: [preact(), tailwind(), compress({ SVG: false })],
   adapter: netlify()
 });
