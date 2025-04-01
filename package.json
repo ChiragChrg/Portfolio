@@ -18,19 +18,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^5.5.3",
-    "@astrojs/preact": "^3.5.3",
-    "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/netlify": "^6.2.5",
+    "@astrojs/preact": "^4.0.8",
+    "@astrojs/tailwind": "^6.0.2",
     "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
-    "astro": "^4.15.12",
-    "astro-compress": "^2.3.3",
-    "astro-font": "^0.1.81",
+    "astro": "^5.5.6",
+    "astro-compress": "^2.3.7",
+    "astro-font": "^1.0.0",
     "astro-seo": "^0.8.4",
-    "gsap": "^3.12.5",
-    "lucide-preact": "^0.451.0",
-    "preact": "^10.24.2",
+    "gsap": "^3.12.7",
+    "lucide-preact": "^0.486.0",
+    "preact": "^10.26.4",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2"
+    "typescript": "^5.8.2"
   }
 }
