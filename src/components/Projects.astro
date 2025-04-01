@@ -38,7 +38,7 @@ const { ProjectsList } = await ProjectInfo;
                                     alt={`Project_ScreenShot_${project.Name}`}
                                     widths={[346, project.Shot.width]}
                                     sizes={`(max-width: 720px) 346px, ${project.Shot.width}px`}
-                                    loading="eager"
+                                    loading="lazy"
                                 />
                                 <Image
                                     class="absolute left-6 bottom-6"
@@ -46,7 +46,7 @@ const { ProjectsList } = await ProjectInfo;
                                     alt={`Project_Logo_${project.Name}`}
                                     width={project.LogoSize}
                                     height={project.LogoSize}
-                                    loading="eager"
+                                    loading="lazy"
                                 />
                             </a>
                             <div class="w-full text-[0.95em] px-4">
