@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Avatar_180 from "../Avatar_180.webp";
-import Avatar_250 from "../Avatar_250.webp";
 ---
 
 <section
@@ -168,8 +167,7 @@ import Avatar_250 from "../Avatar_250.webp";
                 alt="Hero_Avatar"
                 class="object-cover"
                 width="250"
-                height="180"
-                srcset={`${Avatar_180.src} 180w, ${Avatar_250.src} 250w`}
+                height="250"
                 sizes="(max-width: 640px) 180px, 250px"
                 loading="eager"
             />
