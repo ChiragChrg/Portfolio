@@ -10,38 +10,16 @@ Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of 
 ## Tools and TechStacks used :
 
 <div align="center">
-      <img
-        alt="AstroJS"
-        title="AstroJS"
-        width="40px"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/astrojs.svg" 
-        />
-      <img
-        alt="PreactJS"
-        title="PreactJS"
-        width="40px"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg"
-        />
-      <img
-        alt="TypeScript"
-        title="TypeScript"
-        width="40px"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/typescript.svg" />
-      <img
-        alt="TailwindCSS"
-        title="TailwindCSS"
-        width="40px"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/tailwind.svg" />
-      <img 
-        alt="GSAP"
-        title="GSAP"
-        width="40px"
-        src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" />
+      <a href="https://astro.build/" title="Astro"><img src="https://skillicons.dev/icons?i=astro" alt="Astro" width="40" height="40"/></a>&emsp;
+      <a href="https://preactjs.com/" title="Preact.js"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg" alt="Preact.js" width="40" height="40"/></a>&emsp;
+      <a href="https://www.typescriptlang.org/docs/" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" width="40" height="40"/></a>&emsp;
+      <a href="https://tailwindcss.com/docs/installation" title="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" width="40" height="40"/></a>&emsp;
+      <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40" height="40"/></a>&emsp;
 </div>
 
 ### Live Demo
 
-Check out a live demo of ARMS at https://chiragchrg.netlify.app/.
+Check out a live demo at https://chiragchrg.netlify.app/.
 
 ### LightHouse Audit
 ![LightHouse Audit Preview](public/LightHouse_Audit.jpg)
