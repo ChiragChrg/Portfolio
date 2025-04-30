@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import preact from "@astrojs/preact";
-// import netlify from "@astrojs/netlify";
 import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
-  integrations: [preact(), tailwind(), compress()],
-  // adapter: netlify()
+  integrations: [preact(), compress()],
+  vite: {
+    plugins: [tailwindcss()]
+  },
 });

@@ -3,15 +3,18 @@ import { Download } from "lucide-preact";
 // import ThemeButton from "./ThemeButton.astro";
 ---
 
-<header id="header" class="hidden lg:block sticky top-0 z-50">
+<header
+    id="header"
+    class="hidden lg:block sticky top-0 max-w-[1800px] mx-auto z-50"
+>
     <div
-        class="flex justify-between items-center w-full px-6 py-2 bg-headerGradient backdrop-blur-[2px]"
+        class="flex justify-between items-center w-full px-6 py-2 headerGradient backdrop-blur-[2px]"
     >
         <a href="#home" class="Fade_Down font-satisfy font-bold text-[2em]">
             <span class="gradientText w-fit">Portfolio.</span>
         </a>
 
-        <nav class="Header_Nav flex gap-6">
+        <nav class="Header_Nav relative tracking-wide flex gap-6">
             <a class="Fade_Down" href="#about">ABOUT</a>
             <a class="Fade_Down" href="#skills">SKILLS</a>
             <a class="Fade_Down" href="#projects">PROJECTS</a>
@@ -22,7 +25,7 @@ import { Download } from "lucide-preact";
             <!-- <ThemeButton className="Fade_Down" /> -->
 
             <a
-                class="Fade_Down Header_ActionBtn"
+                class="Fade_Down Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
                 href="/Chirag Resume.pdf"
                 target="_blank"
             >
