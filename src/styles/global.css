@@ -121,12 +121,12 @@
     --color-primary: hsl(var(--primary));
     --color-secondary: hsl(var(--secondary));
     --color-mixColor: hsl(var(--mixColor));
-    --color-primaryLite: hsl(var(--primaryLite));
-    --color-primaryLiteAlt: hsl(var(--primaryLiteAlt));
-    --color-secondaryLite: hsl(var(--secondaryLite));
-    --color-secondaryLiteAlt: hsl(var(--secondaryLiteAlt));
-    --color-footer: hsl(var(--footer));
-    --color-contactSocialColor: hsl(var(--contactSocialColor));
+    --color-primaryLite: var(--primaryLite);
+    --color-primaryLiteAlt: var(--primaryLiteAlt);
+    --color-secondaryLite: var(--secondaryLite);
+    --color-secondaryLiteAlt: var(--secondaryLiteAlt);
+    --color-footer: var(--footer);
+    --color-contactSocialColor: var(--contactSocialColor);
 
     --animate-ripple: ripple 1s infinite;
     --animate-orbit: orbit 6s linear infinite;
