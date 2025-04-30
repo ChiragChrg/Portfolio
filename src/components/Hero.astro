@@ -6,7 +6,7 @@ import Avatar_250 from "../Avatar_250.webp";
 
 <section
     id="Hero"
-    class="w-full h-[calc(100vh-4rem)] px-6 py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
+    class="w-full h-[calc(100vh-4rem)] py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
 >
     <!-- Hero Intro Info -->
     <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
@@ -161,12 +161,13 @@ import Avatar_250 from "../Avatar_250.webp";
         class="Hero_Orbit relative flex_center w-[360px] lg:w-[500px] aspect-square"
     >
         <div
-            class="Spring_Up flex_center w-[50%] aspect-square rounded-full z-10"
+            id="avatarImage"
+            class="flex_center w-[250px] aspect-square rounded-full z-10"
         >
             <Image
                 src={Avatar_180}
                 alt="Hero_Avatar"
-                class="object-cover"
+                class="object-cover w-full h-full rounded-full"
                 width="250"
                 height="180"
                 srcset={`${Avatar_180.src} 180w, ${Avatar_250.src} 250w`}

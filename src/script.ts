@@ -88,13 +88,55 @@ const transitions = {
     }
 }
 
+// Hero Orbit Spring Config
+const avatar = document.querySelector('#avatarImage') as HTMLElement;
+const trails = [
+    document.querySelector('.Trail1'),
+    document.querySelector('.Trail2'),
+    document.querySelector('.Trail3'),
+    document.querySelector('.Trail4')
+] as HTMLElement[];
+const allSpringUp = [avatar, ...trails];
+
 // Hero Orbit Spring Animation
-ScrollTrigger.batch(".Spring_Up", {
+ScrollTrigger.create({
+    trigger: ".Hero_Orbit",
     start: "top bottom",
-    onEnter: elements => {
-        gsap.fromTo(elements, transitions.SpringUp.from, transitions.SpringUp.to);
-    },
-    once: true
+    once: true,
+    onEnter: () => {
+        gsap.fromTo(
+            allSpringUp,
+            { opacity: 0, scale: 0.75, rotation: 0 },
+            {
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                duration: 4.25,
+                delay: 1.25,
+                ease: "elastic.out(0.8, 0.2)",
+                stagger: 0.15,
+                onStart: function () {
+                    this.targets().forEach((el: HTMLElement, i: number) => {
+                        if (i === 0) return; // skip avatar for rotation
+
+                        const trailConfig: { duration: number; direction: number }[] = [
+                            { duration: 6, direction: 1 },
+                            { duration: 8, direction: -1 },
+                            { duration: 10, direction: 1 },
+                            { duration: 12, direction: -1 }
+                        ];
+                        const { duration, direction } = trailConfig[i - 1];
+                        gsap.to(el, {
+                            rotation: `+=${360 * direction}`,
+                            duration,
+                            repeat: -1,
+                            ease: "linear"
+                        });
+                    });
+                }
+            }
+        );
+    }
 });
 
 // Stagger Animation
