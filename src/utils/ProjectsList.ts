@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GoogleCloud, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
 } from "../assets/Icons"
 
 import {
@@ -125,7 +125,7 @@ const TechInfo = {
     GDrive: {
         title: "Google Drive API",
         description: "RESTful API for integrating Google Drive functionalities such as file storage and synchronization into applications.",
-        icon: GdriveIcon
+        icon: GoogleCloud
     },
     SocketIO: {
         title: "Socket.IO",
