@@ -55,3 +55,7 @@ Follow these steps to run the project locally:
 - **Interactive Animations**: Powered by GSAP for smooth transitions.
 - **SEO Friendly**: Enhanced visibility with Astro SEO integration.
 - **Dynamic Components**: Utilizes Preact for modular and reusable UI elements.
+
+## 📄 License
+
+This portfolio is licensed under [Creative Commons BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/).
