@@ -60,4 +60,5 @@ Follow these steps to run the project locally:
 
 ## 📄 License
 
-This portfolio is licensed under [Creative Commons BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/).
+This project is licensed under the [MIT License](LICENSE).  
+You are free to use, modify, and share this project, as long as you give proper credit.
