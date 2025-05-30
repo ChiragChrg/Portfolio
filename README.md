@@ -1,5 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/chiragchrg/deploys)
-[![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ##### Created : 09/04/2023
 
@@ -61,4 +61,6 @@ Follow these steps to run the project locally:
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).  
-You are free to use, modify, and share this project, as long as you give proper credit.
+You are free to use, modify, and share this project, as long as you include the original copyright.
+
+© 2025 Chirag — All rights reserved under MIT.
