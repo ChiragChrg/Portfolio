@@ -63,4 +63,4 @@ Follow these steps to run the project locally:
 This project is licensed under the [MIT License](LICENSE).  
 You are free to use, modify, and share this project, as long as you include the original copyright.
 
-© 2025 Chirag — All rights reserved under MIT.
+© 2025 ChiragChrg — All rights reserved under MIT.
