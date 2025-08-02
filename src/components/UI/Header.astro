@@ -71,19 +71,16 @@ import { Download } from "lucide-preact";
         }
     };
 
-    function throttle(func, limit) {
-        let throttling = false;
+    function debounce(func, delay) {
+        let timeoutId;
         return function () {
-            if (!throttling) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
                 func.apply(this, arguments);
-                throttling = true;
-                setTimeout(() => {
-                    throttling = false;
-                }, limit);
-            }
+            }, delay);
         };
     }
 
-    window.addEventListener("scroll", throttle(handleScroll, 100));
-    handleScroll(); // Initial call
+    window.addEventListener("scroll", debounce(handleScroll, 0));
+    handleScroll();
 </script>
