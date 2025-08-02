@@ -55,7 +55,8 @@ body:hover #cursorDot {
 }
 
 
-:has(a:hover, button:hover) #cursor {
+/* Expand cursor circles on hover */
+:has(a:hover, button:hover, [role="button"]:hover) #cursor {
     width: 4em;
     height: 4em;
     background: none;

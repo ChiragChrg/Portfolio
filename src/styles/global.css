@@ -285,6 +285,11 @@ html.lenis {
     opacity: 0;
     scale: 0.75;
 }
+.spring-element-performance {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
 
 /* Cursor */
 .Cursor-Main {

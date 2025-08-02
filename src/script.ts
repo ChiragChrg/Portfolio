@@ -3,6 +3,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 gsap.registerPlugin(ScrollTrigger);
 
+// Global GSAP performance settings
+gsap.config({
+    force3D: true,
+    nullTargetWarn: false
+});
+
+// Set default properties for smoother animations
+gsap.defaults({
+    ease: "power2.out",
+    duration: 1
+});
+
 const transitions = {
     SpringUp: {
         from: {
@@ -96,7 +108,9 @@ const trails = [
     document.querySelector('.Trail3'),
     document.querySelector('.Trail4')
 ] as HTMLElement[];
+
 const allSpringUp = [avatar, ...trails];
+allSpringUp.forEach(el => el.classList.add('spring-element-performance'));
 
 // Hero Orbit Spring Animation
 ScrollTrigger.create({
@@ -138,6 +152,106 @@ ScrollTrigger.create({
         );
     }
 });
+
+let isPressed = false;
+let isScalingDown = false;
+let pendingSpringUp = false;
+
+// Create CSS for performance
+gsap.set(allSpringUp, {
+    transformOrigin: "center center",
+    force3D: true
+});
+
+// Mouse and Touch Event Handlers for Spring Up Animation
+function onPressStart() {
+    if (isPressed) return;
+    isPressed = true;
+    isScalingDown = true;
+    pendingSpringUp = false;
+
+    gsap.to(allSpringUp, {
+        scale: 0.75,
+        duration: 0.15,
+        ease: "power2.out",
+        stagger: {
+            amount: 0.06,
+            ease: "power2.inOut"
+        },
+        onComplete: () => {
+            isScalingDown = false;
+            // If mouse was released during scale down, trigger spring up
+            if (pendingSpringUp) {
+                triggerSpringUp();
+            }
+        },
+        overwrite: "auto"
+    });
+}
+
+// Mouse and Touch Event Handlers for Spring Down Animation
+function onPressEnd() {
+    if (!isPressed) return;
+    isPressed = false;
+
+    if (isScalingDown) {
+        pendingSpringUp = true;
+    } else {
+        triggerSpringUp();
+    }
+}
+
+// Function to trigger the spring up animation
+function triggerSpringUp() {
+    pendingSpringUp = false;
+
+    gsap.to(allSpringUp, {
+        scale: 1,
+        duration: 4.25,
+        ease: "elastic.out(0.8, 0.2)",
+        stagger: 0.1,
+        overwrite: "auto",
+        onStart: function () {
+            this.targets().forEach((el: HTMLElement, i: number) => {
+                if (i === 0) return; // skip avatar for rotation
+
+                const trailConfig: { duration: number; direction: number }[] = [
+                    { duration: 6, direction: 1 },
+                    { duration: 8, direction: -1 },
+                    { duration: 10, direction: 1 },
+                    { duration: 12, direction: -1 }
+                ];
+                const { duration, direction } = trailConfig[i - 1];
+                gsap.to(el, {
+                    rotation: `+=${360 * direction}`,
+                    duration,
+                    repeat: -1,
+                    ease: "linear"
+                });
+            });
+        }
+    });
+}
+
+// Add event listeners to the avatar image for mouse and touch events
+const avatarImageElement = document.querySelector('#avatarImage');
+
+if (avatarImageElement) {
+    // Mouse events
+    avatarImageElement.addEventListener('mousedown', onPressStart, { passive: true });
+    avatarImageElement.addEventListener('mouseup', onPressEnd, { passive: true });
+    avatarImageElement.addEventListener('mouseleave', onPressEnd, { passive: true });
+
+    // Touch events for mobile
+    avatarImageElement.addEventListener('touchstart', onPressStart, { passive: true });
+    avatarImageElement.addEventListener('touchend', onPressEnd, { passive: true });
+    avatarImageElement.addEventListener('touchcancel', onPressEnd, { passive: true });
+
+    // Prevent context menu for better UX
+    avatarImageElement.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    });
+}
 
 // Stagger Animation
 ScrollTrigger.batch(".Fade_Stagger", {
