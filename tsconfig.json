@@ -1,7 +1,64 @@
 {
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.astro"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".astro"
+  ],
   "compilerOptions": {
+    // JSX Configuration for Preact
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
-  "extends": "astro/tsconfigs/strict"
+    "jsxImportSource": "preact",
+    // Path mapping for cleaner imports
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    },
+    // Additional TypeScript options for better development experience
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": true,
+    // Type checking improvements
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    // Modern module resolution
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "target": "ESNext",
+    // Astro-specific settings
+    "types": [
+      "astro/client"
+    ],
+    "noEmit": true,
+    "isolatedModules": true
+  }
 }
