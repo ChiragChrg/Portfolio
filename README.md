@@ -65,7 +65,7 @@ You may use, copy, modify, and distribute this project for any purpose, provided
 
 - Include the original copyright.
 - Retain the MIT license in all copies or substantial portions of the software.
-- Do **not** remove or alter the attribution text, © 2025 ChiragChrg, from the code or UI.
+- Visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
 
 Any use that removes visible attribution is a violation of the license terms.
 
