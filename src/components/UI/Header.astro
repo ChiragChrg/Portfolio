@@ -73,10 +73,10 @@ import { Download } from "lucide-preact";
 
     function debounce(func, delay) {
         let timeoutId;
-        return function () {
+        return function (...args) {
             clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
-                func.apply(this, arguments);
+                func.apply(this, args);
             }, delay);
         };
     }

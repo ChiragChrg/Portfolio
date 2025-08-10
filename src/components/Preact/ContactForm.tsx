@@ -54,8 +54,12 @@ const ContactForm = () => {
             NameRef.current.value = ""
             EmailRef.current.value = ""
             MessageRef.current.value = ""
-        } catch (error: { message: string } | any) {
-            setMailStatus({ status: false, message: error.message })
+        } catch (error) {
+            if (error instanceof Error) {
+                setMailStatus({ status: false, message: error.message })
+            } else {
+                setMailStatus({ status: false, message: "An unknown error occurred." })
+            }
         } finally {
             setTimeout(() => {
                 setMailStatus({ status: false, message: "" })

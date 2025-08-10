@@ -142,9 +142,9 @@ import { Download } from "lucide-preact";
 
     function throttle(func, limit) {
         let throttling = false;
-        return function () {
+        return function (...args) {
             if (!throttling) {
-                func.apply(this, arguments);
+                func.apply(this, args);
                 throttling = true;
                 setTimeout(() => {
                     throttling = false;
