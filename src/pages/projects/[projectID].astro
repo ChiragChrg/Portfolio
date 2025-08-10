@@ -25,8 +25,8 @@ import { CenterTitle, SectionTitle } from "../../components/UI";
 
 // Lazy loading ProjectInfo
 const ProjectInfo = import("../../utils/ProjectsList");
-const { ProjectsList } = await ProjectInfo;
-const [project] = ProjectsList.filter(
+const { PROJECTS_LIST } = await ProjectInfo;
+const [project] = PROJECTS_LIST.filter(
     (itm) => itm.Name.replaceAll(" ", "-").toLowerCase() === projectID,
 );
 ---

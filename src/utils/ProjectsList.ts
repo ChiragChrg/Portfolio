@@ -1,17 +1,23 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GoogleCloud, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GoogleCloud,
+    SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon,
+    AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon,
+    PrismaIcon
 } from "../assets/Icons"
 
 import {
-    NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
+    NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo,
+    PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
 } from "../assets/Logos"
 
 import {
-    NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
+    NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots,
+    PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
 } from "../assets/Shots"
 
 import {
-    ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
+    ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup,
+    XreconMockup, YoatubeMockup
 } from "../assets/Mockup"
 
 
@@ -23,7 +29,7 @@ type ProjectsListType = {
     Shot: ImageMetadata,
     Mockup: ImageMetadata,
     Theme: string,
-    Status: string,
+    Status: "completed" | "development",
     Link: string,
     Source: string,
     Demo?: {
@@ -44,10 +50,12 @@ type ProjectsListType = {
     versions: {
         title: string,
         version: string
+        link: string
     }[]
 }[]
 
-// -- PROJECTS TEMPLATE --
+
+//#region Template
 // {
 //     Name: "TITLE",
 //     ShortDesc: "SHORT_DESCRIPTION",
@@ -75,127 +83,136 @@ type ProjectsListType = {
 //         version: "VERSION_NO" 
 //     }]
 // },
+//#endregion Template
 
-const TechInfo = {
-    HTML: {
-        title: "HTML",
-        description: "HyperText Markup Language for creating the structure of web pages.",
-        icon: HtmlIcon
+//#region Tech Stack
+const TECH_STACK = {
+    Astro: {
+        title: "Astro",
+        description: "Frontend framework for streamlined development, integrating seamlessly with popular tools to create fast and modern websites with minimal configuration overhead.",
+        icon: AstroIcon
     },
     CSS: {
         title: "CSS",
         description: "Cascading Style Sheets for styling the presentation of HTML documents.",
         icon: CssIcon
     },
-    JavaScript: {
-        title: "JavaScript",
-        description: "High-level scripting language for adding interactivity to web pages.",
-        icon: JsIcon
+    D3: {
+        title: "D3.js",
+        description: "Versatile JavaScript library for data visualization, enabling developers to create dynamic, interactive graphics and charts by binding data to DOM elements.",
+        icon: D3JsIcon
     },
-    React: {
-        title: "React",
-        description: "JavaScript library for building user interfaces with reusable components.",
-        icon: ReactIcon
-    },
-    Node: {
-        title: "Node.js",
-        description: "JavaScript runtime for server-side applications, enabling scalable and event-driven architecture.",
-        icon: NodeIcon
-    },
-    TypeScript: {
-        title: "TypeScript",
-        description: "A superset of JavaScript adding static typing for building large-scale applications with enhanced maintainability and tooling support.",
-        icon: TsIcon
-    },
-    Next: {
-        title: "Next.js",
-        description: "A React framework for server-side rendering, static site generation, and routing, offering improved performance and SEO optimization.",
-        icon: NextIcon
-    },
-    MySQL: {
-        title: "MySQL",
-        description: "Open-source relational database management system for storing and managing structured data.",
-        icon: MysqlIcon
-    },
-    MongoDB: {
-        title: "MongoDB",
-        description: "NoSQL database offering flexibility and scalability for storing and managing data efficiently.",
-        icon: MongoIcon
+    EdgeStore: {
+        title: "EdgeStore",
+        description: "EdgeStore is an open-source file storage service, designed for scalability and performance, with efficient updates and minimal API.",
+        icon: EdgeStoreIcon
     },
     GDrive: {
         title: "Google Drive API",
         description: "RESTful API for integrating Google Drive functionalities such as file storage and synchronization into applications.",
         icon: GoogleCloud
     },
-    SocketIO: {
-        title: "Socket.IO",
-        description: "Real-time bidirectional communication library for building interactive web applications.",
-        icon: SocketIoIcon
+    HTML: {
+        title: "HTML",
+        description: "HyperText Markup Language for creating the structure of web pages.",
+        icon: HtmlIcon
     },
-    RESTAPI: {
-        title: "REST API",
-        description: "Architectural style for designing networked applications with standardized HTTP operations.",
-        icon: RestApiIcon
+    JavaScript: {
+        title: "JavaScript",
+        description: "High-level scripting language for adding interactivity to web pages.",
+        icon: JsIcon
     },
-    PHP: {
-        title: "PHP",
-        description: "Server-side scripting language for building dynamic web applications.",
-        icon: PhpIcon
+    MongoDB: {
+        title: "MongoDB",
+        description: "NoSQL database offering flexibility and scalability for storing and managing data efficiently.",
+        icon: MongoIcon
     },
-    Vite: {
-        title: "Vite",
-        description: "Modern build tooling for web development with rapid startup and hot module replacement.",
-        icon: ViteIcon
-    },
-    NextAuth: {
-        title: "NextAuth.js",
-        description: "Authentication library designed specifically for Next.js applications, providing robust authentication features and seamless integration.",
-        icon: NextAuthIcon
-    },
-    Redux: {
-        title: "Redux",
-        description: "Predictable state management library for JavaScript applications, enabling developers to write consistent, scalable code with ease.",
-        icon: ReduxIcon
-    },
-    TailwindCSS: {
-        title: "Tailwind CSS",
-        description: "A utility-first CSS framework providing pre-designed, atomic-level utility classes for rapid UI development with minimal CSS code.",
-        icon: TailwindIcon
-    },
-    Zustand: {
-        title: "Zustand",
-        description: "Tiny, fast, and scalable state management for React applications, providing a simple and intuitive API.",
-        icon: ZustandIcon
-    },
-    Astro: {
-        title: "Astro",
-        description: "Frontend framework for streamlined development, integrating seamlessly with popular tools to create fast and modern websites with minimal configuration overhead.",
-        icon: AstroIcon
+    MySQL: {
+        title: "MySQL",
+        description: "Open-source relational database management system for storing and managing structured data.",
+        icon: MysqlIcon
     },
     NanoStores: {
         title: "NanoStores",
         description: "Lightweight state management library for JavaScript applications, designed for simplicity and performance to simplify state management and improve application responsiveness.",
         icon: NanostoresIcon
     },
-    D3: {
-        title: "D3.js",
-        description: "Versatile JavaScript library for data visualization, enabling developers to create dynamic, interactive graphics and charts by binding data to DOM elements.",
-        icon: D3JsIcon
+    NextAuth: {
+        title: "NextAuth.js",
+        description: "Authentication library designed specifically for Next.js applications, providing robust authentication features and seamless integration.",
+        icon: NextAuthIcon
+    },
+    NextJS: {
+        title: "Next.js",
+        description: "A React framework for server-side rendering, static site generation, and routing, offering improved performance and SEO optimization.",
+        icon: NextIcon
+    },
+    NodeJS: {
+        title: "Node.js",
+        description: "JavaScript runtime for server-side applications, enabling scalable and event-driven architecture.",
+        icon: NodeIcon
+    },
+    PHP: {
+        title: "PHP",
+        description: "Server-side scripting language for building dynamic web applications.",
+        icon: PhpIcon
+    },
+    Prisma: {
+        title: "Prisma",
+        description: "Next-generation ORM for Node.js and TypeScript, facilitating seamless database access and simplified schema management.",
+        icon: PrismaIcon,
+    },
+    ReactJS: {
+        title: "React",
+        description: "JavaScript library for building user interfaces with reusable components.",
+        icon: ReactIcon
     },
     ReactQuery: {
         title: "React Query",
         description: "React library for managing, caching, and synchronizing server state in web applications, providing a powerful and intuitive API for fetching and updating data.",
         icon: ReactQueryIcon
     },
-    EdgeStore: {
-        title: "EdgeStore",
-        description: "EdgeStore is an open-source file storage service, designed for scalability and performance, with efficient updates and minimal API.",
-        icon: EdgeStoreIcon
-    }
+    RESTAPI: {
+        title: "REST API",
+        description: "Architectural style for designing networked applications with standardized HTTP operations.",
+        icon: RestApiIcon
+    },
+    Redux: {
+        title: "Redux",
+        description: "Predictable state management library for JavaScript applications, enabling developers to write consistent, scalable code with ease.",
+        icon: ReduxIcon
+    },
+    SocketIO: {
+        title: "Socket.IO",
+        description: "Real-time bidirectional communication library for building interactive web applications.",
+        icon: SocketIoIcon
+    },
+    TailwindCSS: {
+        title: "Tailwind CSS",
+        description: "A utility-first CSS framework providing pre-designed, atomic-level utility classes for rapid UI development with minimal CSS code.",
+        icon: TailwindIcon
+    },
+    TypeScript: {
+        title: "TypeScript",
+        description: "A superset of JavaScript adding static typing for building large-scale applications with enhanced maintainability and tooling support.",
+        icon: TsIcon
+    },
+    Vite: {
+        title: "Vite",
+        description: "Modern build tooling for web development with rapid startup and hot module replacement.",
+        icon: ViteIcon
+    },
+    Zustand: {
+        title: "Zustand",
+        description: "Tiny, fast, and scalable state management for React applications, providing a simple and intuitive API.",
+        icon: ZustandIcon
+    },
 };
 
-// Common Features List
-const FeatureList = {
+//#endregion Tech Stack
+
+//#region Features
+const FEATURES = {
     Responsive: {
         title: "Responsive Design",
         description: "Enjoy a seamless experience across devices with a responsive design that adapts to various screen sizes and orientations."
@@ -205,8 +222,68 @@ const FeatureList = {
         description: "Crafted with SEO best practices, ensuring optimal visibility on search engines. From keyword-rich content to streamlined meta tags and efficient site architecture."
     }
 }
+//#endregion Features
 
-export const ProjectsList: ProjectsListType = [
+//#region Projects List
+export const PROJECTS_LIST: ProjectsListType = [
+    {
+        Name: "ARMS v4",
+        ShortDesc: "Next-generation academic resource platform for frictionless student access and robust faculty management.",
+        Desc: "ARMS v4 (Academic Resource Management System) is a modern educational platform enabling students to effortlessly browse and download subject-specific study materials uploaded by faculty. With advanced architecture powered by Redux Toolkit, Prisma ORM, and NextAuth, ARMS v4 delivers a fast, secure, and scalable experience. Anonymous login, structured resource management, and integrated UI streamlining make it ideal for institutions of any size. Building on previous versions—now faster, more intuitive, and developer-friendly.",
+        Logo: ArmsLogo,
+        Shot: Armsv3Shots,
+        Mockup: ARMSv3Mockup,
+        Theme: "#FFF",
+        Status: "completed",
+        Link: "https://arms-v4.vercel.app/",
+        Source: "https://github.com/ChiragChrg/arms-v4",
+        Tech: [
+            TECH_STACK.NextJS,
+            TECH_STACK.TypeScript,
+            TECH_STACK.TailwindCSS,
+            TECH_STACK.Redux,
+            TECH_STACK.Prisma,
+            TECH_STACK.MongoDB,
+            TECH_STACK.NextAuth,
+            TECH_STACK.EdgeStore,
+        ],
+        features: [
+            {
+                title: "Anonymous Student Access",
+                description: "Effortless anonymous login for students to browse and download study materials."
+            },
+            {
+                title: "Role-based Secure Authentication",
+                description: "NextAuth with Prisma adapter enables secure access for faculty and admin accounts."
+            },
+            {
+                title: "Centralized Resource Management",
+                description: "Faculties can efficiently upload, organize, and manage academic PDF documents."
+            },
+            {
+                title: "Bulk Upload & Fast Download",
+                description: "Quick PDF bulk uploads for faculty and rapid download for students."
+            },
+            {
+                title: "Optimistic & Cached Data Fetching",
+                description: "Redux Toolkit Query enables fast UI, tag-based caching, and real-time updates."
+            },
+            {
+                title: "Scalable & Consistent Backend",
+                description: "Prisma ORM powers a scalable and reliable database schema."
+            },
+            FEATURES.Responsive,
+            FEATURES.SEO,
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: [
+            { title: "ARMS v4", version: "4", link: "https://arms-v4.vercel.app/" },
+            { title: "ARMS v3", version: "3", link: "https://arms-v3.vercel.app/" },
+            { title: "ARMS v2", version: "2", link: "https://armss.netlify.app/" },
+            { title: "ARMS v1", version: "1", link: "https://github.com/ChiragChrg/arms-php" },
+        ]
+    },
     {
         Name: "ARMS v3",
         ShortDesc: "An educational platform designed to empower students with easy access to study materials. Students can browse & download PDFs files.",
@@ -218,7 +295,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://arms-v3.vercel.app/",
         Source: "https://github.com/ChiragChrg/arms-v3",
-        Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.ReactQuery, TechInfo.Zustand, TechInfo.MongoDB, TechInfo.NextAuth, TechInfo.EdgeStore],
+        Tech: [TECH_STACK.NextJS, TECH_STACK.TypeScript, TECH_STACK.TailwindCSS, TECH_STACK.ReactQuery, TECH_STACK.Zustand, TECH_STACK.MongoDB, TECH_STACK.NextAuth, TECH_STACK.EdgeStore],
         features: [
             {
                 title: "Anonymous Login",
@@ -240,15 +317,16 @@ export const ProjectsList: ProjectsListType = [
                 title: "Efficient Data Management",
                 description: "Automatically caches query results, reduces redundant network requests, and improves overall application performance using Tanstack Query."
             },
-            FeatureList.Responsive,
-            FeatureList.SEO
+            FEATURES.Responsive,
+            FEATURES.SEO
         ],
         hideProject: false,
         LogoSize: 50,
         versions: [
-            { title: "ARMS v3", version: "3" },
-            { title: "ARMS v2", version: "2" },
-            { title: "ARMS v1", version: "1" },
+            { title: "ARMS v4", version: "4", link: "https://arms-v4.vercel.app/" },
+            { title: "ARMS v3", version: "3", link: "https://arms-v3.vercel.app/" },
+            { title: "ARMS v2", version: "2", link: "https://armss.netlify.app/" },
+            { title: "ARMS v1", version: "1", link: "https://github.com/ChiragChrg/arms-php" },
         ]
     },
     {
@@ -262,10 +340,10 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://vortexa.netlify.app/",
         Source: "https://github.com/ChiragChrg/vortexa",
-        Tech: [TechInfo.Astro, TechInfo.React, TechInfo.TypeScript, TechInfo.TailwindCSS, TechInfo.D3, TechInfo.NanoStores, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.Astro, TECH_STACK.ReactJS, TECH_STACK.TypeScript, TECH_STACK.TailwindCSS, TECH_STACK.D3, TECH_STACK.NanoStores, TECH_STACK.RESTAPI],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
             {
                 title: "Dynamic Background Images",
                 description: "Experience the weather firsthand with dynamic background images that change based on the current weather conditions, creating an immersive atmosphere."
@@ -298,8 +376,8 @@ export const ProjectsList: ProjectsListType = [
         hideProject: false,
         LogoSize: 50,
         versions: [
-            { title: "Vortexa", version: "2" },
-            { title: "CliMate", version: "1" },
+            { title: "Vortexa", version: "2", link: "https://vortexa.netlify.app/" },
+            { title: "CliMate", version: "1", link: "https://klimate.netlify.app/" },
         ]
     },
     {
@@ -313,10 +391,10 @@ export const ProjectsList: ProjectsListType = [
         Status: "development",
         Link: "https://nextmart.vercel.app/",
         Source: "https://github.com/ChiragChrg/nextmart",
-        Tech: [TechInfo.Next, TechInfo.TypeScript, TechInfo.MongoDB, TechInfo.NextAuth, TechInfo.Redux, TechInfo.TailwindCSS],
+        Tech: [TECH_STACK.NextJS, TECH_STACK.TypeScript, TECH_STACK.MongoDB, TECH_STACK.NextAuth, TECH_STACK.Redux, TECH_STACK.TailwindCSS],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 40,
@@ -333,7 +411,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://armss.netlify.app/",
         Source: "https://github.com/ChiragChrg/ARMS",
-        Tech: [TechInfo.Vite, TechInfo.React, TechInfo.Node, TechInfo.MongoDB, TechInfo.GDrive],
+        Tech: [TECH_STACK.Vite, TECH_STACK.ReactJS, TECH_STACK.NodeJS, TECH_STACK.MongoDB, TECH_STACK.GDrive],
         features: [
             {
                 title: "Anonymous Login",
@@ -347,15 +425,16 @@ export const ProjectsList: ProjectsListType = [
                 title: "Document Download",
                 description: "Easily download PDF documents for offline access."
             },
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
         versions: [
-            { title: "ARMS v3", version: "3" },
-            { title: "ARMS v2", version: "2" },
-            { title: "ARMS v1", version: "1" },
+            { title: "ARMS v4", version: "4", link: "https://arms-v4.vercel.app/" },
+            { title: "ARMS v3", version: "3", link: "https://arms-v3.vercel.app/" },
+            { title: "ARMS v2", version: "2", link: "https://armss.netlify.app/" },
+            { title: "ARMS v1", version: "1", link: "https://github.com/ChiragChrg/arms-php" },
         ]
     },
     {
@@ -370,7 +449,7 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://xrecon.netlify.app/",
         Source: "https://github.com/ChiragChrg/xrecon",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [TechInfo.Vite, TechInfo.React, TechInfo.Node, TechInfo.MongoDB, TechInfo.SocketIO],
+        Tech: [TECH_STACK.Vite, TECH_STACK.ReactJS, TECH_STACK.NodeJS, TECH_STACK.MongoDB, TECH_STACK.SocketIO],
         features: [
             {
                 title: "Real-Time Chat",
@@ -388,8 +467,8 @@ export const ProjectsList: ProjectsListType = [
                 title: "Emojis and Reactions",
                 description: "Express yourself with a wide range of emojis and reactions. Add fun and personality to your messages with animated emojis and customizable reactions."
             },
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -406,7 +485,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://yoatube.netlify.app/",
         Source: "https://github.com/ChiragChrg/yoatube",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.ReactJS, TECH_STACK.RESTAPI],
         features: [
             {
                 title: "Video Streaming",
@@ -416,8 +495,8 @@ export const ProjectsList: ProjectsListType = [
                 title: "Search and Discovery",
                 description: "Discover new content with powerful search and recommendation algorithms. Find videos based on your interests and preferences."
             },
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -435,7 +514,7 @@ export const ProjectsList: ProjectsListType = [
         Link: "https://srinivas-exam-manager.netlify.app/",
         Source: "https://github.com/ChiragChrg/srinivas-exam-manager",
         Demo: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.Node, TechInfo.MySQL],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.ReactJS, TECH_STACK.NodeJS, TECH_STACK.MySQL],
         features: [
             {
                 title: "Dynamic Hall Ticket Generation",
@@ -461,8 +540,8 @@ export const ProjectsList: ProjectsListType = [
                 title: "Notification System",
                 description: "Send automated notifications to students and faculty about exam-related events. Notify about exam schedules, hall ticket availability, and result announcements."
             },
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -479,10 +558,10 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://pikture.netlify.app/",
         Source: "https://github.com/ChiragChrg/pikture",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.React, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.ReactJS, TECH_STACK.RESTAPI],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -499,7 +578,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://daysbeyond.netlify.app/",
         Source: "https://github.com/ChiragChrg/DaysBeyond",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.RESTAPI],
         features: [
             {
                 title: "Accurate Time Progress",
@@ -517,8 +596,8 @@ export const ProjectsList: ProjectsListType = [
                 title: "Color of the Day",
                 description: "Show the color associated with the current day. Use color psychology to represent the mood or energy of the day."
             },
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: false,
         LogoSize: 55,
@@ -535,17 +614,18 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "http://arms-v1.infinityfreeapp.com/",
         Source: "https://github.com/ChiragChrg/ARMS-PHP",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.PHP, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.PHP, TECH_STACK.RESTAPI],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
         versions: [
-            { title: "ARMS v3", version: "3" },
-            { title: "ARMS v2", version: "2" },
-            { title: "ARMS v1", version: "1" },
+            { title: "ARMS v4", version: "4", link: "https://arms-v4.vercel.app/" },
+            { title: "ARMS v3", version: "3", link: "https://arms-v3.vercel.app/" },
+            { title: "ARMS v2", version: "2", link: "https://armss.netlify.app/" },
+            { title: "ARMS v1", version: "1", link: "https://github.com/ChiragChrg/arms-php" },
         ]
     },
     {
@@ -559,10 +639,10 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://filmstack.netlify.app/",
         Source: "https://github.com/ChiragChrg/FilmStack",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.RESTAPI],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -579,10 +659,10 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://covidtrax.netlify.app/",
         Source: "https://github.com/ChiragChrg/CovidTrax",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.RESTAPI],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
@@ -599,16 +679,19 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://klimate.netlify.app/",
         Source: "https://github.com/ChiragChrg/CliMate",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript, TechInfo.RESTAPI],
+        Tech: [TECH_STACK.HTML, TECH_STACK.CSS, TECH_STACK.JavaScript, TECH_STACK.RESTAPI],
         features: [
-            FeatureList.Responsive,
-            FeatureList.SEO,
+            FEATURES.Responsive,
+            FEATURES.SEO,
         ],
         hideProject: true,
         LogoSize: 55,
         versions: [
-            { title: "Vortexa", version: "2" },
-            { title: "CliMate", version: "1" },
+            { title: "ARMS v4", version: "4", link: "https://arms-v4.vercel.app/" },
+            { title: "ARMS v3", version: "3", link: "https://arms-v3.vercel.app/" },
+            { title: "ARMS v2", version: "2", link: "https://armss.netlify.app/" },
+            { title: "ARMS v1", version: "1", link: "https://github.com/ChiragChrg/arms-php" },
         ]
     }
 ]
+//#endregion Projects List
