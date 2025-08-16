@@ -1,50 +1,65 @@
 import {
+    // Web & Programming Languages
     HtmlIcon,
     CssIcon,
     JsIcon,
     TsIcon,
+    PythonIcon,
+    CppIcon,
+    JavaIcon,
+    RIcon,
+    CSharpIcon,
+
+    // Front-End Frameworks & Libraries
     ReactIcon,
     NextIcon,
     AstroIcon,
     TailwindIcon,
-    ReactQueryIcon,
-    ReduxIcon,
-    ZustandIcon,
+    PreactIcon,
     D3JsIcon,
-    NanostoresIcon,
+    GSAPIcon,
+    MotionIcon,
+
+    // Back-End Frameworks & Libraries
     NodeIcon,
     ExpressIcon,
-    MongoIcon,
-    FirebaseIcon,
-    EdgeStoreIcon,
-    MysqlIcon,
     PhpIcon,
-    RestApiIcon,
+    FirebaseIcon,
     GoogleCloud,
     NextAuthIcon,
-    PythonIcon,
-    CppIcon,
-    JavaIcon,
-    ViteIcon,
-    SocketIoIcon,
-    NpmIcon,
-    GitIcon,
-    NetlifyIcon,
-    VercelIcon,
-    VsCodeIcon,
-    FigmaIcon,
-    PreactIcon,
-    GSAPIcon,
-    FramerMotionIcon,
-    BunIcon,
-    RIcon,
+    EdgeStoreIcon,
     DotnetIcon,
-    CSharpIcon,
+    NatsIcon,
+
+    // Databases & Libraries
+    MongoIcon,
+    MysqlIcon,
+    RestApiIcon,
     PostgresIcon,
     PrismaIcon,
-    VisualStudioIcon,
+
+    // State Management & Utilities
+    ReduxIcon,
+    ZustandIcon,
+    NanostoresIcon,
+    ReactQueryIcon,
+
+    // Platforms & Hosting
+    NetlifyIcon,
+    VercelIcon,
     GithubIcon,
-    AndroidStudioIcon
+    RenderIcon,
+
+    // Tools & Software
+    NpmIcon,
+    BunIcon,
+    GitIcon,
+    VsCodeIcon,
+    VisualStudioIcon,
+    AndroidStudioIcon,
+    FigmaIcon,
+    ViteIcon,
+    SocketIoIcon
 } from "../assets/Icons";
 
 // Web Development Stack
@@ -69,7 +84,7 @@ export const FrontendLibrariesStack = [
     { name: "Preact.js", icon: PreactIcon, link: "https://preactjs.com/" },
     { name: "D3.js", icon: D3JsIcon, link: "https://d3js.org/" },
     { name: "GSAP", icon: GSAPIcon, link: "https://gsap.com/" },
-    { name: "Motion", icon: FramerMotionIcon, link: "https://www.framer.com/motion/" },
+    { name: "Motion", icon: MotionIcon, link: "https://www.framer.com/motion/" },
 ];
 
 // Backend Frameworks and Libraries
@@ -83,6 +98,7 @@ export const BackendLibrariesStack = [
     { name: "Auth.js", icon: NextAuthIcon, link: "https://authjs.dev/" },
     { name: "EdgeStore", icon: EdgeStoreIcon, link: "https://edgestore.dev/" },
     { name: "REST API", icon: RestApiIcon, link: "https://restfulapi.net/" },
+    { name: "NATS", icon: NatsIcon, link: "https://nats.io/" }
 ];
 
 // Database and Storage
@@ -107,6 +123,7 @@ export const PlatformsStack = [
     { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
     { name: "Netlify", icon: NetlifyIcon, link: "https://www.netlify.com/" },
     { name: "Vercel", icon: VercelIcon, link: "https://vercel.com/" },
+    { name: "Render", icon: RenderIcon, link: "https://render.com/" }
 ];
 
 // Tools and IDEs
@@ -119,5 +136,5 @@ export const ToolsStack = [
     { name: "Android Studio", icon: AndroidStudioIcon, link: "https://developer.android.com/studio" },
     { name: "Figma", icon: FigmaIcon, link: "https://www.figma.com/" },
     { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
-    { name: "Socket.io", icon: SocketIoIcon, link: "https://socket.io/" },
+    { name: "Socket.io", icon: SocketIoIcon, link: "https://socket.io/" }
 ];
