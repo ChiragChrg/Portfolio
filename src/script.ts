@@ -1,8 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
-gsap.registerPlugin(ScrollTrigger);
 
+//#region GSAP Config
+gsap.registerPlugin(ScrollTrigger);
 // Global GSAP performance settings
 gsap.config({
     force3D: true,
@@ -15,6 +16,7 @@ gsap.defaults({
     duration: 1
 });
 
+//#region Transitions Config
 const transitions = {
     SpringUp: {
         from: {
@@ -100,6 +102,7 @@ const transitions = {
     }
 }
 
+//#region Hero Orbit Animation
 // Hero Orbit Spring Config
 const avatar = document.querySelector('#avatarImage') as HTMLElement;
 const trails = [
@@ -110,58 +113,62 @@ const trails = [
 ] as HTMLElement[];
 
 const allSpringUp = [avatar, ...trails];
-allSpringUp.forEach(el => el.classList.add('spring-element-performance'));
+allSpringUp.forEach(el => el?.classList.add('spring-element-performance'));
 
 // Hero Orbit Spring Animation
-ScrollTrigger.create({
-    trigger: ".Hero_Orbit",
-    start: "top bottom",
-    once: true,
-    onEnter: () => {
-        gsap.fromTo(
-            allSpringUp,
-            { opacity: 0, scale: 0.75, rotation: 0 },
-            {
-                opacity: 1,
-                scale: 1,
-                rotation: 0,
-                duration: 4.25,
-                delay: 1.25,
-                ease: "elastic.out(0.8, 0.2)",
-                stagger: 0.15,
-                onStart: function () {
-                    this.targets().forEach((el: HTMLElement, i: number) => {
-                        if (i === 0) return; // skip avatar for rotation
+if (!allSpringUp.every(el => el === null)) {
+    ScrollTrigger.create({
+        trigger: ".Hero_Orbit",
+        start: "top bottom",
+        once: true,
+        onEnter: () => {
+            gsap.fromTo(
+                allSpringUp,
+                { opacity: 0, scale: 0.75, rotation: 0 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    rotation: 0,
+                    duration: 4.25,
+                    delay: 1.25,
+                    ease: "elastic.out(0.8, 0.2)",
+                    stagger: 0.15,
+                    onStart: function () {
+                        this.targets().forEach((el: HTMLElement, i: number) => {
+                            if (i === 0) return; // skip avatar for rotation
 
-                        const trailConfig: { duration: number; direction: number }[] = [
-                            { duration: 6, direction: 1 },
-                            { duration: 8, direction: -1 },
-                            { duration: 10, direction: 1 },
-                            { duration: 12, direction: -1 }
-                        ];
-                        const { duration, direction } = trailConfig[i - 1];
-                        gsap.to(el, {
-                            rotation: `+=${360 * direction}`,
-                            duration,
-                            repeat: -1,
-                            ease: "linear"
+                            const trailConfig: { duration: number; direction: number }[] = [
+                                { duration: 6, direction: 1 },
+                                { duration: 8, direction: -1 },
+                                { duration: 10, direction: 1 },
+                                { duration: 12, direction: -1 }
+                            ];
+                            const { duration, direction } = trailConfig[i - 1];
+                            gsap.to(el, {
+                                rotation: `+=${360 * direction}`,
+                                duration,
+                                repeat: -1,
+                                ease: "linear"
+                            });
                         });
-                    });
+                    }
                 }
-            }
-        );
-    }
-});
+            );
+        }
+    });
+}
 
 let isPressed = false;
 let isScalingDown = false;
 let pendingSpringUp = false;
 
 // Create CSS for performance
-gsap.set(allSpringUp, {
-    transformOrigin: "center center",
-    force3D: true
-});
+if (!allSpringUp.every(el => el === null)) {
+    gsap.set(allSpringUp, {
+        transformOrigin: "center center",
+        force3D: true
+    });
+}
 
 // Mouse and Touch Event Handlers for Spring Up Animation
 function onPressStart() {
@@ -253,6 +260,7 @@ if (avatarImageElement) {
     });
 }
 
+//#region Other Animations
 // Stagger Animation
 ScrollTrigger.batch(".Fade_Stagger", {
     start: "top bottom",
@@ -312,6 +320,7 @@ ScrollTrigger.batch(".Fade_In", {
     once: true
 });
 
+//#region Mobile Nav Animation
 // Mobile Nav Ham-Menu Animation
 const MobileNavElement = document.querySelector("#mobileHeaderNav");
 let isMenuOpen = false;
