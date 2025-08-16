@@ -101,6 +101,9 @@
         transparent,
         transparent
     );
+    --imgOverlayGradient: radial-gradient(circle,transparent,var(--base) 95%),
+    linear-gradient(180deg, var(--base), transparent 25%),
+    linear-gradient(0deg, var(--base), transparent 25%);
 
     --orbitDotColor: #fff;
     --heroSocialColoe: #fff;

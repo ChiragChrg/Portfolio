@@ -1,4 +1,7 @@
 ---
+// Define the static paths for the project pages
+// This allows Astro to generate static pages for each project
+// based on the projectID during the build process
 export function getStaticPaths() {
     return [
         { params: { projectID: "arms-v3" } },
@@ -16,12 +19,13 @@ export function getStaticPaths() {
         { params: { projectID: "climate" } },
     ];
 }
-const { projectID } = Astro.params;
 
 import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
 import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
 import { CenterTitle, SectionTitle } from "../../components/UI";
+
+const { projectID } = Astro.params;
 
 // Lazy loading ProjectInfo
 const ProjectInfo = import("../../utils/ProjectsList");
@@ -42,7 +46,13 @@ const [project] = PROJECTS_LIST.filter(
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
             loading="eager"
         />
-        <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
+
+        <!-- Dark Image Overlay -->
+        <div
+            style="background: var(--imgOverlayGradient);"
+            class="w-full h-full absolute inset-0"
+        >
+        </div>
     </div>
 
     <div class="flex_center flex-col gap-4 py-4">
