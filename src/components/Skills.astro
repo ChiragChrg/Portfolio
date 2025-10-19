@@ -1,14 +1,23 @@
 ---
 import { CenterTitle, SkillTitle, SkillGrid } from "./UI";
-import {
-    BackendLibrariesStack,
+const SkillStacksPromise = import("../utils/SkillStack");
+
+let BackendLibrariesStack,
     DatabaseStack,
     FrontendLibrariesStack,
     PlatformsStack,
     StateUtilitiesStack,
     ToolsStack,
-    WebLanguagesStack,
-} from "../utils/SkillStack";
+    WebLanguagesStack;
+
+const skillStacks = await SkillStacksPromise;
+BackendLibrariesStack = skillStacks.BackendLibrariesStack;
+DatabaseStack = skillStacks.DatabaseStack;
+FrontendLibrariesStack = skillStacks.FrontendLibrariesStack;
+PlatformsStack = skillStacks.PlatformsStack;
+StateUtilitiesStack = skillStacks.StateUtilitiesStack;
+ToolsStack = skillStacks.ToolsStack;
+WebLanguagesStack = skillStacks.WebLanguagesStack;
 ---
 
 <section id="skills" class="w-full min-h-screen py-4 pt-14 bg-background">
