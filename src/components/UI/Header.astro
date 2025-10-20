@@ -50,6 +50,8 @@ const { config } = Astro.props;
         "#contact": document.getElementById("contact"),
     };
 
+    const headerHeight = headerElement.offsetHeight;
+
     // Set Active class on section scroll
     const handleScroll = () => {
         for (const [linkHref, section] of Object.entries(sectionsList)) {
@@ -63,8 +65,8 @@ const { config } = Astro.props;
             if (
                 link &&
                 headerElement &&
-                rect.top <= headerElement.offsetHeight &&
-                rect.bottom >= headerElement.offsetHeight
+                rect.top <= headerHeight &&
+                rect.bottom >= headerHeight
             ) {
                 link?.classList.add("active");
             } else {

@@ -179,14 +179,15 @@ import { Image } from "astro:assets";
         const iconSize = images[0].clientWidth;
         const radius = Math.ceil((center.clientWidth + 2) / 2);
 
+        const centerWidth = center.offsetWidth;
+        const centerHeight = center.offsetHeight;
+
         images.forEach((image, index) => {
             const angle = (index / (images.length - 1)) * Math.PI;
             const x = Math.cos(-angle) * radius - iconSize / 2;
             const y = Math.sin(-angle) * radius - iconSize / 2;
 
             const imageStyle = image.style;
-            const centerWidth = center.offsetWidth;
-            const centerHeight = center.offsetHeight;
 
             imageStyle.left = `${centerWidth / 2 + x}px`;
             imageStyle.top = `${centerHeight / 2 + y}px`;
