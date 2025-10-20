@@ -4,7 +4,7 @@ import { SectionTitle } from "@components/UI";
 import { Image } from "astro:assets";
 
 // Lazy loading ProjectInfo
-const ProjectInfo = import("@utils/ProjectsList");
+const ProjectInfo = import("@/config/ProjectsList");
 const { PROJECTS_LIST } = await ProjectInfo;
 ---
 
