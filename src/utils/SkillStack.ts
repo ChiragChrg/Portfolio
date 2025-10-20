@@ -60,7 +60,7 @@ import {
     FigmaIcon,
     ViteIcon,
     SocketIoIcon
-} from "../assets/Icons";
+} from "@assets/Icons";
 
 // Web Development Stack
 export const WebLanguagesStack = [

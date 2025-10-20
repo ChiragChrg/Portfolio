@@ -3,22 +3,22 @@ import {
     SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon,
     AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon,
     PrismaIcon
-} from "../assets/Icons"
+} from "@assets/Icons"
 
 import {
     NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo,
     PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
-} from "../assets/Logos"
+} from "@assets/Logos"
 
 import {
     NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots,
     PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
-} from "../assets/Shots"
+} from "@assets/Shots"
 
 import {
     ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup,
     XreconMockup, YoatubeMockup
-} from "../assets/Mockup"
+} from "@assets/Mockup"
 
 
 type ProjectsListType = {

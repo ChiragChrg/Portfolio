@@ -1,10 +1,10 @@
 ---
 import { ExternalLinkIcon, WrenchIcon } from "lucide-preact";
-import { SectionTitle } from "./UI";
+import { SectionTitle } from "@components/UI";
 import { Image } from "astro:assets";
 
 // Lazy loading ProjectInfo
-const ProjectInfo = import("../utils/ProjectsList");
+const ProjectInfo = import("@utils/ProjectsList");
 const { PROJECTS_LIST } = await ProjectInfo;
 ---
 
