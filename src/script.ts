@@ -389,7 +389,8 @@ themeToggleMobileProjectBtn?.addEventListener('click', () => {
     HamMenuButton?.classList.toggle("isOpen");
 });
 
-// Smooth Scrolling
+
+//#region Smooth Scroll
 const lenis = new Lenis();
 lenis.on("scroll", ScrollTrigger.update);
 gsap.ticker.add((time) => {
@@ -401,19 +402,35 @@ gsap.ticker.lagSmoothing(0);
 document
     .querySelectorAll('nav a, a[href^="#home"]')
     .forEach((el) => {
-        el.addEventListener("click", () => {
+        el.addEventListener("click", (e) => {
+            e.preventDefault(); // Prevent default jump
+
             const id = el.getAttribute("href")?.slice(1);
             if (!id) return;
 
             const target = document.getElementById(id);
-            if (target) {
-                lenis.scrollTo(target);
+            if (!target) return;
 
-                if (window.innerWidth < 1024) {
-                    closeNav()
-                    isMenuOpen = !isMenuOpen;
-                    HamMenuButton?.classList.toggle("isOpen");
+            // Complete all animations above the target section
+            const targetTop = target.getBoundingClientRect().top + window.scrollY;
+            const triggers = ScrollTrigger.getAll();
+
+            triggers.forEach(trigger => {
+                if (!trigger.trigger) return;
+                const triggerTop = trigger.trigger.getBoundingClientRect().top + window.scrollY;
+
+                if (triggerTop < targetTop && trigger.animation) {
+                    trigger.animation.progress(1, false);
                 }
+            });
+
+            // Scroll to target
+            lenis.scrollTo(target);
+
+            if (window.innerWidth < 1024) {
+                closeNav();
+                isMenuOpen = !isMenuOpen;
+                HamMenuButton?.classList.toggle("isOpen");
             }
         });
     });
