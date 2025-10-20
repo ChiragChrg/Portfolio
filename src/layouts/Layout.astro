@@ -21,12 +21,9 @@ const { config } = Astro.props;
 		<meta name="robots" content="index, follow" />
 		<meta
 			name="google-site-verification"
-			content="YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y"
+			content={config.site.googleSiteVerification}
 		/>
-		<meta
-			name="keywords"
-			content="chiragchrg,chrgchirag, chirag, chrg, @ChrgChirag, portfolio, vortexa, ARMS, ARMS2.0, ARMS v3, Academic, Resource, Management, System, xrecon, @ChrgChirag, chiruchirag2001, chiragchrg.netlify.app, Fullstack Web Developer, My Personal Portfolio, ChiragChrg.github.io, I create Exciting Stuff on the Internet., epitome, aimit, epitome2k24,Epitome 2k24, Oriv.io, Oriv"
-		/>
+		<meta name="keywords" content={config.site.keywords} />
 		<meta name="author" content="ChiragChrg" />
 		<meta name="publisher" content="ChiragChrg" />
 		<link rel="manifest" href="/manifest.json" />
@@ -41,25 +38,24 @@ const { config } = Astro.props;
 		<link rel="preload stylesheet" href="@styles/cursor.css" as="style" /> -->
 
 		<SEO
-			title="ChiragChrg | My Personal Portfolio | Fullstack Web Developer"
-			description="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX."
-			canonical="https://chiragchrg.netlify.app/"
+			title=`${config.site.title}`
+			description=`${config.site.description}`
+			canonical=`${config.site.siteUrl}`
 			openGraph={{
 				basic: {
-					title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
+					title: config.site.title,
 					type: "website",
-					image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
-					url: "https://chiragchrg.netlify.app/",
+					image: config.site.avatar,
+					url: config.site.siteUrl,
 				},
 			}}
 			twitter={{
-				title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
-				description:
-					"Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
+				title: config.site.title,
+				description: config.site.description,
 				card: "summary",
 				site: "@ChrgChirag",
 				creator: "@ChrgChirag",
-				image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+				image: config.site.avatar,
 			}}
 			extend={{
 				link: [
@@ -78,7 +74,7 @@ const { config } = Astro.props;
 				meta: [
 					{
 						name: "twitter:url",
-						content: "https://chiragchrg.netlify.app/",
+						content: config.site.siteUrl,
 					},
 				],
 			}}

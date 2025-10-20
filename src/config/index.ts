@@ -9,6 +9,17 @@ import {
     GoogleIcon
 } from "@assets/SVGs";
 
+// Site Configuration
+export const siteConfig = {
+    title: "Chirag Chrg | Fullstack Software Engineer & Web Developer",
+    description: "Explore the digital world of Chirag Chrg, a Fullstack Software Engineer crafting modern web experiences that blend clean code, creativity, and exceptional UI/UX design.",
+    canonical: "https://chiragchrg.netlify.app/",
+    googleSiteVerification: "YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y",
+    keywords: "Chirag Chrg, ChiragChrg, Fullstack Software Engineer, Fullstack Web Developer, React Developer, Node.js Developer, TypeScript Developer, UI/UX Engineer, Frontend Developer, Backend Developer, JavaScript Developer, Portfolio, Vortexa, ARMS, ARMS 2.0, ARMS v3, Academic Resource Management System, xrecon, Oriv, Oriv.io, Epitome, Epitome 2k24, AIMIT, I create exciting stuff on the internet, Modern Web Apps, Scalable Web Applications",
+    avatar: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+    siteUrl: "https://chiragchrg.netlify.app/",
+}
+
 // Header Section
 export const headerConfig = {
     logotext: "Portfolio.",

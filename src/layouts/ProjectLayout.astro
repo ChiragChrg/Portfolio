@@ -20,13 +20,9 @@ import "@styles/cursor.css";
         <meta name="robots" content="index, follow" />
         <meta
             name="google-site-verification"
-            content="YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y"
+            content={config.site.googleSiteVerification}
         />
-        <meta
-            name="keywords"
-            content="chiragchrg,chrgchirag, @ChrgChirag, portfolio, vortexa,  devbase, ARMS, ARMS2.0, Academic, Resource, Management, System, arms2, xrecon, @ChrgChirag, chiruchirag2001, chiragchrg.netlify.app, devbase.netlify.app,
-		Fullstack Web Developer, My Personal Portfolio, ChiragChrg.github.io, I create Exciting Stuff on the Internet."
-        />
+        <meta name="keywords" content={config.site.keywords} />
         <meta name="author" content="ChiragChrg" />
         <link rel="manifest" href="/manifest.json" />
 
@@ -43,8 +39,8 @@ import "@styles/cursor.css";
                 basic: {
                     title: `${title}`,
                     type: "website",
-                    image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
-                    url: "https://chiragchrg.netlify.app/",
+                    image: config.site.avatar,
+                    url: config.site.siteUrl,
                 },
             }}
             twitter={{
@@ -53,7 +49,7 @@ import "@styles/cursor.css";
                 card: "summary",
                 site: "@ChrgChirag",
                 creator: "@ChrgChirag",
-                image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+                image: config.site.avatar,
             }}
             extend={{
                 link: [
@@ -72,7 +68,7 @@ import "@styles/cursor.css";
                 meta: [
                     {
                         name: "twitter:url",
-                        content: "https://chiragchrg.netlify.app/",
+                        content: config.site.siteUrl,
                     },
                 ],
             }}
