@@ -1,6 +1,8 @@
 ---
 import { Download } from "lucide-preact";
 // import ThemeButton from "./ThemeButton.astro";
+
+const { config } = Astro.props;
 ---
 
 <header class="hidden lg:block sticky top-0 z-50">
@@ -8,7 +10,7 @@ import { Download } from "lucide-preact";
         class="flex justify-between items-center w-full px-6 py-2 headerGradient backdrop-blur-[2px]"
     >
         <a href="/" class="Fade_Down font-satisfy font-bold text-[2em]">
-            <span class="gradientText w-fit">Portfolio.</span>
+            <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
         <div class="Header_Nav flex gap-6">
@@ -23,11 +25,11 @@ import { Download } from "lucide-preact";
 
             <a
                 class="Fade_Down Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
-                href="/Chirag Resume.pdf"
+                href={config.actionButton.url}
                 target="_blank"
             >
                 <div class="flex_center gap-2">
-                    <p>Resume</p>
+                    <p>{config.actionButton.text}</p>
                     <Download size={18} />
                 </div>
             </a>
@@ -41,7 +43,7 @@ import { Download } from "lucide-preact";
 >
     <div class="flex justify-between items-center py-2 px-4">
         <a href="#home" class="Fade_In font-satisfy font-bold text-[2em]">
-            <span class="gradientText w-fit">Portfolio.</span>
+            <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
         <svg
@@ -86,89 +88,14 @@ import { Download } from "lucide-preact";
         <div class="MobileHeader_Nav flex_center">
             <a
                 class="MobileHeader_ActionBtn flex_center"
-                href="/Chirag Resume.pdf"
+                href={config.actionButton.url}
                 target="_blank"
             >
                 <div class="flex_center gap-4">
-                    <p>Resume</p>
+                    <p>{config.actionButton.text}</p>
                     <Download />
                 </div>
             </a>
         </div>
-
-        <!-- <div
-            id="themeToggleMobileProject"
-            class="MobileHeader_Nav flex_center min-h-[68px]"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                id="themeSunSvgMobileProject"
-                class="lucide lucide-sun absolute"
-                style="visibility: hidden;"
-                ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
-                ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
-                ></path><path d="m17.66 17.66 1.41 1.41"></path><path
-                    d="M2 12h2"></path><path d="M20 12h2"></path><path
-                    d="m6.34 17.66-1.41 1.41"></path><path
-                    d="m19.07 4.93-1.41 1.41"></path></svg
-            >
-
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                id="themeMoonSvgMobileProject"
-                class="lucide lucide-moon-star absolute"
-                style="visibility: visible;"
-                ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path><path
-                    d="M20 3v4"></path><path d="M22 5h-4"></path></svg
-            >
-        </div> -->
     </div>
 </header>
-
-<!-- <script is:inline type="module">
-    // Theme Toggle Script for Mobile screens
-    const themeToggleBtn = document.getElementById("themeToggleMobileProject");
-    const lightThemeBtn = document.getElementById("themeSunSvgMobileProject");
-    const darkThemeBtn = document.getElementById("themeMoonSvgMobileProject");
-
-    let currentTheme = localStorage.getItem("chiragchrg-portfolio-theme");
-    if (currentTheme == "light") {
-        document.documentElement.classList.add("light");
-        darkThemeBtn.style.visibility = "hidden";
-        lightThemeBtn.style.visibility = "visible";
-    } else {
-        document.documentElement.classList.remove("light");
-        darkThemeBtn.style.visibility = "visible";
-        lightThemeBtn.style.visibility = "hidden";
-    }
-
-    themeToggleBtn.addEventListener("click", () => {
-        if (document.documentElement.classList.contains("light")) {
-            darkThemeBtn.style.visibility = "visible";
-            lightThemeBtn.style.visibility = "hidden";
-            document.documentElement.classList.remove("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "dark");
-        } else {
-            darkThemeBtn.style.visibility = "hidden";
-            lightThemeBtn.style.visibility = "visible";
-            document.documentElement.classList.add("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "light");
-        }
-    });
-</script> -->

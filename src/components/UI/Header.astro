@@ -1,6 +1,8 @@
 ---
 import { Download } from "lucide-preact";
 // import ThemeButton from "./ThemeButton.astro";
+
+const { config } = Astro.props;
 ---
 
 <header
@@ -11,7 +13,7 @@ import { Download } from "lucide-preact";
         class="flex justify-between items-center w-full px-6 py-2 headerGradient backdrop-blur-[2px]"
     >
         <a href="#home" class="Fade_Down font-satisfy font-bold text-[2em]">
-            <span class="gradientText w-fit">Portfolio.</span>
+            <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
         <nav class="Header_Nav relative tracking-wide flex gap-6">
@@ -26,11 +28,11 @@ import { Download } from "lucide-preact";
 
             <a
                 class="Fade_Down Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
-                href="/Chirag Resume.pdf"
+                href={config.actionButton.url}
                 target="_blank"
             >
                 <div class="flex_center gap-2">
-                    <p>Resume</p>
+                    <p>{config.actionButton.text}</p>
                     <Download size={18} />
                 </div>
             </a>

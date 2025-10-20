@@ -1,5 +1,5 @@
 ---
-const { title, description } = Astro.props;
+const { title, description, config } = Astro.props;
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
@@ -144,14 +144,14 @@ import "../styles/cursor.css";
         />
     </head>
     <body>
-        <ProjectsHeader />
+        <ProjectsHeader config={config.header} />
 
         <main class="px-6 md:px-8">
             <slot />
         </main>
 
         <Cursor />
-        <Footer />
+        <Footer config={config.footer} />
         <script src="../script.ts"></script>
     </body>
 </html>

@@ -1,16 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import {
-    DiscordIcon,
-    FaceBookIcon,
-    GithubIcon,
-    InstagramIcon,
-    LinkedinIcon,
-    LogoIcon,
-    TwitterIcon,
-} from "../assets/SVGs";
 
 const currentYear = new Date().getFullYear();
+const { config } = Astro.props;
 ---
 
 <footer
@@ -38,49 +30,31 @@ const currentYear = new Date().getFullYear();
     </svg>
 
     <div class="w-full flex_center flex-col gap-2">
-        <Image src={LogoIcon} alt="LogoIcon" width={80} height={80} />
-        <span>ChiragChrg | Portfolio</span>
+        <Image src={config.logo} alt="LogoIcon" width={80} height={80} />
+        <span>{config.title}</span>
     </div>
 
     <div class="grid grid-cols-3 lg:grid-cols-6 gap-x-20 gap-y-10 lg:gap-20">
-        <a
-            href="https://www.facebook.com/ChiragChrg/"
-            target="_blank"
-            rel="noreferrer"
-        >
-            <Image src={FaceBookIcon} alt="FaceBook" width={30} height={30} />
-        </a>
-        <a href="https://x.com/ChrgChirag" target="_blank" rel="noreferrer">
-            <Image src={TwitterIcon} alt="Twitter X" width={30} height={30} />
-        </a>
-        <a
-            href="https://www.instagram.com/chiragchrg/"
-            target="_blank"
-            rel="noreferrer"
-        >
-            <Image src={InstagramIcon} alt="Instagram" width={30} height={30} />
-        </a>
-        <a
-            href="https://in.linkedin.com/in/chiragchrg"
-            target="_blank"
-            rel="noreferrer"
-        >
-            <Image src={LinkedinIcon} alt="Discord" width={30} height={30} />
-        </a>
-        <a
-            href="https://github.com/ChiragChrg"
-            target="_blank"
-            rel="noreferrer"
-        >
-            <Image src={GithubIcon} alt="Discord" width={30} height={30} />
-        </a>
-        <a
-            href="https://discord.gg/WmVQjMryDz"
-            target="_blank"
-            rel="noreferrer"
-        >
-            <Image src={DiscordIcon} alt="Discord" width={30} height={30} />
-        </a>
+        {
+            config.links &&
+                config.links.map(
+                    (link: { url: string; label: string; icon: string }) => (
+                        <a
+                            href={link.url}
+                            title={link.label}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Image
+                                src={link.icon}
+                                alt={link.label}
+                                width={30}
+                                height={30}
+                            />
+                        </a>
+                    ),
+                )
+        }
     </div>
 
     <span>© Copyright 2023-{currentYear} ChiragChrg</span>

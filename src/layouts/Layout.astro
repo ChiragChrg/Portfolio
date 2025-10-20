@@ -7,6 +7,8 @@ import { Footer } from "../components";
 import "../styles/global.css";
 import "../styles/utility.css";
 import "../styles/cursor.css";
+
+const { config } = Astro.props;
 ---
 
 <!doctype html>
@@ -100,7 +102,7 @@ import "../styles/cursor.css";
 					],
 					preload: true,
 					display: "swap",
-					fallback: "serif",
+					fallback: "sans-serif",
 					cssVariable: "astro-font-poppins",
 					selector: ".font-poppins",
 				},
@@ -147,15 +149,16 @@ import "../styles/cursor.css";
 			]}
 		/>
 	</head>
+
 	<body id="home">
-		<Header />
-		<MobileHeader />
+		<Header config={config.header} />
+		<MobileHeader config={config.header} />
 
 		<main class="max-w-[1800px] mx-auto">
 			<slot />
 		</main>
 
-		<Footer />
+		<Footer config={config.footer} />
 		<Cursor />
 		<script src="../script.ts"></script>
 	</body>

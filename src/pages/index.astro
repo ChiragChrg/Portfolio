@@ -1,11 +1,20 @@
 ---
 import { Layout } from "../layouts";
 import { Hero, About, Skills, Projects, Contact } from "../components";
+
+const { headerConfig, heroConfig, aboutConfig, footerConfig } = await import(
+	"@/portfolio.config.ts"
+);
 ---
 
-<Layout>
-	<Hero />
-	<About />
+<Layout
+	config={{
+		header: headerConfig,
+		footer: footerConfig,
+	}}
+>
+	<Hero config={heroConfig} />
+	<About config={aboutConfig} />
 	<Skills />
 	<Projects />
 	<Contact />
