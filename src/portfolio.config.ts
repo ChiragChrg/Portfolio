@@ -20,8 +20,8 @@ export const headerConfig = {
 
 // Hero Section
 export const heroConfig = {
-    firstName: "Chirag",
-    lastName: ".",
+    firstName: "Chirag.",
+    lastName: "",
     position: "Fullstack Software Engineer",
     tagLine: {
         prefixText: "I create",

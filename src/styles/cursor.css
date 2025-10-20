@@ -7,7 +7,7 @@
     border-radius: 100px;
     background-color: var(--cursorColor);
     box-shadow: 0 0 15px 0 var(--cursorColorAlt);
-    /* transition: all 0.2s ease-in-out; */
+    transition: all 0.2s ease-in-out;
     pointer-events: none;
     will-change: transform;
     backface-visibility: hidden;
