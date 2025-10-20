@@ -220,7 +220,6 @@ body {
     }
 }
 
-
 /* Lenis Smooth Scroll */
 html.lenis {
     height: auto;
@@ -261,10 +260,11 @@ html.lenis {
     transform: rotate(-45deg);
     position: absolute;
     top: -0.2em;
-    left: 49%;
+    left: 50%;
     transition: 0.25s ease-in-out;
     overflow: hidden;
     box-shadow: 0 0 10px var(--orbitDotColor);
+    outline: 0.5px solid var(--orbitDotColor);
 }
 :has(.Hero_Orbit:hover) .Orbit_Dot {
     background-color: var(--base) !important;
