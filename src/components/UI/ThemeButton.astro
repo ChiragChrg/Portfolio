@@ -8,7 +8,7 @@ const { className }: Props = Astro.props;
 <button
     id="themeToggleBtn"
     title="Toggle Theme"
-    class={`aspect-square w-8 h-8 outline outline-2 outline-primaryLiteAlt rounded-full relative flex_center ${className}`}
+    class={`aspect-square w-8 h-8 outline-2 outline-primaryLiteAlt rounded-full relative flex_center ${className}`}
 >
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,33 +48,37 @@ const { className }: Props = Astro.props;
     >
 </button>
 
-<!-- <script is:inline type="module">
+<script is:inline type="module">
     const themeToggleBtn = document.getElementById("themeToggleBtn");
     const lightThemeBtn = document.getElementById("themeSunSvg");
     const darkThemeBtn = document.getElementById("themeMoonSvg");
 
-    let currentTheme = localStorage.getItem("chiragchrg-portfolio-theme");
-    if (currentTheme == "light") {
-        document.documentElement.classList.add("light");
-        darkThemeBtn.style.visibility = "hidden";
-        lightThemeBtn.style.visibility = "visible";
-    } else {
-        document.documentElement.classList.remove("light");
-        darkThemeBtn.style.visibility = "visible";
-        lightThemeBtn.style.visibility = "hidden";
-    }
+    const THEME_KEY = "chiragchrg-portfolio-theme";
 
-    themeToggleBtn.addEventListener("click", () => {
-        if (document.documentElement.classList.contains("light")) {
-            darkThemeBtn.style.visibility = "visible";
-            lightThemeBtn.style.visibility = "hidden";
-            document.documentElement.classList.remove("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "dark");
-        } else {
-            darkThemeBtn.style.visibility = "hidden";
+    const setTheme = (theme) => {
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+
+        if (theme === "light") {
             lightThemeBtn.style.visibility = "visible";
-            document.documentElement.classList.add("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "light");
+            darkThemeBtn.style.visibility = "hidden";
+        } else {
+            lightThemeBtn.style.visibility = "hidden";
+            darkThemeBtn.style.visibility = "visible";
         }
+
+        localStorage.setItem(THEME_KEY, theme);
+    };
+
+    // Initialize theme from localStorage or default to dark
+    const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+    setTheme(savedTheme);
+
+    // Toggle theme on button click
+    themeToggleBtn.addEventListener("click", () => {
+        const newTheme = document.documentElement.classList.contains("light")
+            ? "dark"
+            : "light";
+        setTheme(newTheme);
     });
-</script> -->
+</script>

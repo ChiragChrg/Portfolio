@@ -1,5 +1,6 @@
 ---
 import { Download } from "lucide-preact";
+import ThemeButton from "@/components/UI/ThemeButton.astro";
 
 const { config } = Astro.props;
 ---
@@ -62,6 +63,10 @@ const { config } = Astro.props;
                     <Download />
                 </div>
             </a>
+        </div>
+
+        <div class="MobileHeader_Nav flex_center">
+            <ThemeButton />
         </div>
     </nav>
 </header>

@@ -1,6 +1,6 @@
 ---
 import { Download } from "lucide-preact";
-// import ThemeButton from "@components/ThemeButton.astro";
+import ThemeButton from "@components/UI/ThemeButton.astro";
 
 const { config } = Astro.props;
 ---
@@ -21,7 +21,7 @@ const { config } = Astro.props;
         </div>
 
         <div class="flex_center gap-4">
-            <!-- <ThemeButton className="Fade_Down" /> -->
+            <ThemeButton className="Fade_Down" />
 
             <a
                 class="Fade_Down Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
