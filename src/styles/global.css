@@ -16,6 +16,7 @@
     --color-secondaryLiteAlt: var(--secondaryLiteAlt);
     --color-footer: var(--footer);
     --color-contactSocialColor: var(--contactSocialColor);
+    --color-socialIconColor: var(--socialIconColor);
 
     --animate-ripple: ripple 1s infinite;
     --animate-orbit: orbit 6s linear infinite;

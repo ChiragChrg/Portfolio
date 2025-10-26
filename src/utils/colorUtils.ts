@@ -162,9 +162,9 @@ export const generateThemeVariables = async (
     const isDark = mode === 'dark';
 
     // Footer and other derived colors adjust based on mode
-    const footerLightness = isDark ? Math.max(5, backgroundColor.l * 0.15) : Math.min(95, backgroundColor.l * 0.85);
-    const footerSvgALightness = isDark ? Math.max(3, backgroundColor.l * 0.1) : Math.min(90, backgroundColor.l * 0.8);
-    const footerSvgBLightness = isDark ? Math.max(1, backgroundColor.l * 0.05) : Math.min(85, backgroundColor.l * 0.75);
+    const footerLightness = isDark ? 15 : 75;
+    const footerSvgALightness = isDark ? 10 : 80;
+    const footerSvgBLightness = isDark ? 5 : 85;
 
     return {
         // Base colors
@@ -211,7 +211,7 @@ export const generateThemeVariables = async (
 
         // Misc colors
         orbitDotColor: isDark ? textHsl : `hsl(var(--primary))`,
-        heroSocialColor: isDark ? textHsl : `hsl(var(--primary))`,
+        socialIconColor: isDark ? textHsl : `hsl(var(--primary))`,
         contactSocialColor: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.4)`,
         cursorColor: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.6)`,
         cursorColorAlt: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.8)`,

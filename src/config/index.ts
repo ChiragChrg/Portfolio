@@ -1,13 +1,14 @@
 import { Avatar_180, Avatar_250 } from "@assets/images";
-import {
-    DiscordIcon,
-    GithubIcon,
-    InstagramIcon,
-    LinkedinIcon,
-    LogoIcon,
-    TwitterIcon,
-    GoogleIcon
-} from "@assets/SVGs";
+
+// Importing SVGs as raw strings
+import GithubIconRaw from "@assets/SVGs/Github.svg?raw";
+import LinkedinIconRaw from "@assets/SVGs/Linkedin.svg?raw";
+import TwitterIconRaw from "@assets/SVGs/Twitter.svg?raw";
+import InstagramIconRaw from "@assets/SVGs/Instagram.svg?raw";
+import GoogleIconRaw from "@assets/SVGs/Google.svg?raw";
+import DiscordIconRaw from "@assets/SVGs/Discord.svg?raw";
+
+import { LogoIcon } from "@/assets/SVGs";
 
 enum ThemeOptions {
     CUSTOM = "custom",
@@ -57,27 +58,27 @@ export const heroConfig = {
         {
             label: "GitHub",
             url: "https://github.com/ChiragChrg",
-            icon: GithubIcon
+            icon: GithubIconRaw
         },
         {
             label: "LinkedIn",
             url: "https://www.linkedin.com/in/chiragchrg/",
-            icon: LinkedinIcon
+            icon: LinkedinIconRaw
         },
         {
             label: "X",
             url: "https://x.com/ChiragChrg",
-            icon: TwitterIcon
+            icon: TwitterIconRaw
         },
         {
             label: "Instagram",
             url: "https://www.instagram.com/chiragchrg/",
-            icon: InstagramIcon
+            icon: InstagramIconRaw
         },
         {
             label: "Google Search",
             url: "https://www.google.com/search?q=ChiragChrg",
-            icon: GoogleIcon
+            icon: GoogleIconRaw
         }
     ],
 }
@@ -100,32 +101,32 @@ export const footerConfig = {
         {
             label: "GitHub",
             url: "https:github.com/ChiragChrg",
-            icon: GithubIcon
+            icon: GithubIconRaw
         },
         {
             label: "LinkedIn",
             url: "https://www.linkedin.com/in/chiragchrg/",
-            icon: LinkedinIcon
+            icon: LinkedinIconRaw
         },
         {
             label: "X",
             url: "https://x.com/ChiragChrg",
-            icon: TwitterIcon
+            icon: TwitterIconRaw
         },
         {
             label: "Instagram",
             url: "https://www.instagram.com/chiragchrg/",
-            icon: InstagramIcon
+            icon: InstagramIconRaw
         },
         {
             label: "Discord",
             url: "https://discord.gg/WmVQjMryDz",
-            icon: DiscordIcon
+            icon: DiscordIconRaw
         },
         {
             label: "Google Search",
             url: "https://www.google.com/search?q=ChiragChrg",
-            icon: GoogleIcon
+            icon: GoogleIconRaw
         }
     ],
     copyrightText: `© Copyright 2023-${new Date().getFullYear()

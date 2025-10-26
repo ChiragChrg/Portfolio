@@ -28,7 +28,7 @@ const { config } = Astro.props;
         </div>
 
         <div
-            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4"
+            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4 !text-socialIconColor"
         >
             {
                 config.links &&
@@ -41,17 +41,12 @@ const { config } = Astro.props;
                             <a
                                 href={link.url}
                                 title={link.label}
+                                aria-label={link.label}
                                 target="_blank"
                                 rel="noreferrer"
-                                aria-label={link.label}
-                                class="Fade_Stagger"
+                                class="Fade_Stagger w-[30px] h-[30px] flex items-center justify-center"
                             >
-                                <Image
-                                    src={link.icon}
-                                    alt={link.label}
-                                    width={30}
-                                    height={30}
-                                />
+                                <Fragment set:html={link.icon} />
                             </a>
                         ),
                     )
