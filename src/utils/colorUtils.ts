@@ -205,8 +205,8 @@ export const generateThemeVariables = async (
         SkillGradient: `linear-gradient(-135deg, hsla(${p.h + 12}, 50%, ${isDark ? 10 : 50}%, 0.8), hsla(${s.h - 19}, 50%, ${isDark ? 10 : 50}%, 0.5))`,
         SkillGradientAlt: `linear-gradient(-135deg, hsla(${p.h + 12}, 50%, ${isDark ? 10 : 50}%, 0.4), hsla(${s.h - 19}, 50%, ${isDark ? 10 : 50}%, 0.25))`,
 
-        orbitGradient: `conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), ${textHsl})`,
-        orbitGradientAlt: `conic-gradient(${textHsl}, hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent)`,
+        orbitGradient: `conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), ${isDark ? textHsl : `hsl(var(--primary))`})`,
+        orbitGradientAlt: `conic-gradient(${isDark ? textHsl : `hsl(var(--primary))`}, hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent)`,
         imgOverlayGradient: `radial-gradient(circle, transparent, var(--background) 95%), linear-gradient(180deg, var(--background), transparent 25%), linear-gradient(0deg, var(--background), transparent 25%)`,
 
         // Misc colors
