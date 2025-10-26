@@ -213,8 +213,9 @@ export const generateThemeVariables = async (
         orbitDotColor: isDark ? textHsl : `hsl(var(--primary))`,
         socialIconColor: isDark ? textHsl : `hsl(var(--primary))`,
         contactSocialColor: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.4)`,
-        cursorColor: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.6)`,
-        cursorColorAlt: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.8)`,
+        cursorColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.6)`,
+        cursorColorAlt: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.8)`,
+        cursorBackgroundColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.3)`,
         dotColor: isDark ? textHsl : `hsl(var(--primary))`,
     };
 };
