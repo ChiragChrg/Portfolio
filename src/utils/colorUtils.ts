@@ -193,7 +193,7 @@ export const generateThemeVariables = async (
         orbitGradientAlt: `conic-gradient(${isDark ? textHsl : `hsl(var(--primary))`}, hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent)`,
 
         // Skill colors
-        SkillGradient: `linear-gradient(-135deg, hsla(${p.h}, 60%, ${isDark ? 15 : 85}%, 0.6), hsla(${s.h}, 60%, ${isDark ? 15 : 50}%, 0.3))`,
+        SkillGradient: `linear-gradient(45deg, hsla(${p.h}, 60%, ${isDark ? 10 : 80}%, 0.5), hsla(${s.h}, 50%, ${isDark ? 10 : 50}%, 0.2))`,
         SkillGradientAlt: `linear-gradient(-135deg, hsla(${p.h}, 50%, ${isDark ? 15 : 55}%, 0.5), hsla(${s.h}, 50%, ${isDark ? 15 : 50}%, 0.2))`,
 
         // Gradients colors
@@ -201,7 +201,7 @@ export const generateThemeVariables = async (
         gradientLite: `linear-gradient(45deg, var(--primaryLite), var(--secondaryLite))`,
 
         // Card colors
-        cardGradient: `linear-gradient(45deg, hsl(${backgroundColor.h}, ${backgroundColor.s}%, ${Math.max(1, backgroundColor.l * 0.1)}%), var(--primaryLite))`,
+        cardGradient: `linear-gradient(45deg, hsl(${backgroundColor.h}, ${backgroundColor.s}%, ${isDark ? 1 : 95}%), var(--primaryLiteAlt))`,
         cardGradientAlt: `linear-gradient(-135deg, hsl(${backgroundColor.h}, ${backgroundColor.s}%, ${Math.max(5, backgroundColor.l * 0.15)}%), var(--primaryLiteAlt))`,
 
         // Misc colors
@@ -215,7 +215,7 @@ export const generateThemeVariables = async (
         // Cursor colors
         cursorColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.6)`,
         cursorColorAlt: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.8)`,
-        cursorBackgroundColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.3)`,
+        cursorBackgroundColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.2)`,
         dotColor: isDark ? textHsl : `hsl(var(--primary))`,
 
         // Footer colors
