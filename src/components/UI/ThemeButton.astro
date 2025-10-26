@@ -49,36 +49,62 @@ const { className }: Props = Astro.props;
 </button>
 
 <script is:inline type="module">
-    const themeToggleBtn = document.getElementById("themeToggleBtn");
-    const lightThemeBtn = document.getElementById("themeSunSvg");
-    const darkThemeBtn = document.getElementById("themeMoonSvg");
+    if (!window.themeInitialized) {
+        window.themeInitialized = true;
 
-    const THEME_KEY = "chiragchrg-portfolio-theme";
+        const themeToggleBtn = document.getElementById("themeToggleBtn");
+        const lightThemeBtn = document.getElementById("themeSunSvg");
+        const darkThemeBtn = document.getElementById("themeMoonSvg");
 
-    const setTheme = (theme) => {
-        document.documentElement.classList.remove("light", "dark");
-        document.documentElement.classList.add(theme);
+        const THEME_KEY = "chiragchrg-portfolio-theme";
 
-        if (theme === "light") {
-            lightThemeBtn.style.visibility = "visible";
-            darkThemeBtn.style.visibility = "hidden";
-        } else {
-            lightThemeBtn.style.visibility = "hidden";
-            darkThemeBtn.style.visibility = "visible";
+        const setTheme = (theme) => {
+            // Update document element class
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(theme);
+
+            // Update button visibility
+            if (theme === "light") {
+                lightThemeBtn.style.visibility = "visible";
+                darkThemeBtn.style.visibility = "hidden";
+            } else {
+                lightThemeBtn.style.visibility = "hidden";
+                darkThemeBtn.style.visibility = "visible";
+            }
+
+            // Save to localStorage
+            try {
+                localStorage.setItem(THEME_KEY, theme);
+            } catch (_e) {
+                console.warn("Failed to save theme:", _e);
+            }
+        };
+
+        // Get current theme from localStorage or system preference
+        function getCurrentTheme() {
+            try {
+                const saved = localStorage.getItem(THEME_KEY);
+                const system = window.matchMedia("(prefers-color-scheme: dark)")
+                    .matches
+                    ? "dark"
+                    : "light";
+
+                return saved || system;
+            } catch (_e) {
+                console.log("Error getting theme, defaulting to dark");
+                return "dark";
+            }
         }
 
-        localStorage.setItem(THEME_KEY, theme);
-    };
+        // Initialize theme
+        const savedTheme = getCurrentTheme();
+        setTheme(savedTheme);
 
-    // Initialize theme from localStorage or default to dark
-    const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
-    setTheme(savedTheme);
-
-    // Toggle theme on button click
-    themeToggleBtn.addEventListener("click", () => {
-        const newTheme = document.documentElement.classList.contains("light")
-            ? "dark"
-            : "light";
-        setTheme(newTheme);
-    });
+        // Toggle theme on button click
+        themeToggleBtn.addEventListener("click", () => {
+            const isDark = document.documentElement.classList.contains("dark");
+            const newTheme = isDark ? "light" : "dark";
+            setTheme(newTheme);
+        });
+    }
 </script>
