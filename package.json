@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build:themes": "ts-node scripts/generateThemes.ts",
+    "build": "npm run build:themes && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint ."

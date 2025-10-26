@@ -38,6 +38,9 @@
       ],
       "@assets/*": [
         "src/assets/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
       ]
     },
     // Additional TypeScript options for better development experience
