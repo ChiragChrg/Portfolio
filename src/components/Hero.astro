@@ -11,7 +11,7 @@ const { config } = Astro.props;
     <!-- Hero Intro Info -->
     <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
         <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
-            <p class="Fade_Stagger">Hi👋🏻 My name is</p>
+            <p class="Fade_Stagger">{config.salutation}</p>
             <h1
                 class="Fade_Stagger gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
             >

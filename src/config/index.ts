@@ -31,6 +31,7 @@ export const headerConfig = {
 
 // Hero Section
 export const heroConfig = {
+    salutation: "Hi👋🏻 My name is",
     firstName: "Chirag.",
     lastName: "",
     position: "Fullstack Software Engineer",
