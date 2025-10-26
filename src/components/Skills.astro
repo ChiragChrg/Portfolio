@@ -1,23 +1,14 @@
 ---
 import { CenterTitle, SkillTitle, SkillGrid } from "@components/UI";
-const SkillStacksPromise = import("@/config/SkillStack");
+const skillStacks = await import("@/config/SkillStack");
 
-let BackendLibrariesStack,
-    DatabaseStack,
-    FrontendLibrariesStack,
-    PlatformsStack,
-    StateUtilitiesStack,
-    ToolsStack,
-    WebLanguagesStack;
-
-const skillStacks = await SkillStacksPromise;
-BackendLibrariesStack = skillStacks.BackendLibrariesStack;
-DatabaseStack = skillStacks.DatabaseStack;
-FrontendLibrariesStack = skillStacks.FrontendLibrariesStack;
-PlatformsStack = skillStacks.PlatformsStack;
-StateUtilitiesStack = skillStacks.StateUtilitiesStack;
-ToolsStack = skillStacks.ToolsStack;
-WebLanguagesStack = skillStacks.WebLanguagesStack;
+const BackendLibrariesStack = skillStacks.BackendLibrariesStack;
+const DatabaseStack = skillStacks.DatabaseStack;
+const FrontendLibrariesStack = skillStacks.FrontendLibrariesStack;
+const PlatformsStack = skillStacks.PlatformsStack;
+const StateUtilitiesStack = skillStacks.StateUtilitiesStack;
+const ToolsStack = skillStacks.ToolsStack;
+const WebLanguagesStack = skillStacks.WebLanguagesStack;
 ---
 
 <section id="skills" class="w-full min-h-screen py-4 pt-14 bg-background">
@@ -82,7 +73,7 @@ WebLanguagesStack = skillStacks.WebLanguagesStack;
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
             <SkillTitle title="Tools & Libraries" color="primary" />
-            <SkillGrid stack={ToolsStack} className="!flex" />
+            <SkillGrid stack={ToolsStack} />
         </div>
     </div>
 </section>
