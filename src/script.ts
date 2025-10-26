@@ -335,7 +335,7 @@ if (MobileNavElement) {
         MobileNavElement,
         {
             clipPath: `circle(30px at ${dimensions.width + 30}px -30px)`,
-            backgroundColor: "var(--base)",
+            backgroundColor: "var(--background)",
         },
         {
             clipPath: `circle(${(dimensions.height * 2) + 200}px at 40px 40px)`,

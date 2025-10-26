@@ -2,12 +2,19 @@
 import { Layout } from "@layouts/index";
 import { Hero, About, Skills, Projects, Contact } from "@components/index";
 
-const { siteConfig, headerConfig, heroConfig, aboutConfig, footerConfig } =
-	await import("@/config");
+const {
+	themeConfig,
+	siteConfig,
+	headerConfig,
+	heroConfig,
+	aboutConfig,
+	footerConfig,
+} = await import("@/config");
 ---
 
 <Layout
 	config={{
+		theme: themeConfig,
 		site: siteConfig,
 		header: headerConfig,
 		footer: footerConfig,

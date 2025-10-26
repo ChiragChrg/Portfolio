@@ -4,6 +4,8 @@ import { AstroFont } from "astro-font";
 import { join } from "node:path";
 import { Header, MobileHeader, Cursor } from "@components/UI";
 import { Footer } from "@components/index";
+
+import "@styles/themes.css";
 import "@styles/global.css";
 import "@styles/utility.css";
 import "@styles/cursor.css";
@@ -12,7 +14,7 @@ const { config } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class=`theme-${config.theme} dark`>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />

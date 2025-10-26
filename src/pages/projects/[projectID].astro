@@ -21,7 +21,9 @@ const { projectID } = Astro.params;
 const author = "ChiragChrg";
 
 const { PROJECTS_LIST } = await import("@/config/ProjectsList");
-const { siteConfig, headerConfig, footerConfig } = await import("@/config");
+const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
+    "@/config"
+);
 
 // Find the project
 const project = PROJECTS_LIST.find(
@@ -38,6 +40,7 @@ if (!project) {
     title={`${project.Name} | ${author}`}
     description={project.ShortDesc}
     config={{
+        theme: themeConfig,
         site: siteConfig,
         header: headerConfig,
         footer: footerConfig,

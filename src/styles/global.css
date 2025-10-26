@@ -1,129 +1,15 @@
 @import "tailwindcss";
 
-:root {
-    --base: #000000;
-    --baseLite: rgba(0, 0, 0, 0.85);
-    --text: #fff;
-
-    --pH: 264;
-    --pS: 100%;
-    --pL: 50%;
-
-    --sH: 315;
-    --sS: 100%;
-    --sL: 50%;
-
-    --mH: 275;
-    --mS: 100%;
-    --mL: 47%;
-
-    /* --primary: 264, 100%, 50%;
---secondary: 315, 100%, 50%;
---mixColor: 275, 100%, 47%; */
-
-    --primary: var(--pH), var(--pS), var(--pL);
-    --secondary: var(--sH), var(--sS), var(--sL);
-    --mixColor: var(--mH), var(--mS), var(--mL);
-
-    --primaryLite: hsla(var(--primary), 0.6);
-    --primaryLiteAlt: hsla(var(--primary), 0.3);
-    --secondaryLite: hsla(var(--secondary), 0.6);
-    --secondaryLiteAlt: hsla(var(--secondary), 0.3);
-
-    --footer: hsl(264, 100%, 15%);
-    --footerSvgA: hsl(259, 75%, 10%);
-    --footerSvgB: hsl(256, 60%, 5%);
-
-    --gradient: linear-gradient(
-        to right,
-        hsl(var(--secondary)),
-        hsl(var(--primary)),
-        hsl(var(--primary)),
-        hsl(var(--secondary))
-    );
-    --gradientLite: linear-gradient(
-        45deg,
-        var(--primaryLite),
-        hsl(var(--secondaryLite))
-    );
-
-    --headerGradient: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.6),
-        transparent
-    );
-    --cardGradient: linear-gradient(
-        45deg,
-        hsl(0, 0%, 1%),
-        var(--primaryLite)
-    );
-    --cardGradientAlt: linear-gradient(
-        -135deg,
-        hsl(0, 0%, 5%),
-        var(--primaryLiteAlt)
-    );
-    --miscCardGradient: linear-gradient(
-        -45deg,
-        hsl(0, 0%, 1%),
-        var(--primaryLiteAlt)
-    );
-    --overlayGradient: radial-gradient(
-        farthest-corner at 100% 0%,
-        hsla(0, 0%, 5%, 0.5),
-        transparent
-    );
-    --LinkBtnGradient: linear-gradient(
-        -135deg,
-        hsla(0, 0%, 9%, 0.8),
-        hsla(0, 0%, 10%, 0.6)
-    );
-    --SkillGradient: linear-gradient(
-        -135deg,
-        hsla(276, 50%, 10%, 0.8),
-        hsla(296, 50%, 10%, 0.5)
-    );
-    --SkillGradientAlt: linear-gradient(
-        -135deg,
-        hsla(276, 50%, 10%, 0.4),
-        hsla(296, 50%, 10%, 0.25)
-    );
-    --orbitGradient: conic-gradient(
-        transparent,
-        transparent,
-        hsl(var(--primary)),
-        hsl(var(--secondary)),
-        #fff
-    );
-    --orbitGradientAlt: conic-gradient(
-        #fff,
-        hsl(var(--primary)),
-        hsl(var(--secondary)),
-        transparent,
-        transparent
-    );
-    --imgOverlayGradient: radial-gradient(circle,transparent,var(--base) 95%),
-    linear-gradient(180deg, var(--base), transparent 25%),
-    linear-gradient(0deg, var(--base), transparent 25%);
-
-    --orbitDotColor: #fff;
-    --heroSocialColoe: #fff;
-    --contactSocialColor: hsla(0, 0%, 100%, 0.4);
-
-    --cursorColor: hsla(0, 0%, 100%, 0.6);
-    --cursorColorAlt: hsla(0, 0%, 100%, 0.8);
-    --dotColor: #fff;
-}
-
 @theme {
     --breakpoint-xs: 410px;
     --breakpoint-4xl: 1800px;
 
-    --color-background: var(--base);
-    --color-background-lite: var(--baseLite);
+    --color-background: var(--background);
+    --color-background-lite: var(--backgroundLite);
     --color-foreground: var(--text);
     --color-primary: hsl(var(--primary));
     --color-secondary: hsl(var(--secondary));
-    --color-mixColor: hsl(var(--mixColor));
+    --color-accent: hsl(var(--accent));
     --color-primaryLite: var(--primaryLite);
     --color-primaryLiteAlt: var(--primaryLiteAlt);
     --color-secondaryLite: var(--secondaryLite);
@@ -151,7 +37,7 @@ html {
     font-family: Poppins;
 }
 body {
-    background-color: var(--base);
+    background-color: var(--background);
     color: var(--text);
 }
 
@@ -267,7 +153,7 @@ html.lenis {
     outline: 0.5px solid var(--orbitDotColor);
 }
 :has(.Hero_Orbit:hover) .Orbit_Dot {
-    background-color: var(--base) !important;
+    background-color: var(--background) !important;
     outline: 0.5px solid var(--orbitDotColor);
     /* border-radius: 50% !important; */
     scale: 1.8;
@@ -337,7 +223,7 @@ html.lenis {
 }
 .Header_ActionBtn > div {
     padding: 0.2em 1.35em;
-    background-color: var(--base);
+    background-color: var(--background);
     color: var(--text);
     border-radius: inherit;
     margin: 2px;
@@ -349,7 +235,7 @@ html.lenis {
 .MobileHeader_Nav {
     min-width: 14em;
     text-align: center;
-    background-color: var(--base);
+    background-color: var(--background);
     border-radius: 0.3em;
     padding: 1em;
     font-size: 1.3em;
@@ -393,7 +279,7 @@ html.lenis {
 .MobileHeader_ActionBtn > div {
     padding: 0.7em 1em;
     width: 100%;
-    background-color: var(--base);
+    background-color: var(--background);
     color: var(--text);
     border-radius: inherit;
     margin: 4px;
@@ -417,7 +303,7 @@ html.lenis {
     margin: auto;
     border-radius: 50%;
     position: absolute;
-    background-color: var(--base);
+    background-color: var(--background);
 }
 .Trail1 {
     width: 60%;
@@ -457,7 +343,7 @@ html.lenis {
 .Title-Tag span,
 .Title-Tag p {
     z-index: 1;
-    background-color: var(--base);
+    background-color: var(--background);
     padding-inline: 0.25em;
 }
 .Title-Tag.open {
@@ -578,7 +464,7 @@ div {
     background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--mixColor);
+    background-color: var(--accent);
     border-radius: 14px;
     border: 6px solid transparent;
     background-clip: content-box;

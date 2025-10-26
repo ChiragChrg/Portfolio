@@ -9,6 +9,18 @@ import {
     GoogleIcon
 } from "@assets/SVGs";
 
+enum ThemeOptions {
+    CUSTOM = "custom",
+    DEFAULT = "default",
+    OCEAN = "ocean",
+    FOREST = "forest",
+    SUNSET = "sunset",
+    LAVENDER = "lavender",
+}
+
+// Theme Configuration
+export const themeConfig = ThemeOptions.DEFAULT;
+
 // Site Configuration
 export const siteConfig = {
     title: "Chirag Chrg | Fullstack Software Engineer & Web Developer",
