@@ -65,7 +65,10 @@ const { config } = Astro.props;
             </a>
         </div>
 
-        <div class="MobileHeader_Nav flex_center">
+        <div
+            onclick="window.toggleTheme()"
+            class="MobileHeader_Nav flex_center"
+        >
             <ThemeButton />
         </div>
     </nav>

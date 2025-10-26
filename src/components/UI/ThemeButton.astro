@@ -49,6 +49,7 @@ const { className }: Props = Astro.props;
 </button>
 
 <script is:inline type="module">
+    // Handle theme toggling
     if (!window.themeInitialized) {
         window.themeInitialized = true;
 
@@ -100,11 +101,17 @@ const { className }: Props = Astro.props;
         const savedTheme = getCurrentTheme();
         setTheme(savedTheme);
 
-        // Toggle theme on button click
-        themeToggleBtn.addEventListener("click", () => {
+        // Toggle theme function
+        const toggleTheme = () => {
             const isDark = document.documentElement.classList.contains("dark");
             const newTheme = isDark ? "light" : "dark";
             setTheme(newTheme);
-        });
+        };
+
+        // Toggle theme on button click
+        themeToggleBtn.addEventListener("click", toggleTheme);
+
+        // Global function for external access
+        window.toggleTheme = toggleTheme;
     }
 </script>
