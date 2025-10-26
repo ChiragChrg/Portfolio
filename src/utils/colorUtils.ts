@@ -184,38 +184,43 @@ export const generateThemeVariables = async (
         accentLite: 'hsla(var(--accent), 0.6)',
         accentLiteAlt: 'hsla(var(--accent), 0.3)',
 
-        // Footer colors
-        footer: `hsl(${p.h}, ${p.s}%, ${footerLightness}%)`,
-        footerSvgA: `hsl(${p.h - 5}, ${p.s * 0.75}%, ${footerSvgALightness}%)`,
-        footerSvgB: `hsl(${p.h - 8}, ${p.s * 0.6}%, ${footerSvgBLightness}%)`,
+        // Header colors
+        headerGradient: `linear-gradient(180deg, ${isDark ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)'}, transparent)`,
+
+        // Orbit colors
+        orbitDotColor: isDark ? textHsl : `hsl(var(--primary))`,
+        orbitGradient: `conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), ${isDark ? textHsl : `hsl(var(--primary))`})`,
+        orbitGradientAlt: `conic-gradient(${isDark ? textHsl : `hsl(var(--primary))`}, hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent)`,
+
+        // Skill colors
+        SkillGradient: `linear-gradient(-135deg, hsla(${p.h}, 60%, ${isDark ? 15 : 85}%, 0.6), hsla(${s.h}, 60%, ${isDark ? 15 : 50}%, 0.3))`,
+        SkillGradientAlt: `linear-gradient(-135deg, hsla(${p.h}, 50%, ${isDark ? 15 : 55}%, 0.5), hsla(${s.h}, 50%, ${isDark ? 15 : 50}%, 0.2))`,
 
         // Gradients colors
         gradient: `linear-gradient(to right, hsl(var(--secondary)), hsl(var(--primary)), hsl(var(--primary)), hsl(var(--secondary)))`,
         gradientLite: `linear-gradient(45deg, var(--primaryLite), var(--secondaryLite))`,
 
-        headerGradient: `linear-gradient(180deg, ${isDark ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)'}, transparent)`,
-
+        // Card colors
         cardGradient: `linear-gradient(45deg, hsl(${backgroundColor.h}, ${backgroundColor.s}%, ${Math.max(1, backgroundColor.l * 0.1)}%), var(--primaryLite))`,
         cardGradientAlt: `linear-gradient(-135deg, hsl(${backgroundColor.h}, ${backgroundColor.s}%, ${Math.max(5, backgroundColor.l * 0.15)}%), var(--primaryLiteAlt))`,
 
+        // Misc colors
+        socialIconColor: isDark ? textHsl : `hsl(var(--primary))`,
+        contactSocialColor: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.4)`,
+        imgOverlayGradient: `radial-gradient(circle, transparent, var(--background) 95%), linear-gradient(180deg, var(--background), transparent 25%), linear-gradient(0deg, var(--background), transparent 25%)`,
         miscCardGradient: `linear-gradient(-45deg, hsl(${backgroundColor.h}, ${backgroundColor.s}%, ${Math.max(1, backgroundColor.l * 0.1)}%), var(--primaryLiteAlt))`,
         overlayGradient: `radial-gradient(farthest-corner at 100% 0%, hsla(${backgroundColor.h}, ${backgroundColor.s}%, ${footerSvgBLightness}%, 0.5), transparent)`,
         LinkBtnGradient: `linear-gradient(-135deg, hsla(${backgroundColor.h}, ${backgroundColor.s}%, ${footerSvgALightness}%, 0.8), hsla(${backgroundColor.h}, ${backgroundColor.s}%, ${footerLightness}%, 0.6))`,
 
-        SkillGradient: `linear-gradient(-135deg, hsla(${p.h + 12}, 50%, ${isDark ? 10 : 50}%, 0.8), hsla(${s.h - 19}, 50%, ${isDark ? 10 : 50}%, 0.5))`,
-        SkillGradientAlt: `linear-gradient(-135deg, hsla(${p.h + 12}, 50%, ${isDark ? 10 : 50}%, 0.4), hsla(${s.h - 19}, 50%, ${isDark ? 10 : 50}%, 0.25))`,
-
-        orbitGradient: `conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), ${isDark ? textHsl : `hsl(var(--primary))`})`,
-        orbitGradientAlt: `conic-gradient(${isDark ? textHsl : `hsl(var(--primary))`}, hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent)`,
-        imgOverlayGradient: `radial-gradient(circle, transparent, var(--background) 95%), linear-gradient(180deg, var(--background), transparent 25%), linear-gradient(0deg, var(--background), transparent 25%)`,
-
-        // Misc colors
-        orbitDotColor: isDark ? textHsl : `hsl(var(--primary))`,
-        socialIconColor: isDark ? textHsl : `hsl(var(--primary))`,
-        contactSocialColor: `hsla(${textColor.h}, ${textColor.s}%, ${textColor.l}%, 0.4)`,
+        // Cursor colors
         cursorColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.6)`,
         cursorColorAlt: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.8)`,
         cursorBackgroundColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.3)`,
         dotColor: isDark ? textHsl : `hsl(var(--primary))`,
+
+        // Footer colors
+        footer: `hsl(${p.h}, ${p.s}%, ${footerLightness}%)`,
+        footerSvgA: `hsl(${p.h - 5}, ${p.s * 0.75}%, ${footerSvgALightness}%)`,
+        footerSvgB: `hsl(${p.h - 8}, ${p.s * 0.6}%, ${footerSvgBLightness}%)`,
     };
 };
