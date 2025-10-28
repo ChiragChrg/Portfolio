@@ -2,7 +2,7 @@
     "branches": [
         "main",
         {
-            "name": "beta",
+            "name": "astro",
             "prerelease": true
         }
     ],
@@ -87,6 +87,12 @@
                         }
                     ]
                 }
+            }
+        ],
+        [
+            "@semantic-release/npm",
+            {
+                "npmPublish": false
             }
         ],
         [
