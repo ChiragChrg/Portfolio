@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## <small>1.0.1 (2025-10-28)</small>
+
+* chore: :wrench: Rename beta branch to astro in release configuration ([c2dcb53](https://github.com/ChiragChrg/Portfolio/commit/c2dcb53))
+
 ## 1.0.0 (2025-10-28)
 
 * build: 📦 Add permissions for contents, issues, and pull-requests in release workflow ([4d8d403](https://github.com/ChiragChrg/Portfolio/commit/4d8d403))
