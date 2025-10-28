@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## <small>1.0.2 (2025-10-28)</small>
+
+* chore: :wrench: Add @semantic-release/npm and disable npm publishing ([59d5a78](https://github.com/ChiragChrg/Portfolio/commit/59d5a78))
+
 ## <small>1.0.1 (2025-10-28)</small>
 
 * chore: :wrench: Rename beta branch to astro in release configuration ([c2dcb53](https://github.com/ChiragChrg/Portfolio/commit/c2dcb53))
