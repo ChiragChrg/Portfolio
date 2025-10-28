@@ -1,0 +1,121 @@
+{
+    "branches": [
+        "main",
+        {
+            "name": "beta",
+            "prerelease": true
+        }
+    ],
+    "plugins": [
+        [
+            "@semantic-release/commit-analyzer",
+            {
+                "preset": "conventionalcommits",
+                "releaseRules": [
+                    {
+                        "type": "enhance",
+                        "release": "minor"
+                    },
+                    {
+                        "type": "seo",
+                        "release": "minor"
+                    },
+                    {
+                        "type": "perf",
+                        "release": "minor"
+                    },
+                    {
+                        "type": "enhance",
+                        "release": "minor"
+                    },
+                    {
+                        "type": "docs",
+                        "release": "patch"
+                    },
+                    {
+                        "type": "refactor",
+                        "release": "patch"
+                    },
+                    {
+                        "type": "style",
+                        "release": "patch"
+                    },
+                    {
+                        "type": "chore",
+                        "release": "patch"
+                    }
+                ]
+            }
+        ],
+        [
+            "@semantic-release/release-notes-generator",
+            {
+                "preset": "conventionalcommits",
+                "presetConfig": {
+                    "types": [
+                        {
+                            "type": "feat",
+                            "section": "✨ Features"
+                        },
+                        {
+                            "type": "enhance",
+                            "section": "⭐ Enhancements"
+                        },
+                        {
+                            "type": "fix",
+                            "section": "🐛 Bug Fixes"
+                        },
+                        {
+                            "type": "refactor",
+                            "section": "♻️ Code Refactoring"
+                        },
+                        {
+                            "type": "docs",
+                            "section": "📝 Documentation"
+                        },
+                        {
+                            "type": "style",
+                            "section": "🎨 Styles"
+                        },
+                        {
+                            "type": "seo",
+                            "section": "🔍 SEO Updates"
+                        },
+                        {
+                            "type": "perf",
+                            "section": "🚀 Performance Improvements"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            "@semantic-release/changelog",
+            {
+                "changelogFile": "CHANGELOG.md",
+                "changelogTitle": "# 📦 Changelog\n\nAll notable changes to this project will be documented in this file."
+            }
+        ],
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "package.json",
+                    "CHANGELOG.md"
+                ],
+                "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+            }
+        ],
+        [
+            "@semantic-release/github",
+            {
+                "assets": [
+                    {
+                        "path": "dist.zip",
+                        "label": "Distribution Build (dist.zip)"
+                    }
+                ]
+            }
+        ]
+    ]
+}

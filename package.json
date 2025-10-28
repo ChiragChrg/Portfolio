@@ -15,7 +15,10 @@
     "build": "npm run build:themes && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -38,6 +41,13 @@
     "eslint": "^9.38.0",
     "eslint-plugin-astro": "^1.3.1",
     "ts-node": "^10.9.2",
-    "typescript-eslint": "^8.46.1"
+    "typescript-eslint": "^8.46.1",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.0",
+    "husky": "^9.1.7",
+    "semantic-release": "^25.0.1"
   }
 }

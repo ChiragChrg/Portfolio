@@ -61,6 +61,10 @@ Follow these steps to run the project locally:
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).  
-You are free to use, modify, and share this project, as long as you include the original copyright.
+You may use, copy, modify, and distribute this project for any purpose, provided that you:
 
-© 2025 ChiragChrg — All rights reserved under MIT.
+- Include the original copyright.
+- Retain the MIT license in all copies or substantial portions of the software.
+- Visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
+
+Proper attribution helps acknowledge the effort invested in this project and upholds the values of integrity, transparency, and the open‑source community.
