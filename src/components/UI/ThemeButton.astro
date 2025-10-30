@@ -49,7 +49,7 @@ const { className }: Props = Astro.props;
 </button>
 
 <script is:inline type="module">
-    // Handle theme toggling
+    // Handle theme toggling (light/dark mode)
     if (!window.themeInitialized) {
         window.themeInitialized = true;
 
@@ -58,14 +58,15 @@ const { className }: Props = Astro.props;
         const darkThemeBtn = document.getElementById("themeMoonSvg");
 
         const THEME_KEY = "chiragchrg-portfolio-theme";
+        const THEME_NAME_KEY = "chiragchrg-portfolio-theme-name";
 
-        const setTheme = (theme) => {
-            // Update document element class
+        const setTheme = (mode) => {
+            // Update document element class for light/dark mode
             document.documentElement.classList.remove("light", "dark");
-            document.documentElement.classList.add(theme);
+            document.documentElement.classList.add(mode);
 
             // Update button visibility
-            if (theme === "light") {
+            if (mode === "light") {
                 lightThemeBtn.style.visibility = "visible";
                 darkThemeBtn.style.visibility = "hidden";
             } else {
@@ -75,7 +76,7 @@ const { className }: Props = Astro.props;
 
             // Save to localStorage
             try {
-                localStorage.setItem(THEME_KEY, theme);
+                localStorage.setItem(THEME_KEY, mode);
             } catch (_e) {
                 console.warn("Failed to save theme:", _e);
             }
@@ -99,13 +100,24 @@ const { className }: Props = Astro.props;
 
         // Initialize theme
         const savedTheme = getCurrentTheme();
+        const savedThemeName = localStorage.getItem(THEME_NAME_KEY) || "custom";
+
+        // Ensure theme class is applied
+        const currentThemeClasses = Array.from(
+            document.documentElement.classList,
+        ).filter((cls) => cls.startsWith("theme-"));
+
+        if (currentThemeClasses.length === 0) {
+            document.documentElement.classList.add(`theme-${savedThemeName}`);
+        }
+
         setTheme(savedTheme);
 
-        // Toggle theme function
+        // Toggle theme function (only toggles light/dark)
         const toggleTheme = () => {
             const isDark = document.documentElement.classList.contains("dark");
-            const newTheme = isDark ? "light" : "dark";
-            setTheme(newTheme);
+            const newMode = isDark ? "light" : "dark";
+            setTheme(newMode);
         };
 
         // Toggle theme on button click

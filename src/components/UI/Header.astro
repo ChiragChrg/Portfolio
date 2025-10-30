@@ -1,8 +1,10 @@
 ---
 import { Download } from "lucide-preact";
-import ThemeButton from "@components/UI/ThemeButton.astro";
+import ThemeDropdown from "@components/UI/ThemeDropdown.astro";
+import ThemeButton from "./ThemeButton.astro";
 
 const { config } = Astro.props;
+const isDev = import.meta.env.DEV;
 ---
 
 <header
@@ -24,6 +26,7 @@ const { config } = Astro.props;
         </nav>
 
         <div class="flex_center gap-4">
+            {isDev && <ThemeDropdown className="Fade_Down" />}
             <ThemeButton className="Fade_Down" />
 
             <a
