@@ -9,15 +9,7 @@ import GoogleIconRaw from "@assets/SVGs/Google.svg?raw";
 import DiscordIconRaw from "@assets/SVGs/Discord.svg?raw";
 
 import { LogoIcon } from "@/assets/SVGs";
-
-enum ThemeOptions {
-    CUSTOM = "custom",
-    DEFAULT = "default",
-    OCEAN = "ocean",
-    FOREST = "forest",
-    SUNSET = "sunset",
-    LAVENDER = "lavender",
-}
+import { ThemeOptions } from "scripts/generateThemes";
 
 // Theme Configuration
 export const themeConfig = ThemeOptions.DEFAULT;
