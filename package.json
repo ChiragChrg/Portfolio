@@ -9,10 +9,10 @@
     "url": "https://chiragchrg.netlify.app/"
   },
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
+    "dev": "bun run build:themes && astro dev --host",
+    "start": "bun run build:themes && astro dev",
     "build:themes": "ts-node scripts/generateThemes.ts",
-    "build": "npm run build:themes && astro check && astro build",
+    "build": "bun run build:themes && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -32,6 +32,7 @@
     "astro-seo": "^0.8.4",
     "gsap": "^3.13.0",
     "lucide-preact": "^0.548.0",
+    "nanostores": "^1.0.1",
     "preact": "^10.27.2",
     "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3"
