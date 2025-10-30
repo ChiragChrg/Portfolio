@@ -15,14 +15,6 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // Enable CSS code splitting
-          additionalData: `@import "src/styles/variables.scss";`
-        }
-      }
-    },
     build: {
       rollupOptions: {
         output: {
