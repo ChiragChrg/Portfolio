@@ -5,7 +5,7 @@ import ThemeDropdown from "@/components/UI/ThemeDropdown.astro";
 
 const { config } = Astro.props;
 
-const isDev = import.meta.env.DEV;
+const isDev = import.meta.env.ENVIRONMENT === "development";
 const isNightly = Astro.url.origin.includes("chiragchrg-nightly.netlify.app");
 
 const showThemeDropdown = isDev || isNightly;
