@@ -6,8 +6,7 @@ import ThemeButton from "@components/UI/ThemeButton.astro";
 const { config } = Astro.props;
 
 const isDev = import.meta.env.DEV;
-const isNightly =
-    Astro.url.origin === "https://chiragchrg-nightly.netlify.app/";
+const isNightly = Astro.url.origin.includes("chiragchrg-nightly.netlify.app");
 
 const showThemeDropdown = isDev || isNightly;
 ---
