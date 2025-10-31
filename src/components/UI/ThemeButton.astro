@@ -86,12 +86,8 @@ const { className }: Props = Astro.props;
         function getCurrentTheme() {
             try {
                 const saved = localStorage.getItem(THEME_KEY);
-                const system = window.matchMedia("(prefers-color-scheme: dark)")
-                    .matches
-                    ? "dark"
-                    : "light";
 
-                return saved || system;
+                return saved || "dark";
             } catch (_e) {
                 console.log("Error getting theme, defaulting to dark");
                 return "dark";
@@ -100,7 +96,8 @@ const { className }: Props = Astro.props;
 
         // Initialize theme
         const savedTheme = getCurrentTheme();
-        const savedThemeName = localStorage.getItem(THEME_NAME_KEY) || "custom";
+        const savedThemeName =
+            localStorage.getItem(THEME_NAME_KEY) || "default";
 
         // Ensure theme class is applied
         const currentThemeClasses = Array.from(
