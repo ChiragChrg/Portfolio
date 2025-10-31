@@ -1,8 +1,15 @@
 ---
 import { Download } from "lucide-preact";
 import ThemeButton from "@components/UI/ThemeButton.astro";
+import ThemeDropdown from "@components/UI/ThemeDropdown.astro";
 
 const { config } = Astro.props;
+
+const isDev = import.meta.env.DEV;
+const isNightly =
+    Astro.url.origin === "https://chiragchrg-nightly.netlify.app/";
+
+const showThemeDropdown = isDev || isNightly;
 ---
 
 <header class="hidden lg:block sticky top-0 z-50">
@@ -21,6 +28,7 @@ const { config } = Astro.props;
         </div>
 
         <div class="flex_center gap-4">
+            {showThemeDropdown && <ThemeDropdown className="Fade_Down" />}
             <ThemeButton className="Fade_Down" />
 
             <a

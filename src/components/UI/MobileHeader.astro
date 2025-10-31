@@ -1,8 +1,15 @@
 ---
 import { Download } from "lucide-preact";
 import ThemeButton from "@/components/UI/ThemeButton.astro";
+import ThemeDropdown from "@/components/UI/ThemeDropdown.astro";
 
 const { config } = Astro.props;
+
+const isDev = import.meta.env.DEV;
+const isNightly =
+    Astro.url.origin === "https://chiragchrg-nightly.netlify.app/";
+
+const showThemeDropdown = isDev || isNightly;
 ---
 
 <header
@@ -69,6 +76,7 @@ const { config } = Astro.props;
             onclick="window.toggleTheme()"
             class="MobileHeader_Nav flex_center"
         >
+            {showThemeDropdown && <ThemeDropdown />}
             <ThemeButton />
         </div>
     </nav>
