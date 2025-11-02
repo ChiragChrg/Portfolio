@@ -3,10 +3,16 @@ type Props = {
     className?: string;
 };
 const { className }: Props = Astro.props;
+
+// Generate unique ID for this instance
+const uniqueId = Math.random().toString(36).substr(2, 9);
+const btnId = `themeToggleBtn-${uniqueId}`;
+const sunId = `themeSunSvg-${uniqueId}`;
+const moonId = `themeMoonSvg-${uniqueId}`;
 ---
 
 <button
-    id="themeToggleBtn"
+    id={btnId}
     title="Toggle Theme"
     class={`aspect-square w-8 h-8 outline-2 outline-primaryLiteAlt rounded-full relative flex_center ${className}`}
 >
@@ -20,7 +26,7 @@ const { className }: Props = Astro.props;
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        id="themeSunSvg"
+        id={sunId}
         class="lucide lucide-sun absolute"
         style="visibility: hidden;"
         ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path
@@ -40,7 +46,7 @@ const { className }: Props = Astro.props;
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        id="themeMoonSvg"
+        id={moonId}
         class="lucide lucide-moon-star absolute"
         style="visibility: visible;"
         ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path><path d="M20 3v4"
@@ -48,14 +54,13 @@ const { className }: Props = Astro.props;
     >
 </button>
 
-<script is:inline type="module">
-    // Handle theme toggling (light/dark mode)
-    if (!window.themeInitialized) {
-        window.themeInitialized = true;
+<script is:inline type="module" define:vars={{ btnId, sunId, moonId }}>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggleBtn = document.getElementById(btnId);
+        const lightThemeBtn = document.getElementById(sunId);
+        const darkThemeBtn = document.getElementById(moonId);
 
-        const themeToggleBtn = document.getElementById("themeToggleBtn");
-        const lightThemeBtn = document.getElementById("themeSunSvg");
-        const darkThemeBtn = document.getElementById("themeMoonSvg");
+        if (!themeToggleBtn || !lightThemeBtn || !darkThemeBtn) return;
 
         const THEME_KEY = "chiragchrg-portfolio-theme";
         const THEME_NAME_KEY = "chiragchrg-portfolio-theme-name";
@@ -65,13 +70,28 @@ const { className }: Props = Astro.props;
             document.documentElement.classList.remove("light", "dark");
             document.documentElement.classList.add(mode);
 
-            // Update button visibility
+            // Update button visibility for all theme buttons
+            const allSunIcons = document.querySelectorAll(
+                '[id^="themeSunSvg"]',
+            );
+            const allMoonIcons = document.querySelectorAll(
+                '[id^="themeMoonSvg"]',
+            );
+
             if (mode === "light") {
-                lightThemeBtn.style.visibility = "visible";
-                darkThemeBtn.style.visibility = "hidden";
+                allSunIcons.forEach(
+                    (icon) => (icon.style.visibility = "visible"),
+                );
+                allMoonIcons.forEach(
+                    (icon) => (icon.style.visibility = "hidden"),
+                );
             } else {
-                lightThemeBtn.style.visibility = "hidden";
-                darkThemeBtn.style.visibility = "visible";
+                allSunIcons.forEach(
+                    (icon) => (icon.style.visibility = "hidden"),
+                );
+                allMoonIcons.forEach(
+                    (icon) => (icon.style.visibility = "visible"),
+                );
             }
 
             // Save to localStorage
@@ -86,7 +106,6 @@ const { className }: Props = Astro.props;
         function getCurrentTheme() {
             try {
                 const saved = localStorage.getItem(THEME_KEY);
-
                 return saved || "dark";
             } catch (_e) {
                 console.log("Error getting theme, defaulting to dark");
@@ -94,21 +113,37 @@ const { className }: Props = Astro.props;
             }
         }
 
-        // Initialize theme
-        const savedTheme = getCurrentTheme();
-        const savedThemeName =
-            localStorage.getItem(THEME_NAME_KEY) || "default";
+        // Initialize theme only once globally
+        if (!window.themeInitialized) {
+            window.themeInitialized = true;
 
-        // Ensure theme class is applied
-        const currentThemeClasses = Array.from(
-            document.documentElement.classList,
-        ).filter((cls) => cls.startsWith("theme-"));
+            const savedTheme = getCurrentTheme();
+            const savedThemeName =
+                localStorage.getItem(THEME_NAME_KEY) || "default";
 
-        if (currentThemeClasses.length === 0) {
-            document.documentElement.classList.add(`theme-${savedThemeName}`);
+            // Ensure theme class is applied
+            const currentThemeClasses = Array.from(
+                document.documentElement.classList,
+            ).filter((cls) => cls.startsWith("theme-"));
+
+            if (currentThemeClasses.length === 0) {
+                document.documentElement.classList.add(
+                    `theme-${savedThemeName}`,
+                );
+            }
+
+            setTheme(savedTheme);
+        } else {
+            // If already initialized, just update this button's visibility
+            const currentTheme = getCurrentTheme();
+            if (currentTheme === "light") {
+                lightThemeBtn.style.visibility = "visible";
+                darkThemeBtn.style.visibility = "hidden";
+            } else {
+                lightThemeBtn.style.visibility = "hidden";
+                darkThemeBtn.style.visibility = "visible";
+            }
         }
-
-        setTheme(savedTheme);
 
         // Toggle theme function (only toggles light/dark)
         const toggleTheme = () => {
@@ -119,8 +154,5 @@ const { className }: Props = Astro.props;
 
         // Toggle theme on button click
         themeToggleBtn.addEventListener("click", toggleTheme);
-
-        // Global function for external access
-        window.toggleTheme = toggleTheme;
-    }
+    });
 </script>
