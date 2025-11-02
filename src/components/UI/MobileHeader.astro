@@ -19,22 +19,36 @@ const showThemeDropdown = isDev || isNightly;
             <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
-        <svg
-            viewBox="20 20 60 60"
-            width="45"
-            class="Fade_In MobileNav_Ham flex justify-center items-end flex-col gap-2 z-70 cursor-pointer"
-            id="Ham_Menu"
-        >
-            <path
-                class="line top"
-                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-            ></path>
-            <path class="line middle" d="m 30,50 h 40"></path>
-            <path
-                class="line bottom"
-                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-            ></path>
-        </svg>
+        <div class="flex items-center gap-4">
+            {
+                showThemeDropdown && (
+                    <div class="Fade_In z-120 relative">
+                        <ThemeDropdown className="z-120" idPrefix="Mobile" />
+                    </div>
+                )
+            }
+
+            <div onclick="window.toggleTheme()" class="Fade_In">
+                <ThemeButton />
+            </div>
+
+            <svg
+                viewBox="20 20 60 60"
+                width="45"
+                class="Fade_In MobileNav_Ham flex justify-center items-end flex-col gap-2 z-70 cursor-pointer"
+                id="Ham_Menu"
+            >
+                <path
+                    class="line top"
+                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+                ></path>
+                <path class="line middle" d="m 30,50 h 40"></path>
+                <path
+                    class="line bottom"
+                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+                ></path>
+            </svg>
+        </div>
     </div>
 
     <nav
@@ -69,14 +83,6 @@ const showThemeDropdown = isDev || isNightly;
                     <Download />
                 </div>
             </a>
-        </div>
-
-        <div
-            onclick="window.toggleTheme()"
-            class="MobileHeader_Nav flex_center"
-        >
-            {showThemeDropdown && <ThemeDropdown />}
-            <ThemeButton />
         </div>
     </nav>
 </header>

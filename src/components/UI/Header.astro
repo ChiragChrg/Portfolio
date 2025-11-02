@@ -30,7 +30,11 @@ const showThemeDropdown = isDev || isNightly;
         </nav>
 
         <div class="flex_center gap-4">
-            {showThemeDropdown && <ThemeDropdown className="Fade_Down" />}
+            {
+                showThemeDropdown && (
+                    <ThemeDropdown className="Fade_Down" idPrefix="Desktop" />
+                )
+            }
             <ThemeButton className="Fade_Down" />
 
             <a
