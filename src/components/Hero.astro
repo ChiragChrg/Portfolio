@@ -13,9 +13,10 @@ const { config } = Astro.props;
         <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
             <p class="Fade_Stagger">{config.salutation}</p>
             <h1
-                class="Fade_Stagger gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
+                class="Fade_Stagger gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight max-w-xs md:max-w-6xl"
             >
-                {config.firstName}&nbsp;{config.lastName}
+                {config.firstName}
+                {" " + config.lastName}
             </h1>
             <p class="Fade_Stagger">I'm a {config.position}.</p>
             <p class="Fade_Stagger">
@@ -28,7 +29,7 @@ const { config } = Astro.props;
         </div>
 
         <div
-            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4 !text-socialIconColor"
+            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4 text-socialIconColor!"
         >
             {
                 config.links &&
@@ -61,7 +62,7 @@ const { config } = Astro.props;
         <div
             id="avatarImage"
             role="button"
-            class="flex_center w-[250px] aspect-square rounded-full z-10 cursor-pointer"
+            class="flex_center w-[180px] sm:w-[250px] aspect-square rounded-full z-10 cursor-pointer"
         >
             <Image
                 src={config.avatar}
