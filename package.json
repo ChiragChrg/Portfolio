@@ -9,7 +9,7 @@
     "url": "https://chiragchrg.netlify.app/"
   },
   "scripts": {
-    "dev": "bun run build:themes && astro dev --host",
+    "dev": "bun run build:themes && astro dev --open --host",
     "start": "bun run build:themes && astro dev",
     "build:themes": "ts-node scripts/generateThemes.ts",
     "build": "bun run build:themes && astro check && astro build",
