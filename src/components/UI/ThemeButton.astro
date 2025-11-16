@@ -145,6 +145,18 @@ const moonId = `themeMoonSvg-${uniqueId}`;
             }
         }
 
+        /**
+         * Toggle theme with circular expansion animation
+         *
+         * @async
+         * @param {Event} event - Click event from theme toggle button
+         *
+         * @credits
+         * Circular expansion transition animation inspired by Ramkrishna Swarnkar (@ramxcodes)
+         * - Portfolio: https://ramx.in/
+         * - GitHub: https://github.com/ramxcodes
+         * - Original Implementation: https://github.com/ramxcodes/sleek-portfolio
+         */
         const toggleTheme = async (event) => {
             if (
                 !document.startViewTransition ||
