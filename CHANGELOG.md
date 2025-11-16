@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## <small>1.0.3 (2025-11-16)</small>
+
+* docs: 📚  Update README to include details about nightly build and new features ([79fc2ae](https://github.com/ChiragChrg/Portfolio/commit/79fc2ae))
+
 ## <small>1.0.2 (2025-10-28)</small>
 
 * chore: :wrench: Add @semantic-release/npm and disable npm publishing ([59d5a78](https://github.com/ChiragChrg/Portfolio/commit/59d5a78))
