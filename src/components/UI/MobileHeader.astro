@@ -31,7 +31,7 @@ const showThemeDropdown = isDev || isNightly;
             <svg
                 viewBox="20 20 60 60"
                 width="45"
-                class="Fade_In MobileNav_Ham flex justify-center items-end flex-col gap-2 z-70 cursor-pointer"
+                class="Fade_In MobileNav_Ham flex justify-center items-end flex-col gap-2 z-80 cursor-pointer"
                 id="Ham_Menu"
             >
                 <path
@@ -49,26 +49,30 @@ const showThemeDropdown = isDev || isNightly;
 
     <nav
         id="mobileHeaderNav"
-        style="clip-path: circle(30px at calc(100vw + 30px) -30px);"
-        class="w-full h-dvh flex_center flex-col fixed top-0 right-0 gap-8 z-60"
+        class="w-full h-dvh flex_center flex-col fixed top-0 right-0 gap-8 z-60 opacity-0 pointer-events-none"
+        style="clip-path: circle(0px at calc(100% - 45px) 45px);"
     >
-        <div class="MobileHeader_Nav flex_center">
+        <!-- Translucent blurry background -->
+        <div class="absolute inset-0 bg-background/50 backdrop-blur -z-10">
+        </div>
+
+        <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
             <a href="#about">About</a>
         </div>
 
-        <div class="MobileHeader_Nav flex_center">
+        <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
             <a href="#skills">Skills</a>
         </div>
 
-        <div class="MobileHeader_Nav flex_center">
+        <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
             <a href="#projects">Projects</a>
         </div>
 
-        <div class="MobileHeader_Nav flex_center">
+        <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
             <a href="#contact">Contact</a>
         </div>
 
-        <div class="MobileHeader_Nav flex_center">
+        <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
             <a
                 class="MobileHeader_ActionBtn flex_center"
                 href={config.actionButton.url}
@@ -85,6 +89,11 @@ const showThemeDropdown = isDev || isNightly;
 
 <script is:inline type="module">
     const headerElement = document.getElementById("mobileHeaderNav");
+    const hamMenu = document.getElementById("Ham_Menu");
+    const menuItems = document.querySelectorAll(".MobileHeader_Nav");
+
+    let isMenuOpen = false;
+
     const sectionsList = {
         "#home": document.getElementById("home"),
         "#about": document.getElementById("about"),
@@ -93,7 +102,133 @@ const showThemeDropdown = isDev || isNightly;
         "#contact": document.getElementById("contact"),
     };
 
-    const headerHeight = headerElement.offsetHeight;
+    const headerHeight = headerElement?.offsetHeight || 0;
+
+    // Toggle menu with circular expansion animation
+    async function toggleMenu() {
+        if (!headerElement || !hamMenu) return;
+
+        // Get hamburger button position
+        const hamRect = hamMenu.getBoundingClientRect();
+        const x = hamRect.left + hamRect.width / 2;
+        const y = hamRect.top + hamRect.height / 2;
+
+        // Calculate radius to cover entire screen
+        const endRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y),
+        );
+
+        if (!isMenuOpen) {
+            // Opening menu
+            isMenuOpen = true;
+            hamMenu.classList.add("opened");
+            headerElement.style.pointerEvents = "auto";
+
+            // Circular expansion animation
+            headerElement.animate(
+                {
+                    clipPath: [
+                        `circle(0px at ${x}px ${y}px)`,
+                        `circle(${endRadius}px at ${x}px ${y}px)`,
+                    ],
+                    opacity: [0, 1],
+                },
+                {
+                    duration: 800,
+                    easing: "ease-in-out",
+                    fill: "forwards",
+                },
+            ).onfinish = () => {
+                headerElement.style.clipPath = `circle(${endRadius}px at ${x}px ${y}px)`;
+                headerElement.style.opacity = "1";
+            };
+
+            // Stagger menu items with fade up
+            menuItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.animate(
+                        {
+                            opacity: [0, 1],
+                            transform: ["translateY(40px)", "translateY(0)"],
+                        },
+                        {
+                            duration: 500,
+                            easing: "ease-in-out",
+                            fill: "forwards",
+                            delay: index * 100,
+                        },
+                    ).onfinish = () => {
+                        item.style.opacity = "1";
+                        item.style.transform = "translateY(0)";
+                    };
+                }, 200); // Start after circle begins expanding
+            });
+        } else {
+            // Closing menu
+            isMenuOpen = false;
+            hamMenu.classList.remove("opened");
+
+            // Fade out menu items (reverse order)
+            menuItems.forEach((item, index) => {
+                const reverseIndex = menuItems.length - 1 - index;
+                setTimeout(() => {
+                    item.animate(
+                        {
+                            opacity: [1, 0],
+                            transform: ["translateY(0)", "translateY(-20px)"],
+                        },
+                        {
+                            duration: 300,
+                            easing: "ease-in-out",
+                            fill: "forwards",
+                            delay: reverseIndex * 50,
+                        },
+                    ).onfinish = () => {
+                        item.style.opacity = "0";
+                        item.style.transform = "translateY(20px)";
+                    };
+                }, 0);
+            });
+
+            // Circular collapse animation
+            setTimeout(() => {
+                headerElement.animate(
+                    {
+                        clipPath: [
+                            `circle(${endRadius}px at ${x}px ${y}px)`,
+                            `circle(0px at ${x}px ${y}px)`,
+                        ],
+                        opacity: [1, 0],
+                    },
+                    {
+                        duration: 800,
+                        easing: "ease-in-out",
+                        fill: "forwards",
+                    },
+                ).onfinish = () => {
+                    headerElement.style.clipPath = `circle(0px at ${x}px ${y}px)`;
+                    headerElement.style.opacity = "0";
+                    headerElement.style.pointerEvents = "none";
+                };
+            }, 200);
+        }
+    }
+
+    // Close menu when clicking on a link
+    function closeMenuOnLinkClick() {
+        if (isMenuOpen) {
+            hamMenu?.click();
+        }
+    }
+
+    // Add event listeners
+    hamMenu?.addEventListener("click", toggleMenu);
+
+    // Close menu when clicking on navigation links
+    document.querySelectorAll("#mobileHeaderNav a").forEach((link) => {
+        link.addEventListener("click", closeMenuOnLinkClick);
+    });
 
     // Set Active class on section scroll
     const handleScroll = () => {
