@@ -30,7 +30,7 @@ export const headerConfig = {
     logotext: "Portfolio.",
     actionButton: {
         text: "Resume",
-        url: "/Chirag Resume.pdf"
+        url: "/Chirag Resume.pdf" // use full URL or Public Folder path
     },
 }
 
