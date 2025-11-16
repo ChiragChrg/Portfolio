@@ -113,7 +113,13 @@ const trails = [
 ] as HTMLElement[];
 
 const allSpringUp = [avatar, ...trails];
-allSpringUp.forEach(el => el?.classList.add('spring-element-performance'));
+allSpringUp.forEach(el => {
+    el?.classList.add('spring-element-performance');
+    // Add GSAP force3D for better performance
+    if (el) {
+        gsap.set(el, { force3D: true });
+    }
+});
 
 // Hero Orbit Spring Animation
 if (!allSpringUp.every(el => el === null)) {
@@ -133,6 +139,7 @@ if (!allSpringUp.every(el => el === null)) {
                     delay: 1.25,
                     ease: "elastic.out(0.8, 0.2)",
                     stagger: 0.15,
+                    force3D: true,
                     onStart: function () {
                         this.targets().forEach((el: HTMLElement, i: number) => {
                             if (i === 0) return; // skip avatar for rotation
@@ -148,7 +155,9 @@ if (!allSpringUp.every(el => el === null)) {
                                 rotation: `+=${360 * direction}`,
                                 duration,
                                 repeat: -1,
-                                ease: "linear"
+                                ease: "linear",
+                                force3D: true,
+                                overwrite: "auto"
                             });
                         });
                     }
