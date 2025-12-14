@@ -1,0 +1,37 @@
+---
+import { SectionTitle } from "@/components/UI";
+import ProjectCard from "@/components/UI/ProjectCard.astro";
+import { ProjectLayout } from "@layouts/index";
+
+const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
+    "@/config"
+);
+
+// Lazy loading ProjectInfo
+const ProjectInfo = import("@/config/ProjectsList");
+const { PROJECTS_LIST } = await ProjectInfo;
+---
+
+<ProjectLayout
+    title="Projects | ChiragChrg"
+    config={{
+        theme: themeConfig,
+        site: siteConfig,
+        header: headerConfig,
+        footer: footerConfig,
+    }}
+>
+    <SectionTitle title="Projects" color="secondary" className="mb-120">
+        <div
+            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-6 mt-4"
+        >
+            {
+                PROJECTS_LIST?.map((project) => {
+                    if (project?.hideProject) return;
+
+                    return <ProjectCard project={project} />;
+                })
+            }
+        </div>
+    </SectionTitle>
+</ProjectLayout>

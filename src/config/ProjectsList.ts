@@ -21,7 +21,7 @@ import {
 } from "@assets/Mockup"
 
 
-type ProjectsListType = {
+export interface ProjectsListType {
     Name: string,
     ShortDesc: string,
     Desc: string,
@@ -52,7 +52,7 @@ type ProjectsListType = {
         version: string
         link: string
     }[]
-}[]
+}
 
 
 //#region Template
@@ -225,7 +225,7 @@ const FEATURES = {
 //#endregion Features
 
 //#region Projects List
-export const PROJECTS_LIST: ProjectsListType = [
+export const PROJECTS_LIST: ProjectsListType[] = [
     {
         Name: "ARMS v4",
         ShortDesc: "Next-generation academic resource platform for frictionless student access and robust faculty management.",
