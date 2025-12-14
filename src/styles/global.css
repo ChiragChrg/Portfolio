@@ -1,5 +1,34 @@
 @import "tailwindcss";
 
+:root {
+  --status-live-fg: #009966;
+  --status-live-bg: rgba(22, 163, 74, 0.12);
+  --status-live-border: rgba(22, 163, 74, 0.5);
+
+  --status-down-fg: #b91c1c; 
+  --status-down-bg: rgba(220, 38, 38, 0.12);
+  --status-down-border: rgba(220, 38, 38, 0.5);
+
+  --status-warn-fg: #b45309; 
+  --status-warn-bg: rgba(245, 158, 11, 0.12);
+  --status-warn-border: rgba(245, 158, 11, 0.5);
+}
+
+html.dark {
+  --status-live-fg: #4ade80; 
+  --status-live-bg: rgba(34,197,94,0.16);
+  --status-live-border: rgba(74,222,128,0.55);
+
+  --status-down-fg: #f87171; 
+  --status-down-bg: rgba(239,68,68,0.16);
+  --status-down-border: rgba(248,113,113,0.55);
+
+  --status-warn-fg: #fbbf24;  
+  --status-warn-bg: rgba(245,158,11,0.16);
+  --status-warn-border: rgba(251,191,36,0.55);
+}
+
+
 @theme {
     --breakpoint-xs: 410px;
     --breakpoint-4xl: 1800px;
@@ -15,6 +44,8 @@
     --color-secondaryLite: var(--secondaryLite);
     --color-secondaryLiteAlt: var(--secondaryLiteAlt);
     --color-footer: var(--footer);
+    --color-footerAlt: var(--footerSvgA);
+    --color-footerAltLite: var(--footerSvgB);
     --color-contactSocialColor: var(--contactSocialColor);
     --color-socialIconColor: var(--socialIconColor);
 
@@ -40,6 +71,25 @@ html {
 body {
     background-color: var(--background);
     color: var(--text);
+}
+
+/* Project Status Chip */
+.statusLive {
+  color: var(--status-live-fg);
+  background: var(--status-live-bg);
+  border: 1px solid var(--status-live-border);
+}
+
+.statusDown {
+  color: var(--status-down-fg);
+  background: var(--status-down-bg);
+  border: 1px solid var(--status-down-border);
+}
+
+.statusBuilding {
+  color: var(--status-warn-fg);
+  background: var(--status-warn-bg);
+  border: 1px solid var(--status-warn-border);
 }
 
 
@@ -412,8 +462,8 @@ html.lenis {
 }
 .Projects_Link {
     padding: 0.45em;
-    border: 1px solid var(--primaryLite);
-    border-radius: 100%;
+    /* border: 1px solid var(--primaryLite);
+    border-radius: 100%; */
     z-index: 10;
 }
 
