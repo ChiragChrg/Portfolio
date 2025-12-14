@@ -1,6 +1,5 @@
 ---
-import { SectionTitle } from "@/components/UI";
-import ProjectCard from "@/components/UI/ProjectCard.astro";
+import { SectionTitle, ProjectCard } from "@/components/UI";
 import { ProjectLayout } from "@layouts/index";
 
 const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
@@ -22,8 +21,18 @@ const { PROJECTS_LIST } = await ProjectInfo;
     }}
 >
     <SectionTitle title="Projects" color="secondary" className="mb-120">
+        <!-- Empty Projects Grid -->
+        {
+            PROJECTS_LIST.length === 0 && (
+                <p class="text-center text-muted-foreground mt-10">
+                    No projects to display at the moment. Please check back
+                    later.
+                </p>
+            )
+        }
+
         <div
-            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-6 mt-4"
+            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4"
         >
             {
                 PROJECTS_LIST?.map((project) => {

@@ -1,7 +1,5 @@
 ---
-import { ExternalLinkIcon, WrenchIcon } from "lucide-preact";
-import { SectionTitle } from "@components/UI";
-import { Image } from "astro:assets";
+import { SectionTitle, ProjectCard } from "@components/UI";
 
 // Lazy loading ProjectInfo
 const ProjectInfo = import("@/config/ProjectsList");
@@ -10,90 +8,24 @@ const { PROJECTS_LIST } = await ProjectInfo;
 
 <section id="projects" class="w-full min-h-screen py-4 pt-14 bg-background">
     <SectionTitle title="My Projects" color="secondary">
+        <!-- Empty Projects Grid -->
+        {
+            PROJECTS_LIST.length === 0 && (
+                <p class="text-center text-muted-foreground mt-10">
+                    No projects to display at the moment. Please check back
+                    later.
+                </p>
+            )
+        }
+
         <div
-            class="Fade_Up relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
+            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4"
         >
             {
-                PROJECTS_LIST?.map((project) => {
+                PROJECTS_LIST.map((project) => {
                     if (project?.hideProject) return;
 
-                    return (
-                        <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col cardGradient overflow-hidden rounded-[0.4em] mt-3 opacity-0">
-                            <a
-                                href={`/projects/${project?.Name.replaceAll(
-                                    " ",
-                                    "-",
-                                ).toLowerCase()}`}
-                                class="Projects_Preview w-full relative rounded-[0.4em]"
-                            >
-                                <Image
-                                    class="Card_Image bg-cover opacity-100 transition-opacity w-full"
-                                    style={{
-                                        borderRadius: "0.4em 0.4em 0 100%",
-                                    }}
-                                    src={project.Shot}
-                                    alt={`Project_ScreenShot_${project.Name}`}
-                                    widths={[346, project.Shot.width]}
-                                    sizes={`(max-width: 720px) 346px, ${project.Shot.width}px`}
-                                    loading="lazy"
-                                />
-                                <Image
-                                    class="absolute left-6 bottom-6"
-                                    src={project.Logo}
-                                    alt={`Project_Logo_${project.Name}`}
-                                    width={project.LogoSize}
-                                    height={project.LogoSize}
-                                    loading="lazy"
-                                />
-                            </a>
-                            <div class="w-full text-[0.95em] px-4">
-                                <div class="flex justify-between items-center">
-                                    <h3 class="font-ubuntu text-[1.4em] py-3">
-                                        {project.Name}
-                                    </h3>
-                                    <div class="flex">
-                                        {project.Status === "development" && (
-                                            <div class="flex_center gap-2 px-1 py-0.5 text-orange-400">
-                                                <WrenchIcon size={16} />
-
-                                                <span class="text-[0.8em]">
-                                                    Under Development
-                                                </span>
-                                            </div>
-                                        )}
-
-                                        <a
-                                            href={project.Link}
-                                            title={`${project.Name} Live`}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            class="Projects_Link flex"
-                                        >
-                                            <ExternalLinkIcon aria-hidden="true" />
-                                            <span class="sr-only">
-                                                Demo for {project.Name}
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <p class="text-center">{project.ShortDesc}</p>
-
-                                <div class="w-full flex_center gap-4 py-3">
-                                    {project.Tech.map((tech) => {
-                                        return (
-                                            <Image
-                                                src={tech.icon}
-                                                alt={`TechIcon ${tech.title}`}
-                                                width={22}
-                                                height={22}
-                                                loading="lazy"
-                                            />
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    );
+                    return <ProjectCard project={project} />;
                 })
             }
         </div>
