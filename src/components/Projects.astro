@@ -4,6 +4,10 @@ import { SectionTitle, ProjectCard } from "@components/UI";
 // Lazy loading ProjectInfo
 const ProjectInfo = import("@/config/ProjectsList");
 const { PROJECTS_LIST } = await ProjectInfo;
+
+const PROJECT_LIST_LIMIT = 9;
+const SHOW_ALL_PROJECTS =
+    PROJECTS_LIST.filter((p) => !p.hideProject).length > PROJECT_LIST_LIMIT;
 ---
 
 <section id="projects" class="w-full min-h-screen py-4 pt-14 bg-background">
@@ -19,15 +23,31 @@ const { PROJECTS_LIST } = await ProjectInfo;
         }
 
         <div
-            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4"
+            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4 mb-8"
         >
             {
-                PROJECTS_LIST.map((project) => {
+                PROJECTS_LIST.map((project, index) => {
                     if (project?.hideProject) return;
+
+                    // LIMIT PROJECT LIST TO 9 ITEMS
+                    if (index > PROJECT_LIST_LIMIT + 2) return;
 
                     return <ProjectCard project={project} />;
                 })
             }
         </div>
+
+        <!-- View all projects -->
+        {
+            SHOW_ALL_PROJECTS && (
+                <a
+                    href="/projects"
+                    title="View All Projects"
+                    class="flex items-center mx-auto w-fit px-4 py-2 bg-footerAlt border border-accent font-medium"
+                >
+                    View All Projects
+                </a>
+            )
+        }
     </SectionTitle>
 </section>
