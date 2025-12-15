@@ -67,7 +67,7 @@
   --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 15%, 0.6));
   --cursorColor: hsla(0, 0%, 100%, 0.6);
   --cursorColorAlt: hsla(0, 0%, 100%, 0.8);
-  --cursorBackgroundColor: hsla(0, 0%, 100%, 0.2);
+  --cursorBackgroundColor: hsla(263.9, 98.9%, 64.7%, 0.3);
   --dotColor: hsl(0, 0%, 100%);
   --footer: hsl(263.9, 98.9%, 15%);
   --footerSvgA: hsl(258.9, 74.17500000000001%, 10%);
@@ -141,7 +141,7 @@
   --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 15%, 0.6));
   --cursorColor: hsla(0, 0%, 100%, 0.6);
   --cursorColorAlt: hsla(0, 0%, 100%, 0.8);
-  --cursorBackgroundColor: hsla(0, 0%, 100%, 0.2);
+  --cursorBackgroundColor: hsla(264, 100%, 50%, 0.3);
   --dotColor: hsl(0, 0%, 100%);
   --footer: hsl(264, 100%, 15%);
   --footerSvgA: hsl(259, 75%, 10%);
@@ -215,7 +215,7 @@
   --LinkBtnGradient: linear-gradient(-135deg, hsla(202.5, 100%, 10%, 0.8), hsla(202.5, 100%, 15%, 0.6));
   --cursorColor: hsla(190.4, 100%, 95.5%, 0.6);
   --cursorColorAlt: hsla(190.4, 100%, 95.5%, 0.8);
-  --cursorBackgroundColor: hsla(190.4, 100%, 95.5%, 0.2);
+  --cursorBackgroundColor: hsla(211.3, 98.9%, 64.7%, 0.3);
   --dotColor: hsl(190.4, 100%, 95.5%);
   --footer: hsl(211.3, 98.9%, 15%);
   --footerSvgA: hsl(206.3, 74.17500000000001%, 10%);
@@ -289,7 +289,7 @@
   --LinkBtnGradient: linear-gradient(-135deg, hsla(146.7, 100%, 10%, 0.8), hsla(146.7, 100%, 15%, 0.6));
   --cursorColor: hsla(122.6, 100%, 95.5%, 0.6);
   --cursorColorAlt: hsla(122.6, 100%, 95.5%, 0.8);
-  --cursorBackgroundColor: hsla(122.6, 100%, 95.5%, 0.2);
+  --cursorBackgroundColor: hsla(148, 100%, 47.8%, 0.3);
   --dotColor: hsl(122.6, 100%, 95.5%);
   --footer: hsl(148, 100%, 15%);
   --footerSvgA: hsl(143, 75%, 10%);
@@ -363,7 +363,7 @@
   --LinkBtnGradient: linear-gradient(-135deg, hsla(18.5, 100%, 10%, 0.8), hsla(18.5, 100%, 15%, 0.6));
   --cursorColor: hsla(24, 100%, 95.1%, 0.6);
   --cursorColorAlt: hsla(24, 100%, 95.1%, 0.8);
-  --cursorBackgroundColor: hsla(24, 100%, 95.1%, 0.2);
+  --cursorBackgroundColor: hsla(20.2, 98.9%, 64.7%, 0.3);
   --dotColor: hsl(24, 100%, 95.1%);
   --footer: hsl(20.2, 98.9%, 15%);
   --footerSvgA: hsl(15.2, 74.17500000000001%, 10%);

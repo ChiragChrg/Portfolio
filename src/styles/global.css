@@ -9,7 +9,7 @@
   --status-down-bg: rgba(220, 38, 38, 0.12);
   --status-down-border: rgba(220, 38, 38, 0.5);
 
-  --status-warn-fg: #b45309; 
+  --status-warn-fg: #fe9a00; 
   --status-warn-bg: rgba(245, 158, 11, 0.12);
   --status-warn-border: rgba(245, 158, 11, 0.5);
 }

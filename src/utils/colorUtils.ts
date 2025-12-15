@@ -215,7 +215,7 @@ export const generateThemeVariables = async (
         // Cursor colors
         cursorColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.6)`,
         cursorColorAlt: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.8)`,
-        cursorBackgroundColor: `hsla(${isDark ? textColor.h : p.h}, ${isDark ? textColor.s : p.s}%, ${isDark ? textColor.l : p.l}%, 0.2)`,
+        cursorBackgroundColor: `hsla(${p.h}, ${p.s}%, ${p.l}%, ${isDark ? 0.3 : 0.2})`,
         dotColor: isDark ? textHsl : `hsl(var(--primary))`,
 
         // Footer colors
