@@ -3,12 +3,18 @@ type Props = {
     className?: string;
 };
 const { className }: Props = Astro.props;
+
+// Generate unique ID for this instance
+const uniqueId = Math.random().toString(36).substr(2, 9);
+const btnId = `themeToggleBtn-${uniqueId}`;
+const sunId = `themeSunSvg-${uniqueId}`;
+const moonId = `themeMoonSvg-${uniqueId}`;
 ---
 
 <button
-    id="themeToggleBtn"
+    id={btnId}
     title="Toggle Theme"
-    class={`aspect-square w-8 h-8 outline outline-2 outline-primaryLiteAlt rounded-full relative flex_center ${className}`}
+    class={`aspect-square w-8 h-8 outline-2 outline-primaryLiteAlt rounded-full relative flex_center cursor-pointer ${className}`}
 >
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,15 +26,20 @@ const { className }: Props = Astro.props;
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        id="themeSunSvg"
+        id={sunId}
         class="lucide lucide-sun absolute"
         style="visibility: hidden;"
-        ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path
-            d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path
-            d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path
-            d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path
-            d="m19.07 4.93-1.41 1.41"></path></svg
     >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="m4.93 4.93 1.41 1.41"></path>
+        <path d="m17.66 17.66 1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="m6.34 17.66-1.41 1.41"></path>
+        <path d="m19.07 4.93-1.41 1.41"></path>
+    </svg>
 
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,41 +51,194 @@ const { className }: Props = Astro.props;
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        id="themeMoonSvg"
+        id={moonId}
         class="lucide lucide-moon-star absolute"
         style="visibility: visible;"
-        ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path><path d="M20 3v4"
-        ></path><path d="M22 5h-4"></path></svg
     >
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path>
+        <path d="M20 3v4"></path>
+        <path d="M22 5h-4"></path>
+    </svg>
 </button>
 
-<!-- <script is:inline type="module">
-    const themeToggleBtn = document.getElementById("themeToggleBtn");
-    const lightThemeBtn = document.getElementById("themeSunSvg");
-    const darkThemeBtn = document.getElementById("themeMoonSvg");
+<script is:inline type="module" define:vars={{ btnId, sunId, moonId }}>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggleBtn = document.getElementById(btnId);
+        const lightThemeBtn = document.getElementById(sunId);
+        const darkThemeBtn = document.getElementById(moonId);
 
-    let currentTheme = localStorage.getItem("chiragchrg-portfolio-theme");
-    if (currentTheme == "light") {
-        document.documentElement.classList.add("light");
-        darkThemeBtn.style.visibility = "hidden";
-        lightThemeBtn.style.visibility = "visible";
-    } else {
-        document.documentElement.classList.remove("light");
-        darkThemeBtn.style.visibility = "visible";
-        lightThemeBtn.style.visibility = "hidden";
+        if (!themeToggleBtn || !lightThemeBtn || !darkThemeBtn) return;
+
+        const THEME_KEY = "chiragchrg-portfolio-theme";
+        const THEME_NAME_KEY = "chiragchrg-portfolio-theme-name";
+
+        const setTheme = (mode) => {
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(mode);
+
+            const allSunIcons = document.querySelectorAll(
+                '[id^="themeSunSvg"]',
+            );
+            const allMoonIcons = document.querySelectorAll(
+                '[id^="themeMoonSvg"]',
+            );
+
+            if (mode === "light") {
+                allSunIcons.forEach(
+                    (icon) => (icon.style.visibility = "visible"),
+                );
+                allMoonIcons.forEach(
+                    (icon) => (icon.style.visibility = "hidden"),
+                );
+            } else {
+                allSunIcons.forEach(
+                    (icon) => (icon.style.visibility = "hidden"),
+                );
+                allMoonIcons.forEach(
+                    (icon) => (icon.style.visibility = "visible"),
+                );
+            }
+
+            try {
+                localStorage.setItem(THEME_KEY, mode);
+            } catch (_e) {
+                console.warn("Failed to save theme:", _e);
+            }
+        };
+
+        function getCurrentTheme() {
+            try {
+                const saved = localStorage.getItem(THEME_KEY);
+                return saved || "dark";
+            } catch (_e) {
+                console.log("Error getting theme, defaulting to dark");
+                return "dark";
+            }
+        }
+
+        if (!window.themeInitialized) {
+            window.themeInitialized = true;
+
+            const savedTheme = getCurrentTheme();
+            const savedThemeName =
+                localStorage.getItem(THEME_NAME_KEY) || "default";
+
+            const currentThemeClasses = Array.from(
+                document.documentElement.classList,
+            ).filter((cls) => cls.startsWith("theme-"));
+
+            if (currentThemeClasses.length === 0) {
+                document.documentElement.classList.add(
+                    `theme-${savedThemeName}`,
+                );
+            }
+
+            setTheme(savedTheme);
+        } else {
+            const currentTheme = getCurrentTheme();
+            if (currentTheme === "light") {
+                lightThemeBtn.style.visibility = "visible";
+                darkThemeBtn.style.visibility = "hidden";
+            } else {
+                lightThemeBtn.style.visibility = "hidden";
+                darkThemeBtn.style.visibility = "visible";
+            }
+        }
+
+        /**
+         * Toggle theme with circular expansion animation
+         *
+         * @async
+         * @param {Event} event - Click event from theme toggle button
+         *
+         * @credits
+         * Circular expansion transition animation inspired by Ramkrishna Swarnkar (@ramxcodes)
+         * - Portfolio: https://ramx.in/
+         * - GitHub: https://github.com/ramxcodes
+         * - Original Implementation: https://github.com/ramxcodes/sleek-portfolio
+         */
+        const toggleTheme = async (event) => {
+            if (
+                !document.startViewTransition ||
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+                const isDark =
+                    document.documentElement.classList.contains("dark");
+                const newMode = isDark ? "light" : "dark";
+                setTheme(newMode);
+                return;
+            }
+
+            const button = event.currentTarget;
+            const { top, left, width, height } = button.getBoundingClientRect();
+            const x = left + width / 2;
+            const y = top + height / 2;
+            const endRadius = Math.hypot(
+                Math.max(x, window.innerWidth - x),
+                Math.max(y, window.innerHeight - y),
+            );
+
+            const isDark = document.documentElement.classList.contains("dark");
+            const newMode = isDark ? "light" : "dark";
+
+            // Preserve GSAP animations if GSAP is available
+            let gsapTweens = [];
+            if (window.gsap) {
+                gsapTweens = window.gsap.globalTimeline.getChildren(
+                    true,
+                    true,
+                    false,
+                );
+            }
+
+            const transition = document.startViewTransition(() => {
+                setTheme(newMode);
+            });
+
+            await transition.ready;
+
+            // Resume GSAP animations
+            if (window.gsap && gsapTweens.length > 0) {
+                gsapTweens.forEach((tween) => {
+                    if (tween && typeof tween.resume === "function") {
+                        tween.resume();
+                    }
+                });
+            }
+
+            document.documentElement.animate(
+                {
+                    clipPath: [
+                        `circle(0px at ${x}px ${y}px)`,
+                        `circle(${endRadius}px at ${x}px ${y}px)`,
+                    ],
+                },
+                {
+                    duration: 800,
+                    easing: "ease-in-out",
+                    pseudoElement: "::view-transition-new(root)",
+                },
+            );
+        };
+
+        themeToggleBtn.addEventListener("click", toggleTheme);
+    });
+</script>
+
+<style is:global>
+    /* Disable default view transition animation */
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
     }
 
-    themeToggleBtn.addEventListener("click", () => {
-        if (document.documentElement.classList.contains("light")) {
-            darkThemeBtn.style.visibility = "visible";
-            lightThemeBtn.style.visibility = "hidden";
-            document.documentElement.classList.remove("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "dark");
-        } else {
-            darkThemeBtn.style.visibility = "hidden";
-            lightThemeBtn.style.visibility = "visible";
-            document.documentElement.classList.add("light");
-            localStorage.setItem("chiragchrg-portfolio-theme", "light");
-        }
-    });
-</script> -->
+    /* Smoother appearance */
+    ::view-transition-old(root) {
+        z-index: 1;
+    }
+
+    ::view-transition-new(root) {
+        z-index: 2;
+    }
+</style>

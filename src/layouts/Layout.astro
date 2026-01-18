@@ -2,12 +2,19 @@
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { join } from "node:path";
-import { Header, MobileHeader, Cursor } from "../components/UI";
-import { Footer } from "../components";
+import { Header, MobileHeader, Cursor } from "@components/UI";
+import { Footer } from "@components/index";
+
+import "@styles/themes.css";
+import "@styles/global.css";
+import "@styles/utility.css";
+import "@styles/cursor.css";
+
+const { config } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class=`theme-${config.theme} dark`>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,41 +23,41 @@ import { Footer } from "../components";
 		<meta name="robots" content="index, follow" />
 		<meta
 			name="google-site-verification"
-			content="YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y"
+			content={config.site.googleSiteVerification}
 		/>
-		<meta
-			name="keywords"
-			content="chiragchrg,chrgchirag, chirag, chrg, @ChrgChirag, portfolio, vortexa, ARMS, ARMS2.0, ARMS v3, Academic, Resource, Management, System, xrecon, @ChrgChirag, chiruchirag2001, chiragchrg.netlify.app, Fullstack Web Developer, My Personal Portfolio, ChiragChrg.github.io, I create Exciting Stuff on the Internet., epitome, aimit, epitome2k24,Epitome 2k24, Oriv.io, Oriv"
-		/>
+		<meta name="keywords" content={config.site.keywords} />
 		<meta name="author" content="ChiragChrg" />
 		<meta name="publisher" content="ChiragChrg" />
 		<link rel="manifest" href="/manifest.json" />
 
 		<!-- Preload CSS Styles -->
-		<link rel="preload stylesheet" href="/styles/global.css" as="style" />
-		<link rel="preload stylesheet" href="/styles/utility.css" as="style" />
-		<link rel="preload stylesheet" href="/styles/cursor.css" as="style" />
+		<!-- <link rel="preload stylesheet" href="@styles/global.css" as="style" /> -->
+		<!-- <link
+			rel="preload stylesheet"
+			href="@styles/utility.css"
+			as="style"
+		/>
+		<link rel="preload stylesheet" href="@styles/cursor.css" as="style" /> -->
 
 		<SEO
-			title="ChiragChrg | My Personal Portfolio | Fullstack Web Developer"
-			description="Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX."
-			canonical="https://chiragchrg.netlify.app/"
+			title=`${config.site.title}`
+			description=`${config.site.description}`
+			canonical=`${config.site.siteUrl}`
 			openGraph={{
 				basic: {
-					title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
+					title: config.site.title,
 					type: "website",
-					image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
-					url: "https://chiragchrg.netlify.app/",
+					image: config.site.avatar,
+					url: config.site.siteUrl,
 				},
 			}}
 			twitter={{
-				title: "ChiragChrg | My Personal Portfolio | Fullstack Web Developer",
-				description:
-					"Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
+				title: config.site.title,
+				description: config.site.description,
 				card: "summary",
 				site: "@ChrgChirag",
 				creator: "@ChrgChirag",
-				image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
+				image: config.site.avatar,
 			}}
 			extend={{
 				link: [
@@ -69,7 +76,7 @@ import { Footer } from "../components";
 				meta: [
 					{
 						name: "twitter:url",
-						content: "https://chiragchrg.netlify.app/",
+						content: config.site.siteUrl,
 					},
 				],
 			}}
@@ -93,8 +100,9 @@ import { Footer } from "../components";
 					],
 					preload: true,
 					display: "swap",
-					fallback: "serif",
+					fallback: "sans-serif",
 					cssVariable: "astro-font-poppins",
+					selector: ".font-poppins",
 				},
 				{
 					name: "Satisfy",
@@ -114,6 +122,7 @@ import { Footer } from "../components";
 					display: "swap",
 					fallback: "serif",
 					cssVariable: "astro-font-satisfy",
+					selector: ".font-satisfy",
 				},
 				{
 					name: "Ubuntu",
@@ -133,637 +142,21 @@ import { Footer } from "../components";
 					display: "swap",
 					fallback: "serif",
 					cssVariable: "astro-font-ubuntu",
+					selector: ".font-ubuntu",
 				},
 			]}
 		/>
-
-		<style is:global>
-			:root {
-				--base: #000000;
-				--baseLite: rgba(0, 0, 0, 0.85);
-				--text: #fff;
-
-				--pH: 264;
-				--pS: 100%;
-				--pL: 50%;
-
-				--sH: 315;
-				--sS: 100%;
-				--sL: 50%;
-
-				--mH: 275;
-				--mS: 100%;
-				--mL: 47%;
-
-				/* --primary: 264, 100%, 50%;
-				--secondary: 315, 100%, 50%;
-				--mixColor: 275, 100%, 47%; */
-
-				--primary: var(--pH), var(--pS), var(--pL);
-				--secondary: var(--sH), var(--sS), var(--sL);
-				--mixColor: var(--mH), var(--mS), var(--mL);
-
-				--primaryLite: hsla(var(--primary), 0.6);
-				--primaryLiteAlt: hsla(var(--primary), 0.3);
-				--secondaryLite: hsla(var(--secondary), 0.6);
-				--secondaryLiteAlt: hsla(var(--secondary), 0.3);
-
-				--footer: hsl(264, 100%, 15%);
-				--footerSvgA: hsl(259, 75%, 10%);
-				--footerSvgB: hsl(256, 60%, 5%);
-
-				--gradient: linear-gradient(
-					to right,
-					hsl(var(--secondary)),
-					hsl(var(--primary)),
-					hsl(var(--primary)),
-					hsl(var(--secondary))
-				);
-				--gradientLite: linear-gradient(
-					45deg,
-					var(--primaryLite),
-					hsl(var(--secondaryLite))
-				);
-
-				--headerGradient: linear-gradient(
-					180deg,
-					rgba(0, 0, 0, 0.6),
-					transparent
-				);
-				--cardGradient: linear-gradient(
-					45deg,
-					hsl(0, 0%, 1%),
-					var(--primaryLite)
-				);
-				--cardGradientAlt: linear-gradient(
-					-135deg,
-					hsl(0, 0%, 5%),
-					var(--primaryLiteAlt)
-				);
-				--miscCardGradient: linear-gradient(
-					-45deg,
-					hsl(0, 0%, 1%),
-					var(--primaryLiteAlt)
-				);
-				--overlayGradient: radial-gradient(
-					farthest-corner at 100% 0%,
-					hsla(0, 0%, 5%, 0.5),
-					transparent
-				);
-				--LinkBtnGradient: linear-gradient(
-					-135deg,
-					hsla(0, 0%, 9%, 0.8),
-					hsla(0, 0%, 10%, 0.6)
-				);
-				--SkillGradient: linear-gradient(
-					-135deg,
-					hsla(276, 50%, 10%, 0.8),
-					hsla(296, 50%, 10%, 0.5)
-				);
-				--SkillGradientAlt: linear-gradient(
-					-135deg,
-					hsla(276, 50%, 10%, 0.4),
-					hsla(296, 50%, 10%, 0.25)
-				);
-				--orbitGradient: conic-gradient(
-					transparent,
-					transparent,
-					hsl(var(--primary)),
-					hsl(var(--secondary)),
-					#fff
-				);
-				--orbitGradientAlt: conic-gradient(
-					#fff,
-					hsl(var(--primary)),
-					hsl(var(--secondary)),
-					transparent,
-					transparent
-				);
-
-				--orbitDotColor: #fff;
-				--heroSocialColoe: #fff;
-				--contactSocialColor: hsla(0, 0%, 100%, 0.4);
-
-				--cursorColor: hsla(0, 0%, 100%, 0.6);
-				--cursorColorAlt: hsla(0, 0%, 100%, 0.8);
-				--dotColor: #fff;
-			}
-
-			html.light {
-				--base: #fff;
-				--baseLite: rgba(255, 255, 255, 0.85);
-				--text: #000;
-
-				--pH: 264;
-				--pS: 100%;
-				--pL: 50%;
-
-				--sH: 315;
-				--sS: 100%;
-				--sL: 50%;
-
-				--mH: 275;
-				--mS: 100%;
-				--mL: 47%;
-
-				/* --pH: 240;
-				--pS: 60%;
-				--pL: 35%;
-
-				--sH: 190;
-				--sS: 80%;
-				--sL: 50%;
-
-				--mH: 200;
-				--mS: 80%;
-				--mL: 60%; */
-
-				/* --primary: 264, 100%, 50%;
-				--secondary: 315, 100%, 50%;
-				--mixColor: 275, 100%, 47%; */
-
-				--primary: var(--pH), var(--pS), var(--pL);
-				--secondary: var(--sH), var(--sS), var(--sL);
-				--mixColor: var(--mH), var(--mS), var(--mL);
-
-				--primaryLite: hsla(var(--primary), 0.6);
-				--primaryLiteAlt: hsla(var(--primary), 0.3);
-				--secondaryLite: hsla(var(--secondary), 0.6);
-				--secondaryLiteAlt: hsla(var(--secondary), 0.3);
-
-				--footer: hsl(var(--pH), var(--pS), 75%);
-				--footerSvgA: hsl(var(--pH), var(--pS), 85%);
-				--footerSvgB: hsl(var(--pH), var(--pS), 90%);
-
-				--gradient: linear-gradient(
-					to right,
-					hsl(var(--secondary)),
-					hsl(var(--primary)),
-					hsl(var(--primary)),
-					hsl(var(--secondary))
-				);
-				--gradientLite: linear-gradient(
-					45deg,
-					var(--primaryLite),
-					hsl(var(--secondaryLite))
-				);
-
-				--headerGradient: linear-gradient(
-					180deg,
-					rgba(255, 255, 255, 0.6),
-					transparent
-				);
-				--cardGradient: linear-gradient(
-					45deg,
-					hsl(var(--secondary), 0.1),
-					var(--primaryLiteAlt)
-				);
-				--cardGradientAlt: linear-gradient(
-					-135deg,
-					var(--primaryLiteAlt),
-					hsl(0, 0%, 100%)
-				);
-				--miscCardGradient: linear-gradient(
-					-45deg,
-					var(--primaryLiteAlt),
-					hsl(0, 0%, 100%)
-				);
-				--overlayGradient: radial-gradient(
-					farthest-corner at 100% 0%,
-					hsla(0, 0%, 100%, 0.5),
-					transparent
-				);
-				--LinkBtnGradient: linear-gradient(
-					-135deg,
-					hsla(var(--secondary), 0.15),
-					hsla(var(--mixColor), 0.15)
-				);
-				--SkillGradient: linear-gradient(
-					-135deg,
-					hsla(var(--mixColor), 0.125),
-					hsla(var(--primary), 0.25)
-				);
-				--SkillGradientAlt: linear-gradient(
-					-135deg,
-					hsla(var(--primary), 0.15),
-					hsla(var(--secondary), 0.15)
-				);
-				--orbitGradient: conic-gradient(
-					transparent,
-					transparent,
-					hsl(var(--secondary)),
-					hsl(var(--primary))
-				);
-				--orbitGradientAlt: conic-gradient(
-					hsl(var(--primary)),
-					hsl(var(--secondary)),
-					transparent,
-					transparent
-				);
-
-				--orbitDotColor: hsl(var(--mixColor));
-				--heroSocialColor: hsl(0, 0%, 20%);
-				--contactSocialColor: hsla(0, 0%, 20%, 0.4);
-
-				--cursorColor: hsla(var(--primary), 0.6);
-				--cursorColorAlt: hsla(var(--primary), 0.6);
-				--dotColor: hsl(var(--mixColor));
-			}
-
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			html {
-				font-family: Poppins !important;
-			}
-
-			body {
-				background-color: var(--base);
-				color: var(--text);
-			}
-
-			/* Header */
-			.Header_Nav a {
-				position: relative;
-				overflow: hidden;
-				letter-spacing: 1px;
-			}
-
-			.Header_Nav a::after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 2px;
-				background-color: var(--orbitDotColor);
-				transform: scaleX(0);
-				transition: transform 0.25s ease-out;
-			}
-
-			.Header_Nav a.active::after {
-				transform: scaleX(1);
-			}
-
-			/* Action Button Style */
-			.Header_ActionBtn {
-				position: relative;
-				border-radius: 0.2em;
-				overflow: hidden;
-				display: grid;
-				place-items: center;
-			}
-
-			.Header_ActionBtn::after {
-				content: "";
-				position: absolute;
-				width: 120%;
-				aspect-ratio: 1;
-				background: conic-gradient(
-					hsl(var(--primary)),
-					hsl(var(--secondary)),
-					hsl(var(--primary))
-				);
-				animation: spin 5s linear infinite;
-			}
-
-			.Header_ActionBtn > div {
-				padding: 0.2em 1.35em;
-				background-color: var(--base);
-				color: var(--text);
-				border-radius: inherit;
-				margin: 2px;
-				z-index: 2;
-			}
-
-			/* Mobile Header Nav */
-			.MobileHeader_Nav {
-				min-width: 14em;
-				text-align: center;
-				background-color: var(--base);
-				border-radius: 0.3em;
-				padding: 1em;
-				font-size: 1.3em;
-				font-weight: 700;
-				letter-spacing: 1px;
-			}
-
-			.MobileHeader_Nav a {
-				width: 100%;
-				color: var(--text);
-				text-decoration: none;
-				text-transform: uppercase;
-			}
-
-			.MobileHeader_Nav a.active {
-				background: var(--gradient);
-				background-clip: text;
-				-webkit-background-clip: text;
-				color: transparent;
-				background-size: 200%;
-				animation: gradientPan 5s linear infinite;
-			}
-
-			:has(.MobileHeader_ActionBtn).MobileHeader_Nav {
-				padding: 0;
-			}
-
-			.MobileHeader_ActionBtn {
-				position: relative;
-				border-radius: 0.2em;
-				overflow: hidden;
-			}
-
-			.MobileHeader_ActionBtn::after {
-				content: "";
-				position: absolute;
-				width: 120%;
-				aspect-ratio: 1;
-				background: conic-gradient(
-					hsl(var(--primary)),
-					hsl(var(--secondary)),
-					hsl(var(--primary))
-				);
-				animation: spin 5s linear infinite;
-			}
-
-			.MobileHeader_ActionBtn > div {
-				padding: 0.7em 1em;
-				width: 100%;
-				background-color: var(--base);
-				color: var(--text);
-				border-radius: inherit;
-				margin: 4px;
-				z-index: 2;
-			}
-
-			/* Page Title Style */
-			.Title-Tag {
-				font-family: Ubuntu;
-			}
-
-			.Title-Tag span,
-			.Title-Tag p {
-				z-index: 1;
-				background-color: var(--base);
-				padding-inline: 0.25em;
-			}
-
-			.Title-Tag.open {
-				margin-bottom: 1em;
-				justify-content: flex-start;
-			}
-
-			.Title-Tag.close {
-				justify-content: flex-end;
-				padding-top: 0.5em;
-				opacity: 0.7 !important;
-			}
-
-			.Title-Tag.primary span {
-				color: hsl(var(--primary));
-			}
-
-			.Title-Tag.secondary span {
-				color: hsl(var(--secondary));
-			}
-
-			.Title_Line::after {
-				content: "";
-				position: absolute;
-				margin-top: 0.3em;
-				width: 100%;
-				height: 2px;
-				z-index: 0;
-				background-color: var(--primaryLite);
-			}
-
-			.Title_Line.secondary::after {
-				background-color: var(--secondaryLite);
-			}
-
-			.Title_Line.close::after {
-				background-color: transparent;
-			}
-
-			/* Mobile Ham Menu Animation --> */
-			.MobileNav_Ham {
-				-webkit-tap-highlight-color: transparent;
-				transition: transform 0.4s;
-				user-select: none;
-			}
-
-			.MobileNav_Ham .line {
-				fill: none;
-				transition:
-					stroke-dasharray 0.4s,
-					stroke-dashoffset 0.4s;
-				stroke: var(--text);
-				stroke-width: 5.5;
-				transform-origin: right;
-				stroke-linecap: round;
-			}
-
-			html.light .MobileNav_Ham .line {
-				stroke: hsl(var(--primary)) !important;
-			}
-
-			.MobileNav_Ham .top {
-				stroke-dasharray: 18 160;
-			}
-
-			.MobileNav_Ham .middle {
-				stroke-dasharray: 40 142;
-				transform-origin: 83% 83%;
-				transition: transform 0.4s;
-			}
-
-			.MobileNav_Ham .bottom {
-				stroke-dasharray: 18 85;
-				transform-origin: 50%;
-				transition:
-					transform 0.4s,
-					stroke-dashoffset 0.4s;
-			}
-
-			.Projects_Link {
-				padding: 0.45em;
-				border: 1px solid var(--primaryLite);
-				border-radius: 100%;
-				z-index: 10;
-			}
-
-			/* Cursor */
-			.Cursor-Main {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				inset: 0;
-				z-index: 9999;
-				overflow: hidden;
-				pointer-events: none;
-			}
-
-			/* Hero */
-			.Hero_Trail {
-				position: absolute;
-				aspect-ratio: 1;
-				border-radius: 50%;
-				animation: spin 6s linear infinite;
-				animation-delay: 1s;
-			}
-
-			.Hero_Trail::before {
-				content: "";
-				width: calc(100% - 1%);
-				aspect-ratio: 1;
-				inset: 0;
-				margin: auto;
-				border-radius: 50%;
-				position: absolute;
-				background-color: var(--base);
-			}
-
-			.Trail1 {
-				width: 60%;
-				background: var(--orbitGradient);
-				z-index: 5;
-			}
-
-			.Trail2 {
-				width: 70%;
-				animation-duration: 8s;
-				animation-direction: reverse;
-				background: var(--orbitGradientAlt);
-				z-index: 4;
-			}
-
-			.Trail3 {
-				width: 80%;
-				background: var(--orbitGradient);
-				animation-duration: 10s;
-				z-index: 3;
-			}
-
-			.Trail4 {
-				width: 90%;
-				animation-duration: 12s;
-				animation-direction: reverse;
-				background: var(--orbitGradientAlt);
-				z-index: 2;
-			}
-
-			.Trail2 span,
-			.Trail4 span {
-				transform: rotate(140deg) !important;
-			}
-
-			footer {
-				color: #fff !important;
-			}
-
-			/* Lenis Smooth Scroll */
-			html.lenis {
-				height: auto;
-			}
-
-			.lenis.lenis-smooth {
-				scroll-behavior: auto !important;
-			}
-
-			.lenis.lenis-smooth [data-lenis-prevent] {
-				overscroll-behavior: contain;
-			}
-
-			.lenis.lenis-stopped {
-				overflow: hidden;
-			}
-
-			.lenis.lenis-scrolling iframe {
-				pointer-events: none;
-			}
-
-			/* GSAP Animation inits */
-			.flex_center {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			.gradientText {
-				background: var(--gradient);
-				background-clip: text;
-				-webkit-background-clip: text;
-				color: transparent;
-				background-size: 200%;
-				animation: gradientPan 5s linear infinite;
-				will-change: background-position;
-			}
-
-			.Orbit_Dot {
-				width: 0.5em;
-				aspect-ratio: 1;
-				background-color: var(--orbitDotColor);
-				border-radius: 0 50% 50%;
-				transform: rotate(-45deg);
-				position: absolute;
-				top: -0.2em;
-				left: 49%;
-				transition: 0.25s ease-in-out;
-				overflow: hidden;
-				box-shadow: 0 0 10px var(--orbitDotColor);
-			}
-
-			:has(.Hero_Orbit:hover) .Orbit_Dot {
-				background-color: var(--base) !important;
-				outline: 0.5px solid var(--orbitDotColor);
-				/* border-radius: 50% !important; */
-				scale: 1.8;
-			}
-
-			.Fade_Stagger,
-			.Fade_Up {
-				opacity: 0;
-				transform: translateY(50);
-			}
-
-			.Fade_Down {
-				opacity: 0;
-				transform: translateY(-50);
-			}
-
-			.Fade_In {
-				opacity: 0;
-			}
-
-			.Spring_Up {
-				opacity: 0;
-				scale: 0.75;
-			}
-
-			@keyframes spin {
-				0% {
-					rotate: 0deg;
-				}
-
-				100% {
-					rotate: 360deg;
-				}
-			}
-		</style>
 	</head>
-	<body id="home">
-		<Header />
-		<MobileHeader />
 
-		<main>
+	<body id="home">
+		<Header config={config.header} />
+		<MobileHeader config={config.header} />
+
+		<main class="max-w-[1800px] mx-auto px-6">
 			<slot />
 		</main>
 
-		<Footer />
+		<Footer config={config.footer} />
 		<Cursor />
 		<script src="../script.ts"></script>
 	</body>

@@ -1,48 +1,64 @@
 ---
-export function getStaticPaths() {
-    return [
-        { params: { projectID: "arms-v3" } },
-        { params: { projectID: "vortexa" } },
-        { params: { projectID: "next-mart" } },
-        { params: { projectID: "arms-v2" } },
-        { params: { projectID: "xrecon" } },
-        { params: { projectID: "yoatube" } },
-        { params: { projectID: "srinivas-exam-manager" } },
-        { params: { projectID: "piktures" } },
-        { params: { projectID: "days-beyond" } },
-        { params: { projectID: "arms-v1" } },
-        { params: { projectID: "film-stack" } },
-        { params: { projectID: "covidtrax" } },
-        { params: { projectID: "climate" } },
-    ];
-}
-const { projectID } = Astro.params;
-
 import { Image } from "astro:assets";
-import { ProjectLayout } from "../../layouts";
+import { ProjectLayout } from "@layouts/index";
 import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
-import { CenterTitle, SectionTitle } from "../../components/UI";
+import { CenterTitle, SectionTitle } from "@components/UI";
 
-// Lazy loading ProjectInfo
-const ProjectInfo = import("../../utils/ProjectsList");
-const { ProjectsList } = await ProjectInfo;
-const [project] = ProjectsList.filter(
+// Dynamic Route Generation for Projects
+export async function getStaticPaths() {
+    const { PROJECTS_LIST } = await import("@/config/ProjectsList");
+
+    return PROJECTS_LIST.filter((project) => !project.hideProject).map(
+        (project) => ({
+            params: {
+                projectID: project.Name.replaceAll(" ", "-").toLowerCase(),
+            },
+        }),
+    );
+}
+
+const { projectID } = Astro.params;
+const author = "ChiragChrg";
+
+const { PROJECTS_LIST } = await import("@/config/ProjectsList");
+const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
+    "@/config"
+);
+
+// Find the project
+const project = PROJECTS_LIST.find(
     (itm) => itm.Name.replaceAll(" ", "-").toLowerCase() === projectID,
 );
+
+// If no project is found, return 404
+if (!project) {
+    return Astro.redirect("/404");
+}
 ---
 
 <ProjectLayout
-    title=`${project.Name} | ChiragChrg`
+    title={`${project.Name} | ${author}`}
     description={project.ShortDesc}
+    config={{
+        theme: themeConfig,
+        site: siteConfig,
+        header: headerConfig,
+        footer: footerConfig,
+    }}
 >
     <div class="Fade_In flex_center absolute inset-0 w-full h-full z-[-1]">
         <Image
             src={project.Shot}
             alt={`${project.Name}_BG_Image`}
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
-            loading="eager"
         />
-        <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
+
+        <!-- Dark Image Overlay -->
+        <div
+            style="background: var(--imgOverlayGradient);"
+            class="w-full h-full absolute inset-0"
+        >
+        </div>
     </div>
 
     <div class="flex_center flex-col gap-4 py-4">
@@ -82,7 +98,7 @@ const [project] = ProjectsList.filter(
                 href={project.Source}
                 target="_blank"
                 rel="author"
-                class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-4 py-2 rounded"
+                class="Fade_Stagger flex_center gap-2 LinkBtnGradient px-4 py-2 rounded"
             >
                 <svg
                     stroke="currentColor"
@@ -93,7 +109,7 @@ const [project] = ProjectsList.filter(
                     height="24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    style="color: var(--heroSocialColor);"
+                    style="color: var(--socialIconColor);"
                 >
                     <path
                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
@@ -106,7 +122,7 @@ const [project] = ProjectsList.filter(
                 href={project.Link}
                 target="_blank"
                 rel="noreferrer"
-                class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-4 py-2 rounded"
+                class="Fade_Stagger flex_center gap-2 LinkBtnGradient px-4 py-2 rounded"
             >
                 <ExternalLinkIcon />
                 <span>Live Demo</span>
@@ -130,7 +146,7 @@ const [project] = ProjectsList.filter(
         <div class="Fade_Up flex_center flex-col gap-4">
             {
                 project.Demo && (
-                    <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
+                    <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 LinkBtnGradient rounded-md mt-4 lg:mt-0">
                         <h3 class="min-w-max my-auto">Demo Credentials</h3>
 
                         <div class="flex justify-evenly w-full flex-col md:flex-row gap-2 text-[0.8em]">
@@ -196,7 +212,7 @@ const [project] = ProjectsList.filter(
 
     <CenterTitle title="Tech Stack" color="secondary" />
     <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-[30rem]"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-120"
     >
         {
             project.Tech.map((tech) => (

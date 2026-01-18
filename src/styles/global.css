@@ -1,0 +1,531 @@
+@import "tailwindcss";
+
+:root {
+  --status-live-fg: #009966;
+  --status-live-bg: rgba(22, 163, 74, 0.12);
+  --status-live-border: rgba(22, 163, 74, 0.5);
+
+  --status-down-fg: #b91c1c; 
+  --status-down-bg: rgba(220, 38, 38, 0.12);
+  --status-down-border: rgba(220, 38, 38, 0.5);
+
+  --status-warn-fg: #fe9a00; 
+  --status-warn-bg: rgba(245, 158, 11, 0.12);
+  --status-warn-border: rgba(245, 158, 11, 0.5);
+}
+
+html.dark {
+  --status-live-fg: #4ade80; 
+  --status-live-bg: rgba(34,197,94,0.16);
+  --status-live-border: rgba(74,222,128,0.55);
+
+  --status-down-fg: #f87171; 
+  --status-down-bg: rgba(239,68,68,0.16);
+  --status-down-border: rgba(248,113,113,0.55);
+
+  --status-warn-fg: #fbbf24;  
+  --status-warn-bg: rgba(245,158,11,0.16);
+  --status-warn-border: rgba(251,191,36,0.55);
+}
+
+
+@theme {
+    --breakpoint-xs: 410px;
+    --breakpoint-4xl: 1800px;
+
+    --color-background: var(--background);
+    --color-background-lite: var(--backgroundLite);
+    --color-foreground: var(--text);
+    --color-primary: hsl(var(--primary));
+    --color-secondary: hsl(var(--secondary));
+    --color-accent: hsl(var(--accent));
+    --color-primaryLite: var(--primaryLite);
+    --color-primaryLiteAlt: var(--primaryLiteAlt);
+    --color-secondaryLite: var(--secondaryLite);
+    --color-secondaryLiteAlt: var(--secondaryLiteAlt);
+    --color-footer: var(--footer);
+    --color-footerAlt: var(--footerSvgA);
+    --color-footerAltLite: var(--footerSvgB);
+    --color-contactSocialColor: var(--contactSocialColor);
+    --color-socialIconColor: var(--socialIconColor);
+
+    --animate-ripple: ripple 1s infinite;
+    --animate-orbit: orbit 6s linear infinite;
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+html {
+    font-family: Poppins;
+}
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Project Status Chip */
+.statusLive {
+  color: var(--status-live-fg);
+  background: var(--status-live-bg);
+  border: 1px solid var(--status-live-border);
+}
+
+.statusDown {
+  color: var(--status-down-fg);
+  background: var(--status-down-bg);
+  border: 1px solid var(--status-down-border);
+}
+
+.statusBuilding {
+  color: var(--status-warn-fg);
+  background: var(--status-warn-bg);
+  border: 1px solid var(--status-warn-border);
+}
+
+
+/* Custom Gradients */
+.headerGradient {
+    background: var(--headerGradient);
+}
+.orbitGradient {
+    background: var(--orbitGradient);
+}
+.skillGradient {
+    background: var(--SkillGradient);
+}
+.skillGradientAlt {
+    background: var(--SkillGradientAlt);
+}
+.LinkBtnGradient {
+    background: var(--LinkBtnGradient);
+}
+.cardGradient {
+    background: var(--cardGradient);
+}
+.imgOverlayGradient {
+    background: var(--overlayGradient);
+}
+
+
+/* Custom Animations */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        rotate: 0deg !important;
+    }
+
+    100% {
+        rotate: 360deg !important;
+    }
+}
+@keyframes gradientPan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+/* Lenis Smooth Scroll */
+html.lenis {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* GSAP Animation inits */
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gradientText {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: gradientPan 5s linear infinite;
+    will-change: background-position;
+}
+.Orbit_Dot {
+    width: 0.5em;
+    aspect-ratio: 1;
+    background-color: var(--orbitDotColor);
+    border-radius: 0 50% 50%;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -0.2em;
+    left: 50%;
+    transition: 0.25s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--orbitDotColor);
+    outline: 0.5px solid var(--orbitDotColor);
+}
+:has(.Hero_Orbit:hover) .Orbit_Dot {
+    background-color: var(--background) !important;
+    outline: 0.5px solid var(--orbitDotColor);
+    /* border-radius: 50% !important; */
+    scale: 1.8;
+}
+.Fade_Stagger,
+.Fade_Up {
+    opacity: 0;
+    transform: translateY(50);
+}
+.Fade_Down {
+    opacity: 0;
+    transform: translateY(-50);
+}
+.Fade_In {
+    opacity: 0;
+}
+.Spring_Up {
+    opacity: 0;
+    scale: 0.75;
+}
+.spring-element-performance {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Cursor */
+.Cursor-Main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Header */
+.Header_Nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--orbitDotColor);
+    transform: scaleX(0);
+    transition: transform 0.25s ease-out;
+}
+.Header_Nav a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* Action Button Style */
+.Header_ActionBtn::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    aspect-ratio: 1;
+    background: conic-gradient(
+        hsl(var(--primary)),
+        hsl(var(--secondary)),
+        hsl(var(--primary))
+    );
+    animation: spin 5s linear infinite;
+}
+.Header_ActionBtn > div {
+    padding: 0.2em 1.35em;
+    background-color: var(--background);
+    color: var(--text);
+    border-radius: inherit;
+    margin: 2px;
+    z-index: 2;
+}
+
+
+/* Mobile Header Nav */
+.MobileHeader_Nav {
+    min-width: 14em;
+    text-align: center;
+    background-color: var(--background);
+    border-radius: 0.3em;
+    padding: 1em;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.MobileHeader_Nav a {
+    width: 100%;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.MobileHeader_Nav a.active {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: gradientPan 5s linear infinite;
+}
+:has(.MobileHeader_ActionBtn).MobileHeader_Nav {
+    padding: 0;
+}
+.MobileHeader_ActionBtn {
+    position: relative;
+    border-radius: 0.2em;
+    overflow: hidden;
+}
+.MobileHeader_ActionBtn::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    aspect-ratio: 1;
+    background: conic-gradient(
+        hsl(var(--primary)),
+        hsl(var(--secondary)),
+        hsl(var(--primary))
+    );
+    animation: spin 5s linear infinite;
+}
+.MobileHeader_ActionBtn > div {
+    padding: 0.7em 1em;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--text);
+    border-radius: inherit;
+    margin: 4px;
+    z-index: 2;
+}
+
+
+/* Hero */
+.Hero_Trail {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* animation: spin 6s linear infinite; */
+    animation-delay: 1s;
+}
+.Hero_Trail::before {
+    content: "";
+    width: calc(100% - 1%);
+    aspect-ratio: 1;
+    inset: 0;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--background);
+}
+.Trail1 {
+    width: 60%;
+    background: var(--orbitGradient);
+    z-index: 5;
+}
+.Trail2 {
+    width: 70%;
+    animation-duration: 8s;
+    animation-direction: reverse;
+    background: var(--orbitGradientAlt);
+    z-index: 4;
+}
+.Trail3 {
+    width: 80%;
+    background: var(--orbitGradient);
+    animation-duration: 10s;
+    z-index: 3;
+}
+.Trail4 {
+    width: 90%;
+    animation-duration: 12s;
+    animation-direction: reverse;
+    background: var(--orbitGradientAlt);
+    z-index: 2;
+}
+.Trail2 span,
+.Trail4 span {
+    transform: rotate(140deg);
+}
+
+
+/* Page Title Style */
+.Title-Tag {
+    font-family: Ubuntu;
+}
+.Title-Tag span,
+.Title-Tag p {
+    z-index: 1;
+    background-color: var(--background);
+    padding-inline: 0.25em;
+}
+.Title-Tag.open {
+    margin-bottom: 1em;
+    justify-content: flex-start;
+}
+.Title-Tag.close {
+    justify-content: flex-end;
+    padding-top: 0.5em;
+    opacity: 0.7 !important;
+}
+.Title-Tag.primary span {
+    color: hsl(var(--primary));
+}
+.Title-Tag.secondary span {
+    color: hsl(var(--secondary));
+}
+.Title_Line::after {
+    content: "";
+    position: absolute;
+    margin-top: 0.3em;
+    width: 100%;
+    height: 2px;
+    z-index: 0;
+    background-color: var(--primaryLite);
+}
+.Title_Line.secondary::after {
+    background-color: var(--secondaryLite);
+}
+.Title_Line.close::after {
+    background-color: transparent;
+}
+
+
+/* Mobile Ham Menu Animation --> */
+.MobileNav_Ham {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.4s;
+    user-select: none;
+}
+.MobileNav_Ham .line {
+    fill: none;
+    transition:
+        stroke-dasharray 0.4s,
+        stroke-dashoffset 0.4s;
+    stroke: var(--text);
+    stroke-width: 5.5;
+    transform-origin: right;
+    stroke-linecap: round;
+}
+.MobileNav_Ham .top {
+    stroke-dasharray: 18 160;
+}
+.MobileNav_Ham .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 83% 83%;
+    transition: transform 0.4s;
+}
+.MobileNav_Ham .bottom {
+    stroke-dasharray: 18 85;
+    transform-origin: 50%;
+    transition:
+        transform 0.4s,
+        stroke-dashoffset 0.4s;
+}
+.Projects_Link {
+    padding: 0.45em;
+    /* border: 1px solid var(--primaryLite);
+    border-radius: 100%; */
+    z-index: 10;
+}
+
+
+footer {
+    color: #fff !important;
+}
+
+
+/* UI Debugger */
+/* * {
+    border: 1px solid red !important;
+    outline: 1px solid green !important;
+} */
+
+/* Misc Global Styles */
+a {
+    cursor: pointer !important;
+}
+a,
+button,
+h1,
+p {
+    /* cursor: none !important; */
+    text-decoration: none;
+}
+img {
+    user-select: none;
+    pointer-events: none;
+}
+.selectable p {
+    user-select: text;
+    cursor: text;
+}
+
+/* Disable blue button click highlight */
+input,
+button,
+a,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 16px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 14px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+/* Disable Input Autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 999999s ease-in-out 0s;
+}

@@ -1,13 +1,13 @@
 ---
-import { CenterTitle } from "./UI";
-import { ContactForm } from "./Preact";
-import { ContactArt } from "../assets/SVGs";
+import { CenterTitle } from "@components/UI";
+import { ContactForm } from "@components/Preact";
+import { ContactArt } from "@assets/SVGs";
 import { Image } from "astro:assets";
 ---
 
 <section
     id="contact"
-    class="w-full min-h-screen mb-16 lg:mb-[15em] px-6 py-4 pt-14 bg-background"
+    class="w-full min-h-screen mb-16 lg:mb-[25em] px-6 py-4 pt-14"
 >
     <CenterTitle title="Contact" color="primary" />
 
@@ -26,7 +26,7 @@ import { Image } from "astro:assets";
     >
         <div class="relative w-full flex_center flex-col">
             <div
-                class="Fade_Up w-full max-w-[350px] scale-[0.9] lg:scale-1 lg:max-w-[450px] aspect-square rounded-full border-2 border-dashed border-contactSocialColor mb-8 md:mb-0 md:mt-7"
+                class="Fade_Up w-full max-w-[350px] scale-[0.9] lg:scale-100 lg:max-w-[450px] aspect-square rounded-full border-2 border-dashed border-contactSocialColor mb-8 md:mb-0 md:mt-7"
                 id="socialCircle"
             >
                 <a
@@ -40,7 +40,7 @@ import { Image } from "astro:assets";
                     <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        style="color: var(--heroSocialColor);"
+                        style="color: var(--socialIconColor);"
                         stroke-width="0"
                         viewBox="0 0 16 16"
                         height="30"
@@ -64,7 +64,7 @@ import { Image } from "astro:assets";
                     <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        style="color: var(--heroSocialColor);"
+                        style="color: var(--socialIconColor);"
                         stroke-width="0"
                         viewBox="0 0 16 16"
                         height="30"
@@ -88,7 +88,7 @@ import { Image } from "astro:assets";
                     <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        style="color: var(--heroSocialColor);"
+                        style="color: var(--socialIconColor);"
                         stroke-width="0"
                         role="img"
                         viewBox="0 0 24 24"
@@ -114,7 +114,7 @@ import { Image } from "astro:assets";
                     <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        style="color: var(--heroSocialColor);"
+                        style="color: var(--socialIconColor);"
                         stroke-width="0"
                         viewBox="0 0 24 24"
                         height="30"
@@ -139,7 +139,7 @@ import { Image } from "astro:assets";
                     <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        style="color: var(--heroSocialColor);"
+                        style="color: var(--socialIconColor);"
                         width="30px"
                         height="22px"
                         viewBox="0 0 30 22"
@@ -179,14 +179,15 @@ import { Image } from "astro:assets";
         const iconSize = images[0].clientWidth;
         const radius = Math.ceil((center.clientWidth + 2) / 2);
 
+        const centerWidth = center.offsetWidth;
+        const centerHeight = center.offsetHeight;
+
         images.forEach((image, index) => {
             const angle = (index / (images.length - 1)) * Math.PI;
             const x = Math.cos(-angle) * radius - iconSize / 2;
             const y = Math.sin(-angle) * radius - iconSize / 2;
 
             const imageStyle = image.style;
-            const centerWidth = center.offsetWidth;
-            const centerHeight = center.offsetHeight;
 
             imageStyle.left = `${centerWidth / 2 + x}px`;
             imageStyle.top = `${centerHeight / 2 + y}px`;

@@ -10,17 +10,19 @@ Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of 
 ![Portfolio Preview](public/Mockup_Preview.png)
 
 ## 🚀 Live Demo  
-Explore the live demo of the portfolio: [https://chiragchrg.netlify.app](https://chiragchrg.netlify.app).  
+Check out the current live version of the portfolio:  
+👉 **https://chiragchrg.netlify.app**
+
+Preview the upcoming version here (Nightly Build - [astro branch](https://github.com/ChiragChrg/Portfolio/tree/astro)):  
+👉 **https://chiragchrg-nightly.netlify.app/**
 
 ### 🚧 Nightly Build in Progress  
-A new version of this portfolio is currently under active development. It’s not just a facelift—this build includes powerful new features meant for reuse and personalization:
+A fresh version is under active development—this isn’t just a revamp but a more extensible architecture designed for quick personalization:
 
-- **Templatized Portfolio** – Easily fork and customize your own portfolio with minimal effort.
-- **Custom Theme System** – Pick from multiple themes that adapt to your preferences, each with light and dark mode variants.
-- **Quality Enhancements** – Includes performance tweaks, UI touch-ups, and subtle improvements all around.
-
-Curious? Dive into the latest build here:  
-🔗 **https://chiragchrg-nightly.netlify.app/**
+- **Templatized Setup** – Fork and adapt your own version in minutes.
+- **Custom Theme System** – Try different themes (with light/dark variants) using a theme selection dropdown—**available only in the nightly build for preview purposes.**
+- **Production Behavior** – In the stable version, the theme dropdown is disabled; a single static theme is used based on your choice in `config/index.ts`.
+- **Quality Enhancements** – Performance boosts and UI refinements all around.
 
 <br/>
 

@@ -1,10 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import Avatar_250 from "../Avatar_250.webp";
-import { SectionTitle } from "./UI";
+import { Avatar_250 } from "@assets/images";
+import { SectionTitle } from "@components/UI";
+
+const { config } = Astro.props;
 ---
 
-<section id="about" class="w-full min-h-screen px-6 py-4 pt-14 bg-background">
+<section id="about" class="w-full min-h-screen py-4 pt-14 bg-background">
     <SectionTitle
         title="About Me"
         color="primary"
@@ -15,43 +17,23 @@ import { SectionTitle } from "./UI";
                 src={Avatar_250}
                 alt="About_Avatar"
                 class="Fade_Up rounded-full scale-x-[-1] lg:mx-14"
-                width={225}
-                height={225}
+                width={250}
+                height={250}
                 loading="lazy"
+                decoding="async"
             />
 
             <div
                 class="Fade_Up w-full md:w-[80%] lg:w-[60%] flex justify-center items-start flex-col gap-4 lg:border-l border-primary py-8 lg:pl-10"
             >
                 <h2 class="Fade_Up text-[1.5em] font-bold">Hey there! 👋🏻</h2>
-                <p class="Fade_Up text-justify">
-                    I'm Chirag, a full stack web developer with a strong passion
-                    for crafting digital realms that captivate and inspire.
-                </p>
-                <p class="Fade_Up text-justify">
-                    I specialize in creating dynamic and interactive UI/UX
-                    experience. I stay up to date with the latest tools and
-                    techniques and worked on a wide range of projects, from
-                    personal websites to large-scale applications, sharpening my
-                    problem solving skills and fostering creativity.
-                </p>
-                <p class="Fade_Up text-justify">
-                    If you're seeking a dedicated and passionate web developer,
-                    I'm eager to collaborate with you. Let's bring your ideas to
-                    life!
-                </p>
+                {
+                    config.description &&
+                        config.description.map((para: string) => (
+                            <p class="Fade_Up text-justify">{para}</p>
+                        ))
+                }
             </div>
         </div>
-
-        <!-- <picture class="flex_center">
-            <source
-                media="(prefers-color-scheme: dark)"
-                srcset="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg/output/github-contribution-grid-snake-dark.svg"
-            />
-            <img
-                alt="github contribution grid snake animation"
-                src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg/output/github-contribution-grid-snake.svg"
-            />
-        </picture> -->
     </SectionTitle>
 </section>

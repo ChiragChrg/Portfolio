@@ -1,17 +1,28 @@
 ---
 import { Download } from "lucide-preact";
-// import ThemeButton from "./ThemeButton.astro";
+import ThemeDropdown from "@components/UI/ThemeDropdown.astro";
+import ThemeButton from "@components/UI/ThemeButton.astro";
+
+const { config } = Astro.props;
+
+const isDev = import.meta.env.ENVIRONMENT === "development";
+const isNightly = Astro.url.origin.includes("chiragchrg-nightly.netlify.app");
+
+const showThemeDropdown = isDev || isNightly;
 ---
 
-<header id="header" class="hidden lg:block sticky top-0 z-50">
+<header
+    id="header"
+    class="hidden lg:block sticky top-0 max-w-[1800px] mx-auto z-50"
+>
     <div
-        class="flex justify-between items-center w-full px-6 py-2 bg-headerGradient backdrop-blur-[2px]"
+        class="flex justify-between items-center w-full px-6 py-2 headerGradient backdrop-blur-[2px]"
     >
         <a href="#home" class="Fade_Down font-satisfy font-bold text-[2em]">
-            <span class="gradientText w-fit">Portfolio.</span>
+            <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
-        <nav class="Header_Nav flex gap-6">
+        <nav class="Header_Nav relative tracking-wide flex gap-6">
             <a class="Fade_Down" href="#about">ABOUT</a>
             <a class="Fade_Down" href="#skills">SKILLS</a>
             <a class="Fade_Down" href="#projects">PROJECTS</a>
@@ -19,15 +30,20 @@ import { Download } from "lucide-preact";
         </nav>
 
         <div class="flex_center gap-4">
-            <!-- <ThemeButton className="Fade_Down" /> -->
+            {
+                showThemeDropdown && (
+                    <ThemeDropdown className="Fade_Down" idPrefix="Desktop" />
+                )
+            }
+            <ThemeButton className="Fade_Down" />
 
             <a
-                class="Fade_Down Header_ActionBtn"
-                href="/Chirag Resume.pdf"
+                class="Fade_Down Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
+                href={config.actionButton.url}
                 target="_blank"
             >
                 <div class="flex_center gap-2">
-                    <p>Resume</p>
+                    <p>{config.actionButton.text}</p>
                     <Download size={18} />
                 </div>
             </a>
@@ -45,6 +61,8 @@ import { Download } from "lucide-preact";
         "#contact": document.getElementById("contact"),
     };
 
+    const headerHeight = headerElement.offsetHeight;
+
     // Set Active class on section scroll
     const handleScroll = () => {
         for (const [linkHref, section] of Object.entries(sectionsList)) {
@@ -58,8 +76,8 @@ import { Download } from "lucide-preact";
             if (
                 link &&
                 headerElement &&
-                rect.top <= headerElement.offsetHeight &&
-                rect.bottom >= headerElement.offsetHeight
+                rect.top <= headerHeight &&
+                rect.bottom >= headerHeight
             ) {
                 link?.classList.add("active");
             } else {
@@ -68,19 +86,16 @@ import { Download } from "lucide-preact";
         }
     };
 
-    function throttle(func, limit) {
-        let throttling = false;
-        return function () {
-            if (!throttling) {
-                func.apply(this, arguments);
-                throttling = true;
-                setTimeout(() => {
-                    throttling = false;
-                }, limit);
-            }
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
         };
     }
 
-    window.addEventListener("scroll", throttle(handleScroll, 100));
-    handleScroll(); // Initial call
+    window.addEventListener("scroll", debounce(handleScroll, 0));
+    handleScroll();
 </script>

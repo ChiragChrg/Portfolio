@@ -7,18 +7,21 @@ type Props = {
         icon: ImageMetadata;
         link: string;
     }[];
+    className?: string;
 };
 
-const { stack }: Props = Astro.props;
+const { stack, className }: Props = Astro.props;
 ---
 
-<div class="Fade_Up grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<div
+    class={`Fade_Up grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 ${className}`}
+>
     {
         stack.map((obj) => (
             <a
                 href={obj.link}
                 title={obj.name}
-                class="Fade_Stagger flex_center flex-col gap-2 min-w-24 aspect-square rounded-lg bg-skillGradient"
+                class="Fade_Stagger flex_center flex-col gap-2 w-24 h-24 rounded-lg skillGradient p-2"
                 target="_blank"
                 rel="noreferrer"
             >
@@ -30,7 +33,9 @@ const { stack }: Props = Astro.props;
                         height={35}
                     />
                 </div>
-                <span class="text-[0.9em]">{obj.name}</span>
+                <span class="text-[0.9em] overflow-ellipsis whitespace-nowrap overflow-hidden text-center w-full">
+                    {obj.name}
+                </span>
             </a>
         ))
     }

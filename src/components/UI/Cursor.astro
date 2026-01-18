@@ -10,9 +10,7 @@
         const CursorRef = document.getElementById("cursor");
         const CursorDotRef = document.getElementById("cursorDot");
 
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mousedown", handleMouseClick);
-
+        // Handle mouse movement to update cursor position
         function handleMouseMove(evt) {
             if (window.innerWidth < 1024) return;
             if (!CursorRef || !CursorDotRef) return;
@@ -41,6 +39,7 @@
             });
         }
 
+        // Handle mouse click to create a ripple effect
         function handleMouseClick() {
             if (!CursorRef) return;
 
@@ -61,5 +60,13 @@
                 CursorRef.removeChild(ripple);
             }, 1000);
         }
+
+        // Remove existing listeners before adding new ones
+        document.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("mousedown", handleMouseClick);
+
+        // Add new event listeners
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mousedown", handleMouseClick);
     });
 </script>
