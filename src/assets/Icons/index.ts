@@ -1,61 +1,126 @@
 // Web & Programming Languages
-export { default as HtmlIcon } from "./html.svg";
-export { default as CssIcon } from "./css.svg";
-export { default as JsIcon } from "./javascript.svg";
-export { default as TsIcon } from "./typescript.svg";
-export { default as PythonIcon } from "./python.svg";
-export { default as CppIcon } from "./cpp.svg";
-export { default as JavaIcon } from "./java.svg";
-export { default as RIcon } from "./Rlogo.svg";
-export { default as CSharpIcon } from "./csharp.svg";
+import HtmlIcon from "./html.svg";
+import CssIcon from "./css.svg";
+import JsIcon from "./javascript.svg";
+import TsIcon from "./typescript.svg";
+import PythonIcon from "./python.svg";
+import CppIcon from "./cpp.svg";
+import JavaIcon from "./java.svg";
+import RIcon from "./Rlogo.svg";
+import CSharpIcon from "./csharp.svg";
 
 // Front-End Frameworks & Libraries
-export { default as ReactIcon } from "./reactjs.svg";
-export { default as NextIcon } from "./nextjs.svg";
-export { default as AstroIcon } from "./astrojs.svg";
-export { default as TailwindIcon } from "./tailwind.svg";
-export { default as PreactIcon } from "./preactjs.svg";
-export { default as D3JsIcon } from "./d3js.svg";
-export { default as GSAPIcon } from "./gsap.svg";
-export { default as MotionIcon } from "./motion.svg";
+import ReactIcon from "./reactjs.svg";
+import NextIcon from "./nextjs.svg";
+import AstroIcon from "./astrojs.svg";
+import TailwindIcon from "./tailwind.svg";
+import PreactIcon from "./preactjs.svg";
+import D3JsIcon from "./d3js.svg";
+import GSAPIcon from "./gsap.svg";
+import MotionIcon from "./motion.svg";
 
 // Back-End Frameworks & Libraries
-export { default as NodeIcon } from "./nodejs.svg";
-export { default as ExpressIcon } from "./express.svg";
-export { default as PhpIcon } from "./php.svg";
-export { default as FirebaseIcon } from "./firebase.svg";
-export { default as GoogleCloud } from "./googleCloud.svg";
-export { default as NextAuthIcon } from "./nextauth.svg";
-export { default as EdgeStoreIcon } from "./edgestore.webp";
-export { default as DotnetIcon } from "./dotnet.svg";
-export { default as NatsIcon } from "./nats.svg";
+import NodeIcon from "./nodejs.svg";
+import ExpressIcon from "./express.svg";
+import PhpIcon from "./php.svg";
+import FirebaseIcon from "./firebase.svg";
+import GoogleCloud from "./googleCloud.svg";
+import NextAuthIcon from "./nextauth.svg";
+import EdgeStoreIcon from "./edgestore.webp";
+import DotnetIcon from "./dotnet.svg";
+import NatsIcon from "./nats.svg";
 
 // Databases & Libraries
-export { default as MongoIcon } from "./mongodb.svg";
-export { default as MysqlIcon } from "./mysql.svg";
-export { default as RestApiIcon } from "./database.svg";
-export { default as PostgresIcon } from "./postgres.svg";
-export { default as PrismaIcon } from "./prisma.svg";
+import MongoIcon from "./mongodb.svg";
+import MysqlIcon from "./mysql.svg";
+import RestApiIcon from "./database.svg";
+import PostgresIcon from "./postgres.svg";
+import PrismaIcon from "./prisma.svg";
 
 // State Management & Utilities
-export { default as ReduxIcon } from "./redux.svg";
-export { default as ZustandIcon } from "./zustand.webp";
-export { default as NanostoresIcon } from "./nanostores.svg";
-export { default as ReactQueryIcon } from "./reactquery.svg";
+import ReduxIcon from "./redux.svg";
+import ZustandIcon from "./zustand.webp";
+import NanostoresIcon from "./nanostores.svg";
+import ReactQueryIcon from "./reactquery.svg";
 
 // Platforms & Hosting
-export { default as NetlifyIcon } from "./netlify.svg";
-export { default as VercelIcon } from "./vercel.svg";
-export { default as GithubIcon } from "./github.svg";
-export { default as RenderIcon } from "./render.svg";
+import NetlifyIcon from "./netlify.svg";
+import VercelIcon from "./vercel.svg";
+import GithubIcon from "./github.svg";
+import RenderIcon from "./render.svg";
 
 // Tools & Software
-export { default as NpmIcon } from "./npm.svg";
-export { default as BunIcon } from "./bun.svg";
-export { default as GitIcon } from "./git.svg";
-export { default as VsCodeIcon } from "./vscode.svg";
-export { default as VisualStudioIcon } from "./visualStudio.svg";
-export { default as ViteIcon } from "./vitejs.svg";
-export { default as AndroidStudioIcon } from "./androidStudio.svg";
-export { default as FigmaIcon } from "./figma.svg";
-export { default as SocketIoIcon } from "./socketio.svg";
+import NpmIcon from "./npm.svg";
+import BunIcon from "./bun.svg";
+import GitIcon from "./git.svg";
+import VsCodeIcon from "./vscode.svg";
+import VisualStudioIcon from "./visualStudio.svg";
+import ViteIcon from "./vitejs.svg";
+import AndroidStudioIcon from "./androidStudio.svg";
+import FigmaIcon from "./figma.svg";
+import SocketIoIcon from "./socketio.svg";
+
+
+export default {
+    // Web & Programming Languages
+    HtmlIcon,
+    CssIcon,
+    JsIcon,
+    TsIcon,
+    PythonIcon,
+    CppIcon,
+    JavaIcon,
+    RIcon,
+    CSharpIcon,
+
+    // Front-End Frameworks & Libraries
+    ReactIcon,
+    NextIcon,
+    AstroIcon,
+    TailwindIcon,
+    PreactIcon,
+    D3JsIcon,
+    GSAPIcon,
+    MotionIcon,
+
+    // Back-End Frameworks & Libraries
+    NodeIcon,
+    ExpressIcon,
+    PhpIcon,
+    FirebaseIcon,
+    GoogleCloud,
+    NextAuthIcon,
+    EdgeStoreIcon,
+    DotnetIcon,
+    NatsIcon,
+
+    // Databases & Libraries
+    MongoIcon,
+    MysqlIcon,
+    RestApiIcon,
+    PostgresIcon,
+    PrismaIcon,
+
+    // State Management & Utilities
+    ReduxIcon,
+    ZustandIcon,
+    NanostoresIcon,
+    ReactQueryIcon,
+
+    // Platforms & Hosting
+    NetlifyIcon,
+    VercelIcon,
+    GithubIcon,
+    RenderIcon,
+
+    // Tools & Software
+    NpmIcon,
+    BunIcon,
+    GitIcon,
+    VsCodeIcon,
+    VisualStudioIcon,
+    ViteIcon,
+    AndroidStudioIcon,
+    FigmaIcon,
+    SocketIoIcon,
+}
