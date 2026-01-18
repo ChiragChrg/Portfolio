@@ -1,4 +1,4 @@
-import SKILLS from "@assets/Icons"
+import SKILLS from "@/assets/skills"
 import LOGOS from "@assets/Logos"
 import SCREENSHOTS from "@assets/Shots"
 import MOCKUPS from "@assets/Mockup"
