@@ -1,7 +1,8 @@
-import SKILLS from "@/assets/skills"
 import LOGOS from "@assets/Logos"
 import SCREENSHOTS from "@assets/Shots"
 import MOCKUPS from "@assets/Mockup"
+import SKILL_STACK from "@/constants/skillStack";
+import { buildTechStack } from "@/utils/commonUtils";
 
 //#region Types
 /**
@@ -52,138 +53,46 @@ export interface IProject {
     }[];
 }
 
+/**
+ * Technology Stack Type Definition
+ * This interface defines the structure and types of properties for each technology in the tech stack.
+ */
+export interface ITechStack {
+    title: string;
+    description: string;
+    icon: ImageMetadata;
+}
 //#endregion
 
 
 //#region Tech Stack
-/**
- * Tech Stack Configuration
- * This object defines the various technologies used across different projects.
- * Each technology includes a title, description, and icon for easy identification.
- * The TECH_STACK object serves as a centralized repository for technology information, allowing for consistent usage across project configurations.
- * To add a new technology, simply create a new property in the TECH_STACK object with the appropriate title, description, and icon.
- */
-const TECH_STACK = {
-    Astro: {
-        title: "Astro",
-        description: "Frontend framework for streamlined development, integrating seamlessly with popular tools to create fast and modern websites with minimal configuration overhead.",
-        icon: SKILLS.AstroIcon
-    },
-    CSS: {
-        title: "CSS",
-        description: "Cascading Style Sheets for styling the presentation of HTML documents.",
-        icon: SKILLS.CssIcon
-    },
-    D3: {
-        title: "D3.js",
-        description: "Versatile JavaScript library for data visualization, enabling developers to create dynamic, interactive graphics and charts by binding data to DOM elements.",
-        icon: SKILLS.D3JsIcon
-    },
-    EdgeStore: {
-        title: "EdgeStore",
-        description: "EdgeStore is an open-source file storage service, designed for scalability and performance, with efficient updates and minimal API.",
-        icon: SKILLS.EdgeStoreIcon
-    },
-    GDrive: {
-        title: "Google Drive API",
-        description: "RESTful API for integrating Google Drive functionalities such as file storage and synchronization into applications.",
-        icon: SKILLS.GoogleCloud
-    },
-    HTML: {
-        title: "HTML",
-        description: "HyperText Markup Language for creating the structure of web pages.",
-        icon: SKILLS.HtmlIcon
-    },
-    JavaScript: {
-        title: "JavaScript",
-        description: "High-level scripting language for adding interactivity to web pages.",
-        icon: SKILLS.JsIcon
-    },
-    MongoDB: {
-        title: "MongoDB",
-        description: "NoSQL database offering flexibility and scalability for storing and managing data efficiently.",
-        icon: SKILLS.MongoIcon
-    },
-    MySQL: {
-        title: "MySQL",
-        description: "Open-source relational database management system for storing and managing structured data.",
-        icon: SKILLS.MysqlIcon
-    },
-    NanoStores: {
-        title: "NanoStores",
-        description: "Lightweight state management library for JavaScript applications, designed for simplicity and performance to simplify state management and improve application responsiveness.",
-        icon: SKILLS.NanostoresIcon
-    },
-    NextAuth: {
-        title: "NextAuth.js",
-        description: "Authentication library designed specifically for Next.js applications, providing robust authentication features and seamless integration.",
-        icon: SKILLS.NextAuthIcon
-    },
-    NextJS: {
-        title: "Next.js",
-        description: "A React framework for server-side rendering, static site generation, and routing, offering improved performance and SEO optimization.",
-        icon: SKILLS.NextIcon
-    },
-    NodeJS: {
-        title: "Node.js",
-        description: "JavaScript runtime for server-side applications, enabling scalable and event-driven architecture.",
-        icon: SKILLS.NodeIcon
-    },
-    PHP: {
-        title: "PHP",
-        description: "Server-side scripting language for building dynamic web applications.",
-        icon: SKILLS.PhpIcon
-    },
-    Prisma: {
-        title: "Prisma",
-        description: "Next-generation ORM for Node.js and TypeScript, facilitating seamless database access and simplified schema management.",
-        icon: SKILLS.PrismaIcon,
-    },
-    ReactJS: {
-        title: "React",
-        description: "JavaScript library for building user interfaces with reusable components.",
-        icon: SKILLS.ReactIcon
-    },
-    ReactQuery: {
-        title: "React Query",
-        description: "React library for managing, caching, and synchronizing server state in web applications, providing a powerful and intuitive API for fetching and updating data.",
-        icon: SKILLS.ReactQueryIcon
-    },
-    RESTAPI: {
-        title: "REST API",
-        description: "Architectural style for designing networked applications with standardized HTTP operations.",
-        icon: SKILLS.RestApiIcon
-    },
-    Redux: {
-        title: "Redux",
-        description: "Predictable state management library for JavaScript applications, enabling developers to write consistent, scalable code with ease.",
-        icon: SKILLS.ReduxIcon
-    },
-    SocketIO: {
-        title: "Socket.IO",
-        description: "Real-time bidirectional communication library for building interactive web applications.",
-        icon: SKILLS.SocketIoIcon
-    },
-    TailwindCSS: {
-        title: "Tailwind CSS",
-        description: "A utility-first CSS framework providing pre-designed, atomic-level utility classes for rapid UI development with minimal CSS code.",
-        icon: SKILLS.TailwindIcon
-    },
-    TypeScript: {
-        title: "TypeScript",
-        description: "A superset of JavaScript adding static typing for building large-scale applications with enhanced maintainability and tooling support.",
-        icon: SKILLS.TsIcon
-    },
-    Vite: {
-        title: "Vite",
-        description: "Modern build tooling for web development with rapid startup and hot module replacement.",
-        icon: SKILLS.ViteIcon
-    },
-    Zustand: {
-        title: "Zustand",
-        description: "Tiny, fast, and scalable state management for React applications, providing a simple and intuitive API.",
-        icon: SKILLS.ZustandIcon
-    },
+export const TECH_STACK = {
+    // Web Fundamentals & Languages
+    ...buildTechStack(SKILL_STACK.WebLanguagesStack),
+
+    // Frontend & UI Libraries
+    ...buildTechStack(SKILL_STACK.FrontendLibrariesStack),
+
+    // State, Data & Realtime
+    ...buildTechStack(SKILL_STACK.StateDataRealtimeStack),
+
+    // Backend & APIs
+    ...buildTechStack(SKILL_STACK.BackendApisStack),
+
+    // Databases, Caching & ORM
+    ...buildTechStack(SKILL_STACK.DatabaseStack),
+
+    // Cloud, Storage & DevOps
+    ...buildTechStack(SKILL_STACK.CloudDevOpsStack),
+
+    // Tooling, Testing & Observability
+    ...buildTechStack(SKILL_STACK.ToolingTestingStack),
+
+    // Configuration & Templating
+    ...buildTechStack(SKILL_STACK.ConfigTemplatingStack),
+
+    // IDEs & Design Tools
+    ...buildTechStack(SKILL_STACK.IdesDesignStack),
 };
 //#endregion
 
@@ -254,7 +163,7 @@ export const PROJECTS_LIST: IProject[] = [
         isHidden: false,
         name: "ARMS v4",
         shortDescription: "Next-generation academic resource platform for frictionless student access and robust faculty management.",
-        description: "ARMS v4 (Academic Resource Management System) is a modern educational platform enabling students to effortlessly browse and download subject-specific study materials uploaded by faculty. With advanced architecture powered by Redux Toolkit, Prisma ORM, and NextAuth, ARMS v4 delivers a fast, secure, and scalable experience. Anonymous login, structured resource management, and integrated UI streamlining make it ideal for institutions of any size. Building on previous versions—now faster, more intuitive, and developer-friendly.",
+        description: "ARMS v4 (Academic Resource Management System) is a modern educational platform enabling students to effortlessly browse and download subject-specific study materials uploaded by faculty. With advanced architecture powered by Redux Toolkit, Prisma ORM, and Authjs, ARMS v4 delivers a fast, secure, and scalable experience. Anonymous login, structured resource management, and integrated UI streamlining make it ideal for institutions of any size. Building on previous versions—now faster, more intuitive, and developer-friendly.",
         logoImage: LOGOS.ArmsLogo,
         previewImage: SCREENSHOTS.Armsv3Shots,
         deviceMockupImage: MOCKUPS.ARMSv3Mockup,
@@ -263,13 +172,13 @@ export const PROJECTS_LIST: IProject[] = [
         liveUrl: "https://arms-v4.vercel.app/",
         sourceUrl: "https://github.com/ChiragChrg/arms-v4",
         technologies: [
-            TECH_STACK.NextJS,
+            TECH_STACK.Nextjs,
             TECH_STACK.TypeScript,
             TECH_STACK.TailwindCSS,
             TECH_STACK.Redux,
             TECH_STACK.Prisma,
             TECH_STACK.MongoDB,
-            TECH_STACK.NextAuth,
+            TECH_STACK.Authjs,
             TECH_STACK.EdgeStore,
         ],
         features: [
@@ -279,7 +188,7 @@ export const PROJECTS_LIST: IProject[] = [
             },
             {
                 title: "Role-based Secure Authentication",
-                description: "NextAuth with Prisma adapter enables secure access for faculty and admin accounts."
+                description: "Authjs with Prisma adapter enables secure access for faculty and admin accounts."
             },
             {
                 title: "Centralized Resource Management",
@@ -337,13 +246,13 @@ export const PROJECTS_LIST: IProject[] = [
         liveUrl: "https://arms-v3.vercel.app/",
         sourceUrl: "https://github.com/ChiragChrg/arms-v3",
         technologies: [
-            TECH_STACK.NextJS,
+            TECH_STACK.Nextjs,
             TECH_STACK.TypeScript,
             TECH_STACK.TailwindCSS,
-            TECH_STACK.ReactQuery,
+            TECH_STACK.TanStackQuery,
             TECH_STACK.Zustand,
             TECH_STACK.MongoDB,
-            TECH_STACK.NextAuth,
+            TECH_STACK.Authjs,
             TECH_STACK.EdgeStore
         ],
         features: [
@@ -353,7 +262,7 @@ export const PROJECTS_LIST: IProject[] = [
             },
             {
                 title: "Secure Access",
-                description: "Utilizes NextAuth for secure authentication of authorized users using Google and Github Auth providers."
+                description: "Utilizes Authjs for secure authentication of authorized users using Google and Github Auth providers."
             },
             {
                 title: "Streamlined Resource Management",
@@ -408,11 +317,11 @@ export const PROJECTS_LIST: IProject[] = [
         sourceUrl: "https://github.com/ChiragChrg/vortexa",
         technologies: [
             TECH_STACK.Astro,
-            TECH_STACK.ReactJS,
+            TECH_STACK.Reactjs,
             TECH_STACK.TypeScript,
             TECH_STACK.TailwindCSS,
-            TECH_STACK.D3,
-            TECH_STACK.NanoStores,
+            TECH_STACK.D3js,
+            TECH_STACK.Nanostores,
             TECH_STACK.RESTAPI
         ],
         features: [
@@ -474,10 +383,10 @@ export const PROJECTS_LIST: IProject[] = [
         liveUrl: "https://nextmart.vercel.app/",
         sourceUrl: "https://github.com/ChiragChrg/nextmart",
         technologies: [
-            TECH_STACK.NextJS,
+            TECH_STACK.Nextjs,
             TECH_STACK.TypeScript,
             TECH_STACK.MongoDB,
-            TECH_STACK.NextAuth,
+            TECH_STACK.Authjs,
             TECH_STACK.Redux,
             TECH_STACK.TailwindCSS
         ],
@@ -502,10 +411,10 @@ export const PROJECTS_LIST: IProject[] = [
         sourceUrl: "https://github.com/ChiragChrg/ARMS",
         technologies: [
             TECH_STACK.Vite,
-            TECH_STACK.ReactJS,
-            TECH_STACK.NodeJS,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
             TECH_STACK.MongoDB,
-            TECH_STACK.GDrive
+            TECH_STACK.GoogleCloud
         ],
         features: [
             {
@@ -562,10 +471,10 @@ export const PROJECTS_LIST: IProject[] = [
         demoCredentials: { email: "demouser123@gmail.com", password: "DemoUser123" },
         technologies: [
             TECH_STACK.Vite,
-            TECH_STACK.ReactJS,
-            TECH_STACK.NodeJS,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
             TECH_STACK.MongoDB,
-            TECH_STACK.SocketIO
+            TECH_STACK.Socketio
         ],
         features: [
             {
@@ -606,7 +515,7 @@ export const PROJECTS_LIST: IProject[] = [
             TECH_STACK.HTML,
             TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.ReactJS,
+            TECH_STACK.Reactjs,
             TECH_STACK.RESTAPI
         ],
         features: [
@@ -641,8 +550,8 @@ export const PROJECTS_LIST: IProject[] = [
             TECH_STACK.HTML,
             TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.ReactJS,
-            TECH_STACK.NodeJS,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
             TECH_STACK.MySQL
         ],
         features: [
@@ -692,7 +601,7 @@ export const PROJECTS_LIST: IProject[] = [
             TECH_STACK.HTML,
             TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.ReactJS,
+            TECH_STACK.Reactjs,
             TECH_STACK.RESTAPI
         ],
         features: [
