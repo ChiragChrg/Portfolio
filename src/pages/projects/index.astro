@@ -36,7 +36,7 @@ const { PROJECTS_LIST } = await ProjectInfo;
         >
             {
                 PROJECTS_LIST?.map((project) => {
-                    if (project?.hideProject) return;
+                    if (project?.isHidden) return;
 
                     return <ProjectCard project={project} />;
                 })

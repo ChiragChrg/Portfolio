@@ -8,10 +8,10 @@ import { CenterTitle, SectionTitle } from "@components/UI";
 export async function getStaticPaths() {
     const { PROJECTS_LIST } = await import("@/config/ProjectsList");
 
-    return PROJECTS_LIST.filter((project) => !project.hideProject).map(
+    return PROJECTS_LIST.filter((project) => !project.isHidden).map(
         (project) => ({
             params: {
-                projectID: project.Name.replaceAll(" ", "-").toLowerCase(),
+                projectID: project.name.replaceAll(" ", "-").toLowerCase(),
             },
         }),
     );
@@ -27,7 +27,7 @@ const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
 
 // Find the project
 const project = PROJECTS_LIST.find(
-    (itm) => itm.Name.replaceAll(" ", "-").toLowerCase() === projectID,
+    (itm) => itm.name.replaceAll(" ", "-").toLowerCase() === projectID,
 );
 
 // If no project is found, return 404
@@ -37,8 +37,8 @@ if (!project) {
 ---
 
 <ProjectLayout
-    title={`${project.Name} | ${author}`}
-    description={project.ShortDesc}
+    title={`${project.name} | ${author}`}
+    description={project.previewImage}
     config={{
         theme: themeConfig,
         site: siteConfig,
@@ -46,10 +46,11 @@ if (!project) {
         footer: footerConfig,
     }}
 >
+    <!-- Project Background Image -->
     <div class="Fade_In flex_center absolute inset-0 w-full h-full z-[-1]">
         <Image
-            src={project.Shot}
-            alt={`${project.Name}_BG_Image`}
+            src={project.previewImage}
+            alt={`${project.name}_BG_Image`}
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
         />
 
@@ -61,24 +62,29 @@ if (!project) {
         </div>
     </div>
 
+    <!-- Main Project Info -->
     <div class="flex_center flex-col gap-4 py-4">
+        <!-- Project Logo Image -->
         <Image
-            src={project.Logo}
-            alt={`${project.Name}_Image`}
+            src={project.logoImage}
+            alt={`${project.name}_Image`}
             class="Fade_Up"
             width={100}
             height={100}
             loading="eager"
         />
+
+        <!-- Project Title -->
         <h1
             class="Fade_Up font-ubuntu text-[1.6em] md:text-[1.8em] tracking-wider md:tracking-[0.2em] text-center"
         >
-            {project.Name}
+            {project.name}
         </h1>
 
+        <!-- Technologies Icons -->
         <div class="w-full flex_center gap-4">
             {
-                project?.Tech?.map((tech, index) => {
+                project.technologies?.map((tech, index) => {
                     return (
                         <Image
                             src={tech.icon}
@@ -93,9 +99,10 @@ if (!project) {
             }
         </div>
 
+        <!-- Project Links -->
         <div class="flex_center gap-4 text-[1em]">
             <a
-                href={project.Source}
+                href={project.sourceUrl}
                 target="_blank"
                 rel="author"
                 class="Fade_Stagger flex_center gap-2 LinkBtnGradient px-4 py-2 rounded"
@@ -119,7 +126,7 @@ if (!project) {
                 <span>Source Code</span>
             </a>
             <a
-                href={project.Link}
+                href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
                 class="Fade_Stagger flex_center gap-2 LinkBtnGradient px-4 py-2 rounded"
@@ -136,24 +143,28 @@ if (!project) {
     <div
         class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10"
     >
+        <!-- Project Mockup Image -->
         <Image
-            src={project.Mockup}
-            alt={`${project.Name}_Mockup_Image`}
+            src={project.deviceMockupImage}
+            alt={`${project.name}_Mockup_Image`}
             width={600}
             class="Fade_Up"
             loading="eager"
         />
+
         <div class="Fade_Up flex_center flex-col gap-4">
+            <!-- Demo Credentials -->
             {
-                project.Demo && (
+                project.demoCredentials && (
                     <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 LinkBtnGradient rounded-md mt-4 lg:mt-0">
                         <h3 class="min-w-max my-auto">Demo Credentials</h3>
 
                         <div class="flex justify-evenly w-full flex-col md:flex-row gap-2 text-[0.8em]">
+                            {/* Copy Email */}
                             <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
                                 <span class="min-w-20 md:w-fit">Email : </span>
                                 <span id="emailContent" class="w-full">
-                                    {project.Demo?.email}
+                                    {project.demoCredentials?.email}
                                 </span>
 
                                 <button
@@ -164,12 +175,14 @@ if (!project) {
                                     <CheckIcon class="emailCopyIcon absolute invisible" />
                                 </button>
                             </div>
+
+                            {/* Copy Password */}
                             <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
                                 <span class="min-w-20 md:w-fit">
                                     Password :{" "}
                                 </span>
                                 <span id="passContent" class="w-full">
-                                    {project.Demo?.password}
+                                    {project.demoCredentials?.password}
                                 </span>
 
                                 <button
@@ -185,12 +198,14 @@ if (!project) {
                 )
             }
 
+            <!-- Project Description -->
             <p class="w-full text-justify text-[1.1em] mt-4 px-4 indent-12">
-                {project.Desc}
+                {project.description}
             </p>
         </div>
     </div>
 
+    <!-- Project Features -->
     <SectionTitle title="Features" color="primary">
         <div
             class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4"
@@ -210,12 +225,13 @@ if (!project) {
         </div>
     </SectionTitle>
 
+    <!-- Details of Technologies Used -->
     <CenterTitle title="Tech Stack" color="secondary" />
     <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-120"
     >
         {
-            project.Tech.map((tech) => (
+            project.technologies.map((tech) => (
                 <div class="Fade_Stagger flex_center flex-col gap-4 p-4 border border-secondaryLiteAlt sm:border-transparent hover:border-secondaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
                     <div class="flex_center gap-4">
                         <Image
@@ -241,6 +257,7 @@ if (!project) {
     const emailCopyIcons = document.querySelectorAll(".emailCopyIcon");
     const passCopyIcons = document.querySelectorAll(".passCopyIcon");
 
+    // Copy Email to Clipboard
     emailCopyBtn?.addEventListener("click", () => {
         navigator.clipboard.writeText(emailContent?.textContent);
 
@@ -253,6 +270,7 @@ if (!project) {
         }, 2000);
     });
 
+    // Copy Password to Clipboard
     passCopyBtn?.addEventListener("click", () => {
         navigator.clipboard.writeText(passContent?.textContent);
 
