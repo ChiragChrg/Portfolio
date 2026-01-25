@@ -1,4 +1,4 @@
-// Web & Programming Languages
+// Web Fundamentals & Languages
 import HtmlIcon from "./html.svg";
 import CssIcon from "./css.svg";
 import JsIcon from "./javascript.svg";
@@ -6,63 +6,79 @@ import TsIcon from "./typescript.svg";
 import PythonIcon from "./python.svg";
 import CppIcon from "./cpp.svg";
 import JavaIcon from "./java.svg";
-import RIcon from "./Rlogo.svg";
 import CSharpIcon from "./csharp.svg";
+import PhpIcon from "./php.svg";
+import RIcon from "./r.svg";
 
-// Front-End Frameworks & Libraries
+// Frontend & UI Libraries
 import ReactIcon from "./reactjs.svg";
 import NextIcon from "./nextjs.svg";
 import AstroIcon from "./astrojs.svg";
-import TailwindIcon from "./tailwind.svg";
 import PreactIcon from "./preactjs.svg";
+import TailwindIcon from "./tailwind.svg";
 import D3JsIcon from "./d3js.svg";
 import GSAPIcon from "./gsap.svg";
 import MotionIcon from "./motion.svg";
 
-// Back-End Frameworks & Libraries
-import NodeIcon from "./nodejs.svg";
-import ExpressIcon from "./express.svg";
-import PhpIcon from "./php.svg";
-import FirebaseIcon from "./firebase.svg";
-import GoogleCloud from "./googleCloud.svg";
-import NextAuthIcon from "./nextauth.svg";
-import EdgeStoreIcon from "./edgestore.webp";
-import DotnetIcon from "./dotnet.svg";
-import NatsIcon from "./nats.svg";
-
-// Databases & Libraries
-import MongoIcon from "./mongodb.svg";
-import MysqlIcon from "./mysql.svg";
-import RestApiIcon from "./database.svg";
-import PostgresIcon from "./postgres.svg";
-import PrismaIcon from "./prisma.svg";
-
-// State Management & Utilities
+// State, Data & Realtime
 import ReduxIcon from "./redux.svg";
 import ZustandIcon from "./zustand.webp";
 import NanostoresIcon from "./nanostores.svg";
 import ReactQueryIcon from "./reactquery.svg";
+import SocketIoIcon from "./socketio.svg";
+import NatsIcon from "./nats.svg";
 
-// Platforms & Hosting
+// Backend & APIs
+import NodeIcon from "./nodejs.svg";
+import ExpressIcon from "./express.svg";
+import FastApiIcon from "./fastapi.svg";
+import DotnetIcon from "./dotnet.svg";
+import RestApiIcon from "./restapi.svg";
+
+// Databases, Caching & ORM
+import MongoIcon from "./mongodb.svg";
+import MysqlIcon from "./mysql.svg";
+import PostgresIcon from "./postgres.svg";
+import RedisIcon from "./redis.svg";
+import PrismaIcon from "./prisma.svg";
+import EdgeStoreIcon from "./edgestore.webp";
+
+// Cloud, Storage & DevOps
+import DockerIcon from "./docker.svg";
+import FirebaseIcon from "./firebase.svg";
+import GoogleCloud from "./google-cloud.svg";
+import AwsS3Icon from "./aws-s3.svg";
+import NextAuthIcon from "./nextauth.svg";
 import NetlifyIcon from "./netlify.svg";
 import VercelIcon from "./vercel.svg";
-import GithubIcon from "./github.svg";
 import RenderIcon from "./render.svg";
 
-// Tools & Software
+// Tooling, Testing & Observability
+import GitIcon from "./git.svg";
+import GithubIcon from "./github.svg";
+import ViteIcon from "./vitejs.svg";
 import NpmIcon from "./npm.svg";
 import BunIcon from "./bun.svg";
-import GitIcon from "./git.svg";
-import VsCodeIcon from "./vscode.svg";
-import VisualStudioIcon from "./visualStudio.svg";
-import ViteIcon from "./vitejs.svg";
-import AndroidStudioIcon from "./androidStudio.svg";
-import FigmaIcon from "./figma.svg";
-import SocketIoIcon from "./socketio.svg";
+import JestIcon from "./jest.svg";
+import PostmanIcon from "./postman.svg";
+import SwaggerIcon from "./swagger.svg";
+import OpenTelemetryIcon from "./opentelemetry.svg";
+import StreamlitIcon from "./streamlit.svg";
 
+// Configuration & Templating
+import YamlIcon from "./yaml.svg";
+import JsonIcon from "./json.svg";
+import MarkdownIcon from "./markdown.svg";
+import FreeMarkerIcon from "./freemarker.svg";
+
+// IDEs & Design Tools
+import VsCodeIcon from "./vscode.svg";
+import VisualStudioIcon from "./visual-studio.svg";
+import AndroidStudioIcon from "./android-studio.svg";
+import FigmaIcon from "./figma.svg";
 
 export default {
-    // Web & Programming Languages
+    // Web Fundamentals & Languages
     HtmlIcon,
     CssIcon,
     JsIcon,
@@ -70,57 +86,74 @@ export default {
     PythonIcon,
     CppIcon,
     JavaIcon,
-    RIcon,
     CSharpIcon,
+    PhpIcon,
+    RIcon,
 
-    // Front-End Frameworks & Libraries
+    // Frontend & UI Libraries
     ReactIcon,
     NextIcon,
     AstroIcon,
-    TailwindIcon,
     PreactIcon,
+    TailwindIcon,
     D3JsIcon,
     GSAPIcon,
     MotionIcon,
 
-    // Back-End Frameworks & Libraries
-    NodeIcon,
-    ExpressIcon,
-    PhpIcon,
-    FirebaseIcon,
-    GoogleCloud,
-    NextAuthIcon,
-    EdgeStoreIcon,
-    DotnetIcon,
-    NatsIcon,
-
-    // Databases & Libraries
-    MongoIcon,
-    MysqlIcon,
-    RestApiIcon,
-    PostgresIcon,
-    PrismaIcon,
-
-    // State Management & Utilities
+    // State, Data & Realtime
     ReduxIcon,
     ZustandIcon,
     NanostoresIcon,
     ReactQueryIcon,
+    SocketIoIcon,
+    NatsIcon,
 
-    // Platforms & Hosting
+    // Backend & APIs
+    NodeIcon,
+    ExpressIcon,
+    FastApiIcon,
+    DotnetIcon,
+    RestApiIcon,
+
+    // Databases, Caching & ORM
+    MongoIcon,
+    MysqlIcon,
+    PostgresIcon,
+    RedisIcon,
+    PrismaIcon,
+    EdgeStoreIcon,
+
+    // Cloud, Storage & DevOps
+    DockerIcon,
+    FirebaseIcon,
+    GoogleCloud,
+    AwsS3Icon,
+    NextAuthIcon,
     NetlifyIcon,
     VercelIcon,
-    GithubIcon,
     RenderIcon,
 
-    // Tools & Software
+    // Tooling, Testing & Observability
+    GitIcon,
+    GithubIcon,
+    ViteIcon,
     NpmIcon,
     BunIcon,
-    GitIcon,
+    JestIcon,
+    PostmanIcon,
+    SwaggerIcon,
+    OpenTelemetryIcon,
+    StreamlitIcon,
+
+    // Configuration & Templating
+    YamlIcon,
+    JsonIcon,
+    MarkdownIcon,
+    FreeMarkerIcon,
+
+    // IDEs & Design Tools
     VsCodeIcon,
     VisualStudioIcon,
-    ViteIcon,
     AndroidStudioIcon,
     FigmaIcon,
-    SocketIoIcon,
-}
+};
