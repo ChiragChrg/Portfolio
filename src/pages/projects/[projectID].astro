@@ -18,12 +18,12 @@ export async function getStaticPaths() {
 }
 
 const { projectID } = Astro.params;
-const author = "ChiragChrg";
 
 const { PROJECTS_LIST } = await import("@/config/ProjectsList");
-const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
-    "@/config"
-);
+const { themeConfig, siteConfig, headerConfig, footerConfig, heroConfig } =
+    await import("@/config");
+
+const author = `${heroConfig.firstName} ${heroConfig.lastName}`;
 
 // Find the project
 const project = PROJECTS_LIST.find(
