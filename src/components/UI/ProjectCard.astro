@@ -1,11 +1,11 @@
 ---
 import { GithubIcon } from "@/assets/SVGs";
-import type { IProject } from "@/config/ProjectsList";
+import type { ProjectsListType } from "@/config/ProjectsList";
 import { Image } from "astro:assets";
 import { ArrowUpRightIcon } from "lucide-preact";
 
 type Props = {
-    project: IProject;
+    project: ProjectsListType;
     className?: string;
 };
 
@@ -13,14 +13,14 @@ const { project, className }: Props = Astro.props;
 
 // PROJECT STATUS CHECK
 let PROJECT_STATUS: string;
-if (project.status === "development") {
+if (project.Status === "development") {
     PROJECT_STATUS = "BUILDING";
 } else {
     let isLive = false;
 
     // LIVE CHECK
     try {
-        const res = await fetch(project.liveUrl, {
+        const res = await fetch(project.Link, {
             method: "HEAD",
             redirect: "follow",
         });
@@ -37,15 +37,15 @@ if (project.status === "development") {
     class={`Project_Stagger Card_Main w-full h-[525px] flex flex-col bg-footerAltLite/80 overflow-hidden mt-3 opacity-0 rounded-xl ${className}`}
 >
     <a
-        href={`/projects/${project?.name.replaceAll(" ", "-").toLowerCase()}`}
+        href={`/projects/${project?.Name.replaceAll(" ", "-").toLowerCase()}`}
         class="Projects_Preview relative w-full p-1"
     >
         <Image
             class="Card_Image bg-cover opacity-100 transition-opacity w-full rounded-lg"
-            src={project.previewImage}
-            alt={`Project_ScreenShot_${project.name}`}
-            widths={[346, project.previewImage.width]}
-            sizes={`(max-width: 720px) 346px, ${project.previewImage.width}px`}
+            src={project.Shot}
+            alt={`Project_ScreenShot_${project.Name}`}
+            widths={[346, project.Shot.width]}
+            sizes={`(max-width: 720px) 346px, ${project.Shot.width}px`}
             loading="lazy"
         />
 
@@ -59,11 +59,10 @@ if (project.status === "development") {
         class="relative w-full flex flex-col flex-1 text-[0.95em] px-6 py-4 min-h-0"
     >
         <div class="flex justify-between items-center">
-            <!-- Project Title & Logo -->
             <div class="flex justify-start items-center gap-4 max-h-[60px]">
                 <Image
-                    src={project.logoImage}
-                    alt={`Project_Logo_${project.name}`}
+                    src={project.Logo}
+                    alt={`Project_Logo_${project.Name}`}
                     width={60}
                     height={60}
                     loading="lazy"
@@ -72,12 +71,11 @@ if (project.status === "development") {
 
                 <div class="flex flex-col">
                     <h3 class="font-ubuntu text-[1.4em]">
-                        {project.name}
+                        {project.Name}
                     </h3>
                 </div>
             </div>
 
-            <!-- Project Status & Links -->
             <div class="flex gap-4 items-center">
                 <div
                     class={`flex items-center gap-2 w-fit text-sm tracking-widest align-middle px-2 ${
@@ -102,30 +100,29 @@ if (project.status === "development") {
                     {PROJECT_STATUS}
                 </div>
 
-                <!-- Project Links -->
                 <div class="flex items-center gap-2">
                     <a
-                        href={project.sourceUrl}
-                        title={`${project.name} - GitHub`}
+                        href={project.Source}
+                        title={`${project.Name} - GitHub`}
                         target="_blank"
                         rel="noreferrer"
                         class="Projects_Link flex"
                     >
                         <GithubIcon width={20} height={20} aria-hidden="true" />
                         <span class="sr-only">
-                            {project.name} - GitHub
+                            {project.Name} - GitHub
                         </span>
                     </a>
                     <a
-                        href={project.liveUrl}
-                        title={`${project.name} Preview`}
+                        href={project.Link}
+                        title={`${project.Name} Preview`}
                         target="_blank"
                         rel="noreferrer"
                         class="Projects_Link flex"
                     >
                         <ArrowUpRightIcon aria-hidden="true" />
                         <span class="sr-only">
-                            {project.name} Preview
+                            {project.Name} Preview
                         </span>
                     </a>
                 </div>
@@ -133,21 +130,20 @@ if (project.status === "development") {
         </div>
 
         <div class="flex flex-1 items-center">
-            <p class="text-center">{project.shortDescription}</p>
+            <p class="text-center">{project.ShortDesc}</p>
         </div>
 
-        <!-- Technologies Icons -->
         <div class="w-full flex_center gap-4 shrink-0">
             {
-                project.technologies.map((tech, index) => {
+                project.Tech.map((tech, index) => {
                     // LIMIT TECH STACK TO 12 ITEMS
-                    if (project.technologies.length > 12) {
+                    if (project.Tech.length > 12) {
                         if (index > 12) return;
 
                         if (index === 12) {
                             return (
                                 <div class="flex items-center justify-center w-6 h-6 p-1 text-xs bg-background/60 rounded">
-                                    +&nbsp;{project.technologies.length - 12}
+                                    +&nbsp;{project.Tech.length - 12}
                                 </div>
                             );
                         }

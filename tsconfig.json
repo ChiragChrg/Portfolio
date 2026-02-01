@@ -21,17 +21,8 @@
       "@/*": [
         "src/*"
       ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
       "@components/*": [
         "src/components/*"
-      ],
-      "@config/*": [
-        "src/config/*"
-      ],
-      "@constants/*": [
-        "src/constants/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
@@ -39,8 +30,14 @@
       "@pages/*": [
         "src/pages/*"
       ],
+      "@config/*": [
+        "src/config/*"
+      ],
       "@styles/*": [
         "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
       ],
       "@utils/*": [
         "src/utils/*"

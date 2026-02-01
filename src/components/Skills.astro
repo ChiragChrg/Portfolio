@@ -1,22 +1,19 @@
 ---
 import { CenterTitle, SkillTitle, SkillGrid } from "@components/UI";
-const skillStacks = await import("@/constants/skillStack");
+const skillStacks = await import("@/config/SkillStack");
 
-const WebLanguagesStack = skillStacks.WebLanguagesStack;
-const FrontendLibrariesStack = skillStacks.FrontendLibrariesStack;
-const BackendApisStack = skillStacks.BackendApisStack;
+const BackendLibrariesStack = skillStacks.BackendLibrariesStack;
 const DatabaseStack = skillStacks.DatabaseStack;
-const StateEventStack = skillStacks.StateEventStack;
-const CloudDevOpsStack = skillStacks.CloudDevOpsStack;
-const ToolingTestingStack = skillStacks.ToolingTestingStack;
-const ConfigTemplatingStack = skillStacks.ConfigTemplatingStack;
-const IdesDesignStack = skillStacks.IdesDesignStack;
+const FrontendLibrariesStack = skillStacks.FrontendLibrariesStack;
+const PlatformsStack = skillStacks.PlatformsStack;
+const StateUtilitiesStack = skillStacks.StateUtilitiesStack;
+const ToolsStack = skillStacks.ToolsStack;
+const WebLanguagesStack = skillStacks.WebLanguagesStack;
 ---
 
 <section id="skills" class="w-full min-h-screen py-4 pt-14 bg-background">
     <CenterTitle title="Tech Stack" color="primary" />
 
-    <!-- Web & Frontend Skills -->
     <div
         class="Fade_Up flex justify-center items-start flex-col lg:flex-row gap-2"
     >
@@ -35,72 +32,48 @@ const IdesDesignStack = skillStacks.IdesDesignStack;
         </div>
     </div>
 
-    <!-- Backend & Database Skills -->
     <div
         class="Fade_Up flex justify-center items-start flex-col lg:flex-row gap-2"
     >
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="Backend & APIs" color="primary" />
-            <SkillGrid stack={BackendApisStack} />
+            <SkillTitle title="Backend" color="primary" />
+            <SkillGrid stack={BackendLibrariesStack} />
         </div>
 
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="Databases & Storage" color="primary" />
+            <SkillTitle title="Database" color="primary" />
             <SkillGrid stack={DatabaseStack} />
         </div>
     </div>
-
-    <!-- State Management & Cloud Skills -->
     <div
         class="Fade_Up flex justify-center items-start flex-col lg:flex-row gap-2"
     >
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="State & Events" color="primary" />
-            <SkillGrid stack={StateEventStack} />
+            <SkillTitle title="State Management" color="primary" />
+            <SkillGrid stack={StateUtilitiesStack} />
         </div>
 
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="Cloud & DevOps" color="primary" />
-            <SkillGrid stack={CloudDevOpsStack} />
+            <SkillTitle title="Platform" color="primary" />
+            <SkillGrid stack={PlatformsStack} />
         </div>
     </div>
-
-    <!-- Tooling & Config Skills -->
     <div
         class="Fade_Up flex justify-center items-start flex-col lg:flex-row gap-2"
     >
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="Tooling & Observability" color="primary" />
-            <SkillGrid stack={ToolingTestingStack} />
-        </div>
-
-        <div
-            class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
-        >
-            <SkillTitle title="Config & Templating" color="primary" />
-            <SkillGrid stack={ConfigTemplatingStack} />
-        </div>
-    </div>
-
-    <!-- IDEs & Design Skills -->
-    <div
-        class="Fade_Up flex justify-center items-start flex-col lg:flex-row gap-2"
-    >
-        <div
-            class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
-        >
-            <SkillTitle title="IDEs & Design" color="primary" />
-            <SkillGrid stack={IdesDesignStack} />
+            <SkillTitle title="Tools & Libraries" color="primary" />
+            <SkillGrid stack={ToolsStack} />
         </div>
     </div>
 </section>

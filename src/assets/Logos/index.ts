@@ -1,33 +1,15 @@
-import NextmartLogo from "./NextmartLogo.svg"
-import ArmsLogo from "./ArmsLogo.svg"
-import ArmsPhpLogo from "./ArmsPhpLogo.svg"
-import ClimateLogo from "./ClimateLogo.svg"
-import CookeezLogo from "./CookeezLogo.svg"
-import CovidtraxLogo from "./CovidtraxLogo.svg"
-import DaysbeyondLogo from "./DaysbeyondLogo.svg"
-import FilmstackLogo from "./FilmstackLogo.svg"
-import KalciLogo from "./KalciLogo.svg"
-import NuklearbrainLogo from "./NuklearbrainLogo.svg"
-import PikturesLogo from "./PikturesLogo.svg"
-import SrinivasLogo from "./SrinivasLogo.svg"
-import XReconLogo from "./XReconLogo.svg"
-import YoatubeLogo from "./YoatubeLogo.svg"
-import VortexaLogo from "./VortexaLogo.svg"
-
-export default {
-    NextmartLogo,
-    ArmsLogo,
-    ArmsPhpLogo,
-    ClimateLogo,
-    CookeezLogo,
-    CovidtraxLogo,
-    DaysbeyondLogo,
-    FilmstackLogo,
-    KalciLogo,
-    NuklearbrainLogo,
-    PikturesLogo,
-    SrinivasLogo,
-    XReconLogo,
-    YoatubeLogo,
-    VortexaLogo,
-}
+export { default as NextmartLogo } from "./NextmartLogo.svg"
+export { default as ArmsLogo } from "./ArmsLogo.svg"
+export { default as ArmsPhpLogo } from "./ArmsPhpLogo.svg"
+export { default as ClimateLogo } from "./ClimateLogo.svg"
+export { default as CookeezLogo } from "./CookeezLogo.svg"
+export { default as CovidtraxLogo } from "./CovidtraxLogo.svg"
+export { default as DaysbeyondLogo } from "./DaysbeyondLogo.svg"
+export { default as FilmstackLogo } from "./FilmstackLogo.svg"
+export { default as KalciLogo } from "./KalciLogo.svg"
+export { default as NuklearbrainLogo } from "./NuklearbrainLogo.svg"
+export { default as PikturesLogo } from "./PikturesLogo.svg"
+export { default as SrinivasLogo } from "./SrinivasLogo.svg"
+export { default as XReconLogo } from "./XReconLogo.svg"
+export { default as YoatubeLogo } from "./YoatubeLogo.svg"
+export { default as VortexaLogo } from "./VortexaLogo.svg"
