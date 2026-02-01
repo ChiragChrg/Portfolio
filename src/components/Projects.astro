@@ -7,7 +7,7 @@ const { PROJECTS_LIST } = await ProjectInfo;
 
 const PROJECT_LIST_LIMIT = 9;
 const SHOW_ALL_PROJECTS =
-    PROJECTS_LIST.filter((p) => !p.hideProject).length > PROJECT_LIST_LIMIT;
+    PROJECTS_LIST.filter((p) => !p.isHidden).length > PROJECT_LIST_LIMIT;
 ---
 
 <section id="projects" class="w-full min-h-screen py-4 pt-14 bg-background">
@@ -27,7 +27,7 @@ const SHOW_ALL_PROJECTS =
         >
             {
                 PROJECTS_LIST.map((project, index) => {
-                    if (project?.hideProject) return;
+                    if (project?.isHidden) return;
 
                     // LIMIT PROJECT LIST TO 9 ITEMS
                     if (index > PROJECT_LIST_LIMIT + 2) return;
