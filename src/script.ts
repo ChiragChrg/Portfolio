@@ -392,7 +392,7 @@ if (MobileLinkElement.length !== 0) {
     linkTl.fromTo(MobileLinkElement, transitions.MobileLink.from, transitions.MobileLink.to);
 }
 
-const HamMenuButton = document.getElementById("Ham_Menu");
+const HamMenuButton = document.querySelector("#Ham_Menu svg");
 
 const closeNav = () => {
     linkTl.reverse()
@@ -440,7 +440,6 @@ document
     .forEach((el) => {
         el.addEventListener("click", (e) => {
             e.preventDefault();
-
             const id = el.getAttribute("href")?.slice(1);
             if (!id) return;
 
@@ -453,7 +452,6 @@ document
             triggers.forEach(trigger => {
                 if (!trigger.trigger) return;
                 const triggerTop = trigger.trigger.getBoundingClientRect().top + window.scrollY;
-
                 if (triggerTop < targetTop && trigger.animation) {
                     trigger.animation.progress(1, false);
                 }
@@ -461,13 +459,15 @@ document
 
             lenis.scrollTo(target);
 
-            if (window.innerWidth < 1024) {
+            // Only close nav if menu is actually open
+            if (window.innerWidth < 1024 && isMenuOpen) {
                 closeNav();
-                isMenuOpen = !isMenuOpen;
-                HamMenuButton?.classList.toggle("isOpen");
+                isMenuOpen = false;
+                HamMenuButton?.classList.remove("isOpen");
             }
         });
     });
+
 // #endregion
 
 

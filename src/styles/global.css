@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --status-live-fg: #009966;
-  --status-live-bg: rgba(22, 163, 74, 0.12);
-  --status-live-border: rgba(22, 163, 74, 0.5);
+    --status-live-fg: #009966;
+    --status-live-bg: rgba(22, 163, 74, 0.12);
+    --status-live-border: rgba(22, 163, 74, 0.5);
 
-  --status-down-fg: #b91c1c; 
-  --status-down-bg: rgba(220, 38, 38, 0.12);
-  --status-down-border: rgba(220, 38, 38, 0.5);
+    --status-down-fg: #b91c1c;
+    --status-down-bg: rgba(220, 38, 38, 0.12);
+    --status-down-border: rgba(220, 38, 38, 0.5);
 
-  --status-warn-fg: #fe9a00; 
-  --status-warn-bg: rgba(245, 158, 11, 0.12);
-  --status-warn-border: rgba(245, 158, 11, 0.5);
+    --status-warn-fg: #fe9a00;
+    --status-warn-bg: rgba(245, 158, 11, 0.12);
+    --status-warn-border: rgba(245, 158, 11, 0.5);
 }
 
 html.dark {
-  --status-live-fg: #4ade80; 
-  --status-live-bg: rgba(34,197,94,0.16);
-  --status-live-border: rgba(74,222,128,0.55);
+    --status-live-fg: #4ade80;
+    --status-live-bg: rgba(34, 197, 94, 0.16);
+    --status-live-border: rgba(74, 222, 128, 0.55);
 
-  --status-down-fg: #f87171; 
-  --status-down-bg: rgba(239,68,68,0.16);
-  --status-down-border: rgba(248,113,113,0.55);
+    --status-down-fg: #f87171;
+    --status-down-bg: rgba(239, 68, 68, 0.16);
+    --status-down-border: rgba(248, 113, 113, 0.55);
 
-  --status-warn-fg: #fbbf24;  
-  --status-warn-bg: rgba(245,158,11,0.16);
-  --status-warn-border: rgba(251,191,36,0.55);
+    --status-warn-fg: #fbbf24;
+    --status-warn-bg: rgba(245, 158, 11, 0.16);
+    --status-warn-border: rgba(251, 191, 36, 0.55);
 }
 
 
@@ -54,11 +54,13 @@ html.dark {
 }
 
 @layer base {
+
     *,
     *::before,
     *::after {
         box-sizing: border-box;
     }
+
     * {
         margin: 0;
         padding: 0;
@@ -68,6 +70,7 @@ html.dark {
 html {
     font-family: Poppins;
 }
+
 body {
     background-color: var(--background);
     color: var(--text);
@@ -75,21 +78,21 @@ body {
 
 /* Project Status Chip */
 .statusLive {
-  color: var(--status-live-fg);
-  background: var(--status-live-bg);
-  border: 1px solid var(--status-live-border);
+    color: var(--status-live-fg);
+    background: var(--status-live-bg);
+    border: 1px solid var(--status-live-border);
 }
 
 .statusDown {
-  color: var(--status-down-fg);
-  background: var(--status-down-bg);
-  border: 1px solid var(--status-down-border);
+    color: var(--status-down-fg);
+    background: var(--status-down-bg);
+    border: 1px solid var(--status-down-border);
 }
 
 .statusBuilding {
-  color: var(--status-warn-fg);
-  background: var(--status-warn-bg);
-  border: 1px solid var(--status-warn-border);
+    color: var(--status-warn-fg);
+    background: var(--status-warn-bg);
+    border: 1px solid var(--status-warn-border);
 }
 
 
@@ -97,21 +100,27 @@ body {
 .headerGradient {
     background: var(--headerGradient);
 }
+
 .orbitGradient {
     background: var(--orbitGradient);
 }
+
 .skillGradient {
     background: var(--SkillGradient);
 }
+
 .skillGradientAlt {
     background: var(--SkillGradientAlt);
 }
+
 .LinkBtnGradient {
     background: var(--LinkBtnGradient);
 }
+
 .cardGradient {
     background: var(--cardGradient);
 }
+
 .imgOverlayGradient {
     background: var(--overlayGradient);
 }
@@ -129,6 +138,7 @@ body {
         opacity: 0;
     }
 }
+
 @keyframes orbit {
     0% {
         transform: rotate(0deg);
@@ -138,6 +148,7 @@ body {
         transform: rotate(360deg);
     }
 }
+
 @keyframes spin {
     0% {
         rotate: 0deg !important;
@@ -147,6 +158,7 @@ body {
         rotate: 360deg !important;
     }
 }
+
 @keyframes gradientPan {
     from {
         background-position: 0% center;
@@ -161,15 +173,19 @@ body {
 html.lenis {
     height: auto;
 }
+
 .lenis.lenis-smooth {
     scroll-behavior: auto !important;
 }
+
 .lenis.lenis-smooth [data-lenis-prevent] {
     overscroll-behavior: contain;
 }
+
 .lenis.lenis-stopped {
     overflow: hidden;
 }
+
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
 }
@@ -180,6 +196,7 @@ html.lenis {
     justify-content: center;
     align-items: center;
 }
+
 .gradientText {
     background: var(--gradient);
     background-clip: text;
@@ -189,6 +206,7 @@ html.lenis {
     animation: gradientPan 5s linear infinite;
     will-change: background-position;
 }
+
 .Orbit_Dot {
     width: 0.5em;
     aspect-ratio: 1;
@@ -203,28 +221,34 @@ html.lenis {
     box-shadow: 0 0 10px var(--orbitDotColor);
     outline: 0.5px solid var(--orbitDotColor);
 }
+
 :has(.Hero_Orbit:hover) .Orbit_Dot {
     background-color: var(--background) !important;
     outline: 0.5px solid var(--orbitDotColor);
     /* border-radius: 50% !important; */
     scale: 1.8;
 }
+
 .Fade_Stagger,
 .Fade_Up {
     opacity: 0;
     transform: translateY(50);
 }
+
 .Fade_Down {
     opacity: 0;
     transform: translateY(-50);
 }
+
 .Fade_In {
     opacity: 0;
 }
+
 .Spring_Up {
     opacity: 0;
     scale: 0.75;
 }
+
 .spring-element-performance {
     will-change: transform, opacity;
     backface-visibility: hidden;
@@ -254,6 +278,7 @@ html.lenis {
     transform: scaleX(0);
     transition: transform 0.25s ease-out;
 }
+
 .Header_Nav a.active::after {
     transform: scaleX(1);
 }
@@ -265,14 +290,13 @@ html.lenis {
     position: absolute;
     width: 120%;
     aspect-ratio: 1;
-    background: conic-gradient(
-        hsl(var(--primary)),
-        hsl(var(--secondary)),
-        hsl(var(--primary))
-    );
+    background: conic-gradient(hsl(var(--primary)),
+            hsl(var(--secondary)),
+            hsl(var(--primary)));
     animation: spin 5s linear infinite;
 }
-.Header_ActionBtn > div {
+
+.Header_ActionBtn>div {
     padding: 0.2em 1.35em;
     background-color: var(--background);
     color: var(--text);
@@ -293,12 +317,14 @@ html.lenis {
     font-weight: 700;
     letter-spacing: 1px;
 }
+
 .MobileHeader_Nav a {
     width: 100%;
     color: var(--text);
     text-decoration: none;
     text-transform: uppercase;
 }
+
 .MobileHeader_Nav a.active {
     background: var(--gradient);
     background-clip: text;
@@ -307,27 +333,29 @@ html.lenis {
     background-size: 200%;
     animation: gradientPan 5s linear infinite;
 }
+
 :has(.MobileHeader_ActionBtn).MobileHeader_Nav {
     padding: 0;
 }
+
 .MobileHeader_ActionBtn {
     position: relative;
     border-radius: 0.2em;
     overflow: hidden;
 }
+
 .MobileHeader_ActionBtn::after {
     content: "";
     position: absolute;
     width: 120%;
     aspect-ratio: 1;
-    background: conic-gradient(
-        hsl(var(--primary)),
-        hsl(var(--secondary)),
-        hsl(var(--primary))
-    );
+    background: conic-gradient(hsl(var(--primary)),
+            hsl(var(--secondary)),
+            hsl(var(--primary)));
     animation: spin 5s linear infinite;
 }
-.MobileHeader_ActionBtn > div {
+
+.MobileHeader_ActionBtn>div {
     padding: 0.7em 1em;
     width: 100%;
     background-color: var(--background);
@@ -346,6 +374,7 @@ html.lenis {
     /* animation: spin 6s linear infinite; */
     animation-delay: 1s;
 }
+
 .Hero_Trail::before {
     content: "";
     width: calc(100% - 1%);
@@ -356,11 +385,13 @@ html.lenis {
     position: absolute;
     background-color: var(--background);
 }
+
 .Trail1 {
     width: 60%;
     background: var(--orbitGradient);
     z-index: 5;
 }
+
 .Trail2 {
     width: 70%;
     animation-duration: 8s;
@@ -368,12 +399,14 @@ html.lenis {
     background: var(--orbitGradientAlt);
     z-index: 4;
 }
+
 .Trail3 {
     width: 80%;
     background: var(--orbitGradient);
     animation-duration: 10s;
     z-index: 3;
 }
+
 .Trail4 {
     width: 90%;
     animation-duration: 12s;
@@ -381,6 +414,7 @@ html.lenis {
     background: var(--orbitGradientAlt);
     z-index: 2;
 }
+
 .Trail2 span,
 .Trail4 span {
     transform: rotate(140deg);
@@ -391,27 +425,33 @@ html.lenis {
 .Title-Tag {
     font-family: Ubuntu;
 }
+
 .Title-Tag span,
 .Title-Tag p {
     z-index: 1;
     background-color: var(--background);
     padding-inline: 0.25em;
 }
+
 .Title-Tag.open {
     margin-bottom: 1em;
     justify-content: flex-start;
 }
+
 .Title-Tag.close {
     justify-content: flex-end;
     padding-top: 0.5em;
     opacity: 0.7 !important;
 }
+
 .Title-Tag.primary span {
     color: hsl(var(--primary));
 }
+
 .Title-Tag.secondary span {
     color: hsl(var(--secondary));
 }
+
 .Title_Line::after {
     content: "";
     position: absolute;
@@ -421,20 +461,33 @@ html.lenis {
     z-index: 0;
     background-color: var(--primaryLite);
 }
+
 .Title_Line.secondary::after {
     background-color: var(--secondaryLite);
 }
+
 .Title_Line.close::after {
     background-color: transparent;
 }
 
 
 /* Mobile Ham Menu Animation --> */
+#Ham_Menu {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
 .MobileNav_Ham {
     -webkit-tap-highlight-color: transparent;
     transition: transform 0.4s;
     user-select: none;
 }
+
 .MobileNav_Ham .line {
     fill: none;
     transition:
@@ -445,14 +498,17 @@ html.lenis {
     transform-origin: right;
     stroke-linecap: round;
 }
+
 .MobileNav_Ham .top {
     stroke-dasharray: 18 160;
 }
+
 .MobileNav_Ham .middle {
     stroke-dasharray: 40 142;
     transform-origin: 83% 83%;
     transition: transform 0.4s;
 }
+
 .MobileNav_Ham .bottom {
     stroke-dasharray: 18 85;
     transform-origin: 50%;
@@ -460,6 +516,28 @@ html.lenis {
         transform 0.4s,
         stroke-dashoffset 0.4s;
 }
+
+.MobileNav_Ham.isOpen {
+    transform: rotate(45deg);
+}
+
+.MobileNav_Ham.isOpen .top {
+    stroke-dashoffset: -64px;
+}
+
+.MobileNav_Ham.isOpen .middle {
+    stroke-dasharray: 40 142;
+    stroke-dashoffset: 0%;
+    transform: rotate(90deg);
+}
+
+.MobileNav_Ham.isOpen .bottom {
+    stroke-dasharray: 40 85;
+    stroke-dashoffset: -64px;
+}
+
+/* <-- Mobile Ham Menu Animation */
+
 .Projects_Link {
     padding: 0.45em;
     /* border: 1px solid var(--primaryLite);
@@ -483,6 +561,7 @@ footer {
 a {
     cursor: pointer !important;
 }
+
 a,
 button,
 h1,
@@ -490,10 +569,12 @@ p {
     /* cursor: none !important; */
     text-decoration: none;
 }
+
 img {
     user-select: none;
     pointer-events: none;
 }
+
 .selectable p {
     user-select: text;
     cursor: text;
@@ -511,9 +592,11 @@ div {
 ::-webkit-scrollbar {
     width: 16px;
 }
+
 ::-webkit-scrollbar-track {
     background-color: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: var(--accent);
     border-radius: 14px;
