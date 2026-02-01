@@ -5,10 +5,10 @@ import ThemeDropdown from "@components/UI/ThemeDropdown.astro";
 
 const { config } = Astro.props;
 
-const isDev = import.meta.env.ENVIRONMENT === "development";
+const showThemeMenu = import.meta.env.showThemeMenu === "true";
 const isNightly = Astro.url.origin.includes("chiragchrg-nightly.netlify.app");
 
-const showThemeDropdown = isDev || isNightly;
+const showThemeDropdown = showThemeMenu || isNightly;
 ---
 
 <header class="hidden lg:block sticky top-0 max-w-[1800px] mx-auto z-50">

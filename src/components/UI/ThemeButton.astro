@@ -5,7 +5,7 @@ type Props = {
 const { className }: Props = Astro.props;
 
 // Generate unique ID for this instance
-const uniqueId = Math.random().toString(36).substr(2, 9);
+const uniqueId = Math.random().toString(36).slice(2, 10);
 const btnId = `themeToggleBtn-${uniqueId}`;
 const sunId = `themeSunSvg-${uniqueId}`;
 const moonId = `themeMoonSvg-${uniqueId}`;
@@ -69,9 +69,15 @@ const moonId = `themeMoonSvg-${uniqueId}`;
 
         if (!themeToggleBtn || !lightThemeBtn || !darkThemeBtn) return;
 
+        // Local Storage Keys
         const THEME_KEY = "chiragchrg-portfolio-theme";
         const THEME_NAME_KEY = "chiragchrg-portfolio-theme-name";
 
+        /**
+         * Set the theme mode (light/dark)
+         * @param {string} mode - Theme mode to set ("light" or "dark")
+         * @returns {void}
+         */
         const setTheme = (mode) => {
             document.documentElement.classList.remove("light", "dark");
             document.documentElement.classList.add(mode);
@@ -106,6 +112,10 @@ const moonId = `themeMoonSvg-${uniqueId}`;
             }
         };
 
+        /**
+         * Get the current theme from local storage or default to dark
+         * @returns {string} - Current theme mode ("light" or "dark")
+         */
         function getCurrentTheme() {
             try {
                 const saved = localStorage.getItem(THEME_KEY);
@@ -116,6 +126,7 @@ const moonId = `themeMoonSvg-${uniqueId}`;
             }
         }
 
+        // Initialize theme on first load
         if (!window.themeInitialized) {
             window.themeInitialized = true;
 
@@ -219,6 +230,9 @@ const moonId = `themeMoonSvg-${uniqueId}`;
                     pseudoElement: "::view-transition-new(root)",
                 },
             );
+
+            // Dispatch event to close mobile nav if open
+            window.dispatchEvent(new CustomEvent("closeMobileNav"));
         };
 
         themeToggleBtn.addEventListener("click", toggleTheme);
