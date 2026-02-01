@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0-nightly.2 (2026-02-01)
+
+* Merge branch 'nightly' of https://github.com/ChiragChrg/Portfolio into dev ([a163dd6](https://github.com/ChiragChrg/Portfolio/commit/a163dd6))
+* Merge pull request #13 from ChiragChrg/dev ([1929601](https://github.com/ChiragChrg/Portfolio/commit/1929601)), closes [#13](https://github.com/ChiragChrg/Portfolio/issues/13)
+* chore: 🔧 Remove unused utility CSS import from layout files ([813f81a](https://github.com/ChiragChrg/Portfolio/commit/813f81a))
+
 ## 1.1.0-nightly.1 (2026-02-01)
 
 * ci-cd:  💚Refactor branch configuration in .releaserc.json ([1f063fa](https://github.com/ChiragChrg/Portfolio/commit/1f063fa))
