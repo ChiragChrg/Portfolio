@@ -20,7 +20,7 @@ import D3JsIcon from "./d3js.svg";
 import GSAPIcon from "./gsap.svg";
 import MotionIcon from "./motion.svg";
 
-// State, Data & Realtime
+// State & Events
 import ReduxIcon from "./redux.svg";
 import ZustandIcon from "./zustand.webp";
 import NanostoresIcon from "./nanostores.svg";
@@ -100,7 +100,7 @@ export default {
     GSAPIcon,
     MotionIcon,
 
-    // State, Data & Realtime
+    // State & Events
     ReduxIcon,
     ZustandIcon,
     NanostoresIcon,

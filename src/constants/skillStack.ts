@@ -126,8 +126,8 @@ export const FrontendLibrariesStack = [
 ] as const;
 // #endregion
 
-// #region State, Data & Realtime
-export const StateDataRealtimeStack = [
+// #region State & Events
+export const StateEventStack = [
     {
         name: "Redux",
         description: "Predictable state management library for JavaScript applications, enabling consistent and scalable code.",
@@ -216,13 +216,7 @@ export const BackendApisStack = [
         description: "Suite of APIs and services for integrating Google products such as Drive, Maps, and more.",
         icon: SKILLS.GoogleCloud,
         link: "https://developers.google.com/",
-    },
-    {
-        name: "EdgeStore",
-        description: "Open-source file storage service designed for scalability and performance, with efficient updates and a minimal API.",
-        icon: SKILLS.EdgeStoreIcon,
-        link: "https://edgestore.dev/",
-    },
+    }
 ] as const;
 // #endregion
 
@@ -446,7 +440,7 @@ export const IdesDesignStack = [
 export default {
     WebLanguagesStack,
     FrontendLibrariesStack,
-    StateDataRealtimeStack,
+    StateEventStack,
     BackendApisStack,
     DatabaseStack,
     CloudDevOpsStack,

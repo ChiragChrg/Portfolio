@@ -73,8 +73,8 @@ export const TECH_STACK = {
     // Frontend & UI Libraries
     ...buildTechStack(SKILL_STACK.FrontendLibrariesStack),
 
-    // State, Data & Realtime
-    ...buildTechStack(SKILL_STACK.StateDataRealtimeStack),
+    // State & Events
+    ...buildTechStack(SKILL_STACK.StateEventStack),
 
     // Backend & APIs
     ...buildTechStack(SKILL_STACK.BackendApisStack),
