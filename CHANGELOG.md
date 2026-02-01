@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0-nightly.3 (2026-02-01)
+
+* Merge pull request #14 from ChiragChrg/dev ([f0eede8](https://github.com/ChiragChrg/Portfolio/commit/f0eede8)), closes [#14](https://github.com/ChiragChrg/Portfolio/issues/14)
+* refactor: ♻️ Simplify theme dropdown visibility logic in headers ([03cc266](https://github.com/ChiragChrg/Portfolio/commit/03cc266))
+
 ## 1.1.0-nightly.2 (2026-02-01)
 
 * Merge branch 'nightly' of https://github.com/ChiragChrg/Portfolio into dev ([a163dd6](https://github.com/ChiragChrg/Portfolio/commit/a163dd6))
