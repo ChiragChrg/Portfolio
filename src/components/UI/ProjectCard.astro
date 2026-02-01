@@ -34,7 +34,7 @@ if (project.status === "development") {
 ---
 
 <div
-    class={`Project_Stagger Card_Main w-full h-[525px] flex flex-col bg-footerAltLite/80 overflow-hidden mt-3 opacity-0 rounded-xl ${className}`}
+    class={`Project_Stagger Card_Main w-full md:h-[525px] flex flex-col bg-footerAltLite/80 overflow-hidden mt-3 opacity-0 rounded-xl ${className}`}
 >
     <a
         href={`/projects/${project?.name.replaceAll(" ", "-").toLowerCase()}`}
@@ -56,7 +56,7 @@ if (project.status === "development") {
     </a>
 
     <div
-        class="relative w-full flex flex-col flex-1 text-[0.95em] px-6 py-4 min-h-0"
+        class="relative w-full flex flex-col flex-1 text-[0.95em] p-2 md:px-6 md:py-4 min-h-0"
     >
         <div class="flex justify-between items-center">
             <!-- Project Title & Logo -->
@@ -71,16 +71,16 @@ if (project.status === "development") {
                 />
 
                 <div class="flex flex-col">
-                    <h3 class="font-ubuntu text-[1.4em]">
+                    <h3 class="font-ubuntu text-[1.2rem] md:text-[1.4rem]">
                         {project.name}
                     </h3>
                 </div>
             </div>
 
             <!-- Project Status & Links -->
-            <div class="flex gap-4 items-center">
+            <div class="flex md:gap-4 items-center">
                 <div
-                    class={`flex items-center gap-2 w-fit text-sm tracking-widest align-middle px-2 ${
+                    class={`flex items-center gap-2 w-fit text-sm tracking-widest align-middle md:px-2 ${
                         PROJECT_STATUS === "LIVE"
                             ? "text-(--status-live-fg)"
                             : PROJECT_STATUS === "DOWN"
@@ -132,7 +132,7 @@ if (project.status === "development") {
             </div>
         </div>
 
-        <div class="flex flex-1 items-center">
+        <div class="flex flex-1 items-center py-2">
             <p class="text-center">{project.shortDescription}</p>
         </div>
 
