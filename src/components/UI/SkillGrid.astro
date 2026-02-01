@@ -1,12 +1,9 @@
 ---
+import type { ISkill } from "@/constants/skillStack";
 import { Image } from "astro:assets";
 
 type Props = {
-    stack: {
-        name: string;
-        icon: ImageMetadata;
-        link: string;
-    }[];
+    stack: readonly ISkill[];
     className?: string;
 };
 
