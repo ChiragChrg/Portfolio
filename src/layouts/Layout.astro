@@ -7,7 +7,6 @@ import { Footer } from "@components/index";
 
 import "@styles/themes.css";
 import "@styles/global.css";
-import "@styles/utility.css";
 import "@styles/cursor.css";
 
 const { config } = Astro.props;
@@ -32,12 +31,7 @@ const { config } = Astro.props;
 
 		<!-- Preload CSS Styles -->
 		<!-- <link rel="preload stylesheet" href="@styles/global.css" as="style" /> -->
-		<!-- <link
-			rel="preload stylesheet"
-			href="@styles/utility.css"
-			as="style"
-		/>
-		<link rel="preload stylesheet" href="@styles/cursor.css" as="style" /> -->
+		<!-- <link rel="preload stylesheet" href="@styles/cursor.css" as="style" /> -->
 
 		<SEO
 			title=`${config.site.title}`
