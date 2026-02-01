@@ -222,11 +222,14 @@ html.lenis {
     outline: 0.5px solid var(--orbitDotColor);
 }
 
-:has(.Hero_Orbit:hover) .Orbit_Dot {
-    background-color: var(--background) !important;
-    outline: 0.5px solid var(--orbitDotColor);
-    /* border-radius: 50% !important; */
-    scale: 1.8;
+/* Hover effect for Orbit Dots on large screens */
+@media (min-width: 1024px) {
+    :has(.Hero_Orbit:hover) .Orbit_Dot {
+        background-color: var(--background) !important;
+        outline: 0.5px solid var(--orbitDotColor);
+        /* border-radius: 50% !important; */
+        scale: 1.8;
+    }
 }
 
 .Fade_Stagger,
