@@ -5,10 +5,10 @@ import ThemeButton from "@components/UI/ThemeButton.astro";
 
 const { config } = Astro.props;
 
-const showThemeMenu = import.meta.env.showThemeMenu === "true";
+const isDev = import.meta.env.ENVIRONMENT === "development";
 const isNightly = Astro.url.origin.includes("chiragchrg-nightly.netlify.app");
 
-const showThemeDropdown = showThemeMenu || isNightly;
+const showThemeDropdown = isDev || isNightly;
 ---
 
 <header

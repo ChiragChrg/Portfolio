@@ -1,21 +1,9 @@
-import ARMSv1Mockup from "./ARMSv1-Mockup.webp";
-import ARMSv2Mockup from "./ARMSv2-Mockup.webp";
-import ARMSv3Mockup from "./ARMSv3-Mockup.webp";
-import ClimateMockup from "./Climate-Mockup.webp";
-import DaysbeyondMockup from "./Daysbeyond-Mockup.webp";
-import SrinivasMockup from "./SEM-Mockup.webp";
-import VortexaMockup from "./Vortexa-Mockup.webp";
-import XreconMockup from "./Xrecon-Mockup.webp";
-import YoatubeMockup from "./Yoatube-Mockup.webp";
-
-export default {
-    ARMSv1Mockup,
-    ARMSv2Mockup,
-    ARMSv3Mockup,
-    ClimateMockup,
-    DaysbeyondMockup,
-    SrinivasMockup,
-    VortexaMockup,
-    XreconMockup,
-    YoatubeMockup,
-};
+export { default as ARMSv1Mockup } from "./ARMSv1-Mockup.webp"
+export { default as ARMSv2Mockup } from "./ARMSv2-Mockup.webp"
+export { default as ARMSv3Mockup } from "./ARMSv3-Mockup.webp"
+export { default as ClimateMockup } from "./Climate-Mockup.webp"
+export { default as DaysbeyondMockup } from "./Daysbeyond-Mockup.webp"
+export { default as SrinivasMockup } from "./SEM-Mockup.webp"
+export { default as VortexaMockup } from "./Vortexa-Mockup.webp"
+export { default as XreconMockup } from "./Xrecon-Mockup.webp"
+export { default as YoatubeMockup } from "./Yoatube-Mockup.webp"
