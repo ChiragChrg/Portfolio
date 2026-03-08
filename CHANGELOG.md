@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0-nightly.4 (2026-03-08)
+
+* Merge pull request #16 from ChiragChrg/dev ([0c6b71c](https://github.com/ChiragChrg/Portfolio/commit/0c6b71c)), closes [#16](https://github.com/ChiragChrg/Portfolio/issues/16)
+* fix: 🐛 https://github.com/ChiragChrg/Portfolio/issues/15 | Resolve header elements fade animation ([af16ca6](https://github.com/ChiragChrg/Portfolio/commit/af16ca6))
+
 ## 1.1.0-nightly.3 (2026-02-01)
 
 * Merge pull request #14 from ChiragChrg/dev ([f0eede8](https://github.com/ChiragChrg/Portfolio/commit/f0eede8)), closes [#14](https://github.com/ChiragChrg/Portfolio/issues/14)
