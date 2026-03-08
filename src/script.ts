@@ -75,6 +75,20 @@ const transitions = {
             ease: "power2.out",
         }
     },
+    FadeDownHeader: {
+        from: {
+            opacity: 0,
+            y: -50,
+        },
+        to: {
+            opacity: 1,
+            y: 0,
+            delay: 0.25,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power2.out",
+        }
+    },
     FadeIn: {
         from: {
             opacity: 0,
@@ -357,6 +371,15 @@ ScrollTrigger.batch(".Fade_In", {
     },
     once: true
 });
+
+// Header Fade Down Animation (no ScrollTrigger - direct animation on load)
+const headerFadeDownElements = Array.from(
+    document.querySelectorAll<HTMLElement>(".Fade_Down_Header")
+);
+if (headerFadeDownElements.length > 0) {
+    gsap.set(headerFadeDownElements, transitions.FadeDownHeader.from);
+    gsap.to(headerFadeDownElements, { ...transitions.FadeDownHeader.to });
+}
 // #endregion
 
 

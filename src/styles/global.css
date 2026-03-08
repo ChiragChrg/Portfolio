@@ -243,6 +243,11 @@ html.lenis {
     transform: translateY(-50);
 }
 
+.Fade_Down_Header {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
 .Fade_In {
     opacity: 0;
 }
