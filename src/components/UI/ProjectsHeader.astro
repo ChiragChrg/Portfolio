@@ -1,34 +1,34 @@
 ---
-import { Download } from "lucide-preact";
-import ThemeButton from "@components/UI/ThemeButton.astro";
-import ThemeDropdown from "@components/UI/ThemeDropdown.astro";
+import { Download } from 'lucide-preact';
+import ThemeButton from '@components/UI/ThemeButton.astro';
+import ThemeDropdown from '@components/UI/ThemeDropdown.astro';
 
 const { config } = Astro.props;
 
-const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
+const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
 ---
 
 <header class="hidden lg:block sticky top-0 max-w-[1800px] mx-auto z-50">
     <div
         class="flex justify-between items-center w-full px-6 py-2 headerGradient backdrop-blur-[2px]"
     >
-        <a href="/" class="Fade_Down font-satisfy font-bold text-[2em]">
+        <a href="/" class="Fade_Down_Header font-satisfy font-bold text-[2em]">
             <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
         <div class="Header_Nav flex gap-6">
-            <a class="Fade_Down" href="/#about">ABOUT</a>
-            <a class="Fade_Down" href="/#skills">SKILLS</a>
-            <a class="Fade_Down" href="/#projects">PROJECTS</a>
-            <a class="Fade_Down" href="/#contact">CONTACT</a>
+            <a class="Fade_Down_Header" href="/#about">ABOUT</a>
+            <a class="Fade_Down_Header" href="/#skills">SKILLS</a>
+            <a class="Fade_Down_Header" href="/#projects">PROJECTS</a>
+            <a class="Fade_Down_Header" href="/#contact">CONTACT</a>
         </div>
 
         <div class="flex_center gap-4">
-            {showThemeDropdown && <ThemeDropdown className="Fade_Down" />}
-            <ThemeButton className="Fade_Down" />
+            {showThemeDropdown && <ThemeDropdown className="Fade_Down_Header" />}
+            <ThemeButton className="Fade_Down_Header" />
 
             <a
-                class="Fade_Down Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
+                class="Fade_Down_Header Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
                 href={config.actionButton.url}
                 target="_blank"
             >
@@ -42,9 +42,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
 </header>
 
 <!-- Mobile Header -->
-<header
-    class="lg:hidden w-full sticky top-0 z-50 headerGradient backdrop-blur-[2px]"
->
+<header class="lg:hidden w-full sticky top-0 z-50 headerGradient backdrop-blur-[2px]">
     <div class="flex justify-between items-center py-2 px-4">
         <a href="#home" class="Fade_In font-satisfy font-bold text-[2em]">
             <span class="gradientText w-fit">{config.logotext}</span>
