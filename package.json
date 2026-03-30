@@ -21,12 +21,12 @@
     "release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.5",
-    "@astrojs/preact": "^4.1.2",
+    "@astrojs/check": "0.9.8",
+    "@astrojs/preact": "5.1.0",
     "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.16",
-    "astro": "^5.15.3",
+    "astro": "6.1.2",
     "astro-compress": "^2.3.8",
     "astro-font": "^1.1.0",
     "astro-seo": "^0.8.4",
