@@ -459,12 +459,15 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 document
-    .querySelectorAll('nav a, a[href^="#home"]')
+    .querySelectorAll('nav a[href^="#"], a[href^="#home"]')
     .forEach((el) => {
         el.addEventListener("click", (e) => {
+            const href = el.getAttribute("href");
+if (!href || !href.startsWith("#")) return;
+
             e.preventDefault();
-            const id = el.getAttribute("href")?.slice(1);
-            if (!id) return;
+             const id = href.slice(1);
+  if (!id) return;
 
             const target = document.getElementById(id);
             if (!target) return;
