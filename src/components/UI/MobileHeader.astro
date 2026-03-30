@@ -44,6 +44,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
 
     <nav
         id="mobileHeaderNav"
+        data-menu-controller="inline"
         class="w-full h-svh flex_center flex-col fixed top-0 right-0 gap-8 z-60 opacity-0 pointer-events-none"
         style="clip-path: circle(0px at calc(100% - 45px) 45px);"
     >
@@ -104,7 +105,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
         if (isMenuOpen || !headerElement || !hamMenuSvg) return;
 
         isMenuOpen = true;
-        hamMenuSvg.classList.add('opened');
+        hamMenuSvg.classList.add('isOpen');
         headerElement.style.pointerEvents = 'auto';
         document.body.style.overflow = 'hidden';
 
@@ -126,6 +127,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
                     `circle(${endRadius}px at ${x}px ${y}px)`,
                 ],
                 opacity: [0, 1],
+                backgroundColor: ['var(--background)', 'var(--primaryLite)'],
             },
             { duration: 800, easing: 'ease-in-out', fill: 'forwards' },
         );
@@ -151,7 +153,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
         if (!isMenuOpen || !headerElement || !hamMenuSvg) return;
 
         isMenuOpen = false;
-        hamMenuSvg.classList.remove('opened');
+        hamMenuSvg.classList.remove('isOpen');
         document.body.style.overflow = '';
 
         const hamRect = hamMenuSvg.getBoundingClientRect();
@@ -187,13 +189,27 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
                     `circle(0px at ${x}px ${y}px)`,
                 ],
                 opacity: [1, 0],
+                backgroundColor: ['var(--primaryLite)', 'var(--background)'],
             },
             { duration: 700, easing: 'ease-in-out', fill: 'forwards' },
         ).onfinish = () => {
             headerElement.style.pointerEvents = 'none';
             headerElement.style.opacity = '0';
             headerElement.style.clipPath = 'circle(0px at calc(100% - 45px) 45px)';
+            headerElement.style.backgroundColor = 'var(--background)';
         };
+    }
+
+    function resetMenuState() {
+        if (!headerElement || !hamMenuSvg) return;
+
+        isMenuOpen = false;
+        hamMenuSvg.classList.remove('isOpen');
+        document.body.style.overflow = '';
+        headerElement.style.pointerEvents = 'none';
+        headerElement.style.opacity = '0';
+        headerElement.style.clipPath = 'circle(0px at calc(100% - 45px) 45px)';
+        headerElement.style.backgroundColor = 'var(--background)';
     }
 
     // Add event listeners
@@ -263,6 +279,11 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
         });
     });
 
+    window.addEventListener('pageshow', resetMenuState);
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) resetMenuState();
+    });
+
     // Set Active class on section scroll
     const handleScroll = () => {
         for (const [linkHref, section] of Object.entries(sectionsList)) {
@@ -294,5 +315,6 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
     }
 
     window.addEventListener('scroll', throttle(handleScroll, 16));
+    resetMenuState();
     handleScroll();
 </script>

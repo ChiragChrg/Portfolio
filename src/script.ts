@@ -386,13 +386,15 @@ if (headerFadeDownElements.length > 0) {
 //#region Mobile Nav Animation
 const MobileNavElement = document.querySelector("#mobileHeaderNav");
 let isMenuOpen = false;
+const isInlineMobileMenuController =
+    MobileNavElement?.getAttribute("data-menu-controller") === "inline";
 const dimensions = {
     width: window.innerWidth,
     height: window.innerHeight,
 }
 const menuTl = gsap.timeline({ paused: true });
 
-if (MobileNavElement) {
+if (MobileNavElement && !isInlineMobileMenuController) {
     menuTl.fromTo(
         MobileNavElement,
         {
@@ -411,41 +413,54 @@ if (MobileNavElement) {
 const MobileLinkElement = document.querySelectorAll("#mobileHeaderNav .MobileHeader_Nav");
 const linkTl = gsap.timeline({ paused: true });
 
-if (MobileLinkElement.length !== 0) {
+if (MobileLinkElement.length !== 0 && !isInlineMobileMenuController) {
     linkTl.fromTo(MobileLinkElement, transitions.MobileLink.from, transitions.MobileLink.to);
 }
 
 const HamMenuButton = document.querySelector("#Ham_Menu svg");
 
 const closeNav = () => {
-    linkTl.reverse()
+    if (isInlineMobileMenuController) {
+        isMenuOpen = false;
+        HamMenuButton?.classList.remove("isOpen");
+        return;
+    }
+
+    linkTl.reverse();
     setTimeout(() => {
         menuTl.reverse();
-    }, 350)
-}
+    }, 350);
 
-HamMenuButton?.addEventListener('click', () => {
-    if (!isMenuOpen) {
-        menuTl.play();
-        linkTl.play()
-    } else {
-        closeNav()
-    }
-    isMenuOpen = !isMenuOpen;
-    HamMenuButton?.classList.toggle("isOpen");
-});
+    isMenuOpen = false;
+    HamMenuButton?.classList.remove("isOpen");
+};
+
+if (!isInlineMobileMenuController) {
+    HamMenuButton?.addEventListener('click', () => {
+        if (!isMenuOpen) {
+            menuTl.play();
+            linkTl.play();
+            isMenuOpen = true;
+            HamMenuButton?.classList.add("isOpen");
+        } else {
+            closeNav();
+        }
+    });
+}
 
 const themeToggleMobileBtn = document.getElementById("themeToggleMobile");
 const themeToggleMobileProjectBtn = document.getElementById("themeToggleMobileProject");
-themeToggleMobileBtn?.addEventListener('click', () => {
-    closeNav()
-    isMenuOpen = !isMenuOpen;
-    HamMenuButton?.classList.toggle("isOpen");
-});
-themeToggleMobileProjectBtn?.addEventListener('click', () => {
-    closeNav()
-    isMenuOpen = !isMenuOpen;
-    HamMenuButton?.classList.toggle("isOpen");
+if (!isInlineMobileMenuController) {
+    themeToggleMobileBtn?.addEventListener('click', () => {
+        closeNav();
+    });
+    themeToggleMobileProjectBtn?.addEventListener('click', () => {
+        closeNav();
+    });
+}
+
+window.addEventListener("pageshow", () => {
+    closeNav();
 });
 // #endregion
 
