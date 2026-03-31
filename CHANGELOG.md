@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-nightly.5](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.4...v1.1.0-nightly.5) (2026-03-31)
+
+### ⭐ Enhancements
+
+* ⭐ Update commitlint configuration with extended rules for commit message types ([d81eb4e](https://github.com/ChiragChrg/Portfolio/commit/d81eb4edf54f6aab5cd1548f1f2776fa3f30f57a))
+
+### 🐛 Bug Fixes
+
+* 🐛 Improve mobile navigation behavior and state management for inline menu ([5f25a25](https://github.com/ChiragChrg/Portfolio/commit/5f25a253527778b44d8804a03568f9b9332a379f))
+* 🐛 Resolve issue where Resume link in mobile ham menu was not redirecting to the provided url ([edbd7d7](https://github.com/ChiragChrg/Portfolio/commit/edbd7d78b4c6439a81d63decc87502488f698d66))
+* 🐛 Update project header layout and improve menu animations ([9b83f69](https://github.com/ChiragChrg/Portfolio/commit/9b83f6945b85404a03db0082c1841dc06337f19f))
+
 ## 1.1.0-nightly.4 (2026-03-08)
 
 * Merge pull request #16 from ChiragChrg/dev ([0c6b71c](https://github.com/ChiragChrg/Portfolio/commit/0c6b71c)), closes [#16](https://github.com/ChiragChrg/Portfolio/issues/16)
