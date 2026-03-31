@@ -1,27 +1,21 @@
 ---
-import { Download } from "lucide-preact";
-import ThemeButton from "@/components/UI/ThemeButton.astro";
-import ThemeDropdown from "@/components/UI/ThemeDropdown.astro";
+import { Download } from 'lucide-preact';
+import ThemeButton from '@/components/UI/ThemeButton.astro';
+import ThemeDropdown from '@/components/UI/ThemeDropdown.astro';
 
 const { config } = Astro.props;
 
-const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
+const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
 ---
 
-<header
-    class="lg:hidden w-full sticky top-0 z-50 headerGradient backdrop-blur-[2px]"
->
+<header class="lg:hidden w-full sticky top-0 z-50 headerGradient backdrop-blur-[2px]">
     <div class="flex justify-between items-center py-2 px-4 z-10">
         <a href="#home" class="Fade_In font-satisfy font-bold text-[2em]">
             <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
         <div class="flex items-center gap-4">
-            {
-                showThemeDropdown && (
-                    <ThemeDropdown className="Fade_In" idPrefix="Mobile" />
-                )
-            }
+            {showThemeDropdown && <ThemeDropdown className="Fade_In" idPrefix="Mobile" />}
 
             <ThemeButton className="Fade_In" />
 
@@ -50,12 +44,12 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
 
     <nav
         id="mobileHeaderNav"
+        data-menu-controller="inline"
         class="w-full h-svh flex_center flex-col fixed top-0 right-0 gap-8 z-60 opacity-0 pointer-events-none"
         style="clip-path: circle(0px at calc(100% - 45px) 45px);"
     >
         <!-- Translucent blurry background -->
-        <div class="absolute inset-0 bg-background/50 backdrop-blur -z-10">
-        </div>
+        <div class="absolute inset-0 bg-background/50 backdrop-blur -z-10"></div>
 
         <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
             <a href="#about">About</a>
@@ -78,6 +72,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
                 class="MobileHeader_ActionBtn flex_center"
                 href={config.actionButton.url}
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 <div class="flex_center gap-4">
                     <p>{config.actionButton.text}</p>
@@ -89,18 +84,18 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
 </header>
 
 <script is:inline type="module">
-    const headerElement = document.getElementById("mobileHeaderNav");
-    const hamMenuSvg = document.querySelector("#Ham_Menu svg");
-    const menuItems = document.querySelectorAll(".MobileHeader_Nav");
+    const headerElement = document.getElementById('mobileHeaderNav');
+    const hamMenuSvg = document.querySelector('#Ham_Menu svg');
+    const menuItems = document.querySelectorAll('.MobileHeader_Nav');
 
     let isMenuOpen = false;
 
     const sectionsList = {
-        "#home": document.getElementById("home"),
-        "#about": document.getElementById("about"),
-        "#skills": document.getElementById("skills"),
-        "#projects": document.getElementById("projects"),
-        "#contact": document.getElementById("contact"),
+        '#home': document.getElementById('home'),
+        '#about': document.getElementById('about'),
+        '#skills': document.getElementById('skills'),
+        '#projects': document.getElementById('projects'),
+        '#contact': document.getElementById('contact'),
     };
 
     const headerHeight = headerElement?.offsetHeight || 0;
@@ -110,9 +105,9 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
         if (isMenuOpen || !headerElement || !hamMenuSvg) return;
 
         isMenuOpen = true;
-        hamMenuSvg.classList.add("opened");
-        headerElement.style.pointerEvents = "auto";
-        document.body.style.overflow = "hidden";
+        hamMenuSvg.classList.add('isOpen');
+        headerElement.style.pointerEvents = 'auto';
+        document.body.style.overflow = 'hidden';
 
         const hamRect = hamMenuSvg.getBoundingClientRect();
         const vv = window.visualViewport;
@@ -132,20 +127,21 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
                     `circle(${endRadius}px at ${x}px ${y}px)`,
                 ],
                 opacity: [0, 1],
+                backgroundColor: ['var(--background)', 'var(--primaryLite)'],
             },
-            { duration: 800, easing: "ease-in-out", fill: "forwards" },
+            { duration: 800, easing: 'ease-in-out', fill: 'forwards' },
         );
 
         menuItems.forEach((item, i) => {
             item.animate(
                 {
                     opacity: [0, 1],
-                    transform: ["translateY(40px)", "translateY(0)"],
+                    transform: ['translateY(40px)', 'translateY(0)'],
                 },
                 {
                     duration: 400,
-                    easing: "ease-out",
-                    fill: "forwards",
+                    easing: 'ease-out',
+                    fill: 'forwards',
                     delay: 200 + i * 80,
                 },
             );
@@ -157,8 +153,8 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
         if (!isMenuOpen || !headerElement || !hamMenuSvg) return;
 
         isMenuOpen = false;
-        hamMenuSvg.classList.remove("opened");
-        document.body.style.overflow = "";
+        hamMenuSvg.classList.remove('isOpen');
+        document.body.style.overflow = '';
 
         const hamRect = hamMenuSvg.getBoundingClientRect();
         const vv = window.visualViewport;
@@ -175,12 +171,12 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
             item.animate(
                 {
                     opacity: [1, 0],
-                    transform: ["translateY(0)", "translateY(-20px)"],
+                    transform: ['translateY(0)', 'translateY(-20px)'],
                 },
                 {
                     duration: 250,
-                    easing: "ease-in",
-                    fill: "forwards",
+                    easing: 'ease-in',
+                    fill: 'forwards',
                     delay: (menuItems.length - i - 1) * 40,
                 },
             );
@@ -193,21 +189,34 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
                     `circle(0px at ${x}px ${y}px)`,
                 ],
                 opacity: [1, 0],
+                backgroundColor: ['var(--primaryLite)', 'var(--background)'],
             },
-            { duration: 700, easing: "ease-in-out", fill: "forwards" },
+            { duration: 700, easing: 'ease-in-out', fill: 'forwards' },
         ).onfinish = () => {
-            headerElement.style.pointerEvents = "none";
-            headerElement.style.opacity = "0";
-            headerElement.style.clipPath =
-                "circle(0px at calc(100% - 45px) 45px)";
+            headerElement.style.pointerEvents = 'none';
+            headerElement.style.opacity = '0';
+            headerElement.style.clipPath = 'circle(0px at calc(100% - 45px) 45px)';
+            headerElement.style.backgroundColor = 'var(--background)';
         };
+    }
+
+    function resetMenuState() {
+        if (!headerElement || !hamMenuSvg) return;
+
+        isMenuOpen = false;
+        hamMenuSvg.classList.remove('isOpen');
+        document.body.style.overflow = '';
+        headerElement.style.pointerEvents = 'none';
+        headerElement.style.opacity = '0';
+        headerElement.style.clipPath = 'circle(0px at calc(100% - 45px) 45px)';
+        headerElement.style.backgroundColor = 'var(--background)';
     }
 
     // Add event listeners
     // Only toggle menu when clicking directly on the hamburger menu, not the logo link
-    hamMenuSvg.addEventListener("click", (e) => {
+    hamMenuSvg.addEventListener('click', (e) => {
         // Only respond to clicks that actually hit the SVG
-        if (e.currentTarget !== e.target && !e.target.closest("#Ham_Menu")) {
+        if (e.currentTarget !== e.target && !e.target.closest('#Ham_Menu')) {
             return;
         }
 
@@ -220,26 +229,59 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
         }
     });
 
-    // Close menu when clicking on a link
-    function closeMenuOnLinkClick(e) {
-        e.preventDefault();
+    // // Close menu when clicking on a link
+    // function closeMenuOnLinkClick(e) {
+    //     e.preventDefault();
 
+    //     const link = e.currentTarget;
+    //     const href = link.getAttribute("href");
+    //     if (!href) return;
+
+    //     closeMenu();
+
+    //     setTimeout(() => {
+    //         document
+    //             .querySelector(href)
+    //             ?.scrollIntoView({ behavior: "smooth" });
+    //     }, 750);
+    // }
+
+    // // Close menu when clicking on navigation links
+    // document.querySelectorAll("#mobileHeaderNav a").forEach((link) => {
+    //     link.addEventListener("click", closeMenuOnLinkClick);
+    // });
+
+    // Intercept only section links for smooth scroll
+    function closeMenuOnSectionLinkClick(e) {
         const link = e.currentTarget;
-        const href = link.getAttribute("href");
-        if (!href) return;
+        if (!(link instanceof HTMLAnchorElement)) return;
 
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+
+        e.preventDefault();
         closeMenu();
 
         setTimeout(() => {
-            document
-                .querySelector(href)
-                ?.scrollIntoView({ behavior: "smooth" });
+            document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
         }, 750);
     }
 
-    // Close menu when clicking on navigation links
-    document.querySelectorAll("#mobileHeaderNav a").forEach((link) => {
-        link.addEventListener("click", closeMenuOnLinkClick);
+    // Section links: smooth scroll + close menu
+    document.querySelectorAll('#mobileHeaderNav a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', closeMenuOnSectionLinkClick);
+    });
+
+    // External links: keep browser default navigation/new-tab, just close menu
+    document.querySelectorAll('#mobileHeaderNav a:not([href^="#"])').forEach((link) => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+
+    window.addEventListener('pageshow', resetMenuState);
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) resetMenuState();
     });
 
     // Set Active class on section scroll
@@ -248,19 +290,12 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
             if (!section) return;
 
             const rect = section.getBoundingClientRect();
-            const link = document.querySelector(
-                `#mobileHeaderNav a[href="${linkHref}"]`,
-            );
+            const link = document.querySelector(`#mobileHeaderNav a[href="${linkHref}"]`);
 
-            if (
-                link &&
-                headerElement &&
-                rect.top <= headerHeight &&
-                rect.bottom >= headerHeight
-            ) {
-                link?.classList.add("active");
+            if (link && headerElement && rect.top <= headerHeight && rect.bottom >= headerHeight) {
+                link?.classList.add('active');
             } else {
-                link?.classList.remove("active");
+                link?.classList.remove('active');
             }
         }
     };
@@ -279,6 +314,7 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === "true";
         };
     }
 
-    window.addEventListener("scroll", throttle(handleScroll, 16));
+    window.addEventListener('scroll', throttle(handleScroll, 16));
+    resetMenuState();
     handleScroll();
 </script>

@@ -14,17 +14,7 @@ export default defineConfig({
     })
   ],
   vite: {
-    plugins: [tailwindcss()],
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'vendor': ['preact', 'gsap'],
-            'utils': ['@studio-freight/lenis']
-          }
-        }
-      }
-    }
+    plugins: [tailwindcss()]
   },
   build: {
     // Enable CSS code splitting
