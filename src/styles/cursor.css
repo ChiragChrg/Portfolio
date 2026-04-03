@@ -1,6 +1,8 @@
 .Cursor-Main #cursor {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    inset: auto;
     opacity: 0;
     width: 20px;
     height: 20px;
@@ -11,6 +13,7 @@
     pointer-events: none;
     will-change: transform;
     backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 }
 
 .Cursor-Main #cursorView {
@@ -26,6 +29,9 @@
 
 .Cursor-Main #cursorDot {
     position: fixed;
+    top: 0;
+    left: 0;
+    inset: auto;
     width: 10px;
     height: 10px;
     border-radius: 100px;
@@ -35,6 +41,7 @@
     background-color: var(--dotColor);
     /* box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, 0.8); */
     backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 }
 
 body:hover #cursor,
