@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-nightly.6](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.5...v1.1.0-nightly.6) (2026-04-03)
+
+### 🐛 Bug Fixes
+
+* 🐛 Resolve issue where duplicate ghosted cursor is created on top left of the screen ([56ed33d](https://github.com/ChiragChrg/Portfolio/commit/56ed33d95e9332661ebb618d2ce0684ba4be9b58))
+* 🐛 Update mobile header link to include full path for home ([6abfd20](https://github.com/ChiragChrg/Portfolio/commit/6abfd20ed99b41073eed1b5bb27fdea28c6fac4f))
+
 ## [1.1.0-nightly.5](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.4...v1.1.0-nightly.5) (2026-03-31)
 
 ### ⭐ Enhancements
