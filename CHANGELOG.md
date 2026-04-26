@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-nightly.7](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.6...v1.1.0-nightly.7) (2026-04-26)
+
+### ♻️ Code Refactoring
+
+* .♻️ Rename portfolio template config file from `index.ts` to `portfolio.config.ts` ([cd2a06c](https://github.com/ChiragChrg/Portfolio/commit/cd2a06ce9d3110c7918c12e3cb479e370ff5e66b))
+* ♻️ Update site and about descriptions for clarity and engagement ([3555632](https://github.com/ChiragChrg/Portfolio/commit/3555632640b20496e72ec73d83842806bbf03eeb))
+
+### 🔍 SEO Updates
+
+* :zap: Standardize import quotes and improve SEO metadata across multiple components ([21244d5](https://github.com/ChiragChrg/Portfolio/commit/21244d5599265225316eec85bff56e7a519cc418))
+
 ## [1.1.0-nightly.6](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.5...v1.1.0-nightly.6) (2026-04-03)
 
 ### 🐛 Bug Fixes
