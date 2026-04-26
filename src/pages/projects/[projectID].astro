@@ -33,11 +33,16 @@ const project = PROJECTS_LIST.find(
 if (!project) {
     return Astro.redirect('/404');
 }
+
+const projectCanonicalUrl = new URL(`projects/${projectID}`, siteConfig.siteUrl).toString();
+const projectImageUrl = new URL(project.previewImage.src, siteConfig.siteUrl).toString();
 ---
 
 <ProjectLayout
     title={`${project.name} | ${author}`}
-    description={project.previewImage}
+    description={project.description}
+    canonical={projectCanonicalUrl}
+    ogImage={projectImageUrl}
     config={{
         theme: themeConfig,
         site: siteConfig,

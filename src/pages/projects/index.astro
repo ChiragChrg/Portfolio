@@ -6,6 +6,8 @@ const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
     '@/config/portfolio.config'
 );
 
+const projectsCanonicalUrl = new URL('projects', siteConfig.siteUrl).toString();
+
 // Lazy loading ProjectInfo
 const ProjectInfo = import('@/config/ProjectsList');
 const { PROJECTS_LIST } = await ProjectInfo;
@@ -13,6 +15,8 @@ const { PROJECTS_LIST } = await ProjectInfo;
 
 <ProjectLayout
     title="Projects | ChiragChrg"
+    description="Browse selected web engineering projects by Chirag Chrg, with architecture highlights, features, and live demos."
+    canonical={projectsCanonicalUrl}
     config={{
         theme: themeConfig,
         site: siteConfig,

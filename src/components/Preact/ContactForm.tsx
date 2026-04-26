@@ -1,5 +1,4 @@
 import { useState, useRef } from 'preact/hooks'
-import emailjs from "@emailjs/browser"
 
 type StatusType = {
     status: boolean,
@@ -37,6 +36,7 @@ const ContactForm = () => {
             }
 
             setisLoading(true)
+            const { default: emailjs } = await import('@emailjs/browser')
             const mailRes = await emailjs.send(
                 import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
                 import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -61,6 +61,7 @@ const ContactForm = () => {
                 setMailStatus({ status: false, message: "An unknown error occurred." })
             }
         } finally {
+            setisLoading(false)
             setTimeout(() => {
                 setMailStatus({ status: false, message: "" })
             }, 3000);
