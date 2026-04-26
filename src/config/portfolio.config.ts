@@ -9,7 +9,7 @@ import GoogleIconRaw from "@assets/SVGs/Google.svg?raw";
 import DiscordIconRaw from "@assets/SVGs/Discord.svg?raw";
 
 import { LogoIcon } from "@/assets/SVGs";
-import { ThemeOptions } from "scripts/generateThemes";
+import { ThemeOptions } from "../../scripts/generateThemes";
 
 // Theme Configuration
 export const themeConfig = ThemeOptions.DEFAULT;

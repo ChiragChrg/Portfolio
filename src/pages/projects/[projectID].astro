@@ -1,38 +1,37 @@
 ---
-import { Image } from "astro:assets";
-import { ProjectLayout } from "@layouts/index";
-import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
-import { CenterTitle, SectionTitle } from "@components/UI";
+import { Image } from 'astro:assets';
+import { ProjectLayout } from '@layouts/index';
+import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from 'lucide-preact';
+import { CenterTitle, SectionTitle } from '@components/UI';
 
 // Dynamic Route Generation for Projects
 export async function getStaticPaths() {
-    const { PROJECTS_LIST } = await import("@/config/ProjectsList");
+    const { PROJECTS_LIST } = await import('@/config/ProjectsList');
 
-    return PROJECTS_LIST.filter((project) => !project.isHidden).map(
-        (project) => ({
-            params: {
-                projectID: project.name.replaceAll(" ", "-").toLowerCase(),
-            },
-        }),
-    );
+    return PROJECTS_LIST.filter((project) => !project.isHidden).map((project) => ({
+        params: {
+            projectID: project.name.replaceAll(' ', '-').toLowerCase(),
+        },
+    }));
 }
 
 const { projectID } = Astro.params;
 
-const { PROJECTS_LIST } = await import("@/config/ProjectsList");
-const { themeConfig, siteConfig, headerConfig, footerConfig, heroConfig } =
-    await import("@/config");
+const { PROJECTS_LIST } = await import('@/config/ProjectsList');
+const { themeConfig, siteConfig, headerConfig, footerConfig, heroConfig } = await import(
+    '@/config/portfolio.config'
+);
 
 const author = `${heroConfig.firstName} ${heroConfig.lastName}`;
 
 // Find the project
 const project = PROJECTS_LIST.find(
-    (itm) => itm.name.replaceAll(" ", "-").toLowerCase() === projectID,
+    (itm) => itm.name.replaceAll(' ', '-').toLowerCase() === projectID,
 );
 
 // If no project is found, return 404
 if (!project) {
-    return Astro.redirect("/404");
+    return Astro.redirect('/404');
 }
 ---
 
@@ -55,10 +54,7 @@ if (!project) {
         />
 
         <!-- Dark Image Overlay -->
-        <div
-            style="background: var(--imgOverlayGradient);"
-            class="w-full h-full absolute inset-0"
-        >
+        <div style="background: var(--imgOverlayGradient);" class="w-full h-full absolute inset-0">
         </div>
     </div>
 
@@ -137,12 +133,8 @@ if (!project) {
         </div>
     </div>
 
-    <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">
-        About the project.
-    </h2>
-    <div
-        class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10"
-    >
+    <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">About the project.</h2>
+    <div class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10">
         <!-- Project Mockup Image -->
         <Image
             src={project.deviceMockupImage}
@@ -167,10 +159,7 @@ if (!project) {
                                     {project.demoCredentials?.email}
                                 </span>
 
-                                <button
-                                    id="emailCopyBtn"
-                                    class="flex_center relative"
-                                >
+                                <button id="emailCopyBtn" class="flex_center relative">
                                     <ClipboardCopyIcon class="emailCopyIcon visible" />
                                     <CheckIcon class="emailCopyIcon absolute invisible" />
                                 </button>
@@ -178,17 +167,12 @@ if (!project) {
 
                             {/* Copy Password */}
                             <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
-                                <span class="min-w-20 md:w-fit">
-                                    Password :{" "}
-                                </span>
+                                <span class="min-w-20 md:w-fit">Password : </span>
                                 <span id="passContent" class="w-full">
                                     {project.demoCredentials?.password}
                                 </span>
 
-                                <button
-                                    id="passCopyBtn"
-                                    class="flex_center relative"
-                                >
+                                <button id="passCopyBtn" class="flex_center relative">
                                     <ClipboardCopyIcon class="passCopyIcon visible" />
                                     <CheckIcon class="passCopyIcon absolute invisible" />
                                 </button>
@@ -207,18 +191,12 @@ if (!project) {
 
     <!-- Project Features -->
     <SectionTitle title="Features" color="primary">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4">
             {
                 project.features.map((items) => (
                     <div class="Fade_Up p-2 md:p-4 text-center md:text-start flex flex-col gap-3 border border-primaryLiteAlt sm:border-transparent hover:border-primaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
-                        <span class="font-ubuntu text-[1.125em]">
-                            {items.title}
-                        </span>
-                        <p class="md:pl-8 text-center md:text-justify">
-                            {items.description}
-                        </p>
+                        <span class="font-ubuntu text-[1.125em]">{items.title}</span>
+                        <p class="md:pl-8 text-center md:text-justify">{items.description}</p>
                     </div>
                 ))
             }
@@ -227,19 +205,12 @@ if (!project) {
 
     <!-- Details of Technologies Used -->
     <CenterTitle title="Tech Stack" color="secondary" />
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-120"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-120">
         {
             project.technologies.map((tech) => (
                 <div class="Fade_Stagger flex_center flex-col gap-4 p-4 border border-secondaryLiteAlt sm:border-transparent hover:border-secondaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
                     <div class="flex_center gap-4">
-                        <Image
-                            src={tech.icon}
-                            alt={tech.title}
-                            width={40}
-                            height={40}
-                        />
+                        <Image src={tech.icon} alt={tech.title} width={40} height={40} />
                         <span class="text-[1.2em]">{tech.title}</span>
                     </div>
                     <p class="text-center">{tech.description}</p>
@@ -250,36 +221,36 @@ if (!project) {
 </ProjectLayout>
 
 <script is:inline type="module">
-    const emailCopyBtn = document.getElementById("emailCopyBtn");
-    const passCopyBtn = document.getElementById("passCopyBtn");
-    const emailContent = document.getElementById("emailContent");
-    const passContent = document.getElementById("passContent");
-    const emailCopyIcons = document.querySelectorAll(".emailCopyIcon");
-    const passCopyIcons = document.querySelectorAll(".passCopyIcon");
+    const emailCopyBtn = document.getElementById('emailCopyBtn');
+    const passCopyBtn = document.getElementById('passCopyBtn');
+    const emailContent = document.getElementById('emailContent');
+    const passContent = document.getElementById('passContent');
+    const emailCopyIcons = document.querySelectorAll('.emailCopyIcon');
+    const passCopyIcons = document.querySelectorAll('.passCopyIcon');
 
     // Copy Email to Clipboard
-    emailCopyBtn?.addEventListener("click", () => {
+    emailCopyBtn?.addEventListener('click', () => {
         navigator.clipboard.writeText(emailContent?.textContent);
 
-        emailCopyIcons[0].classList.replace("visible", "invisible");
-        emailCopyIcons[1].classList.replace("invisible", "visible");
+        emailCopyIcons[0].classList.replace('visible', 'invisible');
+        emailCopyIcons[1].classList.replace('invisible', 'visible');
 
         setTimeout(() => {
-            emailCopyIcons[0].classList.replace("invisible", "visible");
-            emailCopyIcons[1].classList.replace("visible", "invisible");
+            emailCopyIcons[0].classList.replace('invisible', 'visible');
+            emailCopyIcons[1].classList.replace('visible', 'invisible');
         }, 2000);
     });
 
     // Copy Password to Clipboard
-    passCopyBtn?.addEventListener("click", () => {
+    passCopyBtn?.addEventListener('click', () => {
         navigator.clipboard.writeText(passContent?.textContent);
 
-        passCopyIcons[0].classList.replace("visible", "invisible");
-        passCopyIcons[1].classList.replace("invisible", "visible");
+        passCopyIcons[0].classList.replace('visible', 'invisible');
+        passCopyIcons[1].classList.replace('invisible', 'visible');
 
         setTimeout(() => {
-            passCopyIcons[0].classList.replace("invisible", "visible");
-            passCopyIcons[1].classList.replace("visible", "invisible");
+            passCopyIcons[0].classList.replace('invisible', 'visible');
+            passCopyIcons[1].classList.replace('visible', 'invisible');
         }, 2000);
     });
 </script>

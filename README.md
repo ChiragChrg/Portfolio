@@ -21,7 +21,7 @@ A fresh version is under active development—this isn’t just a revamp but a m
 
 - **Templatized Setup** – Fork and adapt your own version in minutes.
 - **Custom Theme System** – Try different themes (with light/dark variants) using a theme selection dropdown—**available only in the nightly build for preview purposes.**
-- **Production Behavior** – In the stable version, the theme dropdown is disabled; a single static theme is used based on your choice in `config/index.ts`.
+- **Production Behavior** – In the stable version, the theme dropdown is disabled; a single static theme is used based on your choice in `src/config/portfolio.config.ts`.
 - **Quality Enhancements** – Performance boosts and UI refinements all around.
 
 <br/>
