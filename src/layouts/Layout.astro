@@ -1,157 +1,172 @@
 ---
-import { SEO } from "astro-seo";
-import { AstroFont } from "astro-font";
-import { join } from "node:path";
-import { Header, MobileHeader, Cursor } from "@components/UI";
-import { Footer } from "@components/index";
+import { SEO } from 'astro-seo';
+import { AstroFont } from 'astro-font';
+import { join } from 'node:path';
+import { Header, MobileHeader, Cursor } from '@components/UI';
+import { Footer } from '@components/index';
 
-import "@styles/themes.css";
-import "@styles/global.css";
-import "@styles/cursor.css";
+import '@styles/themes.css';
+import '@styles/global.css';
+import '@styles/cursor.css';
 
 const { config } = Astro.props;
+
+const personStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${config.site.siteUrl}#person`,
+    name: 'Chirag Chrg',
+    url: config.site.siteUrl,
+    jobTitle: 'Fullstack Software Engineer',
+    image: config.site.avatar,
+    sameAs: [
+        'https://github.com/ChiragChrg',
+        'https://www.linkedin.com/in/chiragchrg/',
+        'https://x.com/ChrgChirag',
+        'https://www.instagram.com/chiragchrg/',
+    ],
+};
 ---
 
 <!doctype html>
 <html lang="en" class=`theme-${config.theme} dark`>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#000" />
-		<meta name="robots" content="index, follow" />
-		<meta
-			name="google-site-verification"
-			content={config.site.googleSiteVerification}
-		/>
-		<meta name="keywords" content={config.site.keywords} />
-		<meta name="author" content="ChiragChrg" />
-		<meta name="publisher" content="ChiragChrg" />
-		<link rel="manifest" href="/manifest.json" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="theme-color" content="#000" />
+        <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content={config.site.googleSiteVerification} />
+        <meta name="keywords" content={config.site.keywords} />
+        <meta name="author" content="ChiragChrg" />
+        <meta name="publisher" content="ChiragChrg" />
+        <link rel="manifest" href="/manifest.json" />
 
-		<!-- Preload CSS Styles -->
-		<!-- <link rel="preload stylesheet" href="@styles/global.css" as="style" /> -->
-		<!-- <link rel="preload stylesheet" href="@styles/cursor.css" as="style" /> -->
+        <!-- Preload CSS Styles -->
+        <!-- <link rel="preload stylesheet" href="@styles/global.css" as="style" /> -->
+        <!-- <link rel="preload stylesheet" href="@styles/cursor.css" as="style" /> -->
 
-		<SEO
-			title=`${config.site.title}`
-			description=`${config.site.description}`
-			canonical=`${config.site.siteUrl}`
-			openGraph={{
-				basic: {
-					title: config.site.title,
-					type: "website",
-					image: config.site.avatar,
-					url: config.site.siteUrl,
-				},
-			}}
-			twitter={{
-				title: config.site.title,
-				description: config.site.description,
-				card: "summary",
-				site: "@ChrgChirag",
-				creator: "@ChrgChirag",
-				image: config.site.avatar,
-			}}
-			extend={{
-				link: [
-					{ rel: "icon", type: "image/png", href: "/favicon.png" },
-					{
-						rel: "shortcut",
-						type: "image/png",
-						href: "/favicon.png",
-					},
-					{
-						rel: "apple-touch-icon",
-						type: "image/png",
-						href: "/favicon.png",
-					},
-				],
-				meta: [
-					{
-						name: "twitter:url",
-						content: config.site.siteUrl,
-					},
-				],
-			}}
-		/>
+        <SEO
+            title=`${config.site.title}`
+            description=`${config.site.description}`
+            canonical=`${config.site.siteUrl}`
+            openGraph={{
+                basic: {
+                    title: config.site.title,
+                    type: 'website',
+                    image: config.site.avatar,
+                    url: config.site.siteUrl,
+                },
+            }}
+            twitter={{
+                title: config.site.title,
+                description: config.site.description,
+                card: 'summary',
+                site: '@ChrgChirag',
+                creator: '@ChrgChirag',
+                image: config.site.avatar,
+            }}
+            extend={{
+                link: [
+                    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+                    {
+                        rel: 'shortcut',
+                        type: 'image/png',
+                        href: '/favicon.png',
+                    },
+                    {
+                        rel: 'apple-touch-icon',
+                        type: 'image/png',
+                        href: '/favicon.png',
+                    },
+                ],
+                meta: [
+                    {
+                        name: 'twitter:url',
+                        content: config.site.siteUrl,
+                    },
+                ],
+            }}
+        />
 
-		<AstroFont
-			config={[
-				{
-					name: "Poppins",
-					src: [
-						{
-							weight: "400",
-							style: "normal",
-							path: join(
-								process.cwd(),
-								"public",
-								"fonts",
-								"poppins-v20-latin-regular.woff2",
-							),
-						},
-					],
-					preload: true,
-					display: "swap",
-					fallback: "sans-serif",
-					cssVariable: "astro-font-poppins",
-					selector: ".font-poppins",
-				},
-				{
-					name: "Satisfy",
-					src: [
-						{
-							weight: "400",
-							style: "normal",
-							path: join(
-								process.cwd(),
-								"public",
-								"fonts",
-								"satisfy-v17-latin-regular.woff2",
-							),
-						},
-					],
-					preload: true,
-					display: "swap",
-					fallback: "serif",
-					cssVariable: "astro-font-satisfy",
-					selector: ".font-satisfy",
-				},
-				{
-					name: "Ubuntu",
-					src: [
-						{
-							weight: "700",
-							style: "normal",
-							path: join(
-								process.cwd(),
-								"public",
-								"fonts",
-								"ubuntu-v20-latin-700.woff2",
-							),
-						},
-					],
-					preload: true,
-					display: "swap",
-					fallback: "serif",
-					cssVariable: "astro-font-ubuntu",
-					selector: ".font-ubuntu",
-				},
-			]}
-		/>
-	</head>
+        <script type="application/ld+json" set:html={JSON.stringify(personStructuredData)} />
 
-	<body id="home">
-		<Header config={config.header} />
-		<MobileHeader config={config.header} />
+        <AstroFont
+            config={[
+                {
+                    name: 'Poppins',
+                    src: [
+                        {
+                            weight: '400',
+                            style: 'normal',
+                            path: join(
+                                process.cwd(),
+                                'public',
+                                'fonts',
+                                'poppins-v20-latin-regular.woff2',
+                            ),
+                        },
+                    ],
+                    preload: true,
+                    display: 'swap',
+                    fallback: 'sans-serif',
+                    cssVariable: 'astro-font-poppins',
+                    selector: '.font-poppins',
+                },
+                {
+                    name: 'Satisfy',
+                    src: [
+                        {
+                            weight: '400',
+                            style: 'normal',
+                            path: join(
+                                process.cwd(),
+                                'public',
+                                'fonts',
+                                'satisfy-v17-latin-regular.woff2',
+                            ),
+                        },
+                    ],
+                    preload: true,
+                    display: 'swap',
+                    fallback: 'serif',
+                    cssVariable: 'astro-font-satisfy',
+                    selector: '.font-satisfy',
+                },
+                {
+                    name: 'Ubuntu',
+                    src: [
+                        {
+                            weight: '700',
+                            style: 'normal',
+                            path: join(
+                                process.cwd(),
+                                'public',
+                                'fonts',
+                                'ubuntu-v20-latin-700.woff2',
+                            ),
+                        },
+                    ],
+                    preload: true,
+                    display: 'swap',
+                    fallback: 'serif',
+                    cssVariable: 'astro-font-ubuntu',
+                    selector: '.font-ubuntu',
+                },
+            ]}
+        />
+    </head>
 
-		<main class="max-w-[1800px] mx-auto px-6">
-			<slot />
-		</main>
+    <body id="home">
+        <Header config={config.header} />
+        <MobileHeader config={config.header} />
 
-		<Footer config={config.footer} />
-		<Cursor />
-		<script src="../script.ts"></script>
-	</body>
+        <main class="max-w-[1800px] mx-auto px-6">
+            <slot />
+        </main>
+
+        <Footer config={config.footer} />
+        <Cursor />
+        <script src="../script-loader.ts"></script>
+    </body>
 </html>

@@ -1,26 +1,22 @@
 ---
-import { CenterTitle } from "@components/UI";
-import { ContactForm } from "@components/Preact";
-import { ContactArt } from "@assets/SVGs";
-import { Image } from "astro:assets";
+import { CenterTitle } from '@components/UI';
+import { ContactForm } from '@components/Preact';
+import { ContactArt } from '@assets/SVGs';
+import { Image } from 'astro:assets';
 ---
 
 <section id="contact" class="w-full min-h-screen mb-16 lg:mb-[25em] py-4 pt-14">
     <CenterTitle title="Contact" color="primary" />
 
     <div class="w-full flex_center flex-col p-4 text-[1.2em] text-center">
-        <h3
-            class="Fade_Up gradientText font-ubuntu text-[2rem] lg:text-[2.4rem]"
-        >
+        <h3 class="Fade_Up gradientText font-ubuntu text-[2rem] lg:text-[2.4rem]">
             Let's collaborate!
         </h3>
         <p class="Fade_Up">Contact me to discuss your web development needs</p>
         <p class="Fade_Up">or just to say hello. 😉</p>
     </div>
 
-    <div
-        class="flex_center flex-col lg:flex-row w-full h-full gap-4 lg:gap-10 lg:px-20 pt-8 pb-16"
-    >
+    <div class="flex_center flex-col lg:flex-row w-full h-full gap-4 lg:gap-10 lg:px-20 pt-8 pb-16">
         <div class="relative w-full flex_center flex-col">
             <div
                 class="Fade_Up w-full max-w-[350px] scale-[0.9] lg:scale-100 lg:max-w-[450px] aspect-square rounded-full border-2 border-dashed border-contactSocialColor mb-8 md:mb-0 md:mt-7"
@@ -159,17 +155,17 @@ import { Image } from "astro:assets";
             />
         </div>
 
-        <ContactForm client:load />
+        <ContactForm client:visible />
     </div>
 </section>
 
 <script is:inline type="module">
-    document.addEventListener("DOMContentLoaded", () => {
-        const center = document.querySelector("#socialCircle");
-        const images = document.querySelectorAll(".socialIcon");
+    document.addEventListener('DOMContentLoaded', () => {
+        const center = document.querySelector('#socialCircle');
+        const images = document.querySelectorAll('.socialIcon');
 
         if (!center || !images.length) {
-            console.error("Social circle or icons not found.");
+            console.error('Social circle or icons not found.');
             return;
         }
 

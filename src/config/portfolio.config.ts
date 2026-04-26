@@ -9,7 +9,7 @@ import GoogleIconRaw from "@assets/SVGs/Google.svg?raw";
 import DiscordIconRaw from "@assets/SVGs/Discord.svg?raw";
 
 import { LogoIcon } from "@/assets/SVGs";
-import { ThemeOptions } from "scripts/generateThemes";
+import { ThemeOptions } from "../../scripts/generateThemes";
 
 // Theme Configuration
 export const themeConfig = ThemeOptions.DEFAULT;
@@ -17,7 +17,7 @@ export const themeConfig = ThemeOptions.DEFAULT;
 // Site Configuration
 export const siteConfig = {
     title: "Chirag Chrg | Fullstack Software Engineer & Web Developer",
-    description: "Explore the digital world of Chirag Chrg, a Fullstack Software Engineer crafting modern web experiences that blend clean code, creativity, and exceptional UI/UX design.",
+    description: "Chirag Chrg is a full stack software engineer building high-performance, interactive web applications, real-time systems, and scalable digital experiences.",
     canonical: "https://chiragchrg.netlify.app/",
     googleSiteVerification: "YRAUUyc8TP4QJ1s53KAdLxcON9xifQf33BnLeP-F_5Y",
     keywords: "Chirag Chrg, ChiragChrg, Fullstack Software Engineer, Fullstack Web Developer, React Developer, Node.js Developer, TypeScript Developer, UI/UX Engineer, Frontend Developer, Backend Developer, JavaScript Developer, Portfolio, Vortexa, ARMS, ARMS 2.0, ARMS v3, Academic Resource Management System, xrecon, Oriv, Oriv.io, Epitome, Epitome 2k24, AIMIT, I create exciting stuff on the internet, Modern Web Apps, Scalable Web Applications",
@@ -79,9 +79,10 @@ export const heroConfig = {
 export const aboutConfig = {
     aboutAvatar: Avatar_250,
     description: [
-        "I'm Chirag, a full stack web developer with a strong passion for crafting digital realms that captivate and inspire.",
-        "I specialize in creating dynamic and interactive UI/UX experience. I stay up to date with the latest tools and techniques and worked on a wide range of projects, from personal websites to large-scale applications, sharpening  problem solving skills and fostering creativity.",
-        "If you're seeking a dedicated and passionate web developer, I'm eager to collaborate with you. Let's bring your ideas life!"
+        "Hey there! 👋🏻 I'm Chirag. I build things on the internet — with a strong focus on performance, interactivity, and getting the details right.",
+        "I enjoy working on systems that aren’t static. Real-time updates, complex UIs, and applications with lots of moving parts. I naturally go deeper into problems — optimizing, refining, and chasing that \"this feels right\" moment.",
+        "I like pushing systems to their limits, understanding how they behave, and improving them to be faster, cleaner, and more reliable.",
+        "If you're building something interesting, challenging, or technically demanding… I’d love to be part of it 😄"
     ],
 }
 
@@ -92,7 +93,7 @@ export const footerConfig = {
     links: [
         {
             label: "GitHub",
-            url: "https:github.com/ChiragChrg",
+            url: "https://github.com/ChiragChrg",
             icon: GithubIconRaw
         },
         {

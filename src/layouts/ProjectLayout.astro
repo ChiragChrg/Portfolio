@@ -1,15 +1,35 @@
 ---
-import { SEO } from "astro-seo";
-import { AstroFont } from "astro-font";
-import { join } from "node:path";
-import { Cursor, ProjectsHeader } from "@components/UI";
-import { Footer } from "@components/index";
+import { SEO } from 'astro-seo';
+import { AstroFont } from 'astro-font';
+import { join } from 'node:path';
+import { Cursor, ProjectsHeader } from '@components/UI';
+import { Footer } from '@components/index';
 
-import "@styles/themes.css";
-import "@styles/global.css";
-import "@styles/cursor.css";
+import '@styles/themes.css';
+import '@styles/global.css';
+import '@styles/cursor.css';
 
-const { title, description, config } = Astro.props;
+const { title, description, canonical, ogImage, config } = Astro.props;
+
+const canonicalUrl =
+    canonical ||
+    new URL(
+        `projects/${title.replace(' | ChiragChrg', '').replaceAll(' ', '-').toLowerCase()}`,
+        config.site.siteUrl,
+    ).toString();
+const pageDescription = description || config.site.description;
+const pageImage = ogImage || config.site.avatar;
+
+const projectStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${canonicalUrl}#webpage`,
+    name: title,
+    description: pageDescription,
+    url: canonicalUrl,
+    image: pageImage,
+    inLanguage: 'en',
+};
 ---
 
 <!doctype html>
@@ -20,10 +40,7 @@ const { title, description, config } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="theme-color" content="#000" />
         <meta name="robots" content="index, follow" />
-        <meta
-            name="google-site-verification"
-            content={config.site.googleSiteVerification}
-        />
+        <meta name="google-site-verification" content={config.site.googleSiteVerification} />
         <meta name="keywords" content={config.site.keywords} />
         <meta name="author" content="ChiragChrg" />
         <link rel="manifest" href="/manifest.json" />
@@ -35,108 +52,110 @@ const { title, description, config } = Astro.props;
 
         <SEO
             title={title}
-            description={description}
-            canonical=`https://chiragchrg.netlify.app/projects/${title.replace(" | ChiragChrg","").replaceAll(" ","-").toLowerCase()}`
+            description={pageDescription}
+            canonical={canonicalUrl}
             openGraph={{
                 basic: {
                     title: `${title}`,
-                    type: "website",
-                    image: config.site.avatar,
-                    url: config.site.siteUrl,
+                    type: 'website',
+                    image: pageImage,
+                    url: canonicalUrl,
                 },
             }}
             twitter={{
                 title: `${title}`,
-                description: `${description}`,
-                card: "summary",
-                site: "@ChrgChirag",
-                creator: "@ChrgChirag",
-                image: config.site.avatar,
+                description: pageDescription,
+                card: 'summary',
+                site: '@ChrgChirag',
+                creator: '@ChrgChirag',
+                image: pageImage,
             }}
             extend={{
                 link: [
-                    { rel: "icon", type: "image/png", href: "/favicon.png" },
+                    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
                     {
-                        rel: "shortcut",
-                        type: "image/png",
-                        href: "/favicon.png",
+                        rel: 'shortcut',
+                        type: 'image/png',
+                        href: '/favicon.png',
                     },
                     {
-                        rel: "apple-touch-icon",
-                        type: "image/png",
-                        href: "/favicon.png",
+                        rel: 'apple-touch-icon',
+                        type: 'image/png',
+                        href: '/favicon.png',
                     },
                 ],
                 meta: [
                     {
-                        name: "twitter:url",
-                        content: config.site.siteUrl,
+                        name: 'twitter:url',
+                        content: canonicalUrl,
                     },
                 ],
             }}
         />
 
+        <script type="application/ld+json" set:html={JSON.stringify(projectStructuredData)} />
+
         <AstroFont
             config={[
                 {
-                    name: "Poppins",
+                    name: 'Poppins',
                     src: [
                         {
-                            weight: "400",
-                            style: "normal",
+                            weight: '400',
+                            style: 'normal',
                             path: join(
                                 process.cwd(),
-                                "public",
-                                "fonts",
-                                "poppins-v20-latin-regular.woff2",
+                                'public',
+                                'fonts',
+                                'poppins-v20-latin-regular.woff2',
                             ),
                         },
                     ],
                     preload: true,
-                    display: "swap",
-                    fallback: "serif",
-                    cssVariable: "astro-font-poppins",
-                    selector: ".font-poppins",
+                    display: 'swap',
+                    fallback: 'serif',
+                    cssVariable: 'astro-font-poppins',
+                    selector: '.font-poppins',
                 },
                 {
-                    name: "Satisfy",
+                    name: 'Satisfy',
                     src: [
                         {
-                            weight: "400",
-                            style: "normal",
+                            weight: '400',
+                            style: 'normal',
                             path: join(
                                 process.cwd(),
-                                "public",
-                                "fonts",
-                                "satisfy-v17-latin-regular.woff2",
+                                'public',
+                                'fonts',
+                                'satisfy-v17-latin-regular.woff2',
                             ),
                         },
                     ],
                     preload: true,
-                    display: "swap",
-                    fallback: "serif",
-                    cssVariable: "astro-font-satisfy",
-                    selector: ".font-satisfy",
+                    display: 'swap',
+                    fallback: 'serif',
+                    cssVariable: 'astro-font-satisfy',
+                    selector: '.font-satisfy',
                 },
                 {
-                    name: "Ubuntu",
+                    name: 'Ubuntu',
                     src: [
                         {
-                            weight: "700",
-                            style: "normal",
+                            weight: '700',
+                            style: 'normal',
                             path: join(
                                 process.cwd(),
-                                "public",
-                                "fonts",
-                                "ubuntu-v20-latin-700.woff2",
+                                'public',
+                                'fonts',
+                                'ubuntu-v20-latin-700.woff2',
                             ),
                         },
                     ],
                     preload: true,
-                    display: "swap",
-                    fallback: "serif",
-                    cssVariable: "astro-font-ubuntu",
-                    selector: ".font-ubuntu",
+                    display: 'swap',
+                    fallback: 'serif',
+                    cssVariable: 'astro-font-ubuntu',
+                    selector: '.font-ubuntu',
                 },
             ]}
         />
@@ -150,6 +169,6 @@ const { title, description, config } = Astro.props;
 
         <Cursor />
         <Footer config={config.footer} />
-        <script src="../script.ts"></script>
+        <script src="../script-loader.ts"></script>
     </body>
 </html>

@@ -1,18 +1,22 @@
 ---
-import { SectionTitle, ProjectCard } from "@/components/UI";
-import { ProjectLayout } from "@layouts/index";
+import { SectionTitle, ProjectCard } from '@/components/UI';
+import { ProjectLayout } from '@layouts/index';
 
 const { themeConfig, siteConfig, headerConfig, footerConfig } = await import(
-    "@/config"
+    '@/config/portfolio.config'
 );
 
+const projectsCanonicalUrl = new URL('projects', siteConfig.siteUrl).toString();
+
 // Lazy loading ProjectInfo
-const ProjectInfo = import("@/config/ProjectsList");
+const ProjectInfo = import('@/config/ProjectsList');
 const { PROJECTS_LIST } = await ProjectInfo;
 ---
 
 <ProjectLayout
     title="Projects | ChiragChrg"
+    description="Browse selected web engineering projects by Chirag Chrg, with architecture highlights, features, and live demos."
+    canonical={projectsCanonicalUrl}
     config={{
         theme: themeConfig,
         site: siteConfig,
@@ -25,15 +29,12 @@ const { PROJECTS_LIST } = await ProjectInfo;
         {
             PROJECTS_LIST.length === 0 && (
                 <p class="text-center text-muted-foreground mt-10">
-                    No projects to display at the moment. Please check back
-                    later.
+                    No projects to display at the moment. Please check back later.
                 </p>
             )
         }
 
-        <div
-            class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4"
-        >
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4">
             {
                 PROJECTS_LIST?.map((project) => {
                     if (project?.isHidden) return;
