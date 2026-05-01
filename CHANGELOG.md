@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-nightly.8](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.7...v1.1.0-nightly.8) (2026-05-01)
+
+### ♻️ Code Refactoring
+
+* ♻️ Update script tags for structured data and adjust main container width ([ba96a25](https://github.com/ChiragChrg/Portfolio/commit/ba96a2562b941d5eeca2c5fa769dda5585b372a9))
+
 ## [1.1.0-nightly.7](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.6...v1.1.0-nightly.7) (2026-04-26)
 
 ### ♻️ Code Refactoring
