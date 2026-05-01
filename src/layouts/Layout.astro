@@ -89,7 +89,11 @@ const personStructuredData = {
             }}
         />
 
-        <script type="application/ld+json" set:html={JSON.stringify(personStructuredData)} />
+        <script
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify(personStructuredData)}
+        />
 
         <AstroFont
             config={[
@@ -161,7 +165,7 @@ const personStructuredData = {
         <Header config={config.header} />
         <MobileHeader config={config.header} />
 
-        <main class="max-w-[1800px] mx-auto px-6">
+        <main class="max-w-450 mx-auto px-6">
             <slot />
         </main>
 
