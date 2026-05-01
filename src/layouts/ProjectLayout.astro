@@ -93,7 +93,11 @@ const projectStructuredData = {
             }}
         />
 
-        <script type="application/ld+json" set:html={JSON.stringify(projectStructuredData)} />
+        <script
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify(projectStructuredData)}
+        />
 
         <AstroFont
             config={[
@@ -163,7 +167,7 @@ const projectStructuredData = {
     <body>
         <ProjectsHeader config={config.header} />
 
-        <main class="max-w-[1800px] mx-auto px-6">
+        <main class="max-w-450 mx-auto px-6">
             <slot />
         </main>
 
