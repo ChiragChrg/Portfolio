@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-nightly.9](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.8...v1.1.0-nightly.9) (2026-05-02)
+
 ## [1.1.0-nightly.8](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.7...v1.1.0-nightly.8) (2026-05-01)
 
 ### ♻️ Code Refactoring
