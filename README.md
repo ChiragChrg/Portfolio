@@ -30,11 +30,11 @@ A fresh version is under active development—this isn’t just a revamp but a m
 
 The portfolio leverages the following technologies:
 <div align="center">
-      <a href="https://astro.build/" title="Astro"><img src="https://skillicons.dev/icons?i=astro" alt="Astro" width="40" height="40"/></a>&emsp;
-      <a href="https://preactjs.com/" title="Preact.js"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg" alt="Preact.js" width="40" height="40"/></a>&emsp;
-      <a href="https://www.typescriptlang.org/docs/" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" width="40" height="40"/></a>&emsp;
-      <a href="https://tailwindcss.com/docs/installation" title="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" width="40" height="40"/></a>&emsp;
-      <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40" height="40"/></a>&emsp;
+      <a href="https://astro.build/" title="Astro"><img src="https://skillicons.dev/icons?i=astro" alt="Astro" width="40"/></a>&emsp;
+      <a href="https://preactjs.com/" title="Preact.js"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg" alt="Preact.js" width="40"/></a>&emsp;
+      <a href="https://www.typescriptlang.org/docs/" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" width="40"/></a>&emsp;
+      <a href="https://tailwindcss.com/docs/installation" title="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" width="40"/></a>&emsp;
+      <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40"/></a>&emsp;
 </div>
 
 ## 🗼 LightHouse Audit
@@ -77,6 +77,7 @@ You may use, copy, modify, and distribute this project for any purpose, provided
 
 - Include the original copyright.
 - Retain the MIT license in all copies or substantial portions of the software.
-- Visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
+
+Attribution is appreciated but not required. If you use this project, consider giving visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
 
 Proper attribution helps acknowledge the effort invested in this project and upholds the values of integrity, transparency, and the open‑source community.
