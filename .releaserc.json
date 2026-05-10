@@ -1,8 +1,11 @@
 {
     "branches": [
-        "main",
         {
-            "name": "astro",
+            "name": "main",
+            "prerelease": false
+        },
+        {
+            "name": "nightly",
             "prerelease": true
         }
     ],
@@ -12,6 +15,14 @@
             {
                 "preset": "conventionalcommits",
                 "releaseRules": [
+                    {
+                        "breaking": true,
+                        "release": "major"
+                    },
+                    {
+                        "type": "feat",
+                        "release": "minor"
+                    },
                     {
                         "type": "enhance",
                         "release": "minor"
@@ -25,8 +36,8 @@
                         "release": "minor"
                     },
                     {
-                        "type": "enhance",
-                        "release": "minor"
+                        "type": "fix",
+                        "release": "patch"
                     },
                     {
                         "type": "docs",
@@ -43,6 +54,18 @@
                     {
                         "type": "chore",
                         "release": "patch"
+                    },
+                    {
+                        "type": "ci-cd",
+                        "release": false
+                    },
+                    {
+                        "type": "build",
+                        "release": false
+                    },
+                    {
+                        "type": "test",
+                        "release": false
                     }
                 ]
             }

@@ -6,13 +6,11 @@
 </div>
 
 <script is:inline type="module">
-    document.addEventListener("DOMContentLoaded", function () {
-        const CursorRef = document.getElementById("cursor");
-        const CursorDotRef = document.getElementById("cursorDot");
+    document.addEventListener('DOMContentLoaded', function () {
+        const CursorRef = document.getElementById('cursor');
+        const CursorDotRef = document.getElementById('cursorDot');
 
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mousedown", handleMouseClick);
-
+        // Handle mouse movement to update cursor position
         function handleMouseMove(evt) {
             if (window.innerWidth < 1024) return;
             if (!CursorRef || !CursorDotRef) return;
@@ -31,28 +29,29 @@
 
             CursorRef.animate(keyframes, {
                 duration: 500,
-                easing: "ease-in-out",
-                fill: "forwards",
+                easing: 'ease-in-out',
+                fill: 'forwards',
             });
             CursorDotRef.animate(dotKeyframes, {
                 duration: 100,
-                easing: "ease-out",
-                fill: "forwards",
+                easing: 'ease-out',
+                fill: 'forwards',
             });
         }
 
+        // Handle mouse click to create a ripple effect
         function handleMouseClick() {
             if (!CursorRef) return;
 
-            const ripple = document.createElement("span");
+            const ripple = document.createElement('span');
             ripple?.classList.add(
-                "absolute",
-                "w-[200%]",
-                "aspect-square",
-                "rounded-full",
-                "bg-[var(--orbitDotColor)]",
-                "opacity-0",
-                "animate-ripple",
+                'absolute',
+                'w-[200%]',
+                'aspect-square',
+                'rounded-full',
+                'bg-[var(--orbitDotColor)]',
+                'opacity-0',
+                'animate-ripple',
             );
             CursorRef.appendChild(ripple);
 
@@ -61,5 +60,13 @@
                 CursorRef.removeChild(ripple);
             }, 1000);
         }
+
+        // Remove existing listeners before adding new ones
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mousedown', handleMouseClick);
+
+        // Add new event listeners
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mousedown', handleMouseClick);
     });
 </script>

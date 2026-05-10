@@ -1,16 +1,35 @@
-export { default as KalciShots } from "./Kalci.webp"
-export { default as NuklearbrainShots } from "./Nuklearbrain.webp"
-export { default as ClimateShots } from "./Climate.webp"
-export { default as CookeezShots } from "./Cookeez.webp"
-export { default as CovidTraxShots } from "./CovidTrax.webp"
-export { default as FilmstackShots } from "./Filmstack.webp"
-export { default as Armsv1Shots } from "./ARMSv1.webp"
-export { default as DaysbeyondShots } from "./Daysbeyond.webp"
-export { default as PikturesShots } from "./Piktures.webp"
-export { default as SrinivasShots } from "./Srinivas.webp"
-export { default as YoatubeShots } from "./Yoatube.webp"
-export { default as XreconShots } from "./Xrecon.webp"
-export { default as Armsv2Shots } from "./ARMSv2.webp"
-export { default as NextmartShots } from "./NextMart.webp"
-export { default as VortexaShots } from "./Vortexa.webp"
-export { default as Armsv3Shots } from "./ARMSv3.webp"
+import KalciShots from "./Kalci.webp"
+import NuklearbrainShots from "./Nuklearbrain.webp"
+import ClimateShots from "./Climate.webp"
+import CookeezShots from "./Cookeez.webp"
+import CovidTraxShots from "./CovidTrax.webp"
+import FilmstackShots from "./Filmstack.webp"
+import Armsv1Shots from "./ARMSv1.webp"
+import DaysbeyondShots from "./Daysbeyond.webp"
+import PikturesShots from "./Piktures.webp"
+import SrinivasShots from "./Srinivas.webp"
+import YoatubeShots from "./Yoatube.webp"
+import XreconShots from "./Xrecon.webp"
+import Armsv2Shots from "./ARMSv2.webp"
+import NextmartShots from "./NextMart.webp"
+import VortexaShots from "./Vortexa.webp"
+import Armsv3Shots from "./ARMSv3.webp"
+
+export default {
+    KalciShots,
+    NuklearbrainShots,
+    ClimateShots,
+    CookeezShots,
+    CovidTraxShots,
+    FilmstackShots,
+    Armsv1Shots,
+    DaysbeyondShots,
+    PikturesShots,
+    SrinivasShots,
+    YoatubeShots,
+    XreconShots,
+    Armsv2Shots,
+    NextmartShots,
+    VortexaShots,
+    Armsv3Shots,
+};

@@ -1,33 +1,39 @@
 ---
-import { Download } from "lucide-preact";
-// import ThemeButton from "./ThemeButton.astro";
+import { Download } from 'lucide-preact';
+import ThemeDropdown from '@components/UI/ThemeDropdown.astro';
+import ThemeButton from '@components/UI/ThemeButton.astro';
+
+const { config } = Astro.props;
+
+const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
 ---
 
-<header id="header" class="hidden lg:block sticky top-0 z-50">
+<header id="header" class="hidden lg:block sticky top-0 max-w-[1800px] mx-auto z-50">
     <div
-        class="flex justify-between items-center w-full px-6 py-2 bg-headerGradient backdrop-blur-[2px]"
+        class="flex justify-between items-center w-full px-6 py-2 headerGradient backdrop-blur-[2px]"
     >
-        <a href="#home" class="Fade_Down font-satisfy font-bold text-[2em]">
-            <span class="gradientText w-fit">Portfolio.</span>
+        <a href="#home" class="Fade_Down_Header font-satisfy font-bold text-[2em]">
+            <span class="gradientText w-fit">{config.logotext}</span>
         </a>
 
-        <nav class="Header_Nav flex gap-6">
-            <a class="Fade_Down" href="#about">ABOUT</a>
-            <a class="Fade_Down" href="#skills">SKILLS</a>
-            <a class="Fade_Down" href="#projects">PROJECTS</a>
-            <a class="Fade_Down" href="#contact">CONTACT</a>
+        <nav class="Header_Nav relative tracking-wide flex gap-6">
+            <a class="Fade_Down_Header" href="#about">ABOUT</a>
+            <a class="Fade_Down_Header" href="#skills">SKILLS</a>
+            <a class="Fade_Down_Header" href="#projects">PROJECTS</a>
+            <a class="Fade_Down_Header" href="#contact">CONTACT</a>
         </nav>
 
         <div class="flex_center gap-4">
-            <!-- <ThemeButton className="Fade_Down" /> -->
+            {showThemeDropdown && <ThemeDropdown className="Fade_Down_Header" idPrefix="Desktop" />}
+            <ThemeButton className="Fade_Down_Header" />
 
             <a
-                class="Fade_Down Header_ActionBtn"
-                href="/Chirag Resume.pdf"
+                class="Fade_Down_Header Header_ActionBtn relative overflow-hidden rounded-sm flex_center"
+                href={config.actionButton.url}
                 target="_blank"
             >
                 <div class="flex_center gap-2">
-                    <p>Resume</p>
+                    <p>{config.actionButton.text}</p>
                     <Download size={18} />
                 </div>
             </a>
@@ -36,14 +42,16 @@ import { Download } from "lucide-preact";
 </header>
 
 <script is:inline type="module">
-    const headerElement = document.getElementById("header");
+    const headerElement = document.getElementById('header');
     const sectionsList = {
-        "#home": document.getElementById("home"),
-        "#about": document.getElementById("about"),
-        "#skills": document.getElementById("skills"),
-        "#projects": document.getElementById("projects"),
-        "#contact": document.getElementById("contact"),
+        '#home': document.getElementById('home'),
+        '#about': document.getElementById('about'),
+        '#skills': document.getElementById('skills'),
+        '#projects': document.getElementById('projects'),
+        '#contact': document.getElementById('contact'),
     };
+
+    const headerHeight = headerElement.offsetHeight;
 
     // Set Active class on section scroll
     const handleScroll = () => {
@@ -51,36 +59,26 @@ import { Download } from "lucide-preact";
             if (!section) return;
 
             const rect = section.getBoundingClientRect();
-            const link = document.querySelector(
-                `#header a[href="${linkHref}"]`,
-            );
+            const link = document.querySelector(`#header a[href="${linkHref}"]`);
 
-            if (
-                link &&
-                headerElement &&
-                rect.top <= headerElement.offsetHeight &&
-                rect.bottom >= headerElement.offsetHeight
-            ) {
-                link?.classList.add("active");
+            if (link && headerElement && rect.top <= headerHeight && rect.bottom >= headerHeight) {
+                link?.classList.add('active');
             } else {
-                link?.classList.remove("active");
+                link?.classList.remove('active');
             }
         }
     };
 
-    function throttle(func, limit) {
-        let throttling = false;
-        return function () {
-            if (!throttling) {
-                func.apply(this, arguments);
-                throttling = true;
-                setTimeout(() => {
-                    throttling = false;
-                }, limit);
-            }
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
         };
     }
 
-    window.addEventListener("scroll", throttle(handleScroll, 100));
-    handleScroll(); // Initial call
+    window.addEventListener('scroll', debounce(handleScroll, 0));
+    handleScroll();
 </script>

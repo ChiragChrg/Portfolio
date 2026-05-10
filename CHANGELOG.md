@@ -2,6 +2,179 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-nightly.9](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.8...v1.1.0-nightly.9) (2026-05-02)
+
+## [1.1.0-nightly.8](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.7...v1.1.0-nightly.8) (2026-05-01)
+
+### ♻️ Code Refactoring
+
+* ♻️ Update script tags for structured data and adjust main container width ([ba96a25](https://github.com/ChiragChrg/Portfolio/commit/ba96a2562b941d5eeca2c5fa769dda5585b372a9))
+
+## [1.1.0-nightly.7](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.6...v1.1.0-nightly.7) (2026-04-26)
+
+### ♻️ Code Refactoring
+
+* .♻️ Rename portfolio template config file from `index.ts` to `portfolio.config.ts` ([cd2a06c](https://github.com/ChiragChrg/Portfolio/commit/cd2a06ce9d3110c7918c12e3cb479e370ff5e66b))
+* ♻️ Update site and about descriptions for clarity and engagement ([3555632](https://github.com/ChiragChrg/Portfolio/commit/3555632640b20496e72ec73d83842806bbf03eeb))
+
+### 🔍 SEO Updates
+
+* :zap: Standardize import quotes and improve SEO metadata across multiple components ([21244d5](https://github.com/ChiragChrg/Portfolio/commit/21244d5599265225316eec85bff56e7a519cc418))
+
+## [1.1.0-nightly.6](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.5...v1.1.0-nightly.6) (2026-04-03)
+
+### 🐛 Bug Fixes
+
+* 🐛 Resolve issue where duplicate ghosted cursor is created on top left of the screen ([56ed33d](https://github.com/ChiragChrg/Portfolio/commit/56ed33d95e9332661ebb618d2ce0684ba4be9b58))
+* 🐛 Update mobile header link to include full path for home ([6abfd20](https://github.com/ChiragChrg/Portfolio/commit/6abfd20ed99b41073eed1b5bb27fdea28c6fac4f))
+
+## [1.1.0-nightly.5](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.4...v1.1.0-nightly.5) (2026-03-31)
+
+### ⭐ Enhancements
+
+* ⭐ Update commitlint configuration with extended rules for commit message types ([d81eb4e](https://github.com/ChiragChrg/Portfolio/commit/d81eb4edf54f6aab5cd1548f1f2776fa3f30f57a))
+
+### 🐛 Bug Fixes
+
+* 🐛 Improve mobile navigation behavior and state management for inline menu ([5f25a25](https://github.com/ChiragChrg/Portfolio/commit/5f25a253527778b44d8804a03568f9b9332a379f))
+* 🐛 Resolve issue where Resume link in mobile ham menu was not redirecting to the provided url ([edbd7d7](https://github.com/ChiragChrg/Portfolio/commit/edbd7d78b4c6439a81d63decc87502488f698d66))
+* 🐛 Update project header layout and improve menu animations ([9b83f69](https://github.com/ChiragChrg/Portfolio/commit/9b83f6945b85404a03db0082c1841dc06337f19f))
+
+## 1.1.0-nightly.4 (2026-03-08)
+
+* Merge pull request #16 from ChiragChrg/dev ([0c6b71c](https://github.com/ChiragChrg/Portfolio/commit/0c6b71c)), closes [#16](https://github.com/ChiragChrg/Portfolio/issues/16)
+* fix: 🐛 https://github.com/ChiragChrg/Portfolio/issues/15 | Resolve header elements fade animation ([af16ca6](https://github.com/ChiragChrg/Portfolio/commit/af16ca6))
+
+## 1.1.0-nightly.3 (2026-02-01)
+
+* Merge pull request #14 from ChiragChrg/dev ([f0eede8](https://github.com/ChiragChrg/Portfolio/commit/f0eede8)), closes [#14](https://github.com/ChiragChrg/Portfolio/issues/14)
+* refactor: ♻️ Simplify theme dropdown visibility logic in headers ([03cc266](https://github.com/ChiragChrg/Portfolio/commit/03cc266))
+
+## 1.1.0-nightly.2 (2026-02-01)
+
+* Merge branch 'nightly' of https://github.com/ChiragChrg/Portfolio into dev ([a163dd6](https://github.com/ChiragChrg/Portfolio/commit/a163dd6))
+* Merge pull request #13 from ChiragChrg/dev ([1929601](https://github.com/ChiragChrg/Portfolio/commit/1929601)), closes [#13](https://github.com/ChiragChrg/Portfolio/issues/13)
+* chore: 🔧 Remove unused utility CSS import from layout files ([813f81a](https://github.com/ChiragChrg/Portfolio/commit/813f81a))
+
+## 1.1.0-nightly.1 (2026-02-01)
+
+* ci-cd:  💚Refactor branch configuration in .releaserc.json ([1f063fa](https://github.com/ChiragChrg/Portfolio/commit/1f063fa))
+* ci-cd: 💚 Add pull request trigger for nightly branch ([352ec0b](https://github.com/ChiragChrg/Portfolio/commit/352ec0b))
+* ci-cd: 💚 Update workflow trigger for nightly branch ([7e5ed92](https://github.com/ChiragChrg/Portfolio/commit/7e5ed92))
+* Merge branch 'main' of https://github.com/ChiragChrg/Portfolio into astro ([0068e0b](https://github.com/ChiragChrg/Portfolio/commit/0068e0b))
+* Merge branch 'main' of https://github.com/ChiragChrg/Portfolio into astro ([8f3bcf4](https://github.com/ChiragChrg/Portfolio/commit/8f3bcf4))
+* Merge branch 'main' of https://github.com/ChiragChrg/Portfolio into astro ([d902e82](https://github.com/ChiragChrg/Portfolio/commit/d902e82))
+* Merge branch 'main' of https://github.com/ChiragChrg/Portfolio into astro ([65460d2](https://github.com/ChiragChrg/Portfolio/commit/65460d2))
+* Merge branch 'main' of https://github.com/ChiragChrg/Portfolio into astro ([eccba10](https://github.com/ChiragChrg/Portfolio/commit/eccba10))
+* Merge branch 'nightly' of https://github.com/ChiragChrg/Portfolio into dev ([f3dd0a8](https://github.com/ChiragChrg/Portfolio/commit/f3dd0a8))
+* Merge pull request #10 from ChiragChrg/revert-9-dev ([6cc894b](https://github.com/ChiragChrg/Portfolio/commit/6cc894b)), closes [#10](https://github.com/ChiragChrg/Portfolio/issues/10)
+* Merge pull request #11 from ChiragChrg/revert-10-revert-9-dev ([a4db130](https://github.com/ChiragChrg/Portfolio/commit/a4db130)), closes [#11](https://github.com/ChiragChrg/Portfolio/issues/11)
+* Merge pull request #12 from ChiragChrg/dev ([905ab9e](https://github.com/ChiragChrg/Portfolio/commit/905ab9e)), closes [#12](https://github.com/ChiragChrg/Portfolio/issues/12)
+* Merge pull request #8 from ChiragChrg/astro ([56439cd](https://github.com/ChiragChrg/Portfolio/commit/56439cd)), closes [#8](https://github.com/ChiragChrg/Portfolio/issues/8)
+* Merge pull request #9 from ChiragChrg/dev ([4355874](https://github.com/ChiragChrg/Portfolio/commit/4355874)), closes [#9](https://github.com/ChiragChrg/Portfolio/issues/9)
+* Revert "🔀 Merge to Nightly: ♻️ Refactor asset architecture and standardize data structures with enh ([a169b54](https://github.com/ChiragChrg/Portfolio/commit/a169b54))
+* Revert "Revert "🔀 Merge to Nightly: ♻️ Refactor asset architecture and standardize data structures  ([b97ef8a](https://github.com/ChiragChrg/Portfolio/commit/b97ef8a))
+* style: 🎨 Enhance Theme toggle with expanding circle transition ([b1264ef](https://github.com/ChiragChrg/Portfolio/commit/b1264ef))
+* style: 💄 Adjust Hero component dimensions and enhance hover effects for Orbit Dots ([3e37441](https://github.com/ChiragChrg/Portfolio/commit/3e37441))
+* style: 💄 Remove unnecessary line breaks in Contact section markup ([af7fbc6](https://github.com/ChiragChrg/Portfolio/commit/af7fbc6))
+* style: 💄 Update styling for project cards and project list layout ([ab05938](https://github.com/ChiragChrg/Portfolio/commit/ab05938))
+* enhance:  ⭐Update ESLint configuration for TypeScript support ([82c344d](https://github.com/ChiragChrg/Portfolio/commit/82c344d))
+* enhance: ⭐ Add ARMS v4 project to project list and refactored ProjectList file structure ([1bc4218](https://github.com/ChiragChrg/Portfolio/commit/1bc4218))
+* enhance: ⭐ Add new SVG icons for various skills ([8d8c6a2](https://github.com/ChiragChrg/Portfolio/commit/8d8c6a2))
+* enhance: ⭐ Add project list limit and "View All Projects" link for enhanced project display ([06ad1a1](https://github.com/ChiragChrg/Portfolio/commit/06ad1a1))
+* enhance: ⭐ Enables theme switching across all headers ([a1dfa9f](https://github.com/ChiragChrg/Portfolio/commit/a1dfa9f))
+* enhance: ⭐ Improve GSAP configuration and enhance animation handling for better performance ([e439985](https://github.com/ChiragChrg/Portfolio/commit/e439985))
+* enhance: ⭐ Refactors header height usage to avoid repeated DOM queries. ([4c48bf9](https://github.com/ChiragChrg/Portfolio/commit/4c48bf9))
+* enhance: ⭐ Replace Framer Motion icon with Motion icon and add NATS and Render icons ([571030d](https://github.com/ChiragChrg/Portfolio/commit/571030d))
+* enhance: ⭐ Update cursor event listeners and comment out transition for performance ([21f35c9](https://github.com/ChiragChrg/Portfolio/commit/21f35c9))
+* enhance: ⭐ Update ProjectsHeader styles for improved button appearance and add image overlay gradien ([5b93690](https://github.com/ChiragChrg/Portfolio/commit/5b93690))
+* enhance: ⭐ Update theme handling and mobile menu animations across components ([75965b3](https://github.com/ChiragChrg/Portfolio/commit/75965b3))
+* refactor: ♻️ Add opacity style to avatar image for initial visibility control ([17f59a1](https://github.com/ChiragChrg/Portfolio/commit/17f59a1))
+* refactor: ♻️ Adds theme system and refactors color variables ([c530e90](https://github.com/ChiragChrg/Portfolio/commit/c530e90))
+* refactor: ♻️ Comment out transition for cursor dot to improve performance ([21bec06](https://github.com/ChiragChrg/Portfolio/commit/21bec06))
+* refactor: ♻️ Create SkillStack constants with detailed descriptions and structured organization ([069773a](https://github.com/ChiragChrg/Portfolio/commit/069773a))
+* refactor: ♻️ Enhance Astro configuration for improved integration and build options ([dea2e48](https://github.com/ChiragChrg/Portfolio/commit/dea2e48))
+* refactor: ♻️ Implement theme toggle functionality in MobileHeader and ThemeButton components ([24e5eee](https://github.com/ChiragChrg/Portfolio/commit/24e5eee))
+* refactor: ♻️ Improve theme toggle functionality and enhance theme persistence ([5a90186](https://github.com/ChiragChrg/Portfolio/commit/5a90186))
+* refactor: ♻️ Organize GSAP configuration and transitions for better readability and performance ([dae1143](https://github.com/ChiragChrg/Portfolio/commit/dae1143))
+* refactor: ♻️ Rearrange path mappings in tsconfig for improved organization ([f6e7637](https://github.com/ChiragChrg/Portfolio/commit/f6e7637))
+* refactor: ♻️ Refactor color variables for social icons and footer styles ([32211b4](https://github.com/ChiragChrg/Portfolio/commit/32211b4))
+* refactor: ♻️ Refactor Hero Section to adapt to tailwind v4 ([b708993](https://github.com/ChiragChrg/Portfolio/commit/b708993))
+* refactor: ♻️ Refactor image imports for better asset organization ([0b8fd2d](https://github.com/ChiragChrg/Portfolio/commit/0b8fd2d))
+* refactor: ♻️ Refactor Skill section and modified skill categories ([8a1841b](https://github.com/ChiragChrg/Portfolio/commit/8a1841b))
+* refactor: ♻️ Remove SCSS preprocessor options from Vite configuration and update lock file ([9247ed3](https://github.com/ChiragChrg/Portfolio/commit/9247ed3))
+* refactor: ♻️ Rename "State, Data & Realtime" to "State & Events" for clarity ([5066146](https://github.com/ChiragChrg/Portfolio/commit/5066146))
+* refactor: ♻️ Rename `/Icons` to `/skills` directory ([a7ddcc4](https://github.com/ChiragChrg/Portfolio/commit/a7ddcc4))
+* refactor: ♻️ Rename utils dir to config and add portfolio config file as index.ts ([ebbf545](https://github.com/ChiragChrg/Portfolio/commit/ebbf545))
+* refactor: ♻️ Revise theme color generation for improved header, skill, and footer styles ([08142a1](https://github.com/ChiragChrg/Portfolio/commit/08142a1))
+* refactor: ♻️ Streamline skill stack imports and improve SkillGrid styling ([442f840](https://github.com/ChiragChrg/Portfolio/commit/442f840))
+* refactor: ♻️ Update author retrieval to use heroConfig for dynamic name generation ([13d693e](https://github.com/ChiragChrg/Portfolio/commit/13d693e))
+* refactor: ♻️ Update cursor styles to support dynamic background color and improve color handling ([9d991ba](https://github.com/ChiragChrg/Portfolio/commit/9d991ba))
+* refactor: ♻️ Update environment configuration to enable theme menu visibility ([ee39c24](https://github.com/ChiragChrg/Portfolio/commit/ee39c24))
+* refactor: ♻️ Update gradient classes for consistency across components ([f8fa25d](https://github.com/ChiragChrg/Portfolio/commit/f8fa25d))
+* refactor: ♻️ Update import paths to use absolute references for better maintainability ([865d22d](https://github.com/ChiragChrg/Portfolio/commit/865d22d))
+* refactor: ♻️ Update imports for assets organization in Icons, Logos, Mockups, and Shots ([a0196ec](https://github.com/ChiragChrg/Portfolio/commit/a0196ec))
+* refactor: ♻️ Update markdown.svg for improved readability and color consistency ([baff61e](https://github.com/ChiragChrg/Portfolio/commit/baff61e))
+* refactor: ♻️ Update orbit gradients to support dynamic theme colors based on mode ([6119f6b](https://github.com/ChiragChrg/Portfolio/commit/6119f6b))
+* refactor: ♻️ Update project card image opacity and adjust skill gradient colors for improved visibil ([85b3cf5](https://github.com/ChiragChrg/Portfolio/commit/85b3cf5))
+* refactor: ♻️ Update project property names for consistency and clarity ([2e683de](https://github.com/ChiragChrg/Portfolio/commit/2e683de))
+* refactor: ♻️ Update ProjectsListType interface for improved consistency and clarity ([dfd2ec0](https://github.com/ChiragChrg/Portfolio/commit/dfd2ec0))
+* refactor: ♻️ Update skill stacks import and restructure SkillGrid props for improved consistency ([c62f27a](https://github.com/ChiragChrg/Portfolio/commit/c62f27a))
+* refactor: ♻️ Update Skills component to dynamically import skill stacks for improved performance ([92fcd53](https://github.com/ChiragChrg/Portfolio/commit/92fcd53))
+* refactor: ♻️ Update SVG fill colors to improve visual consistency ([a8fd766](https://github.com/ChiragChrg/Portfolio/commit/a8fd766))
+* refactor: ♻️ Update TECH_STACK to utilize buildTechStack for improved organization and consistency ([5cbadae](https://github.com/ChiragChrg/Portfolio/commit/5cbadae))
+* refactor: ♻️ Update VSCode settings and upgrade dependencies for improved performance ([9d85fc5](https://github.com/ChiragChrg/Portfolio/commit/9d85fc5))
+* refactor: ♻️ Upgrade tailwindcss to v4  and modify related files ([d1d2280](https://github.com/ChiragChrg/Portfolio/commit/d1d2280))
+* refactor: 🔧 Simplify nightly environment check in headers ([6073cab](https://github.com/ChiragChrg/Portfolio/commit/6073cab))
+* chore: :wrench: Renamed portfolio config file ([967c3fe](https://github.com/ChiragChrg/Portfolio/commit/967c3fe))
+* chore: 🔧  Update cursor background color variables for improved theming consistency ([8764a1d](https://github.com/ChiragChrg/Portfolio/commit/8764a1d))
+* chore: 🔧 Add ESLint configuration and TypeScript support for improved code quality ([c5aceae](https://github.com/ChiragChrg/Portfolio/commit/c5aceae))
+* chore: 🔧 Add rules for commit message types in commitlint configuration ([4cfbd27](https://github.com/ChiragChrg/Portfolio/commit/4cfbd27))
+* chore: 🔧 Add ts-node as a dependency for improved TypeScript support ([5922ae8](https://github.com/ChiragChrg/Portfolio/commit/5922ae8))
+* chore: 🔧 Removed redundant NPM lock file since BUN is used as the package manager ([1ab817a](https://github.com/ChiragChrg/Portfolio/commit/1ab817a))
+* chore: 🔧 Update actionButton URL comment to suggest using full URL or public folder path ([8ac6084](https://github.com/ChiragChrg/Portfolio/commit/8ac6084))
+* chore: 🔧 Update branch name from "astro" to "nightly" in pre release configuration ([5c73e4d](https://github.com/ChiragChrg/Portfolio/commit/5c73e4d))
+* chore: 🔧 Update dependencies and devDependencies in package.json ([1780e5f](https://github.com/ChiragChrg/Portfolio/commit/1780e5f))
+* chore: 🔧 Update dependencies for improved performance and compatibility ([7611073](https://github.com/ChiragChrg/Portfolio/commit/7611073))
+* chore: 🔧 Update dev script to include --open flag for improved development experience ([0c9a1a7](https://github.com/ChiragChrg/Portfolio/commit/0c9a1a7))
+* chore: 🔧 Update package dependencies for improved stability and performance ([f2b3815](https://github.com/ChiragChrg/Portfolio/commit/f2b3815))
+* chore: 🔧 Update package.json and bun.lock to add nanostores dependency and adjust build scripts ([fc3de09](https://github.com/ChiragChrg/Portfolio/commit/fc3de09))
+* chore: 🔧 Update package.json to include typescript-eslint in devDependencies ([5d9bac2](https://github.com/ChiragChrg/Portfolio/commit/5d9bac2))
+* chore: 🔧 Update z-index classes in MobileHeader and ProjectsHeader for consistency ([7b11443](https://github.com/ChiragChrg/Portfolio/commit/7b11443))
+* chore: 🧹 Remove unused Astro dependencies from package.json ([53c44a4](https://github.com/ChiragChrg/Portfolio/commit/53c44a4))
+* chore: 🧹 Remove VSCode configuration files and update .gitignore for editor directories ([5a7f443](https://github.com/ChiragChrg/Portfolio/commit/5a7f443))
+* feat: ✨ Add Avatar interaction on Hero section with spring animation on Mouse events ([e099d3f](https://github.com/ChiragChrg/Portfolio/commit/e099d3f))
+* feat: ✨ Add dynamic salutation to Hero section using config ([00eebab](https://github.com/ChiragChrg/Portfolio/commit/00eebab))
+* feat: ✨ Add Enhanced ProjectCard component for displaying project details and status ([20504d2](https://github.com/ChiragChrg/Portfolio/commit/20504d2))
+* feat: ✨ Add Netlify secret scan omit keys to environment configuration ([bd83ad0](https://github.com/ChiragChrg/Portfolio/commit/bd83ad0))
+* feat: ✨ Add portfolio configuration with personal details and social links ([ff921ac](https://github.com/ChiragChrg/Portfolio/commit/ff921ac))
+* feat: ✨ Add theme dropdown component and integrate with theme management ([71944fe](https://github.com/ChiragChrg/Portfolio/commit/71944fe))
+* feat: ✨ Adds auto-generated multi-theme CSS support ([d572df3](https://github.com/ChiragChrg/Portfolio/commit/d572df3))
+* feat: ✨ Enhance project layout and styling with new status indicators and responsive adjustments ([2eea9e0](https://github.com/ChiragChrg/Portfolio/commit/2eea9e0))
+* feat: ✨ enhance theme management with auto-generated constants ([fa41ef8](https://github.com/ChiragChrg/Portfolio/commit/fa41ef8))
+* feat: ✨ Enhance ThemeDropdown and Header components with idPrefix for better accessibility ([1061a8c](https://github.com/ChiragChrg/Portfolio/commit/1061a8c))
+* feat: ✨ Implement buildTechStack function to create technology stack from skills array ([a5bc905](https://github.com/ChiragChrg/Portfolio/commit/a5bc905))
+* feat: ✨ Implement circular expansion animation for mobile menu toggle ([9d98c99](https://github.com/ChiragChrg/Portfolio/commit/9d98c99))
+* feat: ✨ Integrate dynamic configuration for components and improve project routing ([15686c9](https://github.com/ChiragChrg/Portfolio/commit/15686c9))
+* feat: ✨ Integrate ProjectCard component and add empty state message for projects ([8cde83d](https://github.com/ChiragChrg/Portfolio/commit/8cde83d))
+* feat: ✨ Integrate site configuration into layout and page components for improved SEO and consistenc ([0fd68d1](https://github.com/ChiragChrg/Portfolio/commit/0fd68d1))
+* feat: ✨ Integrate ThemeDropdown visibility logic in headers based on environment ([e74399a](https://github.com/ChiragChrg/Portfolio/commit/e74399a))
+* feat: ✨ Refactor ThemeButton and MobileHeader for improved theme toggling and accessibility ([b1467df](https://github.com/ChiragChrg/Portfolio/commit/b1467df))
+* feat: ✨ Update environment variable handling for development mode in headers ([a574769](https://github.com/ChiragChrg/Portfolio/commit/a574769))
+* build: 📦 Update release rules to include breaking changes and refine versioning strategy ([bdc0572](https://github.com/ChiragChrg/Portfolio/commit/bdc0572))
+* fix: 🐛 Add missing aria-label to theme dropdown button for accessibility ([a4762df](https://github.com/ChiragChrg/Portfolio/commit/a4762df))
+* fix: 🐛 Adjust layout and styling in Hero component for better responsiveness ([9588b65](https://github.com/ChiragChrg/Portfolio/commit/9588b65))
+* fix: 🐛 Adjust orbit dot positioning and add outline for better visibility ([0ecf74d](https://github.com/ChiragChrg/Portfolio/commit/0ecf74d))
+* fix: 🐛 Correct hero section name formatting and re-enable cursor transition effect ([29443a3](https://github.com/ChiragChrg/Portfolio/commit/29443a3))
+* fix: 🐛 Default to dark theme if no saved theme is found and update default theme name ([3facefd](https://github.com/ChiragChrg/Portfolio/commit/3facefd))
+* fix: 🐛 Ensures all scroll-triggered animations above the target section finish before initiating sm ([7ca4c15](https://github.com/ChiragChrg/Portfolio/commit/7ca4c15))
+* fix: 🐛 Fix Header nav links underline animation flickering by replacing throttle with debounce func ([e70468f](https://github.com/ChiragChrg/Portfolio/commit/e70468f))
+* fix: 🐛 Update sitemap URLs and last modified dates for accuracy ([48788c5](https://github.com/ChiragChrg/Portfolio/commit/48788c5))
+* docs: 📚 Credit circular theme toggle animation source ([14cfbfa](https://github.com/ChiragChrg/Portfolio/commit/14cfbfa))
+* docs: 📚 Update README with live demo links and clarify nightly build features ([4a99686](https://github.com/ChiragChrg/Portfolio/commit/4a99686))
+* bump: 📦 Update Astro and its dependencies ([8aa3908](https://github.com/ChiragChrg/Portfolio/commit/8aa3908))
+* bump: 📦 Update dependencies ([96c3e37](https://github.com/ChiragChrg/Portfolio/commit/96c3e37))
+
 ## <small>1.0.3 (2025-11-16)</small>
 
 * docs: 📚  Update README to include details about nightly build and new features ([79fc2ae](https://github.com/ChiragChrg/Portfolio/commit/79fc2ae))

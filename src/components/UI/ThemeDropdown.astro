@@ -1,0 +1,331 @@
+---
+import { ChevronDown } from "lucide-preact";
+import { ThemeDropdownOptions } from "../../constants/themeDropdownOptions";
+
+const { className, idPrefix = "" } = Astro.props;
+const btnId = `themeDropdownBtn${idPrefix}`;
+const dropdownId = `themeDropdown${idPrefix}`;
+const previewId = `currentThemePreview${idPrefix}`;
+const nameId = `currentThemeName${idPrefix}`;
+const iconId = `dropdownIcon${idPrefix}`;
+---
+
+<div class={`relative theme-dropdown-container isolate ${className || ""}`}>
+    <!-- Dropdown Button -->
+    <button
+        id={btnId}
+        type="button"
+        class="flex items-center gap-2 px-3 py-2 backdrop-blur-sm border border-white/10 rounded-md transition-all duration-200 min-w-4 md:min-w-32 cursor-pointer"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Select Theme"
+    >
+        <div class="flex items-center gap-2 flex-1">
+            <div
+                id={previewId}
+                class="w-4 h-4 rounded-full border border-white/30"
+                style="background: linear-gradient(45deg, hsl(264, 100%, 50%), hsl(315.1, 100%, 50%));"
+            >
+            </div>
+            <span id={nameId} class="hidden sm:block text-sm font-medium"
+                >Custom</span
+            >
+        </div>
+        <ChevronDown
+            size={16}
+            id={iconId}
+            class="transition-transform duration-200"
+        />
+    </button>
+
+    <!-- Dropdown List -->
+    <div
+        id={dropdownId}
+        class="absolute top-full left-0 mt-2 min-w-32 bg-background/70 backdrop-blur-md border border-white/10 rounded-lg shadow-lg opacity-0 invisible transform -translate-y-2.5 transition-all duration-200 z-130 max-h-64 overflow-y-auto overscroll-contain"
+        role="menu"
+        aria-labelledby={btnId}
+    >
+        <div class="py-2">
+            {
+                ThemeDropdownOptions.map((theme) => (
+                    <button
+                        type="button"
+                        class="theme-option w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-white/10 transition-all duration-150 cursor-pointer"
+                        data-theme={theme.name}
+                        data-primary={theme.primaryColor}
+                        data-secondary={theme.secondaryColor}
+                        role="menuitem"
+                    >
+                        <div
+                            class="w-5 h-5 rounded-full border border-white/30 shrink-0"
+                            style={`background: linear-gradient(45deg, ${theme.primaryColor}, ${theme.secondaryColor});`}
+                        />
+                        <span class="text-sm font-medium">
+                            {theme.displayName}
+                        </span>
+                    </button>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<script
+    is:inline
+    type="module"
+    define:vars={{ btnId, dropdownId, iconId, previewId, nameId }}
+>
+    document.addEventListener("DOMContentLoaded", () => {
+        const dropdownBtn = document.getElementById(btnId);
+        const dropdown = document.getElementById(dropdownId);
+        const dropdownIcon = document.getElementById(iconId);
+        const currentThemePreview = document.getElementById(previewId);
+        const currentThemeName = document.getElementById(nameId);
+        const themeOptions = dropdown?.querySelectorAll(".theme-option");
+
+        if (!dropdownBtn || !dropdown) return;
+
+        const THEME_KEY = "chiragchrg-portfolio-theme";
+        const THEME_NAME_KEY = "chiragchrg-portfolio-theme-name";
+        let isOpen = false;
+
+        // Toggle dropdown visibility
+        const toggleDropdown = () => {
+            isOpen = !isOpen;
+            const classes = ["opacity-100", "visible", "translate-y-0"];
+            const hiddenClasses = [
+                "opacity-0",
+                "invisible",
+                "-translate-y-2.5",
+            ];
+
+            if (isOpen) {
+                dropdown.classList.remove(...hiddenClasses);
+                dropdown.classList.add(...classes);
+                if (dropdownIcon) {
+                    dropdownIcon.style.transform = "rotate(180deg)";
+                }
+            } else {
+                dropdown.classList.add(...hiddenClasses);
+                dropdown.classList.remove(...classes);
+                if (dropdownIcon) {
+                    dropdownIcon.style.transform = "rotate(0deg)";
+                }
+            }
+            dropdownBtn.setAttribute("aria-expanded", isOpen.toString());
+        };
+
+        // Close dropdown
+        const closeDropdown = () => isOpen && toggleDropdown();
+
+        // Apply theme
+        const applyTheme = (
+            themeName,
+            displayName,
+            primaryColor,
+            secondaryColor,
+        ) => {
+            // Remove existing theme classes
+            const classes = Array.from(document.documentElement.classList);
+            classes.forEach((cls) => {
+                if (cls.startsWith("theme-")) {
+                    document.documentElement.classList.remove(cls);
+                }
+            });
+
+            // Apply new theme
+            document.documentElement.classList.add(`theme-${themeName}`);
+
+            // Update UI
+            if (currentThemePreview) {
+                currentThemePreview.style.background = `linear-gradient(45deg, ${primaryColor}, ${secondaryColor})`;
+            }
+            if (currentThemeName) {
+                currentThemeName.textContent = displayName;
+            }
+
+            // Save to localStorage
+            try {
+                const currentMode = document.documentElement.classList.contains(
+                    "dark",
+                )
+                    ? "dark"
+                    : "light";
+                localStorage.setItem(THEME_NAME_KEY, themeName);
+                localStorage.setItem(THEME_KEY, currentMode);
+            } catch (e) {
+                console.warn("Failed to save theme:", e);
+            }
+
+            closeDropdown();
+        };
+
+        // Initialize theme from localStorage
+        const initTheme = () => {
+            try {
+                const savedThemeName =
+                    localStorage.getItem(THEME_NAME_KEY) || "default";
+                const savedMode = localStorage.getItem(THEME_KEY) || "dark";
+
+                // Set light/dark mode
+                document.documentElement.classList.remove("light", "dark");
+                document.documentElement.classList.add(savedMode);
+
+                // Find and apply saved theme
+                const themeOption = document.querySelector(
+                    `[data-theme="${savedThemeName}"]`,
+                );
+                if (themeOption && themeOption instanceof HTMLElement) {
+                    const displayName =
+                        themeOption.textContent?.trim() || savedThemeName;
+                    const primaryColor = themeOption.dataset.primary || "";
+                    const secondaryColor = themeOption.dataset.secondary || "";
+
+                    // Apply theme without saving (initialization)
+                    const classes = Array.from(
+                        document.documentElement.classList,
+                    );
+                    classes.forEach((cls) => {
+                        if (cls.startsWith("theme-")) {
+                            document.documentElement.classList.remove(cls);
+                        }
+                    });
+                    document.documentElement.classList.add(
+                        `theme-${savedThemeName}`,
+                    );
+
+                    if (currentThemePreview) {
+                        currentThemePreview.style.background = `linear-gradient(45deg, ${primaryColor}, ${secondaryColor})`;
+                    }
+                    if (currentThemeName) {
+                        currentThemeName.textContent = displayName;
+                    }
+                }
+            } catch (e) {
+                console.warn("Failed to initialize theme:", e);
+            }
+        };
+
+        // Event listeners
+        dropdownBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+
+        themeOptions?.forEach((option) => {
+            option.addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (option instanceof HTMLElement) {
+                    const themeName = option.dataset.theme || "";
+                    const displayName = option.textContent?.trim() || "";
+                    const primaryColor = option.dataset.primary || "";
+                    const secondaryColor = option.dataset.secondary || "";
+
+                    applyTheme(
+                        themeName,
+                        displayName,
+                        primaryColor,
+                        secondaryColor,
+                    );
+                }
+            });
+        });
+
+        // Close dropdown on outside click
+        document.addEventListener("click", (e) => {
+            const target = e.target;
+            if (
+                target instanceof Node &&
+                !dropdownBtn.contains(target) &&
+                !dropdown.contains(target)
+            ) {
+                closeDropdown();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeDropdown();
+        });
+
+        // Prevent page scroll when dropdown scrolling reaches limits
+        dropdown.addEventListener("wheel", (e) => {
+            e.stopPropagation();
+            const { scrollTop, scrollHeight, clientHeight } = dropdown;
+            const isAtTop = scrollTop === 0;
+            const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+
+            if ((isAtTop && e.deltaY < 0) || (isAtBottom && e.deltaY > 0)) {
+                e.preventDefault();
+            }
+        });
+
+        // Prevent touch scroll from affecting page on mobile
+        dropdown.addEventListener("touchmove", (e) => e.stopPropagation());
+
+        // Initialize theme and listen for external changes
+        initTheme();
+        window.addEventListener("storage", (e) => {
+            if (e.key === THEME_KEY || e.key === THEME_NAME_KEY) {
+                initTheme();
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Ensure dropdown has proper scrolling */
+    #themeDropdown {
+        overflow-y: auto !important;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+        overscroll-behavior: contain;
+        scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar for webkit browsers */
+    #themeDropdown::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #themeDropdown::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 3px;
+    }
+
+    #themeDropdown::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+        transition: background 0.2s ease;
+    }
+
+    #themeDropdown::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Hover effect for theme options */
+    .theme-option {
+        transition: background-color 0.15s ease;
+        user-select: none;
+    }
+
+    .theme-option:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .theme-option:active {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* Better focus indicators */
+    .theme-option:focus {
+        outline: 2px solid rgba(255, 255, 255, 0.4);
+        outline-offset: -2px;
+    }
+
+    /* Ensure the dropdown container doesn't interfere with scrolling */
+    .theme-dropdown-container {
+        isolation: isolate;
+    }
+</style>

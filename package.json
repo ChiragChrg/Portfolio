@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.1.0-nightly.9",
   "homepage": "https://github.com/ChiragChrg/portfolio",
   "author": {
     "name": "ChiragChrg",
@@ -9,9 +9,10 @@
     "url": "https://chiragchrg.netlify.app/"
   },
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "dev": "bun run build:themes && astro dev --open --host",
+    "start": "bun run build:themes && astro dev",
+    "build:themes": "ts-node scripts/generateThemes.ts",
+    "build": "bun run build:themes && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -20,30 +21,35 @@
     "release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^6.2.5",
-    "@astrojs/preact": "^4.0.8",
-    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/check": "0.9.9",
+    "@astrojs/preact": "5.1.2",
     "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
-    "astro": "^5.5.6",
-    "astro-compress": "^2.3.7",
-    "astro-font": "^1.0.0",
-    "astro-seo": "^0.8.4",
-    "gsap": "^3.12.7",
-    "lucide-preact": "^0.486.0",
-    "preact": "^10.26.4",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.8.2"
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "6.2.1",
+    "astro-compress": "^2.4.1",
+    "astro-font": "^1.1.0",
+    "astro-seo": "^1.1.0",
+    "gsap": "^3.15.0",
+    "lucide-preact": "^1.14.0",
+    "nanostores": "^1.3.0",
+    "preact": "^10.29.1",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@typescript-eslint/parser": "^8.59.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-astro": "^1.7.0",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.59.1",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^12.0.0",
-    "@semantic-release/npm": "^13.1.1",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/npm": "^13.1.5",
     "husky": "^9.1.7",
-    "semantic-release": "^25.0.1"
+    "semantic-release": "^25.0.3"
   }
 }

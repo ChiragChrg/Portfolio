@@ -1,68 +1,91 @@
 ---
-export function getStaticPaths() {
-    return [
-        { params: { projectID: "arms-v3" } },
-        { params: { projectID: "vortexa" } },
-        { params: { projectID: "next-mart" } },
-        { params: { projectID: "arms-v2" } },
-        { params: { projectID: "xrecon" } },
-        { params: { projectID: "yoatube" } },
-        { params: { projectID: "srinivas-exam-manager" } },
-        { params: { projectID: "piktures" } },
-        { params: { projectID: "days-beyond" } },
-        { params: { projectID: "arms-v1" } },
-        { params: { projectID: "film-stack" } },
-        { params: { projectID: "covidtrax" } },
-        { params: { projectID: "climate" } },
-    ];
+import { Image } from 'astro:assets';
+import { ProjectLayout } from '@layouts/index';
+import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from 'lucide-preact';
+import { CenterTitle, SectionTitle } from '@components/UI';
+
+// Dynamic Route Generation for Projects
+export async function getStaticPaths() {
+    const { PROJECTS_LIST } = await import('@/config/ProjectsList');
+
+    return PROJECTS_LIST.filter((project) => !project.isHidden).map((project) => ({
+        params: {
+            projectID: project.name.replaceAll(' ', '-').toLowerCase(),
+        },
+    }));
 }
+
 const { projectID } = Astro.params;
 
-import { Image } from "astro:assets";
-import { ProjectLayout } from "../../layouts";
-import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
-import { CenterTitle, SectionTitle } from "../../components/UI";
-
-// Lazy loading ProjectInfo
-const ProjectInfo = import("../../utils/ProjectsList");
-const { ProjectsList } = await ProjectInfo;
-const [project] = ProjectsList.filter(
-    (itm) => itm.Name.replaceAll(" ", "-").toLowerCase() === projectID,
+const { PROJECTS_LIST } = await import('@/config/ProjectsList');
+const { themeConfig, siteConfig, headerConfig, footerConfig, heroConfig } = await import(
+    '@/config/portfolio.config'
 );
+
+const author = `${heroConfig.firstName} ${heroConfig.lastName}`;
+
+// Find the project
+const project = PROJECTS_LIST.find(
+    (itm) => itm.name.replaceAll(' ', '-').toLowerCase() === projectID,
+);
+
+// If no project is found, return 404
+if (!project) {
+    return Astro.redirect('/404');
+}
+
+const projectCanonicalUrl = new URL(`projects/${projectID}`, siteConfig.siteUrl).toString();
+const projectImageUrl = new URL(project.previewImage.src, siteConfig.siteUrl).toString();
 ---
 
 <ProjectLayout
-    title=`${project.Name} | ChiragChrg`
-    description={project.ShortDesc}
+    title={`${project.name} | ${author}`}
+    description={project.description}
+    canonical={projectCanonicalUrl}
+    ogImage={projectImageUrl}
+    config={{
+        theme: themeConfig,
+        site: siteConfig,
+        header: headerConfig,
+        footer: footerConfig,
+    }}
 >
+    <!-- Project Background Image -->
     <div class="Fade_In flex_center absolute inset-0 w-full h-full z-[-1]">
         <Image
-            src={project.Shot}
-            alt={`${project.Name}_BG_Image`}
+            src={project.previewImage}
+            alt={`${project.name}_BG_Image`}
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
-            loading="eager"
         />
-        <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
+
+        <!-- Dark Image Overlay -->
+        <div style="background: var(--imgOverlayGradient);" class="w-full h-full absolute inset-0">
+        </div>
     </div>
 
+    <!-- Main Project Info -->
     <div class="flex_center flex-col gap-4 py-4">
+        <!-- Project Logo Image -->
         <Image
-            src={project.Logo}
-            alt={`${project.Name}_Image`}
+            src={project.logoImage}
+            alt={`${project.name}_Image`}
             class="Fade_Up"
             width={100}
             height={100}
             loading="eager"
         />
+
+        <!-- Project Title -->
         <h1
             class="Fade_Up font-ubuntu text-[1.6em] md:text-[1.8em] tracking-wider md:tracking-[0.2em] text-center"
         >
-            {project.Name}
+            {project.name}
         </h1>
 
+        <!-- Technologies Icons -->
         <div class="w-full flex_center gap-4">
             {
-                project?.Tech?.map((tech, index) => {
+                project.technologies?.map((tech, index) => {
                     return (
                         <Image
                             src={tech.icon}
@@ -77,12 +100,13 @@ const [project] = ProjectsList.filter(
             }
         </div>
 
+        <!-- Project Links -->
         <div class="flex_center gap-4 text-[1em]">
             <a
-                href={project.Source}
+                href={project.sourceUrl}
                 target="_blank"
                 rel="author"
-                class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-4 py-2 rounded"
+                class="Fade_Stagger flex_center gap-2 LinkBtnGradient px-4 py-2 rounded"
             >
                 <svg
                     stroke="currentColor"
@@ -93,7 +117,7 @@ const [project] = ProjectsList.filter(
                     height="24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    style="color: var(--heroSocialColor);"
+                    style="color: var(--socialIconColor);"
                 >
                     <path
                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
@@ -103,10 +127,10 @@ const [project] = ProjectsList.filter(
                 <span>Source Code</span>
             </a>
             <a
-                href={project.Link}
+                href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-4 py-2 rounded"
+                class="Fade_Stagger flex_center gap-2 LinkBtnGradient px-4 py-2 rounded"
             >
                 <ExternalLinkIcon />
                 <span>Live Demo</span>
@@ -114,52 +138,46 @@ const [project] = ProjectsList.filter(
         </div>
     </div>
 
-    <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">
-        About the project.
-    </h2>
-    <div
-        class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10"
-    >
+    <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">About the project.</h2>
+    <div class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10">
+        <!-- Project Mockup Image -->
         <Image
-            src={project.Mockup}
-            alt={`${project.Name}_Mockup_Image`}
+            src={project.deviceMockupImage}
+            alt={`${project.name}_Mockup_Image`}
             width={600}
             class="Fade_Up"
             loading="eager"
         />
+
         <div class="Fade_Up flex_center flex-col gap-4">
+            <!-- Demo Credentials -->
             {
-                project.Demo && (
-                    <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
+                project.demoCredentials && (
+                    <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 LinkBtnGradient rounded-md mt-4 lg:mt-0">
                         <h3 class="min-w-max my-auto">Demo Credentials</h3>
 
                         <div class="flex justify-evenly w-full flex-col md:flex-row gap-2 text-[0.8em]">
+                            {/* Copy Email */}
                             <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
                                 <span class="min-w-20 md:w-fit">Email : </span>
                                 <span id="emailContent" class="w-full">
-                                    {project.Demo?.email}
+                                    {project.demoCredentials?.email}
                                 </span>
 
-                                <button
-                                    id="emailCopyBtn"
-                                    class="flex_center relative"
-                                >
+                                <button id="emailCopyBtn" class="flex_center relative">
                                     <ClipboardCopyIcon class="emailCopyIcon visible" />
                                     <CheckIcon class="emailCopyIcon absolute invisible" />
                                 </button>
                             </div>
+
+                            {/* Copy Password */}
                             <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
-                                <span class="min-w-20 md:w-fit">
-                                    Password :{" "}
-                                </span>
+                                <span class="min-w-20 md:w-fit">Password : </span>
                                 <span id="passContent" class="w-full">
-                                    {project.Demo?.password}
+                                    {project.demoCredentials?.password}
                                 </span>
 
-                                <button
-                                    id="passCopyBtn"
-                                    class="flex_center relative"
-                                >
+                                <button id="passCopyBtn" class="flex_center relative">
                                     <ClipboardCopyIcon class="passCopyIcon visible" />
                                     <CheckIcon class="passCopyIcon absolute invisible" />
                                 </button>
@@ -169,45 +187,35 @@ const [project] = ProjectsList.filter(
                 )
             }
 
+            <!-- Project Description -->
             <p class="w-full text-justify text-[1.1em] mt-4 px-4 indent-12">
-                {project.Desc}
+                {project.description}
             </p>
         </div>
     </div>
 
+    <!-- Project Features -->
     <SectionTitle title="Features" color="primary">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4">
             {
                 project.features.map((items) => (
                     <div class="Fade_Up p-2 md:p-4 text-center md:text-start flex flex-col gap-3 border border-primaryLiteAlt sm:border-transparent hover:border-primaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
-                        <span class="font-ubuntu text-[1.125em]">
-                            {items.title}
-                        </span>
-                        <p class="md:pl-8 text-center md:text-justify">
-                            {items.description}
-                        </p>
+                        <span class="font-ubuntu text-[1.125em]">{items.title}</span>
+                        <p class="md:pl-8 text-center md:text-justify">{items.description}</p>
                     </div>
                 ))
             }
         </div>
     </SectionTitle>
 
+    <!-- Details of Technologies Used -->
     <CenterTitle title="Tech Stack" color="secondary" />
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-[30rem]"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-120">
         {
-            project.Tech.map((tech) => (
+            project.technologies.map((tech) => (
                 <div class="Fade_Stagger flex_center flex-col gap-4 p-4 border border-secondaryLiteAlt sm:border-transparent hover:border-secondaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
                     <div class="flex_center gap-4">
-                        <Image
-                            src={tech.icon}
-                            alt={tech.title}
-                            width={40}
-                            height={40}
-                        />
+                        <Image src={tech.icon} alt={tech.title} width={40} height={40} />
                         <span class="text-[1.2em]">{tech.title}</span>
                     </div>
                     <p class="text-center">{tech.description}</p>
@@ -218,34 +226,36 @@ const [project] = ProjectsList.filter(
 </ProjectLayout>
 
 <script is:inline type="module">
-    const emailCopyBtn = document.getElementById("emailCopyBtn");
-    const passCopyBtn = document.getElementById("passCopyBtn");
-    const emailContent = document.getElementById("emailContent");
-    const passContent = document.getElementById("passContent");
-    const emailCopyIcons = document.querySelectorAll(".emailCopyIcon");
-    const passCopyIcons = document.querySelectorAll(".passCopyIcon");
+    const emailCopyBtn = document.getElementById('emailCopyBtn');
+    const passCopyBtn = document.getElementById('passCopyBtn');
+    const emailContent = document.getElementById('emailContent');
+    const passContent = document.getElementById('passContent');
+    const emailCopyIcons = document.querySelectorAll('.emailCopyIcon');
+    const passCopyIcons = document.querySelectorAll('.passCopyIcon');
 
-    emailCopyBtn?.addEventListener("click", () => {
+    // Copy Email to Clipboard
+    emailCopyBtn?.addEventListener('click', () => {
         navigator.clipboard.writeText(emailContent?.textContent);
 
-        emailCopyIcons[0].classList.replace("visible", "invisible");
-        emailCopyIcons[1].classList.replace("invisible", "visible");
+        emailCopyIcons[0].classList.replace('visible', 'invisible');
+        emailCopyIcons[1].classList.replace('invisible', 'visible');
 
         setTimeout(() => {
-            emailCopyIcons[0].classList.replace("invisible", "visible");
-            emailCopyIcons[1].classList.replace("visible", "invisible");
+            emailCopyIcons[0].classList.replace('invisible', 'visible');
+            emailCopyIcons[1].classList.replace('visible', 'invisible');
         }, 2000);
     });
 
-    passCopyBtn?.addEventListener("click", () => {
+    // Copy Password to Clipboard
+    passCopyBtn?.addEventListener('click', () => {
         navigator.clipboard.writeText(passContent?.textContent);
 
-        passCopyIcons[0].classList.replace("visible", "invisible");
-        passCopyIcons[1].classList.replace("invisible", "visible");
+        passCopyIcons[0].classList.replace('visible', 'invisible');
+        passCopyIcons[1].classList.replace('invisible', 'visible');
 
         setTimeout(() => {
-            passCopyIcons[0].classList.replace("invisible", "visible");
-            passCopyIcons[1].classList.replace("visible", "invisible");
+            passCopyIcons[0].classList.replace('invisible', 'visible');
+            passCopyIcons[1].classList.replace('visible', 'invisible');
         }, 2000);
     });
 </script>
