@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0-nightly.1](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.9...v2.0.0-nightly.1) (2026-05-16)
+
+### ⚠ BREAKING CHANGES
+
+* 🚀 Release v2 major redesign
+
+### ✨ Features
+
+* 🚀 Release v2 major redesign ([f4632e7](https://github.com/ChiragChrg/Portfolio/commit/f4632e702f3a0a428622ff3d8e929dc285ce18a3))
+
 ## [1.1.0-nightly.9](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.8...v1.1.0-nightly.9) (2026-05-02)
 
 ## [1.1.0-nightly.8](https://github.com/ChiragChrg/Portfolio/compare/v1.1.0-nightly.7...v1.1.0-nightly.8) (2026-05-01)
